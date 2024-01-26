@@ -1,0 +1,778 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a98:d84b:0:b0:1eb:e128:bbe3 with SMTP id b11csp1267778eil;
+        Fri, 19 Jan 2024 16:55:19 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IE6OGEIeQQ55gqr6jyu93IrCKgw5mK+bDnzbXWKL0sFo0zrqWqWQrt8nT4yvQed4v9caOjt
+X-Received: by 2002:a05:620a:1a09:b0:783:90d9:bbd5 with SMTP id bk9-20020a05620a1a0900b0078390d9bbd5mr651047qkb.0.1705712119581;
+        Fri, 19 Jan 2024 16:55:19 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1705712119; cv=none;
+        d=google.com; s=arc-20160816;
+        b=SZmSB6M1xLbehfvvBDSBydznC3TdKkIQ9sJgZtobhOn//8Q0Clw2biWcuV7WSKZooB
+         zZliFHPF8ZqnSLAY8ECGR3gvxuIWF8SWOSwJ9q7julp8F6Cbh982aHjLqJRfECwEIcH+
+         AIRqETDutM3EipdqZ/TCfyj9AkzQmPpuqyFVrRbPdQ1o7QSCUMQktV8D1JnFAS+lVYrV
+         QRZfwI8h7XHspAhmX/cEKs+yJkZiUXsHGpHkoiGX8XamsFWXAOw+r8vOutInusgsoeEe
+         UZ14wnA2J1LS2jWpqryoSWgWvMwZbmdgfrJTOiOqjtDjMXuDz3ZHlAhiy6kV4lQfCFQR
+         e+kg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=civAjIzN+RUovlqLUAcPqlJNDz1VRVDT59wnBxA+PlQ=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=BtPVYGo01mWAEk0lBKMlu/cLideamFoabaWhvnbLlhkMlvXXSJhqiAwUr0qJKw1KPW
+         yldmxphpy+99ypmQjGZ4CJJKQekF9Hiqx1KquyG4CmyQyXgDC+8Nx3yh79v0B1K0NM71
+         7GAbwRslkMu2c/qDmFAMTdPHp9+rspS6+d7O5+VeFXzfxbAAx/Hp6tyQ8HL4V5OqYS4O
+         UbSxcfiRNXpRTV3EnB0TLv40r40GvIkkQJxfqqGGMg+MVzd2xKtyzOlYaLrRmEpXfyJH
+         sPXCfUlqfew2Zyx7n8qQMDlES2Ci10n3r4K9vsVt1pikQsz30iZ6aVNn0XgxPID/9a4v
+         DmMQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=wFP0JyX7;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=xWVRFqgq;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id t21-20020a05620a451500b007833d031b7dsi515001qkp.642.2024.01.19.16.55.19
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 19 Jan 2024 16:55:19 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=wFP0JyX7;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=xWVRFqgq;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=civAjIzN+RUovlqLUAcPqlJNDz1VRVDT59wnBxA+PlQ=;
+	b=wFP0JyX7lZ5zcH619DkJNqVqJ/v2iWynGrWPtnM6GK0+ttcLokB5yBslnFoEGtY3j+jE
+	ul/uCMfJ7f8NrGUf5vx3+NPHB+wMEoMIIDovIKYuNv5jWHKzpcXZwVLWeacCeuAO5wfYsO
+	r8ppL8j1eP/64l+Q39gf3ndlQOtt4GwNFcjMZLrUISea0lID68jwaUKjsM8NzRTIzKGHee
+	VK9qypweNF5hrmt4gTpMnKumXbMD++3dMmsAG8clwPNwxpygtXtlO9YZJrWWOMNdWWMBnA
+	EWSb5hTYp6Kgp5WluTEr3fv5se+gEPr1yG+e8Eu8AzA6QVnXb0MvWosqDQ8f83Dw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=civAjIzN+RUovlqLUAcPqlJNDz1VRVDT59wnBxA+PlQ=;
+	b=xWVRFqgqi7c05kfII2DT/eZZUoDrO5aqPDE+nGqqyvuBfXBJVI4s+/JP03nnRs9QcWwP
+	vX15s8Z2xAHYpur4NqSMupc4dwAFkORzLdWqKNwVL/MbkXb3W89T+wNmb+JLPVqUIJ/qsF
+	i7v/gp6mEk/T3PKcu0V1NCC8V03WT5Z+Q=
+Received: by filterdrecv-7784dfc559-jwjp8 with SMTP id filterdrecv-7784dfc559-jwjp8-1-65AB19F3-5
+        2024-01-20 00:55:15.119844959 +0000 UTC m=+8144026.177297704
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-30 (SG) with HTTP
+	id kzdwKWTZT1SuFiZ609SDAQ
+	Sat, 20 Jan 2024 00:55:15.051 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=838eb25312b8faaad95608bfd6da96f5202548d933f2f133f3ca4705a690
+Date: Sat, 20 Jan 2024 00:55:18 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <kzdwKWTZT1SuFiZ609SDAQ@geopod-ismtpd-30>
+Subject: PRO/EDR> Pseudomonas aeruginosa - USA: (ME) swimming pool
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iBWufkBpq=2FnmnIja7dHWM4j67P6f3BJba2=2FO3gM?=
+ =?us-ascii?Q?mjVIZM5KJEq4DTivQ0SNdh+ox10FNRHpmpTHFRL?=
+ =?us-ascii?Q?ao3e5B3=2FaSEQ95nUoWH8IEAPRSRpHtHI+DMRhqN?=
+ =?us-ascii?Q?gGqlW7yMkkjC0lm4hGaSECAr8xhZQOHSWNa4Mzj?=
+ =?us-ascii?Q?kPexXOTZJiiWrGEGdBxvexW0pUqtA8DwS6outM?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUhc93xcG=2F095a5S4+mt=2FG?=
+ =?us-ascii?Q?uYUpctI=2FOGD2dwyi+uvm2j4FCdvuw0l9zcHM8iA?=
+ =?us-ascii?Q?mojOvTXq7jOpDFFNtfsYkHQYACEW8pq1BXXqYmH?=
+ =?us-ascii?Q?oGTsnt6QpE2ZV5WVqnpwfXWoLXx7+4Y=2FMWBTFG4?=
+ =?us-ascii?Q?HoK3ozF3AWBikRRsKj2lc2eJT1G9kaVJNDC2piG?=
+ =?us-ascii?Q?f1Kfsbsp52siHsLCj3TOifZHq3NcYHnZZQ=2Fb=2FkE?=
+ =?us-ascii?Q?u7044VppoyoFNItk=2Fic4fU5EdkKuQ46oht3pPhz?=
+ =?us-ascii?Q?qPwCvTXPdQXcy=2Fd+8w4AtqdKbzPxF4MnReBFk+Z?=
+ =?us-ascii?Q?tDw2ugWspWv3eW+ZoRB+rOguyHVbFLSTvlc3Bs8?=
+ =?us-ascii?Q?=2FvayNWcINcyOy=2FAzEHcEigFt2KKegU8Oh3Aicmj?=
+ =?us-ascii?Q?gGuj=2FrV3I2lJHnSXH9ZVZPMQkqzOP2=2Fn+HSu51V?=
+ =?us-ascii?Q?ELpQKj9EErOW7sE7Vi=2FlzBScFoD91BaklpPvGdk?=
+ =?us-ascii?Q?6bO5w5NcvR4rc1Y+bZNkb02ROEN96Cezyfx70PF?=
+ =?us-ascii?Q?IZfxQnyywzjISW9c=2Fc9j4B1+WcPErHpLRjcFMER?=
+ =?us-ascii?Q?nE8y94XvYtALEQDr39U4x8C8cb0=2FcH+JuwmUpc1?=
+ =?us-ascii?Q?YH8wU15ARD1MDQplnNdg1sMoQW1ZN2dWkupMi2I?=
+ =?us-ascii?Q?WEpXsZAkOKf98NtXCwrw8+Ak4iQwNiyEBmsF74p?=
+ =?us-ascii?Q?82XrJJ7qD7LQ2CLRgl5svS5LiwfMw04WdhRiRnQ?=
+ =?us-ascii?Q?doZ538+5HcHxzonF8X2NljJMhMaqwvjORQdwcSD?=
+ =?us-ascii?Q?amtGySpxQ8qhYEbxvmB7Ji92Dw=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2Eq2BCcHkzm?=
+ =?us-ascii?Q?p0PJKaGgGKDG6CUWHDaT-PvfOTr71gtCfRoMDAw?=
+ =?us-ascii?Q?dTAwMF3WGpmRDuFgBJPOerFHHSuZOfdaO9nvAeD?=
+ =?us-ascii?Q?FabQ5GdJAiTbx6Tw5T6AlReW5n0wldkkgOYs3Ny?=
+ =?us-ascii?Q?J-3KmEznSFAV-gOHJprinhlvJKg9CoQ5o9YxX9V?=
+ =?us-ascii?Q?9vzCu1cP=5FH4WJw5=5Fg=3D=3D=2E1WTokZO0QWdV=5F-BJ8Vu?=
+ =?us-ascii?Q?FIZ5EYZ1exLxpFVOm90fN47doMDAwdTAwMEAcJO?=
+ =?us-ascii?Q?qr2y0mI7HQ1Vfe-3lzsIYL1-ipwhRW2f5P7vP1w?=
+ =?us-ascii?Q?KHSMvJZt9fgFSU3yIffVsU1RZ4b0gL5Yv90Y=5F2r?=
+ =?us-ascii?Q?DyaorSLq3W=5FEt9mB4cJthNILfYjF31e6TOnGBYT?=
+ =?us-ascii?Q?WSiLWrj-PM7xO-vnNzoLQK3hXNh=5F5qJ1leGLA8z?=
+ =?us-ascii?Q?fJlh1uy1Na-oT2slERc6vyx4EichOM4cA-IX0Ej?=
+ =?us-ascii?Q?GNmgePckRtWqeo2b0B61KRS-V=5Fx=5F6qCNVdPK=5Fu7?=
+ =?us-ascii?Q?OPYwX7KHot1nkCsF7bNgXdX7TlfRKmPMKlzEHhO?=
+ =?us-ascii?Q?11HwrAmzQEOsy2fzrr25oo8-4WZclixQFYD345I?=
+ =?us-ascii?Q?loAlC8XsdTJz5U4dpdLb843mU2BNvb4illnNfkv?=
+ =?us-ascii?Q?QJHlUzuiI5JmVh9Hb9A-Wjd8He=5FRcqg9KbCHyEp?=
+ =?us-ascii?Q?g8evVdGwGYkEyC0f9JVp0Hoa3J6uBzdauNgY-gO?=
+ =?us-ascii?Q?wohSTtBeRtwQjVJCSb11xcMrsl7Lz=5F-To3sX0Ql?=
+ =?us-ascii?Q?fgHja9B-z8H7=5FWX9lWZZZolMoh7pOwYrfLPaiNn?=
+ =?us-ascii?Q?trpnrq9X-DvhW7yuPwGFd=5Fi2zFIZFv5U56HAlD4?=
+ =?us-ascii?Q?KgZGirKwbo0v8vF3jjoz2H9dfFScDAcFY8ZXf6Q?=
+ =?us-ascii?Q?U-qYESBiWaTkv-AL6wse8awpq2VUZU3KAfTSUl5?=
+ =?us-ascii?Q?VuYM4aN4WF8xD=5FGm3tWD0wZQRRfwE7AVpmJkiZV?=
+ =?us-ascii?Q?Fq9yLLo29BSbYG3Dc8Jkw3WkHzyqjdmBRzVVuhf?=
+ =?us-ascii?Q?ZnC3rzNxQcbaEdY=5F7T-s2L4HfmZTQWMBUU0vACG?=
+ =?us-ascii?Q?Zeo=5FuRqLyX=5FbFbonGDILcqgoGbSswLebD6P-3-j?=
+ =?us-ascii?Q?XAFVcBxtuvYju4cH=5FpD=5FsuSLrHcLzbTS0WthrL-?=
+ =?us-ascii?Q?mA7dFx-1wFnQuOT4nRqcJgD8F1PozU0fHurr8Cw?=
+ =?us-ascii?Q?9SrBKYw5hBhH1y4ndFj-Vm3xRmnhr9eC89DVeJR?=
+ =?us-ascii?Q?byUhLH7OR1XLv2770dsdypdIVuprBUIE-WBV7FH?=
+ =?us-ascii?Q?jx6i81fNvjNbbkFXNTdxNxzyu5QzdxirX0o59Jq?=
+ =?us-ascii?Q?vsKXx6hFnj=5F21LMmKL9t1OX=3E?=
+
+--838eb25312b8faaad95608bfd6da96f5202548d933f2f133f3ca4705a690
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=us-ascii
+Mime-Version: 1.0
+
+PSEUDOMONAS AERUGINOSA - USA: (MAINE) SWIMMING POOL
+***************************************************
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+Date: Thu 18 Jan 2024
+Source: Morbidity and Mortality Weekly Report (MMWR) [abridged,
+edited]
+<http://dx.doi.org/10.15585/mmwr.mm7302a2>
+
+
+Citation: Lamere L, Smith E, Grieser H, et al. _Pseudomonas_ infection
+outbreak associated with a hotel swimming pool -- Maine, March 2023.
+MMWR Morb Mortal Wkly Rep. 2024;73:32-36.
+---------------------------------------------------------------------------=
+-----
+
+Investigation and Results
+-------------------------
+On 7 Mar 2023, the Maine Center for Disease Control and Prevention
+(Maine CDC) received a report from a group of hotel guests who had
+developed ear pain, rashes, and eye irritation after using a swimming
+pool at hotel A during the 4-5 Mar 2023 weekend. Later that day, an
+additional family that had used hotel A's swimming pool the same
+weekend reported experiencing similar illness, in addition to redness
+and pain of their hands and feet. Over the next 2 days, 4 additional
+groups of guests reported similar illnesses after using the hotel A
+pool during the same weekend. On 7 Mar 2023, in response to the
+reports, Maine CDC's Health Inspection Program contacted hotel A and
+learned that management had voluntarily closed the pool after
+receiving guest complaints. In response, on 8 Mar 2023, Maine CDC
+initiated an epidemiologic, laboratory, and environmental health
+investigation.
+
+Case Identification: Maine CDC used illness reports to identify 6
+households with members who had visited hotel A's pool during the
+weekend of 4-5 Mar 2023 and interviewed a representative from each
+household using a standard questionnaire. Interviewers asked about
+other groups or persons who had used the hotel pool; additional
+identified persons were also contacted and interviewed. Guests were
+asked about their use of the hotel A pool, other pools, and hot tubs
+since 24 Feb 2023, and subsequent illness.
+
+A total of 10 households (30 guests) were identified as having visited
+or used the hotel A pool during 4-5 Mar 2023 (Figure 1 [for
+Figures/Tables, see source URL above - Mod.LL]); 1 person per
+household was interviewed about all household members who used the
+pool. To further assess the scope of the outbreak, Maine CDC obtained
+a list of registered guests who were at hotel A during 1-7 Mar 2023
+and identified 29 additional registrants who might have been present
+at hotel A during 4-5 Mar 2023. These additional registrants were sent
+the standardized questionnaire by text or email and asked to fill out
+a separate questionnaire for each household member who used the pool.
+Questionnaires were completed for 5 additional guests.
+
+A total of 15 interviews or questionnaires were completed for 35
+unique persons. Maine CDC requested that symptomatic guests ask their
+healthcare provider to obtain a skin lesion swab for laboratory
+analysis and requested that laboratories send any isolates to Maine's
+Health and Environmental Testing Laboratory.
+
+A case was defined as the occurrence of ear pain, rash, or pain or
+swelling in feet or hands in a person within 7 days after using the
+hotel pool during 4-5 Mar 2023. Among 35 persons for whom information
+was available, 26 (74%) reportedly used the hotel A swimming pool
+during that time period. Among these 26 persons, 23 (88%) experienced
+an illness meeting the case definition; illness onset date was
+available for 20 persons (Figure 2). Among the 23 patients, 16 (70%)
+had ear pain, 15 (65%) had a rash, and 7 (30%) had pain or swelling in
+their feet or hands (Table). Fifteen (65%) patients were female. Among
+22 patients with available information, age ranged from 5 months to 61
+years (median =3D 8 years). Among 20 patients with reported time and
+date of illness onset, illness began a median of 24 hours (range =3D 8
+hours-6 days) after use of the hotel A pool.
+
+Laboratory Evaluation: Skin lesion swabs were obtained from 3
+patients, 2 of whom were family members who lived in separate
+households, spent time together outside of the hotel pool, and had no
+other pool or hot tub exposures. _P. aeruginosa_ was identified in all
+3 specimens; the isolates of the 2 family members were sent to Maine's
+Health and Environmental Testing Laboratory for whole genome
+sequencing. Single nucleotide polymorphism (SNP) analysis, using
+CLC-BIO (version 23.0.2; Qiagen Aarhus), indicated that the 2 isolates
+were highly related with a 2-SNP difference, suggesting a common
+exposure.
+
+Hotel A Pool Inspections: In January 2022, the hotel pool had failed a
+routine health department inspection. During that inspection, several
+violations were identified: 1) no operator had successfully completed
+approved training, 2) no pool logs documenting free chlorine
+concentration readings at least 3 times per day while the pool was
+open for use, 3) no posted routine operating procedures, and 4) no
+functioning disinfectant feeder installed. During the subsequent 8 Mar
+2023 inspection, the health inspector noted that although the hotel
+did have an operator who had successfully completed approved training
+<2 weeks before inspection, none of the other previously identified
+violations had been corrected. The pool logs for 1-5 Mar 2023 showed 2
+compliant free chlorine concentration readings, not the expected 15,
+and both readings were dated 3 Mar 2023. The inspector also noted that
+an indeterminant amount of chlorine had been added to the pool water
+by hotel staff members after they voluntarily closed the pool;
+therefore, water quality and environmental samples were not
+collected.
+
+Because the identified violations included imminent health hazards and
+uncorrected previously identified violations, Maine CDC's Health
+Inspection Program directed hotel A to not reopen the pool until all
+the violations were addressed. The health inspector provided
+recommendations to address the violations. On reinspection 1 month
+later, the violations were noted to be corrected. No additional hotel
+A pool-associated illnesses were identified after reopening.
+
+Discussion
+---------
+_P. aeruginosa_ can cause acute otitis externa (swimmer's ear),
+folliculitis (hot tub rash) (1), and painful nodular lesions on the
+soles or palms (hot hand-foot syndrome) (2) and is likely to be
+transmitted through contact with contaminated water in pools or hot
+tubs and not through person-to-person contact (3). _P. aeruginosa_ is
+readily inactivated by disinfectants such as chlorine and bromine.
+Because of this, maintaining a minimum free chlorine concentration of
+at least 1 ppm in treated recreational water venues open to the public
+as recommended by CDC and as required by Maine's pool code, prevents
+waterborne transmission of most pathogens, including _P. aeruginosa_.
+The lack of an installed and functioning disinfectant feeder in this
+pool and inadequate monitoring of the free chlorine concentration
+during 1-5 Mar 2023, particularly the 4-5 Mar 2023 weekend, would make
+it more challenging to maintain adequate free chlorine concentration,
+and thus, more challenging to prevent pathogen transmission.
+Inadequately maintained disinfectant concentration can lead to
+proliferation of _P. aeruginosa_ and buildup of biofilm on wet venue
+surface, scale, and sediment. Biofilm is a primarily polysaccharide
+matrix that is produced by microbial cells and in which bacteria are
+embedded; biofilm is difficult to remove and cannot be removed by
+gentle rinsing (4). Even when adequate disinfectant concentration is
+maintained, the extracellular matrix of the biofilm can protect _P.
+aeruginosa_ and other pathogens from disinfectants.
+
+Among 987 treated recreational water-associated outbreaks reported to
+CDC for the period 1971-2021, 369 (37.4%) were linked to a hotel
+setting (i.e., hotel, motel, lodging, inn, or resort) (5). In
+addition, for the period 1971-2021, 38 states reported 222 outbreaks
+associated with treated recreational water venues that were confirmed
+or suspected to be caused by _P. aeruginosa_ (5), 152 (68%) of which
+were associated with a hotel setting. A total of 17 (11%) of these 152
+outbreaks were associated with pools only and 87 (57%) with hot tubs
+only. Among the 152 outbreaks, 100 (66%) began during January-April.
+Outbreak exposures often occur during a weekend, when trained
+operators might not be on duty, and when events, including parties and
+sports tournaments, are scheduled (6).
+
+To help prevent outbreaks caused by _P. aeruginosa_ and other
+pathogens readily inactivated by disinfectants, local, state,
+territorial, and tribal jurisdictions can voluntarily adopt
+recommendations in CDC's Model Aquatic Health Code (MAHC). Such
+recommendations include having an operator who has successfully
+completed approved training to ensure adequate recreational water
+disinfectant concentration (MAHC 5.7.3.1.1 and 5.7.3.1.2) (7,8) and
+conducting a daily preopening inspection for biofilm (MAHC 6.4.1.3.1)
+and, if needed, removing biofilm by vigorous scrubbing. Public health
+officials can also increase awareness of healthy swimming by
+disseminating prevention messages, including recommendations to check
+the latest inspection score before using the pool. Much like
+restaurant inspection scores, scores from inspections of treated
+recreational water venues open to the public provide an assessment of
+operation and management. These scores are often posted waterside or
+on the jurisdiction's website. Because inspections are a snapshot in
+time, pool and hot tub users can additionally protect themselves by
+conducting their own mini-inspection before getting in the water
+(e.g., measuring the disinfectant levels and pH using test strips that
+are readily available at hardware and big-box stores); such
+interventions should not replace pool and hot tub management but can
+provide users a timely assessment of water conditions.
+
+Limitations
+-----------
+The findings in this report are subject to at least 2 limitations.
+First, the reported number of persons who used the hotel pool and
+subsequently developed illness meeting the case definition likely
+underestimates the actual incidence. For example, although the hotel
+identified 29 additional guest registrants who were at the hotel
+during the 4-5 Mar 2023 weekend, only 5 completed the questionnaire.
+Second, a definitive link between illness and the hotel pool could not
+be established. The 2 isolates found to be only 2 SNPs apart were from
+family members who both used the hotel pool but also spent time
+together outside of the hotel pool. Not collecting environmental
+samples precluded molecular characterization of an isolate and
+comparison with clinical isolates. However, neither family member
+reported other pool or hot tub exposures, and _P. aeruginosa_ is
+likely to be transmitted through contaminated water but not person to
+person. The hotel pool remains the most likely source of exposure.
+
+Implications for Public Health Practice
+---------------------------------------
+Enforcement of local, state, territorial, and tribal codes and
+dissemination of prevention messaging to pool and hot tub users can
+reduce the likelihood of outbreaks caused by _P. aeruginosa_ and other
+pathogens. Healthy swimming promotion efforts are especially necessary
+when the public might be more likely to stay at hotels and use the
+pools and hot tubs. To prevent outbreaks, operators should be vigilant
+about proper operation and management, especially during January-April
+and weekends.
+
+References
+----------
+1. Ratnam S, Hogan K, March SB, Butler RW: Whirlpool-associated
+folliculitis caused by _Pseudomonas aeruginosa_: report of an outbreak
+and review. J Clin Microbiol. 1986;23:655-659.
+<https://doi.org/10.1128/jcm.23.3.655-659.1986>
+2. Yu Y, Cheng AS, Wang L, et al: Hot tub folliculitis or hot
+hand-foot syndrome caused by _Pseudomonas aeruginosa_. J Am Acad
+Dermatol. 2007;57:596-600.
+<https://doi.org/10.1016/j.jaad.2007.04.004>
+3. Gustafson TL, Band JD, Hutcheson RH Jr, Schaffner W: _Pseudomonas_
+folliculitis: an outbreak and review. Rev Infect Dis. 1983;5:1-8.
+<https://doi.org/10.1093/clinids/5.1.1>
+4. Donlan RM: Biofilms: microbial life on surfaces. Emerg Infect Dis.
+2002;8:881-890. <https://doi.org/10.3201/eid0809.020063>
+5. CDC: National Outbreak Reporting System (NORS) dashboard. Atlanta,
+GA: US Department of Health and Human Services, CDC; 2022. (Accessed
+December 11, 2023). <https://wwwn.cdc.gov/norsdashboard/>
+6. Hlavsa MC, Roberts VA, Anderson AR, et al: CDC. Surveillance for
+waterborne disease outbreaks and other health events associated with
+recreational water -- United States, 2007-2008. MMWR Surveill Summ.
+2011;60(No. SS-12):1-32.
+7. Buss BF, Safranek TJ, Magri JM, et al: Association between swimming
+pool operator certification and reduced pool chemistry violations --
+Nebraska, 2005-2006. J Environ Health. 2009;71:36-40.
+8. Johnston K, Kinziger M: Certified operators: does certification
+provide significant results in real-world pool & spa chemistry? Int J
+Aquat Res Educ. 2007;1:18-33.
+<https://doi.org/10.25035/ijare.01.01.03>
+
+--
+Communicated by:
+ProMED
+
+[This MMWR report is important to remind us about this entity of
+mucocutaneous infection with _Pseudomonas aeruginosa_ related to
+swimming pools and, more commonly, hot tubs when adequate
+concentrations of chlorine are not maintained. _Pseudomonas_
+folliculitis can be misdiagnosed as hand/foot/mouth syndrome or even
+varicella. Indeed, this moderator had a personal experience with this
+in our youngest daughter who was first diagnosed with varicella
+(despite a past history) until her father (me) obtained the history of
+her use of a neighbor's hot tub and cultured a lesion that grew
+_Pseudomonas_.
+
+A photograph of the organism growing in a Petri dish showing the
+production of its blue-green pigment pyocyanin is seen at
+<https://step1.medbullets.com/microbiology/104050/pseudomonas-aeruginosa>.
+- Mod.LL
+
+ProMED map:
+Maine, United States:
+<https://promedmail.org/promed-post?place=3D8714339,222>]
+
+[See Also:
+2023
+----
+Pseudomonas aeruginosa - Australia: 2021, skin piercings, contam.
+solution, WGS http://promedmail.org/post/20230904.8711961
+Pseudomonas aeruginosa - USA (06): ex India/XDR/contam eye drops, more
+cases, RFI http://promedmail.org/post/20230520.8710157
+Pseudomonas aeruginosa - USA (05): India-made/XDR/contam eye drops,
+RFI http://promedmail.org/post/20230406.8709357
+Pseudomonas aeruginosa - USA (04): India-made/XDR/contam. eye drops,
+more cases http://promedmail.org/post/20230318.8709007
+Pseudomonas aeruginosa - USA (03): India made, contaminated eye drops,
+recall http://promedmail.org/post/20230208.8708228
+Pseudomonas aeruginosa - USA (02): contaminated eye drops, XDR, CDC,
+recall http://promedmail.org/post/20230203.8708154
+Pseudomonas aeruginosa - USA: contaminated eye drops susp, fatal
+http://promedmail.org/post/20230201.8708113
+2013
+----
+Pseudomonas perichondritis - USA (02): (IL) ear piercing
+http://promedmail.org/post/20130801.1858179
+Pseudomonas perichondritis - USA: (IL) ear piercing
+http://promedmail.org/post/20130726.1846195]
+.................................................ll/rd/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3DbBavyMvSZos2R8gik0sk7Cdev_fHTAL99m_VXhfR2xZoMDAwdTAwMMTjPcR=
+sQZUhEHIIV9dN8gcruwHcPZeCRorcXPodYOaQu1JafHuy1C1LryputBbAFC99BwOFR6f-bR4YuC=
+PZzMrn-uRhsIveEE0xJNWJ8xAYViFPqTax1X8f7m8wvi3jG0J9-rkiKTpCEBDmTZ3zvK9_hxTdP=
+e0HqI0BYsMriX6pyvrwJH81cJH7yiLEU65KRFjJhUrfdYz2FARczYtI389B35Xz7bCmrlI4zLNr=
+KCw-4SYRatSO2mSfxBN9PO39cazbKgf8-Dke826qkSMU1hpjdGc3whTi8dhRIfANJQ1MM7ReiQ5=
+m2P53tjmv_xZLywjqQOj3QqWBmUPKzAXeQoMS6FnP5J9zQEd5l7araWpENc0dy0dTG6E-wALZND=
+NGOm_UJzwOhzjPCx2skeA-mgU8B2-1AmMJQqHPOkreX_yxncSG-GajOb9b4-LH7-NQc0pO1z9no=
+n51e1rA6B6D-Z7HfU2ijcriYZV5ZEOD4iIpz1dUI-yVUjc2dVQZVDfkv9tBo-5BEbvFGHqBEg14=
+Qv3V1kCGBl7N6cqIGgd27PIUMd6h771cMYZX-LY6NH-nM9xL7nDBwap7H61QK7YMhIv90zzZZmX=
+nN45-BBivQVWm1bvmPT5p6AuyObgCzBwVQj6-vibuYEl8rBlis3T39r8Bbh-xPiVgA6kTaPpQ__=
+JTDyjVrLY1gB_WINUKdaR1i9qMMBNYeq1A21i036JGRGNddwh0rYtIz84azgByZgpsLBHF3g_O8=
+tBmGx_vH8tApgOJhe-YJGtdmGNY6T2Qzw_hIc33HoztPEcyZH23tzmpWY5TmHG0IM-upBHofWxm=
+qT6HG5iBUOnYm5thq0HYDlL0SMyeNOrp8IKviYIAmQJ5a_YDXI-6EWz_b2hKr2lZRbUVfhWhG8m=
+ASzg8S5PKJKZEW_zJ-xZ_W2nkpudmZp_P3ptDtyPaWpLw3mfTiKDdU5cSfVJNHWYXACoFuFQ_Zv=
+i_NJxu4CMHq4q-4VysFylvCV-lf5OUK2p7QDpjVTrZyLgKiOT2lMNVO5mnBOccWHuFbSbb4Gcpx=
+GuckzjqbT_N5qzD2orurgueua_JiDV2L1xFuu4pKrWL_D9gkEiIq_sHF82nXdszuO6VjkpONslV=
+ElLoSEkWxDxQSW1N5qZAvRUNAtIIA1J8xrwbzpUKd1Y=3D )
+############################################################
+############################################################
+
+--838eb25312b8faaad95608bfd6da96f5202548d933f2f133f3ca4705a690
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>PSEUDOMONAS AERUGINOSA - USA: (MAINE) SWIMMING POOL<br>**************=
+*************************************<br>A ProMED-mail post<br><a href=3D"h=
+ttps://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisIijpefK5PNjW-mL-=
+YZGnfgDOxU1G3gjwnPSi2Tfv3HA/435/AT3xqlm7R7CdQaecneo1_w/h0/jMbDuvVYDw3CTmbp3=
+-IW_qLghyezmtiOcM5-wZ7xkn0">http://www.promedmail.org</a><br>ProMED-mail is=
+ a program of the<br>International Society for Infectious Diseases<br><a hr=
+ef=3D"https://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisCT5tpD4Up=
+m3qyMCbcYSQvc/435/AT3xqlm7R7CdQaecneo1_w/h1/a83tAHLJwVzjahbSc4H-KwsB6E106uI=
+lrNWmMP3GzX8">http://www.isid.org</a><br><br>Date: Thu 18 Jan 2024=0D<br>So=
+urce: Morbidity and Mortality Weekly Report (MMWR) [abridged,<br>edited]=0D=
+<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/VK-lmH02123vjL5hL9eW5=
+rOj1DpR8XIkANSSCkV5vz6wd0-tP2FvuuIhDrf3EZE-/435/AT3xqlm7R7CdQaecneo1_w/h2/W=
+Qv3I-V2tHQhDPQ0HMqq8GRuB7artenLGrGu0p0r-8Y">http://dx.doi.org/10.15585/mmwr=
+.mm7302a2</a>=0D<br>=0D<br>=0D<br>Citation: Lamere L, Smith E, Grieser H, e=
+t al. _Pseudomonas_ infection<br>outbreak associated with a hotel swimming =
+pool -- Maine, March 2023.<br>MMWR Morb Mortal Wkly Rep. 2024;73:32-36.=0D<=
+br>------------------------------------------------------------------------=
+--------=0D<br>=0D<br>Investigation and Results=0D<br>---------------------=
+----=0D<br>On 7 Mar 2023, the Maine Center for Disease Control and Preventi=
+on<br>(Maine CDC) received a report from a group of hotel guests who had<br=
+>developed ear pain, rashes, and eye irritation after using a swimming<br>p=
+ool at hotel A during the 4-5 Mar 2023 weekend. Later that day, an<br>addit=
+ional family that had used hotel A's swimming pool the same<br>weekend repo=
+rted experiencing similar illness, in addition to redness<br>and pain of th=
+eir hands and feet. Over the next 2 days, 4 additional<br>groups of guests =
+reported similar illnesses after using the hotel A<br>pool during the same =
+weekend. On 7 Mar 2023, in response to the<br>reports, Maine CDC's Health I=
+nspection Program contacted hotel A and<br>learned that management had volu=
+ntarily closed the pool after<br>receiving guest complaints. In response, o=
+n 8 Mar 2023, Maine CDC<br>initiated an epidemiologic, laboratory, and envi=
+ronmental health<br>investigation.=0D<br>=0D<br>Case Identification: Maine =
+CDC used illness reports to identify 6<br>households with members who had v=
+isited hotel A's pool during the<br>weekend of 4-5 Mar 2023 and interviewed=
+ a representative from each<br>household using a standard questionnaire. In=
+terviewers asked about<br>other groups or persons who had used the hotel po=
+ol; additional<br>identified persons were also contacted and interviewed. G=
+uests were<br>asked about their use of the hotel A pool, other pools, and h=
+ot tubs<br>since 24 Feb 2023, and subsequent illness.=0D<br>=0D<br>A total =
+of 10 households (30 guests) were identified as having visited<br>or used t=
+he hotel A pool during 4-5 Mar 2023 (Figure 1 [for<br>Figures/Tables, see s=
+ource URL above - Mod.LL]); 1 person per<br>household was interviewed about=
+ all household members who used the<br>pool. To further assess the scope of=
+ the outbreak, Maine CDC obtained<br>a list of registered guests who were a=
+t hotel A during 1-7 Mar 2023<br>and identified 29 additional registrants w=
+ho might have been present<br>at hotel A during 4-5 Mar 2023. These additio=
+nal registrants were sent<br>the standardized questionnaire by text or emai=
+l and asked to fill out<br>a separate questionnaire for each household memb=
+er who used the pool.<br>Questionnaires were completed for 5 additional gue=
+sts.=0D<br>=0D<br>A total of 15 interviews or questionnaires were completed=
+ for 35<br>unique persons. Maine CDC requested that symptomatic guests ask =
+their<br>healthcare provider to obtain a skin lesion swab for laboratory<br=
+>analysis and requested that laboratories send any isolates to Maine's<br>H=
+ealth and Environmental Testing Laboratory.=0D<br>=0D<br>A case was defined=
+ as the occurrence of ear pain, rash, or pain or<br>swelling in feet or han=
+ds in a person within 7 days after using the<br>hotel pool during 4-5 Mar 2=
+023. Among 35 persons for whom information<br>was available, 26 (74%) repor=
+tedly used the hotel A swimming pool<br>during that time period. Among thes=
+e 26 persons, 23 (88%) experienced<br>an illness meeting the case definitio=
+n; illness onset date was<br>available for 20 persons (Figure 2). Among the=
+ 23 patients, 16 (70%)<br>had ear pain, 15 (65%) had a rash, and 7 (30%) ha=
+d pain or swelling in<br>their feet or hands (Table). Fifteen (65%) patient=
+s were female. Among<br>22 patients with available information, age ranged =
+from 5 months to 61<br>years (median =3D 8 years). Among 20 patients with r=
+eported time and<br>date of illness onset, illness began a median of 24 hou=
+rs (range =3D 8<br>hours-6 days) after use of the hotel A pool.=0D<br>=0D<b=
+r>Laboratory Evaluation: Skin lesion swabs were obtained from 3<br>patients=
+, 2 of whom were family members who lived in separate<br>households, spent =
+time together outside of the hotel pool, and had no<br>other pool or hot tu=
+b exposures. _P. aeruginosa_ was identified in all<br>3 specimens; the isol=
+ates of the 2 family members were sent to Maine's<br>Health and Environment=
+al Testing Laboratory for whole genome<br>sequencing. Single nucleotide pol=
+ymorphism (SNP) analysis, using<br>CLC-BIO (version 23.0.2; Qiagen Aarhus),=
+ indicated that the 2 isolates<br>were highly related with a 2-SNP differen=
+ce, suggesting a common<br>exposure.=0D<br>=0D<br>Hotel A Pool Inspections:=
+ In January 2022, the hotel pool had failed a<br>routine health department =
+inspection. During that inspection, several<br>violations were identified: =
+1) no operator had successfully completed<br>approved training, 2) no pool =
+logs documenting free chlorine<br>concentration readings at least 3 times p=
+er day while the pool was<br>open for use, 3) no posted routine operating p=
+rocedures, and 4) no<br>functioning disinfectant feeder installed. During t=
+he subsequent 8 Mar<br>2023 inspection, the health inspector noted that alt=
+hough the hotel<br>did have an operator who had successfully completed appr=
+oved training<br><2 weeks before inspection, none of the other previously i=
+dentified<br>violations had been corrected. The pool logs for 1-5 Mar 2023 =
+showed 2<br>compliant free chlorine concentration readings, not the expecte=
+d 15,<br>and both readings were dated 3 Mar 2023. The inspector also noted =
+that<br>an indeterminant amount of chlorine had been added to the pool wate=
+r<br>by hotel staff members after they voluntarily closed the pool;<br>ther=
+efore, water quality and environmental samples were not<br>collected.=0D<br=
+>=0D<br>Because the identified violations included imminent health hazards =
+and<br>uncorrected previously identified violations, Maine CDC's Health<br>=
+Inspection Program directed hotel A to not reopen the pool until all<br>the=
+ violations were addressed. The health inspector provided<br>recommendation=
+s to address the violations. On reinspection 1 month<br>later, the violatio=
+ns were noted to be corrected. No additional hotel<br>A pool-associated ill=
+nesses were identified after reopening.=0D<br>=0D<br>Discussion=0D<br>-----=
+----=0D<br>_P. aeruginosa_ can cause acute otitis externa (swimmer's ear),<=
+br>folliculitis (hot tub rash) (1), and painful nodular lesions on the<br>s=
+oles or palms (hot hand-foot syndrome) (2) and is likely to be<br>transmitt=
+ed through contact with contaminated water in pools or hot<br>tubs and not =
+through person-to-person contact (3). _P. aeruginosa_ is<br>readily inactiv=
+ated by disinfectants such as chlorine and bromine.<br>Because of this, mai=
+ntaining a minimum free chlorine concentration of<br>at least 1 ppm in trea=
+ted recreational water venues open to the public<br>as recommended by CDC a=
+nd as required by Maine's pool code, prevents<br>waterborne transmission of=
+ most pathogens, including _P. aeruginosa_.<br>The lack of an installed and=
+ functioning disinfectant feeder in this<br>pool and inadequate monitoring =
+of the free chlorine concentration<br>during 1-5 Mar 2023, particularly the=
+ 4-5 Mar 2023 weekend, would make<br>it more challenging to maintain adequa=
+te free chlorine concentration,<br>and thus, more challenging to prevent pa=
+thogen transmission.<br>Inadequately maintained disinfectant concentration =
+can lead to<br>proliferation of _P. aeruginosa_ and buildup of biofilm on w=
+et venue<br>surface, scale, and sediment. Biofilm is a primarily polysaccha=
+ride<br>matrix that is produced by microbial cells and in which bacteria ar=
+e<br>embedded; biofilm is difficult to remove and cannot be removed by<br>g=
+entle rinsing (4). Even when adequate disinfectant concentration is<br>main=
+tained, the extracellular matrix of the biofilm can protect _P.<br>aerugino=
+sa_ and other pathogens from disinfectants.=0D<br>=0D<br>Among 987 treated =
+recreational water-associated outbreaks reported to<br>CDC for the period 1=
+971-2021, 369 (37.4%) were linked to a hotel<br>setting (i.e., hotel, motel=
+, lodging, inn, or resort) (5). In<br>addition, for the period 1971-2021, 3=
+8 states reported 222 outbreaks<br>associated with treated recreational wat=
+er venues that were confirmed<br>or suspected to be caused by _P. aeruginos=
+a_ (5), 152 (68%) of which<br>were associated with a hotel setting. A total=
+ of 17 (11%) of these 152<br>outbreaks were associated with pools only and =
+87 (57%) with hot tubs<br>only. Among the 152 outbreaks, 100 (66%) began du=
+ring January-April.<br>Outbreak exposures often occur during a weekend, whe=
+n trained<br>operators might not be on duty, and when events, including par=
+ties and<br>sports tournaments, are scheduled (6).=0D<br>=0D<br>To help pre=
+vent outbreaks caused by _P. aeruginosa_ and other<br>pathogens readily ina=
+ctivated by disinfectants, local, state,<br>territorial, and tribal jurisdi=
+ctions can voluntarily adopt<br>recommendations in CDC's Model Aquatic Heal=
+th Code (MAHC). Such<br>recommendations include having an operator who has =
+successfully<br>completed approved training to ensure adequate recreational=
+ water<br>disinfectant concentration (MAHC 5.7.3.1.1 and 5.7.3.1.2) (7,8) a=
+nd<br>conducting a daily preopening inspection for biofilm (MAHC 6.4.1.3.1)=
+<br>and, if needed, removing biofilm by vigorous scrubbing. Public health<b=
+r>officials can also increase awareness of healthy swimming by<br>dissemina=
+ting prevention messages, including recommendations to check<br>the latest =
+inspection score before using the pool. Much like<br>restaurant inspection =
+scores, scores from inspections of treated<br>recreational water venues ope=
+n to the public provide an assessment of<br>operation and management. These=
+ scores are often posted waterside or<br>on the jurisdiction's website. Bec=
+ause inspections are a snapshot in<br>time, pool and hot tub users can addi=
+tionally protect themselves by<br>conducting their own mini-inspection befo=
+re getting in the water<br>(e.g., measuring the disinfectant levels and pH =
+using test strips that<br>are readily available at hardware and big-box sto=
+res); such<br>interventions should not replace pool and hot tub management =
+but can<br>provide users a timely assessment of water conditions.=0D<br>=0D=
+<br>Limitations=0D<br>-----------=0D<br>The findings in this report are sub=
+ject to at least 2 limitations.<br>First, the reported number of persons wh=
+o used the hotel pool and<br>subsequently developed illness meeting the cas=
+e definition likely<br>underestimates the actual incidence. For example, al=
+though the hotel<br>identified 29 additional guest registrants who were at =
+the hotel<br>during the 4-5 Mar 2023 weekend, only 5 completed the question=
+naire.<br>Second, a definitive link between illness and the hotel pool coul=
+d not<br>be established. The 2 isolates found to be only 2 SNPs apart were =
+from<br>family members who both used the hotel pool but also spent time<br>=
+together outside of the hotel pool. Not collecting environmental<br>samples=
+ precluded molecular characterization of an isolate and<br>comparison with =
+clinical isolates. However, neither family member<br>reported other pool or=
+ hot tub exposures, and _P. aeruginosa_ is<br>likely to be transmitted thro=
+ugh contaminated water but not person to<br>person. The hotel pool remains =
+the most likely source of exposure.=0D<br>=0D<br>Implications for Public He=
+alth Practice=0D<br>---------------------------------------=0D<br>Enforceme=
+nt of local, state, territorial, and tribal codes and<br>dissemination of p=
+revention messaging to pool and hot tub users can<br>reduce the likelihood =
+of outbreaks caused by _P. aeruginosa_ and other<br>pathogens. Healthy swim=
+ming promotion efforts are especially necessary<br>when the public might be=
+ more likely to stay at hotels and use the<br>pools and hot tubs. To preven=
+t outbreaks, operators should be vigilant<br>about proper operation and man=
+agement, especially during January-April<br>and weekends.=0D<br>=0D<br>Refe=
+rences=0D<br>----------=0D<br>1. Ratnam S, Hogan K, March SB, Butler RW: Wh=
+irlpool-associated<br>folliculitis caused by _Pseudomonas aeruginosa_: repo=
+rt of an outbreak<br>and review. J Clin Microbiol. 1986;23:655-659.<br><a h=
+ref=3D"https://u19268662.ct.sendgrid.net/ss/c/TUIVIg4PCmni5tP3Q8lzBTKN4p1NL=
+uw8pW9_gvLlsCtnUDfLMWFrAOpdJkoLSoyhMOJ91Y2fBxeYdRN5xsG73g/435/AT3xqlm7R7CdQ=
+aecneo1_w/h3/U_NmLCCaBKTQSQVRpgwIZK7wlTjgBBI0OqOdcT4FJg8">https://doi.org/1=
+0.1128/jcm.23.3.655-659.1986</a>=0D<br>2. Yu Y, Cheng AS, Wang L, et al: Ho=
+t tub folliculitis or hot<br>hand-foot syndrome caused by _Pseudomonas aeru=
+ginosa_. J Am Acad<br>Dermatol. 2007;57:596-600.<br><a href=3D"https://u192=
+68662.ct.sendgrid.net/ss/c/TUIVIg4PCmni5tP3Q8lzBSXYOoMiXIAUFd9WuHu8CbVIikV1=
+TUgyot7VwrYtNNHf5mddnIJ8TublI34x1MWsJQ/435/AT3xqlm7R7CdQaecneo1_w/h4/vASCXE=
+EEhHlIgVAVJbS7h38KhwL_xkdMfdDk3XLtCq0">https://doi.org/10.1016/j.jaad.2007.=
+04.004</a>=0D<br>3. Gustafson TL, Band JD, Hutcheson RH Jr, Schaffner W: _P=
+seudomonas_<br>folliculitis: an outbreak and review. Rev Infect Dis. 1983;5=
+:1-8.<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/TUIVIg4PCmni5tP3=
+Q8lzBZ9WMLSK_aWkLFB5TditFE6rXEyHyM1jAe4hMwqJaZOS/435/AT3xqlm7R7CdQaecneo1_w=
+/h5/8C3g0gpUWHZZFLoOhD0vrmSYpfdDrLhTUZb5I2LbIVc">https://doi.org/10.1093/cl=
+inids/5.1.1</a>=0D<br>4. Donlan RM: Biofilms: microbial life on surfaces. E=
+merg Infect Dis.<br>2002;8:881-890. <a href=3D"https://u19268662.ct.sendgri=
+d.net/ss/c/TUIVIg4PCmni5tP3Q8lzBRDKvT8Dz646t79_YopI3Q2ouDaTD35aanp1uYNJhjGd=
+/435/AT3xqlm7R7CdQaecneo1_w/h6/E-FK4maonTt_7PUEQlfdYJaFnYZSgafhqoP1sAbX9t8"=
+>https://doi.org/10.3201/eid0809.020063</a>=0D<br>5. CDC: National Outbreak=
+ Reporting System (NORS) dashboard. Atlanta,<br>GA: US Department of Health=
+ and Human Services, CDC; 2022. (Accessed<br>December 11, 2023). <a href=3D=
+"https://u19268662.ct.sendgrid.net/ss/c/TLh_csrC34X_iXpbYoMam8D1tIYMjJRazU6=
+xChqX6Vis1jNCMdUPbbLGoMgz72Au/435/AT3xqlm7R7CdQaecneo1_w/h7/PYMbatWreZjbhBg=
+vNH7cwKA48PRup5ix0_yBAC7d7Mo">https://wwwn.cdc.gov/norsdashboard/</a>=0D<br=
+>6. Hlavsa MC, Roberts VA, Anderson AR, et al: CDC. Surveillance for<br>wat=
+erborne disease outbreaks and other health events associated with<br>recrea=
+tional water -- United States, 2007-2008. MMWR Surveill Summ.<br>2011;60(No=
+. SS-12):1-32.=0D<br>7. Buss BF, Safranek TJ, Magri JM, et al: Association =
+between swimming<br>pool operator certification and reduced pool chemistry =
+violations --<br>Nebraska, 2005-2006. J Environ Health. 2009;71:36-40.=0D<b=
+r>8. Johnston K, Kinziger M: Certified operators: does certification<br>pro=
+vide significant results in real-world pool & spa chemistry? Int J<br>Aquat=
+ Res Educ. 2007;1:18-33.<br><a href=3D"https://u19268662.ct.sendgrid.net/ss=
+/c/TUIVIg4PCmni5tP3Q8lzBYWkSOpiWadPg9bWFxviIAxBfl4xjrFxyidT5kDXNlp6/435/AT3=
+xqlm7R7CdQaecneo1_w/h8/dzfDIa_9XN-lu5haO_a809KB-y1OrvD_WtdLLMJ0r6A">https:/=
+/doi.org/10.25035/ijare.01.01.03</a>=0D<br>=0D<br>--=0D<br>Communicated by:=0D=
+<br>ProMED<br><br>[This MMWR report is important to remind us about this en=
+tity of<br>mucocutaneous infection with _Pseudomonas aeruginosa_ related to=
+<br>swimming pools and, more commonly, hot tubs when adequate<br>concentrat=
+ions of chlorine are not maintained. _Pseudomonas_<br>folliculitis can be m=
+isdiagnosed as hand/foot/mouth syndrome or even<br>varicella. Indeed, this =
+moderator had a personal experience with this<br>in our youngest daughter w=
+ho was first diagnosed with varicella<br>(despite a past history) until her=
+ father (me) obtained the history of<br>her use of a neighbor's hot tub and=
+ cultured a lesion that grew<br>_Pseudomonas_.=0D<br>=0D<br>A photograph of=
+ the organism growing in a Petri dish showing the<br>production of its blue=
+-green pigment pyocyanin is seen at<br><a href=3D"https://u19268662.ct.send=
+grid.net/ss/c/h7yixvI7Vw_a8fUsCvNbuOX54wT1OD89QYHgs5wKufpWCKCJBqa_dEg5PqncD=
+zxry4l0ZPLlHWCaexSTuy0av2DtzeFVO5fEmNSZ0LeufE4/435/AT3xqlm7R7CdQaecneo1_w/h=
+9/ca4cCtCqxw374r-5NUCiRULJACBsJdgGcNFeVnYOnnY">https://step1.medbullets.com=
+/microbiology/104050/pseudomonas-aeruginosa</a>.<br>- Mod.LL<br><br>ProMED =
+map:<br>Maine, United States:<br><a href=3D"https://u19268662.ct.sendgrid.n=
+et/ss/c/sSnCkKCWBvais3EuVAOvgy2WOIX7pp1nXnn4AbwuQ3Z6WbkfhqXYXU-aTMPJ8yTh1AI=
+wsNGK_bG7OZ0JzqR5mQ/435/AT3xqlm7R7CdQaecneo1_w/h10/FSGk54hD-aNdSzXUCCmpG6oC=
+7oHoZo5MpHYCtVlPS4M">https://promedmail.org/promed-post?place=3D8714339,222=
+</a>]<br><br>[See Also:<br>2023=0D<br>----=0D<br>Pseudomonas aeruginosa - A=
+ustralia: 2021, skin piercings, contam.<br>solution, WGS http://promedmail.=
+org/post/20230904.8711961=0D<br>Pseudomonas aeruginosa - USA (06): ex India=
+/XDR/contam eye drops, more<br>cases, RFI http://promedmail.org/post/202305=
+20.8710157=0D<br>Pseudomonas aeruginosa - USA (05): India-made/XDR/contam e=
+ye drops,<br>RFI http://promedmail.org/post/20230406.8709357=0D<br>Pseudomo=
+nas aeruginosa - USA (04): India-made/XDR/contam. eye drops,<br>more cases =
+http://promedmail.org/post/20230318.8709007=0D<br>Pseudomonas aeruginosa - =
+USA (03): India made, contaminated eye drops,<br>recall http://promedmail.o=
+rg/post/20230208.8708228=0D<br>Pseudomonas aeruginosa - USA (02): contamina=
+ted eye drops, XDR, CDC,<br>recall http://promedmail.org/post/20230203.8708=
+154=0D<br>Pseudomonas aeruginosa - USA: contaminated eye drops susp, fatal<=
+br>http://promedmail.org/post/20230201.8708113=0D<br>2013=0D<br>----=0D<br>=
+Pseudomonas perichondritis - USA (02): (IL) ear piercing<br>http://promedma=
+il.org/post/20130801.1858179=0D<br>Pseudomonas perichondritis - USA: (IL) e=
+ar piercing<br>http://promedmail.org/post/20130726.1846195]<br>............=
+.....................................ll/rd/jh<br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3DbBavyMvSZos2R8gik0sk7Cdev_fHTAL99m_VXhfR2xZoMDAwdT=
+AwMMTjPcRsQZUhEHIIV9dN8gcruwHcPZeCRorcXPodYOaQu1JafHuy1C1LryputBbAFC99BwOFR=
+6f-bR4YuCPZzMrn-uRhsIveEE0xJNWJ8xAYViFPqTax1X8f7m8wvi3jG0J9-rkiKTpCEBDmTZ3z=
+vK9_hxTdPe0HqI0BYsMriX6pyvrwJH81cJH7yiLEU65KRFjJhUrfdYz2FARczYtI389B35Xz7bC=
+mrlI4zLNrKCw-4SYRatSO2mSfxBN9PO39cazbKgf8-Dke826qkSMU1hpjdGc3whTi8dhRIfANJQ=
+1MM7ReiQ5m2P53tjmv_xZLywjqQOj3QqWBmUPKzAXeQoMS6FnP5J9zQEd5l7araWpENc0dy0dTG=
+6E-wALZNDNGOm_UJzwOhzjPCx2skeA-mgU8B2-1AmMJQqHPOkreX_yxncSG-GajOb9b4-LH7-NQ=
+c0pO1z9non51e1rA6B6D-Z7HfU2ijcriYZV5ZEOD4iIpz1dUI-yVUjc2dVQZVDfkv9tBo-5BEbv=
+FGHqBEg14Qv3V1kCGBl7N6cqIGgd27PIUMd6h771cMYZX-LY6NH-nM9xL7nDBwap7H61QK7YMhI=
+v90zzZZmXnN45-BBivQVWm1bvmPT5p6AuyObgCzBwVQj6-vibuYEl8rBlis3T39r8Bbh-xPiVgA=
+6kTaPpQ__JTDyjVrLY1gB_WINUKdaR1i9qMMBNYeq1A21i036JGRGNddwh0rYtIz84azgByZgps=
+LBHF3g_O8tBmGx_vH8tApgOJhe-YJGtdmGNY6T2Qzw_hIc33HoztPEcyZH23tzmpWY5TmHG0IM-=
+upBHofWxmqT6HG5iBUOnYm5thq0HYDlL0SMyeNOrp8IKviYIAmQJ5a_YDXI-6EWz_b2hKr2lZRb=
+UVfhWhG8mASzg8S5PKJKZEW_zJ-xZ_W2nkpudmZp_P3ptDtyPaWpLw3mfTiKDdU5cSfVJNHWYXA=
+CoFuFQ_Zvi_NJxu4CMHq4q-4VysFylvCV-lf5OUK2p7QDpjVTrZyLgKiOT2lMNVO5mnBOccWHuF=
+bSbb4GcpxGuckzjqbT_N5qzD2orurgueua_JiDV2L1xFuu4pKrWL_D9gkEiIq_sHF82nXdszuO6=
+VjkpONslVElLoSEkWxDxQSW1N5qZAvRUNAtIIA1J8xrwbzpUKd1Y=3D" target=3D"_blank" =
+class=3D"Unsubscribe--unsubscribePreferences" style=3D"font-family:sans-ser=
+if;text-decoration:none;">Unsubscribe Preferences</a></div><br>############=
+################################################<br>#######################=
+#####################################<br><br><img src=3D"https://u19268662.=
+ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/435/AT3xqlm7R7CdQaecneo1_w/ho.g=
+if" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"height:1px !imp=
+ortant;width:1px !important;border-width:0 !important;margin-top:0 !importa=
+nt;margin-bottom:0 !important;margin-right:0 !important;margin-left:0 !impo=
+rtant;padding-top:0 !important;padding-bottom:0 !important;padding-right:0 =
+!important;padding-left:0 !important;"/></body>
+</html>
+--838eb25312b8faaad95608bfd6da96f5202548d933f2f133f3ca4705a690--

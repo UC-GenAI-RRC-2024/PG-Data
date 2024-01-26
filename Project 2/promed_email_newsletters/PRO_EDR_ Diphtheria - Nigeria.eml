@@ -1,0 +1,472 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a98:d84b:0:b0:1eb:e128:bbe3 with SMTP id b11csp1287870eil;
+        Fri, 19 Jan 2024 17:56:18 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IFmHynAWK+O3LGkGtZN+ykvuxR6YGZLCRwi3DsubK5RDeP2bqiayBdxda58U4XXJXght1w3
+X-Received: by 2002:a05:6214:2623:b0:681:80b8:72a with SMTP id gv3-20020a056214262300b0068180b8072amr844465qvb.87.1705715778369;
+        Fri, 19 Jan 2024 17:56:18 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1705715778; cv=none;
+        d=google.com; s=arc-20160816;
+        b=Ht5YXH3naI7d8C5aXQkIxEsEiIApXjvWcYEj5s0LTdRHauhWFzAVKrGtrtp0kmkRcN
+         bRTkcV4FkQT/jfLuYP90XapJCE9M4u5uLLaTVwmGHfPW+6YwuX3MPKuQZYJbJLVSIXB2
+         msNsfdRnBKi3yQMmbrMr0RhIJvzR//FC1Y+3M8ioedgBDfTu538za2T3K4sYV2VveJWW
+         MCou3J3BQcHTA/XzY+drCTLPUeFeSDSGLFNzX0SVMlVSyOrP8Vzmjub8MTgLF/ifZNKq
+         Lv/eVrzJhKohhLICkp8sKWB0Xje6EomkkE2V//l2BPgfzfTdydgPCxDGNcS/J6I6mthB
+         J6wg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=mP9us38vm+GyxuFKDDL/SpI06C3+z6V1UuhPyXPgLN8=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=vGTfkJWVJMOm2YtEk031GbVLxgswhAk629dG/S0TItmtSfefocAepxJxNuwZ+34XKL
+         sFyheF0TXQFRDdJP/MGnXWG2ktHUERMBfH5CcJXjXhfpRHf1xvjj2Sm56GCT4dqrBaeV
+         Tc0hDbLpUvRsX1kgDbGxCPgoONb8bh/w3yQXAlPpTIpeCeYdsLqhCn+dTILR4vcH0sPt
+         4RhB22ZRR/IyOKU4pz2Ambt6FS0yMlPTuvBlwYT3EWpbxE3DgZ5n1vNEITAEJLEMot4Z
+         LtYBG/ibDh0kbdSjPLzu3eZSbxwmHBU5VdASqd5QA0z8sX9L0XjRjmFsjXgtiXqV/4o4
+         IYug==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=mw7Bmm1v;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=Jl9rkHCu;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id q2-20020a0ce202000000b0067f584b65besi591319qvl.263.2024.01.19.17.56.18
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 19 Jan 2024 17:56:18 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=mw7Bmm1v;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=Jl9rkHCu;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=mP9us38vm+GyxuFKDDL/SpI06C3+z6V1UuhPyXPgLN8=;
+	b=mw7Bmm1vETRUiONx9CX77RW3esEoqTgHAfnF5gGTMQMR1ziCi89jr54fWEJT0lqrayPP
+	Yyc+NRLKpkp8y2c5Qkj3qbj1jm8lUsTxkN6CSAQMIQYAcAmwkPFSUtRnNnqdoNNGM8a4+t
+	UUzy3TpFX8PREUoGK/+PulpBKTHGg3XiJ8bGsVWN1I0ZD9q0CAFixCmpOadG59J/OO5fyI
+	mod93SOGsEVJmmLHijSQueEygzCCdQDpr5+zXV1p5P6fTKe9tqJcYfNHmHnyZKZXCuYx3E
+	rdogADcp0DRgxyfl7Ca8BB443KYvbBErnmdv9nCzzKxLO1qxPcjT7r+N72bBUuuQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=mP9us38vm+GyxuFKDDL/SpI06C3+z6V1UuhPyXPgLN8=;
+	b=Jl9rkHCumuADu7fIYm/W3RJQCPJNFN41VKjZb9wZPhBfRrjqKHBPWQnFiG5LnTR9GvF1
+	LAP47vOABh0X7K4BMHaIPK+PX3Ho9LZ4CjgWa6Vg4JV0QqZ9wSLdlCdK6Moi9c7Hk7c7gM
+	3hLlOH2POmmO5mUeIZ0YETt44k/5cP+Y4=
+Received: by filterdrecv-647c69fd5c-8f2t7 with SMTP id filterdrecv-647c69fd5c-8f2t7-1-65AB2840-C
+        2024-01-20 01:56:16.200103862 +0000 UTC m=+8147649.455215175
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-6 (SG) with HTTP
+	id iqN8qe5ASHy_cGbV2MIEdg
+	Sat, 20 Jan 2024 01:56:16.175 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=f56ebc30e08713cc66201f46902592c9ace2e4c4a4088ccd62999e81c428
+Date: Sat, 20 Jan 2024 01:56:18 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <iqN8qe5ASHy_cGbV2MIEdg@geopod-ismtpd-6>
+Subject: PRO/EDR> Diphtheria - Nigeria
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iBnK8ROyPrj=2F8uI+YvVP93Sv37q6hvUh1K8zLl1?=
+ =?us-ascii?Q?JB=2F1S1y1NIAzDX3Ht6N5Ubp+9k5pUO6LeAL4ZQi?=
+ =?us-ascii?Q?GZKflBTp=2F=2Fx801tFFW6U=2FLAgDMiJw+lBFpaDDxE?=
+ =?us-ascii?Q?xyxOqAI+W5yj515m27vEa8R5zKCFVvKpK+Sc2I7?=
+ =?us-ascii?Q?D4r5MNDyAKlzvzqosmFo5UqOO2rY9dEKcxDHB5?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUhc93xcG=2F095a5S4+mt=2FG?=
+ =?us-ascii?Q?uYUpctI=2FOGD2dwyi+uvm2j4FCdvuw0l9zcHM8iA?=
+ =?us-ascii?Q?mojOvTXq7jOpDFFNtfsYkHQYACEW8pq1BXXqYmH?=
+ =?us-ascii?Q?oGTsnt6QpE2ZV5WVqnpwfXWoLXx7+4ZTIIDaarg?=
+ =?us-ascii?Q?KWj9hWnKDkUuOcNFUmIeM3vdzC1hYVz+iFODw5M?=
+ =?us-ascii?Q?psOVBb1p8WR9OMq3swvC8xDV2ZHhYgzlexh=2FzSK?=
+ =?us-ascii?Q?ZNmqM=2FJ8w3Yur6JD7yDCbuZ9UHL5xCfIuk+l95N?=
+ =?us-ascii?Q?JcchMGdakTOWwfzJoITBIbL6+UL32ghHnGPXxtO?=
+ =?us-ascii?Q?fkf9u7vrbSrIGXKq2fCIzSlxkmoEF1mer5=2F70YH?=
+ =?us-ascii?Q?TrAhco37KgzSKO34jhF+XCuen8a2+u4swjkU9qw?=
+ =?us-ascii?Q?v5O1bPCQAZlHVVKlTWBO=2FfoxQagXHTGmnzV1eAD?=
+ =?us-ascii?Q?AS18TVoIiB1wHKwM0lNzhMowTvKJX6E9SeeV8Mh?=
+ =?us-ascii?Q?cm7No6yTWsnuT4SrcfKEwLNTbpe9Jlf5uu23+FV?=
+ =?us-ascii?Q?rjGJ3b9fDLMGYlMHma1V0+PaVGXc8ORgXnnhul5?=
+ =?us-ascii?Q?o5wqEg2oQfOgYItMGHM2upz45TaDVVEu4PimzVc?=
+ =?us-ascii?Q?=2FlmeFrbF2fhJFEIlWj8or+BjmvwqThIqD9RaKsm?=
+ =?us-ascii?Q?RPlZ8xAE8CTUsAltFApoidGnmRjcuklNxx54d=2Fr?=
+ =?us-ascii?Q?=2FkY83OHr9yibDry=2FRkjoiJOLRJV3Ph0MOmu+143?=
+ =?us-ascii?Q?cYOm=2FceaESUcL83hvPAJaHyMtuLr+SBLE17u14k?= =?us-ascii?Q?EDCK?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2ESMn2ixUW3?=
+ =?us-ascii?Q?HSvu-PiD6IxESA3PD=5FMabyaow8Pf2YSQiRoMDAw?=
+ =?us-ascii?Q?dTAwMO-fL0z3=5F-bm3D06QazAEMF4eQK=5F4lwIPB9?=
+ =?us-ascii?Q?HFmmwzJ6uXl=5FJ83ErrDqfF9PNJNL46tNj25wWfm?=
+ =?us-ascii?Q?K=5FsH4Oa4JK4lzOHWYWoLnYVdcmLAK=5Fpeg4NT-1X?=
+ =?us-ascii?Q?8iDkvCJOi8AdHBNbQ=3D=3D=2E92iW5A9RwtwiRmeB99A?=
+ =?us-ascii?Q?hjYuyzG-587IDgiRgDcAc1R1oMDAwdTAwMBxRaj?=
+ =?us-ascii?Q?BSA=5FP-28RuHK379SRX4cX3ykQAX7wQH2jPcfxnT?=
+ =?us-ascii?Q?Ogm8aIajMnc=5FjeKG2opsHY8YuW0Jtabvf6sIMcb?=
+ =?us-ascii?Q?y0nX3sQT9jBsiDY=5FH93ktf4KUauAOyBugcQzYPB?=
+ =?us-ascii?Q?P-9ZRLh88ZPKpOZoSHIdy425fZqk3yIjGkDoFOx?=
+ =?us-ascii?Q?yeK42EesI3n31B=5Fmfg1qUOKJQMciLgcN7dhbj8h?=
+ =?us-ascii?Q?Ei4PQagKfSKIkCsUT9z9pKCwR073Af6JBX82AJ-?=
+ =?us-ascii?Q?3Sv-efPp1R14UJ1sNJXAOmcw=5FhawNAuZs-dDSZK?=
+ =?us-ascii?Q?L7KvBuZt=5F9=5Fx28YSkDmtEhOlIxqKrmQYbKS5TER?=
+ =?us-ascii?Q?k-48lQ-reyjB8Kz2fkXbC0jxZ9G-7ELRvlo0jsa?=
+ =?us-ascii?Q?6MD4dqR4rdW0x=5F-57hmd48p8kOVMwbueLr6KIDo?=
+ =?us-ascii?Q?DsJ6GhKLHAwP=5FNLvtHiwo9iGF6R58DS0LYZCgIt?=
+ =?us-ascii?Q?nZPqvI2YIGAwNhXJnf88n8x94r9MTxc2Q62GISG?=
+ =?us-ascii?Q?7hBchK9tJt1O4=5FM7chw6x3jeMcF=5Fwl9HT=5Fxq2Y=5F?=
+ =?us-ascii?Q?RE-Al4ubeoWIf8OJM6lwBbNIMpxjAKfVqrnfsgu?=
+ =?us-ascii?Q?UWpxw6MU20S5N82kzifVczSDymK5nX6y377MyH9?=
+ =?us-ascii?Q?8An=5FXj04kxuh02z57i72VjQSYw7zsjxKcxyxofZ?=
+ =?us-ascii?Q?lZhfx8YkYQzN1Z32x8xyPIGoujgwLGkv5xG8Nhi?=
+ =?us-ascii?Q?w-KxA9e3Kl=5FDPzc6PcDopK-vzGvjNoBRaPBFZCN?=
+ =?us-ascii?Q?FQfGJMcpmTKKPhYHI7xr4u3TN5i=5FyYnVi1TMRbP?=
+ =?us-ascii?Q?RBiGlY9Q4sjnpCEIkoEwgogKuEOQBNRh8Fu6FQm?=
+ =?us-ascii?Q?oqSk2FuAJSpV38OpP7W50EjSo4ivjoMONQ1omWK?=
+ =?us-ascii?Q?UsyWrS5=5FD=5FJIU-Ewi5BREeAS-kcZldmhGxybCJY?=
+ =?us-ascii?Q?f6qwN80U3BgU69ZsFHCbVnFfMOgUWYyWpRF6zxo?=
+ =?us-ascii?Q?b98mySmr36adTeWS90TEIphmxPFUU9oyTq4nARs?=
+ =?us-ascii?Q?6TgITxb0WvVHua4g8KuSQSW4UyCxyP876OS6yLa?=
+ =?us-ascii?Q?cgAqBwwFN8lPd0eZJpieaYP=3E?=
+
+--f56ebc30e08713cc66201f46902592c9ace2e4c4a4088ccd62999e81c428
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=us-ascii
+Mime-Version: 1.0
+
+DIPHTHERIA - NIGERIA
+********************
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+Date: Wed 17 Jan 2024
+Source: IFRC [edited]
+<https://reliefweb.int/report/nigeria/nigeria-diphtheria-outbreak-operation=
+-update-2-mdrng037-0>
+
+
+Nigeria | Diphtheria Outbreak - Operation Update 2 (MDRNG037)
+-------------------------------------------------------------
+A. Situation Analysis
+---------------------
+Description of the crisis
+
+In Nigeria, the outbreak of diphtheria became the biggest public
+health concern that affected many lives and children in 2023. This
+outbreak began in Kano State in December 2022 and spread to
+neighboring states, including Lagos and Osun, which have reported
+confirmed cases. The NCDC has declared this outbreak to be the worst
+in a decade, with the previous outbreak occurring in 2011 in Nigeria.
+As of December 2023, over 13 000 confirmed cases have already been
+reported across approximately 20 states with majority of people
+affected being children.=20
+
+Diphtheria is a vaccine preventable disease and severe bacterial
+infection that can affect a person's nose, throat, and occasionally
+skin. It is brought on by some toxin-producing species of the
+bacterium _Corynebacterium_. The people at the greatest risk of
+contracting diphtheria are among children and people who have not
+received any, or only a single dose of the vaccine (a diphtheria
+toxoid-containing vaccine). People at risk are communities residing in
+densely crowded places and unsanitary areas with poor environmental
+conditions. Also, healthcare professionals and hospital frontline
+workers who are working with or in close contact with people suffering
+from diphtheria are at risk of contracting the disease. There is also
+a risk of contracting diphtheria if a person comes physically into
+contact with someone with diphtheria.
+
+[The full report can be found at the above URL. - Mod.LL]
+
+--
+Communicated by:
+ProMED
+
+[The following article is a good review of diphtheria:
+Sharma NC, Efstratiou A, Mokrousov I, Mutreja A, Das B, Ramamurthy T.
+Diphtheria. Nat Rev Dis Primers. 2019 Dec 5;5(1):81. doi:
+10.1038/s41572-019-0131-y.
+---------------------------------------------------------------------------=
+-----
+Abstract
+--------
+"Diphtheria is a potentially fatal infection mostly caused by
+toxigenic _Corynebacterium diphtheriae_ strains and occasionally by
+toxigenic _C. ulcerans_ and _C. pseudotuberculosis_ strains.
+Diphtheria is generally an acute respiratory infection, characterized
+by the formation of a pseudomembrane in the throat, but cutaneous
+infections are possible. Systemic effects, such as myocarditis and
+neuropathy, which are associated with increased fatality risk, are due
+to diphtheria toxin, an exotoxin produced by the pathogen that
+inhibits protein synthesis and causes cell death. Clinical diagnosis
+is confirmed by the isolation and identification of the causative
+_Corynebacterium_ spp., usually by bacterial culture followed by
+enzymatic and toxin detection tests. Diphtheria can be treated with
+the timely administration of diphtheria antitoxin and antimicrobial
+therapy. Although effective vaccines are available, this disease has
+the potential to re-emerge in countries where the recommended
+vaccination programs are not sustained, and increasing proportions of
+adults are becoming susceptible to diphtheria. Thousands of diphtheria
+cases are still reported annually from several countries in Asia and
+Africa, along with many outbreaks. Changes in the epidemiology of
+diphtheria have been reported worldwide. The prevalence of toxigenic
+_Corynebacterium_ spp. highlights the need for proper clinical and
+epidemiological investigations to quickly identify and treat affected
+individuals, along with public health measures to prevent and contain
+the spread of this disease."
+
+This infection is vaccine preventable in countries that have a public
+health system to deliver the appropriate immunogen. The toxoid for
+diphtheria prevention is now generally combined with toxoids to
+prevent tetanus and sometime pertussis. Historically, the original
+killed whole cell pertussis vaccine was licensed in 1914. The same
+year, the mixtures of diphtheria toxin and antitoxin were put into
+use. In 1926, alum-precipitated diphtheria toxoid was registered, and
+in 1937 adsorbed tetanus toxoid was put on the market. Pertussis
+vaccine is now an acellullar toxoid product. - Mod.LL
+
+ProMED map:
+Nigeria: <https://promedmail.org/promed-post?place=3D8714345,62>]
+
+[See Also:
+2023
+----
+Diphtheria - France: ex West Africa, multidrug resistance
+http://promedmail.org/post/20231117.8713196
+Diphtheria - Asia, Africa: Pakistan (KP) South Africa (WC) fatal,
+prison http://promedmail.org/post/20231111.8713097
+Diphtheria - SE Asia (06): India (HR) fatal
+http://promedmail.org/post/20231025.8712821
+Diphtheria - SE Asia (04): Indonesia (JR) fatal
+http://promedmail.org/post/20230807.8711603
+Diphtheria - SE Asia (03): Indonesia (JI)
+http://promedmail.org/post/20230709.8711048
+Diphtheria - South Africa: (NL, WC) antitoxin shortage
+http://promedmail.org/post/20230519.8710144
+Diphtheria - SE Asia (02): Indonesia (JR) fatal, more cases, vaccine
+campaign, RFI http://promedmail.org/post/20230319.8709034
+Diphtheria - SE Asia: Indonesia, fatal, more cases, vaccine campaign,
+alert http://promedmail.org/post/20230222.8708538
+2022
+----
+Diphtheria - France: migrants, toxigenic Corynebacterium
+diphtheriae/C. ulcerans http://promedmail.org/post/20221230.8707531
+Diphtheria - Australia: (NSW) unvaccinated children
+http://promedmail.org/post/20220705.8704239
+2018
+----
+Diphtheria - Philippines: increased cases, 4 regions
+http://promedmail.org/post/20181215.6210623
+Diphtheria - Indonesia: fatal, more cases, vaccine campaign
+http://promedmail.org/post/20180106.5542510]
+.................................................ll/may/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3DNwnq9EpY-X5H7PaTmZxXTkYD4qeihjh30Myiq9yDK0hoMDAwdTAwMLLcgGC=
+cfF0v9Fa2Ji6PFlm_MGEPUiVhIN37PmRW3q3PtWyOT10GRHBaf_kbDWaQBg4CI0Dt0o3fieBIOJ=
+5Dr17RetC6i2F8IZ3J7-WnzEBjSdRYZRcUhHTNFojdrTIUrylzAEQxGXtvjuCh7YSG83-xUqQ3v=
+yJf8mKCUQZ8cqTsOliSdbVv_wz1Yta7j-6pujigBEB-DdtChkX6C1cjSsb1U8IBmLZKsKzdYRXC=
+7UjN-xdqO29JrRyWcTKpPK7TWm809egmxI1KOwieua5TT_SfS2n3RmtqwlWUPR2csIqmDw4a7Fk=
+DPpUMrT31egtyUU-v5UrVBSIsX0Sbj_8r79eXOgKpZAQyBlTMf5BPKMFFY2QvFv_100Jblrvb8N=
+ku0CWAdw7EXPA90wDd9GYJtc9B87bpFSIGNK2k1zWeDTPhp3tA1YRb-406S-3yp7lgX02uvnj6z=
+ztDVf5hdTSUMXKOnfR1fJ46FnIe-F4CWa9pTCWGEo9XBJuXzMnZ65Nb53vuayQMxlbqdoyduQTE=
+V6b4hXQh1yATAhNQ9sBq3VjV_gafy4Qe7GeHVX1VBA5uhG3lJTAxEht6xqSgomqmbGDrGG6Ky6a=
+q3ONjIMVVHDk0muTV22X5SwB9sVSx9hY58lXGF3zlplBU-zI5jvjY-xqo7ORXV9gMRqRVCaff3F=
+2i1sghOVX2u6O2fOnGYLmR1oqWJBlBts6G4YY7TQZrFnkl9cEWyuy__DKZktpVixd4D-o2_jNSE=
+vYWk9RyXWHNVXasbHElSjrqJeoh811bwVCxYiOvNqlRBET_Se-0TCTg4DvXLQN7aAYLRbt5SCAl=
+Tj8AsiGSVo2--T0vgRpOVOxlfoQzinolSWv7KBkc0M9_nCqCTLKCn0JT92veDmiPzTiEorngQp4=
+gBlsmxWuQNmzzbTXVHi9z7wyMq4E6L--vLBlHRa6h8Joim2X7fityc4Oc_xye0Xh4FQWuHHkjBZ=
+7HSwz1Ic36QYEYDYD7T8CpycsMnF-B6FcfYbZTanscvyG150zzjgyl2eiGUVt_nOag-xEoS85PG=
+0n_Ob0AyDx6qyQM-AarFIjxFTPxMfwM04psQbOauJrpVXQggUKBgNQJa4Wh70cdZ_oKa_NjfCAm=
+BRTeevGNerQVEp3SW4LB1A=3D=3D )
+############################################################
+############################################################
+
+--f56ebc30e08713cc66201f46902592c9ace2e4c4a4088ccd62999e81c428
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>DIPHTHERIA - NIGERIA<br>********************<br>A ProMED-mail post<br=
+><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisIij=
+pefK5PNjW-mL-YZGnfgDOxU1G3gjwnPSi2Tfv3HA/435/tY0QTiX0ReqDHo3w_m7uOQ/h0/i-Li=
+VT70L-N5cvh86gD9COeBUuu4Wvq9SoqvybaeORY">http://www.promedmail.org</a><br>P=
+roMED-mail is a program of the<br>International Society for Infectious Dise=
+ases<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt4=
+8tisCT5tpD4Upm3qyMCbcYSQvc/435/tY0QTiX0ReqDHo3w_m7uOQ/h1/Tp-XVvVAZdg25E-PJ6=
+Gn25diuiyM6TdAM3U-9s6oqxY">http://www.isid.org</a><br><br>Date: Wed 17 Jan =
+2024=0D<br>Source: IFRC [edited]=0D<br><a href=3D"https://u19268662.ct.send=
+grid.net/ss/c/suRyKAAhd_WyEaNz14Vl-qVBgHNzQ_3sSOh4iwJY841cx8sCsf-lWUHm6NvH5=
+l721hTYsgpa8IjXGsVkLZUrfgl2xuuZBJqpdP3dyaV-M7GRpPNOee_2sIfFQuM1CEIpH1ZR8mjy=
+fV8RqO6BTeY2WA/435/tY0QTiX0ReqDHo3w_m7uOQ/h2/6U5oheoojWJj9BAS7-RVhtQx1DRkhQ=
+sQeCa3barBBkg">https://reliefweb.int/report/nigeria/nigeria-diphtheria-outb=
+reak-operation-update-2-mdrng037-0</a>=0D<br>=0D<br>=0D<br>Nigeria | Diphth=
+eria Outbreak - Operation Update 2 (MDRNG037)=0D<br>-----------------------=
+--------------------------------------=0D<br>A. Situation Analysis=0D<br>--=
+-------------------=0D<br>Description of the crisis=0D<br>=0D<br>In Nigeria=
+, the outbreak of diphtheria became the biggest public<br>health concern th=
+at affected many lives and children in 2023. This<br>outbreak began in Kano=
+ State in December 2022 and spread to<br>neighboring states, including Lago=
+s and Osun, which have reported<br>confirmed cases. The NCDC has declared t=
+his outbreak to be the worst<br>in a decade, with the previous outbreak occ=
+urring in 2011 in Nigeria.<br>As of December 2023, over 13 000 confirmed ca=
+ses have already been<br>reported across approximately 20 states with major=
+ity of people<br>affected being children.=20=0D<br>=0D<br>Diphtheria is a v=
+accine preventable disease and severe bacterial<br>infection that can affec=
+t a person's nose, throat, and occasionally<br>skin. It is brought on by so=
+me toxin-producing species of the<br>bacterium _Corynebacterium_. The peopl=
+e at the greatest risk of<br>contracting diphtheria are among children and =
+people who have not<br>received any, or only a single dose of the vaccine (=
+a diphtheria<br>toxoid-containing vaccine). People at risk are communities =
+residing in<br>densely crowded places and unsanitary areas with poor enviro=
+nmental<br>conditions. Also, healthcare professionals and hospital frontlin=
+e<br>workers who are working with or in close contact with people suffering=
+<br>from diphtheria are at risk of contracting the disease. There is also<b=
+r>a risk of contracting diphtheria if a person comes physically into<br>con=
+tact with someone with diphtheria.=0D<br>=0D<br>[The full report can be fou=
+nd at the above URL. - Mod.LL]=0D<br>=0D<br>--=0D<br>Communicated by:=0D<br=
+>ProMED<br><br>[The following article is a good review of diphtheria:=0D<br=
+>Sharma NC, Efstratiou A, Mokrousov I, Mutreja A, Das B, Ramamurthy T.<br>D=
+iphtheria. Nat Rev Dis Primers. 2019 Dec 5;5(1):81. doi:<br>10.1038/s41572-=
+019-0131-y.=0D<br>---------------------------------------------------------=
+-----------------------=0D<br>Abstract=0D<br>--------=0D<br>"Diphtheria is =
+a potentially fatal infection mostly caused by<br>toxigenic _Corynebacteriu=
+m diphtheriae_ strains and occasionally by<br>toxigenic _C. ulcerans_ and _=
+C. pseudotuberculosis_ strains.<br>Diphtheria is generally an acute respira=
+tory infection, characterized<br>by the formation of a pseudomembrane in th=
+e throat, but cutaneous<br>infections are possible. Systemic effects, such =
+as myocarditis and<br>neuropathy, which are associated with increased fatal=
+ity risk, are due<br>to diphtheria toxin, an exotoxin produced by the patho=
+gen that<br>inhibits protein synthesis and causes cell death. Clinical diag=
+nosis<br>is confirmed by the isolation and identification of the causative<=
+br>_Corynebacterium_ spp., usually by bacterial culture followed by<br>enzy=
+matic and toxin detection tests. Diphtheria can be treated with<br>the time=
+ly administration of diphtheria antitoxin and antimicrobial<br>therapy. Alt=
+hough effective vaccines are available, this disease has<br>the potential t=
+o re-emerge in countries where the recommended<br>vaccination programs are =
+not sustained, and increasing proportions of<br>adults are becoming suscept=
+ible to diphtheria. Thousands of diphtheria<br>cases are still reported ann=
+ually from several countries in Asia and<br>Africa, along with many outbrea=
+ks. Changes in the epidemiology of<br>diphtheria have been reported worldwi=
+de. The prevalence of toxigenic<br>_Corynebacterium_ spp. highlights the ne=
+ed for proper clinical and<br>epidemiological investigations to quickly ide=
+ntify and treat affected<br>individuals, along with public health measures =
+to prevent and contain<br>the spread of this disease."=0D<br>=0D<br>This in=
+fection is vaccine preventable in countries that have a public<br>health sy=
+stem to deliver the appropriate immunogen. The toxoid for<br>diphtheria pre=
+vention is now generally combined with toxoids to<br>prevent tetanus and so=
+metime pertussis. Historically, the original<br>killed whole cell pertussis=
+ vaccine was licensed in 1914. The same<br>year, the mixtures of diphtheria=
+ toxin and antitoxin were put into<br>use. In 1926, alum-precipitated dipht=
+heria toxoid was registered, and<br>in 1937 adsorbed tetanus toxoid was put=
+ on the market. Pertussis<br>vaccine is now an acellullar toxoid product. -=
+ Mod.LL<br><br>ProMED map:<br>Nigeria: <a href=3D"https://u19268662.ct.send=
+grid.net/ss/c/sSnCkKCWBvais3EuVAOvgy2WOIX7pp1nXnn4AbwuQ3Z6WbkfhqXYXU-aTMPJ8=
+yTh3CaYw13zI-QX0lLMfzql0w/435/tY0QTiX0ReqDHo3w_m7uOQ/h3/mZePPDUljWTI0PTFX7D=
+M8hFAOnhTX9oaR64qyd4Zbcc">https://promedmail.org/promed-post?place=3D871434=
+5,62</a>]<br><br>[See Also:<br>2023=0D<br>----=0D<br>Diphtheria - France: e=
+x West Africa, multidrug resistance<br>http://promedmail.org/post/20231117.=
+8713196=0D<br>Diphtheria - Asia, Africa: Pakistan (KP) South Africa (WC) fa=
+tal,<br>prison http://promedmail.org/post/20231111.8713097=0D<br>Diphtheria=
+ - SE Asia (06): India (HR) fatal<br>http://promedmail.org/post/20231025.87=
+12821=0D<br>Diphtheria - SE Asia (04): Indonesia (JR) fatal<br>http://prome=
+dmail.org/post/20230807.8711603=0D<br>Diphtheria - SE Asia (03): Indonesia =
+(JI)<br>http://promedmail.org/post/20230709.8711048=0D<br>Diphtheria - Sout=
+h Africa: (NL, WC) antitoxin shortage<br>http://promedmail.org/post/2023051=
+9.8710144=0D<br>Diphtheria - SE Asia (02): Indonesia (JR) fatal, more cases=
+, vaccine<br>campaign, RFI http://promedmail.org/post/20230319.8709034=0D<b=
+r>Diphtheria - SE Asia: Indonesia, fatal, more cases, vaccine campaign,<br>=
+alert http://promedmail.org/post/20230222.8708538=0D<br>2022=0D<br>----=0D<=
+br>Diphtheria - France: migrants, toxigenic Corynebacterium<br>diphtheriae/=
+C. ulcerans http://promedmail.org/post/20221230.8707531=0D<br>Diphtheria - =
+Australia: (NSW) unvaccinated children<br>http://promedmail.org/post/202207=
+05.8704239=0D<br>2018=0D<br>----=0D<br>Diphtheria - Philippines: increased =
+cases, 4 regions<br>http://promedmail.org/post/20181215.6210623=0D<br>Dipht=
+heria - Indonesia: fatal, more cases, vaccine campaign<br>http://promedmail=
+.org/post/20180106.5542510]<br>............................................=
+.....ll/may/jh<br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3DNwnq9EpY-X5H7PaTmZxXTkYD4qeihjh30Myiq9yDK0hoMDAwdT=
+AwMLLcgGCcfF0v9Fa2Ji6PFlm_MGEPUiVhIN37PmRW3q3PtWyOT10GRHBaf_kbDWaQBg4CI0Dt0=
+o3fieBIOJ5Dr17RetC6i2F8IZ3J7-WnzEBjSdRYZRcUhHTNFojdrTIUrylzAEQxGXtvjuCh7YSG=
+83-xUqQ3vyJf8mKCUQZ8cqTsOliSdbVv_wz1Yta7j-6pujigBEB-DdtChkX6C1cjSsb1U8IBmLZ=
+KsKzdYRXC7UjN-xdqO29JrRyWcTKpPK7TWm809egmxI1KOwieua5TT_SfS2n3RmtqwlWUPR2csI=
+qmDw4a7FkDPpUMrT31egtyUU-v5UrVBSIsX0Sbj_8r79eXOgKpZAQyBlTMf5BPKMFFY2QvFv_10=
+0Jblrvb8Nku0CWAdw7EXPA90wDd9GYJtc9B87bpFSIGNK2k1zWeDTPhp3tA1YRb-406S-3yp7lg=
+X02uvnj6zztDVf5hdTSUMXKOnfR1fJ46FnIe-F4CWa9pTCWGEo9XBJuXzMnZ65Nb53vuayQMxlb=
+qdoyduQTEV6b4hXQh1yATAhNQ9sBq3VjV_gafy4Qe7GeHVX1VBA5uhG3lJTAxEht6xqSgomqmbG=
+DrGG6Ky6aq3ONjIMVVHDk0muTV22X5SwB9sVSx9hY58lXGF3zlplBU-zI5jvjY-xqo7ORXV9gMR=
+qRVCaff3F2i1sghOVX2u6O2fOnGYLmR1oqWJBlBts6G4YY7TQZrFnkl9cEWyuy__DKZktpVixd4=
+D-o2_jNSEvYWk9RyXWHNVXasbHElSjrqJeoh811bwVCxYiOvNqlRBET_Se-0TCTg4DvXLQN7aAY=
+LRbt5SCAlTj8AsiGSVo2--T0vgRpOVOxlfoQzinolSWv7KBkc0M9_nCqCTLKCn0JT92veDmiPzT=
+iEorngQp4gBlsmxWuQNmzzbTXVHi9z7wyMq4E6L--vLBlHRa6h8Joim2X7fityc4Oc_xye0Xh4F=
+QWuHHkjBZ7HSwz1Ic36QYEYDYD7T8CpycsMnF-B6FcfYbZTanscvyG150zzjgyl2eiGUVt_nOag=
+-xEoS85PG0n_Ob0AyDx6qyQM-AarFIjxFTPxMfwM04psQbOauJrpVXQggUKBgNQJa4Wh70cdZ_o=
+Ka_NjfCAmBRTeevGNerQVEp3SW4LB1A=3D=3D" target=3D"_blank" class=3D"Unsubscri=
+be--unsubscribePreferences" style=3D"font-family:sans-serif;text-decoration=
+:none;">Unsubscribe Preferences</a></div><br>##############################=
+##############################<br>#########################################=
+###################<br><br><img src=3D"https://u19268662.ct.sendgrid.net/ss=
+/o/LbtalBvHhFtzyiegKfBhew/435/tY0QTiX0ReqDHo3w_m7uOQ/ho.gif" alt=3D"" width=
+=3D"1" height=3D"1" border=3D"0" style=3D"height:1px !important;width:1px !=
+important;border-width:0 !important;margin-top:0 !important;margin-bottom:0=
+ !important;margin-right:0 !important;margin-left:0 !important;padding-top:=
+0 !important;padding-bottom:0 !important;padding-right:0 !important;padding=
+-left:0 !important;"/></body>
+</html>
+--f56ebc30e08713cc66201f46902592c9ace2e4c4a4088ccd62999e81c428--

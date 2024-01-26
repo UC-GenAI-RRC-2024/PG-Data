@@ -1,0 +1,560 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a98:c004:0:b0:1eb:e128:bbe3 with SMTP id l4csp2972933eic;
+        Sat, 13 Jan 2024 14:49:16 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IFPZ5PImhuKPbndyuEFhTSZyKOoI2TMnt5W31z7kOOryFMJsGlrvqLGbDlaXFesWw5JUUey
+X-Received: by 2002:a05:6214:234f:b0:681:21b7:6539 with SMTP id hu15-20020a056214234f00b0068121b76539mr4172424qvb.0.1705186155750;
+        Sat, 13 Jan 2024 14:49:15 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1705186155; cv=none;
+        d=google.com; s=arc-20160816;
+        b=vmZrICgZZqijSHuEeJ8ZbytgWn4m3Vm+wIzPzt0EC3rfqrX2q3HE2+rUnLomu6KG3N
+         madYvR1a4E6i7TlFp+r606zlhEOVTcSHOlojN7ha/3YG4+fdLRDtldgjCVAg/KOeVVZ2
+         JDlXwLqfVM26CospUsKRb/B3LajdeYjFi2Zur79v/gtJt5hoXNJQFe4dgQthgrh26ae7
+         nG3LgSbkH+BqgiyNao3tmmr4zabiG8OKNsconAIUWI1okM/BYWBFXwDTm6KqEI6pw0v4
+         lPdGd5SxPJNyEfYCxOeSX31cRHCve4+mFhBq7kgBghVkF4mZBogDf9Y1J8cyTLRWdaEc
+         x5gw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=FJwDon4ktzdglBNvutoxTq6qScmfqZYKsD+JiWhEEVA=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=o8fUmha6aBFYBmYx8odAKe1cujLOw3Dg+eeXr/PU5NwSjbWrdHIlR6KXDvyD2NJ0/Q
+         U68FAi6i4nxL9kr+hmMI41Lahoh/kvTpeX3MX7oHLc2QKztM+FmUskHTOOSUn3XceGiR
+         nUG8T8BfTjisPbO9XMQlFlPK/yz5BlB9pOrSN+/Hib5l4r45gPvh5e9coEHQg78O2xN6
+         9iQ+h8byLnlit32lSI+9p1fg3QEznplZLZQ6ZcJN6Ek/jgb7uBUpzgSRZXsx7W5PqshT
+         Pej88MJIBuS0QtoNLXOIX6oF3FlDuVR+nvWqJRD3lbKi7XsU5pbJskM5R32M5bRZR2dG
+         TkwQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=U8IA7GLz;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=Vjeq7mqs;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id z19-20020a05620a101300b0078331661d3dsi5499496qkj.594.2024.01.13.14.49.15
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sat, 13 Jan 2024 14:49:15 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=U8IA7GLz;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=Vjeq7mqs;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=FJwDon4ktzdglBNvutoxTq6qScmfqZYKsD+JiWhEEVA=;
+	b=U8IA7GLzy/ILZFFmq530d6g69kX9q3QAltXjn8kqaxF5DUy5vJuu4hSl6LYp8H9y2sX+
+	Ha3hnz+UhUWUaz1P7/gDZuefyoQDEqPP++D3hB58njhD4RHSndypYLbXsBpulDyAQN1cDz
+	kK9TVR9ABm0gLH1EIJKVZjQtzh1qNvh4PYyNlyhx/KeRhd4xAllv2I8Dp0QGZVXyOt2He3
+	o5fVqE4wyPg7GfTQGiw8sdQrDoMO3TJhvOIAcQYB7xyTCbVTdE6QBJs+YgexU44aHSoshl
+	DhgLJ193tw+SPbq2vVTypXHhY/BPTvg+UmNQtZBZUt8NBh8WBVaR0GYTj52/G4WQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=FJwDon4ktzdglBNvutoxTq6qScmfqZYKsD+JiWhEEVA=;
+	b=Vjeq7mqsRa/NB8z2WMYf0C1nJSOWkwoWDAz72XxYE8NwgSSSF1RDgk5cisYqKpRzBzmc
+	1J8h68MMFVv9dfvHvNWveztmAqTwAQw5/1nZOp36b6nQ6PmGMllxdJ1hSjA7tp92riywvY
+	QuyejYNs0zB7mN4FsQ2Loq0z5RwbItK0Y=
+Received: by filterdrecv-64944f8955-xrqn8 with SMTP id filterdrecv-64944f8955-xrqn8-1-65A31368-13
+        2024-01-13 22:49:12.595560744 +0000 UTC m=+7618069.195722343
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-23 (SG) with HTTP
+	id KEx_jFLNToSI_0i1FLGNaQ
+	Sat, 13 Jan 2024 22:49:12.402 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=e96ad201d91be9512480e1ae36fff5e38e7b6cfdb61d5fcad285f31a679b
+Date: Sat, 13 Jan 2024 22:49:14 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <KEx_jFLNToSI_0i1FLGNaQ@geopod-ismtpd-23>
+Subject: PRO/AH/EDR> Rabies (04): Viet Nam (PY) dog bite mistaken as scratch
+ from collar, fatal
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iBRyW+8jnoXj6NxChdGsm54IjtToQFVe1CmI07o?=
+ =?us-ascii?Q?QtEg1lWTJpWD2jbZNuRp3lfZNk3kCs66miv0UNa?=
+ =?us-ascii?Q?lsS2aLi25g41opR9VFu91CO8v5nZ4O=2F1FyojVgO?=
+ =?us-ascii?Q?Whou4Ep6GpKfepjwQQkZb457HEJrPqA0vssBCTs?=
+ =?us-ascii?Q?of=2FLwHrDhmHhqYpDOF0ZSCZ375KIypwbDd9pBf?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUiShGf=2FO8XJWpH34Od4Nd?=
+ =?us-ascii?Q?fxXa6jil96uRcJkF+N+LeVnO1tx80ddOyoyOo=2Fc?=
+ =?us-ascii?Q?Brxcl3ERAm0cOY743=2FFH59DWiSf5OzXORh1DLKt?=
+ =?us-ascii?Q?hb1NMKty3PsA5ju0ZzxCrq1WQuZSEQf=2FJlWtgqv?=
+ =?us-ascii?Q?cZmsyCHlNUZsDw5uu8Jf=2F11+sL2vuyRR4fdzlzB?=
+ =?us-ascii?Q?x+CzuZ3Mnah0io=2FYOgF4XhygTBX+hw993fFI2OZ?=
+ =?us-ascii?Q?Mk9TUR=2FGhBSRadyZxgUZ6pz1l0Hvxc0cQKBrW4w?=
+ =?us-ascii?Q?iEnEeq4NGOFc88btvzhNQ=2FmWNYNDeW2O9Ra5CJM?=
+ =?us-ascii?Q?oeGCUmjC8lHeNV4qS6q6lPvzg5Dm2vv54XhPvqD?=
+ =?us-ascii?Q?b1cMsAr8+BcJPzhj=2FTeYlfekhfieOTt1lNEKojl?=
+ =?us-ascii?Q?n6=2Fr=2F8FpdX4b198SzikE6YJX8UuMbxw2Aunrjjz?=
+ =?us-ascii?Q?vEwnbqoAFb3wRHwx4bkP6e1Dbh+HInQQb4vzD9Y?=
+ =?us-ascii?Q?K3ZbOPsuRusuyBl=2F0KVO08VD3wBuhRdipKIsyvu?=
+ =?us-ascii?Q?JV2=2FCou7xwBhWBWO2HOWafcPc8T1USfaInxY72P?=
+ =?us-ascii?Q?n7S8ixHyWYsORRz6T4cM8fCLfRLMSu1tpDWb5WL?=
+ =?us-ascii?Q?77eF705q7VRrpNkwp6ZkZdKF3JMAmcijU2HiXWq?=
+ =?us-ascii?Q?FbjqFgc8r8T03yGh8z3KYQ+E0QMsIpaAX73+JYb?=
+ =?us-ascii?Q?S9MRIE5KPFG199a8zFlZYgTbeTks9mP7o6fFByb?=
+ =?us-ascii?Q?dyXuQIPKjfLhHgbVg9jfs0SG1u6h1Nsv=2FQ6yVyI?=
+ =?us-ascii?Q?UWiKloBAvJQ3yUCPbxJsQbWUCQ=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2EYvNpmkfIv?=
+ =?us-ascii?Q?IU8nVViOYKzz=5Fw7dVcDd2PGyKRuoUZfyAtoMDAw?=
+ =?us-ascii?Q?dTAwMEY6s6uIo3ytR-fQiK2Om-Z=5FmpL1BNwB8hT?=
+ =?us-ascii?Q?Mxcrs8t7jyvEpVZeJcB0RY2a4cT=5F9DZxfuKAdUn?=
+ =?us-ascii?Q?RoTDgkPeRldAPrN5VlH-MYTVBpTF52o4=5FNWSRCH?=
+ =?us-ascii?Q?OpDhjd=5FB9yD35-o-A=3D=3D=2EXJMqnIdHBuNLz2KgzuG?=
+ =?us-ascii?Q?wdPIEhdw5Uf7CPOkFIulpMtZoMDAwdTAwMFTvIv?=
+ =?us-ascii?Q?TcnbJrQnfaKX1rBFvRhR6ad2PjBc12vsN2U4iEq?=
+ =?us-ascii?Q?4LTVRI8ANuOUmKn5QKfiqZUAcWX-SrDVEh2ymn2?=
+ =?us-ascii?Q?vxLF6IJ1sbjP=5F8ny6niRaxXkrzoGRG5f7IRdAhN?=
+ =?us-ascii?Q?JTgy5z0I8og4Ym3QZbOFrbkt9fclzSYNSjewAmD?=
+ =?us-ascii?Q?O2I7cJBqZbwkvU1NrvD-QO2uIzWdKCotCQCwCuT?=
+ =?us-ascii?Q?qLDIpTf0BfxDN5R2thWtaYFM2Qo8wgCqLNf95Ks?=
+ =?us-ascii?Q?BvbIqbStSzqVkucLjid4MpaolrKZDLDC7w9Ugpb?=
+ =?us-ascii?Q?P5O0rAa5Gy5Au3J24cBH1HGZ1l=5FUHe4ee6AjgfC?=
+ =?us-ascii?Q?wlNFuTkQI-Tud=5FVA2YtEibQPRXCbOiHHD38Zqc4?=
+ =?us-ascii?Q?3jEpzuZ8Jf-wq4SQmsSCvG340XRKC00dUHKIPBl?=
+ =?us-ascii?Q?TSWM0ximAUKKWMo6mWau8st8wxlq5QGHa4ToRhY?=
+ =?us-ascii?Q?mCqHne0Ino2LsQDZz75V5GtjA6gD04f=5FGNgUw=5Fo?=
+ =?us-ascii?Q?JD8WVr66rg6vBhuUI3I7S2vAK8LizegCiVNdBBP?=
+ =?us-ascii?Q?P6OhaJYl5zROO8q2lPWmBmrfc8rHuZ26DSoVJ09?=
+ =?us-ascii?Q?bZ6rq696D-cswNUkZ8BnYuBz9DJJcpazoIk7kvf?=
+ =?us-ascii?Q?7XwrI2qK6ZqPcGjMzMQKbozYY2WfM0OlhuTaNMR?=
+ =?us-ascii?Q?VK9wgxnvBLoPaTl5tjviHg9Eju2KjaUpsM62qGl?=
+ =?us-ascii?Q?-kham-qy7lPLz-X3JtcBVOFWpGrjwdNYh3wFCKJ?=
+ =?us-ascii?Q?K7AoVgwpx7A7ibPlxTB6RwlnpK-Pzh2XyIRfQbZ?=
+ =?us-ascii?Q?3ahNg-rlB9u2O6150=5Fkl5uVmQgDxHcuMyFeKTJF?=
+ =?us-ascii?Q?uUcq-1hMEla-YyBLavFPwTW7GVXQx56cvxhL1s8?=
+ =?us-ascii?Q?bxpMLFEeYlQodLUgO63kYCcKlSbfUa3FXjJAd1-?=
+ =?us-ascii?Q?YJlFWn2zyG74vZOS5jnGSzWLKdAmy1QrnBsIvOg?=
+ =?us-ascii?Q?aFnBkDnaLwolYe7Nw-HAIcNNtDxiygJ8maewsFr?=
+ =?us-ascii?Q?TTPxsO72Cw6wP1mGADpe8MQVrfFv7cP=5FUpaHEvF?=
+ =?us-ascii?Q?QRTedAmGkPq3uAku0gUnF7Q9YY7VP6nWJBpxahR?=
+ =?us-ascii?Q?DMSyPA=3D=3D=3E?=
+
+--e96ad201d91be9512480e1ae36fff5e38e7b6cfdb61d5fcad285f31a679b
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=iso-8859-1
+Mime-Version: 1.0
+
+RABIES (04): VIET NAM (PHU YEN) DOG BITE MISTAKEN AS SCRATCH FROM
+COLLAR, FATAL
+***************************************************************************=
+****
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+Date: Thu 11 Jan 2024 18:05 ICT
+Source: Tuoi Tre News [edited]
+<https://tuoitrenews.vn/news/society/20240111/man-succumbs-to-dog-bite-afte=
+r-failing-to-get-vaccination-in-southcentral-vietnam/77778.html>
+
+
+A 37-year-old man from Phu Yen Province in south-central Vietnam
+recently did not survive after getting bitten by a strange dog over 3
+months ago, notwithstanding receiving hospital attention for symptoms
+of rabies. Nguyen Gia Phong, chairman of Hoa Vinh Ward in Dong Hoa
+Town, Phu Yen, where 37-year-old [NTK] lived, confirmed his death,
+allegedly due to rabies, on Wednesday [10 Jan 2024].
+
+According to a report from the Dong Hoa Medical Center, [NTK]
+sustained a dog bite on his hand from an unidentified dog over 3
+months ago. At the time, he perceived the injury as a mere scratch
+from the animal's collar and did not seek vaccination against rabies.
+
+On 4 Jan 2024, [NTK] showed symptoms of difficulty breathing, chest
+tightness, and vomiting before developing a fear of water and
+tiredness 4 days later [8 Jan 2024]. His family took him to Phu Yen
+General Hospital at 0:00 on Tuesday [9 Jan 2024] before transferring
+the man to Khanh Hoa Hospital for Tropical Diseases in neighboring
+Khanh Hoa Province.
+
+The patient could not make it by 2:00 am on Wednesday [10 Jan 2024].
+All individuals in close contact with [NTK] were then vaccinated
+against rabies.
+
+Nguyen Dong, director of the Khanh Hoa Hospital for Tropical Diseases,
+stated that [NTK] was brought to the hospital too late, as the rabies
+had already progressed to a stage beyond treatment.
+
+"Dying from rabies is often a result of failure to seek timely
+vaccination after a dog bite," Dong explained. "People tend to delay
+until the onset of a rabies attack, but by then, it's too late as the
+virus has attacked the brain. There's no cure once the disease
+manifests itself."
+
+Huynh Le Xuan Bich, deputy director of the Department of Health of Phu
+Yen Province, emphasized that immediate action is crucial in case of a
+dog bite. Bich advised cleaning the wound with water and soap, seeking
+prompt examination, consultation, and receiving rabies vaccinations
+and/or anti-rabies serum to avoid unnecessary risks.
+
+[Byline: Bao Anh, Nguyen Hoang, Minh Chien]
+
+--
+Communicated by:
+ProMED
+via
+ProMED-MBDS
+
+["Rabies is an acute, progressive encephalomyelitis that is nearly
+always fatal once symptoms begin. Rabies pre-exposure prophylaxis
+(PrEP) is an important component of preventing human rabies in the
+United States. It does not negate the need for post-exposure
+prophylaxis (PEP), but simplifies PEP for persons who are at a higher
+risk for rabies than the general U.S. population, and is believed to
+provide some protection if PEP is inadvertently not sought or delayed.
+PrEP should be considered for persons who participate in the
+following:
+1. Work with research-grade high concentration rabies virus or rabies
+virus that could inadvertently be aerosolized because of laboratory
+manipulation,
+2. Activities that might lead to unrecognized exposures (e.g., from a
+nick in PPE while interacting with bats) for which a person would not
+know to seek PEP,
+3. Frequent interaction with animals that might inflict recognized
+exposures like scratches or bites (e.g., work as a veterinary
+technician), and
+4. International travel to canine-rabies endemic regions where PEP may
+not be easily accessible.
+
+"The Advisory Committee on Immunization Practice (ACIP) has
+recommended PrEP for decades; in 2008, the ACIP recommended a 3-dose
+[0, 7, 21/28 days] intramuscular (IM) rabies vaccine series. However,
+many persons recommended to receive PrEP, do not receive it. Data
+published since the 2008 recommendations support fewer vaccine doses
+for rabies PrEP; a 2-dose series was recently adopted by the World
+Health Organization."
+
+"CDC's Yellow Book states that children who travel to canine-rabies
+endemic regions are at a particular risk for rabies. It mentions their
+inquisitive nature, inability to read behavioral cues from dogs, and
+increased likelihood for severe bites to high-risk anatomic regions
+due to short stature in recommending rabies PrEP for travelers to
+canine rabies endemic regions, including children"
+(<https://www.cdc.gov/vaccines/acip/recs/grade/rabies-2-dose-etr.html>).
+
+The man's misunderstanding that he suffered only from "a mere scratch
+from the dog collar" instead of dog bite led to his fatality. The dog
+is assumed to be not a stray because of having a collar; thus, there
+may have been some indication on the dog's health evolution in the
+past 3 months, as other people may also be exposed. - Mod.ST
+
+ProMED map:
+Ph=FA Y=EAn Province, Vietnam:
+<https://promedmail.org/promed-post?place=3D8714212,1121>]
+
+[See Also:
+Rabies (02): India (Jammu and Kashmir) human, dog
+http://promedmail.org/post/20240110.8714167
+Rabies (01): India (GA) human, dog
+http://promedmail.org/post/20240104.87140672023
+2023
+----
+Rabies (57): India (KA) dog bite, human exposure
+http://promedmail.org/post/20231226.8713898
+Rabies (56): Viet Nam (GL) long incubation period
+http://promedmail.org/post/20231225.8713886
+Rabies (55): Myanmar (MO) dog, WOAH
+http://promedmail.org/post/20231223.8713873
+Rabies (52): India, dog bite, increase
+http://promedmail.org/post/20231210.8713623
+Rabies (50): India (UP) human, cat, dog, fatal
+http://promedmail.org/post/20231202.8713464
+Rabies (45): India (UP) human, dog
+http://promedmail.org/post/20231030.8712889
+Rabies (27): Asia (India, Philippines) human, dog
+http://promedmail.org/post/20230621.8710690
+2022
+----
+Rabies (53): Asia (Israel, India) animal, human, epidemiology, control
+http://promedmail.org/post/20221206.8707113
+Rabies (41): Asia (Afghanistan, India, Israel, Malaysia, Philippines,
+Vietnam) http://promedmail.org/post/20221001.8705891
+Rabies (32): Asia (Malaysia, Bhutan) human, dog
+http://promedmail.org/post/20201205.7995796
+Rabies (12): Asia (India) wolf, zoo
+http://promedmail.org/post/20220404.8702407
+Rabies (09): Eurasia (Ukraine, India, Israel) cat, human, cow, control
+http://promedmail.org/post/20220310.8701906
+2021
+----
+Rabies (31): Eurasia (India, Israel, Ukraine), Africa (S Africa)
+human, animal http://promedmail.org/post/20210827.8626789
+Rabies (25): Asia (India, Nepal) human, dog; (Israel) jackal, human
+exp http://promedmail.org/post/20210711.8511091
+2020
+----
+Rabies (19): Asia (Malaysia, Indonesia, Japan ex Philippines) animal,
+human http://promedmail.org/post/20200628.7517416
+Rabies (05): Asia (Israel, Bangladesh) animal, human
+http://promedmail.org/post/20200219.7005843
+2019
+----
+Rabies (46): Asia (Myanmar) dog, OIE
+http://promedmail.org/post/20190928.6698321
+Rabies (33): Asia (Cambodia) human, dog
+http://promedmail.org/post/20190605.6499719
+Rabies (29): Europe, Asia (Norway ex Philippines) human, dog
+http://promedmail.org/post/20190516.6471701
+Rabies (23): Asia (Thailand) human
+http://promedmail.org/post/20190428.6446053
+Rabies (21): Eurasia, Armenia (TV) dog, OIE
+http://promedmail.org/post/20190424.6436412
+Rabies (19): Eurasia, Armenia (AV), dog, OIE
+http://promedmail.org/post/20190418.6429961
+Rabies (18): Asia (Qatar ex Nepal) human, sylvatic exposure susp.,
+comment http://promedmail.org/post/20190416.6425196
+Rabies (17): Asia (Qatar ex Nepal) human, sylvatic exposure suspected,
+comment http://promedmail.org/post/20190411.6416702
+Rabies (16): Asia (Qatar ex Nepal) human, sylvatic exposure suspected
+http://promedmail.org/post/20190410.6412045
+Rabies (03): Africa, Asia, human, cattle, dog, counterfeit vaccine
+http://promedmail.org/post/20190202.6291746
+and other items in the archives]
+.................................................st/rd/st/rd/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3Dr6kmUWkWm62pCqCP3Ym2LqgMiTd7fIV4mH07Y6_KCq1oMDAwdTAwMIesz3p=
+fif0NpkOxoTRmprWzNWpdA3GYmawPQUpEZqF4Ll0-y9yP8HJBZBDbZk4OWV8qp1_HrLaUip1JXJ=
+--SuEMA4LWOgVDAmhlOGqxZRACo9392K6cROVRRO7jT3qQxbt6VeB-m490_gUiZ2Yb8i052gj8L=
+FPQTvDSLpeL9Bdxcwwa2SUhFnfa4asme3XlyNQZfrBkatBY8f8yCqdT45l-hl2jO_sV9BkxR0rU=
+YGF44Ny5ccve6uMsxDzkASEkd3caE_1au6VpIRkinAK1_hOZSmZDvOddPzlH591ni7uNGP6_C9d=
+lMhEqce7Tt7d4Rtzzl2MzCOurjaJIxayld4rH8B_A22fNELPT-6XJouy876p1N-2RuGmyb0lVxN=
+q7J8lhPjpuy1DlawxmXE4HDzKpCMsksc10yUq_ogBehdadtxS86aamiNLjzJNziHkxHqJW30-Ic=
+KqPAx6BxoPF1AWZ6uLV-8YHtshrHHxSsTDXAkkevgvSP0HFrB0ZbpbqMlIZBmYxCSAFf2PedLrs=
+QGa0NsblqNT8oUJeHOV4YSZylVS_aGknkBNHLF532SZEbwsa4lmgEJxneEiYcYsFzdKNcEomOdW=
+LIGDdsaNrKsV7r9tkcRpnStggkQCVKQ7DXWUaX62myPkrCv1sNb3tVg2vRSOKgOuW1R6glIYyzY=
+w38h3aPYsgCJ7s-4Mv4lsRJIrq62cn0DWT4DOUHZ683Z6Nse51-H1mbOZnZQxwWsIeb0mr-oH8P=
+fuQWBKy8K74PIMy_SNvJbfyMs6zUcJHTz0FRpLwRvw9X1fq-TQOzR1AqvDohVDMJrYZSCGFzQ3c=
+KKyG2OVQNKV01dxW5NqTUnD6qWbbH--K-L1iyYoNsqArmGq2Bck9JdEYhwZmSgAfIXhTRMx7_aA=
+SyV5o7r7Qo_lBz8QknQmL28XSHtQ1TSHssUY6fSxBZn_l3XormPvlL2nDJ19mcvaWFL4yv0zR0L=
+Rn3z4XUJNXUylsueHz-xKHGUSH7Ir78U0HGO8VvNBrOCRNtSqYJWKa8H96qN4ItD2XHB5Ogknth=
+Nqi0tiWIdzEJmn__oCepZnFbruqqTh9Murlg8nUWNV4xeAQ34j6X2g2oUPnsLQEk7HHBiUcFK86=
+J9PNsz314TO75SJy73lqoNHdFwKa_QLpH-9Hi1ClvAZnvE43jQ_La-8p8NcI-pmr )
+############################################################
+############################################################
+
+--e96ad201d91be9512480e1ae36fff5e38e7b6cfdb61d5fcad285f31a679b
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=iso-8859-1
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>RABIES (04): VIET NAM (PHU YEN) DOG BITE MISTAKEN AS SCRATCH FROM<br>=
+COLLAR, FATAL<br>**********************************************************=
+*********************<br>A ProMED-mail post<br><a href=3D"https://u19268662=
+.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisIijpefK5PNjW-mL-YZGnfgDOxU1G3gjw=
+nPSi2Tfv3HA/42y/cjH_WQS_S52VMIq0sKIAQg/h0/FsmdXCHZp7tFbDjuiW_-K1l8oa_2diEWA=
+784fCEVDgE">http://www.promedmail.org</a><br>ProMED-mail is a program of th=
+e<br>International Society for Infectious Diseases<br><a href=3D"https://u1=
+9268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisCT5tpD4Upm3qyMCbcYSQvc/42=
+y/cjH_WQS_S52VMIq0sKIAQg/h1/cgyyKwi-0U70SzfPRn59Vudh61YU2dM1OPsCb8AI6A8">ht=
+tp://www.isid.org</a><br><br>Date: Thu 11 Jan 2024 18:05 ICT=0D<br>Source: =
+Tuoi Tre News [edited]=0D<br><a href=3D"https://u19268662.ct.sendgrid.net/s=
+s/c/n2BLS7Nz6isdK7W6nsHw6xh316a_uAeLM0IN9JqRRoBaH4Ij5rR56wNoWi_9RxHNiQ7lAqz=
+8W_nWi6LYFnKQR1ABSC39F-Jf-iVMWagUAW6urdBoFDVb_HFYx3wv08O3r4FvOA1YPcGkcAKduo=
+JCGHSJvZk5zEpaEgLFvhzl8RBYDYPFM4DcoUQ6zf1b3yjWQx1C3gjR5YjCx_Z3O4JJQg/42y/cj=
+H_WQS_S52VMIq0sKIAQg/h2/Yre2-HJ446VCzvl6HSOMiT5VZy6n_U1mPZ95OvlPbY0">https:=
+//tuoitrenews.vn/news/society/20240111/man-succumbs-to-dog-bite-after-faili=
+ng-to-get-vaccination-in-southcentral-vietnam/77778.html</a>=0D<br>=0D<br>=0D=
+<br>A 37-year-old man from Phu Yen Province in south-central Vietnam<br>rec=
+ently did not survive after getting bitten by a strange dog over 3<br>month=
+s ago, notwithstanding receiving hospital attention for symptoms<br>of rabi=
+es. Nguyen Gia Phong, chairman of Hoa Vinh Ward in Dong Hoa<br>Town, Phu Ye=
+n, where 37-year-old [NTK] lived, confirmed his death,<br>allegedly due to =
+rabies, on Wednesday [10 Jan 2024].=0D<br>=0D<br>According to a report from=
+ the Dong Hoa Medical Center, [NTK]<br>sustained a dog bite on his hand fro=
+m an unidentified dog over 3<br>months ago. At the time, he perceived the i=
+njury as a mere scratch<br>from the animal's collar and did not seek vaccin=
+ation against rabies.=0D<br>=0D<br>On 4 Jan 2024, [NTK] showed symptoms of =
+difficulty breathing, chest<br>tightness, and vomiting before developing a =
+fear of water and<br>tiredness 4 days later [8 Jan 2024]. His family took h=
+im to Phu Yen<br>General Hospital at 0:00 on Tuesday [9 Jan 2024] before tr=
+ansferring<br>the man to Khanh Hoa Hospital for Tropical Diseases in neighb=
+oring<br>Khanh Hoa Province.=0D<br>=0D<br>The patient could not make it by =
+2:00 am on Wednesday [10 Jan 2024].<br>All individuals in close contact wit=
+h [NTK] were then vaccinated<br>against rabies.=0D<br>=0D<br>Nguyen Dong, d=
+irector of the Khanh Hoa Hospital for Tropical Diseases,<br>stated that [NT=
+K] was brought to the hospital too late, as the rabies<br>had already progr=
+essed to a stage beyond treatment.=0D<br>=0D<br>"Dying from rabies is often=
+ a result of failure to seek timely<br>vaccination after a dog bite," Dong =
+explained. "People tend to delay<br>until the onset of a rabies attack, but=
+ by then, it's too late as the<br>virus has attacked the brain. There's no =
+cure once the disease<br>manifests itself."=0D<br>=0D<br>Huynh Le Xuan Bich=
+, deputy director of the Department of Health of Phu<br>Yen Province, empha=
+sized that immediate action is crucial in case of a<br>dog bite. Bich advis=
+ed cleaning the wound with water and soap, seeking<br>prompt examination, c=
+onsultation, and receiving rabies vaccinations<br>and/or anti-rabies serum =
+to avoid unnecessary risks.=0D<br>=0D<br>[Byline: Bao Anh, Nguyen Hoang, Mi=
+nh Chien]=0D<br>=0D<br>--=0D<br>Communicated by:=0D<br>ProMED=0D<br>via=0D<=
+br>ProMED-MBDS<br><br>["Rabies is an acute, progressive encephalomyelitis t=
+hat is nearly<br>always fatal once symptoms begin. Rabies pre-exposure prop=
+hylaxis<br>(PrEP) is an important component of preventing human rabies in t=
+he<br>United States. It does not negate the need for post-exposure<br>proph=
+ylaxis (PEP), but simplifies PEP for persons who are at a higher<br>risk fo=
+r rabies than the general U.S. population, and is believed to<br>provide so=
+me protection if PEP is inadvertently not sought or delayed.<br>PrEP should=
+ be considered for persons who participate in the<br>following:=0D<br>1. Wo=
+rk with research-grade high concentration rabies virus or rabies<br>virus t=
+hat could inadvertently be aerosolized because of laboratory<br>manipulatio=
+n,=0D<br>2. Activities that might lead to unrecognized exposures (e.g., fro=
+m a<br>nick in PPE while interacting with bats) for which a person would no=
+t<br>know to seek PEP,=0D<br>3. Frequent interaction with animals that migh=
+t inflict recognized<br>exposures like scratches or bites (e.g., work as a =
+veterinary<br>technician), and=0D<br>4. International travel to canine-rabi=
+es endemic regions where PEP may<br>not be easily accessible.=0D<br>=0D<br>=
+"The Advisory Committee on Immunization Practice (ACIP) has<br>recommended =
+PrEP for decades; in 2008, the ACIP recommended a 3-dose<br>[0, 7, 21/28 da=
+ys] intramuscular (IM) rabies vaccine series. However,<br>many persons reco=
+mmended to receive PrEP, do not receive it. Data<br>published since the 200=
+8 recommendations support fewer vaccine doses<br>for rabies PrEP; a 2-dose =
+series was recently adopted by the World<br>Health Organization."=0D<br>=0D=
+<br>"CDC's Yellow Book states that children who travel to canine-rabies<br>=
+endemic regions are at a particular risk for rabies. It mentions their<br>i=
+nquisitive nature, inability to read behavioral cues from dogs, and<br>incr=
+eased likelihood for severe bites to high-risk anatomic regions<br>due to s=
+hort stature in recommending rabies PrEP for travelers to<br>canine rabies =
+endemic regions, including children"<br>(<a href=3D"https://u19268662.ct.se=
+ndgrid.net/ss/c/TLh_csrC34X_iXpbYoMam3aWaOFBiyRQuHx3nk2TnlxQoaxDALP_8DvPGCt=
+swWAZ4jGdsqob_7JpHMlwSyUaItBew5JKNAs6pUf9Vr1Kv_0/42y/cjH_WQS_S52VMIq0sKIAQg=
+/h3/4a3mzt0sZG0mL0GXQaYxtkbAgiuCFpJswKfXHoDGmgs">https://www.cdc.gov/vaccin=
+es/acip/recs/grade/rabies-2-dose-etr.html</a>).=0D<br>=0D<br>The man's misu=
+nderstanding that he suffered only from "a mere scratch<br>from the dog col=
+lar" instead of dog bite led to his fatality. The dog<br>is assumed to be n=
+ot a stray because of having a collar; thus, there<br>may have been some in=
+dication on the dog's health evolution in the<br>past 3 months, as other pe=
+ople may also be exposed. - Mod.ST<br><br>ProMED map:<br>Ph=FA Y=EAn Provin=
+ce, Vietnam:<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/sSnCkKCWB=
+vais3EuVAOvgy2WOIX7pp1nXnn4AbwuQ3Z6WbkfhqXYXU-aTMPJ8yTh0wXbg0qbkD8WhHuMk2nB=
+TA/42y/cjH_WQS_S52VMIq0sKIAQg/h4/A_U8qOVPLgoqvh9Q_8mjwTdS437hWC10S_o-c9ZmoA=
+c">https://promedmail.org/promed-post?place=3D8714212,1121</a>]<br><br>[See=
+ Also:<br>Rabies (02): India (Jammu and Kashmir) human, dog<br>http://prome=
+dmail.org/post/20240110.8714167=0D<br>Rabies (01): India (GA) human, dog<br=
+>http://promedmail.org/post/20240104.87140672023=0D<br>2023=0D<br>----=0D<b=
+r>Rabies (57): India (KA) dog bite, human exposure<br>http://promedmail.org=
+/post/20231226.8713898=0D<br>Rabies (56): Viet Nam (GL) long incubation per=
+iod<br>http://promedmail.org/post/20231225.8713886=0D<br>Rabies (55): Myanm=
+ar (MO) dog, WOAH<br>http://promedmail.org/post/20231223.8713873=0D<br>Rabi=
+es (52): India, dog bite, increase<br>http://promedmail.org/post/20231210.8=
+713623=0D<br>Rabies (50): India (UP) human, cat, dog, fatal<br>http://prome=
+dmail.org/post/20231202.8713464=0D<br>Rabies (45): India (UP) human, dog<br=
+>http://promedmail.org/post/20231030.8712889=0D<br>Rabies (27): Asia (India=
+, Philippines) human, dog<br>http://promedmail.org/post/20230621.8710690=0D=
+<br>2022=0D<br>----=0D<br>Rabies (53): Asia (Israel, India) animal, human, =
+epidemiology, control<br>http://promedmail.org/post/20221206.8707113=0D<br>=
+Rabies (41): Asia (Afghanistan, India, Israel, Malaysia, Philippines,<br>Vi=
+etnam) http://promedmail.org/post/20221001.8705891=0D<br>Rabies (32): Asia =
+(Malaysia, Bhutan) human, dog<br>http://promedmail.org/post/20201205.799579=
+6=0D<br>Rabies (12): Asia (India) wolf, zoo<br>http://promedmail.org/post/2=
+0220404.8702407=0D<br>Rabies (09): Eurasia (Ukraine, India, Israel) cat, hu=
+man, cow, control<br>http://promedmail.org/post/20220310.8701906=0D<br>2021=0D=
+<br>----=0D<br>Rabies (31): Eurasia (India, Israel, Ukraine), Africa (S Afr=
+ica)<br>human, animal http://promedmail.org/post/20210827.8626789=0D<br>Rab=
+ies (25): Asia (India, Nepal) human, dog; (Israel) jackal, human<br>exp htt=
+p://promedmail.org/post/20210711.8511091=0D<br>2020=0D<br>----=0D<br>Rabies=
+ (19): Asia (Malaysia, Indonesia, Japan ex Philippines) animal,<br>human ht=
+tp://promedmail.org/post/20200628.7517416=0D<br>Rabies (05): Asia (Israel, =
+Bangladesh) animal, human<br>http://promedmail.org/post/20200219.7005843=0D=
+<br>2019=0D<br>----=0D<br>Rabies (46): Asia (Myanmar) dog, OIE<br>http://pr=
+omedmail.org/post/20190928.6698321=0D<br>Rabies (33): Asia (Cambodia) human=
+, dog<br>http://promedmail.org/post/20190605.6499719=0D<br>Rabies (29): Eur=
+ope, Asia (Norway ex Philippines) human, dog<br>http://promedmail.org/post/=
+20190516.6471701=0D<br>Rabies (23): Asia (Thailand) human<br>http://promedm=
+ail.org/post/20190428.6446053=0D<br>Rabies (21): Eurasia, Armenia (TV) dog,=
+ OIE<br>http://promedmail.org/post/20190424.6436412=0D<br>Rabies (19): Eura=
+sia, Armenia (AV), dog, OIE<br>http://promedmail.org/post/20190418.6429961=0D=
+<br>Rabies (18): Asia (Qatar ex Nepal) human, sylvatic exposure susp.,<br>c=
+omment http://promedmail.org/post/20190416.6425196=0D<br>Rabies (17): Asia =
+(Qatar ex Nepal) human, sylvatic exposure suspected,<br>comment http://prom=
+edmail.org/post/20190411.6416702=0D<br>Rabies (16): Asia (Qatar ex Nepal) h=
+uman, sylvatic exposure suspected<br>http://promedmail.org/post/20190410.64=
+12045=0D<br>Rabies (03): Africa, Asia, human, cattle, dog, counterfeit vacc=
+ine<br>http://promedmail.org/post/20190202.6291746=0D<br>and other items in=
+ the archives]<br>.................................................st/rd/st=
+/rd/jh<br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3Dr6kmUWkWm62pCqCP3Ym2LqgMiTd7fIV4mH07Y6_KCq1oMDAwdT=
+AwMIesz3pfif0NpkOxoTRmprWzNWpdA3GYmawPQUpEZqF4Ll0-y9yP8HJBZBDbZk4OWV8qp1_Hr=
+LaUip1JXJ--SuEMA4LWOgVDAmhlOGqxZRACo9392K6cROVRRO7jT3qQxbt6VeB-m490_gUiZ2Yb=
+8i052gj8LFPQTvDSLpeL9Bdxcwwa2SUhFnfa4asme3XlyNQZfrBkatBY8f8yCqdT45l-hl2jO_s=
+V9BkxR0rUYGF44Ny5ccve6uMsxDzkASEkd3caE_1au6VpIRkinAK1_hOZSmZDvOddPzlH591ni7=
+uNGP6_C9dlMhEqce7Tt7d4Rtzzl2MzCOurjaJIxayld4rH8B_A22fNELPT-6XJouy876p1N-2Ru=
+Gmyb0lVxNq7J8lhPjpuy1DlawxmXE4HDzKpCMsksc10yUq_ogBehdadtxS86aamiNLjzJNziHkx=
+HqJW30-IcKqPAx6BxoPF1AWZ6uLV-8YHtshrHHxSsTDXAkkevgvSP0HFrB0ZbpbqMlIZBmYxCSA=
+Ff2PedLrsQGa0NsblqNT8oUJeHOV4YSZylVS_aGknkBNHLF532SZEbwsa4lmgEJxneEiYcYsFzd=
+KNcEomOdWLIGDdsaNrKsV7r9tkcRpnStggkQCVKQ7DXWUaX62myPkrCv1sNb3tVg2vRSOKgOuW1=
+R6glIYyzYw38h3aPYsgCJ7s-4Mv4lsRJIrq62cn0DWT4DOUHZ683Z6Nse51-H1mbOZnZQxwWsIe=
+b0mr-oH8PfuQWBKy8K74PIMy_SNvJbfyMs6zUcJHTz0FRpLwRvw9X1fq-TQOzR1AqvDohVDMJrY=
+ZSCGFzQ3cKKyG2OVQNKV01dxW5NqTUnD6qWbbH--K-L1iyYoNsqArmGq2Bck9JdEYhwZmSgAfIX=
+hTRMx7_aASyV5o7r7Qo_lBz8QknQmL28XSHtQ1TSHssUY6fSxBZn_l3XormPvlL2nDJ19mcvaWF=
+L4yv0zR0LRn3z4XUJNXUylsueHz-xKHGUSH7Ir78U0HGO8VvNBrOCRNtSqYJWKa8H96qN4ItD2X=
+HB5OgknthNqi0tiWIdzEJmn__oCepZnFbruqqTh9Murlg8nUWNV4xeAQ34j6X2g2oUPnsLQEk7H=
+HBiUcFK86J9PNsz314TO75SJy73lqoNHdFwKa_QLpH-9Hi1ClvAZnvE43jQ_La-8p8NcI-pmr" =
+target=3D"_blank" class=3D"Unsubscribe--unsubscribePreferences" style=3D"fo=
+nt-family:sans-serif;text-decoration:none;">Unsubscribe Preferences</a></di=
+v><br>############################################################<br>#####=
+#######################################################<br><br><img src=3D"=
+https://u19268662.ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/42y/cjH_WQS_S=
+52VMIq0sKIAQg/ho.gif" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=
+=3D"height:1px !important;width:1px !important;border-width:0 !important;ma=
+rgin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;=
+margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !importa=
+nt;padding-right:0 !important;padding-left:0 !important;"/></body>
+</html>
+--e96ad201d91be9512480e1ae36fff5e38e7b6cfdb61d5fcad285f31a679b--

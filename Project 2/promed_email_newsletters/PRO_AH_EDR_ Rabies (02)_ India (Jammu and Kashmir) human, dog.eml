@@ -1,0 +1,618 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a98:c004:0:b0:1eb:e128:bbe3 with SMTP id l4csp1212216eic;
+        Wed, 10 Jan 2024 15:03:19 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IFDzFqwr9st1YZA2yON5WEHgQQ5tdenaa4YPTTqSpM5GJrf6ZUHtb35nCK1p7ki436Co493
+X-Received: by 2002:a17:90b:143:b0:28d:6bec:aa1f with SMTP id em3-20020a17090b014300b0028d6becaa1fmr238012pjb.54.1704927799274;
+        Wed, 10 Jan 2024 15:03:19 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1704927799; cv=none;
+        d=google.com; s=arc-20160816;
+        b=SpgoNSBDkF4vDy7wIoppp/hCDIPj8BSwu3UhptVafqbgJVQHhtEioiQYSMnCv09KE2
+         uDCg7dqgy9nFF0aLk2xTDWkOtdN6olFS1e2zHPkQhimiZpJHUGoFzKha2LAVpkHhu6mA
+         mXv0UpU7UmWj1PRQjsosLmkvlpu0VayWkw5RZpl7OWMXfs8OwGwUXTwRMzTGTt9ibYzU
+         ldGC0Wqn2Br77HSH3S26K3i4ES29Sp61uFZ4/h/uaNhqjtC0DMHnWnw4MpFTmBNXFe3M
+         3Nwkvq+djX9uSRU92rs772a77MNl4lL7Azvg3R0flA5NrqMVrb43gfOosZIX9Wst5V+5
+         QROw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=+tJ+oTu0k0CRDKUC+Ax/FpyMupF14v7YzJU7ZQSAQaU=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=cQFOb07GDqEPa/3OG2VnYgsKUhbW+9cjF3/wrRl33jsg68x0oQrXgPf3TJ1svY6vIc
+         0Qc52tILEboBo9dNV8OfPQm2BEeZ3lJfkJAYk0p1779sqD04numTkoxOf2TXGHYwDna1
+         RTpf3jy6QNuASujVextna8YPoi8fkuUTu5PTKPjFGrO4tGS+vV7xkDKQdpE2csk+A5Bt
+         3MvXrev5evYDwTAaKTZYzPbz+Ho6h/Z6xTKreVoZ39awL7CuX6rdjjXEMEif2ErSaR7f
+         g0r4KCD7oR/CQlNCc6oCNHN8W0vDFYZRtuPOQ28MRL+aHmdFIVCwaKXyrqORYdcC+Ti4
+         jCiQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=emfDX9yr;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=eXgmoAWf;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id sr13-20020a17090b4e8d00b0028dc527c485si1781628pjb.26.2024.01.10.15.03.18
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 10 Jan 2024 15:03:19 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=emfDX9yr;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=eXgmoAWf;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=+tJ+oTu0k0CRDKUC+Ax/FpyMupF14v7YzJU7ZQSAQaU=;
+	b=emfDX9yrdfyCXpn/RVPV1HsHBt0nPN4jziQDEy1DlFPd4C8XrmW58mTNVIj9YYN0wP7/
+	9jc8RbdKHCx4EAiJfw9XAANw1wVdsOxAsPJMag0+skIR8nEQP87Hidvdc8dJzPhu0aeUon
+	IgzwAjd1kMj09njlO0FIwqIaSLXZSSRvB7nMyCtfDCFoN+4Nwsv85iOTfFUEbqrqb1VMji
+	BWXuG3CGFsF9xz2226KEMtNKX30VMgZJb0QBTn4pVQ9reiQkJHB+XTvZBAnJcwqOvFWBlo
+	P8XS9haYhLsgEAnSbUvYPssIkKzoEhaPTCFXviSmUf51uL9DvXLAhFxwziuN/jkw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=+tJ+oTu0k0CRDKUC+Ax/FpyMupF14v7YzJU7ZQSAQaU=;
+	b=eXgmoAWfW0rLvh9SzCptmwIHYOd7oYN0sprUnX95tH77GQ4e9+H1QDw78OItQ+wcfIG7
+	dWdPN2Y8oSHHMhf1ZPzIXnEW+xx3ARNfq6Foghhk944DtYZmM3LHQ8lf02V5xHqGr+81rI
+	Oe26YY9iKcuJhapoo2X3lkVUMr0QQ7WYI=
+Received: by filterdrecv-bfb84544f-xrxbr with SMTP id filterdrecv-bfb84544f-xrxbr-1-659F2235-10
+        2024-01-10 23:03:17.20379899 +0000 UTC m=+7359723.582986045
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-8 (SG) with HTTP
+	id scWMbyDEQQeHntFalBht8g
+	Wed, 10 Jan 2024 23:03:17.021 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=79e9be8edf86f834b92767c21e0ebefdbcf22ece056232627800c9b7e9a8
+Date: Wed, 10 Jan 2024 23:03:17 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <scWMbyDEQQeHntFalBht8g@geopod-ismtpd-8>
+Subject: PRO/AH/EDR> Rabies (02): India (Jammu and Kashmir) human, dog
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iB4xugCoSH6=2FoCR=2FUlt4dnUhXNx+=2FvIhRV=2FfUiX?=
+ =?us-ascii?Q?AopZXYTEbuI=2F0PMwW5nFRqIbQo+gSB8wX5nvcZv?=
+ =?us-ascii?Q?tl+RS1Fp5sHbUFXLjJ0p=2FMLunxIW9WhXPgr8s5o?=
+ =?us-ascii?Q?3+0CJHP+vw029Y9tm4m1jNDMtgQ8I+zS1IKO=2FDH?=
+ =?us-ascii?Q?LFHKwJzZzkH0YMFloHBHA+PEwMOlchaY5BFwJx?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUiShGf=2FO8XJWpH34Od4Nd?=
+ =?us-ascii?Q?fxXa6jil96uRcJkF+N+LeVnO1tx80ddOyoyOo=2Fc?=
+ =?us-ascii?Q?Brxcl3ERAm0cOY743=2FFH59DWiSf5OzXORh1DLKt?=
+ =?us-ascii?Q?hb1NMKty3PsA5ju0ZzxCrq1WQuZSEQf=2FJlWtgqv?=
+ =?us-ascii?Q?cZmsyCHlNUZsDwjlsT6awaGLw4qS8RFozK9Xagx?=
+ =?us-ascii?Q?WfWYAx9qauGkjl1q+cwOvifEHNoMlJhX=2FCWVsdn?=
+ =?us-ascii?Q?V9n1XtmKCxTyTWI5WZUmoh4mTkMkO6TuAjwR5wg?=
+ =?us-ascii?Q?DNjW=2F2hxQGMxltlZuNps69DTjc2xlKaQifI0JWC?=
+ =?us-ascii?Q?5NySsh28yXWg4jyFcFoGlwYhEXNfJCS9SHA2gRg?=
+ =?us-ascii?Q?EpQdMMB9qH4UZ5jZJWihfWNn277JQbOZKN3UAfB?=
+ =?us-ascii?Q?2cYP9oWGy42wO0l1CqMam5Jb0fN7GdsscKa+6ZC?=
+ =?us-ascii?Q?BapMJ2u+U5BxT6CpqEuZgCKuYgCW7HWuBdfWvnB?=
+ =?us-ascii?Q?oC03ZHMJL5xjrt0v3pEPzSk0jawMEXgcBlCsPrR?=
+ =?us-ascii?Q?PdMcLmF6sLFr7NqvE3L0puYyR=2FnGj8aZFm7lEsI?=
+ =?us-ascii?Q?7aUxcqqe1jR22Mu6kvzMnytiRG9KeP+KMRdip+e?=
+ =?us-ascii?Q?Ut4xIg98s+hxSzPnajG8EzXQQvAxSJD0EtMIK+O?=
+ =?us-ascii?Q?jeUOx7QYwNSbWZsVAevprJrTpcevtNzM4Ftdb5y?=
+ =?us-ascii?Q?Typ1IV8UkgT5OOOwqkhlP73C1FSmqA=2FrLDd1N2E?=
+ =?us-ascii?Q?lEC3TvJaFvN+YsN6d9GIrGEdoArrDct8KPZukIn?=
+ =?us-ascii?Q?KiWLu0223jE42k9rIQRwGe0A7A=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2E=5FSonWNRjA?=
+ =?us-ascii?Q?tFbsOE9mQAI2BSZvfITbMD6upPtRPgK5xhoMDAw?=
+ =?us-ascii?Q?dTAwMLKKXfYtTBqx9lldX9LTjJmiDOwrvpK91Em?=
+ =?us-ascii?Q?98O=5FYtt9YF9YXOFhsA-BZSjE6lPtBtL3-czLS3w?=
+ =?us-ascii?Q?MU0JythfvAR2DhAZNcnUd4ZM=5Fp4i-oWszoYzM=5FV?=
+ =?us-ascii?Q?shUJP8W1lx-pePSlQ=3D=3D=2EX0KLbUhsZfsR6a2BkAm?=
+ =?us-ascii?Q?Vzt8rSJfP8sPxPLg3Z1Ze4hJoMDAwdTAwMAnNq6?=
+ =?us-ascii?Q?BISJOEHNTngG7pBNN9SIIgj28Kp3vk5r8GfVA2h?=
+ =?us-ascii?Q?47zzHqcWLw8Pgo0PTzcHep9fKHXNfsK6eBUmZlU?=
+ =?us-ascii?Q?6tsx=5FsX40uc27C-A0tjlsh1zhwbL8I4eohZ-VoD?=
+ =?us-ascii?Q?mdoJksJthbqeI5zaONtK2eBqHYzL8ncr=5FFxUH8D?=
+ =?us-ascii?Q?I6pk1vpqrddd55X8UB2g3o2WH7qeVSm52pnH0=5Fq?=
+ =?us-ascii?Q?XdpohMie17kiW9lvZjoDrfEgQEU7tsQekfM08Cz?=
+ =?us-ascii?Q?HiWSYBLhUQwWef5bTJz-VdBhDQ7myxfSk9JhjII?=
+ =?us-ascii?Q?piFUxWPH9-yLcdIz42p3nBnC-8Lqd0=5F2HwghaCi?=
+ =?us-ascii?Q?aEVIyAe-7Wt8-dl=5Fxp3BuxbLcI0G4w04SFdAYFs?=
+ =?us-ascii?Q?56OceaIMytSsy6qVDfcecyb5GOuY14Bv9gvF6Bx?=
+ =?us-ascii?Q?Zw0NHaCuq=5FMxf9UMFFTHMHzYBr9F-7yWjReT68w?=
+ =?us-ascii?Q?BTY8ewz1axzLKUCcabxMNmPhcUAn=5FscxUMK8kv=5F?=
+ =?us-ascii?Q?Zw6bxRa20D4AMXGP-vK=5F4eZMaj7V=5FuFItbflIrE?=
+ =?us-ascii?Q?6ABJAQ6MQLCFZd5BuRLBQHfeZjKXgzy3U-kjh6s?=
+ =?us-ascii?Q?pCwPP=5FEhy3EeqmT=5FlywW6vmAocWsavEbxqWt5G1?=
+ =?us-ascii?Q?g0WT7bJonX4tf-gAmhf8Ahz9tIICTRdE9gLkho=5F?=
+ =?us-ascii?Q?aqcWdmKGMCFRL6j-k4wbnj=5FnaS-1jkZ2ddJGwpR?=
+ =?us-ascii?Q?-uHcBIxk00WtruwrFyH=5FonBWiHSPBdPMRU1f5og?=
+ =?us-ascii?Q?uKWwoU0hdW8wLF6qNt0sqHNGTedSC7cQfLxMK4r?=
+ =?us-ascii?Q?XCiTqBfLqmHwfDHArYE7SdhjdwkQCUR73YRO2aB?=
+ =?us-ascii?Q?XJCknTMbqhj2W-Fa8JPahZae5HQoR34nNadSbmY?=
+ =?us-ascii?Q?7ipNv3O8bN4rTS7I0Ppl5U2F029bw847Mo=5F3d52?=
+ =?us-ascii?Q?TbOSoij72XZWO6EOrYkWwszOmDXf4swD9ZEW8mJ?=
+ =?us-ascii?Q?atedDazevQIabj7ZVHsPV07G7aH=5FKeS7Vr4jqwz?=
+ =?us-ascii?Q?hA=5FywTIZ=5FTVC8tiLSchmilVP27bu274GXAH2Qmp?=
+ =?us-ascii?Q?ds-frQWFIwM2il8GCoHVQb4S271DU1XdSuCsa5D?=
+ =?us-ascii?Q?d6IbSQ=3D=3D=3E?=
+
+--79e9be8edf86f834b92767c21e0ebefdbcf22ece056232627800c9b7e9a8
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=us-ascii
+Mime-Version: 1.0
+
+RABIES (02): INDIA (JAMMU AND KASHMIR) HUMAN, DOG
+*************************************************
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+Date: Sun 7 Jan 2024
+Source: BNN [edited]
+<https://bnnbreaking.com/breaking-news/health/rabies-threat-looms-over-ramb=
+an-district-in-jammu-and-kashmir/>
+
+
+In 2023, the Ramban district of Jammu and Kashmir grappled with a
+disturbing uptick in dog bite incidents, including 2 tragic fatalities
+due to rabies. The victims, Assistant Sub Inspector [MR] and a
+civilian named [SS], both died after being bitten by rabid dogs. The
+escalating situation has spotlighted a significant public health
+issue, with locals criticizing the administration for its lack of
+preventive measures and awareness campaigns.
+
+[MR], while performing his duties, fell prey to a rabid dog in May
+[2023]. His diagnosis came at AIIMS [All India Institute of Medical
+Sciences] New Delhi, and he tragically succumbed to the disease by
+August [2023]. In a similar vein, [SS], aged 27, also met a grim fate
+in October [2023] after a dog bite 3 months earlier. The deadly
+disease of rabies, transmitted through the bites of infected dogs,
+claimed their lives, stirring fear in the district.
+
+In the wake of [SS's] death, a medical team swung into action,
+conducting a vaccination drive. Approximately 40 individuals who had
+been in contact with Singh received inoculations, and the offending
+dog was euthanized. However, the fatal incidents have raised questions
+about the region's preparedness to deal with the rabies threat.
+Various locations such as Batote, Gool, Ramban, Ramsu, and Banihal
+have reported frequent dog bite cases, exposing the residents to
+potential infection.
+
+Local residents have expressed concerns about the lack of facilities
+in the municipal councils of these areas to test dogs for rabies. They
+have also criticized the surge in the stray dog population and the
+subsequent increase in dog bite incidents. Dr. Ayob Wani from District
+Hospital Ramban has called for immediate treatment for dog bites,
+underscoring the urgency of the situation. Meanwhile, officials from
+the Health department have assured that anti-rabies vaccines are
+readily available at all medical centers in the district. Yet, these
+assurances do little to quell the rising fear in the community.
+
+As the district contends with a public health crisis, the call from
+locals for strategic action, including immunization or sterilization
+programs for stray dogs, grows louder. The community is looking to the
+administration to address the root cause of the problem and bring an
+end to the threat of rabies.
+
+[Byline: Rafia Tasleem]
+
+--
+Communicated by:
+ProMED
+via
+ProMED-SoAs
+
+["Ramban district is an administrative district in the Jammu division
+of Indian-administered Jammu and Kashmir."
+(<https://en.wikipedia.org/wiki/Ramban_district>)
+
+The stray dog population, and consequently, incidence of dog bites,
+has reportedly increased in the district. As also indicated in the
+article above, 2 persons died from rabies in August and October last
+year (2023) in the district, attributed to dog bites. However, there
+is no mention in the article whether they had received the
+post-exposure prophylaxis (PEP) timely against the disease after the
+dog bites. Rabies is almost always fatal after the appearance of
+clinical symptoms, but vaccine preventable when PEP is strictly
+followed after exposure to the virus from rabid animal bites.
+
+"Vaccinating dogs, including puppies, is the most cost-effective
+strategy for preventing rabies in people because it stops the
+transmission at its source. Moreover, dog vaccination reduces the need
+for PEP."
+(<https://www.who.int/news-room/fact-sheets/detail/rabies>)
+- Mod.PKB
+
+ProMED map of Jammu, Jammu and Kashmir State, India:
+<https://promedmail.org/promed-post?place=3D8714134,5616>]
+
+[See Also:
+Rabies (01): India (GA) human, dog
+http://promedmail.org/post/20240104.87140672023
+2023
+----
+Rabies (57): India (KA) dog bite, human exposure
+http://promedmail.org/post/20231226.8713898
+Rabies (56): Viet Nam (GL) long incubation period
+http://promedmail.org/post/20231225.8713886
+Rabies (55): Myanmar (MO) dog, WOAH
+http://promedmail.org/post/20231223.8713873
+Rabies (52): India, dog bite, increase
+http://promedmail.org/post/20231210.8713623
+Rabies (50): India (UP) human, cat, dog, fatal
+http://promedmail.org/post/20231202.8713464
+Rabies (45): India (UP) human, dog
+http://promedmail.org/post/20231030.8712889
+Rabies (27): Asia (India, Philippines) human, dog
+http://promedmail.org/post/20230621.8710690
+2022
+----
+Rabies (53): Asia (Israel, India) animal, human, epidemiology, control
+http://promedmail.org/post/20221206.8707113
+Rabies (41): Asia (Afghanistan, India, Israel, Malaysia, Philippines,
+Vietnam) http://promedmail.org/post/20221001.8705891
+Rabies (32): Asia (Malaysia, Bhutan) human, dog
+http://promedmail.org/post/20201205.7995796
+Rabies (12): Asia (India) wolf, zoo
+http://promedmail.org/post/20220404.8702407
+Rabies (09): Eurasia (Ukraine, India, Israel) cat, human, cow, control
+http://promedmail.org/post/20220310.8701906
+2021
+----
+Rabies (31): Eurasia (India, Israel, Ukraine), Africa (S Africa)
+human, animal http://promedmail.org/post/20210827.8626789
+Rabies (25): Asia (India, Nepal) human, dog; (Israel) jackal, human
+exp http://promedmail.org/post/20210711.8511091
+2020
+----
+Rabies (19): Asia (Malaysia, Indonesia, Japan ex Philippines) animal,
+human http://promedmail.org/post/20200628.7517416
+Rabies (05): Asia (Israel, Bangladesh) animal, human
+http://promedmail.org/post/20200219.7005843
+2019
+----
+Rabies (46): Asia (Myanmar) dog, OIE
+http://promedmail.org/post/20190928.6698321
+Rabies (33): Asia (Cambodia) human, dog
+http://promedmail.org/post/20190605.6499719
+Rabies (29): Europe, Asia (Norway ex Philippines) human, dog
+http://promedmail.org/post/20190516.6471701
+Rabies (23): Asia (Thailand) human
+http://promedmail.org/post/20190428.6446053
+Rabies (21): Eurasia, Armenia (TV) dog, OIE
+http://promedmail.org/post/20190424.6436412
+Rabies (19): Eurasia, Armenia (AV), dog, OIE
+http://promedmail.org/post/20190418.6429961
+Rabies (18): Asia (Qatar ex Nepal) human, sylvatic exposure susp.,
+comment http://promedmail.org/post/20190416.6425196
+Rabies (17): Asia (Qatar ex Nepal) human, sylvatic exposure suspected,
+comment http://promedmail.org/post/20190411.6416702
+Rabies (16): Asia (Qatar ex Nepal) human, sylvatic exposure suspected
+http://promedmail.org/post/20190410.6412045
+Rabies (03): Africa, Asia, human, cattle, dog, counterfeit vaccine
+http://promedmail.org/post/20190202.6291746
+2018
+----
+Rabies (47): Asia (Myanmar) human, canine
+http://promedmail.org/post/20180904.6007321
+Rabies (26): Asia (Kazakhstan) fox, OIE
+http://promedmail.org/post/20180524.5816417
+Rabies (16): Africa (S Africa), Asia (Thailand, Viet Nam, Israel)
+human, animal http://promedmail.org/post/20180321.5701731
+Rabies (15): Asia (Lebanon) canine, OIE
+http://promedmail.org/post/20180314.5687339
+Rabies (14): Asia (Kazakhstan) feline, OIE
+http://promedmail.org/post/20180314.5684768
+Rabies (13): Africa (Zimbabwe) wild dog
+http://promedmail.org/post/20180313.5683456
+Rabies (12): Africa (S Africa) Asia (Thailand) animal, human
+http://promedmail.org/post/20180228.5655831
+Rabies (11): Asia (Kazakhstan) livestock, wolf, OIE
+http://promedmail.org/post/20180221.5643296
+Rabies (08): Asia (Malaysia-SK) human, animal
+http://promedmail.org/post/20180127.5589162
+Rabies (03): Asia (Israel) wild, domestic, OIE
+http://promedmail.org/post/20180110.5550871
+Rabies (02): Asia (Israel) wild, domestic, spread, control measures
+http://promedmail.org/post/20180109.5548024
+Rabies (01): Asia (Israel) wildlife, livestock, human exp, spread:
+http://promedmail.org/post/20180104.55374552017
+2017
+----
+Rabies (26): Asia (India, Nepal, Pakistan) Africa (Algeria) animal,
+human http://promedmail.org/post/20170616.5109529
+Rabies (17): Asia (India) bat
+http://promedmail.org/post/20170405.4949697
+Rabies (06): Asia (India) canine, bovine, human exp. cow milk susp
+http://promedmail.org/post/20170125.4786220
+2016
+----
+Rabies, animal, human (12): Philippines (PN), World Rabies Day
+http://promedmail.org/post/20160927.4519326
+Rabies, animal, human (11): Turkey, India, Israel
+http://promedmail.org/post/20160923.4510261
+Rabies, zoo animals - India (02): (DL) deer
+http://promedmail.org/post/20160801.4385930
+Rabies, zoo animals - India: (Delhi) mongoose bites susp
+http://promedmail.org/post/20160511.4215148
+2015
+----
+Rabies - India (11): (KL) avian, 1st case reported
+http://promedmail.org/post/20151205.3843021
+Rabies - India (10): (TN) canine, human
+http://promedmail.org/post/20151027.3747927
+Rabies - India (09): (KL) bovine, ex canine exposure
+http://promedmail.org/post/20151010.3706402
+Rabies - India (08): (MH) lack of immunoglobin
+http://promedmail.org/post/20150721.3526475
+Rabies - India (07): (GA) bovine, canine, human exp
+http://promedmail.org/post/20150721.3525217
+Rabies - India (06): (CH) human, canine
+http://promedmail.org/post/20150416.3302837
+Rabies - India (04): (MN) canine
+http://promedmail.org/post/20150127.3124202
+Rabies - India (03): (MH) canine, multiple human exposures
+http://promedmail.org/post/20150120.3106231]
+.................................................pkb/tw/pkb/tw/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3DGrfab4B4MTRS03iOFwAJcDQ56R8gEJeZgTSJJmgdXhpoMDAwdTAwMLF1uzH=
+lS8p03r85SdNR3gTJ9qOaSruWy-HQ7J9OuoAyFp2MpzxlI4eB2XTUxYvPSukDTNXqIYuQB_owBt=
+-njv2vINaB2CdO6pvs0DGiRDwp8p7edUJqszlMp_Ckkrl6B9lg0wJ3P07Zha3lHCS1zr7dzhwvo=
+G9xJgQezWofqHH-y0czt5X1pPbcvQ3Wc6hXg4pX9GuqBHiOtVdmJJGJACkgyxXkzjGbBTm3rUqz=
+4c4vi8NqHPyPUBO9-DBzClh6iKdV11jErn2bQHFw7HCxAx_BvxPjaAeXsIlrQhMfJ1aNFV287Pd=
+sZ3azXKcinzpWezoXodS0ZT1xdtW5KzsRhCAOnQC3FuaNp_2-FIXXoKwKyEwM226XEJMY9FCRL1=
+xotLG5Min4tSoj2EWsP9VWrR_rKRYMMF1mRSs1_5Q1A0lHoU_voqPAQpeTukIiaSU8KhreGYQg4=
+laNtS9RZEIhuW8oQZA04cmSa6URUOwvYbqyj90aOLv9zMsNdtP-kVzJomk-Ee5Y7ngz0TtmuuQ2=
+4uK-sG5-XnoxZ1HwEWf1wlWRJgoqcBDkdYNn9wg6ubbPgiooNpXnosjgcJoG0WiDMQTICBgV4uP=
+lLuc6CNSXg3v5UcpNftwkzVTJBviz8o7eKmky-tLbgIKPTQqqtVhplP2yFpjaAcHZ-yrsr5dJDq=
+-p6LsLjF2FaCK8GqPIEITT9WMvJ56A-e8PNyKEb3-phBXYkO2clzvBQFjrDHrSbf7DJwO3-zQBi=
+wuqZLlC8XsmekyjC4E7BJeiuVDdZ7IzH7lPsaY6ezeb04jwU5XtO3fKfA38Es03CmEopobCtddr=
+_PrfeawYW_pNPxRCf49FU8weipVHfi1uTtEdgmNzrPiV8U-WUz4qPoOsMcEWCw11kJDNBPaVVnj=
+guQZDSNuqV8GTu8tcELlFEDq81ZtV99_lFGvv1Vevotd6JhyRdFQbBMJWfqKHBViikdU_rK3YQA=
+g_twpmM1rLd-nw82CppYOD98v8APe27mMuhvGHxdFkJ_BYWfdnuTIHdhdvJcMyt_I0KeqrY5x2J=
+uytuOhQH6BMHCaKxm4ia71lV4up3uk9zHrgd44l2voxRMNTP_cT8hhjmWgwIcg8OtCyQGgIRHHa=
+tBfffvCnZCztgvHAs4LLoeujR5ppRmADl9OfcPVAgTBksjjZ33EZAb9Sr1ADdJcj )
+############################################################
+############################################################
+
+--79e9be8edf86f834b92767c21e0ebefdbcf22ece056232627800c9b7e9a8
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>RABIES (02): INDIA (JAMMU AND KASHMIR) HUMAN, DOG<br>****************=
+*********************************<br>A ProMED-mail post<br><a href=3D"https=
+://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisIijpefK5PNjW-mL-YZGn=
+fgDOxU1G3gjwnPSi2Tfv3HA/42v/uQ96f-G0QzmlSFCFhlgrdw/h0/5oCR34pItlIQ76zpbwjWS=
+j-9zIlLamoyV2uLKvdLN_M">http://www.promedmail.org</a><br>ProMED-mail is a p=
+rogram of the<br>International Society for Infectious Diseases<br><a href=
+=3D"https://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisCT5tpD4Upm3=
+qyMCbcYSQvc/42v/uQ96f-G0QzmlSFCFhlgrdw/h1/fARdLkl-A70RJIEiWkANX7vsG9xcvBYRd=
+5EMBmLM1Yc">http://www.isid.org</a><br><br>Date: Sun 7 Jan 2024=0D<br>Sourc=
+e: BNN [edited]=0D<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/yz2=
+fdA_g7iMSh8qzYPxBFm2jzCah4MIH1gIh7fWPp--1wpl-kkFmWnbaUPRrzfyc46zzvP4K6aCTX_=
+qEEAzGrq8ZbFo2GZLrxRnuL-QxG8BMnCoQ0bNAjK1BiJt_njxMZVKPWThXj1gjkavyfjxGu82Ja=
+BdEE30KvFzA17vyx3o/42v/uQ96f-G0QzmlSFCFhlgrdw/h2/KZjkamuUXufd6_BN-xMZNrTkvv=
+UkjrZjZe5eqZieEbY">https://bnnbreaking.com/breaking-news/health/rabies-thre=
+at-looms-over-ramban-district-in-jammu-and-kashmir/</a>=0D<br>=0D<br>=0D<br=
+>In 2023, the Ramban district of Jammu and Kashmir grappled with a<br>distu=
+rbing uptick in dog bite incidents, including 2 tragic fatalities<br>due to=
+ rabies. The victims, Assistant Sub Inspector [MR] and a<br>civilian named =
+[SS], both died after being bitten by rabid dogs. The<br>escalating situati=
+on has spotlighted a significant public health<br>issue, with locals critic=
+izing the administration for its lack of<br>preventive measures and awarene=
+ss campaigns.=0D<br>=0D<br>[MR], while performing his duties, fell prey to =
+a rabid dog in May<br>[2023]. His diagnosis came at AIIMS [All India Instit=
+ute of Medical<br>Sciences] New Delhi, and he tragically succumbed to the d=
+isease by<br>August [2023]. In a similar vein, [SS], aged 27, also met a gr=
+im fate<br>in October [2023] after a dog bite 3 months earlier. The deadly<=
+br>disease of rabies, transmitted through the bites of infected dogs,<br>cl=
+aimed their lives, stirring fear in the district.=0D<br>=0D<br>In the wake =
+of [SS's] death, a medical team swung into action,<br>conducting a vaccinat=
+ion drive. Approximately 40 individuals who had<br>been in contact with Sin=
+gh received inoculations, and the offending<br>dog was euthanized. However,=
+ the fatal incidents have raised questions<br>about the region's preparedne=
+ss to deal with the rabies threat.<br>Various locations such as Batote, Goo=
+l, Ramban, Ramsu, and Banihal<br>have reported frequent dog bite cases, exp=
+osing the residents to<br>potential infection.=0D<br>=0D<br>Local residents=
+ have expressed concerns about the lack of facilities<br>in the municipal c=
+ouncils of these areas to test dogs for rabies. They<br>have also criticize=
+d the surge in the stray dog population and the<br>subsequent increase in d=
+og bite incidents. Dr. Ayob Wani from District<br>Hospital Ramban has calle=
+d for immediate treatment for dog bites,<br>underscoring the urgency of the=
+ situation. Meanwhile, officials from<br>the Health department have assured=
+ that anti-rabies vaccines are<br>readily available at all medical centers =
+in the district. Yet, these<br>assurances do little to quell the rising fea=
+r in the community.=0D<br>=0D<br>As the district contends with a public hea=
+lth crisis, the call from<br>locals for strategic action, including immuniz=
+ation or sterilization<br>programs for stray dogs, grows louder. The commun=
+ity is looking to the<br>administration to address the root cause of the pr=
+oblem and bring an<br>end to the threat of rabies.=0D<br>=0D<br>[Byline: Ra=
+fia Tasleem]=0D<br>=0D<br>--=0D<br>Communicated by:=0D<br>ProMED=0D<br>via=0D=
+<br>ProMED-SoAs<br><br>["Ramban district is an administrative district in t=
+he Jammu division<br>of Indian-administered Jammu and Kashmir."=0D<br>(<a h=
+ref=3D"https://u19268662.ct.sendgrid.net/ss/c/u6Jy221DtLTd6phwYNECndCVDGULF=
+cCLoA-Mb23Mb1WU-ydagTw2tjYknM9xOsd2ss3XQ41v8I6C4uonAwQ84Q/42v/uQ96f-G0QzmlS=
+FCFhlgrdw/h3/oswULpbyrQM5hWmNRUrzP9btbY--UeEBz4Hws_Z31C8">https://en.wikipe=
+dia.org/wiki/Ramban_district</a>)=0D<br>=0D<br>The stray dog population, an=
+d consequently, incidence of dog bites,<br>has reportedly increased in the =
+district. As also indicated in the<br>article above, 2 persons died from ra=
+bies in August and October last<br>year (2023) in the district, attributed =
+to dog bites. However, there<br>is no mention in the article whether they h=
+ad received the<br>post-exposure prophylaxis (PEP) timely against the disea=
+se after the<br>dog bites. Rabies is almost always fatal after the appearan=
+ce of<br>clinical symptoms, but vaccine preventable when PEP is strictly<br=
+>followed after exposure to the virus from rabid animal bites.=0D<br>=0D<br=
+>"Vaccinating dogs, including puppies, is the most cost-effective<br>strate=
+gy for preventing rabies in people because it stops the<br>transmission at =
+its source. Moreover, dog vaccination reduces the need<br>for PEP."=0D<br>(=
+<a href=3D"https://u19268662.ct.sendgrid.net/ss/c/TLh_csrC34X_iXpbYoMam6rO_=
+cmmDV15e_sx9bKVg9MnQHPwUYWRn6ydRy7ULxLUXDfa5jHp_HeTUslz9UaMUw/42v/uQ96f-G0Q=
+zmlSFCFhlgrdw/h4/V-UN1Bq-cnXCzfBxPaCSqi0jYgs90LCARxTOqbp3uyo">https://www.w=
+ho.int/news-room/fact-sheets/detail/rabies</a>)=0D<br>- Mod.PKB=0D<br>=0D<b=
+r>ProMED map of Jammu, Jammu and Kashmir State, India:<br><a href=3D"https:=
+//u19268662.ct.sendgrid.net/ss/c/sSnCkKCWBvais3EuVAOvgy2WOIX7pp1nXnn4AbwuQ3=
+Z6WbkfhqXYXU-aTMPJ8yThEdqMLG0MJ-aofSDa6r8Gzg/42v/uQ96f-G0QzmlSFCFhlgrdw/h5/=
+WW-WHY4JF332BvsnwZtC6oMpq_UT8kRoZr7jVyHZJqY">https://promedmail.org/promed-=
+post?place=3D8714134,5616</a>]<br><br>[See Also:<br>Rabies (01): India (GA)=
+ human, dog<br>http://promedmail.org/post/20240104.87140672023=0D<br>2023=0D=
+<br>----=0D<br>Rabies (57): India (KA) dog bite, human exposure<br>http://p=
+romedmail.org/post/20231226.8713898=0D<br>Rabies (56): Viet Nam (GL) long i=
+ncubation period<br>http://promedmail.org/post/20231225.8713886=0D<br>Rabie=
+s (55): Myanmar (MO) dog, WOAH<br>http://promedmail.org/post/20231223.87138=
+73=0D<br>Rabies (52): India, dog bite, increase<br>http://promedmail.org/po=
+st/20231210.8713623=0D<br>Rabies (50): India (UP) human, cat, dog, fatal<br=
+>http://promedmail.org/post/20231202.8713464=0D<br>Rabies (45): India (UP) =
+human, dog<br>http://promedmail.org/post/20231030.8712889=0D<br>Rabies (27)=
+: Asia (India, Philippines) human, dog<br>http://promedmail.org/post/202306=
+21.8710690=0D<br>2022=0D<br>----=0D<br>Rabies (53): Asia (Israel, India) an=
+imal, human, epidemiology, control<br>http://promedmail.org/post/20221206.8=
+707113=0D<br>Rabies (41): Asia (Afghanistan, India, Israel, Malaysia, Phili=
+ppines,<br>Vietnam) http://promedmail.org/post/20221001.8705891=0D<br>Rabie=
+s (32): Asia (Malaysia, Bhutan) human, dog<br>http://promedmail.org/post/20=
+201205.7995796=0D<br>Rabies (12): Asia (India) wolf, zoo<br>http://promedma=
+il.org/post/20220404.8702407=0D<br>Rabies (09): Eurasia (Ukraine, India, Is=
+rael) cat, human, cow, control<br>http://promedmail.org/post/20220310.87019=
+06=0D<br>2021=0D<br>----=0D<br>Rabies (31): Eurasia (India, Israel, Ukraine=
+), Africa (S Africa)<br>human, animal http://promedmail.org/post/20210827.8=
+626789=0D<br>Rabies (25): Asia (India, Nepal) human, dog; (Israel) jackal, =
+human<br>exp http://promedmail.org/post/20210711.8511091=0D<br>2020=0D<br>-=
+---=0D<br>Rabies (19): Asia (Malaysia, Indonesia, Japan ex Philippines) ani=
+mal,<br>human http://promedmail.org/post/20200628.7517416=0D<br>Rabies (05)=
+: Asia (Israel, Bangladesh) animal, human<br>http://promedmail.org/post/202=
+00219.7005843=0D<br>2019=0D<br>----=0D<br>Rabies (46): Asia (Myanmar) dog, =
+OIE<br>http://promedmail.org/post/20190928.6698321=0D<br>Rabies (33): Asia =
+(Cambodia) human, dog<br>http://promedmail.org/post/20190605.6499719=0D<br>=
+Rabies (29): Europe, Asia (Norway ex Philippines) human, dog<br>http://prom=
+edmail.org/post/20190516.6471701=0D<br>Rabies (23): Asia (Thailand) human<b=
+r>http://promedmail.org/post/20190428.6446053=0D<br>Rabies (21): Eurasia, A=
+rmenia (TV) dog, OIE<br>http://promedmail.org/post/20190424.6436412=0D<br>R=
+abies (19): Eurasia, Armenia (AV), dog, OIE<br>http://promedmail.org/post/2=
+0190418.6429961=0D<br>Rabies (18): Asia (Qatar ex Nepal) human, sylvatic ex=
+posure susp.,<br>comment http://promedmail.org/post/20190416.6425196=0D<br>=
+Rabies (17): Asia (Qatar ex Nepal) human, sylvatic exposure suspected,<br>c=
+omment http://promedmail.org/post/20190411.6416702=0D<br>Rabies (16): Asia =
+(Qatar ex Nepal) human, sylvatic exposure suspected<br>http://promedmail.or=
+g/post/20190410.6412045=0D<br>Rabies (03): Africa, Asia, human, cattle, dog=
+, counterfeit vaccine<br>http://promedmail.org/post/20190202.6291746=0D<br>=
+2018=0D<br>----=0D<br>Rabies (47): Asia (Myanmar) human, canine<br>http://p=
+romedmail.org/post/20180904.6007321=0D<br>Rabies (26): Asia (Kazakhstan) fo=
+x, OIE<br>http://promedmail.org/post/20180524.5816417=0D<br>Rabies (16): Af=
+rica (S Africa), Asia (Thailand, Viet Nam, Israel)<br>human, animal http://=
+promedmail.org/post/20180321.5701731=0D<br>Rabies (15): Asia (Lebanon) cani=
+ne, OIE<br>http://promedmail.org/post/20180314.5687339=0D<br>Rabies (14): A=
+sia (Kazakhstan) feline, OIE<br>http://promedmail.org/post/20180314.5684768=0D=
+<br>Rabies (13): Africa (Zimbabwe) wild dog<br>http://promedmail.org/post/2=
+0180313.5683456=0D<br>Rabies (12): Africa (S Africa) Asia (Thailand) animal=
+, human<br>http://promedmail.org/post/20180228.5655831=0D<br>Rabies (11): A=
+sia (Kazakhstan) livestock, wolf, OIE<br>http://promedmail.org/post/2018022=
+1.5643296=0D<br>Rabies (08): Asia (Malaysia-SK) human, animal<br>http://pro=
+medmail.org/post/20180127.5589162=0D<br>Rabies (03): Asia (Israel) wild, do=
+mestic, OIE<br>http://promedmail.org/post/20180110.5550871=0D<br>Rabies (02=
+): Asia (Israel) wild, domestic, spread, control measures<br>http://promedm=
+ail.org/post/20180109.5548024=0D<br>Rabies (01): Asia (Israel) wildlife, li=
+vestock, human exp, spread:<br>http://promedmail.org/post/20180104.55374552=
+017=0D<br>2017=0D<br>----=0D<br>Rabies (26): Asia (India, Nepal, Pakistan) =
+Africa (Algeria) animal,<br>human http://promedmail.org/post/20170616.51095=
+29=0D<br>Rabies (17): Asia (India) bat<br>http://promedmail.org/post/201704=
+05.4949697=0D<br>Rabies (06): Asia (India) canine, bovine, human exp. cow m=
+ilk susp<br>http://promedmail.org/post/20170125.4786220=0D<br>2016=0D<br>--=
+--=0D<br>Rabies, animal, human (12): Philippines (PN), World Rabies Day<br>=
+http://promedmail.org/post/20160927.4519326=0D<br>Rabies, animal, human (11=
+): Turkey, India, Israel<br>http://promedmail.org/post/20160923.4510261=0D<=
+br>Rabies, zoo animals - India (02): (DL) deer<br>http://promedmail.org/pos=
+t/20160801.4385930=0D<br>Rabies, zoo animals - India: (Delhi) mongoose bite=
+s susp<br>http://promedmail.org/post/20160511.4215148=0D<br>2015=0D<br>----=0D=
+<br>Rabies - India (11): (KL) avian, 1st case reported<br>http://promedmail=
+.org/post/20151205.3843021=0D<br>Rabies - India (10): (TN) canine, human<br=
+>http://promedmail.org/post/20151027.3747927=0D<br>Rabies - India (09): (KL=
+) bovine, ex canine exposure<br>http://promedmail.org/post/20151010.3706402=0D=
+<br>Rabies - India (08): (MH) lack of immunoglobin<br>http://promedmail.org=
+/post/20150721.3526475=0D<br>Rabies - India (07): (GA) bovine, canine, huma=
+n exp<br>http://promedmail.org/post/20150721.3525217=0D<br>Rabies - India (=
+06): (CH) human, canine<br>http://promedmail.org/post/20150416.3302837=0D<b=
+r>Rabies - India (04): (MN) canine<br>http://promedmail.org/post/20150127.3=
+124202=0D<br>Rabies - India (03): (MH) canine, multiple human exposures<br>=
+http://promedmail.org/post/20150120.3106231]<br>...........................=
+......................pkb/tw/pkb/tw/jh<br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3DGrfab4B4MTRS03iOFwAJcDQ56R8gEJeZgTSJJmgdXhpoMDAwdT=
+AwMLF1uzHlS8p03r85SdNR3gTJ9qOaSruWy-HQ7J9OuoAyFp2MpzxlI4eB2XTUxYvPSukDTNXqI=
+YuQB_owBt-njv2vINaB2CdO6pvs0DGiRDwp8p7edUJqszlMp_Ckkrl6B9lg0wJ3P07Zha3lHCS1=
+zr7dzhwvoG9xJgQezWofqHH-y0czt5X1pPbcvQ3Wc6hXg4pX9GuqBHiOtVdmJJGJACkgyxXkzjG=
+bBTm3rUqz4c4vi8NqHPyPUBO9-DBzClh6iKdV11jErn2bQHFw7HCxAx_BvxPjaAeXsIlrQhMfJ1=
+aNFV287PdsZ3azXKcinzpWezoXodS0ZT1xdtW5KzsRhCAOnQC3FuaNp_2-FIXXoKwKyEwM226XE=
+JMY9FCRL1xotLG5Min4tSoj2EWsP9VWrR_rKRYMMF1mRSs1_5Q1A0lHoU_voqPAQpeTukIiaSU8=
+KhreGYQg4laNtS9RZEIhuW8oQZA04cmSa6URUOwvYbqyj90aOLv9zMsNdtP-kVzJomk-Ee5Y7ng=
+z0TtmuuQ24uK-sG5-XnoxZ1HwEWf1wlWRJgoqcBDkdYNn9wg6ubbPgiooNpXnosjgcJoG0WiDMQ=
+TICBgV4uPlLuc6CNSXg3v5UcpNftwkzVTJBviz8o7eKmky-tLbgIKPTQqqtVhplP2yFpjaAcHZ-=
+yrsr5dJDq-p6LsLjF2FaCK8GqPIEITT9WMvJ56A-e8PNyKEb3-phBXYkO2clzvBQFjrDHrSbf7D=
+JwO3-zQBiwuqZLlC8XsmekyjC4E7BJeiuVDdZ7IzH7lPsaY6ezeb04jwU5XtO3fKfA38Es03CmE=
+opobCtddr_PrfeawYW_pNPxRCf49FU8weipVHfi1uTtEdgmNzrPiV8U-WUz4qPoOsMcEWCw11kJ=
+DNBPaVVnjguQZDSNuqV8GTu8tcELlFEDq81ZtV99_lFGvv1Vevotd6JhyRdFQbBMJWfqKHBViik=
+dU_rK3YQAg_twpmM1rLd-nw82CppYOD98v8APe27mMuhvGHxdFkJ_BYWfdnuTIHdhdvJcMyt_I0=
+KeqrY5x2JuytuOhQH6BMHCaKxm4ia71lV4up3uk9zHrgd44l2voxRMNTP_cT8hhjmWgwIcg8OtC=
+yQGgIRHHatBfffvCnZCztgvHAs4LLoeujR5ppRmADl9OfcPVAgTBksjjZ33EZAb9Sr1ADdJcj" =
+target=3D"_blank" class=3D"Unsubscribe--unsubscribePreferences" style=3D"fo=
+nt-family:sans-serif;text-decoration:none;">Unsubscribe Preferences</a></di=
+v><br>############################################################<br>#####=
+#######################################################<br><br><img src=3D"=
+https://u19268662.ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/42v/uQ96f-G0Q=
+zmlSFCFhlgrdw/ho.gif" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=
+=3D"height:1px !important;width:1px !important;border-width:0 !important;ma=
+rgin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;=
+margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !importa=
+nt;padding-right:0 !important;padding-left:0 !important;"/></body>
+</html>
+--79e9be8edf86f834b92767c21e0ebefdbcf22ece056232627800c9b7e9a8--

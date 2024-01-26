@@ -1,0 +1,533 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a98:c004:0:b0:1eb:e128:bbe3 with SMTP id l4csp3965637eic;
+        Mon, 15 Jan 2024 14:39:21 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IGlPcR39wzg28ZoPKNDqcwNP/uSTT0fw/lFx3zT6XgL8rFLXlMoEmM4jCk+VVqlqClTnEdi
+X-Received: by 2002:a17:903:18e:b0:1d5:b947:5914 with SMTP id z14-20020a170903018e00b001d5b9475914mr6238163plg.82.1705358361400;
+        Mon, 15 Jan 2024 14:39:21 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1705358361; cv=none;
+        d=google.com; s=arc-20160816;
+        b=fBBc9YbmBSOZihtRivtxtDZWvoSNASwGFX62d5BV5ekP0dMsfRrykCIQ251k5Xk1EE
+         6Ruf+q5YrbOCp3a4uUTAJWUxG6iB5aEihvwdh2dxPVRyOv08d6KsVhh2OogiN50tMt+y
+         TwML0wNHAdIaDfyvJiHQsAdgv5EGoxNEJKx/DEetB3iXPitERzT65uimhv5uOLclzQD2
+         FDqIx9nXlV9PzPPdnB6VxSw9RYjEHWz1q1yPyZnoLvr4rFQ9XSx/1TR02aorqpGRB6WL
+         /G6jZjyEj0TNKGKISjC9EC1VmlPZCqVsqfvcrCI04RVjo1zB7DazPVvKtY/r11sRKSg5
+         Tv1g==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=WxFnxvYwsAhmRuBkhX93ddmAK5cOy5vYKFqyq4BHjW4=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=IbUFhQ9SO6ZmRUNnIBMXDhkJ80itQ3MeLYi3GbMsW/Cs4YDYAMCDTNGOgw/cVPDwzk
+         n3Receb/2WmaAF1khgqYsIp3Auk+zbMAzfTjLxYkyyXNPraUTbMUuMahv/QeT19xcppL
+         fs8PoDcR2KVCYn5AyPH5ueVKuJoKYgYRM+624e07nwvlm/fDqCwlmgf5JwUt/vN1lQQk
+         pT4CJL4NUwQceaMJs7ut+PjktzzQQGdEb2HWXwGHps40nKwhn19wEBjL2Nxf62JDEOEk
+         6Amk1HdDa0FoXMS+nQ7Iv50zwBVufRTcbtejq/7ylq9FraTyUAsHi26on3z+LfuZR3o0
+         dUjA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=acYkXPWu;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b="gBfS0UD/";
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id s2-20020a170902c64200b001d4e20ed4c3si9422341pls.366.2024.01.15.14.39.20
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 15 Jan 2024 14:39:21 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=acYkXPWu;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b="gBfS0UD/";
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=WxFnxvYwsAhmRuBkhX93ddmAK5cOy5vYKFqyq4BHjW4=;
+	b=acYkXPWuZW2Y55IXYzQJRGvOUFWGZjCn5rgc3X2n1Ta187SfC/YVDQU9QTkWT/taF1El
+	e/dKnq+yVwuyJL7Q8K3Ee3szXXWRXpA2gHcgZLXkAGfEr0gDLoogW+GbKWRp1F8rvpKnmI
+	1zjsXstRH/HbUJNzleh7rJKjYogxr3KIW3DHNenNacq+XNVn8rUwsb8e6I1G+oNPukJ8WD
+	9qBkGbUtO2Oo4wDOYtaws8J5fQnrK4RysLXYItNm5h1T/Uuab+aw40TJ15KmLtH1zBFriA
+	zQcwu021g/sim2Z8gtybwW9IOtKufQOvvTkkgyVqyU1Qv5vHmrlu0SqBgncvRF0A==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=WxFnxvYwsAhmRuBkhX93ddmAK5cOy5vYKFqyq4BHjW4=;
+	b=gBfS0UD/+C32m47SJ5QxigpVsK+ZeGz574MUmjjTHjChP7+2mUXUmaDke02ryKR27FIK
+	CV2WgFwpPHQ2zudqL8XqGJW7YRPVFU6as5xevAuouMVd7KxFPy9JmAWZEkFwL7IQohFXzJ
+	rKcfsOwa8mfR+psf+q4koHOVVBY/UY5Ig=
+Received: by filterdrecv-786cd9884d-lj6hb with SMTP id filterdrecv-786cd9884d-lj6hb-1-65A5B414-2F
+        2024-01-15 22:39:17.078631569 +0000 UTC m=+7790281.917741612
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-17 (SG) with HTTP
+	id 6cwq-ZdcQACoRD3LnZWr4w
+	Mon, 15 Jan 2024 22:39:16.943 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=378976483dc6eecdcee74269ae7fc76b2e7f9edfd6eee1f85fa5db25f86a
+Date: Mon, 15 Jan 2024 22:39:19 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <6cwq-ZdcQACoRD3LnZWr4w@geopod-ismtpd-17>
+Subject: PRO/EDR> Campylobacteriosis, sapovirus - China: (Beijing) waterborne,
+ 2021
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iB+813H0dAh+4npnar+xANTSS93Ylqz=2FGE0Z66Q?=
+ =?us-ascii?Q?nJqGWZAfsnc=2FwKLJrumBH3VmsenIsh6Yeq1ZoSX?=
+ =?us-ascii?Q?McFNCLueV1KgFcNzgdQyVZ3SAkoVN4QeMgtpQ4J?=
+ =?us-ascii?Q?WCqVx3bxvU7FTzH5Wj5ho6mF0CsNbaJwxb6xW+T?=
+ =?us-ascii?Q?3VRz6larMWyj5AwL6NWudp2Eizg36POrXdhVKv?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUhc93xcG=2F095a5S4+mt=2FG?=
+ =?us-ascii?Q?uYUpctI=2FOGD2dwyi+uvm2j4FCdvuw0l9zcHM8iA?=
+ =?us-ascii?Q?mojOvTXq7jOpDFFNtfsYkHQYACEW8pq1BXXqYmH?=
+ =?us-ascii?Q?oGTsnt6QpE2ZV5WVqnpwfXWoLXx7+4bjuGDIfcp?=
+ =?us-ascii?Q?8o3Lh8JHmudTgmhxctzjegdIt8bw0hORC5IBFMY?=
+ =?us-ascii?Q?Vnxbcpjl8ZhLA1kRPSQqTiZ9cTgLKX0phTDM+QC?=
+ =?us-ascii?Q?c8jWvN+J6xOKUWxUcpWZAU6XjiS0Ht5Bea7t8u2?=
+ =?us-ascii?Q?9u2gBdQKYwQBomuXduOEDS5n2AYBGOtncsxnRcD?=
+ =?us-ascii?Q?+UQ=2FgxWShIZqHGigAdIHfr+jezUh2rd2Ok9zbRc?=
+ =?us-ascii?Q?ncj3PwCuRxhsCkAPtzzmnroOF5r4Y8U=2F9mlCEpH?=
+ =?us-ascii?Q?OSz3e7VT=2FBFpXOiWEBb2RKY0zqjbHV1JRd6udKD?=
+ =?us-ascii?Q?eWDYSyQwNNGA0iqb0EVgF=2FvMQ0vBKQwCat7h9DH?=
+ =?us-ascii?Q?MF18t0dRTH3ZDQ3dPmOt9ej7DYnBbbTjk5TSrkw?=
+ =?us-ascii?Q?ShBS3VoKWmGSr+NqB9H9lIe15kbeoCdUCdWs8j0?=
+ =?us-ascii?Q?iSAAYOU01A5iSugsnNmIwDHpP8Pn12xuAWHK=2F5f?=
+ =?us-ascii?Q?RIR0iJA3bZD4IXz7e=2F9urxWVr7ZX4Xdkzw3kh01?=
+ =?us-ascii?Q?OlbMOnRRxxpDjhuMt42I6MLb=2F4JtnNpTNiE4gvT?=
+ =?us-ascii?Q?2hOKwW91WLud+xlOL737wcNP1gLM90RvCVDxe6e?=
+ =?us-ascii?Q?lFFAezKywIQEQZj0MdK5wKpL8cR+7I2mKidgnTB?=
+ =?us-ascii?Q?UQOlYT3=2Ft8iTLW6DGY12S=2FSVEw=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2E4xNVRbpPO?=
+ =?us-ascii?Q?KB2DLxWk7cJ4JhUaevMrGzCEzv84NWbD-VoMDAw?=
+ =?us-ascii?Q?dTAwMBP9JJfTPObygxT8lQWh1o7SjP=5FBhBpHiYP?=
+ =?us-ascii?Q?UQgmyrTGLfbSQxiCnhr5oMdvTri8SeoUPol1F4L?=
+ =?us-ascii?Q?apdDgoWvY9OSDQV23=5F0fnuunAc8VF7NwHbievTj?=
+ =?us-ascii?Q?X5ak=5FCKPAO0Tgo06g=3D=3D=2EnYnCeFGG4PnScgtGoQv?=
+ =?us-ascii?Q?sXMXSbKMvTgsam5=5Fc37132nxoMDAwdTAwMIiVWw?=
+ =?us-ascii?Q?Be9cD-0qShaGj3E73DBKcHz-qmUhwo3ATUn3IHZ?=
+ =?us-ascii?Q?zbTFjrguxtWQ70epEumw4kv1oAhyT-ZljwCa6Sn?=
+ =?us-ascii?Q?drmspKYijPX3juY1l9O0hPbOZWLDNwUbS-qeP5y?=
+ =?us-ascii?Q?d7vtgV5H565lCZRfOJVbXumKYdCorlcFtXIVSrG?=
+ =?us-ascii?Q?VfTi4FvxZhOohxzRAH7fuviB9Ainu4cNDz8J6h4?=
+ =?us-ascii?Q?vI41fTJFhfpy6N4CzAbEbCYCUQsvI3eU-SHFjv5?=
+ =?us-ascii?Q?NNiFltStenNuwo6jrXNkvf03XjfDgw5pVmSkfwI?=
+ =?us-ascii?Q?d8-IZwruGY4MMPT7XIaeo0Xi5pwhsNh87zk7v=5Fy?=
+ =?us-ascii?Q?eY9hCk-3dWzqMNOktej51Aj1qVFyrhzgSZcyT1t?=
+ =?us-ascii?Q?MLO3JiJ0xa6hJWDHahCo0G4zFA1pkW0V9iW2LIu?=
+ =?us-ascii?Q?Dq1XgFp51xDFiA2xbB4MQKbn6=5FzbIu0JnY8y-MS?=
+ =?us-ascii?Q?nI3rWYLzJQwCQW6d8oWdm062ID-aljmu1ev4Tjn?=
+ =?us-ascii?Q?irAn5CdUike-oZAnsr9rdwnq99xjeyUKfKIfbRf?=
+ =?us-ascii?Q?9AtIPRg15hWO=5FFuH-6-7hAB0w5ywCmI4cJT5ODV?=
+ =?us-ascii?Q?Sb4PFJlyGJbdUmnHbKiBTYjt0Ff5oI0IKQ-LY4I?=
+ =?us-ascii?Q?OEDVfh-JMj25kk5v5JL5TuptTeyyeM4lh3g4gey?=
+ =?us-ascii?Q?QHNPBBKqJOFDzyeOYUQ=5FeJy=5F4xjgKpMlpwIKW3j?=
+ =?us-ascii?Q?2I-XmKNg92XqtxxTeLsFnhVd=5F4oc2RrmExcOjKp?=
+ =?us-ascii?Q?k5NJ7tWRn1hdczwkp0V2yFDjbs=5F9onPgzz9CHJ8?=
+ =?us-ascii?Q?5yTqwf4RyCEXhXViBzSbFGsD5ebxiv=5FDwPWuAf4?=
+ =?us-ascii?Q?gt-1oeq3iTw1VEKQ8bsp=5F7-jAJQZkidLjW40gBc?=
+ =?us-ascii?Q?Rc2hQ6O7JDCUJJh1u9iDEnHLz=5FFXnD4z82lkbcR?=
+ =?us-ascii?Q?2P8lJalvgKWNdTHS4oqScmYk1bMQmhGA6RORO7v?=
+ =?us-ascii?Q?YFi1rO97ZClCFevt90pVkxu-e-LQ5NiHo3yRUKB?=
+ =?us-ascii?Q?4pUr0xZW43YyHOGdTV1BN=5Fvw6xV0986QdAGsD7g?=
+ =?us-ascii?Q?w98BxV2nxvu7TzZ1v-TUnTU=3E?=
+
+--378976483dc6eecdcee74269ae7fc76b2e7f9edfd6eee1f85fa5db25f86a
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=us-ascii
+Mime-Version: 1.0
+
+CAMPYLOBACTERIOSIS, SAPOVIRUS - CHINA: (BEIJING) WATERBORNE, 2021
+*****************************************************************
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+Date: Sun 14 Jan 2024
+Source: Food Safety News [edited]
+<https://www.foodsafetynews.com/2024/01/large-campylobacter-and-sapovirus-o=
+utbreak-in-china-linked-to-water/>
+
+
+Almost 1000 people fell ill in a _Campylobacter_ and sapovirus
+outbreak in China in 2021, according to a recently released study.
+
+The outbreak involved 996 patients and had 2 peaks over a 17-day
+period. Through case-control studies, scientists identified exposure
+to water from a secondary water supply system as a significant risk
+factor.
+
+Among 83 patients, 49 samples tested positive for _Campylobacter
+coli_, 39 tested positive for human sapovirus, and 27 were positive
+for both pathogens. Details on the 1st reported outbreak in China with
+infection by _Campylobacter coli_ and sapovirus were published in the
+journal China CDC Weekly [see URL below].
+
+In July 2021, a hospital in Beijing identified 13 patients with acute
+gastroenteritis in the same school. Epidemiological investigations
+later revealed 996 patients, including 958 students and 38 staff
+members. The most common symptoms were abdominal pain, diarrhea,
+nausea, vomiting, and fever. A total of 828 questionnaires were
+completed, including 341 gastroenteritis cases and 487 controls. One
+direct drinking water (DDW) system supplied by a secondary water
+supply system (WSS-S) was identified in the school building. This DDW
+system offered unboiled direct drinking water (UDDW) and boiled. The
+water source for WSS-S is a groundwater source well (WSW) within the
+campus. One hotel on the same campus also has its own secondary water
+supply system (WSS-H), which uses the WSW as its water source.
+
+Both WSS-H and WSS-S have separate facilities including a water
+storage tank, water pump, and pipeline. The WSS-H conducted
+disinfection using chlorine dioxide, and the storage tank and pump
+were inside the hotel. The water quality from WSS-H was supervised
+effectively. However, the water storage tank and pump of WSS-S was not
+inside the school and lacked effective management. The sewage well was
+uncovered and did not have protective facilities during rainfall, said
+researchers.
+
+Based on findings from case-control studies, exposure to unboiled
+direct drinking water from the contaminated secondary water supply
+system increased the risk of illness. The nearby garbage station and
+sewage well were likely sources of contamination. After a rainstorm,
+some students reported the water in the school appeared turbid and had
+an unpleasant odor. After drinking water was replaced with
+commercially bottled water, the number of patients decreased
+significantly.
+
+The antimicrobial resistance profile of 17 _Campylobacter coli_
+isolates showed co-resistance to nalidixic acid, ciprofloxacin,
+streptomycin, and tetracycline.
+
+"Results of aerobic plate counting and coliform detection indicated
+that the water samples from the WSS-S were of poor quality. But
+neither _Campylobacter coli_ nor human sapovirus were identified in
+the water samples. Waterborne outbreaks often occur on a large scale
+and involve complex processes of pathogen examination and tracing.
+This report emphasizes the significance of ensuring the safety of
+drinking water, particularly in secondary supply systems," said
+scientists.
+
+--
+Communicated by:
+ProMED
+
+[The China CDC Weekly Report is available at
+<https://weekly.chinacdc.cn/en/article/doi/10.46234/ccdcw2023.219>.
+
+_Campylobacter_ is a zoonotic bacterium that can be transmitted to
+humans by a variety of vehicles including contaminated chicken,
+unpasteurized dairy products, and tainted water.
+
+Sapovirus is not a commonly discussed pathogen. Using electron
+microscopy, sapovirus was first seen in diarrheal stool samples from
+the UK in 1977 and was soon known as a gastroenteritis pathogen. While
+the virus was first seen in the United Kingdom, the prototype strain
+of the genus _Sapovirus_ was from another outbreak in Sapporo, Japan,
+in 1982. Following is the citation and abstract for a recent
+publication regarding sapovirus:
+
+Rouhani S, Yori P P, Olortegui M P, et al. The epidemiology of
+sapovirus in the etiology, risk factors, and interactions of enteric
+infection and malnutrition and the consequences for child health and
+development study: Evidence of protection following natural infection.
+Clin Infect Dis. 2022; 75(8): 1334-1341;
+<https://doi.org/10.1093/cid/ciac165>.
+---------------------------------------------------------------------------=
+--------------------------------------
+Abstract
+---------
+Background:
+Sapovirus is one of the principal agents of acute viral enteritis in
+children. Because it has not been routinely included in diagnostic
+evaluations, the epidemiology and natural history remain poorly
+described.
+
+Methods:
+A birth cohort of 1715 children from 8 countries contributed
+surveillance samples (n =3D 35 620) and diarrheal specimens (n =3D 6868)
+from 0 to 24 months of age. Sapovirus was detected by quantitative
+polymerase chain reaction concurrently to other enteropathogens using
+multiarray cards. Logistic regression was used to identify risk
+factors, and longitudinal models were employed to estimate incidence
+rates and evaluate evidence of protective immunity.
+
+Results:
+Sapovirus was detected in 24.7% (n =3D 1665) of diarrheal stools and
+12.8% (n =3D 4429) of monthly surveillance samples. More than 90% of
+children were infected, and 60% experienced sapovirus diarrhea in the
+1st 2 years of life. Breastfeeding and higher socioeconomic status
+were associated with reduced incidence of infection and illness.
+Specimens with sapovirus detected had an increased odds of coinfection
+with rotavirus (odds ratio [OR], 1.6 [95% confidence interval (CI),
+1.3-2.0]), astrovirus (OR, 1.5 [95% CI, 1.3-1.7]), adenovirus (OR, 1.3
+[95% CI, 1.1-1.5]), and _Shigella_ (OR, 1.4 [95% CI, 1.3-1.6]). Prior
+infection with sapovirus conferred a risk reduction of 22% for
+subsequent infection (hazard ratio [HR], 0.78 [95% CI, 0.74-0.85]) and
+24% for subsequent diarrhea (95% CI, 11.0%-35.0%; HR, 0.76).
+
+Conclusions:
+Sapovirus is a common cause of early childhood diarrhea. Further
+research on coinfections is warranted. Evidence of acquired immunity
+was observed even in the absence of genotype-specific analysis for
+this pathogen of known genetic diversity.
+
+- Mod.LL
+
+ProMED map:
+Beijing, China:
+<https://promedmail.org/promed-post?place=3D8714245,353>]
+
+[See Also:
+2022
+----
+Sapovirus - USA: Korean frozen oysters, FDA, alert, recall
+http://promedmail.org/post/20221204.8707088
+Campylobacteriosis - Japan: (Kyoto) raw chicken
+http://promedmail.org/post/20220605.8703696
+2013
+----
+Sapovirus - New Zealand: (GI) hospital outbreak
+http://promedmail.org/post/20131202.2087207
+2012
+----
+Sapovirus - USA: (OR, MN) long-term care facilities
+http://promedmail.org/post/20120412.1099220
+2007
+----
+Sapovirus, gastroenteritis - Taiwan: RFI
+http://promedmail.org/post/20070613.1937]
+.................................................ll/tw/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3DQ3dGdKfxHzjWGMeOWf1pF9Jt8LiDik9Yo7MHzTcLXApoMDAwdTAwMJu_1SP=
+poSACH2-NeGTNjnOwaivYJ8nNpIsr8wlWcW3QHRYoPMrylv9Be_nM-GL3MwMDADuOAuuKZV4D9Y=
+crvj0YFxyJnjxthrmcpP6bwjk-Qm2__KmD8mJWYm8xD2FpoLEV_mn48VaVoqHDJmh2IfGOm1Eog=
+SJRIiQjffVvg26sATzFQwORjG1gi3o0Y2Q942PTYaOxqQJfLginGS0pibYjRSE5ZXYC9qbuLBUW=
+ZdVUJoVxfV1iGD-lQcFfr-b2OoZVds8oTJkyCT8fV6Mzn6FCmpSzZI_saeyLa1P8mQuydPwF940=
+Nap7S4mHYtLPcrV2yqWdpP7KgHab1EcwRZQgRagDa7KY7iBGJtJ4Fr5Ky1e3i1ZF3I6TPLJVETB=
+ILaefhDgaSHfApzbx4iItqjG2wWOG2eqqm1RwDqK1KW9OQ-NVkRRINMHiCgpaHe2w1TXZvYvYos=
+tpig6SeZDq_yADyejtf4mbD-_EbFIL1ZAxEekz46mHy0vosWSz0OsdzmR6yaFK55Wag-Mc-cway=
+gsz433LUEvUDbwGOZo4LMWU4mTdzNShn0D6O64J22YggA7xBM4FVGDPimt8ki8uIxL6agA08cCR=
+jlEo8smClA-LZN5_icPDkneJSKB2v6MtQ_iasKfPEV_oiNZ40fF5_bS-UFoVw5p9CJoE_aJ8jBB=
+X-U5Z_biEyZ91UUjq7vEFLDckltAcBQeaarTr_4hMwSReS5Sl51ZzZwPJy1ic_dJ9dQjHKDNg27=
+T8_0K0pfiR7d65jOHDCF_k04qkXAa2IKW_Q6R7b9yWf4YpOHf9lLvR7wWJTm_Lb7NXwmw7kl7eN=
+GWnzqsTCIDvY6AaMRNmOs55VZXX9WMEm6nR-yY_-8BYqiX8Tevao30hvx3798EpXVLL-4pXHRe7=
+Uh6zGGckmKllO04ENtENSikk7pdSXo-VFrlw9L9traAWhvw3mHsAeG4KAvZn28r5V1stD4s_yj0=
+8zI3AG74xs_ZoVJvDXxBPJ0I9_l2fvLCIsF7cHOnonuy13eyqqftFGxej0KRqSkRUAqTjvBIq7k=
+j4e7vcJZCR5lZhbGTf7sOzme5ddT5gPBtvtx8uH2a0ieJ7YVapBFE01BtGkY7dK7BI9HuMXJLz6=
+pAQ-dC9Z0yrBfn2od3R8Q1vuUxnT9XyxtWOCrhVRymg=3D )
+############################################################
+############################################################
+
+--378976483dc6eecdcee74269ae7fc76b2e7f9edfd6eee1f85fa5db25f86a
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>CAMPYLOBACTERIOSIS, SAPOVIRUS - CHINA: (BEIJING) WATERBORNE, 2021<br>=
+*****************************************************************<br>A ProM=
+ED-mail post<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/wscE2ng5f=
+l6JrPIt48tisIijpefK5PNjW-mL-YZGnfgDOxU1G3gjwnPSi2Tfv3HA/430/QlCEStI3TsuVHiv=
+oiX_sMA/h0/aWCX8oL6xrN2YF7FqDGZKX9P27W06qNXb778YHSDDEc">http://www.promedma=
+il.org</a><br>ProMED-mail is a program of the<br>International Society for =
+Infectious Diseases<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/ws=
+cE2ng5fl6JrPIt48tisCT5tpD4Upm3qyMCbcYSQvc/430/QlCEStI3TsuVHivoiX_sMA/h1/5TT=
+1CYsKTk2BdCr3n8jubzl-szaDKiJHtq--Ftvqg-8">http://www.isid.org</a><br><br>Da=
+te: Sun 14 Jan 2024=0D<br>Source: Food Safety News [edited]=0D<br><a href=
+=3D"https://u19268662.ct.sendgrid.net/ss/c/TLh_csrC34X_iXpbYoMam7_KE_k7g5yU=
+f5I4VNdPS-T4I1yX6XHgS9Q3aBLQVcEZpktPBhbeF5naeGDvLzVxZyLmdB52qnaQgXSVkzl-5vl=
+oYVy3pu6KWqs4_5VryOa2V8WOkaskOplAwFM27OG6Qkx6-8RUs8dLgaZMgfdVlBE/430/QlCESt=
+I3TsuVHivoiX_sMA/h2/4I7HIZO-24_yL4V18RfRCxBYAIMr4GOSBWWHUZpRnd0">https://ww=
+w.foodsafetynews.com/2024/01/large-campylobacter-and-sapovirus-outbreak-in-=
+china-linked-to-water/</a>=0D<br>=0D<br>=0D<br>Almost 1000 people fell ill =
+in a _Campylobacter_ and sapovirus<br>outbreak in China in 2021, according =
+to a recently released study.=0D<br>=0D<br>The outbreak involved 996 patien=
+ts and had 2 peaks over a 17-day<br>period. Through case-control studies, s=
+cientists identified exposure<br>to water from a secondary water supply sys=
+tem as a significant risk<br>factor.=0D<br>=0D<br>Among 83 patients, 49 sam=
+ples tested positive for _Campylobacter<br>coli_, 39 tested positive for hu=
+man sapovirus, and 27 were positive<br>for both pathogens. Details on the 1=
+st reported outbreak in China with<br>infection by _Campylobacter coli_ and=
+ sapovirus were published in the<br>journal China CDC Weekly [see URL below=
+].=0D<br>=0D<br>In July 2021, a hospital in Beijing identified 13 patients =
+with acute<br>gastroenteritis in the same school. Epidemiological investiga=
+tions<br>later revealed 996 patients, including 958 students and 38 staff<b=
+r>members. The most common symptoms were abdominal pain, diarrhea,<br>nause=
+a, vomiting, and fever. A total of 828 questionnaires were<br>completed, in=
+cluding 341 gastroenteritis cases and 487 controls. One<br>direct drinking =
+water (DDW) system supplied by a secondary water<br>supply system (WSS-S) w=
+as identified in the school building. This DDW<br>system offered unboiled d=
+irect drinking water (UDDW) and boiled. The<br>water source for WSS-S is a =
+groundwater source well (WSW) within the<br>campus. One hotel on the same c=
+ampus also has its own secondary water<br>supply system (WSS-H), which uses=
+ the WSW as its water source.=0D<br>=0D<br>Both WSS-H and WSS-S have separa=
+te facilities including a water<br>storage tank, water pump, and pipeline. =
+The WSS-H conducted<br>disinfection using chlorine dioxide, and the storage=
+ tank and pump<br>were inside the hotel. The water quality from WSS-H was s=
+upervised<br>effectively. However, the water storage tank and pump of WSS-S=
+ was not<br>inside the school and lacked effective management. The sewage w=
+ell was<br>uncovered and did not have protective facilities during rainfall=
+, said<br>researchers.=0D<br>=0D<br>Based on findings from case-control stu=
+dies, exposure to unboiled<br>direct drinking water from the contaminated s=
+econdary water supply<br>system increased the risk of illness. The nearby g=
+arbage station and<br>sewage well were likely sources of contamination. Aft=
+er a rainstorm,<br>some students reported the water in the school appeared =
+turbid and had<br>an unpleasant odor. After drinking water was replaced wit=
+h<br>commercially bottled water, the number of patients decreased<br>signif=
+icantly.=0D<br>=0D<br>The antimicrobial resistance profile of 17 _Campyloba=
+cter coli_<br>isolates showed co-resistance to nalidixic acid, ciprofloxaci=
+n,<br>streptomycin, and tetracycline.=0D<br>=0D<br>"Results of aerobic plat=
+e counting and coliform detection indicated<br>that the water samples from =
+the WSS-S were of poor quality. But<br>neither _Campylobacter coli_ nor hum=
+an sapovirus were identified in<br>the water samples. Waterborne outbreaks =
+often occur on a large scale<br>and involve complex processes of pathogen e=
+xamination and tracing.<br>This report emphasizes the significance of ensur=
+ing the safety of<br>drinking water, particularly in secondary supply syste=
+ms," said<br>scientists.=0D<br>=0D<br>--=0D<br>Communicated by:=0D<br>ProME=
+D<br><br>[The China CDC Weekly Report is available at<br><a href=3D"https:/=
+/u19268662.ct.sendgrid.net/ss/c/TLh_csrC34X_iXpbYoMam2G55kQqjF04aRW1VmH_T5_=
+niMcC-m1-qRRCb0yHOeSYqLsAfCiTRKiIinx9kScCDObx12Bl__5MF2Y6YVvOFrs/430/QlCESt=
+I3TsuVHivoiX_sMA/h3/VpTWXQRa3VqmLVofMW1FFHo0J4VcKDoh8bBomGUpF4I">https://we=
+ekly.chinacdc.cn/en/article/doi/10.46234/ccdcw2023.219</a>.=0D<br>=0D<br>_C=
+ampylobacter_ is a zoonotic bacterium that can be transmitted to<br>humans =
+by a variety of vehicles including contaminated chicken,<br>unpasteurized d=
+airy products, and tainted water.=0D<br>=0D<br>Sapovirus is not a commonly =
+discussed pathogen. Using electron<br>microscopy, sapovirus was first seen =
+in diarrheal stool samples from<br>the UK in 1977 and was soon known as a g=
+astroenteritis pathogen. While<br>the virus was first seen in the United Ki=
+ngdom, the prototype strain<br>of the genus _Sapovirus_ was from another ou=
+tbreak in Sapporo, Japan,<br>in 1982. Following is the citation and abstrac=
+t for a recent<br>publication regarding sapovirus:=0D<br>=0D<br>Rouhani S, =
+Yori P P, Olortegui M P, et al. The epidemiology of<br>sapovirus in the eti=
+ology, risk factors, and interactions of enteric<br>infection and malnutrit=
+ion and the consequences for child health and<br>development study: Evidenc=
+e of protection following natural infection.<br>Clin Infect Dis. 2022; 75(8=
+): 1334-1341;<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/TUIVIg4P=
+Cmni5tP3Q8lzBZ9WMLSK_aWkLFB5TditFE4mjzUJqpFR0nJSOhaUoYAR/430/QlCEStI3TsuVHi=
+voiX_sMA/h4/xZj_gSza8EEBgHzzGKEt_q4iZ5qAoqgeBaSR4NLi6jA">https://doi.org/10=
+.1093/cid/ciac165</a>.=0D<br>----------------------------------------------=
+-------------------------------------------------------------------=0D<br>A=
+bstract=0D<br>---------=0D<br>Background:=0D<br>Sapovirus is one of the pri=
+ncipal agents of acute viral enteritis in<br>children. Because it has not b=
+een routinely included in diagnostic<br>evaluations, the epidemiology and n=
+atural history remain poorly<br>described.=0D<br>=0D<br>Methods:=0D<br>A bi=
+rth cohort of 1715 children from 8 countries contributed<br>surveillance sa=
+mples (n =3D 35 620) and diarrheal specimens (n =3D 6868)<br>from 0 to 24 m=
+onths of age. Sapovirus was detected by quantitative<br>polymerase chain re=
+action concurrently to other enteropathogens using<br>multiarray cards. Log=
+istic regression was used to identify risk<br>factors, and longitudinal mod=
+els were employed to estimate incidence<br>rates and evaluate evidence of p=
+rotective immunity.=0D<br>=0D<br>Results:=0D<br>Sapovirus was detected in 2=
+4.7% (n =3D 1665) of diarrheal stools and<br>12.8% (n =3D 4429) of monthly =
+surveillance samples. More than 90% of<br>children were infected, and 60% e=
+xperienced sapovirus diarrhea in the<br>1st 2 years of life. Breastfeeding =
+and higher socioeconomic status<br>were associated with reduced incidence o=
+f infection and illness.<br>Specimens with sapovirus detected had an increa=
+sed odds of coinfection<br>with rotavirus (odds ratio [OR], 1.6 [95% confid=
+ence interval (CI),<br>1.3-2.0]), astrovirus (OR, 1.5 [95% CI, 1.3-1.7]), a=
+denovirus (OR, 1.3<br>[95% CI, 1.1-1.5]), and _Shigella_ (OR, 1.4 [95% CI, =
+1.3-1.6]). Prior<br>infection with sapovirus conferred a risk reduction of =
+22% for<br>subsequent infection (hazard ratio [HR], 0.78 [95% CI, 0.74-0.85=
+]) and<br>24% for subsequent diarrhea (95% CI, 11.0%-35.0%; HR, 0.76).=0D<b=
+r>=0D<br>Conclusions:=0D<br>Sapovirus is a common cause of early childhood =
+diarrhea. Further<br>research on coinfections is warranted. Evidence of acq=
+uired immunity<br>was observed even in the absence of genotype-specific ana=
+lysis for<br>this pathogen of known genetic diversity.=0D<br>=0D<br>- Mod.L=
+L<br><br>ProMED map:<br>Beijing, China:<br><a href=3D"https://u19268662.ct.=
+sendgrid.net/ss/c/sSnCkKCWBvais3EuVAOvgy2WOIX7pp1nXnn4AbwuQ3Z6WbkfhqXYXU-aT=
+MPJ8yThWKllFNgIPe0SitYv_fkG1g/430/QlCEStI3TsuVHivoiX_sMA/h5/4G3_cz1vcsrR8Sk=
+xKGh-tQhXpaGyjtNW0x83rRcMqTQ">https://promedmail.org/promed-post?place=3D87=
+14245,353</a>]<br><br>[See Also:<br>2022=0D<br>----=0D<br>Sapovirus - USA: =
+Korean frozen oysters, FDA, alert, recall<br>http://promedmail.org/post/202=
+21204.8707088=0D<br>Campylobacteriosis - Japan: (Kyoto) raw chicken<br>http=
+://promedmail.org/post/20220605.8703696=0D<br>2013=0D<br>----=0D<br>Sapovir=
+us - New Zealand: (GI) hospital outbreak<br>http://promedmail.org/post/2013=
+1202.2087207=0D<br>2012=0D<br>----=0D<br>Sapovirus - USA: (OR, MN) long-ter=
+m care facilities<br>http://promedmail.org/post/20120412.1099220=0D<br>2007=0D=
+<br>----=0D<br>Sapovirus, gastroenteritis - Taiwan: RFI<br>http://promedmai=
+l.org/post/20070613.1937]<br>..............................................=
+...ll/tw/jh<br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3DQ3dGdKfxHzjWGMeOWf1pF9Jt8LiDik9Yo7MHzTcLXApoMDAwdT=
+AwMJu_1SPpoSACH2-NeGTNjnOwaivYJ8nNpIsr8wlWcW3QHRYoPMrylv9Be_nM-GL3MwMDADuOA=
+uuKZV4D9Ycrvj0YFxyJnjxthrmcpP6bwjk-Qm2__KmD8mJWYm8xD2FpoLEV_mn48VaVoqHDJmh2=
+IfGOm1EogSJRIiQjffVvg26sATzFQwORjG1gi3o0Y2Q942PTYaOxqQJfLginGS0pibYjRSE5ZXY=
+C9qbuLBUWZdVUJoVxfV1iGD-lQcFfr-b2OoZVds8oTJkyCT8fV6Mzn6FCmpSzZI_saeyLa1P8mQ=
+uydPwF940Nap7S4mHYtLPcrV2yqWdpP7KgHab1EcwRZQgRagDa7KY7iBGJtJ4Fr5Ky1e3i1ZF3I=
+6TPLJVETBILaefhDgaSHfApzbx4iItqjG2wWOG2eqqm1RwDqK1KW9OQ-NVkRRINMHiCgpaHe2w1=
+TXZvYvYostpig6SeZDq_yADyejtf4mbD-_EbFIL1ZAxEekz46mHy0vosWSz0OsdzmR6yaFK55Wa=
+g-Mc-cwaygsz433LUEvUDbwGOZo4LMWU4mTdzNShn0D6O64J22YggA7xBM4FVGDPimt8ki8uIxL=
+6agA08cCRjlEo8smClA-LZN5_icPDkneJSKB2v6MtQ_iasKfPEV_oiNZ40fF5_bS-UFoVw5p9CJ=
+oE_aJ8jBBX-U5Z_biEyZ91UUjq7vEFLDckltAcBQeaarTr_4hMwSReS5Sl51ZzZwPJy1ic_dJ9d=
+QjHKDNg27T8_0K0pfiR7d65jOHDCF_k04qkXAa2IKW_Q6R7b9yWf4YpOHf9lLvR7wWJTm_Lb7NX=
+wmw7kl7eNGWnzqsTCIDvY6AaMRNmOs55VZXX9WMEm6nR-yY_-8BYqiX8Tevao30hvx3798EpXVL=
+L-4pXHRe7Uh6zGGckmKllO04ENtENSikk7pdSXo-VFrlw9L9traAWhvw3mHsAeG4KAvZn28r5V1=
+stD4s_yj08zI3AG74xs_ZoVJvDXxBPJ0I9_l2fvLCIsF7cHOnonuy13eyqqftFGxej0KRqSkRUA=
+qTjvBIq7kj4e7vcJZCR5lZhbGTf7sOzme5ddT5gPBtvtx8uH2a0ieJ7YVapBFE01BtGkY7dK7BI=
+9HuMXJLz6pAQ-dC9Z0yrBfn2od3R8Q1vuUxnT9XyxtWOCrhVRymg=3D" target=3D"_blank" =
+class=3D"Unsubscribe--unsubscribePreferences" style=3D"font-family:sans-ser=
+if;text-decoration:none;">Unsubscribe Preferences</a></div><br>############=
+################################################<br>#######################=
+#####################################<br><br><img src=3D"https://u19268662.=
+ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/430/QlCEStI3TsuVHivoiX_sMA/ho.g=
+if" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"height:1px !imp=
+ortant;width:1px !important;border-width:0 !important;margin-top:0 !importa=
+nt;margin-bottom:0 !important;margin-right:0 !important;margin-left:0 !impo=
+rtant;padding-top:0 !important;padding-bottom:0 !important;padding-right:0 =
+!important;padding-left:0 !important;"/></body>
+</html>
+--378976483dc6eecdcee74269ae7fc76b2e7f9edfd6eee1f85fa5db25f86a--

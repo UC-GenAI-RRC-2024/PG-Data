@@ -1,0 +1,481 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a98:c004:0:b0:1eb:e128:bbe3 with SMTP id l4csp2990065eic;
+        Sat, 13 Jan 2024 15:58:16 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IGA/B6mAd/4Htptc1A3ZP8Ig8YnwFWU5Q6xqeQ24H+dW+4llRdxrU+X//TZatI0rcHzwDhX
+X-Received: by 2002:a37:e311:0:b0:783:45ec:c8ce with SMTP id y17-20020a37e311000000b0078345ecc8cemr4002392qki.63.1705190296305;
+        Sat, 13 Jan 2024 15:58:16 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1705190296; cv=none;
+        d=google.com; s=arc-20160816;
+        b=QyjaX58EDRMmoFsbshPVMW/xtp9lS8x9G1Ewa4CDa8x4IYwyq38xWYahoLWa9YIaEX
+         5S0jPMjxVEiSbrisoldNQStMFYdw3F+6mWcVregs5lMa+23STnrlJLHoed2aFJE3FsUF
+         dfSLY9y8V6S1/VShgqnlpWdF/TgH6E464KJiVqiJQ1Qbed5/4QhizKlQmxk2Bnk6gPSA
+         x+Bg9cUeX2axqOyZtnXFiYRldwSdFniseG3SI8VEMSuS61gkNZJtkK+hhcEfu7C4ZZRb
+         VxqfiHYE8pbk0F5xPrsy2uF8x61+ct74/pEJLUbPM0mewV7op6LdV2dyBPuN2m4IlHfe
+         w65A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=xmOAxy8ocN0QZYXQAE51V0GjDbF5vG150XOFOJQAzzE=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=SmFwBpGSYBdFJxv2As/8HWO4CsCA81yJhzwAB0PavPQXW6A7sv0DSQLdAg49l3ThyQ
+         V2AxlT32Gnq1i/KfgXJh224cd9XnsBjOc/WdgLxFQSUBvZ8JRtpMbhe7YeSwJNFu6Rpi
+         LYH/xE3P+RJ7Z6VnjAkmdF5fpP4ycVHGkRQxxLPqK7QziS3DJnqoi55XupDl80pzyX/j
+         YmMlw0FL7xSj4xJXmRWQjnfL7CuBOHd9w2hAhvUnGfFQEEQQNt2PCHwfoYgTLxFwOh8W
+         DQy7vQefmiLgE8Q/v+83WexqfPB8TpU5YLX5IJCTnMo4qFVjmEmgRvME2BQSOd3QRGJX
+         Ao1A==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=o2CS9cja;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=ILJ8yGZ9;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id ea11-20020a05620a488b00b0078349f5b7c7si3959065qkb.559.2024.01.13.15.58.15
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sat, 13 Jan 2024 15:58:16 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=o2CS9cja;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=ILJ8yGZ9;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=xmOAxy8ocN0QZYXQAE51V0GjDbF5vG150XOFOJQAzzE=;
+	b=o2CS9cja/jt7N6Dx2nyRAmRTNar2dXmPvGmWjpy7wjZdyjpewF4jJo8+pq2qtQMq9tEa
+	Iwt0jdMJUBo/uvcVr/s5mOU/v0jroRfXHLxhi6w8V+1JOM29nU0GHTN/bAeBHTNKn1fjN+
+	GHx7EyXXaPXahm6ofSEc1iqE8cpBXFgqMl4Rz0jd2CatIZHypc/JP0Qgh+0GHv6UrYGVvf
+	EcUGl2KNwQWFLx5WUdPFbC70iSVd3OU/jvOtWaRmwX1mvleZ/hDe1VterqW7oEbCY+heyj
+	P3W6XI4WKv51F5uDGcmJGwnLcu1Ud1KtT9ozDlCU3Fs0QRvrSyHG5q0mcLE/bulw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=xmOAxy8ocN0QZYXQAE51V0GjDbF5vG150XOFOJQAzzE=;
+	b=ILJ8yGZ9GQtOlxv+Nt+n2659G1qk3/RKTsHL9rPjYM5IDpLr33kf6UiwAgaRpmfrtmRt
+	LIcYnIAiYG1RNjKWCrJ/eVqZ5CzE1PLQH9KZ1HUmUY4hDIGsJcvr6MWpM92PFkFIhttumy
+	JnMHXRgjWfeobXo6Bi2fC/aP18Yt1Ds4c=
+Received: by filterdrecv-5599bcbfcb-2vmlv with SMTP id filterdrecv-5599bcbfcb-2vmlv-1-65A32395-2
+        2024-01-13 23:58:13.123863882 +0000 UTC m=+7622238.871116556
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-13 (SG) with HTTP
+	id jdmLGJfwRlSWgsoKR4E6Kg
+	Sat, 13 Jan 2024 23:58:12.981 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=a2ef025e65bffad3a5a2bf65dd4bfdd6c0f139d1accaf4ceb3df33454bcc
+Date: Sat, 13 Jan 2024 23:58:15 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <jdmLGJfwRlSWgsoKR4E6Kg@geopod-ismtpd-13>
+Subject: PRO/AH/EDR> Bovine tuberculosis - USA: (MI) human-deer link
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iBjwil3rCVIaUBE2S6kSpHLHVlBey7E6BF3Y9h8?=
+ =?us-ascii?Q?Iqsgtq418DZDYjLsqj8wv5UuFtYwjVxWPUpodeB?=
+ =?us-ascii?Q?UhPX7gdqta7Mpa2BVTZFIh8R1ZJAlk=2FlYVaSqu=2F?=
+ =?us-ascii?Q?my1lrZ1KQrzT2xJEpsl9LFRXMXLQDz=2F77omh6V6?=
+ =?us-ascii?Q?BCtURm6CChU0kq3ijYQOahaIlQT0rSMEBy1ul6?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUiShGf=2FO8XJWpH34Od4Nd?=
+ =?us-ascii?Q?fxXa6jil96uRcJkF+N+LeVnO1tx80ddOyoyOo=2Fc?=
+ =?us-ascii?Q?Brxcl3ERAm0cOY743=2FFH59DWiSf5OzXORh1DLKt?=
+ =?us-ascii?Q?hb1NMKty3PsA5ju0ZzxCrq1WQuZSEQf=2FJlWtgqv?=
+ =?us-ascii?Q?cZmsyCHlNUZsDlFsXcUT92MNts8qqacXIiHi1kD?=
+ =?us-ascii?Q?4RgpMJWhvwugI4jJMfrnbG7PSGbheSyqhynUavX?=
+ =?us-ascii?Q?sbVnv3bG1IAKgl+2h+XiWV+pqLnzu0BNKCgY3lD?=
+ =?us-ascii?Q?PlZg=2FUezVTYtZm7b3tx4eg2I17p4oc+Ca=2FSgdDY?=
+ =?us-ascii?Q?QCRZhQtNGPG5RMPZSqXgoFcxI7KfJl5fB=2FTd66b?=
+ =?us-ascii?Q?pyjNbFHLLW40IwuG8vTzsVott+=2F+hxa5v6L5=2Ffl?=
+ =?us-ascii?Q?8rIzuC8F9uBwn2xSxAv8uKmN315o3rt5R66K+Vs?=
+ =?us-ascii?Q?x2rV7MKCawNAz01L+ODHIKLJ2DEx8vBMlh6LXMn?=
+ =?us-ascii?Q?gYtZ75NXca=2FRvXL2nh3u5tJrujJ=2FOB+5KKLpAVT?=
+ =?us-ascii?Q?PvApGJjRwljfZSVoIyqZl1l3dLIUFGNKmFdT=2F2v?=
+ =?us-ascii?Q?UzJIHhBWGxRZjkmUzWUQZAXOthI+Z=2FXVwzV6A++?=
+ =?us-ascii?Q?MdpR4nSzez0y+Bj7uHfv9C3ulJa6JnKn=2FMtCpLz?=
+ =?us-ascii?Q?2P3QROA8t35U4p62bpyigCuByCHjnHFLDZqSBre?=
+ =?us-ascii?Q?46wUMIjUb=2Fbz9JFpHgHeArGNaljQzuHA9Fc4w84?=
+ =?us-ascii?Q?djKutYTWWDEid8Y1bdO5OwBRTViwQ9MtfavyoDO?=
+ =?us-ascii?Q?UOWbawo=2FFa9dMgCSqqEdFUvzBg=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2ETI-uiZ6uQ?=
+ =?us-ascii?Q?HchdtzCXVU0ZkPyLsjX-iYjM5oHHUSOuj1oMDAw?=
+ =?us-ascii?Q?dTAwMI4JqypQ1XgWE-uQH8aRGh-DnQfEAggxgIF?=
+ =?us-ascii?Q?zMTavWAJfNaab5tIrWkA9KCQOPT7OmyIPyeebYc?=
+ =?us-ascii?Q?Aq3xc-mcwigackA2u3maNeDLjDlvJK4xAzVxRat?=
+ =?us-ascii?Q?-y4QlOFMXJ3rdGj2w=3D=3D=2EkAASrzZNdlxjXWJiUYG?=
+ =?us-ascii?Q?jlPMeBbVD8w83x-SXIudMFINoMDAwdTAwMDdbtZ?=
+ =?us-ascii?Q?xi5q0QyVN4pGabCIf=5Fc3=5F4iZcwEBa9MyUZg=5FzYy?=
+ =?us-ascii?Q?T123bRsZuUtysZDbEteboy9Bhwh-GSbz1tVzUH-?=
+ =?us-ascii?Q?MPyLkrG8ymS79qj6TMtFbX1ILdOuBmrRFyIxHcT?=
+ =?us-ascii?Q?s9dN3RDmQ4yRStEkC=5FnLzfRqqNkP8ua9Cv2Hx1=5F?=
+ =?us-ascii?Q?bAPo2jeJ1lBKOKTcdAZ5J6CrBOx=5F8oODoZzG=5Foy?=
+ =?us-ascii?Q?8kxTUcKRQLX3BJMfNizyj1el539LZowdwimGOCw?=
+ =?us-ascii?Q?PBZn795a0Y7f8UJxmkKupm11D3KduIameiNDyki?=
+ =?us-ascii?Q?X4Xy-lvt4vOg-h-8h89fEa6BGrcZq-7xmS9l4IJ?=
+ =?us-ascii?Q?rQBzu1xEh0N2WoPwWkm82LByIdxeVwVmjCzcth2?=
+ =?us-ascii?Q?l10tBZ6WFXFhoHdihjAFtSp-X4oQzxtntfvnSYJ?=
+ =?us-ascii?Q?n8DzGo03eAC7tqWk9mZOD-4gFdX7d1q2Pt81DTM?=
+ =?us-ascii?Q?z6sN-spGNKB68FmF8sBCZH6m4JZX47gtYi=5FqXYS?=
+ =?us-ascii?Q?DwQsjy9iBLbbdph2eJmvbhqIaHqu5N2-QzR=5FXWb?=
+ =?us-ascii?Q?IQtdOS0cAbdcAg-9T2qiH8b9WuuNR1ypl9kRwQw?=
+ =?us-ascii?Q?61YuGtILCIIjSOAZ55KurwDnwqbnJE3GaYYmw73?=
+ =?us-ascii?Q?maL7aXZBEfIfo9WoFo4FVAzXCu4SOe=5FVU0T9U5L?=
+ =?us-ascii?Q?TR=5F1RJ=5FLVbEY4nzPAEEuHPfyQVKtyVPS=5Fai4=5FMt?=
+ =?us-ascii?Q?gPofKySMk4WIPmeciY5LwCiS=5FV2kNu73FGKG=5F2=5F?=
+ =?us-ascii?Q?eRRhLPNIocqAkFeG12lJotCWfpB0R=5F-nZCOG7LC?=
+ =?us-ascii?Q?0bpx0rAW1v=5FCeBzsz4K0P-r6HjWQ8cqOH8X706Y?=
+ =?us-ascii?Q?u00MBcdugo75y4i1YyOvpkKrKNkG3QDvSUHKYHX?=
+ =?us-ascii?Q?8Wrw6IFTThQS0QzgQLl6IfJtrXMqZ5RZKwY8pjw?=
+ =?us-ascii?Q?ZXUQmASF07Va-2aTT5QtF-=5FPu9dF76Nvhebu8Yr?=
+ =?us-ascii?Q?dJ2omwxQMdCvNKemfCqRMshme05rNCqN-WEMGEp?=
+ =?us-ascii?Q?nHObZ-Y1RXi5d=5FxEtwzob8tdI-XDUBlVmhZe711?=
+ =?us-ascii?Q?en7n3tLhSEPDWKaadtfCBkM9smoGXUYQR0wsv2-?=
+ =?us-ascii?Q?szZlZw=3D=3D=3E?=
+
+--a2ef025e65bffad3a5a2bf65dd4bfdd6c0f139d1accaf4ceb3df33454bcc
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=us-ascii
+Mime-Version: 1.0
+
+BOVINE TUBERCULOSIS - USA: (MICHIGAN) HUMAN-DEER LINK
+*****************************************************
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+Date: Thu 11 Jan 2024
+Source: Clinical Infectious Diseases [edited]
+<https://doi.org/10.1093/cid/ciae009>
+
+
+Citation: Sunstrum J, Power LE, Fligiel HM, et al: Human disease due
+to _Mycobacterium bovis_ linked to free-ranging deer in Michigan. Clin
+Infect Dis. 2024; ciae009.
+---------------------------------------------------------------------------=
+-----
+
+Abstract
+--------
+Background: A unique enzootic focus of _Mycobacterium bovis_ in
+free-ranging deer was identified in northern lower Michigan in 1994,
+with subsequent evidence of transmission to local cattle herds.
+Between 2002 and 2017 three Michigan deer hunters with _M. bovis_
+disease were previously reported. We present 4 additional human cases
+linked to the zoonotic focus in deer, utilizing genomic epidemiology
+to confirm close molecular associations among human, deer and cattle
+_M. bovis_ isolates.
+
+Methods: Identification of human TB cases with cultures of _M. bovis_
+was provided from the Michigan Department of Health and Human Services
+(MDHHS) tuberculosis database. Clinical review and interviews focused
+on risk factors for contact with wildlife and cattle. Whole genome
+sequences of human isolates were compared with a veterinary library of
+_M. bovis_ strains to identify those linked to the enzootic focus.
+
+Results: 3 confirmed and 1 probable human case with _M. bovis_ disease
+were identified between 2019 and 2022, including cutaneous disease, 2
+severe pulmonary disease cases, and human-to-human transmission. The 3
+human isolates had 0-3 SNPs with _M. bovis_ strains circulating in
+wild deer and domestic cattle in Michigan.
+
+Conclusions: Spillover of enzootic _M. bovis_ from deer to humans and
+cattle continues to occur in Michigan. Future studies should examine
+the routes of transmission and degree of risk to humans through
+expanded epidemiological surveys. A One Health approach linking human,
+veterinary and environmental health should address screening for TB
+infection, public education, and mitigation of transmission.
+
+--
+Communicated by:
+ProMED
+
+[The following is a discussion related to _M. bovis_ from my
+colleague, Mod.TG:
+
+Bovine tuberculosis (TB) is a chronic bacterial disease (primarily of
+cattle) caused by the microorganism _Mycobacterium bovis_. The disease
+can affect other species, including humans and wildlife.
+
+"Bovine TB is most often transmitted to humans by inhalation of
+aerosolized respiratory tract bacteria, ingestion of unpasteurized
+milk, and inoculation by contaminated instruments (such as knives).
+The disease can be spread from livestock to wildlife or wildlife to
+livestock via the fecal-oral route, ingestion of contaminated food, or
+though the respiratory tract.
+
+"The APHIS Bovine TB Eradication Program has reduced TB in US cattle;
+however, spillover into wildlife may maintain the microorganism in the
+environment and function as a source of re-infection for livestock.
+
+"Bovine tuberculosis in wildlife was first documented in the United
+States in white-tailed deer (_Odocoileus virginianus_) in 1933. They
+continue to be the wildlife species of most concern because they are
+known to become infected and transmit bovine TB via the oral or
+respiratory route and are considered reservoirs in some areas. Other
+wildlife and feral species in North America in which _M. bovis_ has
+been detected include:
+
+- Elk (_Cervus canadensis_)
+- Mule deer (_Odocoileus hemionus_)
+- Bison (_Bison bison_)
+- Raccoons (_Procyon lotor_)
+- Moose (_Alces alces_)
+- Coyotes (_Canis latrans_)
+- Opossums (_Didelphis virginiana_)
+- Feral cats (_Felis silvestris catus_)
+- Gray fox (_Urocyon cinereoargenteus_)
+- Black bears (_Ursus americanus_)
+- Feral swine (_Sus scrofa_)
+- Gray wolves (_Canis lupus_)
+- Red fox (_Vulpes vulpes_)
+- Bobcat (_Lynx rufus_)
+
+"Active surveillance for TB in wildlife is currently being conducted
+only in Michigan and Minnesota, where the disease has been documented
+in white-tailed deer. However, surveillance in wildlife is often
+conducted in other areas of the United States following the detection
+of bovine TB in domestic livestock or captive cervids. These
+short-term surveillance programs are usually established to evaluate
+whether bovine TB is present in wildlife on or near infected premises"
+(<https://www.aphis.usda.gov/aphis/ourfocus/wildlifedamage/programs/nwdp/nw=
+dp-tb>).
+
+It seems clear that the focus of _M. bovis_ in deer poses the risk of
+zoonotic spread to hunters and others. - Mod.LL
+
+ProMED map:
+Michigan, United States:
+<https://promedmail.org/promed-post?place=3D8714219,225>]
+
+[See Also:
+2020
+----
+Bovine tuberculosis - UK (02): venison source susp. foodborne spread,
+cat, human http://promedmail.org/post/20201207.8000114
+Bovine tuberculosis - USA: (MI) cattle
+http://promedmail.org/post/20201118.7951450
+2019
+----
+Bovine tuberculosis - USA (06): (MI) transmission from deer to humans,
+2017 http://promedmail.org/post/20190927.6696353
+Bovine tuberculosis - USA (05): (MI) cattle
+http://promedmail.org/post/20190724.6586217
+2018
+----
+Bovine tuberculosis - USA (08): (MI) cervids, alert
+http://promedmail.org/post/20181128.6170266
+2016
+----
+Bovine tuberculosis - USA (06): (IN) wild cervid surveillance
+http://promedmail.org/post/20161113.4625099
+Bovine tuberculosis - USA (04): (IN) wild cervids
+http://promedmail.org/post/20160817.4420929]
+.................................................ll/rd/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3DxEW7hmcy2TKK_HQ6ofxeA-ePGwv1HP4Jb1snrkV71etoMDAwdTAwMCNh_vs=
+OngxE-SDKapDr_CsSJQ5Od6kFMM-OM2ool3cW_b4NAJdBeJMRqMZJwHdWdik8E9BYsNwNk9ouBT=
+4B2gc4xk69OVHeg9x3iTQFeIdTw17eI2YMvkXiRdj9kn0awvbviEwOUiO2jFcP9TmNC6KU1urUi=
+xIfDoCICccR6o9_7liYlUWr5CfnTQFIjdIAJ63SKFjTu1XYUDqusBU4EqRsu-hO6vRsXT6AsX5b=
+qZger2vISO3we85UxB3FAkA_hwKhPrFCGOyeba_hFlk6YWCkHTV7aFQ5PCOpUYIrnfsGDOrZygt=
+l3b3x7XCGu77uPu-Yyeo9XSn0xgrWbnDh0xNb8Zo32TGuxe7Qw5f1ghN1J1LNTPucPWeOnHwFnw=
+m4XZQ2-4SbNQhNaobTcw3ix3GC4ZsmaNWKNfb8JhQzQ0IGXG9_mVnUvcCaRVTM7Wbk7QKozWOGb=
+xJxi-L4Ph4S4-dY_D0ptaHVdprGF-KPPzii0XMuftKusUOLO1h-GUo7jZFRge431qY22STtUm27=
+PWJdKo2m7nwmn-sfj9Rd2p72EVShsuyuRDrTuoWCJpp6nRO-DYjhz2unAh4Q3dbWiIyXJBzl1Zt=
+CdVShcQwjf54b-f7rY4pMGWjHQ_9rHSvOKXHktxS94oQdXulGh5i4lnLSNIxzQUdUO25o49Fg0w=
+7tZ68XujgJt1__K8tP0u1lkhcPs_V_BTSIzHHut4NS6XBCfGARnyuk9CPFrNe26zKk6-C5kNT9Q=
+8cnB2SMrWn8SKg7--Lw9zdfatkDvVwGshNMiKEHJONjCTsbmY7FkIAzcYbAgj1UFfe0tKYBQuXB=
+xZpnRjBWf6gsJP-KcPauumcyQwBSHtAk3yjxFPvzqKs5xfJQgneOwRnPGI2LMnTKl6mJyxsl_NR=
+m053QWOOH-k7TRH4ghmBNV4JoW-fUXy_KyQrPZq0jnfilhK-xjMscsrVgDKcNicN8oc2akdpeR5=
+yu8B0pp3ggteehCaEWvPoYx1QwWtAjTc-sWa1rh_b7uOUqLCFu_FaaGxyV7MdKApqzv6kCzIY4q=
+UFon31O3PCqfwRXfBl5T3g4YpaOPWn13NCnqye_HvM8GmndmOKNzUxp2kDEtdFiBgfLQ_AhsScD=
+7PDiPK9vS5OEKXq6_nhfeDRLjgNY_LESJkoL23xtoiTYFCLK4ZWCWDTKyeQgPXDm )
+############################################################
+############################################################
+
+--a2ef025e65bffad3a5a2bf65dd4bfdd6c0f139d1accaf4ceb3df33454bcc
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>BOVINE TUBERCULOSIS - USA: (MICHIGAN) HUMAN-DEER LINK<br>************=
+*****************************************<br>A ProMED-mail post<br><a href=
+=3D"https://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisIijpefK5PNj=
+W-mL-YZGnfgDOxU1G3gjwnPSi2Tfv3HA/42y/IJF6QfcFSBmw4fgSreNuSA/h0/Yi0w6ZpRC1kW=
+Vr2GFI_m_4oWUGyd7g5EqJMoDOdeBQU">http://www.promedmail.org</a><br>ProMED-ma=
+il is a program of the<br>International Society for Infectious Diseases<br>=
+<a href=3D"https://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisCT5t=
+pD4Upm3qyMCbcYSQvc/42y/IJF6QfcFSBmw4fgSreNuSA/h1/OuZT-1qTG_qGs_4ofSobwTHh8z=
+dEFodQ_O8bQhVsOnU">http://www.isid.org</a><br><br>Date: Thu 11 Jan 2024=0D<=
+br>Source: Clinical Infectious Diseases [edited]=0D<br><a href=3D"https://u=
+19268662.ct.sendgrid.net/ss/c/TUIVIg4PCmni5tP3Q8lzBZ9WMLSK_aWkLFB5TditFE4gs=
+VFtbLWcq3YqSHK36yB4/42y/IJF6QfcFSBmw4fgSreNuSA/h2/9qqyvu1XAb8dKAgslrzFVT16V=
+nOsSn2vqmTKQLRP_TQ">https://doi.org/10.1093/cid/ciae009</a>=0D<br>=0D<br>=0D=
+<br>Citation: Sunstrum J, Power LE, Fligiel HM, et al: Human disease due<br=
+>to _Mycobacterium bovis_ linked to free-ranging deer in Michigan. Clin<br>=
+Infect Dis. 2024; ciae009.=0D<br>------------------------------------------=
+--------------------------------------=0D<br>=0D<br>Abstract=0D<br>--------=0D=
+<br>Background: A unique enzootic focus of _Mycobacterium bovis_ in<br>free=
+-ranging deer was identified in northern lower Michigan in 1994,<br>with su=
+bsequent evidence of transmission to local cattle herds.<br>Between 2002 an=
+d 2017 three Michigan deer hunters with _M. bovis_<br>disease were previous=
+ly reported. We present 4 additional human cases<br>linked to the zoonotic =
+focus in deer, utilizing genomic epidemiology<br>to confirm close molecular=
+ associations among human, deer and cattle<br>_M. bovis_ isolates.=0D<br>=0D=
+<br>Methods: Identification of human TB cases with cultures of _M. bovis_<b=
+r>was provided from the Michigan Department of Health and Human Services<br=
+>(MDHHS) tuberculosis database. Clinical review and interviews focused<br>o=
+n risk factors for contact with wildlife and cattle. Whole genome<br>sequen=
+ces of human isolates were compared with a veterinary library of<br>_M. bov=
+is_ strains to identify those linked to the enzootic focus.=0D<br>=0D<br>Re=
+sults: 3 confirmed and 1 probable human case with _M. bovis_ disease<br>wer=
+e identified between 2019 and 2022, including cutaneous disease, 2<br>sever=
+e pulmonary disease cases, and human-to-human transmission. The 3<br>human =
+isolates had 0-3 SNPs with _M. bovis_ strains circulating in<br>wild deer a=
+nd domestic cattle in Michigan.=0D<br>=0D<br>Conclusions: Spillover of enzo=
+otic _M. bovis_ from deer to humans and<br>cattle continues to occur in Mic=
+higan. Future studies should examine<br>the routes of transmission and degr=
+ee of risk to humans through<br>expanded epidemiological surveys. A One Hea=
+lth approach linking human,<br>veterinary and environmental health should a=
+ddress screening for TB<br>infection, public education, and mitigation of t=
+ransmission.=0D<br>=0D<br>--=0D<br>Communicated by:=0D<br>ProMED<br><br>[Th=
+e following is a discussion related to _M. bovis_ from my<br>colleague, Mod=
+.TG:=0D<br>=0D<br>Bovine tuberculosis (TB) is a chronic bacterial disease (=
+primarily of<br>cattle) caused by the microorganism _Mycobacterium bovis_. =
+The disease<br>can affect other species, including humans and wildlife.=0D<=
+br>=0D<br>"Bovine TB is most often transmitted to humans by inhalation of<b=
+r>aerosolized respiratory tract bacteria, ingestion of unpasteurized<br>mil=
+k, and inoculation by contaminated instruments (such as knives).<br>The dis=
+ease can be spread from livestock to wildlife or wildlife to<br>livestock v=
+ia the fecal-oral route, ingestion of contaminated food, or<br>though the r=
+espiratory tract.=0D<br>=0D<br>"The APHIS Bovine TB Eradication Program has=
+ reduced TB in US cattle;<br>however, spillover into wildlife may maintain =
+the microorganism in the<br>environment and function as a source of re-infe=
+ction for livestock.=0D<br>=0D<br>"Bovine tuberculosis in wildlife was firs=
+t documented in the United<br>States in white-tailed deer (_Odocoileus virg=
+inianus_) in 1933. They<br>continue to be the wildlife species of most conc=
+ern because they are<br>known to become infected and transmit bovine TB via=
+ the oral or<br>respiratory route and are considered reservoirs in some are=
+as. Other<br>wildlife and feral species in North America in which _M. bovis=
+_ has<br>been detected include:=0D<br>=0D<br>- Elk (_Cervus canadensis_)=0D=
+<br>- Mule deer (_Odocoileus hemionus_)=0D<br>- Bison (_Bison bison_)=0D<br=
+>- Raccoons (_Procyon lotor_)=0D<br>- Moose (_Alces alces_)=0D<br>- Coyotes=
+ (_Canis latrans_)=0D<br>- Opossums (_Didelphis virginiana_)=0D<br>- Feral =
+cats (_Felis silvestris catus_)=0D<br>- Gray fox (_Urocyon cinereoargenteus=
+_)=0D<br>- Black bears (_Ursus americanus_)=0D<br>- Feral swine (_Sus scrof=
+a_)=0D<br>- Gray wolves (_Canis lupus_)=0D<br>- Red fox (_Vulpes vulpes_)=0D=
+<br>- Bobcat (_Lynx rufus_)=0D<br>=0D<br>"Active surveillance for TB in wil=
+dlife is currently being conducted<br>only in Michigan and Minnesota, where=
+ the disease has been documented<br>in white-tailed deer. However, surveill=
+ance in wildlife is often<br>conducted in other areas of the United States =
+following the detection<br>of bovine TB in domestic livestock or captive ce=
+rvids. These<br>short-term surveillance programs are usually established to=
+ evaluate<br>whether bovine TB is present in wildlife on or near infected p=
+remises"<br>(<a href=3D"https://u19268662.ct.sendgrid.net/ss/c/TLh_csrC34X_=
+iXpbYoMam5aB-nxFsTjBY8W6uXbOrTf5vu1aXR6fyVu_f5qSRlj-vXsg5desm1SBvPfADXavkwl=
+UB2uHvPI8az9R9YlAT7v2Wr5vovNntRnTZbo6MwPL/42y/IJF6QfcFSBmw4fgSreNuSA/h3/y-B=
+tYbt8E2kemOlZoeUSiPKYe2xQvlcjKF6JpxWzsXc">https://www.aphis.usda.gov/aphis/=
+ourfocus/wildlifedamage/programs/nwdp/nwdp-tb</a>).=0D<br>=0D<br>It seems c=
+lear that the focus of _M. bovis_ in deer poses the risk of<br>zoonotic spr=
+ead to hunters and others. - Mod.LL<br><br>ProMED map:<br>Michigan, United =
+States:<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/sSnCkKCWBvais3=
+EuVAOvgy2WOIX7pp1nXnn4AbwuQ3Z6WbkfhqXYXU-aTMPJ8yThz3dbncQ2jqORrBPeG2eJSQ/42=
+y/IJF6QfcFSBmw4fgSreNuSA/h4/4ZJ-QQzqOAhUZ2KRLsrlioBKlSrt2z1EN1AHO6yNjg0">ht=
+tps://promedmail.org/promed-post?place=3D8714219,225</a>]<br><br>[See Also:=
+<br>2020=0D<br>----=0D<br>Bovine tuberculosis - UK (02): venison source sus=
+p. foodborne spread,<br>cat, human http://promedmail.org/post/20201207.8000=
+114=0D<br>Bovine tuberculosis - USA: (MI) cattle<br>http://promedmail.org/p=
+ost/20201118.7951450=0D<br>2019=0D<br>----=0D<br>Bovine tuberculosis - USA =
+(06): (MI) transmission from deer to humans,<br>2017 http://promedmail.org/=
+post/20190927.6696353=0D<br>Bovine tuberculosis - USA (05): (MI) cattle<br>=
+http://promedmail.org/post/20190724.6586217=0D<br>2018=0D<br>----=0D<br>Bov=
+ine tuberculosis - USA (08): (MI) cervids, alert<br>http://promedmail.org/p=
+ost/20181128.6170266=0D<br>2016=0D<br>----=0D<br>Bovine tuberculosis - USA =
+(06): (IN) wild cervid surveillance<br>http://promedmail.org/post/20161113.=
+4625099=0D<br>Bovine tuberculosis - USA (04): (IN) wild cervids<br>http://p=
+romedmail.org/post/20160817.4420929]<br>...................................=
+..............ll/rd/jh<br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3DxEW7hmcy2TKK_HQ6ofxeA-ePGwv1HP4Jb1snrkV71etoMDAwdT=
+AwMCNh_vsOngxE-SDKapDr_CsSJQ5Od6kFMM-OM2ool3cW_b4NAJdBeJMRqMZJwHdWdik8E9BYs=
+NwNk9ouBT4B2gc4xk69OVHeg9x3iTQFeIdTw17eI2YMvkXiRdj9kn0awvbviEwOUiO2jFcP9TmN=
+C6KU1urUixIfDoCICccR6o9_7liYlUWr5CfnTQFIjdIAJ63SKFjTu1XYUDqusBU4EqRsu-hO6vR=
+sXT6AsX5bqZger2vISO3we85UxB3FAkA_hwKhPrFCGOyeba_hFlk6YWCkHTV7aFQ5PCOpUYIrnf=
+sGDOrZygtl3b3x7XCGu77uPu-Yyeo9XSn0xgrWbnDh0xNb8Zo32TGuxe7Qw5f1ghN1J1LNTPucP=
+WeOnHwFnwm4XZQ2-4SbNQhNaobTcw3ix3GC4ZsmaNWKNfb8JhQzQ0IGXG9_mVnUvcCaRVTM7Wbk=
+7QKozWOGbxJxi-L4Ph4S4-dY_D0ptaHVdprGF-KPPzii0XMuftKusUOLO1h-GUo7jZFRge431qY=
+22STtUm27PWJdKo2m7nwmn-sfj9Rd2p72EVShsuyuRDrTuoWCJpp6nRO-DYjhz2unAh4Q3dbWiI=
+yXJBzl1ZtCdVShcQwjf54b-f7rY4pMGWjHQ_9rHSvOKXHktxS94oQdXulGh5i4lnLSNIxzQUdUO=
+25o49Fg0w7tZ68XujgJt1__K8tP0u1lkhcPs_V_BTSIzHHut4NS6XBCfGARnyuk9CPFrNe26zKk=
+6-C5kNT9Q8cnB2SMrWn8SKg7--Lw9zdfatkDvVwGshNMiKEHJONjCTsbmY7FkIAzcYbAgj1UFfe=
+0tKYBQuXBxZpnRjBWf6gsJP-KcPauumcyQwBSHtAk3yjxFPvzqKs5xfJQgneOwRnPGI2LMnTKl6=
+mJyxsl_NRm053QWOOH-k7TRH4ghmBNV4JoW-fUXy_KyQrPZq0jnfilhK-xjMscsrVgDKcNicN8o=
+c2akdpeR5yu8B0pp3ggteehCaEWvPoYx1QwWtAjTc-sWa1rh_b7uOUqLCFu_FaaGxyV7MdKApqz=
+v6kCzIY4qUFon31O3PCqfwRXfBl5T3g4YpaOPWn13NCnqye_HvM8GmndmOKNzUxp2kDEtdFiBgf=
+LQ_AhsScD7PDiPK9vS5OEKXq6_nhfeDRLjgNY_LESJkoL23xtoiTYFCLK4ZWCWDTKyeQgPXDm" =
+target=3D"_blank" class=3D"Unsubscribe--unsubscribePreferences" style=3D"fo=
+nt-family:sans-serif;text-decoration:none;">Unsubscribe Preferences</a></di=
+v><br>############################################################<br>#####=
+#######################################################<br><br><img src=3D"=
+https://u19268662.ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/42y/IJF6QfcFS=
+Bmw4fgSreNuSA/ho.gif" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=
+=3D"height:1px !important;width:1px !important;border-width:0 !important;ma=
+rgin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;=
+margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !importa=
+nt;padding-right:0 !important;padding-left:0 !important;"/></body>
+</html>
+--a2ef025e65bffad3a5a2bf65dd4bfdd6c0f139d1accaf4ceb3df33454bcc--

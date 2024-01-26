@@ -1,0 +1,652 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a05:640c:2d08:b0:1ee:5ffb:29ea with SMTP id p8csp174878eiu;
+        Mon, 22 Jan 2024 14:25:16 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IFuMOXNkPnvuons9KvicGAiJgp29+xB8H0R1m4APGbNNyXx4YNy21hYEF1UzSJJUDzzKk8i
+X-Received: by 2002:a05:6214:5184:b0:684:959b:fbd3 with SMTP id kl4-20020a056214518400b00684959bfbd3mr5174917qvb.56.1705962316179;
+        Mon, 22 Jan 2024 14:25:16 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1705962316; cv=none;
+        d=google.com; s=arc-20160816;
+        b=jnBPstcQpimwgTM2RTmFkbBy+0tIAB20kVjN4b/q/hSXzIBSgrFzOwAFeWU1NKueq+
+         EwXCanZEDziW8dCH53zHipG4FMg9ddbCXJkQat0ihPW673Ir4uHJ+Dk6YSKqznWzsFDO
+         31LeyVCrBUICJY7tHORykJsVvkC9tF8vb2hEXFEkNb0SNeMX0Ce7wMqizuGAHTFh/Ept
+         EsfzxkbQ1xcHZB15lnbEp7GXetUafnTiNwAZspkD+CJvv46/Sgb7B3TNKy7LO/BhmGpl
+         ueaO/IQQ6afAz7dqaP+tyR6rrdzHrMSq4XQY9cTaRebreXmLpysrbZXkQ37jayBMcI1i
+         6Www==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=qHAKPXeF1kriiamMirZQBhUi8ez9fy+0X4nXbu7Y2Rc=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=kItzpAujz4bKweUQG8ZtHA7KHkVZ4MSSuES8PsbwpLxscw0w3dyMYvpr/T2SqBCRz6
+         Jp27x+/wn9DbWdzNPlIGR9CkDJv/gJ6FGb8XFGvczn5usHKAnrTSdGQyuStLc73wMVyY
+         udMDW0H8hS3dBWHKtwIyHcggHdUePSAULTj8jftAlgmX0im7UD6vbf0T9rsiL/jpvXXf
+         uZ/tFIX7DoKaYRwNUth76kotMYvaDsEXdbUf8UkgvJDcdiIwDSAak8zWESE/spP9YUMK
+         2v7/xdJ3UwkXVMoZJFJCBGoRw5tu1dj87ZZylMJGq+NLwrm1NW9CFdG3CZa4zippoU4m
+         58gA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=FAJIYdWC;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=FW7BQbna;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id a13-20020a0ce38d000000b006819449e93bsi6659510qvl.389.2024.01.22.14.25.15
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 22 Jan 2024 14:25:16 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=FAJIYdWC;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=FW7BQbna;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=qHAKPXeF1kriiamMirZQBhUi8ez9fy+0X4nXbu7Y2Rc=;
+	b=FAJIYdWCCkjNL+O7wWFiCs2e7NQ6NE6QzQl+5u7tmOsSO2P3I2sadL9hr+WSxCl/5oeL
+	JeJsSn16/hMkBQZj1NZ8wYLf0Gpmvs8l/JFXFp86ZPozGZEbjgdKASYO+clpqYcha29Cdc
+	szzHfj/CXH48hlfwaE/HyRwBnCV+chLkvzjLyJuKQY77XyiXppQjzpbxRnjvv02nwnJPUU
+	4xSsQxg2Flw5QqCxGa6qU7+A+Wy1DOQDss/yja++ZojAXVYA8mH/EFnvMuB+VU/Ml6T8Jv
+	5mXhiPgODpPEWl0JEtgpPwd7dSyjvgimZsCjpDGzqrevvm3WEirREfNoYccUP5Mg==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=qHAKPXeF1kriiamMirZQBhUi8ez9fy+0X4nXbu7Y2Rc=;
+	b=FW7BQbna3ghYPO7kH3/ppohXvb5ufVP0FFvdFAI3kXc/puAgCQGTdNJJmZPaAUsfSST8
+	V75iR7UHs1eLnBy8LTIUsDAvnWPvGXYsdWWizMH+c48+LsQyLiaLU6w5ruBVkQw32ylMql
+	mTGs8SldfZZzspXUCjayrunl6tFSBeQcc=
+Received: by filterdrecv-59b97c8fcd-xrrrk with SMTP id filterdrecv-59b97c8fcd-xrrrk-1-65AEEB48-4D
+        2024-01-22 22:25:12.576960582 +0000 UTC m=+8394202.918425092
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-34 (SG) with HTTP
+	id kBWO-325QWy5BK5AuejGJA
+	Mon, 22 Jan 2024 22:25:12.558 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=9087fba3118dc219aab9a45fa919f47e30dd2e5a369f48bc55030d1b23a3
+Date: Mon, 22 Jan 2024 22:25:15 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <kBWO-325QWy5BK5AuejGJA@geopod-ismtpd-34>
+Subject: PRO/EDR> Cholera, diarrhea & dysentery update (04): Africa (Zambia,
+ Sudan)
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iB85gR1WEhQvFE=2FjuP1v7En35Om6V2RJQ7MgOAv?=
+ =?us-ascii?Q?e3c3qX2H=2F1zP8fbyfWzVcYfFFNLwBW6iqkGnvf3?=
+ =?us-ascii?Q?X7ECNX5=2Fbygqo4CnDmCktXLcLUkzW73LWAP0cTj?=
+ =?us-ascii?Q?TL+Ys5y0pKwJsgESHkVzEFhnfoSxHiufznNiavP?=
+ =?us-ascii?Q?zRtgcrjb2fj=2F39wxYaFWHozNZsSadEpLBEIJwz?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUhc93xcG=2F095a5S4+mt=2FG?=
+ =?us-ascii?Q?uYUpctI=2FOGD2dwyi+uvm2j4FCdvuw0l9zcHM8iA?=
+ =?us-ascii?Q?mojOvTXq7jOpDFFNtfsYkHQYACEW8pq1BXXqYmH?=
+ =?us-ascii?Q?oGTsnt6QpE2ZV5WVqnpwfXWoLXx7+4Y1pcBR3SG?=
+ =?us-ascii?Q?t2XCY5gdGQB2+56PK3VRXtlIMVR5pVAd67cTd50?=
+ =?us-ascii?Q?eG4e5xUSygzFCejlENctbzcgEEuMe8tPovAefZh?=
+ =?us-ascii?Q?Ad1mXO6qRG0tEt=2F5hC7kxbRqprhkYc8EJ6bzKKK?=
+ =?us-ascii?Q?H1jdUQhYLZrUvahEdHOSU26PnVP0JkhtL5zBDvg?=
+ =?us-ascii?Q?Ofxi3f2JCtMmEX0b0r=2FZYDy5ac+ZYeQZABcLSeH?=
+ =?us-ascii?Q?IbmA7nT8qn2lDdHFttNHuxF=2FBTGq++siEpr63Ef?=
+ =?us-ascii?Q?InRthNCQg00qldaIMl5xdheAw4BuQPoel8LjJlk?=
+ =?us-ascii?Q?jEXNmf2CeZEjEfiEgWTS4hGnVI2J7Op8O+KYY5E?=
+ =?us-ascii?Q?GV3ipdN5fLPYH5fmxVRmOFFdrH84OVvtWCdP0T2?=
+ =?us-ascii?Q?WrW2MOTHrg2NDhyAbs40+mrFRQaD=2F7vGmNQRvpj?=
+ =?us-ascii?Q?Dt8YycQ7J+=2FMqMj48wNJMgqv1ljZHToRbyT79zc?=
+ =?us-ascii?Q?gN+ZYdurP2axlR+KrBtJFcLeQky3icvhxDzVu7a?=
+ =?us-ascii?Q?yWZndP++I1eJnK+S4bKqFgfU8VcM6mFrwJNDrFn?=
+ =?us-ascii?Q?hVt=2FYP+u7aXLfRQ2QTDgkTg7qb4l=2FmNV8ykPpdH?=
+ =?us-ascii?Q?t1hM=2FRoOxxDFBvdIjU2hMYrMbbOx5MY477oB5hM?=
+ =?us-ascii?Q?Tr6XUXipb6kk5o86lvozKJMKJQ=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2E78i5aK8bm?=
+ =?us-ascii?Q?eCOeQO2H5g=5FpdWcfm56xh0=5FlZ29cp7AFmNoMDAw?=
+ =?us-ascii?Q?dTAwMGMHOqw-WcaVUvFn0=5FzjrrDBlr8YovqDoU=5F?=
+ =?us-ascii?Q?FaigAkDy0zqk2yaB1JY85HDxjS7QtIcXqKCnOZO?=
+ =?us-ascii?Q?vVJJO7onU9To=5FtyRtmJp4hyJNj=5FzI76bWMWmqkY?=
+ =?us-ascii?Q?VvdlQN6-jERvzczCg=3D=3D=2Ejgi6X3OVuqzsjjzZCQV?=
+ =?us-ascii?Q?G9xlJ09iH85gnBgui5zse2o1oMDAwdTAwMLYBBb?=
+ =?us-ascii?Q?24FmKL-IceUxRhShPBwhkx-nsx93LGZk2YMc2Cw?=
+ =?us-ascii?Q?upQxhnmxYerWrZ3lFLFW0NgN6SlGmgMCiwZ7EYW?=
+ =?us-ascii?Q?v99-bynAoZ4aGM26RH8FUOQTXRdYxg2kw=5Fhuwb7?=
+ =?us-ascii?Q?ojAct6aqZvM2X558jaMFuUpf6ptRgqOyZqvrzNX?=
+ =?us-ascii?Q?Vb0QgpMEbfvIl=5FQxtJUs-naCh=5Fztoc5dwa4X-LY?=
+ =?us-ascii?Q?V5HqV4M-HndugSh1yMjycqLnkA3tJC1FAmTUr9X?=
+ =?us-ascii?Q?skQogMOtTaW=5FRuJNmY67XV5TvDX7K5j9xxCxt1C?=
+ =?us-ascii?Q?z8t8QAXerMztaZWZ3VTSxk-gtTs6i4O4Gnn-ACV?=
+ =?us-ascii?Q?sl=5F11edt6jZCt8X5R=5FWqSfVE5lSUnFYDVPNhXKo?=
+ =?us-ascii?Q?gJewdmvygH6TI2uZJEwdUEKAbvqQgZlKpb2RQr-?=
+ =?us-ascii?Q?xK0Ua09HC-cCfOZwB78gH0=5F3Gc9kD3WQxqLGFlD?=
+ =?us-ascii?Q?MbIu6w8LxICaYzw2qqqAmqsaOyjz3HVjiO4fEkF?=
+ =?us-ascii?Q?xw2vQdYkGf1YCRGnGUVmfRNxnc3KVOYSbDbu7vO?=
+ =?us-ascii?Q?HbyBN7GZE4n65DlAA1728YaEUYOq6lx3BqWtR5R?=
+ =?us-ascii?Q?oYpfdaehok2oK6Xx4bwqxrVIPvaIpB2OHP0f=5Fds?=
+ =?us-ascii?Q?jF1tZUaOifYp7n6KpldlTSuDFfulpF-=5FoL-TcP5?=
+ =?us-ascii?Q?E9PWXpd9Z8y-ae93ejHq-lf4XK3Jsd4Ghq0G45L?=
+ =?us-ascii?Q?quilRMXNxrsMMrvGnYEgl865RYFQ5EvwwOiIx-a?=
+ =?us-ascii?Q?CD4ABB5t=5FpzIFuznrai6H0ZRzuxywWJzosIqyPU?=
+ =?us-ascii?Q?=5FHwlq=5FDmimUrTJ9dPNA=5FzGq3L4HN6IJqObRIW=5Fg?=
+ =?us-ascii?Q?mFBIHNuHkNUxAqTwlWLguHDtFiOH2iKwN5YeyL9?=
+ =?us-ascii?Q?Akl4vSKYovwt1Tp=5Fyke20be3Jdv9efDG7bVsZCv?=
+ =?us-ascii?Q?cY23Q5rbcFaHCh1XGoqSX80ZbKLyTk=5F4IWwKPML?=
+ =?us-ascii?Q?aQ-zPIsSifAX1C=5Fzip58OOrkItM8smJRHtqn4Pm?=
+ =?us-ascii?Q?yJDs=5FwWiFCNnS8mkM-=5FKDquspdQLKJ7uPVgs8M1?=
+ =?us-ascii?Q?7BoEtrSZLZjWSquw2HUeyCco12lZFlqL=5FsquFXr?=
+ =?us-ascii?Q?808C-A=3D=3D=3E?=
+
+--9087fba3118dc219aab9a45fa919f47e30dd2e5a369f48bc55030d1b23a3
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=us-ascii
+Mime-Version: 1.0
+
+CHOLERA, DIARRHEA & DYSENTERY UPDATE (04): AFRICA (ZAMBIA, SUDAN)
+*****************************************************************
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+In this update:
+[1] Zambia
+[2] Sudan
+
+******
+[1] Zambia
+Date: Sat 20 Jan 2024
+Source: APO Group - Africa Newsroom [edited]
+<https://www.africa-newsroom.com/press/zambia-races-to-curb-fastspreading-c=
+holera-outbreak?lang=3Den>
+
+
+As the cholera outbreak in Zambia continues to expand rapidly, efforts
+are being stepped up to halt the spread of disease and save lives. A
+vaccination campaign is currently underway targeting 1.5 million
+people, including children, health workers, and people at high risk of
+infection in the worst affected areas.
+
+In partnership with Gavi, the Vaccine Alliance, UNICEF, and others,
+World Health Organization (WHO) is supporting the government to
+effectively roll out the oral cholera vaccination campaign as well as
+bolster ongoing outbreak control measures. More than 1.4 million
+cholera vaccine doses have been delivered to the country to help stem
+the outbreak, with another 200 000 additional doses for a total of
+around 1.7 million doses approved by the WHO International
+Coordinating Group on Vaccine Provision.
+
+The government declared a new outbreak in October 2023, which began in
+Lusaka province. As of 18 Jan 2024, 10 887 cases and 432 deaths were
+reported across 9 of the country's 10 provinces. Lusaka, Central, and
+Eastern provinces are the worst affected. Lusaka district is the
+epicentre of the outbreak. The outbreak is spreading fast, with the
+country recording an average of 461 new cases every 24 hours over the
+past 7 days.
+
+The rapid spread of the disease and the increasing number of reported
+cases suggest that the outbreak may be one of the worst in the
+country's recent history. Densely populated areas of Lusaka with
+limited or no access to clean water and sanitation services and poor
+hygiene practices are facing a higher incidence of cholera.
+
+"The current cholera outbreak requires concerted and collaborative
+efforts to protect the health and well-being of citizens. Our priority
+is to work closely with the government, local health authorities, and
+cooperating partners to provide immediate support and expertise," says
+Dr Nathan Bakyaita, WHO representative in Zambia. "The epidemiological
+situation underscores the urgency for a comprehensive response,
+addressing the root causes and implementing targeted interventions."
+
+WHO is working with the government to strengthen the key outbreak
+response areas. The organization has deployed 23 experts from its
+Regional Office for Africa to support emergency coordination, case
+management, surveillance, and infection prevention and control, and to
+bolster water, sanitation, and hygiene services as well as to increase
+public awareness on the risks of the disease.
+
+WHO has also provided more than 14 tons of cholera kits and additional
+medical supplies to the government. The supplies are enough to treat
+about 3000 mild to severe cases of cholera, including moderate cases
+at oral rehydration points in communities. The organization is also
+procuring additional supplies and equipment, including cholera beds,
+which are set to be delivered in the coming days.
+
+The government has activated high-level outbreak response coordinated
+by the Disaster Management and Mitigation Unit. Other efforts to
+control the outbreak include the provision of water tanks to supply
+communities with clean drinking water, setting up of oral rehydration
+points in strategic community places such as markets, churches, and
+bus stops for access to early treatment, and public health campaigns
+to promote hygiene practices. Cholera treatment centres have been set
+up to provide medical care for severe cases, with the largest
+treatment centre at the National Heroes Stadium in central Lusaka.
+
+Cholera is an acute, extremely virulent infection that can spread
+rapidly and dehydration resulting in high morbidity and mortality.
+However, the disease is easily treatable. Most people can be treated
+successfully through prompt administration of oral rehydration
+solution or intravenous fluids.
+
+Effective control relies on implementing comprehensive measures
+including enhanced epidemiological and laboratory surveillance to
+detect, confirm, and quickly respond to outbreaks; improving access to
+treatment, vaccines, safe water, and basic sanitation; as well as
+effecting behavioural change and better hygiene practices among
+communities.
+
+--
+Communicated by:
+ProMED
+via
+ProMED-EAFR
+
+[Zambia faces a severe and rapidly escalating cholera outbreak, with
+Lusaka, Central, and Eastern provinces bearing the brunt of the
+impact. The reported cases and fatalities underscore the urgency for
+immediate and comprehensive response measures. The ongoing vaccination
+campaign, supported by international organizations like WHO, Gavi, and
+UNICEF, is a crucial step in curbing the spread of the disease,
+particularly in densely populated areas lacking adequate water,
+sanitation, and hygiene practices. To strengthen the response,
+continued collaboration between the government, health authorities,
+and partners is essential. - Mod.TU
+
+ProMED map of Zambia:
+<https://promedmail.org/promed-post?place=3D8714378,170>]
+
+******
+[2] Sudan
+Date: Fri 19 Jan 2024
+Source: Sudan Tribune [edited]
+<https://sudantribune.com/article281522/>
+
+
+The Sudanese Ministry of Health has confirmed the presence of a
+cholera outbreak in the River Nile State, with 36 suspected cases and
+2 deaths reported. The outbreak, which initially emerged in Gedaref
+and Khartoum states in September 2023, has since spread to several
+other states, including Al-Jazirah, White Nile, Red Sea, and Kassala.
+The United Nations has warned that the disease could affect over 3
+million Sudanese.
+
+Federal Minister of Health Haitham Mohamed Ibrahim met with health
+officials in the River Nile State on Friday [19 Jan 2024] and
+confirmed that cases had been detected in 3 localities, with the
+majority in Al-Damer locality in the Sidon region. The Minister
+directed the activation of therapeutic protocols in cholera treatment
+centres and acknowledged the health risks posed by mining activities
+and the large influx of displaced people and migrants in the state. He
+emphasized the need for preparedness and increased health
+interventions and called for regular environmental sanitation
+campaigns across all localities. The Minister reassured the stability
+of the state's pharmaceutical supply of intravenous solutions and
+medications and reiterated his commitment to providing support to
+healthcare systems to combat the epidemic and safeguard public health
+across Sudan.
+
+Minister Ibrahim stressed the importance of concerted efforts to
+implement and support health activities, intensify awareness and
+education about epidemic diseases, and recognize the crucial role of
+environmental health management in mitigating the spread of cholera.
+He emphasized the need for individuals to follow preventive measures,
+such as covering eating utensils, washing hands thoroughly, reporting
+suspected cases, and avoiding the consumption of untreated water.
+
+In December 2023, the Sudanese Ministry of Health launched a 2nd
+vaccination campaign against cholera in Khartoum State, targeting the
+localities of Karari, Umm Badda, and East Nile. The 1st campaign,
+conducted in November 2023, covered Gedaref and Gezira states, with
+approximately 2.2 million doses of vaccines provided by the Global
+Mechanism for the Elimination of Cholera.
+
+--
+Communicated by:
+ProMED
+via
+ProMED-EAFR
+
+[The spread of the outbreak to various African countries indicates a
+major challenge to contain and manage the epidemic. The sporadic
+outbreaks associated with multilayer factors including environmental
+issues have been occurring in more than 13 countries since 2023. To
+effectively respond to these outbreaks of cholera, it is crucial to
+prioritize continued environmental sanitation campaigns, intensify
+awareness and education initiatives, and ensure the availability and
+accessibility of vaccinations across affected regions. Additionally,
+collaborative efforts between local and international health agencies,
+ongoing surveillance, and the enforcement of preventive measures at
+the community level are vital components of a robust response
+strategy. The commitment to pharmaceutical supply stability and
+support for healthcare systems is reassuring, and sustained efforts in
+these areas will be key to safeguarding public health. - Mod.TU
+
+ProMED map of Sudan:
+<https://promedmail.org/promed-post?place=3D8714376,96>]
+
+[See Also:
+Cholera, diarrhea & dysentery update (03): Africa (Sudan, Nigeria)
+http://promedmail.org/post/20240117.8714286
+Cholera, diarrhea & dysentery update (02): Africa (Zambia) update
+http://promedmail.org/post/20240106.8714105
+2023
+----
+Cholera, diarrhea & dysentery update (33): Africa (Zambia) fatal
+http://promedmail.org/post/20231228.8713950
+Cholera, diarrhea & dysentery update (32): Africa (Sudan) increasing,
+fatal, MOH http://promedmail.org/post/20231227.8713943
+Cholera, diarrhea & dysentery update (30): Yemen, increasing
+incidence, NGO http://promedmail.org/post/20231219.8713796
+Cholera, diarrhea & dysentery update (29): Sudan, cases increase, MOH
+update http://promedmail.org/post/20231211.8713650
+Cholera, diarrhea & dysentery update (27): Africa (Sudan) case
+increase http://promedmail.org/post/20231210.8713628
+Cholera, diarrhea & dysentery update (26): Africa (Ethiopia) increase,
+fatal http://promedmail.org/post/20231207.8713569
+Cholera, diarrhea & dysentery update (24): Africa (Sudan)
+http://promedmail.org/post/20231115.8713179
+Cholera, dengue - Sudan: (KH, GZ, GD) fatal
+http://promedmail.org/post/20231031.8712921
+Cholera, diarrhea & dysentery update (22): Africa (Nigeria) fatal
+http://promedmail.org/post/20231024.8712800
+Cholera, diarrhea & dysentery update (21): Africa (Sudan) increase,
+fatal, WHO http://promedmail.org/post/20231021.8712750
+Cholera, diarrhea & dysentery update (14): Europe (Italy) Africa
+(South Africa) http://promedmail.org/post/20230713.8711116
+Cholera, diarrhea & dysentery update (11): Africa, WHO global cases
+http://promedmail.org/post/20230517.8710097
+Cholera, diarrhea & dysentery update (08): Americas, Asia, Africa
+http://promedmail.org/post/20230326.8709160
+Cholera, diarrhea & dysentery update (06): Americas, Asia, Africa
+http://promedmail.org/post/20230208.8708226
+Cholera, diarrhea & dysentery update (05): Africa
+http://promedmail.org/post/20230126.8707972
+Cholera, diarrhea & dysentery update (04): Asia, Africa
+http://promedmail.org/post/20230121.8707899
+Cholera, diarrhea & dysentery update (01): Africa, Asia
+http://promedmail.org/post/20230108.8707678
+Cholera, diarrhea & dysentery update (06): Americas, Asia, Africa
+http://promedmail.org/post/20230208.8708226]
+.................................................tu/tw/ya/tw/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3DEHuo2KoC-QCaUTH8zFp2fS1eh1ABDtG0GJdGcIZLkAVoMDAwdTAwMLAxL5S=
+i7J81MEugDlYkKoF_iiWqN9ANCp6sMneMUDYTQVu9-RgN25ZDuZx2lTSipreUaAoHiKyoj3oZW9=
+HR_W9_u7M91zG7JLDA2VIntsds6y4pZ8vfnrgz4T5JwAXI7Pj2Tr_pRlYF1C4hu96H1ZbbWrMPg=
+g6EOG_R3gstPC0mlwbaSAhLsOMvvyZOiQ4szQ4GTL_RvdMuDDAI6mXYQQn3DiEN-Glrw6MYtqjR=
+CfbVWHbavGNrOvocBLirqE_gEgquhj6DIr1v-g4GGux0dd9YliaehRZq8CXAI3pGKYNpcAe1jlB=
+LZ6UAf_Qqb_5ENnxFU3kSisUw-HW6rHeFouyfQv3W5_8R4O4eveYSsbXVOais3o8udp-DV3TQI6=
+C50x3Q1cENsP2J1GnmzLk8nAl4i1isdxsGCLde1txQ0TNP5A2--D2rktQeQXujKaZE327rrhtJI=
+LhEhAQEaQCeAR50A_ziREZZxWK2S5fKuzSyM2s5sgwtglQtk6xkSx52fVZY01p6GRGsVi6uqmde=
+987Y-89_1n4Fpnym9AUJB_OOkrnlQYn7M4VZNV-Or36tVRrTYB1OHm8DQ0PaoGKMI7mMUY1xvoe=
+luxo5hNI6ToQQrTeIlpE8rd_0trYL1g4CeknKFVHamKqi5qaZzklJ9OLxJGjyvK55HLTkD0EBj2=
+9WseH5G64yxXdF0EqATxahD5AbJBdYZNw8A1VxSHj2y1EL38KW3uEChnzFMOh_l7uBm9Jg4h_hs=
+G8rJN0Rz9AGkiOcrKKCCTSXak3XaqglEwXVEhWQQP1shLo22RzvjBn4NPBUCVae0snulAvMrymb=
+XBJyuyICOUj_WSZsbbvwD7u7Wb9d1cqKHL_G8mDFJnNWm1rQSaqkVYwy6Rq9zNJvrej9cgfG1DF=
+-p-IYi83tiO-DrjoOUrvvUFa8e2Ru2fUnwaC3QC5UFDl64srvRea6bJ_QqG1ZROvMO1mASmdDe7=
+4b55rYzsop4Wli9tOTVVbFDptzVPsaM1rURUYmuIj-YJAum_76n5vEsZDAEL4dlixWORH2evMyF=
+7GsRzge-RKoRGbeB-EMrp3uggvAJqEI2bqJhD6O1iMX9rfE4Ljqx6AZko36_YEAqEuUCZSt8rjg=
+da60MfqBaElhAn5ovDk78bIIZBqIjiDXYA7ZGGzOa5M=3D )
+############################################################
+############################################################
+
+--9087fba3118dc219aab9a45fa919f47e30dd2e5a369f48bc55030d1b23a3
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>CHOLERA, DIARRHEA & DYSENTERY UPDATE (04): AFRICA (ZAMBIA, SUDAN)<br>=
+*****************************************************************<br>A ProM=
+ED-mail post<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/wscE2ng5f=
+l6JrPIt48tisIijpefK5PNjW-mL-YZGnfgDOxU1G3gjwnPSi2Tfv3HA/437/55NxH_aYR_yWGrl=
+lfWeq3g/h0/Fa_YGmEMv49x2V0RA-Dz1mRIzHLmtRtXcOmG1XEHKas">http://www.promedma=
+il.org</a><br>ProMED-mail is a program of the<br>International Society for =
+Infectious Diseases<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/ws=
+cE2ng5fl6JrPIt48tisCT5tpD4Upm3qyMCbcYSQvc/437/55NxH_aYR_yWGrllfWeq3g/h1/Rlv=
+FKjiijOPkU3eeeXb6frGlM2OFUKm3w-YLvqlk-uA">http://www.isid.org</a><br><br>In=
+ this update:=0D<br>[1] Zambia=0D<br>[2] Sudan=0D<br>=0D<br>******=0D<br>[1=
+] Zambia=0D<br>Date: Sat 20 Jan 2024=0D<br>Source: APO Group - Africa Newsr=
+oom [edited]=0D<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/TLh_cs=
+rC34X_iXpbYoMam2HHKsWame1WDYlaHBfAQ_lfY0MwV8iqg5HaHyEiFnD6fwFoKbMdQMZz9-sB2=
+C1mNjg6K6bbXUUh0-SV3h3QnCQi1wCGr_3g12fXeXI69zK-aTYYo-ohp8U0ML7QRGpj7Q/437/5=
+5NxH_aYR_yWGrllfWeq3g/h2/vOo897hMbUqwd_INvij0QdajHiIfOWTvT-PjhLw9bvg">https=
+://www.africa-newsroom.com/press/zambia-races-to-curb-fastspreading-cholera=
+-outbreak?lang=3Den</a>=0D<br>=0D<br>=0D<br>As the cholera outbreak in Zamb=
+ia continues to expand rapidly, efforts<br>are being stepped up to halt the=
+ spread of disease and save lives. A<br>vaccination campaign is currently u=
+nderway targeting 1.5 million<br>people, including children, health workers=
+, and people at high risk of<br>infection in the worst affected areas.=0D<b=
+r>=0D<br>In partnership with Gavi, the Vaccine Alliance, UNICEF, and others=
+,<br>World Health Organization (WHO) is supporting the government to<br>eff=
+ectively roll out the oral cholera vaccination campaign as well as<br>bolst=
+er ongoing outbreak control measures. More than 1.4 million<br>cholera vacc=
+ine doses have been delivered to the country to help stem<br>the outbreak, =
+with another 200 000 additional doses for a total of<br>around 1.7 million =
+doses approved by the WHO International<br>Coordinating Group on Vaccine Pr=
+ovision.=0D<br>=0D<br>The government declared a new outbreak in October 202=
+3, which began in<br>Lusaka province. As of 18 Jan 2024, 10 887 cases and 4=
+32 deaths were<br>reported across 9 of the country's 10 provinces. Lusaka, =
+Central, and<br>Eastern provinces are the worst affected. Lusaka district i=
+s the<br>epicentre of the outbreak. The outbreak is spreading fast, with th=
+e<br>country recording an average of 461 new cases every 24 hours over the<=
+br>past 7 days.=0D<br>=0D<br>The rapid spread of the disease and the increa=
+sing number of reported<br>cases suggest that the outbreak may be one of th=
+e worst in the<br>country's recent history. Densely populated areas of Lusa=
+ka with<br>limited or no access to clean water and sanitation services and =
+poor<br>hygiene practices are facing a higher incidence of cholera.=0D<br>=0D=
+<br>"The current cholera outbreak requires concerted and collaborative<br>e=
+fforts to protect the health and well-being of citizens. Our priority<br>is=
+ to work closely with the government, local health authorities, and<br>coop=
+erating partners to provide immediate support and expertise," says<br>Dr Na=
+than Bakyaita, WHO representative in Zambia. "The epidemiological<br>situat=
+ion underscores the urgency for a comprehensive response,<br>addressing the=
+ root causes and implementing targeted interventions."=0D<br>=0D<br>WHO is =
+working with the government to strengthen the key outbreak<br>response area=
+s. The organization has deployed 23 experts from its<br>Regional Office for=
+ Africa to support emergency coordination, case<br>management, surveillance=
+, and infection prevention and control, and to<br>bolster water, sanitation=
+, and hygiene services as well as to increase<br>public awareness on the ri=
+sks of the disease.=0D<br>=0D<br>WHO has also provided more than 14 tons of=
+ cholera kits and additional<br>medical supplies to the government. The sup=
+plies are enough to treat<br>about 3000 mild to severe cases of cholera, in=
+cluding moderate cases<br>at oral rehydration points in communities. The or=
+ganization is also<br>procuring additional supplies and equipment, includin=
+g cholera beds,<br>which are set to be delivered in the coming days.=0D<br>=0D=
+<br>The government has activated high-level outbreak response coordinated<b=
+r>by the Disaster Management and Mitigation Unit. Other efforts to<br>contr=
+ol the outbreak include the provision of water tanks to supply<br>communiti=
+es with clean drinking water, setting up of oral rehydration<br>points in s=
+trategic community places such as markets, churches, and<br>bus stops for a=
+ccess to early treatment, and public health campaigns<br>to promote hygiene=
+ practices. Cholera treatment centres have been set<br>up to provide medica=
+l care for severe cases, with the largest<br>treatment centre at the Nation=
+al Heroes Stadium in central Lusaka.=0D<br>=0D<br>Cholera is an acute, extr=
+emely virulent infection that can spread<br>rapidly and dehydration resulti=
+ng in high morbidity and mortality.<br>However, the disease is easily treat=
+able. Most people can be treated<br>successfully through prompt administrat=
+ion of oral rehydration<br>solution or intravenous fluids.=0D<br>=0D<br>Eff=
+ective control relies on implementing comprehensive measures<br>including e=
+nhanced epidemiological and laboratory surveillance to<br>detect, confirm, =
+and quickly respond to outbreaks; improving access to<br>treatment, vaccine=
+s, safe water, and basic sanitation; as well as<br>effecting behavioural ch=
+ange and better hygiene practices among<br>communities.=0D<br>=0D<br>--=0D<=
+br>Communicated by:=0D<br>ProMED=0D<br>via=0D<br>ProMED-EAFR=0D<br>=0D<br>[=
+Zambia faces a severe and rapidly escalating cholera outbreak, with<br>Lusa=
+ka, Central, and Eastern provinces bearing the brunt of the<br>impact. The =
+reported cases and fatalities underscore the urgency for<br>immediate and c=
+omprehensive response measures. The ongoing vaccination<br>campaign, suppor=
+ted by international organizations like WHO, Gavi, and<br>UNICEF, is a cruc=
+ial step in curbing the spread of the disease,<br>particularly in densely p=
+opulated areas lacking adequate water,<br>sanitation, and hygiene practices=
+. To strengthen the response,<br>continued collaboration between the govern=
+ment, health authorities,<br>and partners is essential. - Mod.TU=0D<br>=0D<=
+br>ProMED map of Zambia:<br><a href=3D"https://u19268662.ct.sendgrid.net/ss=
+/c/sSnCkKCWBvais3EuVAOvgy2WOIX7pp1nXnn4AbwuQ3Z6WbkfhqXYXU-aTMPJ8yThuQvQ6f6m=
+26e6HyaWY6Njnw/437/55NxH_aYR_yWGrllfWeq3g/h3/STnD0yoUp3wGITXm5ry6PUjjlRC7mV=
+hbIVsSRqeDVDM">https://promedmail.org/promed-post?place=3D8714378,170</a>]=0D=
+<br>=0D<br>******=0D<br>[2] Sudan=0D<br>Date: Fri 19 Jan 2024=0D<br>Source:=
+ Sudan Tribune [edited]=0D<br><a href=3D"https://u19268662.ct.sendgrid.net/=
+ss/c/h7yixvI7Vw_a8fUsCvNbuBcC2cATVAfukI-REi4qj6P03PVDEEt4lAf45he0UMVN/437/5=
+5NxH_aYR_yWGrllfWeq3g/h4/XRDGtzOAqp-u0XfO-A3mg_QarPRmLRU_rivYPO3T3P0">https=
+://sudantribune.com/article281522/</a>=0D<br>=0D<br>=0D<br>The Sudanese Min=
+istry of Health has confirmed the presence of a<br>cholera outbreak in the =
+River Nile State, with 36 suspected cases and<br>2 deaths reported. The out=
+break, which initially emerged in Gedaref<br>and Khartoum states in Septemb=
+er 2023, has since spread to several<br>other states, including Al-Jazirah,=
+ White Nile, Red Sea, and Kassala.<br>The United Nations has warned that th=
+e disease could affect over 3<br>million Sudanese.=0D<br>=0D<br>Federal Min=
+ister of Health Haitham Mohamed Ibrahim met with health<br>officials in the=
+ River Nile State on Friday [19 Jan 2024] and<br>confirmed that cases had b=
+een detected in 3 localities, with the<br>majority in Al-Damer locality in =
+the Sidon region. The Minister<br>directed the activation of therapeutic pr=
+otocols in cholera treatment<br>centres and acknowledged the health risks p=
+osed by mining activities<br>and the large influx of displaced people and m=
+igrants in the state. He<br>emphasized the need for preparedness and increa=
+sed health<br>interventions and called for regular environmental sanitation=
+<br>campaigns across all localities. The Minister reassured the stability<b=
+r>of the state's pharmaceutical supply of intravenous solutions and<br>medi=
+cations and reiterated his commitment to providing support to<br>healthcare=
+ systems to combat the epidemic and safeguard public health<br>across Sudan=
+.=0D<br>=0D<br>Minister Ibrahim stressed the importance of concerted effort=
+s to<br>implement and support health activities, intensify awareness and<br=
+>education about epidemic diseases, and recognize the crucial role of<br>en=
+vironmental health management in mitigating the spread of cholera.<br>He em=
+phasized the need for individuals to follow preventive measures,<br>such as=
+ covering eating utensils, washing hands thoroughly, reporting<br>suspected=
+ cases, and avoiding the consumption of untreated water.=0D<br>=0D<br>In De=
+cember 2023, the Sudanese Ministry of Health launched a 2nd<br>vaccination =
+campaign against cholera in Khartoum State, targeting the<br>localities of =
+Karari, Umm Badda, and East Nile. The 1st campaign,<br>conducted in Novembe=
+r 2023, covered Gedaref and Gezira states, with<br>approximately 2.2 millio=
+n doses of vaccines provided by the Global<br>Mechanism for the Elimination=
+ of Cholera.=0D<br>=0D<br>--=0D<br>Communicated by:=0D<br>ProMED=0D<br>via=0D=
+<br>ProMED-EAFR<br><br>[The spread of the outbreak to various African count=
+ries indicates a<br>major challenge to contain and manage the epidemic. The=
+ sporadic<br>outbreaks associated with multilayer factors including environ=
+mental<br>issues have been occurring in more than 13 countries since 2023. =
+To<br>effectively respond to these outbreaks of cholera, it is crucial to<b=
+r>prioritize continued environmental sanitation campaigns, intensify<br>awa=
+reness and education initiatives, and ensure the availability and<br>access=
+ibility of vaccinations across affected regions. Additionally,<br>collabora=
+tive efforts between local and international health agencies,<br>ongoing su=
+rveillance, and the enforcement of preventive measures at<br>the community =
+level are vital components of a robust response<br>strategy. The commitment=
+ to pharmaceutical supply stability and<br>support for healthcare systems i=
+s reassuring, and sustained efforts in<br>these areas will be key to safegu=
+arding public health. - Mod.TU=0D<br>=0D<br>ProMED map of Sudan:<br><a href=
+=3D"https://u19268662.ct.sendgrid.net/ss/c/sSnCkKCWBvais3EuVAOvgy2WOIX7pp1n=
+Xnn4AbwuQ3Z6WbkfhqXYXU-aTMPJ8yThs7sGcMEPWztvu1sxVWgxlg/437/55NxH_aYR_yWGrll=
+fWeq3g/h5/2UBS3N5n3dEFwURBuZiN0Nt9b3aRdKk9-MMhajDKcxg">https://promedmail.o=
+rg/promed-post?place=3D8714376,96</a>]<br><br>[See Also:<br>Cholera, diarrh=
+ea & dysentery update (03): Africa (Sudan, Nigeria)<br>http://promedmail.or=
+g/post/20240117.8714286=0D<br>Cholera, diarrhea & dysentery update (02): Af=
+rica (Zambia) update<br>http://promedmail.org/post/20240106.8714105=0D<br>2=
+023=0D<br>----=0D<br>Cholera, diarrhea & dysentery update (33): Africa (Zam=
+bia) fatal<br>http://promedmail.org/post/20231228.8713950=0D<br>Cholera, di=
+arrhea & dysentery update (32): Africa (Sudan) increasing,<br>fatal, MOH ht=
+tp://promedmail.org/post/20231227.8713943=0D<br>Cholera, diarrhea & dysente=
+ry update (30): Yemen, increasing<br>incidence, NGO http://promedmail.org/p=
+ost/20231219.8713796=0D<br>Cholera, diarrhea & dysentery update (29): Sudan=
+, cases increase, MOH<br>update http://promedmail.org/post/20231211.8713650=0D=
+<br>Cholera, diarrhea & dysentery update (27): Africa (Sudan) case<br>incre=
+ase http://promedmail.org/post/20231210.8713628=0D<br>Cholera, diarrhea & d=
+ysentery update (26): Africa (Ethiopia) increase,<br>fatal http://promedmai=
+l.org/post/20231207.8713569=0D<br>Cholera, diarrhea & dysentery update (24)=
+: Africa (Sudan)<br>http://promedmail.org/post/20231115.8713179=0D<br>Chole=
+ra, dengue - Sudan: (KH, GZ, GD) fatal<br>http://promedmail.org/post/202310=
+31.8712921=0D<br>Cholera, diarrhea & dysentery update (22): Africa (Nigeria=
+) fatal<br>http://promedmail.org/post/20231024.8712800=0D<br>Cholera, diarr=
+hea & dysentery update (21): Africa (Sudan) increase,<br>fatal, WHO http://=
+promedmail.org/post/20231021.8712750=0D<br>Cholera, diarrhea & dysentery up=
+date (14): Europe (Italy) Africa<br>(South Africa) http://promedmail.org/po=
+st/20230713.8711116=0D<br>Cholera, diarrhea & dysentery update (11): Africa=
+, WHO global cases<br>http://promedmail.org/post/20230517.8710097=0D<br>Cho=
+lera, diarrhea & dysentery update (08): Americas, Asia, Africa<br>http://pr=
+omedmail.org/post/20230326.8709160=0D<br>Cholera, diarrhea & dysentery upda=
+te (06): Americas, Asia, Africa<br>http://promedmail.org/post/20230208.8708=
+226=0D<br>Cholera, diarrhea & dysentery update (05): Africa<br>http://prome=
+dmail.org/post/20230126.8707972=0D<br>Cholera, diarrhea & dysentery update =
+(04): Asia, Africa<br>http://promedmail.org/post/20230121.8707899=0D<br>Cho=
+lera, diarrhea & dysentery update (01): Africa, Asia<br>http://promedmail.o=
+rg/post/20230108.8707678=0D<br>Cholera, diarrhea & dysentery update (06): A=
+mericas, Asia, Africa<br>http://promedmail.org/post/20230208.8708226]<br>..=
+...............................................tu/tw/ya/tw/jh<br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3DEHuo2KoC-QCaUTH8zFp2fS1eh1ABDtG0GJdGcIZLkAVoMDAwdT=
+AwMLAxL5Si7J81MEugDlYkKoF_iiWqN9ANCp6sMneMUDYTQVu9-RgN25ZDuZx2lTSipreUaAoHi=
+Kyoj3oZW9HR_W9_u7M91zG7JLDA2VIntsds6y4pZ8vfnrgz4T5JwAXI7Pj2Tr_pRlYF1C4hu96H=
+1ZbbWrMPgg6EOG_R3gstPC0mlwbaSAhLsOMvvyZOiQ4szQ4GTL_RvdMuDDAI6mXYQQn3DiEN-Gl=
+rw6MYtqjRCfbVWHbavGNrOvocBLirqE_gEgquhj6DIr1v-g4GGux0dd9YliaehRZq8CXAI3pGKY=
+NpcAe1jlBLZ6UAf_Qqb_5ENnxFU3kSisUw-HW6rHeFouyfQv3W5_8R4O4eveYSsbXVOais3o8ud=
+p-DV3TQI6C50x3Q1cENsP2J1GnmzLk8nAl4i1isdxsGCLde1txQ0TNP5A2--D2rktQeQXujKaZE=
+327rrhtJILhEhAQEaQCeAR50A_ziREZZxWK2S5fKuzSyM2s5sgwtglQtk6xkSx52fVZY01p6GRG=
+sVi6uqmde987Y-89_1n4Fpnym9AUJB_OOkrnlQYn7M4VZNV-Or36tVRrTYB1OHm8DQ0PaoGKMI7=
+mMUY1xvoeluxo5hNI6ToQQrTeIlpE8rd_0trYL1g4CeknKFVHamKqi5qaZzklJ9OLxJGjyvK55H=
+LTkD0EBj29WseH5G64yxXdF0EqATxahD5AbJBdYZNw8A1VxSHj2y1EL38KW3uEChnzFMOh_l7uB=
+m9Jg4h_hsG8rJN0Rz9AGkiOcrKKCCTSXak3XaqglEwXVEhWQQP1shLo22RzvjBn4NPBUCVae0sn=
+ulAvMrymbXBJyuyICOUj_WSZsbbvwD7u7Wb9d1cqKHL_G8mDFJnNWm1rQSaqkVYwy6Rq9zNJvre=
+j9cgfG1DF-p-IYi83tiO-DrjoOUrvvUFa8e2Ru2fUnwaC3QC5UFDl64srvRea6bJ_QqG1ZROvMO=
+1mASmdDe74b55rYzsop4Wli9tOTVVbFDptzVPsaM1rURUYmuIj-YJAum_76n5vEsZDAEL4dlixW=
+ORH2evMyF7GsRzge-RKoRGbeB-EMrp3uggvAJqEI2bqJhD6O1iMX9rfE4Ljqx6AZko36_YEAqEu=
+UCZSt8rjgda60MfqBaElhAn5ovDk78bIIZBqIjiDXYA7ZGGzOa5M=3D" target=3D"_blank" =
+class=3D"Unsubscribe--unsubscribePreferences" style=3D"font-family:sans-ser=
+if;text-decoration:none;">Unsubscribe Preferences</a></div><br>############=
+################################################<br>#######################=
+#####################################<br><br><img src=3D"https://u19268662.=
+ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/437/55NxH_aYR_yWGrllfWeq3g/ho.g=
+if" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"height:1px !imp=
+ortant;width:1px !important;border-width:0 !important;margin-top:0 !importa=
+nt;margin-bottom:0 !important;margin-right:0 !important;margin-left:0 !impo=
+rtant;padding-top:0 !important;padding-bottom:0 !important;padding-right:0 =
+!important;padding-left:0 !important;"/></body>
+</html>
+--9087fba3118dc219aab9a45fa919f47e30dd2e5a369f48bc55030d1b23a3--

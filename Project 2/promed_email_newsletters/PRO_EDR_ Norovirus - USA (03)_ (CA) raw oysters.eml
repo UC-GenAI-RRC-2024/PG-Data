@@ -1,0 +1,521 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a98:d84b:0:b0:1eb:e128:bbe3 with SMTP id b11csp653141eil;
+        Thu, 18 Jan 2024 17:50:17 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IFZuCDm4qasMu9H3nqsFT6IFJz4CUj4Xa6NPWlWSzfK3FjYCikcsz3p4FvdCBzwqxidaEDq
+X-Received: by 2002:a05:620a:40c2:b0:783:85cb:b22c with SMTP id g2-20020a05620a40c200b0078385cbb22cmr751885qko.67.1705629017297;
+        Thu, 18 Jan 2024 17:50:17 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1705629017; cv=none;
+        d=google.com; s=arc-20160816;
+        b=tEKb0CEz/qRNYZMGPfnYA2qfSTLXKI9E8aUQ2s6we7tnA8W2xLEG3Lc4/Df0/Zl5g4
+         ki11iX7+SSrzSJJqa5eUZFd2wpJK8cJuVivb2j7oH2w2oezaPqgJSWzhZdgH7x4gl3uZ
+         j/5j/I4qNijLC7GQUe4vdJDwVMX4u4USmHAUYYBuQXCHI2FwHaZYeR9hxgOBGSSMEUyH
+         GhTNECEuxDi9ihvBmL7LazrmnwHBhAE1TZTRH+3l/8Riwft+kO2YEfRIF2VTeN9QFqLb
+         NZ1qd2lWrwwPOSB1uHr2m1P++31mQ4ZWgRjdLQjUFp4SCvJ6DuSoCRzFF8pE8UwhKyUY
+         mw3A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=YD+BJwIZx4ChqNlUpWRPC34YUPuAExR9NrSRNziSW80=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=dKA4eOD2N/Q0ox6C8SkzUhL5l5GdAtCb9j7pc4UjoVOqVBXazsacYI6zeG2hBGsale
+         G0f3EEgaPmyiIDAnAEuMR8gx0hyHG9O0tnZdMJCY5xcctq0NfY0d7umzMP9IP0UeNvqV
+         7nBeRwgiMiLNGf/8jbTsK9OnwAwFusdOtIB7/T8j637EGkxbsylhuw8jUm4cgMON9Gnb
+         7tnywN2nXb+pQqCfJ7XoVfbmkeLFA4aBiD47krMCtl4uX0YOQCS6GUcKwR5jCFeV7ASH
+         8FVpJjhW0nHyOnfpRuHvmV9GcDyT3h1vcQMwnGHWcR6GTpioHMheqykFJ96uv3S0FJfT
+         Rmpw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=Lyd983G1;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=OfPBNAY+;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id m9-20020a05622a118900b0042a02a62253si6584978qtk.457.2024.01.18.17.50.17
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 18 Jan 2024 17:50:17 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=Lyd983G1;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=OfPBNAY+;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=YD+BJwIZx4ChqNlUpWRPC34YUPuAExR9NrSRNziSW80=;
+	b=Lyd983G1MGaxQwxxvVDYQG1oMBzaBg+ksyuzVBPu/8Ax6ySfFfzWN42/Qol3OK0Q/Ilc
+	XndkxNM7PYz9sUFX5yblxdrL00F/aeVrh/BFbTBaeZd+Wq90Gkoye5FGr/JQDdK2c8VgmV
+	DAyO/0svOa0XJWGbQ9TZFKhk93ERdNwBIqDvXelahix4hqw8zWj4XBXav5DL+1awTPKpPn
+	uebjNjR1QrPl2ii3NKZ0bjMEu6usZ8cEL75Gt7zXv1RD2y2JptoXkUfP+8gJj6hzYW2/Ls
+	b4VXr+H/4TLIQNWlmnvbmAVZjVVew2CFjV0tm7/T9vBAb8E6mk+Q6bCmALE9w8qQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=YD+BJwIZx4ChqNlUpWRPC34YUPuAExR9NrSRNziSW80=;
+	b=OfPBNAY+IBOPgVcjjFy45QI7b+VH1hw8IRF7zA8/BqiWqY+i4l6khgbnctfNRI2udHzN
+	qYSoRAv0v8DT3rFP30xstNq1cy+cGx+LkWYQYVjTjA4mfzVxoNQjsjxV4MHoglWhVlXFDO
+	LKXNLa2MTCUfi/9fkXUY5Z97eowqXVELI=
+Received: by filterdrecv-5d757dc7bd-htm5b with SMTP id filterdrecv-5d757dc7bd-htm5b-1-65A9D554-48
+        2024-01-19 01:50:12.991312531 +0000 UTC m=+509744.837244358
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-12 (SG) with HTTP
+	id NmdLSaAnTmO3nfNWsec-9g
+	Fri, 19 Jan 2024 01:50:12.946 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=a97a6850723cd0fe8e1378e2e2e432201c93582f8a1df82ce055f264bcc0
+Date: Fri, 19 Jan 2024 01:50:16 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <NmdLSaAnTmO3nfNWsec-9g@geopod-ismtpd-12>
+Subject: PRO/EDR> Norovirus - USA (03): (CA) raw oysters
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iBPOYVvbXIVidiKibzqQabhyFyGfV3rMOZ8IM2g?=
+ =?us-ascii?Q?FkeE2f5aIUhzTWLEgqkK4L6qafR3ch=2FgRqlHtkO?=
+ =?us-ascii?Q?LqTsyfGbdfMa4pWqMbD9tZw+efDjSjQLZ8SaKYf?=
+ =?us-ascii?Q?Vd+cSKkthNJnOFLl+ogrgUnUXEAb+mkDEQB2AmA?=
+ =?us-ascii?Q?p72iD4T9HxOZUedZK9PSyl81DQCMtsP4V=2FLD=2F=2F?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUhc93xcG=2F095a5S4+mt=2FG?=
+ =?us-ascii?Q?uYUpctI=2FOGD2dwyi+uvm2j4FCdvuw0l9zcHM8iA?=
+ =?us-ascii?Q?mojOvTXq7jOpDFFNtfsYkHQYACEW8pq1BXXqYmH?=
+ =?us-ascii?Q?oGTsnt6QpE2ZV5WVqnpwfXWoLXx7+4ahGT+lMON?=
+ =?us-ascii?Q?37xrRtleBs7E8hY+Q6ZomJG7gNmTdhiVitQSOMc?=
+ =?us-ascii?Q?QlLDr0VC3gr3J+9izCBJmddjoooKiLReaJruBsT?=
+ =?us-ascii?Q?A6HvTzqFgpceUnU8d8GbdxsM7OCzF=2FL=2FcN+WlHg?=
+ =?us-ascii?Q?p9yKm=2FMrnAEruSg55sR6ck9Oxv3MYnku=2FdgAt06?=
+ =?us-ascii?Q?nk=2FTRF2QAyF=2FDCC=2F+oWD9htU5PaBhV7ckB2AL02?=
+ =?us-ascii?Q?+CASLaq4JTSoJhm+vjypeWAuieuvGk1opynJ3GV?=
+ =?us-ascii?Q?ugGPGDZ8S0ehxwdLe9T4eCqU93SR=2FycJg+1xdSR?=
+ =?us-ascii?Q?4iMsc1PBKMYGtomeKQWM=2FxkDEStZZAIZNBonA2A?=
+ =?us-ascii?Q?wAV3gZuRMaXmPjSWFvuDJBGHcNDMe3pamI5EuTq?=
+ =?us-ascii?Q?1Aoa3flvrEUj=2Ft2khG3mbz2noJ1s+69qPL89yvH?=
+ =?us-ascii?Q?By5GXPkR8n6blq3=2Fep1ac3l5rGoS0J2raggA=2F7S?=
+ =?us-ascii?Q?bAQ7ST1Zs1BrSKdQk3FAUkLUB2SxePMjdQS9n3H?=
+ =?us-ascii?Q?2q7FQADJ6v=2FHBOZoL8yRDauJB4VyNxgcwJxT=2Fyk?=
+ =?us-ascii?Q?l+FGYMkT7RHr32HrY0Vt65xs3MpM4Any0qRrjBA?=
+ =?us-ascii?Q?2fDn7vXuKR0bRHMC9dO8m=2F1CAMri2gxnsMyKDDk?=
+ =?us-ascii?Q?I4Y=2FRMftKKknE0c+E05EOEijUQ=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2Ejn=5Fpb3s51?=
+ =?us-ascii?Q?DmXUbSpk3uvQsJMoueNYYcTQBVJ9RxaKmpoMDAw?=
+ =?us-ascii?Q?dTAwMM5w54rkuwfAc64szIRbpuWEMnN4YU=5FUPCI?=
+ =?us-ascii?Q?Gld8WgGvfO5nzTFYS5cd1iMlhKeWCONasd299LF?=
+ =?us-ascii?Q?Fc6FAY60KILUKtEFCQ=5FhHViNuy5o4XDyS9GRp5o?=
+ =?us-ascii?Q?BVU58NiH6QnsQ81vg=3D=3D=2ERu3Nm4VWi2y6xsoeVt8?=
+ =?us-ascii?Q?jqL4qBWjCFBD1vlwysRood1toMDAwdTAwMFt8JX?=
+ =?us-ascii?Q?s=5FSTT1suHJ4ZJF3=5FWLj4PxcovLtiIRIferJsOj1?=
+ =?us-ascii?Q?TaMvCO59bwlawYh0k4gh9bnYagEClFhzkKhT5YJ?=
+ =?us-ascii?Q?Tprlb8rJjhQ48MumVm6rfvQqMcOud8KHeAxCnFY?=
+ =?us-ascii?Q?W8zWeLpgYJF7c4nd3jFwGJKXKc89JV2j-utuzZa?=
+ =?us-ascii?Q?QVzZb=5FyXizY5qHvfzfpvAkem-khJzJ2m8lhMLB=5F?=
+ =?us-ascii?Q?EV-VBfGG2orGkVnsJp=5F-V88GHsN5EixM3UVYOf0?=
+ =?us-ascii?Q?Gc0jRPNFDz=5F0UKEU55PC79kFbntDMV-xFOBECnE?=
+ =?us-ascii?Q?ZsCtn4GLGspsuBkS0rgqkCp6JA03KKUH2OWz-KV?=
+ =?us-ascii?Q?dH=5FPLLN6phW=5FzCfDoA18K9VMGBsGOcXpD106rTQ?=
+ =?us-ascii?Q?AP6v6YyD6Hmsmpv9CbDkomSbMTtuPnP0gtJtc6s?=
+ =?us-ascii?Q?2jyyTevxqm4TiIRRtKml1AeeEUNFa6zyFbNjd2j?=
+ =?us-ascii?Q?jN6RGi9i7=5FQxK0nPHwZBg85tjwKHErBlLMrQEOz?=
+ =?us-ascii?Q?5QI1l7Wj2hrI6SLEQdWriwaSapP8Dqcp128B778?=
+ =?us-ascii?Q?7XnrOBd7JR40K4M=5FraaOvmxrGuRH8sx=5FA-VMFDp?=
+ =?us-ascii?Q?UyXf=5FOS0S0uK6VF4hQrqNkj1if1iMCzGXxEGipl?=
+ =?us-ascii?Q?cWgbrjw4ap-YotarRq0FOKDFB82mGZew=5FoGCw9a?=
+ =?us-ascii?Q?KRIoUXew6P6t5AZ8P1AOquQhEO-ez3aluZ5UKba?=
+ =?us-ascii?Q?F33O5YAnLQZOSbKCwptXghUSqpFb5DjH0Z9uGkI?=
+ =?us-ascii?Q?z0B4ZsBlZW9erdEyLfSZWDd7kJue=5FAecTVXWgPO?=
+ =?us-ascii?Q?AFE57FQF2wdc8S4yqP39mglBIf3JvtT-4HdulOY?=
+ =?us-ascii?Q?uuM-zl8pEcxGfsl1zmpMuiG7QTqFtUe5VHkKIAH?=
+ =?us-ascii?Q?=5F0t0WmIloA6rbmOt-iBSggcW3nFQEV4z5Yuhb=5Fo?=
+ =?us-ascii?Q?yPhmTvO0gsKL7YD2Kq-8z5Px0Sp0EHWreF4wNHb?=
+ =?us-ascii?Q?MoxUP4U3n6lYM0Y7Q59gr1xa7gBnd26Q5PxbXAi?=
+ =?us-ascii?Q?jP1u5IgQU18yjObPlomHrcxr65uthko6Z=5F59KAR?=
+ =?us-ascii?Q?QQzO=5FUsPXa5Cmq3jlZQS6Cj=3E?=
+
+--a97a6850723cd0fe8e1378e2e2e432201c93582f8a1df82ce055f264bcc0
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=utf-8
+Mime-Version: 1.0
+
+NOROVIRUS - USA (03): (CALIFORNIA) RAW OYSTERS
+**********************************************
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+Date: Wed 17 Jan 2024
+Source: Food Poison Journal [edited]
+<https://www.foodpoisonjournal.com/food-poisoning-information/oyster-norovi=
+rus-outbreak-hits-191-in-los-angeles-and-san-diego/>
+
+
+The Los Angeles County Department of Public Health is reporting that
+there are more than 150 suspected local cases of gastrointestinal
+illness linked to the consumption of raw oysters, likely caused by
+norovirus. At this time, Public Health is warning consumers not to eat
+raw oysters from Laguna De Guerrero Negro, Baja California, Mexico;
+Laguna Manuela, Baja California, Mexico; and Bahia Salina, Sonora,
+Mexico, because they may be linked to outbreaks of norovirus illnesses
+in California. Before eating raw oysters, consumers should ask the
+vendor/restaurant where the oysters were harvested.
+
+Public Health is currently working with the California Department of
+Public Health (CDPH) to investigate and confirm the source of this
+cluster of gastrointestinal illness cases. If you believe that you
+became sick from eating or drinking something, please file a report.
+
+San Diego County health officials have linked 41 confirmed and
+probable cases=E2=80=AFof norovirus=E2=80=AFillness to raw=E2=80=AFoysters=
+=E2=80=AFimported
+from a specific harvest location in Northwest Mexico.
+
+The FDA is warning restaurants and food retailers in California that
+have recently purchased oysters from Sociedad Acuicola GolPac (MX 06
+SP) harvested from Bahia Salina, Sonora, Mexico, on 18 Dec or 27 Dec
+2023. The FDA alert is also for consumers in California who have
+recently consumed oysters in San Diego or Los Angeles County
+restaurants sourced from Sociedad Acuicola GolPac (MX 06 SP) harvested
+from Bahia Salina, Sonora, Mexico, on 18 Dec or 27 Dec 2023.
+
+The FDA is advising restaurants and food retailers not to serve or
+sell and to dispose of oysters and consumers not to eat oysters from
+Sociedad Acuicola GolPac (MX 06 SP) harvested from Bahia Salina,
+Sonora, Mexico, on 18 Dec or 27 Dec 2023 because they may be
+contaminated with norovirus.
+
+Oysters contaminated with norovirus can cause illness if eaten raw,
+and potentially severe illness in people with compromised immune
+systems. Food containing norovirus may look, smell, and taste normal.
+Consumers of these products experiencing symptoms of illness should
+contact their healthcare provider and report their symptoms to their
+local health department. Diarrhea, abdominal cramps, nausea, vomiting,
+and fever may be associated with gastroenteritis infections caused by
+this organism.
+
+People of all ages can get infected and sick with norovirus. The most
+common symptoms of norovirus are diarrhea, vomiting, nausea, and
+stomach pain. Other symptoms include fever, headache, and body aches.
+A person usually develops symptoms 12 to 48 hours after exposure to
+norovirus. Most people with norovirus illness get better within one to
+3 days.
+
+[Byline: Patti Waller]
+
+--
+Communicated by:
+ProMED
+
+[Norovirus, initially called the Norwalk virus, was one of many
+viruses named after the location from which the agent was first
+isolated, in this case Norwalk, Ohio.
+
+Uncooked shellfish are a common vehicle for norovirus infection as
+well as other bacterial, viral, and toxin diseases.
+
+Norovirus can be transmitted by
+- eating food or drinking liquids that are contaminated with
+norovirus;
+- touching surfaces or objects contaminated with norovirus and then
+putting your fingers in your mouth; or
+- having direct contact with someone who is infected with norovirus,
+such as by caring for them or sharing food or eating utensils with
+them.
+
+The 1st sign of norovirus is usually a sudden sick feeling, followed
+by forceful vomiting and watery diarrhea. Some people may also have a
+raised temperature (over 38 deg C/100.4 deg F), headaches, stomach
+cramps, and aching limbs. Symptoms usually appear one to 2 days after
+exposure to infection, but they can start sooner. Most people make a
+full recovery within a few days. Apart from the risk of dehydration,
+the illness is not generally dangerous, and there are usually no
+long-lasting effects from norovirus infection.
+
+The following are myths about oysters (adapted from
+<https://www.fda.gov/food/health-educators/raw-oyster-myths>):
+
+Myth: Eating raw oysters is safe if you drown them in hot sauce, which
+kills everything.
+Fact: The active ingredients in hot sauce have no more effect on
+harmful bacteria than plain water. Nothing but prolonged exposure to
+heat at a high enough temperature will kill bacteria.
+
+Myth: Avoid oysters from polluted waters and you'll be fine.
+Fact: Many pathogens in oysters have nothing to do with pollution.
+Some harmful bacteria thrive naturally in warm coastal areas (such as
+the Gulf of Mexico) where oysters live.
+
+Myth: An experienced oyster lover can tell a good oyster from a bad
+one.
+Fact: These pathogens can't be seen, smelled, or even tasted. Don't
+rely on your senses to decide if an oyster is safe.
+
+Myth: Alcohol kills harmful organisms.
+Fact: Alcohol may impair your good judgment, but it doesn't destroy
+harmful bacteria.
+
+Myth: Eating oysters in months with an "R" in their name is safe.
+Fact: Even though cold-weather-harvested oysters are likely somewhat
+safer, many oysters come from warmer climates and are imported into
+the colder climate.
+
+Myth: Raw oysters are an aphrodisiac and will cure a hangover.
+Fact: There is no scientific evidence that either of these commonly
+held beliefs is true.
+- Mod.LL
+
+ProMED map:
+California, United States:
+<https://promedmail.org/promed-post?place=3D8714313,204>]
+
+[See Also:
+Norovirus - USA (02): cruise ship
+http://promedmail.org/post/20240118.8714315
+Norovirus - USA: (CA) raw oysters
+http://promedmail.org/post/20240113.8714218
+2023
+----
+Norovirus - USA (09): (IL) restaurant susp., university students
+http://promedmail.org/post/20231125.8713321
+Norovirus - USA (08): oyster, 2022
+http://promedmail.org/post/20230902.8711923
+Norovirus - USA (07): (MN) oyster ex Canada (NS), alert, recall
+http://promedmail.org/post/20230716.8711186
+Norovirus - USA (06): cruise ship
+http://promedmail.org/post/20230625.8710745
+Norovirus - USA (05): (HI,MN) frozen raw oysters ex South Korea,
+alert, recall http://promedmail.org/post/20230614.8710595
+Norovirus - USA (04): cruise ship
+http://promedmail.org/post/20230608.8710480
+Norovirus - USA (03): (CA) restaurant
+http://promedmail.org/post/20230526.8710265
+Norovirus - USA (02): (LA) oysters ex TX
+http://promedmail.org/post/20230414.8709494
+Norovirus - USA: (TX) Caribbean cruise ship
+http://promedmail.org/post/20230311.8708879]
+.................................................ll/tw/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3DgcPJb1c0ndZEqaU8sR9HAquKtlXxxJkcd93PwzLAHeNoMDAwdTAwMKInGxP=
+p5zqVxQmLLxviHa9dmU4q7E_y0sBEHEbq0JOapze_VhrW0UzyQTrYb7ZIBtLqupJfl4aFqCAuAD=
+250jGWAJE2EsKol4yhcmZtThRYqOVcUAMa3XfFAmD0_EPtZnwTIrFNsvdKgKfbN1YoZB_HrkBxh=
+YFjLVbX9CixWvoKiy9QfbACNCrvlhGwSxP5ZvlmFKU1E2AEIzOQnB815snk2g4zoKAhUQv65DAV=
+LBy-sTnTgl_KmDq3XIkYjar9EeLnjX3qq61K0uT3AQDjMNXN1bhAKhVTKrxbkvxRz7aYSNnYkrb=
+2xA7Pi-yl59-JnrfC5AiUxGsawP-J6rBQgD-Rdatop9DT3_KeuCP_yMr7zEsPFqYufR_Ee01VxS=
+ttfs5geRqNM2QbngKjPbZrN6lZYQ25ZHhcOT31GM3HSyp5T_DiQ7by6b5TCa1jy9SReVHSAPR8s=
+-j7TC4u-CV7CmCIsJmeKQ1ZwtuDb8i6bGRGDDD4Pyq_XaVWLOS4fEQ9Qr3mA-sCUJfupgdhVk7N=
+Lo3-_y-GHlwOlv91xHnAmyApc5jXU0Qg_NlA9OZtnMHGN_A7Us9UlyPdGGFfj_ZmHA8hjFnPdow=
+vk-8MDOoY7NNTxalBFvQfp4A5SEaSWNv_gpWSc9mdL13SfNMgQViHAlD4BFAYOd9Qq02M6uVJpW=
+lz6dm_-37E4WoGORwvCagooUG8OOvzCgynP4ZvQlVogeyRkyoxNQnVG4RCgSE0Oz8qU0HfV0tKN=
+9Ij3siy3WmDfnl6e3X_EVjDgck-jpkF05Lsjd7QBuIDrQ50kTEZgbSbDIk-0HqWu-GZvFXMc-JF=
+FTMrRT2gxlKs5-QElo5nZ5vdL9aLstoC_bnPbNG4HZ1r7ZPjr6TO66cf2-Hxs6JrUp7D7x07Ewa=
+gWm8_iDgLUDAGDlKIFYOtbOpZSCJbeDh7LeAsUzEVx6__nQ_Ts5Ps5O3FpEI4g8FrGczdTAPJAS=
+bBwz4dOcFsgqMInieB6uHe_Gn7APobhtjIL8MsI7ZkIDpAUEM_0BuJ_5a2FcDzIL7-lbZpHZG3j=
+o9sSEeKHWznKpvc2kG-Y7yYv-9T3AjkyoUuruzNSkBPy7IW_Dtix-0xDRzMCttrJUXNwYPX0giB=
+ily-d8UQftpoknF3CwFjlZTNh3ThRmQVQcCOD7TCIBE=3D )
+############################################################
+############################################################
+
+--a97a6850723cd0fe8e1378e2e2e432201c93582f8a1df82ce055f264bcc0
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>NOROVIRUS - USA (03): (CALIFORNIA) RAW OYSTERS<br>*******************=
+***************************<br>A ProMED-mail post<br><a href=3D"https://u19=
+268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisIijpefK5PNjW-mL-YZGnfgDOxU=
+1G3gjwnPSi2Tfv3HA/434/74rA3UYoSWGhws57uGlXDg/h0/zHrzi1_cVBGzBCDt9OUkfY4b_k7=
+BAuoxygouAducROE">http://www.promedmail.org</a><br>ProMED-mail is a program=
+ of the<br>International Society for Infectious Diseases<br><a href=3D"http=
+s://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisCT5tpD4Upm3qyMCbcYS=
+Qvc/434/74rA3UYoSWGhws57uGlXDg/h1/twHYxRn1YqLQMJqP1DRCYG72tPBft2_G-GTwmTtpt=
+wA">http://www.isid.org</a><br><br>Date: Wed 17 Jan 2024=0D<br>Source: Food=
+ Poison Journal [edited]=0D<br><a href=3D"https://u19268662.ct.sendgrid.net=
+/ss/c/TLh_csrC34X_iXpbYoMam2U5Gw6-DnRBfXpgzG4_XHqbITdC3FZ9LV028sHSS3UnREumf=
+DnBR7Z7VX2cAyAk_b5U9vL19CaJSLJ3EGb0UjIymVjXAmqswgc118JT3iJHSl4uj3VPSOEuDiHD=
+eSKy0_2Dm2NrYh53FDyd0YjlBZPgrB4EZKC7TIJYhuQ8Cxnz/434/74rA3UYoSWGhws57uGlXDg=
+/h2/9hieKHTyuOyQ3SsdfRERKM_KUwM0Xx2oj2JpgQp3WwE">https://www.foodpoisonjour=
+nal.com/food-poisoning-information/oyster-norovirus-outbreak-hits-191-in-lo=
+s-angeles-and-san-diego/</a>=0D<br>=0D<br>=0D<br>The Los Angeles County Dep=
+artment of Public Health is reporting that<br>there are more than 150 suspe=
+cted local cases of gastrointestinal<br>illness linked to the consumption o=
+f raw oysters, likely caused by<br>norovirus. At this time, Public Health i=
+s warning consumers not to eat<br>raw oysters from Laguna De Guerrero Negro=
+, Baja California, Mexico;<br>Laguna Manuela, Baja California, Mexico; and =
+Bahia Salina, Sonora,<br>Mexico, because they may be linked to outbreaks of=
+ norovirus illnesses<br>in California. Before eating raw oysters, consumers=
+ should ask the<br>vendor/restaurant where the oysters were harvested.=0D<b=
+r>=0D<br>Public Health is currently working with the California Department =
+of<br>Public Health (CDPH) to investigate and confirm the source of this<br=
+>cluster of gastrointestinal illness cases. If you believe that you<br>beca=
+me sick from eating or drinking something, please file a report.=0D<br>=0D<=
+br>San Diego County health officials have linked 41 confirmed and<br>probab=
+le cases=E2=80=AFof norovirus=E2=80=AFillness to raw=E2=80=AFoysters=E2=80=
+=AFimported<br>from a specific harvest location in Northwest Mexico.=0D<br>=0D=
+<br>The FDA is warning restaurants and food retailers in California that<br=
+>have recently purchased oysters from Sociedad Acuicola GolPac (MX 06<br>SP=
+) harvested from Bahia Salina, Sonora, Mexico, on 18 Dec or 27 Dec<br>2023.=
+ The FDA alert is also for consumers in California who have<br>recently con=
+sumed oysters in San Diego or Los Angeles County<br>restaurants sourced fro=
+m Sociedad Acuicola GolPac (MX 06 SP) harvested<br>from Bahia Salina, Sonor=
+a, Mexico, on 18 Dec or 27 Dec 2023.=0D<br>=0D<br>The FDA is advising resta=
+urants and food retailers not to serve or<br>sell and to dispose of oysters=
+ and consumers not to eat oysters from<br>Sociedad Acuicola GolPac (MX 06 S=
+P) harvested from Bahia Salina,<br>Sonora, Mexico, on 18 Dec or 27 Dec 2023=
+ because they may be<br>contaminated with norovirus.=0D<br>=0D<br>Oysters c=
+ontaminated with norovirus can cause illness if eaten raw,<br>and potential=
+ly severe illness in people with compromised immune<br>systems. Food contai=
+ning norovirus may look, smell, and taste normal.<br>Consumers of these pro=
+ducts experiencing symptoms of illness should<br>contact their healthcare p=
+rovider and report their symptoms to their<br>local health department. Diar=
+rhea, abdominal cramps, nausea, vomiting,<br>and fever may be associated wi=
+th gastroenteritis infections caused by<br>this organism.=0D<br>=0D<br>Peop=
+le of all ages can get infected and sick with norovirus. The most<br>common=
+ symptoms of norovirus are diarrhea, vomiting, nausea, and<br>stomach pain.=
+ Other symptoms include fever, headache, and body aches.<br>A person usuall=
+y develops symptoms 12 to 48 hours after exposure to<br>norovirus. Most peo=
+ple with norovirus illness get better within one to<br>3 days.=0D<br>=0D<br=
+>[Byline: Patti Waller]=0D<br>=0D<br>--=0D<br>Communicated by:=0D<br>ProMED=
+<br><br>[Norovirus, initially called the Norwalk virus, was one of many<br>=
+viruses named after the location from which the agent was first<br>isolated=
+, in this case Norwalk, Ohio.=0D<br>=0D<br>Uncooked shellfish are a common =
+vehicle for norovirus infection as<br>well as other bacterial, viral, and t=
+oxin diseases.=0D<br>=0D<br>Norovirus can be transmitted by=0D<br>- eating =
+food or drinking liquids that are contaminated with<br>norovirus;=0D<br>- t=
+ouching surfaces or objects contaminated with norovirus and then<br>putting=
+ your fingers in your mouth; or=0D<br>- having direct contact with someone =
+who is infected with norovirus,<br>such as by caring for them or sharing fo=
+od or eating utensils with<br>them.=0D<br>=0D<br>The 1st sign of norovirus =
+is usually a sudden sick feeling, followed<br>by forceful vomiting and wate=
+ry diarrhea. Some people may also have a<br>raised temperature (over 38 deg=
+ C/100.4 deg F), headaches, stomach<br>cramps, and aching limbs. Symptoms u=
+sually appear one to 2 days after<br>exposure to infection, but they can st=
+art sooner. Most people make a<br>full recovery within a few days. Apart fr=
+om the risk of dehydration,<br>the illness is not generally dangerous, and =
+there are usually no<br>long-lasting effects from norovirus infection.=0D<b=
+r>=0D<br>The following are myths about oysters (adapted from<br><a href=3D"=
+https://u19268662.ct.sendgrid.net/ss/c/TLh_csrC34X_iXpbYoMamwLgbkE5BuGfqVjU=
+rZAtBV_LZMcZFG9NA7QD_MPKTDdSiMJqrCyIT4kV7duVgF1MZp64z7R7WM6GtKXlOKnhwak/434=
+/74rA3UYoSWGhws57uGlXDg/h3/6SStjcbBWiH3usZpMbXZ94yJ1Wk4irGzEaZHXec2TD0">htt=
+ps://www.fda.gov/food/health-educators/raw-oyster-myths</a>):=0D<br>=0D<br>=
+Myth: Eating raw oysters is safe if you drown them in hot sauce, which<br>k=
+ills everything.=0D<br>Fact: The active ingredients in hot sauce have no mo=
+re effect on<br>harmful bacteria than plain water. Nothing but prolonged ex=
+posure to<br>heat at a high enough temperature will kill bacteria.=0D<br>=0D=
+<br>Myth: Avoid oysters from polluted waters and you'll be fine.=0D<br>Fact=
+: Many pathogens in oysters have nothing to do with pollution.<br>Some harm=
+ful bacteria thrive naturally in warm coastal areas (such as<br>the Gulf of=
+ Mexico) where oysters live.=0D<br>=0D<br>Myth: An experienced oyster lover=
+ can tell a good oyster from a bad<br>one.=0D<br>Fact: These pathogens can'=
+t be seen, smelled, or even tasted. Don't<br>rely on your senses to decide =
+if an oyster is safe.=0D<br>=0D<br>Myth: Alcohol kills harmful organisms.=0D=
+<br>Fact: Alcohol may impair your good judgment, but it doesn't destroy<br>=
+harmful bacteria.=0D<br>=0D<br>Myth: Eating oysters in months with an "R" i=
+n their name is safe.=0D<br>Fact: Even though cold-weather-harvested oyster=
+s are likely somewhat<br>safer, many oysters come from warmer climates and =
+are imported into<br>the colder climate.=0D<br>=0D<br>Myth: Raw oysters are=
+ an aphrodisiac and will cure a hangover.=0D<br>Fact: There is no scientifi=
+c evidence that either of these commonly<br>held beliefs is true.=0D<br>- M=
+od.LL<br><br>ProMED map:<br>California, United States:<br><a href=3D"https:=
+//u19268662.ct.sendgrid.net/ss/c/sSnCkKCWBvais3EuVAOvgy2WOIX7pp1nXnn4AbwuQ3=
+Z6WbkfhqXYXU-aTMPJ8yThfjpwShlaE8g2ruI7d6fIGg/434/74rA3UYoSWGhws57uGlXDg/h4/=
+6SwPbssR3irZq9qdcaUsC8tVUldvtKyRPjhQv3yi11M">https://promedmail.org/promed-=
+post?place=3D8714313,204</a>]<br><br>[See Also:<br>Norovirus - USA (02): cr=
+uise ship<br>http://promedmail.org/post/20240118.8714315=0D<br>Norovirus - =
+USA: (CA) raw oysters<br>http://promedmail.org/post/20240113.8714218=0D<br>=
+2023=0D<br>----=0D<br>Norovirus - USA (09): (IL) restaurant susp., universi=
+ty students<br>http://promedmail.org/post/20231125.8713321=0D<br>Norovirus =
+- USA (08): oyster, 2022<br>http://promedmail.org/post/20230902.8711923=0D<=
+br>Norovirus - USA (07): (MN) oyster ex Canada (NS), alert, recall<br>http:=
+//promedmail.org/post/20230716.8711186=0D<br>Norovirus - USA (06): cruise s=
+hip<br>http://promedmail.org/post/20230625.8710745=0D<br>Norovirus - USA (0=
+5): (HI,MN) frozen raw oysters ex South Korea,<br>alert, recall http://prom=
+edmail.org/post/20230614.8710595=0D<br>Norovirus - USA (04): cruise ship<br=
+>http://promedmail.org/post/20230608.8710480=0D<br>Norovirus - USA (03): (C=
+A) restaurant<br>http://promedmail.org/post/20230526.8710265=0D<br>Noroviru=
+s - USA (02): (LA) oysters ex TX<br>http://promedmail.org/post/20230414.870=
+9494=0D<br>Norovirus - USA: (TX) Caribbean cruise ship<br>http://promedmail=
+.org/post/20230311.8708879]<br>............................................=
+.....ll/tw/jh<br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3DgcPJb1c0ndZEqaU8sR9HAquKtlXxxJkcd93PwzLAHeNoMDAwdT=
+AwMKInGxPp5zqVxQmLLxviHa9dmU4q7E_y0sBEHEbq0JOapze_VhrW0UzyQTrYb7ZIBtLqupJfl=
+4aFqCAuAD250jGWAJE2EsKol4yhcmZtThRYqOVcUAMa3XfFAmD0_EPtZnwTIrFNsvdKgKfbN1Yo=
+ZB_HrkBxhYFjLVbX9CixWvoKiy9QfbACNCrvlhGwSxP5ZvlmFKU1E2AEIzOQnB815snk2g4zoKA=
+hUQv65DAVLBy-sTnTgl_KmDq3XIkYjar9EeLnjX3qq61K0uT3AQDjMNXN1bhAKhVTKrxbkvxRz7=
+aYSNnYkrb2xA7Pi-yl59-JnrfC5AiUxGsawP-J6rBQgD-Rdatop9DT3_KeuCP_yMr7zEsPFqYuf=
+R_Ee01VxSttfs5geRqNM2QbngKjPbZrN6lZYQ25ZHhcOT31GM3HSyp5T_DiQ7by6b5TCa1jy9SR=
+eVHSAPR8s-j7TC4u-CV7CmCIsJmeKQ1ZwtuDb8i6bGRGDDD4Pyq_XaVWLOS4fEQ9Qr3mA-sCUJf=
+upgdhVk7NLo3-_y-GHlwOlv91xHnAmyApc5jXU0Qg_NlA9OZtnMHGN_A7Us9UlyPdGGFfj_ZmHA=
+8hjFnPdowvk-8MDOoY7NNTxalBFvQfp4A5SEaSWNv_gpWSc9mdL13SfNMgQViHAlD4BFAYOd9Qq=
+02M6uVJpWlz6dm_-37E4WoGORwvCagooUG8OOvzCgynP4ZvQlVogeyRkyoxNQnVG4RCgSE0Oz8q=
+U0HfV0tKN9Ij3siy3WmDfnl6e3X_EVjDgck-jpkF05Lsjd7QBuIDrQ50kTEZgbSbDIk-0HqWu-G=
+ZvFXMc-JFFTMrRT2gxlKs5-QElo5nZ5vdL9aLstoC_bnPbNG4HZ1r7ZPjr6TO66cf2-Hxs6JrUp=
+7D7x07EwagWm8_iDgLUDAGDlKIFYOtbOpZSCJbeDh7LeAsUzEVx6__nQ_Ts5Ps5O3FpEI4g8FrG=
+czdTAPJASbBwz4dOcFsgqMInieB6uHe_Gn7APobhtjIL8MsI7ZkIDpAUEM_0BuJ_5a2FcDzIL7-=
+lbZpHZG3jo9sSEeKHWznKpvc2kG-Y7yYv-9T3AjkyoUuruzNSkBPy7IW_Dtix-0xDRzMCttrJUX=
+NwYPX0giBily-d8UQftpoknF3CwFjlZTNh3ThRmQVQcCOD7TCIBE=3D" target=3D"_blank" =
+class=3D"Unsubscribe--unsubscribePreferences" style=3D"font-family:sans-ser=
+if;text-decoration:none;">Unsubscribe Preferences</a></div><br>############=
+################################################<br>#######################=
+#####################################<br><br><img src=3D"https://u19268662.=
+ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/434/74rA3UYoSWGhws57uGlXDg/ho.g=
+if" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"height:1px !imp=
+ortant;width:1px !important;border-width:0 !important;margin-top:0 !importa=
+nt;margin-bottom:0 !important;margin-right:0 !important;margin-left:0 !impo=
+rtant;padding-top:0 !important;padding-bottom:0 !important;padding-right:0 =
+!important;padding-left:0 !important;"/></body>
+</html>
+--a97a6850723cd0fe8e1378e2e2e432201c93582f8a1df82ce055f264bcc0--

@@ -1,0 +1,503 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a05:640c:2d08:b0:1ee:5ffb:29ea with SMTP id p8csp179289eiu;
+        Mon, 22 Jan 2024 14:37:25 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IHrd/oI2c/fzA09K3fIE+iFbXCX049+QEI+LIrWFSL15sbeiRXV4J5LwB+fIsQuRwwt3Hju
+X-Received: by 2002:a05:620a:a41:b0:783:76bb:c405 with SMTP id j1-20020a05620a0a4100b0078376bbc405mr7284939qka.64.1705963045101;
+        Mon, 22 Jan 2024 14:37:25 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1705963045; cv=none;
+        d=google.com; s=arc-20160816;
+        b=xemy0cH/1CPa+TVqdi4cCq+xJODpWFf4gN000COh86bADvimcDV0iTCZj/jcf8UbMz
+         EAzXSIYY9DP6til3v+djbJ1fblYkpna9t7c8OSwaBCLH1DrPDR2r/sgg9EpBGBD+f5iy
+         lguelgMumv+Fk1FCz/dPMTuP1LIufazxSpleZDD10UftVwiLZPeo0APeAkpLIlg8U6ck
+         GLjk/MCJHIcc6QyeBagIHBLC2QZXlTFZAjKhdebNSD4NbISGf6KdnAEFx4ZaCvBHt7Mi
+         Umg5YOGLh6s4+tLfGQFNJThXUOMcZq5DB2DCMr7buUaa5pNnT7bHP1rsGhrtVowMKdxx
+         EQxA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=7Ao6mndA5r3i/jVccJoh5bwTS/Q28qyDwCrlm68UpIk=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=siQE+4hAEx4MYLPYynWLSpEjgt7NsZdn0sZlLp3s33FnDgqadZ8PNfJrvH0mELB5jW
+         xd5pcn50Q7iXtdfVC46tqKdnVWq1m6Czdaic87uVo3om/isS6RzGxwJBHR2NJ53IDi4B
+         eHR0Nvj0/4Sm+3mHmCHZdJYIvGy7yaAKa5EEt/Kv8j0ZAD1JiC3miv3GtWSSrPd1W9xe
+         Y8uRfrFsQCScTwLpP6K4cDThfJsKKjbv62d4IupcjLO+dZgdAoVools/ZlXNOsLv8nfR
+         uR6mxGlPFI4TbbB3lJPAUmGgAFSP3OEkpAXfsMx6Zc8vxg+q5GT3JzcEaxyMgFbITExi
+         U7GA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=KniVH+zU;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=N4l+4rue;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id h26-20020a37de1a000000b007833177257esi6203449qkj.557.2024.01.22.14.37.24
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 22 Jan 2024 14:37:25 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=KniVH+zU;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=N4l+4rue;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=7Ao6mndA5r3i/jVccJoh5bwTS/Q28qyDwCrlm68UpIk=;
+	b=KniVH+zUVLy1vzZ3Tro+FGzS+DbKx1JtTnvTCe2BvSdY5t2DGXvfdogULPcOdKq44QCJ
+	VO7/IEJopJLoWcJL8aZyGKepVcNPyS3EMiQiX/USMTq59QOAixp7ENgYLmDtaqv/PeSSzu
+	wTdVmlTMQr632QYcKbsWUBu6sEJNN8TPwK3CwWFgo85KmaTM/K9FAwcIlowKNHGh3HbVSx
+	m02nYV89NFJ1BhOFmeG902LrOIeLSwljoMDsXFLLBat0DPbz2f3M0y9JGuB9ga6VRkilpk
+	j/QS5NiYUF5lClZe84QZM0CZKwkSOLMaa3mi9UH2TbhW1mYLA90k1JNfTl2Cht1g==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=7Ao6mndA5r3i/jVccJoh5bwTS/Q28qyDwCrlm68UpIk=;
+	b=N4l+4rueQOH7rYBrZLFnGyEYB83QSWHxeLo9CbHbi+2upRP28v7vFxDhTjb3OZWTcRTQ
+	oef2FuXI4qPFiRZmGFvAWgbKXVEqh01k6EguC69X4NtEM4PgmaoDL0927QUHY/jXkucnZJ
+	zDiK+46mJqMTHp+Pe0rH7hno0tQW5oGzU=
+Received: by filterdrecv-5d757dc7bd-wjwkd with SMTP id filterdrecv-5d757dc7bd-wjwkd-1-65AEEE20-42
+        2024-01-22 22:37:20.83575478 +0000 UTC m=+8394925.284903979
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-38 (SG) with HTTP
+	id ddw6dS5uQbqYZ2trWkzjBQ
+	Mon, 22 Jan 2024 22:37:20.795 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=ce490151f45b98fc5039fc8b7879f85c0a2a0932c1ba35c4c8ce8cb45672
+Date: Mon, 22 Jan 2024 22:37:24 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <ddw6dS5uQbqYZ2trWkzjBQ@geopod-ismtpd-38>
+Subject: PRO/AH/EDR> Whirling disease - Canada: (BC) trout
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iBL7uPTW5t=2Frq+q1szjFo9xNbdABS5D2KZA2RCo?=
+ =?us-ascii?Q?6ol=2Fb4UQ7OdX4iRu93+Qp64Yz=2F83IVhN9yalESx?=
+ =?us-ascii?Q?plvXoLxDZcUAl92MMp93bCKYgCO9UY3ZsojFqEC?=
+ =?us-ascii?Q?sTWtqCje5ZDDdMJYVD0WcSN+VS4AdrJiayr1W+x?=
+ =?us-ascii?Q?nWnQBfYLymJXtOWLnvPBuOKJcySKjw5ENmY3Ed?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUiShGf=2FO8XJWpH34Od4Nd?=
+ =?us-ascii?Q?fxXa6jil96uRcJkF+N+LeVnO1tx80ddOyoyOo=2Fc?=
+ =?us-ascii?Q?Brxcl3ERAm0cOY743=2FFH59DWiSf5OzXORh1DLKt?=
+ =?us-ascii?Q?hb1NMKty3PsA5ju0ZzxCrq1WQuZSEQf=2FJlWtgqv?=
+ =?us-ascii?Q?cZmsyCHlNUZsDpjwf5ItantbJbkaPpMYwx0j4Wc?=
+ =?us-ascii?Q?xrF=2F3cSFBH6U5HbAw9yzCsBn=2F5cuDAfpYKMkUnh?=
+ =?us-ascii?Q?dIFORsTz7DOkkMaLryiLirLsFUotmf6XBWT01Y5?=
+ =?us-ascii?Q?aQ7o0XnNrFo0OZWqR37PMQRS0rgV0QZA9zynJAl?=
+ =?us-ascii?Q?9F70fS+IjgmzObBWEHMpCB3J9QZ6Q3C+b8kQnJi?=
+ =?us-ascii?Q?Q95OYnzXuaikvCJicsYVtxBnP+=2FIooEJQl5TyBm?=
+ =?us-ascii?Q?gQKYBDtEKJbovwnp6xi182vcL2u6oEEfDmEGo9w?=
+ =?us-ascii?Q?r3HT5X33hFLcvkJ9VNJtSw0VaGkOesCFi0bXvdU?=
+ =?us-ascii?Q?=2Fyiu9GrzhQeh8ha8SupFQydQWitX7SlAY+rSGHD?=
+ =?us-ascii?Q?d98vFkUl92=2F4YzhJbm3XzocQYO7o=2FTIwwz4fdK7?=
+ =?us-ascii?Q?c1ivljit=2F5V77jX3keq1XGrfeYe=2FUqlz9Ai1ngf?=
+ =?us-ascii?Q?4ZXVwYNyksxnWpI58kdq5HWGBpYaFOgHsspOKMQ?=
+ =?us-ascii?Q?CTooef8Z90Fy7BrMF2UBNMBgyOkdEKQ+rKVpOmW?=
+ =?us-ascii?Q?m0XkGYErjb5D9Ul3hfs+32vFOwG6RuEYg4aA89Q?=
+ =?us-ascii?Q?6ZftBbosrEqCbU1RosZPngJoh3HQb3F3LeSriwo?=
+ =?us-ascii?Q?H=2FtfDfjyGrLfNlzKncAVeVIFpQ=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2E7mg2EeHDf?=
+ =?us-ascii?Q?rPzA44UO2O388b8UvotEwuP46rwHy7Sjy5oMDAw?=
+ =?us-ascii?Q?dTAwMJZVxOZtFnDTKOItAgoZ9KR6qmH7FtXflh=5F?=
+ =?us-ascii?Q?8lLIJMjyVRYqAl8wFRTT36MXs5u6osMXlneYUtB?=
+ =?us-ascii?Q?L7Auzo6ttREjyq19f=5FOAASPtOgZ-MOsWOpSkmRR?=
+ =?us-ascii?Q?3utYuBxN---V=5FBICw=3D=3D=2E6R16PVeMmKvdnIlHXGB?=
+ =?us-ascii?Q?P=5Fkumkt2iO8BynaLyWiINdLVoMDAwdTAwMJiWwF?=
+ =?us-ascii?Q?oi2L0rJXBSZtlnYSqbZBwJLlAlR3rlQsaQi09Wl?=
+ =?us-ascii?Q?nUeMeDcdZUb5AmqXJl9pXUlyWKstyfKEMYBMO6r?=
+ =?us-ascii?Q?wXxB9W5ZBq=5FL4NN7aISEKmIOwtXgekRJI0V75fU?=
+ =?us-ascii?Q?gg-yNzLfJNKN1TvYLnEPxBF=5FIidmGAkrEscgomj?=
+ =?us-ascii?Q?MFIgpDgq6H2RBZCcOQN1iCZZXnoL-zZOpLuMmbr?=
+ =?us-ascii?Q?pfmV=5FTZMTYrD3OF9ze5nSy4ffjF89lHvc9UFChk?=
+ =?us-ascii?Q?MfsBCuJfBWhgPL86rKNyAm=5FVxse2ENgZaVKilRX?=
+ =?us-ascii?Q?AlZ-6BzecaYZwYjmk=5FLBsqG6R9mPn3KnUVYZVDe?=
+ =?us-ascii?Q?3MrdksFLsdhbFWKJMFmH5-7NFFlAmeOAFaHEnti?=
+ =?us-ascii?Q?VvaoHxaFjPycBV3IM0BYeB=5FPj2WmRQaKEdcPMeg?=
+ =?us-ascii?Q?6uktuw24eDsMZhddocW-z5G5eiUPINzUiejFUW8?=
+ =?us-ascii?Q?A4BlDcarRsc1zt3ixFb-MwzhQ5JlaVzs8r3QcWp?=
+ =?us-ascii?Q?ANk0zzLaXJSoCK6ODVaH9ITpNz-2LFKuiJanrhI?=
+ =?us-ascii?Q?nKGjmpXFT=5FaBu-tflo8ixFeDU2VIkJp1zC4Oj0h?=
+ =?us-ascii?Q?10t4Ljm2v6PAB55mYKg9oCbbUErrx11X3UckvPN?=
+ =?us-ascii?Q?nYu7Js5YLeeRECn6WGnccfe=5FoC33VfhwlwByi2r?=
+ =?us-ascii?Q?Va2r6LWBAyVj4LITetRoq4=5FK-qoI2RiGHy4ckaV?=
+ =?us-ascii?Q?yCSUB6rP-okAQg3yv6EIvmGe9OHLNtGZhDHTUfE?=
+ =?us-ascii?Q?RTSMzWpkrnb4tUIwUEuAdU=5FGBWCVVy=5FHKMeZA=5Fd?=
+ =?us-ascii?Q?7PM8X=5FS43qOdAVqiKFRU9yXlqtDIoNYmOXa-Vyi?=
+ =?us-ascii?Q?G=5Fwww0aPhFZCzIqAljh3Y2QBQ68e85mnqJNNi1L?=
+ =?us-ascii?Q?3-LF0ZcGh3yUyMMlGvWLFG-=5FUWFSaqNLdn6n0Pm?=
+ =?us-ascii?Q?9D9pC6BApxCPTTVpbw7jL=5F=5FWsdjD-wPljfkx-XS?=
+ =?us-ascii?Q?uo7Eh5zRPrZr=5FqyN07j1iYdj6NU5vFhQqg45tyL?=
+ =?us-ascii?Q?Sl83TaSpTW64tBOxTIGm7EINHO2xFxwVIz9aJrG?=
+ =?us-ascii?Q?JCoTRSvm-1gv0vzydw8N-DbtwDkcAXPW29xijqU?=
+ =?us-ascii?Q?03arQA=3D=3D=3E?=
+
+--ce490151f45b98fc5039fc8b7879f85c0a2a0932c1ba35c4c8ce8cb45672
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=us-ascii
+Mime-Version: 1.0
+
+WHIRLING DISEASE - CANADA: (BRITISH COLUMBIA) TROUT
+***************************************************
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+Date: Thu 18 Jun 2024
+Source: Castanet [edited]
+<https://www.castanet.net/news/Salmon-Arm/467760/Columbia-Shuswap-society-c=
+oncerned-with-first-confirmed-case-of-whirling-disease-in-B-C>
+
+
+The Columbia Shuswap Invasive Species Society is concerned about the
+discovery of whirling disease in Emerald Lake in Yoho National Park.
+According to a CSISS press release, this detection marks the 1st-ever
+confirmed case of the disease in B.C.
+
+"In response to this alarming discovery, CSISS acknowledges the
+immediate collaboration between Parks Canada and the Canadian Food
+Inspection Agency (CFIA) to confirm the presence of whirling disease
+in Yoho National Park," the statement said.
+
+Parks Canada has closed all bodies of water in Yoho and Kootenay
+national parks until March 2024 in order to prevent further spread.
+
+There have been suspected cases of whirling disease in the Kicking
+Horse River, Wapta Lake, Finn Creek, and Monarch Creek.
+
+Robyn Hooper, CSISS executive director, stressed the importance of
+preventative measures when it comes to the disease, caused by a
+microscopic parasite which primarily targets trout and salmon.
+
+"No treatment is currently available, so containment and prevention
+are the best response at this time," Hooper said.
+
+Once the parasite gets inside the fish, it feeds on cartilage found in
+the spine, resulting in deformities. This leads to a distinctive,
+whirling swimming pattern.
+
+Infected fish have a high mortality rate. The fish release parasitic
+spores from their bodies, and when they die, more spores are released
+as their bodies decompose. These spores can remain alive in the
+sediment on the bottom of lakes and rivers for more than 20 years.
+
+Whirling disease is not harmful to humans or other mammals.
+
+"We are closely monitoring the situation at Emerald Lake and are ready
+to provide assistance and support as needed," CSISS wrote in its
+statement.
+
+CSISS advocates for a "clean, drain, and dry" protocol for all
+watercraft and fishing gear, including hip waders and non-motorized
+boats like stand-up paddleboards, canoes, and kayaks.
+
+Before leaving the shoreline, people are encouraged to clean off all
+visible plants, animals, and mud from watercraft and equipment, and
+drain all water-containing devices, including the bilge and motor.
+
+The equipment should be left to dry for at least 5 days, or dried
+thoroughly with towels, before using the watercraft again.
+
+Hooper had other tips to prevent spreading invasive species.
+
+"We want folks to know never to move fish or fish parts from one water
+body to another, and to use fish cleaning stations where available, or
+put fish parts into solid waste systems," Hooper said. "Don't dispose
+of fish or fish parts in a kitchen garburator."
+
+More information on whirling disease can be found on the provincial
+government's website at
+<https://www2.gov.bc.ca/gov/content/environment/plants-animals-ecosystems/f=
+ish/aquatic-species/aquatic-invasives/whirling-disease>.
+
+[Byline: Luc Rempel]
+
+--
+Communicated by:
+ProMED
+
+[Whirling disease affects salmonids (i.e., trouts, salmon, grayling,
+whitefish). The etiologic agent, _Myxobolus cerebralis_, is a
+myxosporean parasite (Phylum Cnidaria) that was introduced to the
+United States from Europe in the 1950s.
+
+It needs to infect a tubificid oligochaete (_Tubifex tubifex_, a kind
+of segmented worm) to complete its life cycle (in fact, _T. tubifex is
+the definitive host of _M. cerebralis_, and fish are intermediary
+hosts). Infection by the parasite in fish does not always lead to
+development of the disease or to population impact. However, this can
+occur under certain circumstances, and whirling disease has been
+associated with major fishery losses and economic costs.
+
+The impact on wild salmonid populations is associated with the lineage
+of _T. tubifex_ present in the area, as some are more prone to be
+infected.
+
+Whirling disease cannot infect humans, mammals, or fish that are not
+members of the salmonid family. - Mod.PMB
+
+ProMED map:
+British Columbia Province, Canada:
+<https://promedmail.org/promed-post?place=3D8714397,264>]
+
+[See Also:
+2023
+----
+Whirling disease - USA: (NM) trout
+http://promedmail.org/post/20230410.8709430
+2017
+----
+Whirling disease - Canada: (AB) fish removal
+http://promedmail.org/post/20170517.5043637
+2016
+----
+Whirling disease, salmonids - Canada: (AB)
+http://promedmail.org/post/20161103.4604377
+2015
+----
+Whirling disease, salmonids - USA: (NC) trout
+http://promedmail.org/post/20150809.3567529
+2011
+----
+Whirling disease, salmonids - USA (04): (UT)
+http://promedmail.org/post/20111208.3548
+Whirling disease, salmonids - USA (03): (UT)
+http://promedmail.org/post/20110911.2770
+Whirling disease, salmonids - USA (02): (UT) trout
+http://promedmail.org/post/20110707.2051
+Whirling disease, salmonids - USA: (UT, MD)
+http://promedmail.org/post/20110520.1528
+2007
+----
+Whirling disease, fish - USA (AK)
+http://promedmail.org/post/20070606.1826
+Whirling disease, fish - USA (MD) (03)
+http://promedmail.org/post/20070505.1454
+Whirling Disease, fish - USA (MD) (02)
+http://promedmail.org/post/20070217.0598
+Whirling disease, fish - USA (MD)
+http://promedmail.org/post/20070215.057
+2006
+----
+Whirling disease, fish - USA (UT)
+http://promedmail.org/post/20061214.3517
+Whirling disease, fish - USA (OR): transmission
+http://promedmail.org/post/20061105.3175
+2005
+----
+Whirling disease, fish hatchery - USA (UT)
+http://promedmail.org/post/20050429.1194]
+.................................................sb/pmb/tw/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3DhYn53q821vF7oHzDyYYe7sVFPxxHl7-JcJ6WFidyuJRoMDAwdTAwMFlBYs8=
+EFgRCX6lbluCRQmghtcsu-o-QuNTuenGJNnEgWEO3apB3COJ6N40OvzpOVJc0YDY2f1X4_9QHqe=
+hnYby1SBKk5kmNJIfTDr7H02ITWlHDMyqonKlovb_EnzLB_dwy4wiCcbXAyWhxDaTTPykbtGL3X=
+Xdko-lgS2_JeNKXqy4Ose6TTKYDb11VErbW_jDRj8MbZ_pvgtTFv3xS0U_47u85O0_XkUIiQOSl=
+ACXAiCon5oCVcsmuk8gG9zlo6OrrWXagJugrpwPyboDWmyQj4yyDIs2z9KqfnsrGCC3vORZ9Vnp=
+Cp1eGnFUhkc0DcVDtxSwLmHBY0BCXe0WeFH8xjdRXRdlO4RpEA87s9FqVDP3vj2vIiUPNbpW_wD=
+OuwZb3kcZQh6TnuiA4yANMcmhaVSXnvMXBtp18toNBOGlLKUn5EGxMcc6EHHWm0IRSZb9xdyTn0=
+PziTuTTYM72TQl9Nn8r_eSk1fpv0HV9d1-unyRYbZXus4F9Qz_4QfNAn2JAsH5yKMyToUjfFelj=
+6WtJxPx9Uv7n8nVo2PdVoVe375Om6rwflI9JVqxQEKoRc1bFb27i_111yBHlg78mNyHLR8qbIZw=
+2vusjv2xx-zECVrU4BI3-0WFwwN5Gpz06U3MDNI5G0RPA40l_WerXHGMu--mgNZSDQV0UHgKnbj=
+FMcn0fevoVoFs0fIZU7P28BXNvWDI_PQFlOs5JFjKe0ttyiL1NCWVmL7xenxlCA4bYkXd-N0wCO=
+pQ_84MMBfWrG8mxP2-JsheW5wVHIASbEtE-7sL6wrR2Up0Xap08Tv5ydrZIWV86ccpUet_xghSh=
+vkcy48Ufjrv4ELHxd6zDt19v-AOnxD0WvmljSLZeAJZXVcOufzCCIqq9RqLvJBEmuDq1_4d-YX-=
+6dp_lUT0NPTrb5JdNjH2HpjGqGOiPvRTKu74t8YEORNfYnpnrPKgc66Lpga7XPKNgjI_hE_i-Ms=
+E4vRw6-nYm8FWizk7gLxmpV-uINGd6UZRYAeONOkTXey3ajE-2gO7divvZtpVVEX1FmQM4hcf6I=
+ols-iPgdYPpMkftpcpq84Gotu7VMag9KXiicCmTlg7mKYaFKierMhabEdAoMgS64MJ_xHXqY_99=
+ijJRmy__aZUY_JfhfnkwmkT5x3dIZD2G17lg3kG_Sb5XCr1QkzOLacfYbZAwEtdq )
+############################################################
+############################################################
+
+--ce490151f45b98fc5039fc8b7879f85c0a2a0932c1ba35c4c8ce8cb45672
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>WHIRLING DISEASE - CANADA: (BRITISH COLUMBIA) TROUT<br>**************=
+*************************************<br>A ProMED-mail post<br><a href=3D"h=
+ttps://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisIijpefK5PNjW-mL-=
+YZGnfgDOxU1G3gjwnPSi2Tfv3HA/437/AjYGADqhSDWoq5GOZOJ4og/h0/xMk0BziLMXyCXdqSu=
+A76JEyTTZN8u0WxN669nwVCEOw">http://www.promedmail.org</a><br>ProMED-mail is=
+ a program of the<br>International Society for Infectious Diseases<br><a hr=
+ef=3D"https://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisCT5tpD4Up=
+m3qyMCbcYSQvc/437/AjYGADqhSDWoq5GOZOJ4og/h1/rgVCLNkbZIh5LP-P87Q4vT30DhyWRgf=
+LIpsflNA4Q34">http://www.isid.org</a><br><br>Date: Thu 18 Jun 2024=0D<br>So=
+urce: Castanet [edited]=0D<br><a href=3D"https://u19268662.ct.sendgrid.net/=
+ss/c/TLh_csrC34X_iXpbYoMam_nPg63hkLdOJBGoUw_PSfZ-JdhsDKobMBdDAF1_pmcWdZm_mp=
+QIt__8gqgAlDBm7EB_Ayo10J48ZS0vMylFR96HFLsqGDxTYWFU5C0r8utnx8bV8aogxYoQRyint=
+INYHi3M4dKVSmr04QRuzJcUO7MBa983JMfaaOqwkpAmTY04/437/AjYGADqhSDWoq5GOZOJ4og/=
+h2/DKDKgmrA0gzGrjmZkAaYjFafVFhizXuazYsT_meSn9I">https://www.castanet.net/ne=
+ws/Salmon-Arm/467760/Columbia-Shuswap-society-concerned-with-first-confirme=
+d-case-of-whirling-disease-in-B-C</a>=0D<br>=0D<br>=0D<br>The Columbia Shus=
+wap Invasive Species Society is concerned about the<br>discovery of whirlin=
+g disease in Emerald Lake in Yoho National Park.<br>According to a CSISS pr=
+ess release, this detection marks the 1st-ever<br>confirmed case of the dis=
+ease in B.C.=0D<br>=0D<br>"In response to this alarming discovery, CSISS ac=
+knowledges the<br>immediate collaboration between Parks Canada and the Cana=
+dian Food<br>Inspection Agency (CFIA) to confirm the presence of whirling d=
+isease<br>in Yoho National Park," the statement said.=0D<br>=0D<br>Parks Ca=
+nada has closed all bodies of water in Yoho and Kootenay<br>national parks =
+until March 2024 in order to prevent further spread.=0D<br>=0D<br>There hav=
+e been suspected cases of whirling disease in the Kicking<br>Horse River, W=
+apta Lake, Finn Creek, and Monarch Creek.=0D<br>=0D<br>Robyn Hooper, CSISS =
+executive director, stressed the importance of<br>preventative measures whe=
+n it comes to the disease, caused by a<br>microscopic parasite which primar=
+ily targets trout and salmon.=0D<br>=0D<br>"No treatment is currently avail=
+able, so containment and prevention<br>are the best response at this time,"=
+ Hooper said.=0D<br>=0D<br>Once the parasite gets inside the fish, it feeds=
+ on cartilage found in<br>the spine, resulting in deformities. This leads t=
+o a distinctive,<br>whirling swimming pattern.=0D<br>=0D<br>Infected fish h=
+ave a high mortality rate. The fish release parasitic<br>spores from their =
+bodies, and when they die, more spores are released<br>as their bodies deco=
+mpose. These spores can remain alive in the<br>sediment on the bottom of la=
+kes and rivers for more than 20 years.=0D<br>=0D<br>Whirling disease is not=
+ harmful to humans or other mammals.=0D<br>=0D<br>"We are closely monitorin=
+g the situation at Emerald Lake and are ready<br>to provide assistance and =
+support as needed," CSISS wrote in its<br>statement.=0D<br>=0D<br>CSISS adv=
+ocates for a "clean, drain, and dry" protocol for all<br>watercraft and fis=
+hing gear, including hip waders and non-motorized<br>boats like stand-up pa=
+ddleboards, canoes, and kayaks.=0D<br>=0D<br>Before leaving the shoreline, =
+people are encouraged to clean off all<br>visible plants, animals, and mud =
+from watercraft and equipment, and<br>drain all water-containing devices, i=
+ncluding the bilge and motor.=0D<br>=0D<br>The equipment should be left to =
+dry for at least 5 days, or dried<br>thoroughly with towels, before using t=
+he watercraft again.=0D<br>=0D<br>Hooper had other tips to prevent spreadin=
+g invasive species.=0D<br>=0D<br>"We want folks to know never to move fish =
+or fish parts from one water<br>body to another, and to use fish cleaning s=
+tations where available, or<br>put fish parts into solid waste systems," Ho=
+oper said. "Don't dispose<br>of fish or fish parts in a kitchen garburator.=
+"=0D<br>=0D<br>More information on whirling disease can be found on the pro=
+vincial<br>government's website at<br><a href=3D"https://u19268662.ct.sendg=
+rid.net/ss/c/TLh_csrC34X_iXpbYoMam50azFZ30L_8hWCYYfqCHqR2T8uqbLczuSdptVFUn9=
+aESqCSQ_vMBgf3wFVwn6phMk-HcCBwoF3Nmo2BFUMs-9auiYj3XsN9uLb4f39Ef9jtxWcn73ofV=
+1qAN0Z8pGgKismyU-PAs573dAtMK1TKbIg2pjJToI97MU_X-Zj5k-5O/437/AjYGADqhSDWoq5G=
+OZOJ4og/h3/lADmff3XPlrliNc8-vr5kVyG5jULF4YcXF5mETREnKQ">https://www2.gov.bc=
+.ca/gov/content/environment/plants-animals-ecosystems/fish/aquatic-species/=
+aquatic-invasives/whirling-disease</a>.=0D<br>=0D<br>[Byline: Luc Rempel]=0D=
+<br>=0D<br>--=0D<br>Communicated by:=0D<br>ProMED<br><br>[Whirling disease =
+affects salmonids (i.e., trouts, salmon, grayling,<br>whitefish). The etiol=
+ogic agent, _Myxobolus cerebralis_, is a<br>myxosporean parasite (Phylum Cn=
+idaria) that was introduced to the<br>United States from Europe in the 1950=
+s.=0D<br>=0D<br>It needs to infect a tubificid oligochaete (_Tubifex tubife=
+x_, a kind<br>of segmented worm) to complete its life cycle (in fact, _T. t=
+ubifex is<br>the definitive host of _M. cerebralis_, and fish are intermedi=
+ary<br>hosts). Infection by the parasite in fish does not always lead to<br=
+>development of the disease or to population impact. However, this can<br>o=
+ccur under certain circumstances, and whirling disease has been<br>associat=
+ed with major fishery losses and economic costs.=0D<br>=0D<br>The impact on=
+ wild salmonid populations is associated with the lineage<br>of _T. tubifex=
+_ present in the area, as some are more prone to be<br>infected.=0D<br>=0D<=
+br>Whirling disease cannot infect humans, mammals, or fish that are not<br>=
+members of the salmonid family. - Mod.PMB<br><br>ProMED map:<br>British Col=
+umbia Province, Canada:<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/=
+c/sSnCkKCWBvais3EuVAOvgy2WOIX7pp1nXnn4AbwuQ3Z6WbkfhqXYXU-aTMPJ8yTh1gSNOosqj=
+5zEulCGDc7OCw/437/AjYGADqhSDWoq5GOZOJ4og/h4/efkDmjcxZOtHcclFwt3uMHnZwDj4f_v=
+-DI0BpOjTApk">https://promedmail.org/promed-post?place=3D8714397,264</a>]<b=
+r><br>[See Also:<br>2023=0D<br>----=0D<br>Whirling disease - USA: (NM) trou=
+t<br>http://promedmail.org/post/20230410.8709430=0D<br>2017=0D<br>----=0D<b=
+r>Whirling disease - Canada: (AB) fish removal<br>http://promedmail.org/pos=
+t/20170517.5043637=0D<br>2016=0D<br>----=0D<br>Whirling disease, salmonids =
+- Canada: (AB)<br>http://promedmail.org/post/20161103.4604377=0D<br>2015=0D=
+<br>----=0D<br>Whirling disease, salmonids - USA: (NC) trout<br>http://prom=
+edmail.org/post/20150809.3567529=0D<br>2011=0D<br>----=0D<br>Whirling disea=
+se, salmonids - USA (04): (UT)<br>http://promedmail.org/post/20111208.3548=0D=
+<br>Whirling disease, salmonids - USA (03): (UT)<br>http://promedmail.org/p=
+ost/20110911.2770=0D<br>Whirling disease, salmonids - USA (02): (UT) trout<=
+br>http://promedmail.org/post/20110707.2051=0D<br>Whirling disease, salmoni=
+ds - USA: (UT, MD)<br>http://promedmail.org/post/20110520.1528=0D<br>2007=0D=
+<br>----=0D<br>Whirling disease, fish - USA (AK)<br>http://promedmail.org/p=
+ost/20070606.1826=0D<br>Whirling disease, fish - USA (MD) (03)<br>http://pr=
+omedmail.org/post/20070505.1454=0D<br>Whirling Disease, fish - USA (MD) (02=
+)<br>http://promedmail.org/post/20070217.0598=0D<br>Whirling disease, fish =
+- USA (MD)<br>http://promedmail.org/post/20070215.057=0D<br>2006=0D<br>----=0D=
+<br>Whirling disease, fish - USA (UT)<br>http://promedmail.org/post/2006121=
+4.3517=0D<br>Whirling disease, fish - USA (OR): transmission<br>http://prom=
+edmail.org/post/20061105.3175=0D<br>2005=0D<br>----=0D<br>Whirling disease,=
+ fish hatchery - USA (UT)<br>http://promedmail.org/post/20050429.1194]<br>.=
+................................................sb/pmb/tw/jh<br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3DhYn53q821vF7oHzDyYYe7sVFPxxHl7-JcJ6WFidyuJRoMDAwdT=
+AwMFlBYs8EFgRCX6lbluCRQmghtcsu-o-QuNTuenGJNnEgWEO3apB3COJ6N40OvzpOVJc0YDY2f=
+1X4_9QHqehnYby1SBKk5kmNJIfTDr7H02ITWlHDMyqonKlovb_EnzLB_dwy4wiCcbXAyWhxDaTT=
+PykbtGL3XXdko-lgS2_JeNKXqy4Ose6TTKYDb11VErbW_jDRj8MbZ_pvgtTFv3xS0U_47u85O0_=
+XkUIiQOSlACXAiCon5oCVcsmuk8gG9zlo6OrrWXagJugrpwPyboDWmyQj4yyDIs2z9KqfnsrGCC=
+3vORZ9VnpCp1eGnFUhkc0DcVDtxSwLmHBY0BCXe0WeFH8xjdRXRdlO4RpEA87s9FqVDP3vj2vIi=
+UPNbpW_wDOuwZb3kcZQh6TnuiA4yANMcmhaVSXnvMXBtp18toNBOGlLKUn5EGxMcc6EHHWm0IRS=
+Zb9xdyTn0PziTuTTYM72TQl9Nn8r_eSk1fpv0HV9d1-unyRYbZXus4F9Qz_4QfNAn2JAsH5yKMy=
+ToUjfFelj6WtJxPx9Uv7n8nVo2PdVoVe375Om6rwflI9JVqxQEKoRc1bFb27i_111yBHlg78mNy=
+HLR8qbIZw2vusjv2xx-zECVrU4BI3-0WFwwN5Gpz06U3MDNI5G0RPA40l_WerXHGMu--mgNZSDQ=
+V0UHgKnbjFMcn0fevoVoFs0fIZU7P28BXNvWDI_PQFlOs5JFjKe0ttyiL1NCWVmL7xenxlCA4bY=
+kXd-N0wCOpQ_84MMBfWrG8mxP2-JsheW5wVHIASbEtE-7sL6wrR2Up0Xap08Tv5ydrZIWV86ccp=
+Uet_xghShvkcy48Ufjrv4ELHxd6zDt19v-AOnxD0WvmljSLZeAJZXVcOufzCCIqq9RqLvJBEmuD=
+q1_4d-YX-6dp_lUT0NPTrb5JdNjH2HpjGqGOiPvRTKu74t8YEORNfYnpnrPKgc66Lpga7XPKNgj=
+I_hE_i-MsE4vRw6-nYm8FWizk7gLxmpV-uINGd6UZRYAeONOkTXey3ajE-2gO7divvZtpVVEX1F=
+mQM4hcf6Iols-iPgdYPpMkftpcpq84Gotu7VMag9KXiicCmTlg7mKYaFKierMhabEdAoMgS64MJ=
+_xHXqY_99ijJRmy__aZUY_JfhfnkwmkT5x3dIZD2G17lg3kG_Sb5XCr1QkzOLacfYbZAwEtdq" =
+target=3D"_blank" class=3D"Unsubscribe--unsubscribePreferences" style=3D"fo=
+nt-family:sans-serif;text-decoration:none;">Unsubscribe Preferences</a></di=
+v><br>############################################################<br>#####=
+#######################################################<br><br><img src=3D"=
+https://u19268662.ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/437/AjYGADqhS=
+DWoq5GOZOJ4og/ho.gif" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=
+=3D"height:1px !important;width:1px !important;border-width:0 !important;ma=
+rgin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;=
+margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !importa=
+nt;padding-right:0 !important;padding-left:0 !important;"/></body>
+</html>
+--ce490151f45b98fc5039fc8b7879f85c0a2a0932c1ba35c4c8ce8cb45672--

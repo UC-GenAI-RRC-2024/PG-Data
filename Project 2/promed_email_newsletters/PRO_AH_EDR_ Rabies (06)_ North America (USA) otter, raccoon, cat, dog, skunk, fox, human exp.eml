@@ -1,0 +1,1219 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a98:d84b:0:b0:1eb:e128:bbe3 with SMTP id b11csp344eil;
+        Wed, 17 Jan 2024 17:56:36 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IGRIzigz8OZHJlfjNA8DCsBe1kx3jqQaruIwiUbxzLHG+FsaZ9/LTAK4Dz+YAPnYL2I1R48
+X-Received: by 2002:ac8:5785:0:b0:429:d727:3824 with SMTP id v5-20020ac85785000000b00429d7273824mr129255qta.134.1705542994790;
+        Wed, 17 Jan 2024 17:56:34 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1705542994; cv=none;
+        d=google.com; s=arc-20160816;
+        b=ulNkrhtk/uylWURXHuDI8n3u10QXmil9o9CR4kLfIlguoEQZOgGFlfrvydyh+v1q2E
+         0DNvYKwgg63b0KffVHL/mwKQefFUlT5foIPyLWX0076K7wUpX9uF+reoYrJcv31HatGw
+         k21IKWFtS4dVPdV0RA1CCP7MzGYv7VloVOYyzwHy+G/wmOE22lvjFCerUKFPpsvOugJt
+         yqp7TMsoYpUlkqF2qX537wJS/DJ8z9RJpMlsLwtBxXfIz/u3nVnPXhA1kj7Z/ahl+lI2
+         cCpaCh/yN1sUdNKvA7sLgFYwD12ZhN4rtZtc+9RCo7btHimQqGwOxvGD/KrWX3u7NDcm
+         CbgQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=xxnlT+pjyc8nBxk4F/OxUPLteCLQU3Z1v1Zq9mutauY=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=L7+Uwd8O9pjkoIkWMmAgvky2vBQbyfmmcsjqQS4USSvPuRKGBJXHPfhN+5RSLO5MU1
+         l523BqHppRDRHabz4wuiCNvuLF8E2NDRj7z1A87EKEMam1Ey+Fq6+nfoqWxbXSSqUNbw
+         P891LeQQFEQoBrY/9iAHmS7vyyf12EfOw7MiMsroK7hocL0zEkqyEYnX2wfBRTy+Ysaq
+         E5/+1xu0B0bcxkzHsBFm/0CNBcHKTaFOISBE8VbzFx3BQPWWQx0lbty9lx7hu/Y7E2fk
+         lTeYiczsGEaJG5LJ7dVMMBvS8kcniDPyv4IkKbsmP+m7rzc5pBzEY/idx5LYzBt0QJM7
+         K/xQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=hmYAXi4l;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=y0jg3hnj;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id d21-20020a05622a101500b0042a1b70626esi93112qte.692.2024.01.17.17.56.16
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 17 Jan 2024 17:56:34 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=hmYAXi4l;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=y0jg3hnj;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=xxnlT+pjyc8nBxk4F/OxUPLteCLQU3Z1v1Zq9mutauY=;
+	b=hmYAXi4lkHuh+/dBbMcylyO755Ya9+/DNwH9xBGa/M3Pvub74dMedv6I3hNPZ3B97DkA
+	T3WVEotO+2wVNBA1i8pRVRPVJBvZBhYrkewwFPrvi0O2yVnyzXcNRTHKOFLlz9h9h1ndcp
+	xSqLAUlwT9c8x0uTrGmVu58DrrfsT9OHOy/1c32tD9BtZJJvvmzeKTalCS+XxROICI5Yoh
+	tF9k4lbsSUssvl/bdDOif3KMMQd30xxHsuWUXTRtUu9hroZTLNctW2I2zedK6cuiFCZjn8
+	XlUzGQugORTRGYLhA+rluJ/9BwtTwKeIQV0hT27Q/2Esa8+Ypol6JTlRFy1RPVzA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=xxnlT+pjyc8nBxk4F/OxUPLteCLQU3Z1v1Zq9mutauY=;
+	b=y0jg3hnj+Sk0XmzLlEWPLtpPK5Ol4DlNvOwSkqCjKBL/3x6whHy8Q1z8fsZLmPepcX8F
+	wr22Bx/r3hCdpDKNsWUoDif+iWRdXcOvD+sWIpqM1uvxCg18VquSzX1HzElx0xAObwcjVl
+	d6B+IZM1ELuQsANNjipBwcbF2LEiwTFSE=
+Received: by filterdrecv-5579bc58-4zcpx with SMTP id filterdrecv-5579bc58-4zcpx-1-65A8853C-43
+        2024-01-18 01:56:13.088296293 +0000 UTC m=+7974850.032837896
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-17 (SG) with HTTP
+	id AqvpEbNVSx66sugZrp0snQ
+	Thu, 18 Jan 2024 01:56:12.908 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=3b9da02ad276c0f3bd8f278820867b2644e24434dd33ace0517cae6ecdb3
+Date: Thu, 18 Jan 2024 01:56:15 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <AqvpEbNVSx66sugZrp0snQ@geopod-ismtpd-17>
+Subject: PRO/AH/EDR> Rabies (06): North America (USA) otter, raccoon, cat,
+ dog, skunk, fox, human exp
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iBpQ0RKOcgjjeI5A0Txw=2FHYX+Mr6COFu7PWovt1?=
+ =?us-ascii?Q?iAh2l8Nkh9umuTtLnfz+9EmpfA7NSJNqcwhBFqY?=
+ =?us-ascii?Q?vXagh2jwk61E5QjDFdonKJ3nnTJ+Qu=2F7cSpWJaP?=
+ =?us-ascii?Q?ZXMXuuGPWkbcrB0a+mrWeS9R=2FWwApRhSMtwwZpe?=
+ =?us-ascii?Q?3RS2gAHq+=2FLTUd5h9STXkNZpV+EsWJNk7ZA9fE?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUiShGf=2FO8XJWpH34Od4Nd?=
+ =?us-ascii?Q?fxXa6jil96uRcJkF+N+LeVnO1tx80ddOyoyOo=2Fc?=
+ =?us-ascii?Q?Brxcl3ERAm0cOY743=2FFH59DWiSf5OzXORh1DLKt?=
+ =?us-ascii?Q?hb1NMKty3PsA5ju0ZzxCrq1WQuZSEQf=2FJlWtgqv?=
+ =?us-ascii?Q?cZmsyCHlNUZsDmKb01nG7En7M6AOBGUYyJ5mXib?=
+ =?us-ascii?Q?YKjRlo6Zxxi6QNyEimZniukx5Ur8NUlQie7y5m1?=
+ =?us-ascii?Q?CapImpS1+WDcRLdBJ4JcMgAFfJKRSqBLGUanwSp?=
+ =?us-ascii?Q?G78z+gK4Xi8I20NdBY8m=2FJN56WdtrCbuYGrdjlA?=
+ =?us-ascii?Q?UyrBMqoZueAurFi4sECEHydmDaOla5UFIKG5TAt?=
+ =?us-ascii?Q?srjzuktqOJpu7wKon3CLi1g0vaWOSVRx7=2F4t=2FKI?=
+ =?us-ascii?Q?cbzMdoAXtimfh3F=2FDPFkjmIM+IzLJ=2F+8LLO8lPT?=
+ =?us-ascii?Q?2Z1vhV834mr=2FC+iWPuHmekH0kGt2fQIdZrFA0gF?=
+ =?us-ascii?Q?v6pukI4aCUKM07hy6VURqkHUYaD1sIvdsDnPuk8?=
+ =?us-ascii?Q?450iylYWHh5Oy=2FmRkNVD2sw4DOf=2Fboz5R7YyaHT?=
+ =?us-ascii?Q?IiqTICj+wa2Pr2Txb6cncbFYf9GWrGEbHNkV+nD?=
+ =?us-ascii?Q?Y552gpSmjYEbgW90tk9RlEOisC8uditc2ix+mNk?=
+ =?us-ascii?Q?nZGPzD7eaYJ4IsbWtqFpwgcCpcq8bxqfImL6D1q?=
+ =?us-ascii?Q?pqv1BiXbEfoaNfBzwO+uy4iqPZzEPtSPYfZfsli?=
+ =?us-ascii?Q?vlPi9r5yomqJ7PFd+Dh3A66kdjH3hx85dxq+efS?=
+ =?us-ascii?Q?De6Se=2F5M18HtpMImY7oDq7yujA=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2ElbdhE3fOR?=
+ =?us-ascii?Q?QmBxRFUTCwHfjYNLYZWjTOA4Ot-lrwamPloMDAw?=
+ =?us-ascii?Q?dTAwMOOT8yOJ0iHrwtrCmY=5FjdC85HNIGmsD9OBc?=
+ =?us-ascii?Q?lDZBwpWvsLksYevGV5wNWmhR89rYU0aIJX5zu6m?=
+ =?us-ascii?Q?4cDgrwLuxFhEJ924Rp4ALjqNb4H-U0JJVRTt3cx?=
+ =?us-ascii?Q?Nk4v2wDHM6kMd8sYg=3D=3D=2EbjkwRFr9SIpWRZUW=5Fso?=
+ =?us-ascii?Q?LCfwsbgAocfWMdtNzWJKj8jRoMDAwdTAwMCAG35?=
+ =?us-ascii?Q?34wYl34UQoxOH=5FQNF0OiBswXJxSteJXwJTXw8ev?=
+ =?us-ascii?Q?QoKT7Z7lUEGGapCw6=5FjA=5FITWQqoGVRyriJjzKxh?=
+ =?us-ascii?Q?hxxlSKo4qwjDCyrEI74XiRre7K8Nj3y4tKRupBm?=
+ =?us-ascii?Q?LiSSot3NIcsd2cL443R85d4arknqmmCUwPlXB0Q?=
+ =?us-ascii?Q?TpkROo30NzdOmSaKuFXy0-uvxhWV=5FYSnalaAH2W?=
+ =?us-ascii?Q?FKW44Y0W6BZusFuOrx3sO6hj41aWIWRHlclzNTj?=
+ =?us-ascii?Q?PjKn1iZwLcCweJBfbXzlkaApx99wU38IbvzqXcA?=
+ =?us-ascii?Q?hNdDllXyz3y6FwB2fmWlFQuhbtNNJF4tDLSTye0?=
+ =?us-ascii?Q?Y5dB2Xi4inyXF6CkU6rOavgQAWfUXMCzfwJFdpK?=
+ =?us-ascii?Q?nk01iGY7YC1v04xC6p0LF2wKr6R7OSgRlpjFpNJ?=
+ =?us-ascii?Q?LCfulEKViumDIP7-TqufbDWOGyo0blX8EDmWBBK?=
+ =?us-ascii?Q?h19-AWrum5=5FEREkUVmEZjna1Xzw6Bcoh=5FgJt9in?=
+ =?us-ascii?Q?6lT80DrhdUgJCmlcrrc8szXD2ZMorgNGTQNGRlg?=
+ =?us-ascii?Q?wSiVtc09Sob34AhvfavYTZI829KWaR=5FLBZcu-pl?=
+ =?us-ascii?Q?41zv0PmAp1s1xEx6ir8eDfP3jjA52OBSOPB-9C1?=
+ =?us-ascii?Q?NIcxZzzglRV3dtE605TS32rtCrrG9cOws27EgAa?=
+ =?us-ascii?Q?lMT70MGVSqpaZki204hN0rEFfsReg1Nez24nmll?=
+ =?us-ascii?Q?C7Frd4sEOBqqRs4C=5F4q985=5FuQqDAtafVrbsNzMH?=
+ =?us-ascii?Q?Y7Sav5DW0vEH2mG03DI3MrGrjr8bn=5FDw8pgB5dv?=
+ =?us-ascii?Q?dGgWx-IfSgcIbxd-cKAVQ=5F-ztz-kC3E25B09xNk?=
+ =?us-ascii?Q?qZfpN249NQtVBOH1Q=5FKOyKszW3-Uk8s1PXOM8B9?=
+ =?us-ascii?Q?49ckAFvu4rc5uB4oYQbjME0gGZLxpFaIZE4yKnc?=
+ =?us-ascii?Q?QCW3=5FjOUlPZ7Bd-DDssxfSQ0m5utlG4KZeRhzqS?=
+ =?us-ascii?Q?CDQULpJkk9hGf6ogXlNcHIObnUSnfsSdWTH=5Fwyr?=
+ =?us-ascii?Q?2wIuCeMY6tMPUUuU9uIYgT8rB99CcuBJUHezG9e?=
+ =?us-ascii?Q?YMvvYnmOTA=5FgdlNljOCL8c19R-M4g1CfZtX8G4E?=
+ =?us-ascii?Q?13H0SQ=3D=3D=3E?=
+
+--3b9da02ad276c0f3bd8f278820867b2644e24434dd33ace0517cae6ecdb3
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=us-ascii
+Mime-Version: 1.0
+
+RABIES (06): NORTH AMERICA (USA) OTTER, RACCOON, CAT, DOG, SKUNK, FOX,
+HUMAN EXPOSURE
+***************************************************************************=
+**********
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+In this posting:
+[1] Florida (Beach County): otter, dog, human exposure
+[2] Georgia (Gwinnett County): raccoon, dogs
+[3] Georgia (Glynn County): raccoon, dog
+[4] Pennsylvania (Adams County): cat, human exposure
+[5] Texas (Tarrant County): skunk, dogs
+[6] New York (Oneida County): fox, human exposure
+
+******
+[1] Florida (Beach County): otter, dog, human exposure
+Date: Thu 11 Jan 2024
+Source: Grand View Outdoors [edited]
+<https://www.grandviewoutdoors.com/waterfowl/rabid-otter-attacks-florida-ma=
+n-whos-feeding-ducks>
+
+
+A 74-year-old Florida man was attacked and bitten by a rabid otter,
+sending the man to the hospital for treatment of multiple wounds on
+his hands, arms and legs. [JS], of Jupiter, Florida, was feeding ducks
+at a small pond near his home when he turned to leave. He heard the
+ducks flush, according to The Miami Herald, and turned to find an
+otter walking down the bank toward him.
+
+[JS] backtracked to a fence gate, but before he could get through it
+the otter attacked. It bit and scratched his feet and legs, and then
+[JS]'s arms and hands as he tried to fend off the crazed animal. It
+finally stopped but also attacked a neighbor's dog. [JS] had 41 wounds
+requiring treatment, and also received various vaccinations. The dog
+was treated by a local veterinarian.
+
+"I started to push it away, and it started to bite my hands," [JS]
+told WPTV. "One of the bites is on my pinkie, and it ripped the nail
+off the pinkie. [It] looks like the tooth went completely through my
+finger."
+
+The otter was trapped under a recycling bin by the Jupiter Police
+Department. It then was captured in a cage by Palm Beach Animal Care
+and Control, and taken to the Florida Department of Health for rabies
+testing.
+
+Coincidentally, the Florida attack happened 7 weeks after 3 women were
+attacked by an otter while floating on the Jefferson River in Montana.
+The 3 women were in the middle of the river and were unable to stand
+because of the depth. They kicked and punched at the otter, which
+finally moved away.
+
+[Byline: Alan Clemons]
+
+--
+Communicated by:
+ProMED
+
+******
+[2] Georgia (Gwinnett County): raccoon, dogs
+Date: Thu 11 Jan 2024 09:06 EST
+Source: WSB-TV News [edited]
+<http://tinyurl.com/3zkmjpfy>
+
+
+Gwinnett officials are warning people of a potential rabies outbreak.
+On 4 Jan 2024, a rabid raccoon bit 2 dogs in Snellville, according to
+the Gwinnett Animal Shelter.
+
+Officials said rabies can spread to people through a bite or a scratch
+[from an unvaccinated animal - Mod.TG]. The shelter encouraged pet
+owners to ensure their pets have the current rabies vaccination.
+
+Officials also said if your child [or yourself] has been bitten or
+scratched by a stray animal, preventive rabies treatment is
+necessary.
+
+Anyone in the area who has been exposed is asked to call the Gwinnett
+County Health Department and ask for the epidemiologist on call.
+
+--
+Communicated by:
+ProMED
+
+******
+[3] Georgia (Glynn County): raccoon, dog
+Date: Fri 12 Jan 2024 16:51 EST
+Source: Yahoo News [edited]
+<https://news.yahoo.com/rabies-alert-sick-raccoon-spotted-215147886.html>
+
+
+The Glynn County Health Department is alerting residents in Brunswick
+about a raccoon having tested positive for rabies.
+
+Several species of wild animals including raccoons, foxes, and bats
+can carry rabies. Feral cats and dogs can also carry this disease.
+Rabies is a potentially deadly virus primarily spread by infected
+animals.
+
+Reports from the Glynn County Health Department state the raccoon was
+discovered in a family's shed on Blythe Island Highway yesterday [11
+Jan 2024]. There are also reports of an encounter between the raccoon
+and the family's dog.
+
+The racoon was quickly captured while the dog was rushed to the vet.
+The dog had previously been vaccinated against rabies and received its
+booster. The dog's owners did not report having any physical contact
+with the raccoon.
+
+Reports state while captured, the racoon passed away.
+
+The Glynn County Environmental Health office prepared a sample from
+the infected raccoon and delivered it to the lab on the morning of 12
+Jan 2024. A positive rabies test result was reported at 2:00 p.m.
+
+The dog's owners have been contacted with the results, and the dog
+will be placed on a 45-day quarantine.
+
+The health department will provide guidance to the owners about
+post-exposure rabies treatment, encouraging them to follow the
+recommendations of poison control and their personal physician to
+determine the level of exposure they had to the racoon.
+
+The Glynn County Environmental Health office wants to use this as an
+important reminder to avoid contact with wild animals and to keep your
+pets up to date on rabies vaccinations.
+
+Follow these tips to protect you and your family from rabies:
+- Avoid contact with animals you don't know.
+- Make sure your pets receive the proper immunizations. Dogs and cats
+should get rabies vaccines after 12 weeks of age, followed by a
+booster shot within 1 year and vaccination every 1-3 years depending
+on veterinary recommendation and vaccine used.
+- Do not handle, feed, or unintentionally attract wild animals with
+open garbage cans or by leaving pet food out at night.
+- Never adopt wild animals or bring them into your home. Do not try to
+nurse sick animals to health. Call animal control or a properly
+licensed animal rescue agency for assistance.
+- Teach children to never handle unfamiliar animals, wild or domestic,
+even if they appear friendly. "Love your own, leave other animals
+alone" is a good principle for children to learn.
+
+Signs of rabies in animals include:
+- Change in behavior
+- Biting
+- Aggression
+- Showing no fear of natural enemies (such as humans)
+- Foaming at the mouth
+- Paralysis
+
+If an animal ever bites you, seek medical care immediately and contact
+Glynn County Animal Control and the Glynn County Health Department
+Environmental Health office.
+
+--
+Communicated by:
+ProMED
+
+******
+[4] Pennsylvania (Adams County): cat, human exposure
+Date: Fri 12 Jan 2024
+Source: MSN [edited]
+<https://www.msn.com/en-us/news/us/rabies-case-in-adams-county-confirmed-af=
+ter-woman-attacked-by-stray-cat/ar-AA1mT3P1>
+
+
+There was a confirmed case of rabies in Adams County earlier this
+week, according to the Adams County SPCA. In a Facebook post on Friday
+[12 Jan 2024], the county's SPCA wrote about a woman attacked by a
+stray cat when she approached it.
+
+The woman was at an auto garage, along the intersection of Hanover
+Street and Rt. 94 in Oxford Township, when she saw a stray cat, out in
+the rain on Tuesday [9 Jan 2024]. When she tried to pick up the cat,
+it attacked her left hand and arm, the post reads.
+
+The cat was trapped the next day [10 Jan 2024], taken to the SPCA to
+be humanely euthanized, and taken to the Pennsylvania Veterinary
+Laboratory (PALDS) to be tested for rabies virus. When the test
+results came back, it showed the cat had the [rabies] virus, the post
+reads.
+
+The human nervous system is attacked by the rabies virus which can be
+contracted if an animal bites, scratches, or if their saliva gets in
+the eyes, nose, mouth, or an opening in the skin, according to the
+SPCA. It, however, can be completely preventable.
+
+If one comes in contact with the virus they should contact their
+doctor immediately, the SPCA wrote. [If an animal you have interacted
+with is found to be rabies positive, it is important start the rabies
+post-exposure prophylaxis treatment immediately. - Mod.TG]
+
+The SPCA offers the following tips on how to stay clear of exposure to
+rabies:
+- All dogs and cats 3 months or older are required by Pennsylvania law
+to be vaccinated by a licensed veterinarian.
+- Don't let pets just roam free.
+- Do not keep your pet's food or water bowls outdoors because it can
+attract other animals.
+- Do not touch or handle unfamiliar or wild animals even if they
+appear friendly.
+
+[Byline: Jared Weaver]
+
+--
+Communicated by:
+ProMED
+
+******
+[5] Texas (Tarrant County): skunk, dogs
+Date: Sat 13 Jan 2024 15:51 CST
+Source: NBCDFW [edited]
+<https://www.nbcdfw.com/news/local/bedford-officials-warn-residents-about-r=
+abies-vaccines-after-skunk-attacks-dogs/3433580/>
+
+
+Health officials are urging pet owners to vaccinate their animals
+against rabies following an attack on 2 dogs by a skunk in Bedford on
+Thursday [11 Jan 2024].
+
+The Bedford Police Department said a woman was walking her 2 dogs near
+Silverwood Lane when they were approached by a skunk. The skunk
+reportedly attacked the dogs and was found dead in the same area a
+short time later by Animal Services officers.
+
+According to Bedford Animal Services, skunks are not frequently active
+during the day because they are primarily nocturnal animals.
+
+"The skunk will be tested for any diseases, and if there are any
+positive results that could be a concern to the community, the City
+will provide additional updates when available," Bedford Police said
+in a released statement.
+
+The City of Bedford requires all dogs and cats must be vaccinated
+against rabies by 4 months of age and then at regular intervals under
+rules adopted by the Texas Health and Safety Code.
+
+--
+Communicated by:
+ProMED
+
+******
+[6] New York (Oneida County): fox, human exp
+Date: Wed 17 Jan 2024 12:50 EST
+Source: WIBX 950 [edited]
+<https://wibx950.com/potentially-rabid-fox-that-attacked-multiple-people-in=
+-rome-is-confirmed-dead/>
+
+
+The Oneida County Health Department confirmed the fox that attacked 3
+people in Rome was rabid. The animal was killed by a private resident
+and its remains were sent in for testing at the New York State
+Department of Health Wadsworth Center.
+
+Another person has since come forward about being exposed to the fox
+and is also undergoing post-exposure prophylaxis. This brings the
+total number of individuals exposed to the animal to 4; however,
+anyone who encountered the rabid fox is now strongly advised to seek
+immediate treatment as rabies is a fatal disease.
+
+Even if no bite took place, residents are still urged to call and make
+an appointment.
+
+As previously reported, The Oneida County Health Department and Rome
+Police say 3 people were attacked by the rabid fox around the Mohawk
+River and Black River Boulevard area over the weekend. The health
+department is also urging those who may have had contact with the fox
+to contact the OC Health Department and seek post-exposure
+prophylaxis, as it can save their life.
+
+Said the health department, "Rabies is a deadly disease, and if you
+become exposed, it is vital to get appropriate care to avoid
+contracting rabies."
+
+Mount Sinai says those exposed to a rabid animal have at least up to
+14 days to receive post-exposure prophylaxis. Rabies is fatal and
+while there have been claims of humans surviving the disease,
+scientific papers about these cases have been retracted -- thus
+casting doubt these claims are actually legitimate.
+
+Additionally, authorities are also urging pet owners to ensure their
+pets' rabies vaccine is up to date amid a troubling rise of this
+deadly disease in the area.
+
+Rabies on the rise in New York
+------------------------------
+County officials are strongly urging residents to learn how to
+recognize a potentially rabid animal and to teach their children to
+never play with unknown animals either wild or domestic.
+
+Madison County Department of Health's Aaron Lazzara warned, "We are
+seeing more rabid animals this year than the last 2 years combined."
+
+Additionally, officials urged pet owners to be aware of the growing
+number of reports of wild animals infected with rabies and ensure
+their pets are protected. [Be sure their rabies vaccine is current and
+up to date. If you have questions contact your veterinarian. - Mod.TG]
+Recently in Herkimer County, a family dog killed a rabid raccoon.
+
+According to the Centers for Disease Control and Prevention, wildlife
+accounts for over 90% of all reported rabies cases. Skunks, foxes,
+raccoons, coyotes, and bats make up the majority of rabies cases in
+the United States, but the disease is capable of infecting horses,
+ferrets, cattle and other warm-blooded animals.
+
+Rabies is transmitted through direct contact with an infected animal
+through its saliva or nervous system tissue. People can get infected
+if bitten from a rabid animal. [It is not always a bite, but may be
+saliva of a rabid animal in the eye or in a cut. - Mod.TG]
+
+The Oneida County Health Department warned: "If you see an animal,
+wild or stray, with these signs, do not approach it and stay away. If
+any animal is acting strangely, call your local animal control officer
+for help. If you are concerned you may have been exposed to a rabid
+animal or find a bat in your home, call Oneida County Health
+Department for guidance."
+
+Signs and symptoms of the disease include drooling or foaming from the
+mouth, abnormal or aggressive behavior, paralysis, seizures,
+difficulty swallowing, and self-mutilation.
+
+The disease is always fatal, which is why officials stress the
+importance of vaccinating your pets against rabies. It's also the law.
+New York mandates all pet owners vaccinate their dogs, cats, and
+ferrets by the time they're 4 months old.
+
+Even if you have an indoor-only pet, vaccinating it will protect your
+animal if it ever slips outside and encounters a sick animal. [There
+are cases of wild animals running into homes. While this is not usual,
+it does happen and such events can put you and your pet at risk of
+rabies. - Mod.TG]
+
+Per Herkimer County officials: "Herkimer County Public Health would
+like to remind the public to please check your pets' rabies
+vaccination records to make sure they are up to date. If they are not
+up to date, make an appointment with their vet or Public Health as
+soon as possible to have them vaccinated against rabies."
+
+If an unvaccinated pet is bitten by a rabid animal, it will need to be
+euthanized immediately as the disease is 100% fatal. There is also no
+USDA-licensed treatment or cure for rabies in unvaccinated domestic
+animals.
+
+Lazzara noted vaccinating your pets does more than protect them
+against the virus. "We never want anyone to have to make a decision to
+euthanize an unvaccinated family pet having come in contact with a
+rabid animal," he said.
+
+There are several pet rabies clinics scheduled in central NY in the
+new year [2024], but dates and locations have yet to be announced.
+Appointments are required. And while the clinics are free, the
+department requests a $10 donation per pet to assist with costs. To
+learn more about these clinics or find one closest to you, contact the
+Oneida County Health Department.
+
+--
+Communicated by:
+ProMED
+
+[This is not the first time rabies has been reported in otters. They
+are wild mammals and all mammals are susceptible to the ravages of the
+rabies virus. We don't often hear about them, so this article should
+serve as a warning that cute fuzzy little critters who seem more clown
+than vicious animal are still susceptible to this horrible disease.
+
+If you take your dog hiking or camping, it is especially important to
+keep them up to date on their vaccines. But likewise, even your house
+cat or pet dog need to be vaccinated for their protection and yours.
+There are reports of wild animals and bats getting into houses and
+biting both people and pets.
+
+The best way to protect your pet is to keep it current on its
+vaccination. It also is appropriate to be alert on your walks or even
+bringing in the groceries. Attacks by rabid animals can happen in a
+town or city just as easily as on the trail or in the rural areas.
+
+Most states have regulations in place that mandate animals 4 months or
+older must be vaccinate against rabies.
+
+If you are bitten, seek medical help immediately. This is a deadly
+disease. Post-exposure prophylaxis is available through a physician or
+sometimes your county health department but you will learn where when
+seeking out medical help if you are bitten.
+
+Please recall even large animals -- horses, cows, pigs, sheep, and
+goats -- are also susceptible to this disease. - Mod.TG
+
+ProMED maps:
+Florida, United States:
+<https://promedmail.org/promed-post?place=3D8714289,212>
+Georgia, United States:
+<https://promedmail.org/promed-post?place=3D8714289,213>
+Pennsylvania, United States:
+<https://promedmail.org/promed-post?place=3D8714289,240>
+Texas, United States:
+<https://promedmail.org/promed-post?place=3D8714289,245>
+New York State, United States:
+<https://promedmail.org/promed-post?place=3D8714289,234>]
+
+[See Also:
+Rabies (03): North America (USA) cat, skunk, dog, bat, raccoon, fox,
+horse, human exp http://promedmail.org/post/20240113.8714178
+2023
+----
+Rabies (59): North America (USA) fox, skunk, cat, dog, human exp
+http://promedmail.org/post/20240101.8714006
+Rabies (54): North America (USA) skunk, coyote, racoon, dog, human
+exposure http://promedmail.org/post/20231223.8713861
+Rabies (51): North America (USA) fox, cat, fisher, goat, human exp
+http://promedmail.org/post/20231206.8713549
+Rabies (48): North America (USA) horse, fox, raccoon, kitten, bat,
+human exp http://promedmail.org/post/20231118.8713208
+Rabies (46): North America (Canada, USA) kitten, cat, dog, bat, human
+exp http://promedmail.org/post/20231105.8712996
+Rabies (44): North America (USA) kitten, bat, fox, raccoon, human exp
+http://promedmail.org/post/20231026.8712841
+Rabies (43): North America (USA) fox
+http://promedmail.org/post/20231023.8712775
+Rabies (40): North America (Canada, USA) bat, cat, human exp
+http://promedmail.org/post/20231015.8712651
+Rabies (39): North America (USA) otter, fox, dog, human exp
+http://promedmail.org/post/20231009.8712530=20
+Rabies (37): North America (USA) dog, raccoon, cat, bat, skunk, human
+exp http://promedmail.org/post/20230925.8712316
+Rabies (36): North America (USA) fox, raccoon
+http://promedmail.org/post/20230918.8712192
+Rabies (35): Americas, dog, bat, human exp
+http://promedmail.org/post/20230914.8712132
+Rabies (34): North America (USA) fox, dog, cat, raccoon, bat, human
+exp http://promedmail.org/post/20230802.8711520=20
+Rabies (33): North America (USA) fox, bat, dog, beaver, cat, human exp
+http://promedmail.org/post/20230724.8711336
+Rabies (32): Americas (USA) bat
+http://promedmail.org/post/20230717.8711209
+Rabies (31): Americas (USA) fox, bat, cat, human exp
+http://promedmail.org/post/20230708.8711034
+Rabies (30): Americas (USA) bat, cat, dog, human exp
+http://promedmail.org/post/20230702.8710893
+Rabies (28): Americas (USA) dog, cat, bat, fox, groundhog, human exp
+http://promedmail.org/post/20230623.8710718
+Rabies (24): Americas (Canada, USA) Australia, human exp, bats, cats,
+wildlife http://promedmail.org/post/20230610.8710499
+Rabies (23): Americas (Canada, USA) fox, bat, dog, cat, human exp
+http://promedmail.org/post/20230604.8710391
+Rabies (20): Americas (USA) bat, possible human exp
+http://promedmail.org/post/20230515.8710053
+Rabies (01): Americas, cat, bat, cattle, skunk, pig, dog, human
+cases/exp http://promedmail.org/post/20230103.8707561
+2022
+----
+Rabies (50): Americas (USA) skunk, bat, cat, dog, raccoon, wildlife,
+human exp http://promedmail.org/post/20221117.8706775
+Rabies (46): Americas (USA) bat, cat, horse, human exp
+http://promedmail.org/post/20221019.8706255
+Rabies (45): Americas (USA) bat, cat, human exposure
+http://promedmail.org/post/20221016.8706174
+Rabies (44): Americas (USA) fox, bat, cat, horse, human exp, vacc
+update, corr http://promedmail.org/post/20221008.8706014
+Rabies (44): Americas (USA) fox, bat, cat, horse, human exp, vacc
+update http://promedmail.org/post/20221007.8706005
+Rabies (43): Americas (USA) bat
+http://promedmail.org/post/20221005.8705974
+Rabies (29): Americas (USA) bat
+http://promedmail.org/post/20220711.8704358
+Rabies (07): Americas (Canada, USA) fox, dog, bat, cat, human exp
+http://promedmail.org/post/20220223.8701603
+2021
+----
+Rabies (29): Americas (USA) dog, fox, cat, bat, human exp
+http://promedmail.org/post/20210726.8544435
+Rabies (26): Americas (USA) fox, bat, dog, human exp, cattle
+http://promedmail.org/post/20210717.852654
+Rabies (17): Americas (USA) bat
+http://promedmail.org/post/20210618.8457663
+Rabies (11): Americas (USA) bat, human exposure
+http://promedmail.org/post/20210519.8370609
+2020
+----
+Rabies (30): Americas (USA) coyote, bat, imported dog ex Egypt, human
+exp http://promedmail.org/post/20201108.7925072
+Rabies (29): Americas (USA) animal, human exposure
+http://promedmail.org/post/20201101.7908381
+Rabies (28): Americas (USA) animal, human exp
+http://promedmail.org/post/20201018.7871698
+Rabies (27): Americas (USA) animal, human exp
+http://promedmail.org/post/20201003.7829604
+Rabies (26): Americas (USA) bat, human exp
+http://promedmail.org/post/20200928.7818946
+Rabies (25): Americas (USA) animal, human exp
+http://promedmail.org/post/20200904.7745166
+Rabies (23): Americas (USA) bat
+http://promedmail.org/post/20200731.7632899
+Rabies (17): Americas (USA) fox, goat, bat, human exposure
+http://promedmail.org/post/20200609.7447179
+Rabies (15): Americas (USA) fox, raccoon, dog, human exp
+http://promedmail.org/post/20200603.7424427
+Rabies (13): Americas (USA) cat, fox, human exp
+http://promedmail.org/post/20200529.7392355
+Rabies (12): Americas (USA) fox, dog, cat, human exp
+http://promedmail.org/post/20200516.7343626
+Rabies (11): Americas (USA) cat, skunk, bat, human exp
+http://promedmail.org/post/20200503.7294707
+Rabies (10): Americas (USA) raccoon, dog, bull, human exp
+http://promedmail.org/post/20200412.7213951
+Rabies (08): Americas (USA, Canada) cat, dog, fox, skunk, human exp
+http://promedmail.org/post/20200321.7122312
+Rabies (06): Americas (USA) cat, fox, cow, human exp
+http://promedmail.org/post/20200302.7041402
+Rabies (03): Americas (USA) cat, fox, otter, coyote, human exposure
+http://promedmail.org/post/20200214.6987679
+Rabies (02): Americas (USA) raccoon, cat, human, dog exp
+http://promedmail.org/post/20200201.6943518
+2019
+----
+Rabies (57): Americas (USA) raccoon, cat, human exp
+http://promedmail.org/post/20191226.6858881
+Rabies (53): Americas (USA) fox, human exp
+http://promedmail.org/post/20191125.6797040
+Rabies (50): Americas (USA) cat, dog, human exposure
+http://promedmail.org/post/20191110.6771632
+Rabies (49): Americas (USA) fox, human exp
+http://promedmail.org/post/20191108.6769314
+Rabies (48): Americas (USA) cat, dog, raccoon, human exp
+http://promedmail.org/post/20191031.6752781
+Rabies (47): Americas (USA) skunk, alert
+http://promedmail.org/post/20191022.6740671
+Rabies (45): Americas (USA) dog, skunk, raccoon, fox, human exp
+http://promedmail.org/post/20190917.6678064
+Rabies (44): Americas (USA) bat, human exp
+http://promedmail.org/post/20190904.6657837
+Rabies (43): Americas (USA) fox, bat, human exp
+http://promedmail.org/post/20190825.6639484
+Rabies (42): Americas (USA) dog, cat, fox, raccoon, human exp
+http://promedmail.org/post/20190810.6615389
+Rabies (40): Americas (USA) bat, human exp
+http://promedmail.org/post/20190730.6595948
+Rabies (39): Americas (Canada, USA) bat, fox, kitten, raccoon, human
+http://promedmail.org/post/20190724.6584394
+Rabies (38): Americas (Canada, USA) bat, fox, human
+http://promedmail.org/post/20190718.6574088
+Rabies (37): Americas (USA) cat, fox, raccoon, human exp
+http://promedmail.org/post/20190707.6555131
+Rabies (34): Americas (USA) cat, dog, skunk, bat, human exp
+http://promedmail.org/post/20190613.6517390
+Rabies (30): Americas, USA (FL, NC) cat, fox, dog, human exposure
+http://promedmail.org/post/20190526.6488419
+Rabies (28): Americas, USA, cattle, imported dogs, corr.
+http://promedmail.org/post/20190512.6466342
+Rabies (28): Americas (USA) cattle, imported dogs
+http://promedmail.org/post/20190511.6465671
+Rabies (26): Americas (USA) fox, raccoon, dog, human exposure
+http://promedmail.org/post/20190507.6459317
+Rabies (13): Americas, USA (CO, PA) dog, cow, human exposure
+http://promedmail.org/post/20190327.6390272
+Rabies (12): Americas, USA (SC, CT) raccoon, dog, human exp.
+http://promedmail.org/post/20190322.6380311
+Rabies (11): Americas, USA (FL) raccoon, alert
+http://promedmail.org/post/20190320.6375303
+Rabies (10): Americas, USA (SC) goat, human exposure
+http://promedmail.org/post/20190313.6365399
+Rabies (09): Americas, USA (NY) raccoon, alert
+http://promedmail.org/post/20190313.6363251
+and other items in the archives]
+.................................................sb/tg/rd/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3DYYQTEKEQfPIFWhvhtePtC-EF-rxwXAh4nrUFZ8x077toMDAwdTAwMA4bBw1=
+eGRssX6aI7xl-Z_-j4XaT6_znNyeFlCsBCd3JQBb36UKs59i8i8MhbRiBvwPJ071VVhptG76kiU=
+-7w6C5GMA8rSrNiLEFEUzTtbeviXcdLwK68ZbyOLMXwW6Pqt25EvYEk1if6VTNah64hcz2nxQVe=
+gQy3ahAiY4LKbz81jFo2f1V1IYQvAzec3-TgRhPgs2FPooW4lCYoDQhjUZOh9xa7sv9TRN0TfjU=
+sAH0GH3yPesaNQCg4ZqSVR3NK3-SOjNsjj1OvumEvC_Gu-QCf6HPdh01VNztZrmD9Y11Xc7BzEy=
+LZW4GGebgyWg5EzMx6dwlt6oAngNi5VYEQDf6oNA4v8HSQDBC-7Rh56X98JPjK084rS8e2aT2SH=
+o1DSlN-YdfsS0vGz40Y6ijKjDRKpathcITiE_tpF-UvH7MAKjPyVpcyhBs_sbCaN3Rr_qTMFBrg=
+TYYOm-GLohm7qaDrVysUwrzovSwzAYMcxtIo1UDYZ3AQB2exR_CnltCchfaOHcQVd9lOKOGVawW=
+gep5aisz6cEbvfjUFhVxxpR55XbrlMr-nbSb70KkupRr6kyeS-0aiWYa-Z9VHDk80yhXhBz4sWI=
+EN13xq7FkXhd8QNN4fEpE8E4KR7pLqzRXP-2-YCS8Rt0XVCPVtx6zVNUx3jHofsOERgjD0E9cjv=
+_hZhjCOZUpjQGEBYKFN-RvPAAuWdj6WAWkAvFGsEMLjAV6a88Fzob5HhiRwe94-0iZjOGOTXhQE=
+9YowS_QhfVBE7mBOKdVj2-uBfnPhCkCmgnP4S3qPrwk_iHXIymVMj7HMu2Fe64gsCnAnDwuRAa7=
+iFDXublST8pc8trST6XRbkJvvO3a_kw_XtMGQhs46E3tB8ReSdw4j1ycanaVC8IhGgUblEy_yNR=
+Vgv6snqyU5plmlElnIJYzsLIj8DXeO4ZpfhQWs_8Mq_5SkroRJ1sQOEfC0Q6breDcv9OqHfxXQ3=
+i-4M4WJHapDLAX8l4CF7y2ylQvSr6m6zUoxYTwiIF_Rn349e1FxzTSToyU7LSmYE1EiXjaVyfTW=
+XRl-x2WV0ByWbBdJK3XSvGaPL5g14yFO86Hdm45iAfNhRxkoZ5AGwWnJy_nJYgwH9HQ28aA4atG=
+yjT_1fUc-IuZHIrHI7zoLaAuA0CxgeZmno6_nn_dRfVCd6CeSx3HTQmN8SIIEmIv )
+############################################################
+############################################################
+
+--3b9da02ad276c0f3bd8f278820867b2644e24434dd33ace0517cae6ecdb3
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>RABIES (06): NORTH AMERICA (USA) OTTER, RACCOON, CAT, DOG, SKUNK, FOX=
+,<br>HUMAN EXPOSURE<br>****************************************************=
+*********************************<br>A ProMED-mail post<br><a href=3D"https=
+://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisIijpefK5PNjW-mL-YZGn=
+fgDOxU1G3gjwnPSi2Tfv3HA/433/y1F1n6CPRfWl4_VnmXhdNw/h0/VqNNzyvf_f2AonFN74xf6=
+UQ7dJ8456xAJPtepqQHaRU">http://www.promedmail.org</a><br>ProMED-mail is a p=
+rogram of the<br>International Society for Infectious Diseases<br><a href=
+=3D"https://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisCT5tpD4Upm3=
+qyMCbcYSQvc/433/y1F1n6CPRfWl4_VnmXhdNw/h1/bDu-mGuCmhr3DARetGPZuuTFLjJMrkHSk=
+I3DKm4K7d0">http://www.isid.org</a><br><br>In this posting:=0D<br>[1] Flori=
+da (Beach County): otter, dog, human exposure=0D<br>[2] Georgia (Gwinnett C=
+ounty): raccoon, dogs=0D<br>[3] Georgia (Glynn County): raccoon, dog=0D<br>=
+[4] Pennsylvania (Adams County): cat, human exposure=0D<br>[5] Texas (Tarra=
+nt County): skunk, dogs=0D<br>[6] New York (Oneida County): fox, human expo=
+sure=0D<br>=0D<br>******=0D<br>[1] Florida (Beach County): otter, dog, huma=
+n exposure=0D<br>Date: Thu 11 Jan 2024=0D<br>Source: Grand View Outdoors [e=
+dited]=0D<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/TLh_csrC34X_=
+iXpbYoMam3BAWY5fxeNPE14MPuzsDdq1D9MYuDDq-4pDKrmCIXwUGmHlVq5UMwaOu6D90uXzUgn=
+oC_SVjpfhNwZZe9Ly1fsTdHnOIVfXSWKi7XWgnspY2cgn_Qxk1c6apPSqNRkU0w/433/y1F1n6C=
+PRfWl4_VnmXhdNw/h2/JKs5HLmglJ2oEAZiKCQ1KAatHo4seIeOxUdDm1IzTc4">https://www=
+.grandviewoutdoors.com/waterfowl/rabid-otter-attacks-florida-man-whos-feedi=
+ng-ducks</a>=0D<br>=0D<br>=0D<br>A 74-year-old Florida man was attacked and=
+ bitten by a rabid otter,<br>sending the man to the hospital for treatment =
+of multiple wounds on<br>his hands, arms and legs. [JS], of Jupiter, Florid=
+a, was feeding ducks<br>at a small pond near his home when he turned to lea=
+ve. He heard the<br>ducks flush, according to The Miami Herald, and turned =
+to find an<br>otter walking down the bank toward him.=0D<br>=0D<br>[JS] bac=
+ktracked to a fence gate, but before he could get through it<br>the otter a=
+ttacked. It bit and scratched his feet and legs, and then<br>[JS]'s arms an=
+d hands as he tried to fend off the crazed animal. It<br>finally stopped bu=
+t also attacked a neighbor's dog. [JS] had 41 wounds<br>requiring treatment=
+, and also received various vaccinations. The dog<br>was treated by a local=
+ veterinarian.=0D<br>=0D<br>"I started to push it away, and it started to b=
+ite my hands," [JS]<br>told WPTV. "One of the bites is on my pinkie, and it=
+ ripped the nail<br>off the pinkie. [It] looks like the tooth went complete=
+ly through my<br>finger."=0D<br>=0D<br>The otter was trapped under a recycl=
+ing bin by the Jupiter Police<br>Department. It then was captured in a cage=
+ by Palm Beach Animal Care<br>and Control, and taken to the Florida Departm=
+ent of Health for rabies<br>testing.=0D<br>=0D<br>Coincidentally, the Flori=
+da attack happened 7 weeks after 3 women were<br>attacked by an otter while=
+ floating on the Jefferson River in Montana.<br>The 3 women were in the mid=
+dle of the river and were unable to stand<br>because of the depth. They kic=
+ked and punched at the otter, which<br>finally moved away.=0D<br>=0D<br>[By=
+line: Alan Clemons]=0D<br>=0D<br>--=0D<br>Communicated by:=0D<br>ProMED=0D<=
+br>=0D<br>******=0D<br>[2] Georgia (Gwinnett County): raccoon, dogs=0D<br>D=
+ate: Thu 11 Jan 2024 09:06 EST=0D<br>Source: WSB-TV News [edited]=0D<br><a =
+href=3D"https://u19268662.ct.sendgrid.net/ss/c/DgIMzhc9xO6P0drrFfDxwfKcm_2t=
+sMaGrI272PSWkXaHs8bQKU-hM4y190tatlTp/433/y1F1n6CPRfWl4_VnmXhdNw/h3/gDT2_VJ5=
+NLzMm5i5mT8ClyJNO3tFh42cO-2o3fMPFyA">http://tinyurl.com/3zkmjpfy</a>=0D<br>=0D=
+<br>=0D<br>Gwinnett officials are warning people of a potential rabies outb=
+reak.<br>On 4 Jan 2024, a rabid raccoon bit 2 dogs in Snellville, according=
+ to<br>the Gwinnett Animal Shelter.=0D<br>=0D<br>Officials said rabies can =
+spread to people through a bite or a scratch<br>[from an unvaccinated anima=
+l - Mod.TG]. The shelter encouraged pet<br>owners to ensure their pets have=
+ the current rabies vaccination.=0D<br>=0D<br>Officials also said if your c=
+hild [or yourself] has been bitten or<br>scratched by a stray animal, preve=
+ntive rabies treatment is<br>necessary.=0D<br>=0D<br>Anyone in the area who=
+ has been exposed is asked to call the Gwinnett<br>County Health Department=
+ and ask for the epidemiologist on call.=0D<br>=0D<br>--=0D<br>Communicated=
+ by:=0D<br>ProMED=0D<br>=0D<br>******=0D<br>[3] Georgia (Glynn County): rac=
+coon, dog=0D<br>Date: Fri 12 Jan 2024 16:51 EST=0D<br>Source: Yahoo News [e=
+dited]=0D<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/MKq6VgKU8EpK=
+B9-MN4UVgb9ZvRKLPfyL5pgIaUVBnx-3MQ9Wb76gpaGQaL4VkbYaAx9X9Sn5648dqrgtoXYzMez=
+B3_-Gz6VFrDYtAlNdeAc/433/y1F1n6CPRfWl4_VnmXhdNw/h4/dxVv6zqtB_N7dqKEiA251hNs=
+jNn1ychyw--T8a5nLBg">https://news.yahoo.com/rabies-alert-sick-raccoon-spott=
+ed-215147886.html</a>=0D<br>=0D<br>=0D<br>The Glynn County Health Departmen=
+t is alerting residents in Brunswick<br>about a raccoon having tested posit=
+ive for rabies.=0D<br>=0D<br>Several species of wild animals including racc=
+oons, foxes, and bats<br>can carry rabies. Feral cats and dogs can also car=
+ry this disease.<br>Rabies is a potentially deadly virus primarily spread b=
+y infected<br>animals.=0D<br>=0D<br>Reports from the Glynn County Health De=
+partment state the raccoon was<br>discovered in a family's shed on Blythe I=
+sland Highway yesterday [11<br>Jan 2024]. There are also reports of an enco=
+unter between the raccoon<br>and the family's dog.=0D<br>=0D<br>The racoon =
+was quickly captured while the dog was rushed to the vet.<br>The dog had pr=
+eviously been vaccinated against rabies and received its<br>booster. The do=
+g's owners did not report having any physical contact<br>with the raccoon.=0D=
+<br>=0D<br>Reports state while captured, the racoon passed away.=0D<br>=0D<=
+br>The Glynn County Environmental Health office prepared a sample from<br>t=
+he infected raccoon and delivered it to the lab on the morning of 12<br>Jan=
+ 2024. A positive rabies test result was reported at 2:00 p.m.=0D<br>=0D<br=
+>The dog's owners have been contacted with the results, and the dog<br>will=
+ be placed on a 45-day quarantine.=0D<br>=0D<br>The health department will =
+provide guidance to the owners about<br>post-exposure rabies treatment, enc=
+ouraging them to follow the<br>recommendations of poison control and their =
+personal physician to<br>determine the level of exposure they had to the ra=
+coon.=0D<br>=0D<br>The Glynn County Environmental Health office wants to us=
+e this as an<br>important reminder to avoid contact with wild animals and t=
+o keep your<br>pets up to date on rabies vaccinations.=0D<br>=0D<br>Follow =
+these tips to protect you and your family from rabies:=0D<br>- Avoid contac=
+t with animals you don't know.=0D<br>- Make sure your pets receive the prop=
+er immunizations. Dogs and cats<br>should get rabies vaccines after 12 week=
+s of age, followed by a<br>booster shot within 1 year and vaccination every=
+ 1-3 years depending<br>on veterinary recommendation and vaccine used.=0D<b=
+r>- Do not handle, feed, or unintentionally attract wild animals with<br>op=
+en garbage cans or by leaving pet food out at night.=0D<br>- Never adopt wi=
+ld animals or bring them into your home. Do not try to<br>nurse sick animal=
+s to health. Call animal control or a properly<br>licensed animal rescue ag=
+ency for assistance.=0D<br>- Teach children to never handle unfamiliar anim=
+als, wild or domestic,<br>even if they appear friendly. "Love your own, lea=
+ve other animals<br>alone" is a good principle for children to learn.=0D<br=
+>=0D<br>Signs of rabies in animals include:=0D<br>- Change in behavior=0D<b=
+r>- Biting=0D<br>- Aggression=0D<br>- Showing no fear of natural enemies (s=
+uch as humans)=0D<br>- Foaming at the mouth=0D<br>- Paralysis=0D<br>=0D<br>=
+If an animal ever bites you, seek medical care immediately and contact<br>G=
+lynn County Animal Control and the Glynn County Health Department<br>Enviro=
+nmental Health office.=0D<br>=0D<br>--=0D<br>Communicated by:=0D<br>ProMED=0D=
+<br>=0D<br>******=0D<br>[4] Pennsylvania (Adams County): cat, human exposur=
+e=0D<br>Date: Fri 12 Jan 2024=0D<br>Source: MSN [edited]=0D<br><a href=3D"h=
+ttps://u19268662.ct.sendgrid.net/ss/c/TLh_csrC34X_iXpbYoMam9N05pUIgYpu0mV3V=
+aH119yZGQgrcu9B7Ufs49ghL_6XtA8g1KlHzzpv7fVPcc89skAgKmmr_pzD8K24y1oKfQYJVEz2=
+yc2hJnYjnH-5qlMVNLi8fD8Z34JZA28774wzKlXKHDiXBI2zg2iV1W57M2M/433/y1F1n6CPRfW=
+l4_VnmXhdNw/h5/YfZtjgPz5MruSW2nw_U-jIeCla_V3qXL-8Ywk5g96HM">https://www.msn=
+.com/en-us/news/us/rabies-case-in-adams-county-confirmed-after-woman-attack=
+ed-by-stray-cat/ar-AA1mT3P1</a>=0D<br>=0D<br>=0D<br>There was a confirmed c=
+ase of rabies in Adams County earlier this<br>week, according to the Adams =
+County SPCA. In a Facebook post on Friday<br>[12 Jan 2024], the county's SP=
+CA wrote about a woman attacked by a<br>stray cat when she approached it.=0D=
+<br>=0D<br>The woman was at an auto garage, along the intersection of Hanov=
+er<br>Street and Rt. 94 in Oxford Township, when she saw a stray cat, out i=
+n<br>the rain on Tuesday [9 Jan 2024]. When she tried to pick up the cat,<b=
+r>it attacked her left hand and arm, the post reads.=0D<br>=0D<br>The cat w=
+as trapped the next day [10 Jan 2024], taken to the SPCA to<br>be humanely =
+euthanized, and taken to the Pennsylvania Veterinary<br>Laboratory (PALDS) =
+to be tested for rabies virus. When the test<br>results came back, it showe=
+d the cat had the [rabies] virus, the post<br>reads.=0D<br>=0D<br>The human=
+ nervous system is attacked by the rabies virus which can be<br>contracted =
+if an animal bites, scratches, or if their saliva gets in<br>the eyes, nose=
+, mouth, or an opening in the skin, according to the<br>SPCA. It, however, =
+can be completely preventable.=0D<br>=0D<br>If one comes in contact with th=
+e virus they should contact their<br>doctor immediately, the SPCA wrote. [I=
+f an animal you have interacted<br>with is found to be rabies positive, it =
+is important start the rabies<br>post-exposure prophylaxis treatment immedi=
+ately. - Mod.TG]=0D<br>=0D<br>The SPCA offers the following tips on how to =
+stay clear of exposure to<br>rabies:=0D<br>- All dogs and cats 3 months or =
+older are required by Pennsylvania law<br>to be vaccinated by a licensed ve=
+terinarian.=0D<br>- Don't let pets just roam free.=0D<br>- Do not keep your=
+ pet's food or water bowls outdoors because it can<br>attract other animals=
+.=0D<br>- Do not touch or handle unfamiliar or wild animals even if they<br=
+>appear friendly.=0D<br>=0D<br>[Byline: Jared Weaver]=0D<br>=0D<br>--=0D<br=
+>Communicated by:=0D<br>ProMED=0D<br>=0D<br>******=0D<br>[5] Texas (Tarrant=
+ County): skunk, dogs=0D<br>Date: Sat 13 Jan 2024 15:51 CST=0D<br>Source: N=
+BCDFW [edited]=0D<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/TLh_=
+csrC34X_iXpbYoMam7ekty9k_sOnM-qCetEN_v10NtZP03N8zz8FR0TrOFmTt2kKthoyXUBhF1a=
+KbeBCZAJzCaQtw_z2Un0150osa0A41-BUPnhz2urwAOtA7oA3kgDJi-JMFsRHq3mAFpAbthpmxA=
+8FzdDVJr1jSKjQwmhOILGeQoyDiDfROPql11BG/433/y1F1n6CPRfWl4_VnmXhdNw/h6/tv4iWE=
+0Vaf1ujkDZoE5sF_Kh8XZlkLe5S-jKWa5zDm0">https://www.nbcdfw.com/news/local/be=
+dford-officials-warn-residents-about-rabies-vaccines-after-skunk-attacks-do=
+gs/3433580/</a>=0D<br>=0D<br>=0D<br>Health officials are urging pet owners =
+to vaccinate their animals<br>against rabies following an attack on 2 dogs =
+by a skunk in Bedford on<br>Thursday [11 Jan 2024].=0D<br>=0D<br>The Bedfor=
+d Police Department said a woman was walking her 2 dogs near<br>Silverwood =
+Lane when they were approached by a skunk. The skunk<br>reportedly attacked=
+ the dogs and was found dead in the same area a<br>short time later by Anim=
+al Services officers.=0D<br>=0D<br>According to Bedford Animal Services, sk=
+unks are not frequently active<br>during the day because they are primarily=
+ nocturnal animals.=0D<br>=0D<br>"The skunk will be tested for any diseases=
+, and if there are any<br>positive results that could be a concern to the c=
+ommunity, the City<br>will provide additional updates when available," Bedf=
+ord Police said<br>in a released statement.=0D<br>=0D<br>The City of Bedfor=
+d requires all dogs and cats must be vaccinated<br>against rabies by 4 mont=
+hs of age and then at regular intervals under<br>rules adopted by the Texas=
+ Health and Safety Code.=0D<br>=0D<br>--=0D<br>Communicated by:=0D<br>ProME=
+D=0D<br>=0D<br>******=0D<br>[6] New York (Oneida County): fox, human exp=0D=
+<br>Date: Wed 17 Jan 2024 12:50 EST=0D<br>Source: WIBX 950 [edited]=0D<br><=
+a href=3D"https://u19268662.ct.sendgrid.net/ss/c/TLh_csrC34X_iXpbYoMam0Rz70=
+PVdWSHJWbl-CY-8HgUEMSSA49AfL3KS1R1ZcBE6VVQ8kDpFdc58GrHAGPNeMOZKvPebNNXPXm-0=
+80oDaosq467kBzrgVxjJiMYRtrMnDry_YBcvUjzwVGhnos-Rw/433/y1F1n6CPRfWl4_VnmXhdN=
+w/h7/JDP1w4f2XPYpaqv1IFyAXLUUtfW1iVY_dVbpkUjtNEM">https://wibx950.com/poten=
+tially-rabid-fox-that-attacked-multiple-people-in-rome-is-confirmed-dead/</=
+a>=0D<br>=0D<br>=0D<br>The Oneida County Health Department confirmed the fo=
+x that attacked 3<br>people in Rome was rabid. The animal was killed by a p=
+rivate resident<br>and its remains were sent in for testing at the New York=
+ State<br>Department of Health Wadsworth Center.=0D<br>=0D<br>Another perso=
+n has since come forward about being exposed to the fox<br>and is also unde=
+rgoing post-exposure prophylaxis. This brings the<br>total number of indivi=
+duals exposed to the animal to 4; however,<br>anyone who encountered the ra=
+bid fox is now strongly advised to seek<br>immediate treatment as rabies is=
+ a fatal disease.=0D<br>=0D<br>Even if no bite took place, residents are st=
+ill urged to call and make<br>an appointment.=0D<br>=0D<br>As previously re=
+ported, The Oneida County Health Department and Rome<br>Police say 3 people=
+ were attacked by the rabid fox around the Mohawk<br>River and Black River =
+Boulevard area over the weekend. The health<br>department is also urging th=
+ose who may have had contact with the fox<br>to contact the OC Health Depar=
+tment and seek post-exposure<br>prophylaxis, as it can save their life.=0D<=
+br>=0D<br>Said the health department, "Rabies is a deadly disease, and if y=
+ou<br>become exposed, it is vital to get appropriate care to avoid<br>contr=
+acting rabies."=0D<br>=0D<br>Mount Sinai says those exposed to a rabid anim=
+al have at least up to<br>14 days to receive post-exposure prophylaxis. Rab=
+ies is fatal and<br>while there have been claims of humans surviving the di=
+sease,<br>scientific papers about these cases have been retracted -- thus<b=
+r>casting doubt these claims are actually legitimate.=0D<br>=0D<br>Addition=
+ally, authorities are also urging pet owners to ensure their<br>pets' rabie=
+s vaccine is up to date amid a troubling rise of this<br>deadly disease in =
+the area.=0D<br>=0D<br>Rabies on the rise in New York=0D<br>---------------=
+---------------=0D<br>County officials are strongly urging residents to lea=
+rn how to<br>recognize a potentially rabid animal and to teach their childr=
+en to<br>never play with unknown animals either wild or domestic.=0D<br>=0D=
+<br>Madison County Department of Health's Aaron Lazzara warned, "We are<br>=
+seeing more rabid animals this year than the last 2 years combined."=0D<br>=0D=
+<br>Additionally, officials urged pet owners to be aware of the growing<br>=
+number of reports of wild animals infected with rabies and ensure<br>their =
+pets are protected. [Be sure their rabies vaccine is current and<br>up to d=
+ate. If you have questions contact your veterinarian. - Mod.TG]<br>Recently=
+ in Herkimer County, a family dog killed a rabid raccoon.=0D<br>=0D<br>Acco=
+rding to the Centers for Disease Control and Prevention, wildlife<br>accoun=
+ts for over 90% of all reported rabies cases. Skunks, foxes,<br>raccoons, c=
+oyotes, and bats make up the majority of rabies cases in<br>the United Stat=
+es, but the disease is capable of infecting horses,<br>ferrets, cattle and =
+other warm-blooded animals.=0D<br>=0D<br>Rabies is transmitted through dire=
+ct contact with an infected animal<br>through its saliva or nervous system =
+tissue. People can get infected<br>if bitten from a rabid animal. [It is no=
+t always a bite, but may be<br>saliva of a rabid animal in the eye or in a =
+cut. - Mod.TG]=0D<br>=0D<br>The Oneida County Health Department warned: "If=
+ you see an animal,<br>wild or stray, with these signs, do not approach it =
+and stay away. If<br>any animal is acting strangely, call your local animal=
+ control officer<br>for help. If you are concerned you may have been expose=
+d to a rabid<br>animal or find a bat in your home, call Oneida County Healt=
+h<br>Department for guidance."=0D<br>=0D<br>Signs and symptoms of the disea=
+se include drooling or foaming from the<br>mouth, abnormal or aggressive be=
+havior, paralysis, seizures,<br>difficulty swallowing, and self-mutilation.=0D=
+<br>=0D<br>The disease is always fatal, which is why officials stress the<b=
+r>importance of vaccinating your pets against rabies. It's also the law.<br=
+>New York mandates all pet owners vaccinate their dogs, cats, and<br>ferret=
+s by the time they're 4 months old.=0D<br>=0D<br>Even if you have an indoor=
+-only pet, vaccinating it will protect your<br>animal if it ever slips outs=
+ide and encounters a sick animal. [There<br>are cases of wild animals runni=
+ng into homes. While this is not usual,<br>it does happen and such events c=
+an put you and your pet at risk of<br>rabies. - Mod.TG]=0D<br>=0D<br>Per He=
+rkimer County officials: "Herkimer County Public Health would<br>like to re=
+mind the public to please check your pets' rabies<br>vaccination records to=
+ make sure they are up to date. If they are not<br>up to date, make an appo=
+intment with their vet or Public Health as<br>soon as possible to have them=
+ vaccinated against rabies."=0D<br>=0D<br>If an unvaccinated pet is bitten =
+by a rabid animal, it will need to be<br>euthanized immediately as the dise=
+ase is 100% fatal. There is also no<br>USDA-licensed treatment or cure for =
+rabies in unvaccinated domestic<br>animals.=0D<br>=0D<br>Lazzara noted vacc=
+inating your pets does more than protect them<br>against the virus. "We nev=
+er want anyone to have to make a decision to<br>euthanize an unvaccinated f=
+amily pet having come in contact with a<br>rabid animal," he said.=0D<br>=0D=
+<br>There are several pet rabies clinics scheduled in central NY in the<br>=
+new year [2024], but dates and locations have yet to be announced.<br>Appoi=
+ntments are required. And while the clinics are free, the<br>department req=
+uests a $10 donation per pet to assist with costs. To<br>learn more about t=
+hese clinics or find one closest to you, contact the<br>Oneida County Healt=
+h Department.=0D<br>=0D<br>--=0D<br>Communicated by:=0D<br>ProMED<br><br>[T=
+his is not the first time rabies has been reported in otters. They<br>are w=
+ild mammals and all mammals are susceptible to the ravages of the<br>rabies=
+ virus. We don't often hear about them, so this article should<br>serve as =
+a warning that cute fuzzy little critters who seem more clown<br>than vicio=
+us animal are still susceptible to this horrible disease.=0D<br>=0D<br>If y=
+ou take your dog hiking or camping, it is especially important to<br>keep t=
+hem up to date on their vaccines. But likewise, even your house<br>cat or p=
+et dog need to be vaccinated for their protection and yours.<br>There are r=
+eports of wild animals and bats getting into houses and<br>biting both peop=
+le and pets.=0D<br>=0D<br>The best way to protect your pet is to keep it cu=
+rrent on its<br>vaccination. It also is appropriate to be alert on your wal=
+ks or even<br>bringing in the groceries. Attacks by rabid animals can happe=
+n in a<br>town or city just as easily as on the trail or in the rural areas=
+.=0D<br>=0D<br>Most states have regulations in place that mandate animals 4=
+ months or<br>older must be vaccinate against rabies.=0D<br>=0D<br>If you a=
+re bitten, seek medical help immediately. This is a deadly<br>disease. Post=
+-exposure prophylaxis is available through a physician or<br>sometimes your=
+ county health department but you will learn where when<br>seeking out medi=
+cal help if you are bitten.=0D<br>=0D<br>Please recall even large animals -=
+- horses, cows, pigs, sheep, and<br>goats -- are also susceptible to this d=
+isease. - Mod.TG<br><br>ProMED maps:<br>Florida, United States:<br><a href=
+=3D"https://u19268662.ct.sendgrid.net/ss/c/sSnCkKCWBvais3EuVAOvgy2WOIX7pp1n=
+Xnn4AbwuQ3Z6WbkfhqXYXU-aTMPJ8yTh6HE-n7bpFnRAuDGnAyUTWQ/433/y1F1n6CPRfWl4_Vn=
+mXhdNw/h8/-rosUPo02BtxRT_UKJ6Y_WnL5o7okT9AQM29wcITNy8">https://promedmail.o=
+rg/promed-post?place=3D8714289,212</a><br>Georgia, United States:<br><a hre=
+f=3D"https://u19268662.ct.sendgrid.net/ss/c/sSnCkKCWBvais3EuVAOvgy2WOIX7pp1=
+nXnn4AbwuQ3Z6WbkfhqXYXU-aTMPJ8yThObj19ivceRyB0J3QifJZFg/433/y1F1n6CPRfWl4_V=
+nmXhdNw/h9/3lxn2HFrX_w8-4YXbd_cCOzDq1xVDPoM1lm92rGIRGs">https://promedmail.=
+org/promed-post?place=3D8714289,213</a><br>Pennsylvania, United States:<br>=
+<a href=3D"https://u19268662.ct.sendgrid.net/ss/c/sSnCkKCWBvais3EuVAOvgy2WO=
+IX7pp1nXnn4AbwuQ3Z6WbkfhqXYXU-aTMPJ8yThKsjSAODcZiV6ZVRPolOhww/433/y1F1n6CPR=
+fWl4_VnmXhdNw/h10/CUKENh_Y1pTluxVbVTnpg_lST7dr2NIO97VFPrt3Xbk">https://prom=
+edmail.org/promed-post?place=3D8714289,240</a><br>Texas, United States:<br>=
+<a href=3D"https://u19268662.ct.sendgrid.net/ss/c/sSnCkKCWBvais3EuVAOvgy2WO=
+IX7pp1nXnn4AbwuQ3Z6WbkfhqXYXU-aTMPJ8yThEuXbpAbaSIqCYZAVDMSRsA/433/y1F1n6CPR=
+fWl4_VnmXhdNw/h11/XthSdxkxxLyrsIrMVq9uPSjCsR3XvkzxvKWd5GRXBo0">https://prom=
+edmail.org/promed-post?place=3D8714289,245</a><br>New York State, United St=
+ates:<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/sSnCkKCWBvais3Eu=
+VAOvgy2WOIX7pp1nXnn4AbwuQ3Z6WbkfhqXYXU-aTMPJ8yThaq5VQDGSXmZwKr46mU31IQ/433/=
+y1F1n6CPRfWl4_VnmXhdNw/h12/loQnuTb6_9ScXfvq-WG3ANUQibHZ1v4N1tsuj6I8N4w">htt=
+ps://promedmail.org/promed-post?place=3D8714289,234</a>]<br><br>[See Also:<=
+br>Rabies (03): North America (USA) cat, skunk, dog, bat, raccoon, fox,<br>=
+horse, human exp http://promedmail.org/post/20240113.8714178=0D<br>2023=0D<=
+br>----=0D<br>Rabies (59): North America (USA) fox, skunk, cat, dog, human =
+exp<br>http://promedmail.org/post/20240101.8714006=0D<br>Rabies (54): North=
+ America (USA) skunk, coyote, racoon, dog, human<br>exposure http://promedm=
+ail.org/post/20231223.8713861=0D<br>Rabies (51): North America (USA) fox, c=
+at, fisher, goat, human exp<br>http://promedmail.org/post/20231206.8713549=0D=
+<br>Rabies (48): North America (USA) horse, fox, raccoon, kitten, bat,<br>h=
+uman exp http://promedmail.org/post/20231118.8713208=0D<br>Rabies (46): Nor=
+th America (Canada, USA) kitten, cat, dog, bat, human<br>exp http://promedm=
+ail.org/post/20231105.8712996=0D<br>Rabies (44): North America (USA) kitten=
+, bat, fox, raccoon, human exp<br>http://promedmail.org/post/20231026.87128=
+41=0D<br>Rabies (43): North America (USA) fox<br>http://promedmail.org/post=
+/20231023.8712775=0D<br>Rabies (40): North America (Canada, USA) bat, cat, =
+human exp<br>http://promedmail.org/post/20231015.8712651=0D<br>Rabies (39):=
+ North America (USA) otter, fox, dog, human exp<br>http://promedmail.org/po=
+st/20231009.8712530=20=0D<br>Rabies (37): North America (USA) dog, raccoon,=
+ cat, bat, skunk, human<br>exp http://promedmail.org/post/20230925.8712316=0D=
+<br>Rabies (36): North America (USA) fox, raccoon<br>http://promedmail.org/=
+post/20230918.8712192=0D<br>Rabies (35): Americas, dog, bat, human exp<br>h=
+ttp://promedmail.org/post/20230914.8712132=0D<br>Rabies (34): North America=
+ (USA) fox, dog, cat, raccoon, bat, human<br>exp http://promedmail.org/post=
+/20230802.8711520=20=0D<br>Rabies (33): North America (USA) fox, bat, dog, =
+beaver, cat, human exp<br>http://promedmail.org/post/20230724.8711336=0D<br=
+>Rabies (32): Americas (USA) bat<br>http://promedmail.org/post/20230717.871=
+1209=0D<br>Rabies (31): Americas (USA) fox, bat, cat, human exp<br>http://p=
+romedmail.org/post/20230708.8711034=0D<br>Rabies (30): Americas (USA) bat, =
+cat, dog, human exp<br>http://promedmail.org/post/20230702.8710893=0D<br>Ra=
+bies (28): Americas (USA) dog, cat, bat, fox, groundhog, human exp<br>http:=
+//promedmail.org/post/20230623.8710718=0D<br>Rabies (24): Americas (Canada,=
+ USA) Australia, human exp, bats, cats,<br>wildlife http://promedmail.org/p=
+ost/20230610.8710499=0D<br>Rabies (23): Americas (Canada, USA) fox, bat, do=
+g, cat, human exp<br>http://promedmail.org/post/20230604.8710391=0D<br>Rabi=
+es (20): Americas (USA) bat, possible human exp<br>http://promedmail.org/po=
+st/20230515.8710053=0D<br>Rabies (01): Americas, cat, bat, cattle, skunk, p=
+ig, dog, human<br>cases/exp http://promedmail.org/post/20230103.8707561=0D<=
+br>2022=0D<br>----=0D<br>Rabies (50): Americas (USA) skunk, bat, cat, dog, =
+raccoon, wildlife,<br>human exp http://promedmail.org/post/20221117.8706775=0D=
+<br>Rabies (46): Americas (USA) bat, cat, horse, human exp<br>http://promed=
+mail.org/post/20221019.8706255=0D<br>Rabies (45): Americas (USA) bat, cat, =
+human exposure<br>http://promedmail.org/post/20221016.8706174=0D<br>Rabies =
+(44): Americas (USA) fox, bat, cat, horse, human exp, vacc<br>update, corr =
+http://promedmail.org/post/20221008.8706014=0D<br>Rabies (44): Americas (US=
+A) fox, bat, cat, horse, human exp, vacc<br>update http://promedmail.org/po=
+st/20221007.8706005=0D<br>Rabies (43): Americas (USA) bat<br>http://promedm=
+ail.org/post/20221005.8705974=0D<br>Rabies (29): Americas (USA) bat<br>http=
+://promedmail.org/post/20220711.8704358=0D<br>Rabies (07): Americas (Canada=
+, USA) fox, dog, bat, cat, human exp<br>http://promedmail.org/post/20220223=
+.8701603=0D<br>2021=0D<br>----=0D<br>Rabies (29): Americas (USA) dog, fox, =
+cat, bat, human exp<br>http://promedmail.org/post/20210726.8544435=0D<br>Ra=
+bies (26): Americas (USA) fox, bat, dog, human exp, cattle<br>http://promed=
+mail.org/post/20210717.852654=0D<br>Rabies (17): Americas (USA) bat<br>http=
+://promedmail.org/post/20210618.8457663=0D<br>Rabies (11): Americas (USA) b=
+at, human exposure<br>http://promedmail.org/post/20210519.8370609=0D<br>202=
+0=0D<br>----=0D<br>Rabies (30): Americas (USA) coyote, bat, imported dog ex=
+ Egypt, human<br>exp http://promedmail.org/post/20201108.7925072=0D<br>Rabi=
+es (29): Americas (USA) animal, human exposure<br>http://promedmail.org/pos=
+t/20201101.7908381=0D<br>Rabies (28): Americas (USA) animal, human exp<br>h=
+ttp://promedmail.org/post/20201018.7871698=0D<br>Rabies (27): Americas (USA=
+) animal, human exp<br>http://promedmail.org/post/20201003.7829604=0D<br>Ra=
+bies (26): Americas (USA) bat, human exp<br>http://promedmail.org/post/2020=
+0928.7818946=0D<br>Rabies (25): Americas (USA) animal, human exp<br>http://=
+promedmail.org/post/20200904.7745166=0D<br>Rabies (23): Americas (USA) bat<=
+br>http://promedmail.org/post/20200731.7632899=0D<br>Rabies (17): Americas =
+(USA) fox, goat, bat, human exposure<br>http://promedmail.org/post/20200609=
+.7447179=0D<br>Rabies (15): Americas (USA) fox, raccoon, dog, human exp<br>=
+http://promedmail.org/post/20200603.7424427=0D<br>Rabies (13): Americas (US=
+A) cat, fox, human exp<br>http://promedmail.org/post/20200529.7392355=0D<br=
+>Rabies (12): Americas (USA) fox, dog, cat, human exp<br>http://promedmail.=
+org/post/20200516.7343626=0D<br>Rabies (11): Americas (USA) cat, skunk, bat=
+, human exp<br>http://promedmail.org/post/20200503.7294707=0D<br>Rabies (10=
+): Americas (USA) raccoon, dog, bull, human exp<br>http://promedmail.org/po=
+st/20200412.7213951=0D<br>Rabies (08): Americas (USA, Canada) cat, dog, fox=
+, skunk, human exp<br>http://promedmail.org/post/20200321.7122312=0D<br>Rab=
+ies (06): Americas (USA) cat, fox, cow, human exp<br>http://promedmail.org/=
+post/20200302.7041402=0D<br>Rabies (03): Americas (USA) cat, fox, otter, co=
+yote, human exposure<br>http://promedmail.org/post/20200214.6987679=0D<br>R=
+abies (02): Americas (USA) raccoon, cat, human, dog exp<br>http://promedmai=
+l.org/post/20200201.6943518=0D<br>2019=0D<br>----=0D<br>Rabies (57): Americ=
+as (USA) raccoon, cat, human exp<br>http://promedmail.org/post/20191226.685=
+8881=0D<br>Rabies (53): Americas (USA) fox, human exp<br>http://promedmail.=
+org/post/20191125.6797040=0D<br>Rabies (50): Americas (USA) cat, dog, human=
+ exposure<br>http://promedmail.org/post/20191110.6771632=0D<br>Rabies (49):=
+ Americas (USA) fox, human exp<br>http://promedmail.org/post/20191108.67693=
+14=0D<br>Rabies (48): Americas (USA) cat, dog, raccoon, human exp<br>http:/=
+/promedmail.org/post/20191031.6752781=0D<br>Rabies (47): Americas (USA) sku=
+nk, alert<br>http://promedmail.org/post/20191022.6740671=0D<br>Rabies (45):=
+ Americas (USA) dog, skunk, raccoon, fox, human exp<br>http://promedmail.or=
+g/post/20190917.6678064=0D<br>Rabies (44): Americas (USA) bat, human exp<br=
+>http://promedmail.org/post/20190904.6657837=0D<br>Rabies (43): Americas (U=
+SA) fox, bat, human exp<br>http://promedmail.org/post/20190825.6639484=0D<b=
+r>Rabies (42): Americas (USA) dog, cat, fox, raccoon, human exp<br>http://p=
+romedmail.org/post/20190810.6615389=0D<br>Rabies (40): Americas (USA) bat, =
+human exp<br>http://promedmail.org/post/20190730.6595948=0D<br>Rabies (39):=
+ Americas (Canada, USA) bat, fox, kitten, raccoon, human<br>http://promedma=
+il.org/post/20190724.6584394=0D<br>Rabies (38): Americas (Canada, USA) bat,=
+ fox, human<br>http://promedmail.org/post/20190718.6574088=0D<br>Rabies (37=
+): Americas (USA) cat, fox, raccoon, human exp<br>http://promedmail.org/pos=
+t/20190707.6555131=0D<br>Rabies (34): Americas (USA) cat, dog, skunk, bat, =
+human exp<br>http://promedmail.org/post/20190613.6517390=0D<br>Rabies (30):=
+ Americas, USA (FL, NC) cat, fox, dog, human exposure<br>http://promedmail.=
+org/post/20190526.6488419=0D<br>Rabies (28): Americas, USA, cattle, importe=
+d dogs, corr.<br>http://promedmail.org/post/20190512.6466342=0D<br>Rabies (=
+28): Americas (USA) cattle, imported dogs<br>http://promedmail.org/post/201=
+90511.6465671=0D<br>Rabies (26): Americas (USA) fox, raccoon, dog, human ex=
+posure<br>http://promedmail.org/post/20190507.6459317=0D<br>Rabies (13): Am=
+ericas, USA (CO, PA) dog, cow, human exposure<br>http://promedmail.org/post=
+/20190327.6390272=0D<br>Rabies (12): Americas, USA (SC, CT) raccoon, dog, h=
+uman exp.<br>http://promedmail.org/post/20190322.6380311=0D<br>Rabies (11):=
+ Americas, USA (FL) raccoon, alert<br>http://promedmail.org/post/20190320.6=
+375303=0D<br>Rabies (10): Americas, USA (SC) goat, human exposure<br>http:/=
+/promedmail.org/post/20190313.6365399=0D<br>Rabies (09): Americas, USA (NY)=
+ raccoon, alert<br>http://promedmail.org/post/20190313.6363251=0D<br>and ot=
+her items in the archives]<br>.............................................=
+....sb/tg/rd/jh<br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3DYYQTEKEQfPIFWhvhtePtC-EF-rxwXAh4nrUFZ8x077toMDAwdT=
+AwMA4bBw1eGRssX6aI7xl-Z_-j4XaT6_znNyeFlCsBCd3JQBb36UKs59i8i8MhbRiBvwPJ071VV=
+hptG76kiU-7w6C5GMA8rSrNiLEFEUzTtbeviXcdLwK68ZbyOLMXwW6Pqt25EvYEk1if6VTNah64=
+hcz2nxQVegQy3ahAiY4LKbz81jFo2f1V1IYQvAzec3-TgRhPgs2FPooW4lCYoDQhjUZOh9xa7sv=
+9TRN0TfjUsAH0GH3yPesaNQCg4ZqSVR3NK3-SOjNsjj1OvumEvC_Gu-QCf6HPdh01VNztZrmD9Y=
+11Xc7BzEyLZW4GGebgyWg5EzMx6dwlt6oAngNi5VYEQDf6oNA4v8HSQDBC-7Rh56X98JPjK084r=
+S8e2aT2SHo1DSlN-YdfsS0vGz40Y6ijKjDRKpathcITiE_tpF-UvH7MAKjPyVpcyhBs_sbCaN3R=
+r_qTMFBrgTYYOm-GLohm7qaDrVysUwrzovSwzAYMcxtIo1UDYZ3AQB2exR_CnltCchfaOHcQVd9=
+lOKOGVawWgep5aisz6cEbvfjUFhVxxpR55XbrlMr-nbSb70KkupRr6kyeS-0aiWYa-Z9VHDk80y=
+hXhBz4sWIEN13xq7FkXhd8QNN4fEpE8E4KR7pLqzRXP-2-YCS8Rt0XVCPVtx6zVNUx3jHofsOER=
+gjD0E9cjv_hZhjCOZUpjQGEBYKFN-RvPAAuWdj6WAWkAvFGsEMLjAV6a88Fzob5HhiRwe94-0iZ=
+jOGOTXhQE9YowS_QhfVBE7mBOKdVj2-uBfnPhCkCmgnP4S3qPrwk_iHXIymVMj7HMu2Fe64gsCn=
+AnDwuRAa7iFDXublST8pc8trST6XRbkJvvO3a_kw_XtMGQhs46E3tB8ReSdw4j1ycanaVC8IhGg=
+UblEy_yNRVgv6snqyU5plmlElnIJYzsLIj8DXeO4ZpfhQWs_8Mq_5SkroRJ1sQOEfC0Q6breDcv=
+9OqHfxXQ3i-4M4WJHapDLAX8l4CF7y2ylQvSr6m6zUoxYTwiIF_Rn349e1FxzTSToyU7LSmYE1E=
+iXjaVyfTWXRl-x2WV0ByWbBdJK3XSvGaPL5g14yFO86Hdm45iAfNhRxkoZ5AGwWnJy_nJYgwH9H=
+Q28aA4atGyjT_1fUc-IuZHIrHI7zoLaAuA0CxgeZmno6_nn_dRfVCd6CeSx3HTQmN8SIIEmIv" =
+target=3D"_blank" class=3D"Unsubscribe--unsubscribePreferences" style=3D"fo=
+nt-family:sans-serif;text-decoration:none;">Unsubscribe Preferences</a></di=
+v><br>############################################################<br>#####=
+#######################################################<br><br><img src=3D"=
+https://u19268662.ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/433/y1F1n6CPR=
+fWl4_VnmXhdNw/ho.gif" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=
+=3D"height:1px !important;width:1px !important;border-width:0 !important;ma=
+rgin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;=
+margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !importa=
+nt;padding-right:0 !important;padding-left:0 !important;"/></body>
+</html>
+--3b9da02ad276c0f3bd8f278820867b2644e24434dd33ace0517cae6ecdb3--

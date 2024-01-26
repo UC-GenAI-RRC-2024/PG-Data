@@ -1,0 +1,39 @@
+NCT Number,Study Title,Study URL,Acronym,Study Status,Brief Summary,Study Results,Conditions,Interventions,Primary Outcome Measures,Secondary Outcome Measures,Other Outcome Measures,Sponsor,Collaborators,Sex,Age,Phases,Enrollment,Funder Type,Study Type,Study Design,Other IDs,Start Date,Primary Completion Date,Completion Date,First Posted,Results First Posted,Last Update Posted,Locations,Study Documents
+NCT01037881,LEO 29102 Cream in the Treatment of Atopic Dermatitis,https://clinicaltrials.gov/study/NCT01037881,,COMPLETED,"This is a proof of concept and dose finding Phase II trial comparing 5 dose strengths with vehicle and an active comparator (Elidel cream 10 mg/g) in a 4 week, twice daily treatment regimen in mild to moderate atopic dermatitis patients.",YES,Atopic Dermatitis,DRUG: LEO 29102|DRUG: Elidel®,"Absolute Change in Eczema Area and Severity Index (EASI) Score From Baseline (Last Observation Carried Forward [LOCF]), The EASI is a composite score based on the evaluation of four characteristic atopic dermatitis (AD) signs and symptoms; erythema, oedema/induration/papulation, excoriation and lichenification together with the area involved.
+
+For each body region, the investigator rated four clinical signs of AD using the following severity scale:
+
+0 = none/absent
+
+1. = mild
+2. = moderate
+3. = severe
+
+The EASI score ranges from 0-12, a higher score equals a worse outcome. Baseline was defined as Day 0. Mean values in table are least squares mean adjusted for the effect of (pooled) country., Baseline (Day 0) and end of treatment (Day 28)","Number of Participants That Were Symptom Free Responders (LOCF), The IGA (Investigator's global assessment) of disease severity on the body (trunk and limbs excluding the hands) was assessed based on visual evaluation by use of the following definitions of severity:
+
+0. Clear - no inflammatory signs of AD
+
+1. Almost clear - just perceptible erythema, and just perceptible papulation/infiltration
+2. Mild - mild erythema, and mild papulation/infiltration
+3. Moderate - moderate erythema, and moderate papulation/infiltration
+4. Severe - severe erythema, and-severe papulation/infiltration
+5. Very severe - severe erythema, and severe papulation/infiltration with oozing/crusting.
+
+Symptom free responders were defined as an IGA of 0 (Clear) or 1 (Almost clear) at the end of treatment., At end of treatment (Day 28)|Participants' Assessment of Pruritus on Trunk and Limbs, Participants' assessment of pruritus on trunk and limbs was assessed at end of treatment by use of the scale below.
+
+* Absent - no itching
+* Mild - occasional, slight itching
+* Moderate - constant or intermittent itching which is not disturbing sleep
+* Severe - intolerable itching which is disturbing sleep
+
+The assessment was based on the average degree of pruritus over the last 24 hours., At end of treatment (Day 28)|Participants' Overall Assessment of Disease Severity, Participants' overall assessment of disease severity on trunk and limbs (excluding the hands) was assessed at end of treatment by use of the following scale: clear, very mild, mild, moderate, severe.
+
+The assessment was based on the condition of the disease at the time of the evaluation and not in relation to the condition at a previous visit., At end of treatment (Day 28)|Number of Participants That Were Symptom Free Responders by Visit, Symptom free responders were defined as an IGA of 0 (Clear) or 1 (Almost clear) according to Investigator's global assessment of disease severity on trunk and limbs at the end of treatment., At Visit 2 (Day 7), Visit 3 (Day 14), Visit 4 (Day 21) and end of treatment (Day 28)|Absolute Change in Eczema Area and Severity Index (EASI) Score From Baseline by Visit, The EASI is a composite score based on the evaluation of four characteristic atopic dermatitis (AD) signs and symptoms; erythema, oedema/induration/papulation, excoriation and lichenification together with the area involved.
+
+For each body region, the investigator rated four clinical signs of AD using the following severity scale:
+
+0 = none/absent
+
+1. = mild
+2. = moderate
+3. = severe The EASI score ranges from 0-12, a higher score equals a worse outcome. Baseline was defined as Day 0. Mean values in table are least squares mean adjusted for the effect of (pooled) country., Baseline and at Visit 2 (Day 7), Visit 3 (Day 14), Visit 4 (Day 21)",,LEO Pharma,,ALL,"ADULT, OLDER_ADULT",PHASE2,183,INDUSTRY,INTERVENTIONAL,"Allocation: RANDOMIZED|Intervention Model: PARALLEL|Masking: DOUBLE (PARTICIPANT, INVESTIGATOR)|Primary Purpose: TREATMENT",LEO 29102-C21|EudraCT Number 2009-013792-22,2009-12,2010-06,2010-06,2009-12-23,2018-08-08,2019-10-14,"Windsor Clinical Research Inc., Windsor, Ontario, N8W 5L7, Canada|Helsinki University Central Hospital, Helsinki, 00250, Finland|Klinik und Poliklinik für Dermatologie, Universität Bonn, Bonn, 53105, Germany",

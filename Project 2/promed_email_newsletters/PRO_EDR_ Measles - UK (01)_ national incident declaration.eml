@@ -1,0 +1,775 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a98:d84b:0:b0:1eb:e128:bbe3 with SMTP id b11csp1305700eil;
+        Fri, 19 Jan 2024 18:58:17 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IHt25WFEj0tasLwygb2ii6b6Hfi34DzstGqA9V584r426hnmJlBV0HNPTMivhuBsUC0Bdp8
+X-Received: by 2002:ac8:5a95:0:b0:42a:316d:c6b9 with SMTP id c21-20020ac85a95000000b0042a316dc6b9mr108262qtc.25.1705719497018;
+        Fri, 19 Jan 2024 18:58:17 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1705719497; cv=none;
+        d=google.com; s=arc-20160816;
+        b=ss6t4L5sb6jrEWeFksSHrlAu8ClnyrFNQPMnohyQEMbOKNmSYsEYPCIBb7Vr/9CvLR
+         QXzEUdM2o2/cs+DLEEms3bVcGP2zAAbvqRoKtC29AxcQ/m98ooQnIK/+aRgCXmgJx7mD
+         jRyjMVcQH4tGaSOiCsp2Q1Ah53bYNo33iDf0++PIY4s44CsrwPNic+YjMQIXl7wisVKq
+         0bWyFr5eQz9MKcDPc2wGeTvmRd3phRs1+U69kOEJZCmP4xEc3NRhpTqmL8pSV9ERHqWj
+         HXYuq1Bnl8Ir1pQYRvqxeYGBvGS+8FLJk8w/XHihZwvdIXXssJeWeD39sYa/AJ0HmUQw
+         9wfA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=2qRJNxbm9cl/vk7G5YgfjE76HdTXSdSnjQFRUkONcWY=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=Ao9R5fZFyXA9Vy3PDyN0kWBQTSRKb0PxALRaAG6Ra7jUbCZHY5qv8qghVce+aHuM4N
+         ZGjNB0cJcy3NnE7A9sEsXxUVykh+GNhatuv/gScVJs0ss8wnYZrPSxkxp30wXfwaXov9
+         C9n7m5u8QuMxhXwrQotvYP4LVc5lVYBCofML8fJqYUQV8E/aroZT7bz6UCwVH1OMPWWF
+         /jAHTkjKYZXR0Zqa5T73crb4xkDmdWwXQGdOITSlLNeqUNgj7jGnbaZN29MoThHdZHOF
+         s8CDvPlUZOi5L44MTRLpfSZ2m39j9n8fdo/igPO/51ZqjaAMkpL3Vy/shNj9GSVScKi3
+         MWbA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=VSQaqJT5;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=dl0j4sFu;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id h13-20020ac87d4d000000b0042a032dffc2si667154qtb.459.2024.01.19.18.58.16
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 19 Jan 2024 18:58:17 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=VSQaqJT5;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=dl0j4sFu;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=2qRJNxbm9cl/vk7G5YgfjE76HdTXSdSnjQFRUkONcWY=;
+	b=VSQaqJT5gAmex9+NpqoUkvVTyn8hq8oLsUzzjr7kYHBFtRpVWFH+NQfssIPAhQYcd++N
+	1IKbB690ptFK1bOhp+uhIII0BtjVzWFUVA20+eMo5EU1Pr+E0y4VzR4zOKmY/hWUD9tMJS
+	uEMyJfKAwDB2VsmTtpMCIWEII/0d2t/2ZuXhIswslADf2cljmEJsl+eXxdFBP3Na4MqGOT
+	89E8YiTTMVEjQzv6DTPhiv4i2qCk4Jc06+wYGpnLRCzx/2mkJs2s89uv4BzQSrFhVYw/w6
+	VjuixJTKN1qIQ1YdXZDUG8hwWeq93rB12h7RRa93aG7xRQrL1p40uY60251x8SwA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=2qRJNxbm9cl/vk7G5YgfjE76HdTXSdSnjQFRUkONcWY=;
+	b=dl0j4sFu2dzC9qgihIS296NqNyFNZGYo6KmibhzfmvzgvQgiMaoex8ELKPHM4KUkm7n2
+	effHZi0N6pFzn3ZCuqshDRKRHyHg8Syd9/BgE6EB5iFIXb8dZP6Z/FCrjoU4y4UCFZ8tQP
+	9EYY/Lnyw1W+C0FnsOh0NjF5Gyj13FwM0=
+Received: by filterdrecv-6d6bf4565d-ktlpx with SMTP id filterdrecv-6d6bf4565d-ktlpx-1-65AB36C5-35
+        2024-01-20 02:58:13.79003934 +0000 UTC m=+8151406.737460545
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-31 (SG) with HTTP
+	id CFjYQyNXQsaWjGkIov0DEw
+	Sat, 20 Jan 2024 02:58:13.743 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=09cfdbcbb281c4921593c8deb68792ca936b1ce8507d9491f9b97977591c
+Date: Sat, 20 Jan 2024 02:58:16 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <CFjYQyNXQsaWjGkIov0DEw@geopod-ismtpd-31>
+Subject: PRO/EDR> Measles - UK (01): national incident declaration
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iBy8p+KA48eIe8=2FtLpcL7=2Fn8KOjfs6jrDWoAkP6?=
+ =?us-ascii?Q?8G45oX9LaIP+zVnX3k5624mzbQVzNwCaf6xYiog?=
+ =?us-ascii?Q?U9IG3OuT3g87NeTc2aTm1NHL9CV11kKkXyqCPKX?=
+ =?us-ascii?Q?VnBqw0mZ5xI9LyaJTSh=2Fvmdp8C8Fz53JREUH+sa?=
+ =?us-ascii?Q?=2Fyus0qqOMDJyKy2VQ=2F+DoLgEHwHps+ZKxUGSDt?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUhc93xcG=2F095a5S4+mt=2FG?=
+ =?us-ascii?Q?uYUpctI=2FOGD2dwyi+uvm2j4FCdvuw0l9zcHM8iA?=
+ =?us-ascii?Q?mojOvTXq7jOpDFFNtfsYkHQYACEW8pq1BXXqYmH?=
+ =?us-ascii?Q?oGTsnt6QpE2ZV5WVqnpwfXWoLXx7+4YEdyv+lAX?=
+ =?us-ascii?Q?T=2FT4LHyZl2xLRWRQr4wQHrkqID9mJm6dEsZ7M2z?=
+ =?us-ascii?Q?uwk=2FcDrUs6cxy=2F8h9ztUaw3ILNSQWrAVkBgnvEf?=
+ =?us-ascii?Q?LbqQVGfIxd=2F+G12BA17LYdNGuRMHrjPfRIQk3c1?=
+ =?us-ascii?Q?4QoOwqHZwb7XZK66aE09eNNro0P7f4Vk3RHlomV?=
+ =?us-ascii?Q?uSnqwuP7WvXz9KVWEVHZ6VFx=2FBZJGs4bG012jk8?=
+ =?us-ascii?Q?ND8FVQ8CXCgoW+MTXoS4MyxLbvMNE9VJwu8IAmR?=
+ =?us-ascii?Q?G7L43oR2pE8Qbt=2FOxUmQ=2FAJ=2FnEnWcUg9tdK2ads?=
+ =?us-ascii?Q?KbHVLRzXQ7X=2Fq0bW4OGPh5OQDFUog5ywoiqt1rX?=
+ =?us-ascii?Q?DJbdOtg5Mk1mFF+Y61JkOGSaWROHaqFrM=2FWR+e1?=
+ =?us-ascii?Q?3M2pzsq1UupSp8CQlAWRQ9YMq7Vj429t1=2Fj=2FrBO?=
+ =?us-ascii?Q?bm1AFYaNUxNecQmCPBcFoOMyNCukaN6gMuc=2FBce?=
+ =?us-ascii?Q?62lv6srRq+johKj8peKDpg3+GWRB25D6OAgmrlP?=
+ =?us-ascii?Q?GaAfENGejNcrJOc5Tccf1TgmvDoJbJXt=2FwajDTF?=
+ =?us-ascii?Q?hHZ8bEgc8u2hlzuWRrp5WXPHqQpuTWE3xGekjfd?=
+ =?us-ascii?Q?I3exZT1OIllQ4APcANtmbIG+PfZFjMMEG8IItY7?=
+ =?us-ascii?Q?JEmOPnUKQL8y5O07WC031qSTsA=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2EOKgT-UvBb?=
+ =?us-ascii?Q?=5F9hJInaYqWGNlFkJEc7YTrg0JbCXQUzDJ9oMDAw?=
+ =?us-ascii?Q?dTAwMKovtZQ3KeTvWrAURgAnn81=5FE7evWi42SWU?=
+ =?us-ascii?Q?hpSPA4fXDHp1kMWuNGlgYJLH2ojkTRwF7yg9KTd?=
+ =?us-ascii?Q?eT0A3KlH0q43LyDyg2vKK2U4iXpZDTIU-eVlJtQ?=
+ =?us-ascii?Q?3jHOOppQSkSjXpv1g=3D=3D=2EUoqDMBFv-MfKAuMMWND?=
+ =?us-ascii?Q?oomuD=5FU-d1hWkSkns0OwBwORoMDAwdTAwMBDONQ?=
+ =?us-ascii?Q?Rdg2bnn9MHGdR-YwH0DUgNlDGawwExkJFXdTZwN?=
+ =?us-ascii?Q?wYu8w7XUvUqhGz5BgW0OoX8Lnj8TBc7cuX-DRaC?=
+ =?us-ascii?Q?JZJUsVfXaoprRvZfPWn44upy1AD0y4yuJDE=5FX7b?=
+ =?us-ascii?Q?19jegZrxaErXChcOsVK16hMPbeGA20LscguyGGa?=
+ =?us-ascii?Q?V1qABrEa0VOeRRwGF0LQ9=5F8jD1k=5F-ihmi=5FgMa0a?=
+ =?us-ascii?Q?dcNJUgwqzw1n0iTKKVIIYYMDgcwapPY0B9QYcdQ?=
+ =?us-ascii?Q?fZd8QjAblSzdvXgg1nQtpFi=5FFAQkHPOZNwt3xPa?=
+ =?us-ascii?Q?3P8hKv=5FVKnMdTuQi2bZbiIhjc8VDsnP28=5FtQCI7?=
+ =?us-ascii?Q?dYsmN9XW3I6-q4cCND619GFSMPF0dBPRpbfFvdL?=
+ =?us-ascii?Q?uyeeuV=5FnnOS0QH90qDcYW7DH3qbr4MOk5Dfal4s?=
+ =?us-ascii?Q?tUjl6MJkQucPeKRtK6leh-px4OVglB97NsXYLRZ?=
+ =?us-ascii?Q?rYAN41QmgneizLmVPLidAJBB6PxxP916qmMTz5A?=
+ =?us-ascii?Q?rYRNQzmgIBF1y5g-9T661y=5FRGKjXPrnD2VNnU6T?=
+ =?us-ascii?Q?0N-AyPt8lMEj-ajyk-MPG0RD=5FDmQnI1bSSrQ4N4?=
+ =?us-ascii?Q?8cK=5FSNyLw0LORFL4seRXxSV3ae=5F0vGC3pbPfa=5FA?=
+ =?us-ascii?Q?h2Xus2uda28Cr4G0DAyfAB2xG-xVqYBM9RAbmTg?=
+ =?us-ascii?Q?CRwt=5FI6QcQUJjkA5=5FPVtj6clRuRpsCI1BlPmppt?=
+ =?us-ascii?Q?-ShQ1H3CgW0kh6GgJUDzsZtrnwkPXjQVnG5KD=5Fl?=
+ =?us-ascii?Q?=5Fadmau1-Z3M7VEhdXOiRvKUqU2I0J2ZMEG1bzT5?=
+ =?us-ascii?Q?II6u-PMA1RvFrOyUAiMXRxvm=5FeshQCPr4LUg9Pj?=
+ =?us-ascii?Q?P5CxFnG01roUllis15o27VGOfNxgD=5FQjs33Om=5F3?=
+ =?us-ascii?Q?L8g7bhnZGTofQhfDsWslB1jrPgW86vIF=5FIAH9e5?=
+ =?us-ascii?Q?WK1OfVtBcTL-AbkQMih37Wj=5F32DpNZO-lpB1PwZ?=
+ =?us-ascii?Q?HUi5dcTgYNmddi8rKZ-=5FYWVlMxNmmpWCoV8ZKaz?=
+ =?us-ascii?Q?5SqgABmG2SGzNI=5F7WxtKddG5d6Q295ogDzFrbNw?=
+ =?us-ascii?Q?41bghmAMCRuMTYXsEJbbzNr=3E?=
+
+--09cfdbcbb281c4921593c8deb68792ca936b1ce8507d9491f9b97977591c
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=us-ascii
+Mime-Version: 1.0
+
+MEASLES - UK (01): NATIONAL INCIDENT DECLARATION
+************************************************
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+[1]
+Date: Fri 19 Jan 2024
+Source: Daily Mail [edited]
+<https://www.dailymail.co.uk/news/article-12985509/Health-chiefs-call-urgen=
+t-vaccination-drive-measles-national-incident-declared-UK-warnings-youngste=
+rs-protected-against-potentially-deadly-virus.html>
+
+
+An urgent vaccination drive is needed to ward off a growing wave of
+measles outbreaks, health chiefs said last night [18 Jan 2024].
+
+Declaring an official 'national incident', the UK Health Security
+Agency warned that too few youngsters were protected against the
+potentially deadly virus.
+
+Jenny Harries, the agency's chief executive, urged parents to check
+whether their children had had the measles, mumps and rubella jab and
+said the UK was on a 'trajectory for everything getting much worse'.=20
+
+It is a far cry from 2016, when Britain was declared measles-free by
+the World Health Organisation.
+
+The disease, which causes flu-like symptoms and a nasty rash, proves
+fatal in roughly 1 in every 5000 cases.=20
+
+Vaccination rates have fallen across the country with London and the
+West Midlands among the worst regions.
+
+The latter has had more than 300 confirmed and probable cases since 1
+Oct 2023. Most victims were under 10.=20
+
+The declaration of a national incident signifies a growing public
+health risk and enables the agency to focus work in specific
+locations.
+
+Dame Jenny told BBC Radio 4's Today programme the vaccination
+programme was 'clearly not' at the right level.
+
+The professor added: 'We had established measles elimination status in
+the UK, but in fact our vaccination rates now have dropped on average
+to about only 85% of children arriving at school having had the 2 MMR
+doses.
+
+'In the West Midlands, that's in some areas down to 81%. If we go down
+to the Surrey Heartlands integrated care board area, that's just over
+70%.
+
+'So we are well under the recommended coverage for MMR vaccination
+that the World Health Organisation recommends.=20
+
+'We want it to be 95% coverage. We need a call to action right across
+the country.
+
+'Colleagues across the West Midlands have worked tirelessly to try to
+control the outbreak, but with vaccine uptake in some communities so
+low, there is now a very real risk of seeing the virus spread in other
+towns and cities.'
+
+Last year [2023] 84.5% of youngsters in England had received both MMR
+doses by the time they were 5 - the lowest rate since 2010/11 - and
+92.5% had received at least one dose.
+
+Experts attribute the fall in uptake to anti-vax sentiment, pandemic
+disruption and a discredited 1998 study suggesting a link between the
+MMR jab and autism.
+
+Dame Jenny said some Muslim communities had shunned the MMR vaccine
+because it contains ingredients derived from pork -- but she stressed
+vegan versions were available.
+
+She added: 'It's quite common with vaccination programmes that when
+the risk is perceived to have gone away, then the concern to get
+vaccinated may drop off and so one of the reasons for flagging this is
+to remind people that cases are still out there. This is a serious
+illness.'
+
+The dire consequences of measles were last night [18 Jan 2024]
+highlighted by [GLJ], whose 6-year-old son [SLJ] died from a brain
+inflammation caused by measles in 2019.
+
+Sharing her story to encourage parents to vaccinate more, she said: 'I
+honestly do believe that people just think that measles, like
+chickenpox, is part of being a child and it's so not.
+
+'[SLJ] didn't need to die and that's the guilt I carry every day with
+me.'
+
+Health Secretary Victoria Atkins said rising measles cases will be a
+'cause of concern for many' and stressed that unvaccinated children
+were at risk of serious illness.
+
+But she added: 'The good news is the MMR vaccine offers extremely high
+protection against this nasty virus, as well as mumps and rubella.
+
+'The vaccine is completely safe. It will boost immunity and stamp out
+this disease once and for all.
+
+'It will also mean children can go back to doing what they should be
+doing, playing with friends, spending time with family and going to
+school.=20
+
+If you are not sure if your child has been fully vaccinated, you can
+check their little red book or call your GP surgery.'
+
+NHS England has issued healthcare workers with infection control
+guidance on measles for the 1st time.=20
+
+It says patients should be isolated on arrival at a GP surgery and
+appointments should be arranged to reduce waiting times in reception
+areas.=20
+
+In hospitals, suspected measles patients should also be put in a
+separate area -- ideally a single room away from others.
+
+[Byline: Shaun Wooler]
+
+--
+Communicated by:
+ProMED
+
+******
+[2]
+Date: Thu 11 Jan 2024
+Source: Birmingham Mail [edited]
+<https://www.birminghammail.co.uk/news/midlands-news/warning-birmingham-par=
+ents-outbreak-highly-28430848>
+
+
+Parents are being warned of a steep rise in cases of an extremely
+infectious and potentially deadly disease in Birmingham, which can
+have severe and potentially life-threatening consequences in children.
+Measles cases are rising daily in the city and there are fears cases
+could increase rapidly this week as children return to school after
+the Christmas break.
+
+The UK Health Security Agency has confirmed there have been 133
+lab-confirmed cases in the West Midlands since 1 Oct 2023 with another
+96 'likely cases' -- a total of 229. Around 80% of those have been
+seen in Birmingham, and 10% in Coventry with other areas also in the
+region now being affected.
+
+Measles starts with cold-like symptoms the NHS says, which are
+followed by a rash, with some people getting small spots in their
+mouth. Other symptoms include getting a high temperature (which can
+reach 40 degrees C [104 F]), a runny or blocked nose, sneezing, a
+cough and red, sore watery eyes.
+
+UKHSA health professionals are concerned cases will now rise quickly
+as children return to school, particularly as the uptake of the MMR
+(measles, mumps and rubella) vaccine is 'worryingly low' in some parts
+of the West Midlands. Most of the measles cases being seen in the West
+Midlands are in younger children who have not had their MMR vaccines,
+with some needing hospital treatment the Government health agency
+said.
+
+Cllr Rob Pocock (Sutton Vesey, Lab.) who is Birmingham's acting
+cabinet member for health and social care put a message on X, formerly
+known as Twitter, and said: "Public Health Alert - measles outbreak
+intensifying. Now over 180 cases in Birmingham, and nationwide a
+National Incident has been declared today [11 Jan 2024]."
+
+Cllr Pocock told BirminghamLive: "There were 80 cases before Christmas
+and before schools went back it was 150. Yesterday (10 Jan 2024) the
+number reported was 180. The big issue this week is kids are back to
+school and we are expecting a surge.
+
+"The scale of the spread will be known by the start of next week. The
+issue is tied in with the MMR vaccination rate. There's a geographic
+and demographic problem. There's still stuff going around that if
+you're Muslim, it's pork and you can't have it. But there are 2
+versions.
+
+"In some areas of the city the MMR vaccination rates are struggling to
+get to 80%. The main problems are in Birmingham east. Now it's a
+watching brief to wait and see if the situation deteriorates. Schools
+will be doing their very best to keep out people with measles
+infections. If cases double and double again, then we have a big, big
+problem.
+
+"Parents should look for symptons, get their children vaccinated if
+they aren't and those with suspected symptoms don't go to a medical
+facility, call 111, go online or call their GP."
+
+How serious is measles?
+-----------------------
+Measles is highly infectious among those who are not vaccinated, with
+every person infecting to 10 to 20 others, far more than those with
+COVID infected. The disease spreads when a person sneezes or coughs
+and can be easily caught by breathing on those droplets, or touching a
+surface where the droplets are and placing your hand near your mouth
+or nose. It can survive on surfaces for several hours.
+
+For most symptoms will last for 7 to 10 days without causing further
+problems. But it also has the potential to cause serious problems,
+like pneumonia, meningitis, blindness and seizures, and can be
+deadly.
+
+Those most at risk from complications are children under the age of 5,
+children with a poor diet and those with a weakened immune system. And
+also pregnant women and adults over the age of 20.
+
+Children who have not been vaccinated and who have come into contact
+with someone with measles can be excluded from school for 21 days --
+the potential incubation period of the disease.
+
+Dr Neil Bugg, deputy medical director at Birmingham Women's and
+Children's NHS Foundation Trust, said: "At our hospital, we see the
+most severe cases of measles, which can lead to more serious
+conditions such as pneumonia, an infection of the lungs, encephalitis,
+which is swelling of the brain and other serious complications.
+
+"The very best way to be protected is to have the MMR vaccine, which
+is available from your GP. We'd like for everyone to be vaccinated
+against measles if they haven't been already, so that they are
+protected against these rare but potentially very serious
+complications."
+
+How do you protect against measles?
+-----------------------------------
+Vaccination is via 2 doses of MMR which is free and 'very effective
+against measles' as well as protecting against mumps and rubella. The
+1st dose is given just after a child's 1st birthday and the 2nd at 3
+years 4 months before children go to school. It is part of the routine
+childhood vaccine schedule but in some areas the uptake is as low as
+5%.
+
+Dr Naveed Syed, UKHSA West Midlands consultant in health protection,
+said: "We are seeing cases of measles rising every day in the West
+Midlands. The virus is very infectious and can spread rapidly among
+communities, such as schools, if people have not had at least one dose
+of the MMR vaccine.
+
+Uptake of MMR in the region is much lower than the 95% needed to
+protect the population, which is giving this serious disease a chance
+to get a foothold in our communities. That's why it's vital that
+anyone who hasn't had 2 doses of the MMR vaccine by the time they
+started full time school gets immunised as soon as possible.
+
+"We have advised schools that anyone who has not had at least one dose
+of MMR and has been in contact with a case of measles could be
+excluded from school for 21 days -- the time it can take for symptoms
+to develop, while still passing the infection to others.
+
+"People may not realise how severe measles can be. While most people
+will recover completely within a couple of weeks, the virus can cause
+serious illness -- sometimes this can leave permanent disability and
+it can even cause death. People in certain at-risk groups, including
+babies and small children, pregnant women, and people with weakened
+immunity, are at increased risk of complications if they catch
+measles."
+
+Anyone who has missed out on the vaccine in childhood can get it at
+any age. And there is a version with no pork gelatine in its
+production, available on request for those who are not allowed pork
+for religious reasons. Parents are advised to check their child's Red
+Book to see if they have had the MMR vaccine or to check with their
+GP.
+
+What should you do if you get measles?
+--------------------------------------
+Those suffering should rest and drink plenty of fluids, take
+paracetamol or ibuprofen to relieve a high temperature and use cotton
+wool soaked in warm water to remove any crusts from eyes. And anyone
+displaying symptoms must stay away from medical facilities.
+
+Dr Syed added: "If you think you could have measles, it's really
+important to stay away from areas where you could come into contact
+with lots of other people -- especially vulnerable patients in
+hospitals, care homes or other healthcare settings.
+
+"If you have the symptoms of measles, it is essential that you don't
+just turn up at your GP practice, walk in centre or other healthcare
+provider. Instead, contact your GP or NHS111 for advice. If you do
+need to visit a healthcare setting, please phone ahead so arrangements
+can be made to prevent other people being infected."
+
+--
+Communicated by:
+ProMED
+
+[Another report (<https://www.bbc.com/news/uk-england-67947095>) noted
+measles cases in West Midlands haven't been this high since the 1990s
+which is telling, especially when so many countries to include the UK
+had nearly or completely eliminated locally acquired measles. It will
+be interesting to see how quickly the national incident declaration
+mobilizes vaccination and education resources and the impact of such
+measures versus the entrenched vaccine hesitancy/resistance in many
+areas. - Mod.JH
+
+ProMED map:
+United Kingdom: <https://promedmail.org/promed-post?place=3D8714349,40>]
+
+[See Also:
+2023
+----
+Measles update (58): UK http://promedmail.org/post/20231108.8713048
+Measles update (51): USA (ID), Ecuador, UK
+http://promedmail.org/post/20230930.8712381
+Measles update (47): Romania, UK
+http://promedmail.org/post/20230909.8712032
+Measles update (22): Africa, Asia, UK, USA
+http://promedmail.org/post/20230508.8709918]
+.................................................jh/sb/jh/may/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3D3CRtNumZTufozO8baMKQRSifOqdjl0FiaishZ7mL1JVoMDAwdTAwML5mqEZ=
+KbhuJdch5h3OFNn4KAj7iQogpJA5ID32lchNfydw1f9j-XsTOVqKWeeYN-KNVdE0ZtpCFnEs0tB=
+mRnEmZwsjysYyQ1-nsPoKabd_XcqvrRUQZdmyv7ufO6h9wNLEghVw7GV9puPju2_7UxTroG2_PP=
+tEHYx8oX7yidi75SNTbis7tKO3WJEP2BuqHG0uL1MgHdEFf8haDsDWEFgBt45AqLzFFCIikeNcU=
+NiU15XbXjgVl8OtAkzKNqZA1ND_qi0y7YPwt4nf34Jzpt4S4_ZpnWM1EzxdLLQK2EBeUj_lcC4n=
+9WIAFwbTu2ZYckpauMQtns4D9zIpihBgwUpS-vd68B09UH5Puyre_3ReVIWbcTH2blAU2_PSSJR=
+81H2dF8_onFlALni7YNncbHgtVbjpXNAO54a9yKMRyV6Et8Ex-Xp5A_xLpsWZ7vNOZPSHvYXmWq=
+5nmwT_XHdH2TlOyeA5m6Wb4_ErcrFkQ-qRBIHclwORncJSAsCRUuRztMAzf2HOE1Ar9A1Pod7tt=
+W-taedTVXaCGLzQ91oLQwakjAk0TwyRZmC8C7NHJrbJmLdAQzAhnSq75CwDRj7xd0c90rF5VytB=
+ovSvRr7tM-03YtbrTWET5UK-rkdAfsWWpyQIbAoqWbIIkMi6era5PgKu5b4wJz--RfAboiuF4Fb=
+ekYUL8llnouzehOn27uUif0nzDCnJ9ou60wNh_U0r-mjyKlsfrT6WivxLz31kuq3HYAPq8fC4M-=
+qPov2lGueg0k4aGQJ4bheR3BPLUEqamQOO5tAVdo7azfPwrjX4pGHkbdo_kxhCNVA_4cDGePSyi=
+n9FaELeBh6aUjIkOq8AhGDBHWJ2k7URhOrZeF9Wo9Y4QKswtDO8Yiwk0-9by2r5XhnERRQzNdfT=
+vn6zAy2YkkmhcYcaIH2eKPqbf-XLCzGbnHA1I8xPXXQwHScCdf-FsKPHni93zHBQcGdYGbDSbrC=
+t3r3U21PpIAcM522FPaLG97k6ywfBsPYQLkrAsVORG86U6tp7pszBJk3TJk-4IFPh_CuS4PK5nR=
+HMRSXxZw1Q4lS2HuzzeJribbpjFlmKGzqW3-5hXWSGCNweLVg74GyQnuVqQDDy0OuwQzsJCpru9=
+MzN_bp9V4a_QYAykH8MNDrnqB-j8rMSdSicm9OCjPG0=3D )
+############################################################
+############################################################
+
+--09cfdbcbb281c4921593c8deb68792ca936b1ce8507d9491f9b97977591c
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>MEASLES - UK (01): NATIONAL INCIDENT DECLARATION<br>*****************=
+*******************************<br>A ProMED-mail post<br><a href=3D"https:/=
+/u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisIijpefK5PNjW-mL-YZGnfg=
+DOxU1G3gjwnPSi2Tfv3HA/435/xAR78W6oQqiU2DOdqHBDYg/h0/QvAco0nVJhgT_phECPmHDGC=
+yiG-WbkFWUhBm1OlJvGo">http://www.promedmail.org</a><br>ProMED-mail is a pro=
+gram of the<br>International Society for Infectious Diseases<br><a href=3D"=
+https://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisCT5tpD4Upm3qyMC=
+bcYSQvc/435/xAR78W6oQqiU2DOdqHBDYg/h1/MlkCC8z06HxQNGKLVtp8sKKQY7l59h8w_59NG=
+XBBPYQ">http://www.isid.org</a><br><br>[1]=0D<br>Date: Fri 19 Jan 2024=0D<b=
+r>Source: Daily Mail [edited]=0D<br><a href=3D"https://u19268662.ct.sendgri=
+d.net/ss/c/TLh_csrC34X_iXpbYoMam2GhJ436w0GjUrJ9vdvu_uzor-hz2k1jr-FIvPfbKx7f=
+OCB6Hzi3yGOIQZ1F40-WzLMXS44JwvXv6R0UA2--ehO2aGWGl0_oCSoM53_MSn1StOX1W1tv7cG=
+Ta7Z5vBGkRnzRHdj-8Dr47iEJvz7NHqVxzpGCj6qvlqNQdE-0T7bSMhsYZudR7Y897rMM4zyMCK=
+SoWPJKvvdC0br_M0uOAGtfW6lx4B7TzeyiS1giaoptDpBASz3MFHY9mBw4yTuqAg/435/xAR78W=
+6oQqiU2DOdqHBDYg/h2/yfCW8t7VF2uEepO0FmiPwpjZrcMLQTdna2gJWOCfYac">https://ww=
+w.dailymail.co.uk/news/article-12985509/Health-chiefs-call-urgent-vaccinati=
+on-drive-measles-national-incident-declared-UK-warnings-youngsters-protecte=
+d-against-potentially-deadly-virus.html</a>=0D<br>=0D<br>=0D<br>An urgent v=
+accination drive is needed to ward off a growing wave of<br>measles outbrea=
+ks, health chiefs said last night [18 Jan 2024].=0D<br>=0D<br>Declaring an =
+official 'national incident', the UK Health Security<br>Agency warned that =
+too few youngsters were protected against the<br>potentially deadly virus.=0D=
+<br>=0D<br>Jenny Harries, the agency's chief executive, urged parents to ch=
+eck<br>whether their children had had the measles, mumps and rubella jab an=
+d<br>said the UK was on a 'trajectory for everything getting much worse'.=20=0D=
+<br>=0D<br>It is a far cry from 2016, when Britain was declared measles-fre=
+e by<br>the World Health Organisation.=0D<br>=0D<br>The disease, which caus=
+es flu-like symptoms and a nasty rash, proves<br>fatal in roughly 1 in ever=
+y 5000 cases.=20=0D<br>=0D<br>Vaccination rates have fallen across the coun=
+try with London and the<br>West Midlands among the worst regions.=0D<br>=0D=
+<br>The latter has had more than 300 confirmed and probable cases since 1<b=
+r>Oct 2023. Most victims were under 10.=20=0D<br>=0D<br>The declaration of =
+a national incident signifies a growing public<br>health risk and enables t=
+he agency to focus work in specific<br>locations.=0D<br>=0D<br>Dame Jenny t=
+old BBC Radio 4's Today programme the vaccination<br>programme was 'clearly=
+ not' at the right level.=0D<br>=0D<br>The professor added: 'We had establi=
+shed measles elimination status in<br>the UK, but in fact our vaccination r=
+ates now have dropped on average<br>to about only 85% of children arriving =
+at school having had the 2 MMR<br>doses.=0D<br>=0D<br>'In the West Midlands=
+, that's in some areas down to 81%. If we go down<br>to the Surrey Heartlan=
+ds integrated care board area, that's just over<br>70%.=0D<br>=0D<br>'So we=
+ are well under the recommended coverage for MMR vaccination<br>that the Wo=
+rld Health Organisation recommends.=20=0D<br>=0D<br>'We want it to be 95% c=
+overage. We need a call to action right across<br>the country.=0D<br>=0D<br=
+>'Colleagues across the West Midlands have worked tirelessly to try to<br>c=
+ontrol the outbreak, but with vaccine uptake in some communities so<br>low,=
+ there is now a very real risk of seeing the virus spread in other<br>towns=
+ and cities.'=0D<br>=0D<br>Last year [2023] 84.5% of youngsters in England =
+had received both MMR<br>doses by the time they were 5 - the lowest rate si=
+nce 2010/11 - and<br>92.5% had received at least one dose.=0D<br>=0D<br>Exp=
+erts attribute the fall in uptake to anti-vax sentiment, pandemic<br>disrup=
+tion and a discredited 1998 study suggesting a link between the<br>MMR jab =
+and autism.=0D<br>=0D<br>Dame Jenny said some Muslim communities had shunne=
+d the MMR vaccine<br>because it contains ingredients derived from pork -- b=
+ut she stressed<br>vegan versions were available.=0D<br>=0D<br>She added: '=
+It's quite common with vaccination programmes that when<br>the risk is perc=
+eived to have gone away, then the concern to get<br>vaccinated may drop off=
+ and so one of the reasons for flagging this is<br>to remind people that ca=
+ses are still out there. This is a serious<br>illness.'=0D<br>=0D<br>The di=
+re consequences of measles were last night [18 Jan 2024]<br>highlighted by =
+[GLJ], whose 6-year-old son [SLJ] died from a brain<br>inflammation caused =
+by measles in 2019.=0D<br>=0D<br>Sharing her story to encourage parents to =
+vaccinate more, she said: 'I<br>honestly do believe that people just think =
+that measles, like<br>chickenpox, is part of being a child and it's so not.=0D=
+<br>=0D<br>'[SLJ] didn't need to die and that's the guilt I carry every day=
+ with<br>me.'=0D<br>=0D<br>Health Secretary Victoria Atkins said rising mea=
+sles cases will be a<br>'cause of concern for many' and stressed that unvac=
+cinated children<br>were at risk of serious illness.=0D<br>=0D<br>But she a=
+dded: 'The good news is the MMR vaccine offers extremely high<br>protection=
+ against this nasty virus, as well as mumps and rubella.=0D<br>=0D<br>'The =
+vaccine is completely safe. It will boost immunity and stamp out<br>this di=
+sease once and for all.=0D<br>=0D<br>'It will also mean children can go bac=
+k to doing what they should be<br>doing, playing with friends, spending tim=
+e with family and going to<br>school.=20=0D<br>=0D<br>If you are not sure i=
+f your child has been fully vaccinated, you can<br>check their little red b=
+ook or call your GP surgery.'=0D<br>=0D<br>NHS England has issued healthcar=
+e workers with infection control<br>guidance on measles for the 1st time.=20=0D=
+<br>=0D<br>It says patients should be isolated on arrival at a GP surgery a=
+nd<br>appointments should be arranged to reduce waiting times in reception<=
+br>areas.=20=0D<br>=0D<br>In hospitals, suspected measles patients should a=
+lso be put in a<br>separate area -- ideally a single room away from others.=0D=
+<br>=0D<br>[Byline: Shaun Wooler]=0D<br>=0D<br>--=0D<br>Communicated by:=0D=
+<br>ProMED=0D<br>=0D<br>******=0D<br>[2]=0D<br>Date: Thu 11 Jan 2024=0D<br>=
+Source: Birmingham Mail [edited]=0D<br><a href=3D"https://u19268662.ct.send=
+grid.net/ss/c/TLh_csrC34X_iXpbYoMamz8Pl_FrqGehSFzqX6iJtj6CD5RvAXPBIaJei7rdH=
+cbSZAQjLYBofEG8nmNI9lA6GIhK64vLhn9sipI62MY3fKMtcZ5rF2k4bGIVsgIEyXgI5rvtmqk2=
+lHvu_b2WXdTgMQ/435/xAR78W6oQqiU2DOdqHBDYg/h3/AdRRazYFkQDwenLmbzxDUWtlG9m0bW=
+RpqUEaOV15oG0">https://www.birminghammail.co.uk/news/midlands-news/warning-=
+birmingham-parents-outbreak-highly-28430848</a>=0D<br>=0D<br>=0D<br>Parents=
+ are being warned of a steep rise in cases of an extremely<br>infectious an=
+d potentially deadly disease in Birmingham, which can<br>have severe and po=
+tentially life-threatening consequences in children.<br>Measles cases are r=
+ising daily in the city and there are fears cases<br>could increase rapidly=
+ this week as children return to school after<br>the Christmas break.=0D<br=
+>=0D<br>The UK Health Security Agency has confirmed there have been 133<br>=
+lab-confirmed cases in the West Midlands since 1 Oct 2023 with another<br>9=
+6 'likely cases' -- a total of 229. Around 80% of those have been<br>seen i=
+n Birmingham, and 10% in Coventry with other areas also in the<br>region no=
+w being affected.=0D<br>=0D<br>Measles starts with cold-like symptoms the N=
+HS says, which are<br>followed by a rash, with some people getting small sp=
+ots in their<br>mouth. Other symptoms include getting a high temperature (w=
+hich can<br>reach 40 degrees C [104 F]), a runny or blocked nose, sneezing,=
+ a<br>cough and red, sore watery eyes.=0D<br>=0D<br>UKHSA health profession=
+als are concerned cases will now rise quickly<br>as children return to scho=
+ol, particularly as the uptake of the MMR<br>(measles, mumps and rubella) v=
+accine is 'worryingly low' in some parts<br>of the West Midlands. Most of t=
+he measles cases being seen in the West<br>Midlands are in younger children=
+ who have not had their MMR vaccines,<br>with some needing hospital treatme=
+nt the Government health agency<br>said.=0D<br>=0D<br>Cllr Rob Pocock (Sutt=
+on Vesey, Lab.) who is Birmingham's acting<br>cabinet member for health and=
+ social care put a message on X, formerly<br>known as Twitter, and said: "P=
+ublic Health Alert - measles outbreak<br>intensifying. Now over 180 cases i=
+n Birmingham, and nationwide a<br>National Incident has been declared today=
+ [11 Jan 2024]."=0D<br>=0D<br>Cllr Pocock told BirminghamLive: "There were =
+80 cases before Christmas<br>and before schools went back it was 150. Yeste=
+rday (10 Jan 2024) the<br>number reported was 180. The big issue this week =
+is kids are back to<br>school and we are expecting a surge.=0D<br>=0D<br>"T=
+he scale of the spread will be known by the start of next week. The<br>issu=
+e is tied in with the MMR vaccination rate. There's a geographic<br>and dem=
+ographic problem. There's still stuff going around that if<br>you're Muslim=
+, it's pork and you can't have it. But there are 2<br>versions.=0D<br>=0D<b=
+r>"In some areas of the city the MMR vaccination rates are struggling to<br=
+>get to 80%. The main problems are in Birmingham east. Now it's a<br>watchi=
+ng brief to wait and see if the situation deteriorates. Schools<br>will be =
+doing their very best to keep out people with measles<br>infections. If cas=
+es double and double again, then we have a big, big<br>problem.=0D<br>=0D<b=
+r>"Parents should look for symptons, get their children vaccinated if<br>th=
+ey aren't and those with suspected symptoms don't go to a medical<br>facili=
+ty, call 111, go online or call their GP."=0D<br>=0D<br>How serious is meas=
+les?=0D<br>-----------------------=0D<br>Measles is highly infectious among=
+ those who are not vaccinated, with<br>every person infecting to 10 to 20 o=
+thers, far more than those with<br>COVID infected. The disease spreads when=
+ a person sneezes or coughs<br>and can be easily caught by breathing on tho=
+se droplets, or touching a<br>surface where the droplets are and placing yo=
+ur hand near your mouth<br>or nose. It can survive on surfaces for several =
+hours.=0D<br>=0D<br>For most symptoms will last for 7 to 10 days without ca=
+using further<br>problems. But it also has the potential to cause serious p=
+roblems,<br>like pneumonia, meningitis, blindness and seizures, and can be<=
+br>deadly.=0D<br>=0D<br>Those most at risk from complications are children =
+under the age of 5,<br>children with a poor diet and those with a weakened =
+immune system. And<br>also pregnant women and adults over the age of 20.=0D=
+<br>=0D<br>Children who have not been vaccinated and who have come into con=
+tact<br>with someone with measles can be excluded from school for 21 days -=
+-<br>the potential incubation period of the disease.=0D<br>=0D<br>Dr Neil B=
+ugg, deputy medical director at Birmingham Women's and<br>Children's NHS Fo=
+undation Trust, said: "At our hospital, we see the<br>most severe cases of =
+measles, which can lead to more serious<br>conditions such as pneumonia, an=
+ infection of the lungs, encephalitis,<br>which is swelling of the brain an=
+d other serious complications.=0D<br>=0D<br>"The very best way to be protec=
+ted is to have the MMR vaccine, which<br>is available from your GP. We'd li=
+ke for everyone to be vaccinated<br>against measles if they haven't been al=
+ready, so that they are<br>protected against these rare but potentially ver=
+y serious<br>complications."=0D<br>=0D<br>How do you protect against measle=
+s?=0D<br>-----------------------------------=0D<br>Vaccination is via 2 dos=
+es of MMR which is free and 'very effective<br>against measles' as well as =
+protecting against mumps and rubella. The<br>1st dose is given just after a=
+ child's 1st birthday and the 2nd at 3<br>years 4 months before children go=
+ to school. It is part of the routine<br>childhood vaccine schedule but in =
+some areas the uptake is as low as<br>5%.=0D<br>=0D<br>Dr Naveed Syed, UKHS=
+A West Midlands consultant in health protection,<br>said: "We are seeing ca=
+ses of measles rising every day in the West<br>Midlands. The virus is very =
+infectious and can spread rapidly among<br>communities, such as schools, if=
+ people have not had at least one dose<br>of the MMR vaccine.=0D<br>=0D<br>=
+Uptake of MMR in the region is much lower than the 95% needed to<br>protect=
+ the population, which is giving this serious disease a chance<br>to get a =
+foothold in our communities. That's why it's vital that<br>anyone who hasn'=
+t had 2 doses of the MMR vaccine by the time they<br>started full time scho=
+ol gets immunised as soon as possible.=0D<br>=0D<br>"We have advised school=
+s that anyone who has not had at least one dose<br>of MMR and has been in c=
+ontact with a case of measles could be<br>excluded from school for 21 days =
+-- the time it can take for symptoms<br>to develop, while still passing the=
+ infection to others.=0D<br>=0D<br>"People may not realise how severe measl=
+es can be. While most people<br>will recover completely within a couple of =
+weeks, the virus can cause<br>serious illness -- sometimes this can leave p=
+ermanent disability and<br>it can even cause death. People in certain at-ri=
+sk groups, including<br>babies and small children, pregnant women, and peop=
+le with weakened<br>immunity, are at increased risk of complications if the=
+y catch<br>measles."=0D<br>=0D<br>Anyone who has missed out on the vaccine =
+in childhood can get it at<br>any age. And there is a version with no pork =
+gelatine in its<br>production, available on request for those who are not a=
+llowed pork<br>for religious reasons. Parents are advised to check their ch=
+ild's Red<br>Book to see if they have had the MMR vaccine or to check with =
+their<br>GP.=0D<br>=0D<br>What should you do if you get measles?=0D<br>----=
+----------------------------------=0D<br>Those suffering should rest and dr=
+ink plenty of fluids, take<br>paracetamol or ibuprofen to relieve a high te=
+mperature and use cotton<br>wool soaked in warm water to remove any crusts =
+from eyes. And anyone<br>displaying symptoms must stay away from medical fa=
+cilities.=0D<br>=0D<br>Dr Syed added: "If you think you could have measles,=
+ it's really<br>important to stay away from areas where you could come into=
+ contact<br>with lots of other people -- especially vulnerable patients in<=
+br>hospitals, care homes or other healthcare settings.=0D<br>=0D<br>"If you=
+ have the symptoms of measles, it is essential that you don't<br>just turn =
+up at your GP practice, walk in centre or other healthcare<br>provider. Ins=
+tead, contact your GP or NHS111 for advice. If you do<br>need to visit a he=
+althcare setting, please phone ahead so arrangements<br>can be made to prev=
+ent other people being infected."=0D<br>=0D<br>--=0D<br>Communicated by:=0D=
+<br>ProMED<br><br>[Another report (<a href=3D"https://u19268662.ct.sendgrid=
+.net/ss/c/TLh_csrC34X_iXpbYoMam_z1csz_syPNa4ablBsCHKuULZklYl8Cq8aZ8vs2B39h3=
+SEaSk6WCqZNXbedUuQFkw/435/xAR78W6oQqiU2DOdqHBDYg/h4/j7BNU4MTUWlTEoBjrJ9ufWo=
+2arqI76vCjYcojpQSPJ4">https://www.bbc.com/news/uk-england-67947095</a>) not=
+ed<br>measles cases in West Midlands haven't been this high since the 1990s=
+<br>which is telling, especially when so many countries to include the UK<b=
+r>had nearly or completely eliminated locally acquired measles. It will<br>=
+be interesting to see how quickly the national incident declaration<br>mobi=
+lizes vaccination and education resources and the impact of such<br>measure=
+s versus the entrenched vaccine hesitancy/resistance in many<br>areas. - Mo=
+d.JH<br><br>ProMED map:<br>United Kingdom: <a href=3D"https://u19268662.ct.=
+sendgrid.net/ss/c/sSnCkKCWBvais3EuVAOvgy2WOIX7pp1nXnn4AbwuQ3Z6WbkfhqXYXU-aT=
+MPJ8yThWQvs3pCmQ75xK56z0CUeqQ/435/xAR78W6oQqiU2DOdqHBDYg/h5/ADFwVpF6AqDSseF=
+eIybvNZf7ZfhvxZqBKhLCyGXTkk0">https://promedmail.org/promed-post?place=3D87=
+14349,40</a>]<br><br>[See Also:<br>2023=0D<br>----=0D<br>Measles update (58=
+): UK http://promedmail.org/post/20231108.8713048=0D<br>Measles update (51)=
+: USA (ID), Ecuador, UK<br>http://promedmail.org/post/20230930.8712381=0D<b=
+r>Measles update (47): Romania, UK<br>http://promedmail.org/post/20230909.8=
+712032=0D<br>Measles update (22): Africa, Asia, UK, USA<br>http://promedmai=
+l.org/post/20230508.8709918]<br>...........................................=
+......jh/sb/jh/may/jh<br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3D3CRtNumZTufozO8baMKQRSifOqdjl0FiaishZ7mL1JVoMDAwdT=
+AwML5mqEZKbhuJdch5h3OFNn4KAj7iQogpJA5ID32lchNfydw1f9j-XsTOVqKWeeYN-KNVdE0Zt=
+pCFnEs0tBmRnEmZwsjysYyQ1-nsPoKabd_XcqvrRUQZdmyv7ufO6h9wNLEghVw7GV9puPju2_7U=
+xTroG2_PPtEHYx8oX7yidi75SNTbis7tKO3WJEP2BuqHG0uL1MgHdEFf8haDsDWEFgBt45AqLzF=
+FCIikeNcUNiU15XbXjgVl8OtAkzKNqZA1ND_qi0y7YPwt4nf34Jzpt4S4_ZpnWM1EzxdLLQK2EB=
+eUj_lcC4n9WIAFwbTu2ZYckpauMQtns4D9zIpihBgwUpS-vd68B09UH5Puyre_3ReVIWbcTH2bl=
+AU2_PSSJR81H2dF8_onFlALni7YNncbHgtVbjpXNAO54a9yKMRyV6Et8Ex-Xp5A_xLpsWZ7vNOZ=
+PSHvYXmWq5nmwT_XHdH2TlOyeA5m6Wb4_ErcrFkQ-qRBIHclwORncJSAsCRUuRztMAzf2HOE1Ar=
+9A1Pod7ttW-taedTVXaCGLzQ91oLQwakjAk0TwyRZmC8C7NHJrbJmLdAQzAhnSq75CwDRj7xd0c=
+90rF5VytBovSvRr7tM-03YtbrTWET5UK-rkdAfsWWpyQIbAoqWbIIkMi6era5PgKu5b4wJz--Rf=
+AboiuF4FbekYUL8llnouzehOn27uUif0nzDCnJ9ou60wNh_U0r-mjyKlsfrT6WivxLz31kuq3HY=
+APq8fC4M-qPov2lGueg0k4aGQJ4bheR3BPLUEqamQOO5tAVdo7azfPwrjX4pGHkbdo_kxhCNVA_=
+4cDGePSyin9FaELeBh6aUjIkOq8AhGDBHWJ2k7URhOrZeF9Wo9Y4QKswtDO8Yiwk0-9by2r5Xhn=
+ERRQzNdfTvn6zAy2YkkmhcYcaIH2eKPqbf-XLCzGbnHA1I8xPXXQwHScCdf-FsKPHni93zHBQcG=
+dYGbDSbrCt3r3U21PpIAcM522FPaLG97k6ywfBsPYQLkrAsVORG86U6tp7pszBJk3TJk-4IFPh_=
+CuS4PK5nRHMRSXxZw1Q4lS2HuzzeJribbpjFlmKGzqW3-5hXWSGCNweLVg74GyQnuVqQDDy0Ouw=
+QzsJCpru9MzN_bp9V4a_QYAykH8MNDrnqB-j8rMSdSicm9OCjPG0=3D" target=3D"_blank" =
+class=3D"Unsubscribe--unsubscribePreferences" style=3D"font-family:sans-ser=
+if;text-decoration:none;">Unsubscribe Preferences</a></div><br>############=
+################################################<br>#######################=
+#####################################<br><br><img src=3D"https://u19268662.=
+ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/435/xAR78W6oQqiU2DOdqHBDYg/ho.g=
+if" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"height:1px !imp=
+ortant;width:1px !important;border-width:0 !important;margin-top:0 !importa=
+nt;margin-bottom:0 !important;margin-right:0 !important;margin-left:0 !impo=
+rtant;padding-top:0 !important;padding-bottom:0 !important;padding-right:0 =
+!important;padding-left:0 !important;"/></body>
+</html>
+--09cfdbcbb281c4921593c8deb68792ca936b1ce8507d9491f9b97977591c--

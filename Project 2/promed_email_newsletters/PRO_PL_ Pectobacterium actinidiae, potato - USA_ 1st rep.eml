@@ -1,0 +1,582 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a05:640c:2d08:b0:1ee:5ffb:29ea with SMTP id p8csp919069eiu;
+        Tue, 23 Jan 2024 19:25:14 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IHscQ04dFxGYZkhzaOJegu254W/f3V4RhMc28cjDzsmoerxReZLgOLRwZFC+8PdpsX3BKeU
+X-Received: by 2002:a05:6214:e89:b0:685:de08:b9b3 with SMTP id hf9-20020a0562140e8900b00685de08b9b3mr2232323qvb.12.1706066714626;
+        Tue, 23 Jan 2024 19:25:14 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1706066714; cv=none;
+        d=google.com; s=arc-20160816;
+        b=S0goAZKhw5y61DV1V+9HTvg6xFvpQIYBMLKSXN4IE/NMrG5ndyPY4CUuQh2djntU2z
+         YMFkvM6U18oTib0kKroLGFwnTFh4bN7GAfXeUVg1Xrj8mg3Y6ksE9X71DBtvk/YCGnQZ
+         YbhD6VuQNhwmaxTuILFzYtY1A868FsPVe44NyUtJ5P625ep3B5wbqyx+2VkY810HghPp
+         9Z8uinXT20PcqCiFrXwKOLxZmCnUPWC4Dh52ZmXUsNZDFZC1ZpILzL6kL53T11w3mYLQ
+         FzKjor5OH3GeDgnXPnvxOvlotKrnl4hbxUqSWTFex3OjqmIrb6Qb5HcQWwQt3Tt3ofYh
+         66TQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=7l2+GcmTyN3b+w1xiu8jHQDIfy0P1WJcge/IzaEqGCk=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=D/o74PvsyYRxRit6gY73TfP0NZuvIe3QCzzBHqbbN0fbfJ+aiDVAgq8Db5xQH7DtLe
+         jAH/4WFYqIQi5Hpr6VMVvwA4h4IjO+ZqbtplV4jYzTmBttrgb17a0OX+/9cL1NdU7q0j
+         IdOoViklQerZ1wXEN6Mc9lMe4GBc+pAmltrIL9vlRihpUXYDVE2iXyDipK25VvsqE4uT
+         9Ng03honNrC4PVSgUpmofDdWEWReZLzD1SXzeD89gP8AGW6Ao4SYURDqtgAASafu3QrZ
+         k5hjdsIW3Jg5+70WRZSa2di6f8d/gET/SkY2gM1HA+7La4Y3+9eV3hGx9hioabTM/caR
+         P68g==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=vMXZ1GWU;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=FgyAWk1s;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id o14-20020a0c8c4e000000b00686a0c905e7si2664548qvb.181.2024.01.23.19.25.14
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 23 Jan 2024 19:25:14 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=vMXZ1GWU;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=FgyAWk1s;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=7l2+GcmTyN3b+w1xiu8jHQDIfy0P1WJcge/IzaEqGCk=;
+	b=vMXZ1GWUNk6uvLRBcbWkrwNOQgXhM8YcbFdrmexSkTOdbHmWlCGqqHnusm2rDBJptwIw
+	Av2ordwQ5fGqLI/8Jvgz2IvOKvLk3ZU7WCZDZ0hdXPiyJevBgaGX4SJTh+844g8c9TtxOH
+	Ak1S08HsFgo5upd+xVyQqqM6Zm76Jx5Vs+0CaF/iepMki+i+J7T6w9knvBb/8p+Qq96u1d
+	+f5lM9PGNXay/p8j1R5HZxS+9LNWNzTLyqvydUTCDcHScUjzUWldLD1OfjmgcdLGN4plXR
+	SI1+l+vTIT/H73mp87pexAHhmsv4FzuPpq8ep/UF2ZFqznhNcnDeYDaL//XOXuiA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=7l2+GcmTyN3b+w1xiu8jHQDIfy0P1WJcge/IzaEqGCk=;
+	b=FgyAWk1s/zWBQEuDo77z+9L0P8it1DPAfwGxu9/9MhZW2T32n06l9kPodGUHH2H3is6o
+	nSAvIK527JM5eyRZqbvmPSdiveFVRap3nUGatt47+wo8MhGnQprGbV7kY+iENJ0+m+R8PM
+	qIiL++K0D0r+LbUf64xL48dDLO9DjnBqw=
+Received: by filterdrecv-75cb66975-ln4xz with SMTP id filterdrecv-75cb66975-ln4xz-1-65B0831A-1B
+        2024-01-24 03:25:14.166832971 +0000 UTC m=+8498604.184446360
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-14 (SG) with HTTP
+	id nKY_gqtPQR6W2lwbkh2FEw
+	Wed, 24 Jan 2024 03:25:14.160 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=461f8d5fa3c333c373191f4811548cb7f2cbb61645b297d3a105640f11f1
+Date: Wed, 24 Jan 2024 03:25:14 +0000 (UTC)
+From: ProMED Plant <promed-plant@isid.org>
+Mime-Version: 1.0
+Message-ID: <nKY_gqtPQR6W2lwbkh2FEw@geopod-ismtpd-14>
+Subject: PRO/PL> Pectobacterium actinidiae, potato - USA: 1st rep
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbKvCl8ppyUAMiP5RVsxU4e1GHJWpgR0=2FEyVHH+VxGv?=
+ =?us-ascii?Q?sYgTuP1ZM9GsQENQXhPK7j+mYyIUyRd=2FEmRFQFO?=
+ =?us-ascii?Q?qrzGnhoXUZZbb8mfDewvmhBLrXF1VCM9t70abUC?=
+ =?us-ascii?Q?PdfCALLNrR=2FA=2FkbK0OJwvjLF54ccFw1kCqmIrm4?=
+ =?us-ascii?Q?wkZorbpMxykaH28CuBeXALOGbHkYrllw1KOriH6?=
+ =?us-ascii?Q?ayyQ4KOhc=2FINn1t4eAr=2FTHxE49nR7xsvszqphO?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUiOnpMxoBKbd1xQrqZppL?=
+ =?us-ascii?Q?dKiuYt7wnmzIsT0HuW86cBZJ0aCLoLnEX62pE0d?=
+ =?us-ascii?Q?F=2F3Qa=2FG9FrkbZhqmpJRh97pV8pWANoV6x=2FZeDPu?=
+ =?us-ascii?Q?TqQjVkI6r1YE9bNjiy6tAbX2MIJ8MJvG7ofO1OP?=
+ =?us-ascii?Q?sLRgroUsSx8=2F9E4kuSGODBPEG+U=2Fr6C3Umnj0Fw?=
+ =?us-ascii?Q?8zTWy1hsolofRbM6s69OUsFj4umoifoTQz63+6G?=
+ =?us-ascii?Q?Rkjwy6gnhG+fSNNxw1v61G1557qE5FGqQttFvEm?=
+ =?us-ascii?Q?y+cMrQ0clK=2FwMUi9bwon3lbhIfpwLW9N5TDouFy?=
+ =?us-ascii?Q?05X6jYvhepJ2fW4+8InX=2Fd3bDSuwVV7nXC6HT+Q?=
+ =?us-ascii?Q?98btqMUd7tCu74IIvChoWO4sIQFH1lp3yhM8RJS?=
+ =?us-ascii?Q?bNDKq=2Fb2O7KBPcBWejgwYT2=2FEsM8szb0RyWxTjM?=
+ =?us-ascii?Q?FFsdfsxcKuD87+fJNVyWNYS6Ld4OlaN=2F8gPNKK9?=
+ =?us-ascii?Q?K97TP2L+166abG533b273mTyGEO6LdAuzP2IwoT?=
+ =?us-ascii?Q?ro+vQ78+LIvrJ9XRESE2XXKBCZeWZlgDD6CRdg6?=
+ =?us-ascii?Q?dkWEHlKIrlYdT3J5j0hfxdhRXVe4atUHJ6xFxmB?=
+ =?us-ascii?Q?w24ejdRw8pK8FPrJVLQx04Zh6fwp=2FUwg=2FcDQLPw?=
+ =?us-ascii?Q?zL2P3rvdLh8E9DuKtY0ks7ZWkKncp8WJADfqVQ8?=
+ =?us-ascii?Q?WG0oseHnHYorWuc00D=2FBWQzoGoD9iBBhYE5xcww?=
+ =?us-ascii?Q?0Lbpep5daY3pv7jhlkyFCqRVC+GILNvvXa8EudK?=
+ =?us-ascii?Q?KJrDpbsP8EgC1L+3TybrkokNYQ=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2EUp3ZPvFJT?=
+ =?us-ascii?Q?EDVm6-sGahDL-Ampn5oyH2DqAbbotbVoMBoMDAw?=
+ =?us-ascii?Q?dTAwMG8eaRQ7aPcYuzFHQ2J1LPwuOU=5FSrChApHB?=
+ =?us-ascii?Q?3KgKD-vh4rbQSa3wihN1vvbxLx2j83X3Dgo1S4E?=
+ =?us-ascii?Q?xl1mBPHcW7Xsjk6jwzaUG9w9gT4Hn0tkXZv2-Zd?=
+ =?us-ascii?Q?6KQdpiNVJAUL58D5A=3D=3D=2Ep2TsXZ0fHwbGu7wVDrF?=
+ =?us-ascii?Q?uP8P=5FDuCe06j=5Fs1NvOSzQmgRoMDAwdTAwMEKZLn?=
+ =?us-ascii?Q?Vhw-XJCSlw74wBrD=5FRu2QHFkyoyj3CNUjabP9u1?=
+ =?us-ascii?Q?YlhW-2xrbV0unpeoQBWkJ4xJ3xWFHmM7SXBwNil?=
+ =?us-ascii?Q?W4GgE5uzF8IVeP-xuPtzlbY=5FZQ3pMxpNWu21znF?=
+ =?us-ascii?Q?XtEgtJKzzYU47Cc74QOqeczDGyaB1d3-295dvZx?=
+ =?us-ascii?Q?3HPoBD9hC-Cv6OEuBxuqYUxocjxImArtgSeoai2?=
+ =?us-ascii?Q?PUBDApjn2F8Ssi34Ms--=5F5Yyod5lHbWHedjPuMN?=
+ =?us-ascii?Q?KBTMeXsZyXevwN3UhU4u4KovAOju28idsOylJtT?=
+ =?us-ascii?Q?jdtzJWZ34sUq=5FuBvBvPRWgAbinbC1VEuY38jnqs?=
+ =?us-ascii?Q?8p6nKV9BNt54CqRzHQoPUaTPc8PeIAOLJ9GKE1P?=
+ =?us-ascii?Q?sFC8dvCyLX=5FCmgeOhh20egKhqwW1Li26n7erb0i?=
+ =?us-ascii?Q?LXyKL0uSt9xz8hu6STKXwysnTaAksFMgoLYmhBQ?=
+ =?us-ascii?Q?PxbRxsI2GU5pOfkj2t0PHMt9TKgaxBPXIkpcEGt?=
+ =?us-ascii?Q?azsllHP3lcAuke4mMYlSCtki0ZOEp=5FBA3O8VW0L?=
+ =?us-ascii?Q?KN3DsdJuLw0zm648STRrXURTLaPYFqUyqqAPd1d?=
+ =?us-ascii?Q?ySWi4Kod=5FK1PqTRVtojzGHQC=5FtO4Muw2gXtY1ii?=
+ =?us-ascii?Q?cZG7ylbUyVBcnRnhdiRhylkg4G-SzDQm10MiASV?=
+ =?us-ascii?Q?xkBOe4IgwY-rhU0TrxUm2m1wll=5Fx6TYTcZ7uYG8?=
+ =?us-ascii?Q?M6-Ht0fn8viKmjUtAYrJx8s6r72hS3K07jUkIB5?=
+ =?us-ascii?Q?5SuhuVU4QveeoSenFSxm9Z7IEWqxBs-3Vq7AtzB?=
+ =?us-ascii?Q?yBwvOXfPEGlFX3IXnzGsjScHl53l2XnfwZoS-Q0?=
+ =?us-ascii?Q?1zVbFzQy3YESZXhtsLfq0FIsYYzL7XmLNhV3ahw?=
+ =?us-ascii?Q?Wa1rJrY=5Fwb-vhS2QEBalfT550VX7mIGW8eH56Zs?=
+ =?us-ascii?Q?rcY5CEzPEFrCl-wXRhkOVaamomJZtM8Q1n-ZPdq?=
+ =?us-ascii?Q?Xq7BJPaBX3WGsc1KO5AFGSLersBnt1oCtlx1bMe?=
+ =?us-ascii?Q?ipVf2j1EFIQakdZF1Y3yWSgyeI0diolcZIGVNMl?=
+ =?us-ascii?Q?gHgS0Qo-no5ATuzqcfTrfh-=3E?=
+
+--461f8d5fa3c333c373191f4811548cb7f2cbb61645b297d3a105640f11f1
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=us-ascii
+Mime-Version: 1.0
+
+PECTOBACTERIUM ACTINIDIAE, POTATO - USA: FIRST REPORT
+*****************************************************
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+Date: Wed 17 Jan 2024
+Source: Pennsylvania State University (PSU) [summ. Mod.DHA, edited]
+<https://www.psu.edu/news/agricultural-sciences/story/new-potato-threatenin=
+g-pathogens-reported-first-time-pennsylvania-us/>
+
+
+Potato stems or tubers with symptoms of black leg or soft rot were
+collected from 26 potato fields in Pennsylvania. In 456 samples,
+bacteria infecting the plants were identified -- including
+_Pectobacterium actinidiae_, _P. polonicum_, _P. polaris_, _P.
+punjabense_, _P. parmentieri_ and _P. versatile_ -- as new to the
+state, as well as _P. carotovorum_, _P. brasiliense_ and _Dickeya
+dianthicola_ previously recorded in the area. This is the 1st time _P.
+actinidiae_ was reported in the USA.
+
+A significant number of new _Pectobacterium_ and _Dickeya_ species
+have emerged during the past few years and have led to significant
+yield losses of potato crops in the country. These outbreaks have
+increased monitoring for pathogens both already known to be present
+and not yet reported in the country. Of particular concern is _Dickeya
+solani_, which was previously associated with severe disease outbreaks
+in Europe. Surveillance results could also aid in a better
+understanding of disease epidemiology and development of new
+management practices.
+
+[Byline: Katie Bohn]
+
+--
+Communicated by:
+ProMED
+
+[Blackleg and soft rot of potato can be caused by several species and
+subspecies of bacteria in the genera _Pectobacterium_ and _Dickeya_
+(see previous ProMED posts in the archives). Symptoms may include stem
+rot leading to leaf yellowing, wilting and stunting of plants, as well
+as tuber rot, which usually starts at the stem end of the tuber. The
+bacteria are spread with contaminated plant or other material
+(including seed tubers, farm machinery), by mechanical means and with
+water. Disease management may include seed tuber handling and cultural
+techniques, use of clean planting material and phytosanitation to
+prevent introduction of the pathogens from external sources. Low
+levels of seed tuber infection pose a major risk of pathogen spread.
+Certification schemes are a vital part of disease management for these
+pathogens.
+
+Population shifts of the blackleg pathogens are being observed in many
+areas. Possible reasons for these population shifts are thought to be
+climate changes and selection pressure due to intensified agriculture.
+The pathogens can also affect other crops, causing, for example, a
+foot rot disease in rice as well as stem and root rot of sweet
+potato.
+
+Taxonomy of Pectobacteriacea is still being refined, with new species
+being delineated. For example, _P. actinidiae_ was first described in
+2012 as _P. carotovorum_ subsp. _actinidiae_; it has been reported
+causing summer canker of kiwifruit (_Actinidia_ spp.) (cankers on
+trunks & twigs, leaf blight, die back of vines), as opposed to
+bacterial canker due to _Pseudomonas syringae_ pv. _actinidiae_ which
+infects earlier in the season. The bacterium has been identified on
+kiwifruit in several countries in Asia, as well as causing cankers on
+pear trees (_Pyrus_ spp.) in Brazil (see links below). While _P.
+carotovorum_ has a wide host range and is known to affect potato,
+there seem to be no records so far specifically for _P. actinidiae_ on
+that host. This may be due to less detailed characterisation and
+taxonomy of _P. carotovorum_ isolates from potato previously, but the
+record on potato may also indicate a new host for _P. actinidiae_.=20
+
+Pictures
+Symptoms of blackleg & soft rot on potato shoots:
+<http://vegetablemdonline.ppath.cornell.edu/Images/Impt_Diseases/85B_Pot_Bl=
+Lg.jpg>
+(stem),
+<https://l450v.alamy.com/450v/bjpyw5/bacterial-soft-rot-pectobacterium-caro=
+tovorum-secondary-infection-bjpyw5.jpg>
+and
+<https://c8.alamy.com/comp/X91WHK/bacterial-soft-rot-pectobacterium-carotov=
+orum-lesion-around-puncture-wound-on-potato-tuber-surface-X91WHK.jpg>
+Blackleg, tuber symptoms:
+<http://www.agroatlas.ru/content/diseases/Solani/Solani_Erwinia_carotovora_=
+subsp_atroseptica/Solani_Erwinia_carotovora_subsp_atroseptica.jpg>
+
+Links
+PSU, source publication:
+<https://doi.org/10.1016/j.syapm.2023.126476>
+Additional news stories:
+<https://www.sciencedaily.com/releases/2024/01/240118122124.htm> and
+<https://www.thenewstribune.com/news/nation-world/national/article284447980=
+.html>
+Information on potato blackleg and soft rot:
+<http://www.ipm.ucdavis.edu/PMG/r607100111.html> and
+<http://www.agroatlas.ru/en/content/diseases/Solani/Solani_Erwinia_carotovo=
+ra_subsp_atroseptica/>
+Information on summer canker of kiwifruit and _P. actinidiae_:
+<https://kvh.org.nz/assets/documents/Biosecurity-tab/Offshore-Risks/Summer-=
+Canker-fact-sheet-March-2023.pdf>
+<https://doi.org/10.1094/PDIS-01-22-0157-RE>,
+<https://doi.org/10.1007/s42161-019-00257-y> and
+<https://doi.org/10.1094/PDIS-03-17-0383-PDN>
+_P. actinidiae_ on pear:
+<https://doi.org/10.1007/s10658-020-02123-5>
+Identification and characterisation of _P. actinidiae_:
+<https://doi.org/10.1080/01140671.2012.707129>,
+<https://doi.org/10.1094/PHYTO-07-20-0287-R> and
+<https://doi.org/10.17660/ActaHortic.2015.1096.47> (diagnosis),
+Bacterial taxonomy via:
+<http://www.uniprot.org/taxonomy/>
+- Mod.DHA
+
+ProMED map:
+United States: <https://promedmail.org/promed-post?place=3D8714421,106>]
+
+[See Also:
+2023
+----
+Blackleg & leaf blight, potato
+http://promedmail.org/post/20230104.8707611
+2022
+----
+Undiagnosed disease, onion - Taiwan
+http://promedmail.org/post/20220203.8701233
+2020
+----
+Bacterial stalk rot, maize - India: (JK)
+http://promedmail.org/post/20200910.7767419
+2019
+----
+Dickeya blackleg, potato - USA: (HI)
+http://promedmail.org/post/20191220.6850191
+2017
+----
+Dickeya blackleg, potato - Australia: 1st rep (WA), alert
+http://promedmail.org/post/20170710.5162819
+Dickeya blackleg, potato - Morocco: 1st rep
+http://promedmail.org/post/20170531.5073294
+2016
+----
+Dickeya blackleg, potato - North America: emerging disease
+http://promedmail.org/post/20160509.4211696
+Blackleg, seed potatoes - Netherlands: species shift
+http://promedmail.org/post/20160128.3974722
+2013
+----
+Blackleg, potato - China: (GD)
+http://promedmail.org/post/20130719.1833922
+2010
+----
+Dickeya, potato & sweetpotato - UK, China
+http://promedmail.org/post/20101112.4106
+2009
+----
+Dickeya solani blackleg, potato: new pathogen
+http://promedmail.org/post/20091207.4162
+Bacterial diseases, maize, sorghum - USA: (NE)
+http://promedmail.org/post/20090713.2500
+and additional items on the pathogens in the archives]
+.................................................dha/may/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3DVqYB24iby9Y_TAtcqY_EWtBBIqJrrAY6nfOCFJxa5floMDAwdTAwMMbz0Ec=
+r9yGWDFRQQvZh8OW6JnhDe1j_aD9dnyD734W_j8Fri51puorL5atP6YAlzaASegDGCY5_L52bXx=
+4ZYAYn37dFDZ9oWAK9KDah7jTIxIKtZha-_DKt17B0RGyt3YDBY6eKCFkixOpywttOFrA1eAewq=
+1lzjehpSo-xC6cF_Dt5JmAbIdVnDileASowieqpFasSL3VEelnUOJuKoCPa64MREMMaNPkh7xf9=
+Pld_isBMyZ_gBQz0hJGJJByVfrGjwD1a3sOQ-jo_0RPm4W_kcGj5wOnRhfdoVxwOmBZ7fYFHmoQ=
+qMJIfwQwxj-B1pzKRxanZ55kZl9KduB0t6gbc_AGeNzxIsWNLorX41VWX3fQOYZ64MMs5xDuszk=
+HEgv8avh546Tgc5zcY6nFSKT_oeu1kZODyh43eGM6Cy7FpHQgJHhgbIC3s3-t7k8gJh8jHzzXAv=
+QNbOodzzrqG52ARUIxm-9bFw-x7adxS7CoqbLuKmCxsqBaZVNgjrtkEU7xaiKdh72lCUV63kVot=
+etW6BXpSkidWxYnYJl3etM5hH2boKDjWmO3hAJCTrVyu4PEB3X4O-h5mWwnY7F6WfhPCFLefUVG=
+f-OHksjLCGNUR67SiDpQxbKemyKFQbzR8XgmdJ2MbIXW7qPcqHHLkNRXalGMQLLtLliqRU6sZmo=
+Tl5qxtgxhRDcglzZleRvuPMPLkNLQZs62sHUI2imfiPaH1eYQ0hTBORSPpRTAcYQ7IelmLHeeZS=
+wWEvS1D1sLa_8NLYeUFgFMpOz2wvC24rTkaVINsagWm54_FCylPFG5NggRZH3aZ6ktL67fN35HV=
+0xtd_MIc7RHNVr8LGdRImClHKjbVehldhP200qgk0HD7BULxJP619hjVsVRKQoCSr4U51JLRuCf=
+KNdR1_S9xSRj2HWExePsQk6-07Ji_Oo_R7STH1s-KHXok4x-qAD9uYV7pZ9wPYnzuPKAcr7Jel4=
+SzVh5TRUY8uiGh4wsNKgOJinFky5Cl2SIySGpSnZkaTP9w5C4tPRi3hCM_Lk-MamTLYwU0mzcSc=
+C-qGL6vnzTrvksa5zC4yw20czYp8TUCFpukRqWhZkWeDK0fCAQ3Cs653ZZo-6msMyX5Bt9ch-aj=
+Kw7fcY6k14Gak1Fthi0AAtBD_bu5VRpT1AnZmUH-m18=3D )
+############################################################
+############################################################
+
+--461f8d5fa3c333c373191f4811548cb7f2cbb61645b297d3a105640f11f1
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>PECTOBACTERIUM ACTINIDIAE, POTATO - USA: FIRST REPORT<br>************=
+*****************************************<br>A ProMED-mail post<br><a href=
+=3D"https://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisIijpefK5PNj=
+W-mL-YZGnfgDOxU1G3gjwnPSi2Tfv3HA/439/1xti1qgyRdC-H0fZFcAtOg/h0/vMxEPGna1HuQ=
+cLhigqxXTrnI5Csx2isc1UvnqYna3t0">http://www.promedmail.org</a><br>ProMED-ma=
+il is a program of the<br>International Society for Infectious Diseases<br>=
+<a href=3D"https://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisCT5t=
+pD4Upm3qyMCbcYSQvc/439/1xti1qgyRdC-H0fZFcAtOg/h1/ieNmX7jB9969tjFn8o7tXVBycs=
+V8godeG4BTJUVDUGA">http://www.isid.org</a><br><br>Date: Wed 17 Jan 2024=0D<=
+br>Source: Pennsylvania State University (PSU) [summ. Mod.DHA, edited]=0D<b=
+r><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/TLh_csrC34X_iXpbYoMam4l=
+pxsfW6wHmVlIaC6qOhreQbU_hnAAivEhIUeRmUO4uGgJJVwvj3T6vYOEnYxA1rDTZDnAt69hTxS=
+rRCrOgqf1Lvex3kv1NUHJOnPw2_uBqLexHLLJbhTXA2bFLMsgDjFOyBwGoVaGTszuAqZWDo_piC=
+mZp1cqlKqDYanwlm8Mx/439/1xti1qgyRdC-H0fZFcAtOg/h2/IwsAbl0uY8i7BTBYEQgoY6ybu=
+PkV17TAisQYiTyTSu8">https://www.psu.edu/news/agricultural-sciences/story/ne=
+w-potato-threatening-pathogens-reported-first-time-pennsylvania-us/</a>=0D<=
+br>=0D<br>=0D<br>Potato stems or tubers with symptoms of black leg or soft =
+rot were<br>collected from 26 potato fields in Pennsylvania. In 456 samples=
+,<br>bacteria infecting the plants were identified -- including<br>_Pectoba=
+cterium actinidiae_, _P. polonicum_, _P. polaris_, _P.<br>punjabense_, _P. =
+parmentieri_ and _P. versatile_ -- as new to the<br>state, as well as _P. c=
+arotovorum_, _P. brasiliense_ and _Dickeya<br>dianthicola_ previously recor=
+ded in the area. This is the 1st time _P.<br>actinidiae_ was reported in th=
+e USA.=0D<br>=0D<br>A significant number of new _Pectobacterium_ and _Dicke=
+ya_ species<br>have emerged during the past few years and have led to signi=
+ficant<br>yield losses of potato crops in the country. These outbreaks have=
+<br>increased monitoring for pathogens both already known to be present<br>=
+and not yet reported in the country. Of particular concern is _Dickeya<br>s=
+olani_, which was previously associated with severe disease outbreaks<br>in=
+ Europe. Surveillance results could also aid in a better<br>understanding o=
+f disease epidemiology and development of new<br>management practices.=0D<b=
+r>=0D<br>[Byline: Katie Bohn]=0D<br>=0D<br>--=0D<br>Communicated by:=0D<br>=
+ProMED<br><br>[Blackleg and soft rot of potato can be caused by several spe=
+cies and<br>subspecies of bacteria in the genera _Pectobacterium_ and _Dick=
+eya_<br>(see previous ProMED posts in the archives). Symptoms may include s=
+tem<br>rot leading to leaf yellowing, wilting and stunting of plants, as we=
+ll<br>as tuber rot, which usually starts at the stem end of the tuber. The<=
+br>bacteria are spread with contaminated plant or other material<br>(includ=
+ing seed tubers, farm machinery), by mechanical means and with<br>water. Di=
+sease management may include seed tuber handling and cultural<br>techniques=
+, use of clean planting material and phytosanitation to<br>prevent introduc=
+tion of the pathogens from external sources. Low<br>levels of seed tuber in=
+fection pose a major risk of pathogen spread.<br>Certification schemes are =
+a vital part of disease management for these<br>pathogens.=0D<br>=0D<br>Pop=
+ulation shifts of the blackleg pathogens are being observed in many<br>area=
+s. Possible reasons for these population shifts are thought to be<br>climat=
+e changes and selection pressure due to intensified agriculture.<br>The pat=
+hogens can also affect other crops, causing, for example, a<br>foot rot dis=
+ease in rice as well as stem and root rot of sweet<br>potato.=0D<br>=0D<br>=
+Taxonomy of Pectobacteriacea is still being refined, with new species<br>be=
+ing delineated. For example, _P. actinidiae_ was first described in<br>2012=
+ as _P. carotovorum_ subsp. _actinidiae_; it has been reported<br>causing s=
+ummer canker of kiwifruit (_Actinidia_ spp.) (cankers on<br>trunks & twigs,=
+ leaf blight, die back of vines), as opposed to<br>bacterial canker due to =
+_Pseudomonas syringae_ pv. _actinidiae_ which<br>infects earlier in the sea=
+son. The bacterium has been identified on<br>kiwifruit in several countries=
+ in Asia, as well as causing cankers on<br>pear trees (_Pyrus_ spp.) in Bra=
+zil (see links below). While _P.<br>carotovorum_ has a wide host range and =
+is known to affect potato,<br>there seem to be no records so far specifical=
+ly for _P. actinidiae_ on<br>that host. This may be due to less detailed ch=
+aracterisation and<br>taxonomy of _P. carotovorum_ isolates from potato pre=
+viously, but the<br>record on potato may also indicate a new host for _P. a=
+ctinidiae_.=20=0D<br>=0D<br>Pictures=0D<br>Symptoms of blackleg & soft rot =
+on potato shoots:=0D<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/Y=
+gtrL1O2mLZlWUdubnFnqs5vqX7-a5SrquB8dle9E1rfG0prnkqf2oKnpQKQvhss6g41WtCtkehN=
+4IH5mDyJVkaPhceBxnwAR-LO2IVz0oh7iRc6ueJm1aXeVIUP1139/439/1xti1qgyRdC-H0fZFc=
+AtOg/h3/qG5z9RsLF7MA5DJWpAdZk-EtnmnzvttP5BhoRpL2Ch0">http://vegetablemdonli=
+ne.ppath.cornell.edu/Images/Impt_Diseases/85B_Pot_BlLg.jpg</a><br>(stem),=0D=
+<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/kpB05XP4S3C5he0czVXZ-=
+_X3n08spsyo6Ukyc_U0BrjQYF6Zs7n1bVuo_DrBJ0LGN5SpqqLocHcFjWaZJXfX9FUv2MMNat5M=
+zIKpxGcPbQ2yuhdby3RWfIMVGDsV827p-xpC78sZhuMLYQxJhG9G8Om-4qtYI6uopGy6726nKwc=
+/439/1xti1qgyRdC-H0fZFcAtOg/h4/Fl93YuGsnt0b0uGeaIxdQk8RG4EhkFkIMQqEPW9mNAM"=
+>https://l450v.alamy.com/450v/bjpyw5/bacterial-soft-rot-pectobacterium-caro=
+tovorum-secondary-infection-bjpyw5.jpg</a><br>and=0D<br><a href=3D"https://=
+u19268662.ct.sendgrid.net/ss/c/jf2l8IGiVWEHUuN2KNp3mU7d4tDKjriRaxqaNbew9i2u=
+E6-lzhqkz1hrQIOpsScw2W1lGp41iVXmU1Gc99nW4lpIZ5fHwrW1gm7lOo5EtkZxc8kYT94NT89=
+hDv2EEHO6pQh9Gb9X8sYlbGdSHRviqzqfrYU-qCumewH2OquzpC9Qa5DIYJLbfrqtR0vdFy8WzH=
+KtLNlhAG5oK9nB5mxkLg/439/1xti1qgyRdC-H0fZFcAtOg/h5/Uo0PTIzHFKTaHbwUOM1W2-2g=
+ShdDYykLkDU2AnpGKwk">https://c8.alamy.com/comp/X91WHK/bacterial-soft-rot-pe=
+ctobacterium-carotovorum-lesion-around-puncture-wound-on-potato-tuber-surfa=
+ce-X91WHK.jpg</a>=0D<br>Blackleg, tuber symptoms:=0D<br><a href=3D"https://=
+u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisLczBjXNu-FPQTnkNPTmaBAP=
+6F92KJior-GwsqPIowqieCcTkFzaMiGHZrXA5DgZ-O_1cu-qLwjHOOexTsxF1fX-h6YPaFRmd9k=
+0-QgX5_kKkkZSUrPRLjHw5CDP4QfSADVOS66XUh_yzjUdn9lSHrlZo-UeyaukiVxo_qQPERi206=
+Hzg8pD9M1123_SiPDWhA/439/1xti1qgyRdC-H0fZFcAtOg/h6/2P_wSLr3W-3M3sRImAAfx0Tf=
+0fNcMfvyx9WVW_dze9E">http://www.agroatlas.ru/content/diseases/Solani/Solani=
+_Erwinia_carotovora_subsp_atroseptica/Solani_Erwinia_carotovora_subsp_atros=
+eptica.jpg</a>=0D<br>=0D<br>Links=0D<br>PSU, source publication:=0D<br><a h=
+ref=3D"https://u19268662.ct.sendgrid.net/ss/c/TUIVIg4PCmni5tP3Q8lzBSXYOoMiX=
+IAUFd9WuHu8CbWaa_azxrlVJn6UYX3_CsUvFVgUDyWjB244dgzEJUThFQ/439/1xti1qgyRdC-H=
+0fZFcAtOg/h7/IdIp3l_JHbcSbItgHUEbm7FjqQWxqwDN3WmtSD00gAY">https://doi.org/1=
+0.1016/j.syapm.2023.126476</a>=0D<br>Additional news stories:=0D<br><a href=
+=3D"https://u19268662.ct.sendgrid.net/ss/c/TLh_csrC34X_iXpbYoMamxOvpU7_40Hu=
+vW0QHVImpDw2xy-O_aqGq9PURnx8Anl0LxOP5pfebv8QNJ9L5BtR9xiCE4D0J7SB1iMMwlfEWoE=
+/439/1xti1qgyRdC-H0fZFcAtOg/h8/eiKxoHsQ30v9sbrdqwFlEHtn0ysdwyVXwP52rZlPQoU"=
+>https://www.sciencedaily.com/releases/2024/01/240118122124.htm</a> and=0D<=
+br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/TLh_csrC34X_iXpbYoMam5=
+dC6OHC-Yk9fu2NxmmO5WvOMn08SgXWJ6owPElXweMBjelOYlhZvF6SkoneCpQcr0yKCx4BiFX6o=
+FxKi9DFIq82B5a3u3P-lkj1Fc7J8_41/439/1xti1qgyRdC-H0fZFcAtOg/h9/UqKE7Bzy1eM6b=
+C6NllkXipqN7zyShZrzsw9WMrHEix0">https://www.thenewstribune.com/news/nation-=
+world/national/article284447980.html</a>=0D<br>Information on potato blackl=
+eg and soft rot:=0D<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/ws=
+cE2ng5fl6JrPIt48tisOlswkSSuFOhax96oGP7zZr1rV11z-CUjY6wsCQwUqyD-_xpvcWkDKqgF=
+HMYtXd-BA/439/1xti1qgyRdC-H0fZFcAtOg/h10/dbnyTF6EK6DOS9LKyJHjizVFj4kbgkVQN0=
+yPEAtSqZg">http://www.ipm.ucdavis.edu/PMG/r607100111.html</a> and=0D<br><a =
+href=3D"https://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisGQf9wwk=
+u331s9ZDSCfkpFQx7exsdCGSC68AJEn3-RWx2WkbhQdgXEFwhMNw-S_A3ybIYkn31MIZQYwkWz2=
+5qOhX1zVVklFJWjB_cKYE6dX4-PKwhiY4cbvlhst-HD_3Gw/439/1xti1qgyRdC-H0fZFcAtOg/=
+h11/Ew7RbWz4FAfvU63n5l3oav8kXSZ1WRMsnYiNVoYySJ8">http://www.agroatlas.ru/en=
+/content/diseases/Solani/Solani_Erwinia_carotovora_subsp_atroseptica/</a>=0D=
+<br>Information on summer canker of kiwifruit and _P. actinidiae_:=0D<br><a=
+ href=3D"https://u19268662.ct.sendgrid.net/ss/c/ikk07a0JaMPGNg3J3K9OO4ARb_B=
+TZ_OYDRPxS2OqyOijsSFUXxuGoQSwfgeDUK3O1unN1EjMb6f-J03G7wkapaXu32U3atyKc-1GLR=
+dv5bXVJeGZrXQXPXG-fOYKzy4eCSON99vB3gblWB3Z-dYioeIoYujh8Y-JF1pX-OVxaC8/439/1=
+xti1qgyRdC-H0fZFcAtOg/h12/SDXbYj0gBY-TYt80p4Yu20G75xP2SKu9Kr6mAlnNgHg">http=
+s://kvh.org.nz/assets/documents/Biosecurity-tab/Offshore-Risks/Summer-Canke=
+r-fact-sheet-March-2023.pdf</a>=0D<br><a href=3D"https://u19268662.ct.sendg=
+rid.net/ss/c/TUIVIg4PCmni5tP3Q8lzBW46q31nd8Rm-739c1VvNYgqNBZpjudfjVVCv_IXbB=
+Alua4J7A2deuXzWf5s0u1gWg/439/1xti1qgyRdC-H0fZFcAtOg/h13/fIWT8s0HitMJEGgyv5-=
+ebPH3XV8tcjdaeBPhuLD6R9E">https://doi.org/10.1094/PDIS-01-22-0157-RE</a>,=0D=
+<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/TUIVIg4PCmni5tP3Q8lzB=
+W0s4G9P9yxxty3gPK0fpxDhSwn3BqEPNUku-lH84C6kbpT6u8-uqJHSjQNUMDZEnA/439/1xti1=
+qgyRdC-H0fZFcAtOg/h14/7gxRbvyJM2xCuJK-U_j1VvQqN6dYLzyv6ZE_rafAGZ4">https://=
+doi.org/10.1007/s42161-019-00257-y</a> and=0D<br><a href=3D"https://u192686=
+62.ct.sendgrid.net/ss/c/TUIVIg4PCmni5tP3Q8lzBW46q31nd8Rm-739c1VvNYitQ5tTD4q=
+hJdFW4XJ9oCpAw_NOclOvGQIqTIJCALtwIA/439/1xti1qgyRdC-H0fZFcAtOg/h15/WzVQvWJ4=
+Cm3jr-JS-z156h8s5lkmXbTuTaoFYQ4a44A">https://doi.org/10.1094/PDIS-03-17-038=
+3-PDN</a>=0D<br>_P. actinidiae_ on pear:=0D<br><a href=3D"https://u19268662=
+.ct.sendgrid.net/ss/c/TUIVIg4PCmni5tP3Q8lzBW0s4G9P9yxxty3gPK0fpxBEDfksRJ4gN=
+GoBHSo2H4VqUTVw4sFH2Ncyr_L6x-bxAQ/439/1xti1qgyRdC-H0fZFcAtOg/h16/QXfiy0Tqb_=
+-RYT2e65W3FRf7WllJrifv8CEcOYg17eU">https://doi.org/10.1007/s10658-020-02123=
+-5</a>=0D<br>Identification and characterisation of _P. actinidiae_:=0D<br>=
+<a href=3D"https://u19268662.ct.sendgrid.net/ss/c/TUIVIg4PCmni5tP3Q8lzBdGAs=
+GQUvQ0VOc7wC1cAxapt3nahO6obUAa5pDuOHe4WbjaDdfJ6klbfdRNtMn75zw/439/1xti1qgyR=
+dC-H0fZFcAtOg/h17/ySvkEfrpwMdQA_OZ2jydp2w9hG37fjgs-0jiptbm-ak">https://doi.=
+org/10.1080/01140671.2012.707129</a>,=0D<br><a href=3D"https://u19268662.ct=
+.sendgrid.net/ss/c/TUIVIg4PCmni5tP3Q8lzBW46q31nd8Rm-739c1VvNYhbh6wCWU8vnoek=
+6_bQX1PF4UbqIIsnPBG5Bk3h9J6wAw/439/1xti1qgyRdC-H0fZFcAtOg/h18/OeLPWjmMhGbs6=
+87UFdPUek_qwx7bQDWudGIHPOfyvgg">https://doi.org/10.1094/PHYTO-07-20-0287-R<=
+/a> and=0D<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/TUIVIg4PCmn=
+i5tP3Q8lzBflCD0xs8K1p60Auy7lAGG8Kakzdc5ZELtAf3hGASmUAMGe0wAOCwmhzvNRQVp36Ug=
+/439/1xti1qgyRdC-H0fZFcAtOg/h19/DNAE0ep_qYB4nRESykr7qGyE_zFYijUb2QMVNTDFJ5w=
+">https://doi.org/10.17660/ActaHortic.2015.1096.47</a> (diagnosis),=0D<br>B=
+acterial taxonomy via:=0D<br><a href=3D"https://u19268662.ct.sendgrid.net/s=
+s/c/wscE2ng5fl6JrPIt48tisDceDkHyu5KTdy4DLBqvQo6FyJKVo4SzMJpczvCEUBgq/439/1x=
+ti1qgyRdC-H0fZFcAtOg/h20/Xr6Gvrt1c9O02T0Qa32lBIAXdokdv9cA-WcA_eBiny8">http:=
+//www.uniprot.org/taxonomy/</a>=0D<br>- Mod.DHA<br><br>ProMED map:<br>Unite=
+d States: <a href=3D"https://u19268662.ct.sendgrid.net/ss/c/sSnCkKCWBvais3E=
+uVAOvgy2WOIX7pp1nXnn4AbwuQ3Z6WbkfhqXYXU-aTMPJ8yTh4FSX78KuLsraMHpiMROhNw/439=
+/1xti1qgyRdC-H0fZFcAtOg/h21/cRA7GBBid9s2-zr2fvo5PdyV14sOcHDRybAtZlW7_rQ">ht=
+tps://promedmail.org/promed-post?place=3D8714421,106</a>]<br><br>[See Also:=
+<br>2023=0D<br>----=0D<br>Blackleg & leaf blight, potato<br>http://promedma=
+il.org/post/20230104.8707611=0D<br>2022=0D<br>----=0D<br>Undiagnosed diseas=
+e, onion - Taiwan<br>http://promedmail.org/post/20220203.8701233=0D<br>2020=0D=
+<br>----=0D<br>Bacterial stalk rot, maize - India: (JK)<br>http://promedmai=
+l.org/post/20200910.7767419=0D<br>2019=0D<br>----=0D<br>Dickeya blackleg, p=
+otato - USA: (HI)<br>http://promedmail.org/post/20191220.6850191=0D<br>2017=0D=
+<br>----=0D<br>Dickeya blackleg, potato - Australia: 1st rep (WA), alert<br=
+>http://promedmail.org/post/20170710.5162819=0D<br>Dickeya blackleg, potato=
+ - Morocco: 1st rep<br>http://promedmail.org/post/20170531.5073294=0D<br>20=
+16=0D<br>----=0D<br>Dickeya blackleg, potato - North America: emerging dise=
+ase<br>http://promedmail.org/post/20160509.4211696=0D<br>Blackleg, seed pot=
+atoes - Netherlands: species shift<br>http://promedmail.org/post/20160128.3=
+974722=0D<br>2013=0D<br>----=0D<br>Blackleg, potato - China: (GD)<br>http:/=
+/promedmail.org/post/20130719.1833922=0D<br>2010=0D<br>----=0D<br>Dickeya, =
+potato & sweetpotato - UK, China<br>http://promedmail.org/post/20101112.410=
+6=0D<br>2009=0D<br>----=0D<br>Dickeya solani blackleg, potato: new pathogen=
+<br>http://promedmail.org/post/20091207.4162=0D<br>Bacterial diseases, maiz=
+e, sorghum - USA: (NE)<br>http://promedmail.org/post/20090713.2500=0D<br>an=
+d additional items on the pathogens in the archives]<br>...................=
+..............................dha/may/jh<br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3DVqYB24iby9Y_TAtcqY_EWtBBIqJrrAY6nfOCFJxa5floMDAwdT=
+AwMMbz0Ecr9yGWDFRQQvZh8OW6JnhDe1j_aD9dnyD734W_j8Fri51puorL5atP6YAlzaASegDGC=
+Y5_L52bXx4ZYAYn37dFDZ9oWAK9KDah7jTIxIKtZha-_DKt17B0RGyt3YDBY6eKCFkixOpywttO=
+FrA1eAewq1lzjehpSo-xC6cF_Dt5JmAbIdVnDileASowieqpFasSL3VEelnUOJuKoCPa64MREMM=
+aNPkh7xf9Pld_isBMyZ_gBQz0hJGJJByVfrGjwD1a3sOQ-jo_0RPm4W_kcGj5wOnRhfdoVxwOmB=
+Z7fYFHmoQqMJIfwQwxj-B1pzKRxanZ55kZl9KduB0t6gbc_AGeNzxIsWNLorX41VWX3fQOYZ64M=
+Ms5xDuszkHEgv8avh546Tgc5zcY6nFSKT_oeu1kZODyh43eGM6Cy7FpHQgJHhgbIC3s3-t7k8gJ=
+h8jHzzXAvQNbOodzzrqG52ARUIxm-9bFw-x7adxS7CoqbLuKmCxsqBaZVNgjrtkEU7xaiKdh72l=
+CUV63kVotetW6BXpSkidWxYnYJl3etM5hH2boKDjWmO3hAJCTrVyu4PEB3X4O-h5mWwnY7F6Wfh=
+PCFLefUVGf-OHksjLCGNUR67SiDpQxbKemyKFQbzR8XgmdJ2MbIXW7qPcqHHLkNRXalGMQLLtLl=
+iqRU6sZmoTl5qxtgxhRDcglzZleRvuPMPLkNLQZs62sHUI2imfiPaH1eYQ0hTBORSPpRTAcYQ7I=
+elmLHeeZSwWEvS1D1sLa_8NLYeUFgFMpOz2wvC24rTkaVINsagWm54_FCylPFG5NggRZH3aZ6kt=
+L67fN35HV0xtd_MIc7RHNVr8LGdRImClHKjbVehldhP200qgk0HD7BULxJP619hjVsVRKQoCSr4=
+U51JLRuCfKNdR1_S9xSRj2HWExePsQk6-07Ji_Oo_R7STH1s-KHXok4x-qAD9uYV7pZ9wPYnzuP=
+KAcr7Jel4SzVh5TRUY8uiGh4wsNKgOJinFky5Cl2SIySGpSnZkaTP9w5C4tPRi3hCM_Lk-MamTL=
+YwU0mzcScC-qGL6vnzTrvksa5zC4yw20czYp8TUCFpukRqWhZkWeDK0fCAQ3Cs653ZZo-6msMyX=
+5Bt9ch-ajKw7fcY6k14Gak1Fthi0AAtBD_bu5VRpT1AnZmUH-m18=3D" target=3D"_blank" =
+class=3D"Unsubscribe--unsubscribePreferences" style=3D"font-family:sans-ser=
+if;text-decoration:none;">Unsubscribe Preferences</a></div><br>############=
+################################################<br>#######################=
+#####################################<br><br><img src=3D"https://u19268662.=
+ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/439/1xti1qgyRdC-H0fZFcAtOg/ho.g=
+if" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"height:1px !imp=
+ortant;width:1px !important;border-width:0 !important;margin-top:0 !importa=
+nt;margin-bottom:0 !important;margin-right:0 !important;margin-left:0 !impo=
+rtant;padding-top:0 !important;padding-bottom:0 !important;padding-right:0 =
+!important;padding-left:0 !important;"/></body>
+</html>
+--461f8d5fa3c333c373191f4811548cb7f2cbb61645b297d3a105640f11f1--

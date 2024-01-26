@@ -1,0 +1,655 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a98:c004:0:b0:1eb:e128:bbe3 with SMTP id l4csp2559198eic;
+        Fri, 12 Jan 2024 18:00:30 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IEcP2twkgHiFpXC/2KcS/AwRZz/xWKwFp4xebnYs8hUrV8A4dPfAAtAk5UmMgoryELlo6/+
+X-Received: by 2002:a05:622a:550:b0:429:a25d:1d90 with SMTP id m16-20020a05622a055000b00429a25d1d90mr3026630qtx.60.1705111230127;
+        Fri, 12 Jan 2024 18:00:30 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1705111230; cv=none;
+        d=google.com; s=arc-20160816;
+        b=Sx8c52OFx6E21iZjwdH75qYV+5VvhV3vZiqUERlnMc1+umHBhIElT6mdiJaAkkTPyP
+         4NyJ1Y2l7yk4+AKACbr231YrLU0n2+fgoTaq4nDVutQ0M9CevgzaIYsYqLUZNV+A/flJ
+         2ZQflKhkAg+kXjYELDIm+mACKwjN0vjbuGDvf9X/epYnIHzRIizVqa3vTf11rsMIch9w
+         znk3QVvvAUa4Q/bCa3Y5izkfyvmstRNgTmSUjMs8fposKiEiSz/pJtSS9Ivn73sqNYTz
+         MKM/W6AyNmq+woSjGyyc9/UaTnvrp8AIDO5xDGRSoEV4sDiHbZmeqU+7YsGby9MdYqxn
+         Os2g==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=baJ69ZWv8meSwkoLWzxxnlLxfgxnxRAAmT8MV5UHND0=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=FSjhVjRbZFJTU59wTTD0gjLA0KQGfxUbhnPvhYbS1EMqYrAaVJiPxEW3zjKA9YMxfL
+         7ywgap5qR4TPWUP7lpnK/7VK5kXtSgs7PewQdBuC9RpslwVPLqNQeiV+mKE2H+iQTcrs
+         DPZdqZcYn+rU4HaeNt6S3u8cXW3moxT8xnNT4dVNSL1+/vXxgzoJKzI+CYYSZqA3kSih
+         ssHb7BYRcMo9wmzleusuvVaZIqvvi/OKLUTwQGNOetKb3jMBcpHzsZU5UQ7LWpN/PyLB
+         3CMUb7rwvYoXsDzDrOh87rEWRsK3bokVx5r/8v2ktFvijhiUvM66oWJ3JMjwU107s5Bg
+         WgRA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=DvzFGOvE;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b="Y/54zqt8";
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id a7-20020a05622a02c700b00429da3fc3a2si382983qtx.732.2024.01.12.18.00.29
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 12 Jan 2024 18:00:30 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=DvzFGOvE;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b="Y/54zqt8";
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=baJ69ZWv8meSwkoLWzxxnlLxfgxnxRAAmT8MV5UHND0=;
+	b=DvzFGOvEBsZYInhoMgfaX8RGTSw6HRwmEyxiulcJgwFPs3xMZk+SYQGW7CX/HM3hXKyl
+	/9gZ68MpgJA1AJ6+5ZZHsTyZypS/20f3vqPZBEX8tEbcEd+DZSCQjffnTwSic7yOKniulM
+	6uWPs8GOz685OGBAaFktNlBA/zdEV6FOkTFtoL+5R1ww44+S4DDfodALzgak6MoEsGqJJ6
+	RNV2QJdjwIC5DYhwjYgzXIjVepYlvyM0rCLLuS0MYvJR18USH4jv9RG4RsYCh9S/BUG4DU
+	UjPaqbqpKYAdB2U3qSvyEXbPvgz4VepTYTark5suIwW0aXgcSVWBPFVi+BPvGkTw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=baJ69ZWv8meSwkoLWzxxnlLxfgxnxRAAmT8MV5UHND0=;
+	b=Y/54zqt8mefnOggsuAgKWqbCkcPbYuEU2MDOJOYfmBzLJ8m3rpRvItb6EQern5NmcwVZ
+	IB/y9xzGjCXLIhEmx901j3drcnD+icbEcOj0dSj/34PynDK3rn6Ol5HOGN1M1SjKhe8CIs
+	WBuDsxlOnBnraQx3pDSDtp0Iu4aElCBH4=
+Received: by filterdrecv-54fb999b49-699q5 with SMTP id filterdrecv-54fb999b49-699q5-1-65A1EEBC-D6
+        2024-01-13 02:00:28.532832584 +0000 UTC m=+7543126.747224607
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-17 (SG) with HTTP
+	id S-2sRQlvToWpTF_bqJmrBA
+	Sat, 13 Jan 2024 02:00:28.484 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=77bd453756df9f4938bee6574c35d525a827929ad128872e94a933fad688
+Date: Sat, 13 Jan 2024 02:00:29 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <S-2sRQlvToWpTF_bqJmrBA@geopod-ismtpd-17>
+Subject: PRO/AH/EDR> Salmonellosis, multiple serotypes - Italy: horse meat,
+ human, 2021
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iB4XT6+vi0rZHweZDwiZchY18EBoDbWmS0YKEBy?=
+ =?us-ascii?Q?AwZ5PFxM1T1jYSX9RuGtAnyCKVz483t5yNCcX55?=
+ =?us-ascii?Q?PVUtMxoKaBCCNjWQgzLWS=2FfN591mS=2FW46BZfdwq?=
+ =?us-ascii?Q?PLGFTBfvULyk15nBg8BTcxybPGa1eOm63eD4g7x?=
+ =?us-ascii?Q?inUyCmC7jjSX46z61qHgguLcWuHy=2FiivTXRGE0?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUiShGf=2FO8XJWpH34Od4Nd?=
+ =?us-ascii?Q?fxXa6jil96uRcJkF+N+LeVnO1tx80ddOyoyOo=2Fc?=
+ =?us-ascii?Q?Brxcl3ERAm0cOY743=2FFH59DWiSf5OzXORh1DLKt?=
+ =?us-ascii?Q?hb1NMKty3PsA5ju0ZzxCrq1WQuZSEQf=2FJlWtgqv?=
+ =?us-ascii?Q?cZmsyCHlNUZsD2NH0QYZco9h7vvMhDiFQcPCJc7?=
+ =?us-ascii?Q?+E+7aSSaIVbcXjnz9UwzXRcRopRlmbOsCPbukN0?=
+ =?us-ascii?Q?2Cd=2FyehnMOniMMDRAYKyB+6M8jPnEHPA=2FTIBuEt?=
+ =?us-ascii?Q?1BjWpB41qCfTpOSyoEcrGQgWashZwJaTgbt48V9?=
+ =?us-ascii?Q?+DTBBOA2WLMQCpTKBDwSvtGvcOujBEVTO5buH6Q?=
+ =?us-ascii?Q?1xsIJC4hhzGsKHRZ5NMdW3HpeJNOmHba5sCh9B8?=
+ =?us-ascii?Q?5eENKA4gt7XBD6ZvZ15pper06YnwpgoNIt2Jinh?=
+ =?us-ascii?Q?=2FU+kxHVsJ0ZdSO1x3As5Fdgv2TjanTMAvWS1G3N?=
+ =?us-ascii?Q?v23RPpkcNR1jMcDTZBQfBPu00TdMaj=2FX6c74cAN?=
+ =?us-ascii?Q?2NqedV709HjxueSyE=2FYZhDHXIsp4xipX+G=2F4ELm?=
+ =?us-ascii?Q?1fbtI0KfhUhlE6G0wD15fVC2eOYDqCKsx4N55A5?=
+ =?us-ascii?Q?3CRXY=2Fh=2FcUi1gHdYphIY1Zrjxb7e6QsP8jo0LPT?=
+ =?us-ascii?Q?61=2Fu3H4QHlFQ+J+YutIlHWQWlMi5Zoe0WjpoBRq?=
+ =?us-ascii?Q?Y198nu=2FeVl7kUMWad3RgbWxxct=2FTZM7fSFgow93?=
+ =?us-ascii?Q?sJhT7DR2Z7E29KUrb1JmAqTwz+TftMNzp+dT63J?=
+ =?us-ascii?Q?glPa+1oLAjUW+Umvn1Ckgz5Dmw=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2Ek5BXiHyOX?=
+ =?us-ascii?Q?zTc7w-c9ztmK8yZ-12K2TPfd8m6c4g07IFoMDAw?=
+ =?us-ascii?Q?dTAwMI-cNPr8tu3YldZlTtgvfe49Zdec4H=5FgROg?=
+ =?us-ascii?Q?tMrDeQh3qVbZzSD99vqjAc4um=5FXlmLKx7NAXnHi?=
+ =?us-ascii?Q?1HxJsT-cB4RoaQJ7K7xQ8VjFiGYHOCO5BUgUHVF?=
+ =?us-ascii?Q?e4Y=5FmZ1UlRIgMzfEQ=3D=3D=2EKPTfBVtAp4TwPk-Nl9M?=
+ =?us-ascii?Q?ZM=5F4Qz1h=5FKZypbcws1EN4jh1oMDAwdTAwMDI6v1?=
+ =?us-ascii?Q?O8nNDuU-8wI2PnMy2KF57s8iu7W5QEB=5FrjMHhM7?=
+ =?us-ascii?Q?5LME=5FYj2lf=5FPuxS9Bjqj6yNari=5Foj0F-yB7z4v1?=
+ =?us-ascii?Q?SyjUYZslMKA1sJnj4OeXSQjlCvvs5ZCb8ZOfGel?=
+ =?us-ascii?Q?8G29eRMJTaKgL7TwoNLRcnFyfEzvPp417MHCKVV?=
+ =?us-ascii?Q?EmJdGzq93IOsIy-KtX29xmNp7uNOkLjIX0HAlK8?=
+ =?us-ascii?Q?hEVUzB2JkVGmwQHaLFwwY3pIYHZ2acOwX7dUOci?=
+ =?us-ascii?Q?KnhIbiTnDug8RRetbTEDpG5Z7nLQx7YUOiRlRF=5F?=
+ =?us-ascii?Q?zH0hyX7b9SZb2Dy3K5DwmPRxvITv2SqUQll5I1m?=
+ =?us-ascii?Q?=5F=5Ft7FAfeRCW2aIAjic2Vwruw6MmPj6tW=5FjSIwI2?=
+ =?us-ascii?Q?LUp6LqKc66OAJb-dOo8EiFRVgAUgDx-JZh50Y5q?=
+ =?us-ascii?Q?=5FnuiWmLxeoNfOGsksLhyGf=5FBSZToAaDt6Z4kixF?=
+ =?us-ascii?Q?bEhjaCfTneu2XSgJsfHdV670qWwQN0rKfZL9IBG?=
+ =?us-ascii?Q?wwxbmSFvhcjpdNfMaU7QC5NUAdYifl-8FMXg8Px?=
+ =?us-ascii?Q?ISyuX9cRpzrwJTCvafqJrZmGEWF-jjw0wtsEYbz?=
+ =?us-ascii?Q?p9w83dchMFIRtzlUaPrrCxQjUYn9f544DpCWNBV?=
+ =?us-ascii?Q?CWJ-IAnNAiD42osEIaEJpt06Fd0hXmT1BboOMgs?=
+ =?us-ascii?Q?1cyTFxg54UgScR26AxBOVxpFFHhQO214qldVKEF?=
+ =?us-ascii?Q?xWbomuBKPm4-6BoJomxzANUU2OUgRNBPYXfsFRn?=
+ =?us-ascii?Q?Jg6TXfuPBBPc7LC-Afy-CSFVP4Syd12vvUnAP77?=
+ =?us-ascii?Q?5H-jXaXw9TciBcWLB2pj3W-GgzWBRWBUU9GkWaC?=
+ =?us-ascii?Q?30qCZ83v-u=5FtKLc7yyMoqN7Acds0rCHrBFAwSPL?=
+ =?us-ascii?Q?M0uJxBQlRH9lY84uQf=5FMxRmCZSIanymfcpq5AFI?=
+ =?us-ascii?Q?BlyMp=5FiMnmI4keSGWFuXQxHoYZVg8-jGk6E3oGM?=
+ =?us-ascii?Q?0V5yQ9aycsLPufcnwD7GkTXdUoZTnAxh3iBix92?=
+ =?us-ascii?Q?VdAn7J6GQZKZz-xhJJT84h=5Fq5zWAGOrhmwE7zCO?=
+ =?us-ascii?Q?95rRtNYUZFvbrzJlLivoY-T2O8scpxv-otV-y59?=
+ =?us-ascii?Q?7wScJw=3D=3D=3E?=
+
+--77bd453756df9f4938bee6574c35d525a827929ad128872e94a933fad688
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=us-ascii
+Mime-Version: 1.0
+
+SALMONELLOSIS, MULTIPLE SEROTYPES - ITALY: HORSE MEAT, HUMAN, 2021
+******************************************************************
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+Date: Thu 11 Jan 2024
+Source: Food Safety News [edited]
+<https://www.foodsafetynews.com/2024/01/scientists-uncover-salmonella-outbr=
+eak-linked-to-horse-meat/>
+
+
+A study of _Salmonella_ in horses in Italy has uncovered an outbreak
+that affected 17 people. From June to November 2021, 146 horses, 5
+donkeys, and 1 mule were tested for _Salmonella_ in cecal contents and
+through carcass swabs from one slaughterhouse. _Salmonella_ was
+detected 3 times in 152 of the cecal contents, while all 152 carcass
+samples were negative.
+
+According to the study published in the International Journal of Food
+Microbiology, _Salmonella_ Enteritidis, Typhimurium, and Stanleyville
+were identified. Countries of horse origin were France, Italy, Poland,
+Hungary, Slovenia, and Germany. They were slaughtered twice a week but
+arrived at the slaughterhouse daily.
+
+_Salmonella_ was detected in June 2021 and late September 2021. A
+total of 9 horses were tested in June [2021], and 2 cecal samples were
+positive for _Salmonella_ Enteritidis and Stanleyville. These animals
+came from Hungary and Italy. In September 2021, 7 were tested, and the
+positive one, from Italy, carried _Salmonella_ Typhimurium.
+
+Considering the consumption of ground horse meat called "pesto di
+cavallo" and dried and smoked strips named "sfilacci di cavallo" in
+northern Italy, researchers investigated the link between horse meat
+and human salmonellosis in this area. In July 2021, whole genome
+sequencing-based surveillance in Emilia-Romagna signaled a potential
+outbreak of _Salmonella_ Enteritidis, including 9 isolates across
+Piacenza, Parma, and Reggio-Emilia provinces. The first isolate came
+from May 2021, and the last came from August. In June 2021, a genomic
+match was found between the _Salmonella_ Enteritidis isolated from
+horse cecal content and an outbreak of 17 cases in Emilia-Romagna.
+
+Epidemiological investigations highlighted some cases of reported
+consumption of horse meat. They traced different batches of the meat,
+released weeks apart from each other, to the slaughter site in the
+study. Five of 8 cases reported eating uncooked horse meat. Horse meat
+associated with cases and traced to the slaughterhouse was produced in
+May and June 2021, while the horse carrying the outbreak strain of
+_Salmonella_ Enteritidis was slaughtered weeks later, in June 2021.
+This means meat from that animal could not have infected those cases.
+
+Scientists said the outbreak strain was likely already present in the
+slaughterhouse environment before the horse arrived from Hungary and
+that environmental persistence could have caused contamination. The
+environment could have been contaminated before June [2021] and have
+affected meat produced in early May. Supporting this is the finding
+that the last batch of horse meat associated with cases was from a
+horse from France and slaughtered 2 weeks before the Hungarian animal
+in June 2021. It appears unlikely that 2 horses from different
+countries slaughtered 2 weeks apart carried the same WGS type of
+_Salmonella_, said researchers.
+
+An official visit to the slaughter plant found manure on the floor,
+dirty troughs, and pests in the lairage area. Improvement of hygiene
+measures at the lairage and along the slaughter line was demanded. The
+company also increased the number of carcasses routinely tested for
+surface contamination by _Salmonella_. Scientists said despite
+findings showing a low prevalence, _Salmonella_ in horse meat can
+represent a consumer risk.
+
+"A key lesson from the study concerns the need to maintain a high
+level of hygiene during the entire slaughtering process. Hygiene at
+lairage (an accommodation for farm animals) is crucial to avoid
+cross-contamination between animals and the meat. For this reason,
+lairage conditions should be critically evaluated, and biosecurity
+measures must be properly implemented."
+
+[Byline: Joe Whitworth]
+
+--
+Communicated by:
+ProMED
+
+[The citation and abstract of the study discussed above follow:
+Bolzoni L, Conter M, Lamperti L, et al: _Salmonella_ in horses at
+slaughter and public health effects in Italy. Int J Food Microbiol.
+2024; 408: 110429;
+<https://www.sciencedirect.com/science/article/pii/S0168160523003458#s0065>
+
+Abstract
+--------
+"The study assessed the role of equids at slaughter as faecal carriers
+of _Salmonella enterica_ and the occurrence of contaminated equid
+carcasses during the slaughter process in Northern Italy
+(Emilia-Romagna Region). From June to November 2021, 152 equids (146
+horses, 5 donkeys and 1 mule) were tested for _Salmonella_ both in
+caecal contents and through carcass swabs. Antimicrobial resistance
+(AMR) of recovered strains was tested against 15 antimicrobials.
+_Salmonella_ was detected in 3 of 152 of the caecal contents (2.0%),
+while all carcass samples were negative. _S. enterica_ serovars
+Enteriditis, Typhimurium and Stanleyville were identified. The only
+AMR isolate was _S._ Typhimurium with AMR profile AmCStxT.
+
+"Considering the consumption of raw horse meat (i.e., minced raw meat
+named 'pesto di cavallo' and dried and smoked strips named 'sfilacci
+di cavallo') in different areas of Northern Italy, we also
+investigated the possible link between horse meat eating and
+salmonellosis cases in the human population in the same area.
+Specifically, we compared the _Salmonella_ strains collected during
+the study with those routinely processed in the laboratory
+surveillance system for human salmonellosis in Emilia-Romagna (a
+region with about 4.5 million inhabitants). The comparison was based
+on whole genome sequencing data through core genome multi-locus
+sequence typing (cgMLST) used in routine surveillance. A genomic match
+in cgMLST was found between the strain of _S. enterica_ serovar
+Enteritidis isolated from a horse caecal content and an enduring
+outbreak of 17 human cases in Emilia-Romagna during the study period.
+The consequent epidemiological investigation highlighted that a number
+of cases with known food history reported the consumption of horse
+meat and traced different batches of the consumed meat, released weeks
+apart from each other, to the slaughter investigated in the study. The
+results of the epidemiological investigation suggested the role of
+horses in the _S. enterica_ serovar Enteritidis outbreak affecting raw
+horse meat consumers.
+
+"This study shows that, despite the low prevalence on equid carcasses,
+_S. enterica_ in horse meat can represent a risk to consumers. From
+the perspective of the slaughter activities, this highlights the need
+to maintain a high level of hygiene during the entire process,
+starting from the hygiene at lairage up to the slaughtering phase and
+dressing of carcasses."
+
+Although not often considered as a source of salmonellosis, equines
+can certainly be on the menu of zoonoses for this pathogen as shown by
+the following report:
+
+Jay-Russell MT, Madigan JE, Bengson Y, et al: _Salmonella_ Oranienburg
+isolated from horses, wild turkeys, and an edible home garden
+fertilized with raw horse manure. Zoonoses Public Health. 2014;
+61(1):64-71;
+<https://onlinelibrary.wiley.com/doi/full/10.1111/zph.12043>
+
+Summary
+------
+"In July 2010, a horse from a rural farm (Farm A) in coastal Northern
+California was diagnosed with _Salmonella_ Oranienburg infection
+following referral to a veterinary hospital for colic surgery.
+Environmental sampling to identify potential sources and persistence
+of _Salmonella_ on the farm was conducted from August 2010 to March
+2011. _Salmonella_ was cultured using standard enrichment and
+selective plating. Pure colonies were confirmed by biochemical
+analysis, serotyped, and compared by pulsed-field gel electrophoresis
+(PFGE) analysis. A total of 204 clinical and environmental samples at
+Farm A were analyzed, and _Salmonella_ spp. were isolated from 6 of 8
+(75%) horses, an asymptomatic pet dog, 2 of 7 (28.6%) water samples
+from horse troughs, 9 of 20 (45%) manure storage pile composites, 16
+of 71 (22.5%) wild turkey feces, and 4 of 39 (10.3%) soil samples from
+the family's edible home garden. Well water and garden vegetable
+samples and horse fecal samples from a neighboring ranch were
+negative. _S._ Oranienburg with a PFGE pattern indistinguishable from
+the horse clinical strain was found in all positive sample types on
+Farm A. The investigation illustrates the potential for widespread
+dissemination of _Salmonella_ in a farm environment following equine
+infections. We speculate that a recent surge in the wild turkey
+population on the property could have introduced _S._ Oranienburg into
+the herd, although we cannot rule out the possibility wild turkeys
+were exposed on the farm or to other potential sources of
+_Salmonella_. Findings from the investigation indicated that raw horse
+manure applied as fertilizer was the most likely source of garden soil
+contamination. Viable _S._ Oranienburg persisted in garden soil for an
+estimated 210 days, which exceeds the 120-day standard between
+application and harvest currently required by the National Organic
+Program. The study underscores the need to educate the public about
+potential food safety hazards associated with using raw animal manure
+to fertilize edible home gardens."
+- Mod.LL
+
+ProMED map:
+Italy: <https://promedmail.org/promed-post?place=3D8714194,75>]
+
+[See Also:
+2023
+----
+Salmonellosis, st Strathcona - EU, UK, USA suspected tomato source
+http://promedmail.org/post/20231122.8713275
+Salmonellosis, st Enteritidis - EU, UK, USA chicken products, alert
+http://promedmail.org/post/20231028.8712873
+Salmonellosis, st Senftenberg - Europe, USA ECDC, tomato source
+http://promedmail.org/post/20230728.8711431
+Salmonellosis - Moldova: (CU)
+http://promedmail.org/post/20230711.8711085
+Salmonellosis, st Ball - Europe, USA: unknown source, 2021-2022
+http://promedmail.org/post/20230625.8710760
+Salmonellosis, st Virchow - Europe, USA: chicken kebabs, ECDC,
+2017-2023 http://promedmail.org/post/20230401.8709275
+Salmonellosis, st Hartford - USA: unknown source, RFI
+http://promedmail.org/post/20230316.8708968
+Salmonellosis - USA: oyster, ex Florida, alert, recall
+http://promedmail.org/post/20230303.8708715
+Salmonellosis, st Enteritidis - Sweden (04): (KA) poultry, eggs
+recall, control http://promedmail.org/post/20230222.8708526
+Salmonellosis, st Enteritidis - Sweden (03): eggs
+http://promedmail.org/post/20230216.8708433
+Salmonellosis, st Typhimurium - Ireland: chicken susp
+http://promedmail.org/post/20230131.8708081
+Salmonellosis, st Enteritidis - Sweden (02): eggs
+http://promedmail.org/post/20230128.8708032
+Salmonellosis, st Enteritidis - Slovenia: steak tartare
+http://promedmail.org/post/20230128.8708031
+Salmonellosis - India: (KL) restaurant, raw egg mayonnaise
+http://promedmail.org/post/20230124.8707955
+Salmonellosis, st Vitkin & IIIb 61:z52:z53 - USA: bearded dragon
+http://promedmail.org/post/20230122.8707906
+2020
+----
+Salmonellosis - France: horse meat, multiple serotypes
+http://promedmail.org/post/20201015.7864777
+2018
+----
+Salmonellosis, st Enteritidis - Belgium, France: chilled horse meat,
+RFI http://promedmail.org/post/20180414.5745948]
+.................................................ll/rd/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3DEpOjiwccmf4CAwSyN-Bi1_amkhj47xgcoNxcG_huMSNoMDAwdTAwMBhc9AE=
+X5-6qSHHRCIz9BLlrU9DwHGsJty0ruKONjgXGjrNdENBywcpjJlxtKUZHGDX949hNW5P0OPb6Pn=
+mSA7pPCK5AFSqKU3xoBSePw44ZBoSlSjXIo_1tOAuTa7PJFKTB7vjhO3Ek8aWF9H1Rf3N7FLmBk=
+KpWPbno1jQVQN3kJWX51tKKXy-W-y2SmkAQ5DL0i8801TD_soflOEDRqMz5Rq8xjGl67Gk2Frax=
+iCGZRbuZ6f7FEuTjCGX-7veQSlLLYUSiEuDvmxVQR72qH3D1_xaUTafbIdCgwR3RaE7a2tAvRO0=
+imZRtHG-JxerrORYsZswtpQJS7PiO9_vtaCxbwqRxU3aH4TdX08oC0wlPT-7v2OJphop7-gAZPq=
+nakpKA_fJZ42fzTrlx354rB2XSwcxfLI51avoFapgpzN__GFEy_Fxp_xDAMe79cKamDUhPrT8_E=
+ZuchiioSYo08UX3o0RLifgKgbDE4dq6BrsUHMY_0hawqG5WP7gqIXuw4DxpHIWCgY9sJzgs_1Pq=
+TvhKgfJuSucnTN2w4oDwbgJXwNCL9iYXG5o2PDGq079oGseT-RQPv_ehwQnB2YuJTNTB7isCgnU=
+R1GY_-X30P6gydCYT1AlJnAZInjmhAusWd6t8FqPQO0UNkQeMs9K0fK2wwWZsNUZYixJqdA9pRu=
+7bifGpliFtzTLpbMfySeRD6I5ueP1WJ76_wigGO-BsbVeS9HdEWVAUO1nZw11rwNtljaLHzkyQ1=
+_LJoeqbCEv74AS5KZcz5AubOjQy4OMsRkg7Ribc7oRD12BD4zOAOShzY03ZG1VebBUelahpBtNp=
+5hehNRq8nrEh1iTcUw3tkTFpXR5WRhZ_YZz3_51HOxrDwCftFr7CNcb56X6TZjGx9Phhq_CfwvB=
+76a7c3nD38P2a44yabl1IDGszp_S7SVaZiPuFDikucsk7zrF6ujv-bcHlDSU2DQt47VqI7dHsfH=
+0srlkSmr30Kygy30gFclteWZUWTjGaSEpwzachtf4IGyG378k2_mog3Ku-LrV8bRMkp3-ZMbxoT=
+JNI5faaoU9Fiv3ZJLkJQsrHSh6U-Ok0o4uiCYvubemglj0RONjJdStoogYqZF09DE07h6Jq4Y2i=
+_QK45e8BAHllLE9srXG4beACqe3vx9e3X6kQOnwi8BhBM-_U12QMGyC3q_LXGOD1 )
+############################################################
+############################################################
+
+--77bd453756df9f4938bee6574c35d525a827929ad128872e94a933fad688
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>SALMONELLOSIS, MULTIPLE SEROTYPES - ITALY: HORSE MEAT, HUMAN, 2021<br=
+>******************************************************************<br>A Pr=
+oMED-mail post<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/wscE2ng=
+5fl6JrPIt48tisIijpefK5PNjW-mL-YZGnfgDOxU1G3gjwnPSi2Tfv3HA/42y/_aoGov2fRJm4I=
+SVunIVBeg/h0/QO-CbY-FdkFlsbGpLk76rExds5W6PP6jSSQq46LVvfk">http://www.promed=
+mail.org</a><br>ProMED-mail is a program of the<br>International Society fo=
+r Infectious Diseases<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/=
+wscE2ng5fl6JrPIt48tisCT5tpD4Upm3qyMCbcYSQvc/42y/_aoGov2fRJm4ISVunIVBeg/h1/P=
+U43lJMSZdWZVzeU37levOSyjzfrTJblnMrHzyB3B60">http://www.isid.org</a><br><br>=
+Date: Thu 11 Jan 2024=0D<br>Source: Food Safety News [edited]=0D<br><a href=
+=3D"https://u19268662.ct.sendgrid.net/ss/c/TLh_csrC34X_iXpbYoMam7_KE_k7g5yU=
+f5I4VNdPS-T_6JB91Zbf89Zvx7V85j_KImW_CNV5L_K3ONJ9N_n5nAY4F903KBEOz1QabB0nbRv=
+dyQN67ioAMAoqURkqhOTg12XjZIvPF8-HqNA_aMOyOg/42y/_aoGov2fRJm4ISVunIVBeg/h2/2=
+nLa5MJMowmYQaLAnndqZ3rz9H-YmEvKO9A9Z8m85Ik">https://www.foodsafetynews.com/=
+2024/01/scientists-uncover-salmonella-outbreak-linked-to-horse-meat/</a>=0D=
+<br>=0D<br>=0D<br>A study of _Salmonella_ in horses in Italy has uncovered =
+an outbreak<br>that affected 17 people. From June to November 2021, 146 hor=
+ses, 5<br>donkeys, and 1 mule were tested for _Salmonella_ in cecal content=
+s and<br>through carcass swabs from one slaughterhouse. _Salmonella_ was<br=
+>detected 3 times in 152 of the cecal contents, while all 152 carcass<br>sa=
+mples were negative.=0D<br>=0D<br>According to the study published in the I=
+nternational Journal of Food<br>Microbiology, _Salmonella_ Enteritidis, Typ=
+himurium, and Stanleyville<br>were identified. Countries of horse origin we=
+re France, Italy, Poland,<br>Hungary, Slovenia, and Germany. They were slau=
+ghtered twice a week but<br>arrived at the slaughterhouse daily.=0D<br>=0D<=
+br>_Salmonella_ was detected in June 2021 and late September 2021. A<br>tot=
+al of 9 horses were tested in June [2021], and 2 cecal samples were<br>posi=
+tive for _Salmonella_ Enteritidis and Stanleyville. These animals<br>came f=
+rom Hungary and Italy. In September 2021, 7 were tested, and the<br>positiv=
+e one, from Italy, carried _Salmonella_ Typhimurium.=0D<br>=0D<br>Consideri=
+ng the consumption of ground horse meat called "pesto di<br>cavallo" and dr=
+ied and smoked strips named "sfilacci di cavallo" in<br>northern Italy, res=
+earchers investigated the link between horse meat<br>and human salmonellosi=
+s in this area. In July 2021, whole genome<br>sequencing-based surveillance=
+ in Emilia-Romagna signaled a potential<br>outbreak of _Salmonella_ Enterit=
+idis, including 9 isolates across<br>Piacenza, Parma, and Reggio-Emilia pro=
+vinces. The first isolate came<br>from May 2021, and the last came from Aug=
+ust. In June 2021, a genomic<br>match was found between the _Salmonella_ En=
+teritidis isolated from<br>horse cecal content and an outbreak of 17 cases =
+in Emilia-Romagna.=0D<br>=0D<br>Epidemiological investigations highlighted =
+some cases of reported<br>consumption of horse meat. They traced different =
+batches of the meat,<br>released weeks apart from each other, to the slaugh=
+ter site in the<br>study. Five of 8 cases reported eating uncooked horse me=
+at. Horse meat<br>associated with cases and traced to the slaughterhouse wa=
+s produced in<br>May and June 2021, while the horse carrying the outbreak s=
+train of<br>_Salmonella_ Enteritidis was slaughtered weeks later, in June 2=
+021.<br>This means meat from that animal could not have infected those case=
+s.=0D<br>=0D<br>Scientists said the outbreak strain was likely already pres=
+ent in the<br>slaughterhouse environment before the horse arrived from Hung=
+ary and<br>that environmental persistence could have caused contamination. =
+The<br>environment could have been contaminated before June [2021] and have=
+<br>affected meat produced in early May. Supporting this is the finding<br>=
+that the last batch of horse meat associated with cases was from a<br>horse=
+ from France and slaughtered 2 weeks before the Hungarian animal<br>in June=
+ 2021. It appears unlikely that 2 horses from different<br>countries slaugh=
+tered 2 weeks apart carried the same WGS type of<br>_Salmonella_, said rese=
+archers.=0D<br>=0D<br>An official visit to the slaughter plant found manure=
+ on the floor,<br>dirty troughs, and pests in the lairage area. Improvement=
+ of hygiene<br>measures at the lairage and along the slaughter line was dem=
+anded. The<br>company also increased the number of carcasses routinely test=
+ed for<br>surface contamination by _Salmonella_. Scientists said despite<br=
+>findings showing a low prevalence, _Salmonella_ in horse meat can<br>repre=
+sent a consumer risk.=0D<br>=0D<br>"A key lesson from the study concerns th=
+e need to maintain a high<br>level of hygiene during the entire slaughterin=
+g process. Hygiene at<br>lairage (an accommodation for farm animals) is cru=
+cial to avoid<br>cross-contamination between animals and the meat. For this=
+ reason,<br>lairage conditions should be critically evaluated, and biosecur=
+ity<br>measures must be properly implemented."=0D<br>=0D<br>[Byline: Joe Wh=
+itworth]=0D<br>=0D<br>--=0D<br>Communicated by:=0D<br>ProMED<br><br>[The ci=
+tation and abstract of the study discussed above follow:=0D<br>Bolzoni L, C=
+onter M, Lamperti L, et al: _Salmonella_ in horses at<br>slaughter and publ=
+ic health effects in Italy. Int J Food Microbiol.<br>2024; 408: 110429;<br>=
+<a href=3D"https://u19268662.ct.sendgrid.net/ss/c/TLh_csrC34X_iXpbYoMam4v-P=
+IYDtT_tnx33_qzfgx5O9ADzUuq56Cuwega06dnL9kf1hxwCQscMJAQpoe1eNLBv4_7XiX3x2xmS=
+Gk5A_k0Px5VUWzHh-TdjPQIpGFk0/42y/_aoGov2fRJm4ISVunIVBeg/h3/WXqAz4im0fBn0a1m=
+eh086vnDuROGNQl3B7lGRbMV4gA">https://www.sciencedirect.com/science/article/=
+pii/S0168160523003458#s0065</a>=0D<br>=0D<br>Abstract=0D<br>--------=0D<br>=
+"The study assessed the role of equids at slaughter as faecal carriers<br>o=
+f _Salmonella enterica_ and the occurrence of contaminated equid<br>carcass=
+es during the slaughter process in Northern Italy<br>(Emilia-Romagna Region=
+). From June to November 2021, 152 equids (146<br>horses, 5 donkeys and 1 m=
+ule) were tested for _Salmonella_ both in<br>caecal contents and through ca=
+rcass swabs. Antimicrobial resistance<br>(AMR) of recovered strains was tes=
+ted against 15 antimicrobials.<br>_Salmonella_ was detected in 3 of 152 of =
+the caecal contents (2.0%),<br>while all carcass samples were negative. _S.=
+ enterica_ serovars<br>Enteriditis, Typhimurium and Stanleyville were ident=
+ified. The only<br>AMR isolate was _S._ Typhimurium with AMR profile AmCStx=
+T.=0D<br>=0D<br>"Considering the consumption of raw horse meat (i.e., mince=
+d raw meat<br>named 'pesto di cavallo' and dried and smoked strips named 's=
+filacci<br>di cavallo') in different areas of Northern Italy, we also<br>in=
+vestigated the possible link between horse meat eating and<br>salmonellosis=
+ cases in the human population in the same area.<br>Specifically, we compar=
+ed the _Salmonella_ strains collected during<br>the study with those routin=
+ely processed in the laboratory<br>surveillance system for human salmonello=
+sis in Emilia-Romagna (a<br>region with about 4.5 million inhabitants). The=
+ comparison was based<br>on whole genome sequencing data through core genom=
+e multi-locus<br>sequence typing (cgMLST) used in routine surveillance. A g=
+enomic match<br>in cgMLST was found between the strain of _S. enterica_ ser=
+ovar<br>Enteritidis isolated from a horse caecal content and an enduring<br=
+>outbreak of 17 human cases in Emilia-Romagna during the study period.<br>T=
+he consequent epidemiological investigation highlighted that a number<br>of=
+ cases with known food history reported the consumption of horse<br>meat an=
+d traced different batches of the consumed meat, released weeks<br>apart fr=
+om each other, to the slaughter investigated in the study. The<br>results o=
+f the epidemiological investigation suggested the role of<br>horses in the =
+_S. enterica_ serovar Enteritidis outbreak affecting raw<br>horse meat cons=
+umers.=0D<br>=0D<br>"This study shows that, despite the low prevalence on e=
+quid carcasses,<br>_S. enterica_ in horse meat can represent a risk to cons=
+umers. From<br>the perspective of the slaughter activities, this highlights=
+ the need<br>to maintain a high level of hygiene during the entire process,=
+<br>starting from the hygiene at lairage up to the slaughtering phase and<b=
+r>dressing of carcasses."=0D<br>=0D<br>Although not often considered as a s=
+ource of salmonellosis, equines<br>can certainly be on the menu of zoonoses=
+ for this pathogen as shown by<br>the following report:=0D<br>=0D<br>Jay-Ru=
+ssell MT, Madigan JE, Bengson Y, et al: _Salmonella_ Oranienburg<br>isolate=
+d from horses, wild turkeys, and an edible home garden<br>fertilized with r=
+aw horse manure. Zoonoses Public Health. 2014;<br>61(1):64-71;<br><a href=
+=3D"https://u19268662.ct.sendgrid.net/ss/c/iFGMyEEwAlEWACufsmUSbtETb9RMSQ5m=
+4-1PJSo2t7wlzD9wmN0REmdeYLA0o5Dgre_dk4e2PeaFNcP5chitEtuQ9sx0VrgDxhnCbJPLVh8=
+/42y/_aoGov2fRJm4ISVunIVBeg/h4/_8E013Rynf5z15hrgyYOBf_cltzYCg3HI8ELaaSWRQE"=
+>https://onlinelibrary.wiley.com/doi/full/10.1111/zph.12043</a>=0D<br>=0D<b=
+r>Summary=0D<br>------=0D<br>"In July 2010, a horse from a rural farm (Farm=
+ A) in coastal Northern<br>California was diagnosed with _Salmonella_ Orani=
+enburg infection<br>following referral to a veterinary hospital for colic s=
+urgery.<br>Environmental sampling to identify potential sources and persist=
+ence<br>of _Salmonella_ on the farm was conducted from August 2010 to March=
+<br>2011. _Salmonella_ was cultured using standard enrichment and<br>select=
+ive plating. Pure colonies were confirmed by biochemical<br>analysis, serot=
+yped, and compared by pulsed-field gel electrophoresis<br>(PFGE) analysis. =
+A total of 204 clinical and environmental samples at<br>Farm A were analyze=
+d, and _Salmonella_ spp. were isolated from 6 of 8<br>(75%) horses, an asym=
+ptomatic pet dog, 2 of 7 (28.6%) water samples<br>from horse troughs, 9 of =
+20 (45%) manure storage pile composites, 16<br>of 71 (22.5%) wild turkey fe=
+ces, and 4 of 39 (10.3%) soil samples from<br>the family's edible home gard=
+en. Well water and garden vegetable<br>samples and horse fecal samples from=
+ a neighboring ranch were<br>negative. _S._ Oranienburg with a PFGE pattern=
+ indistinguishable from<br>the horse clinical strain was found in all posit=
+ive sample types on<br>Farm A. The investigation illustrates the potential =
+for widespread<br>dissemination of _Salmonella_ in a farm environment follo=
+wing equine<br>infections. We speculate that a recent surge in the wild tur=
+key<br>population on the property could have introduced _S._ Oranienburg in=
+to<br>the herd, although we cannot rule out the possibility wild turkeys<br=
+>were exposed on the farm or to other potential sources of<br>_Salmonella_.=
+ Findings from the investigation indicated that raw horse<br>manure applied=
+ as fertilizer was the most likely source of garden soil<br>contamination. =
+Viable _S._ Oranienburg persisted in garden soil for an<br>estimated 210 da=
+ys, which exceeds the 120-day standard between<br>application and harvest c=
+urrently required by the National Organic<br>Program. The study underscores=
+ the need to educate the public about<br>potential food safety hazards asso=
+ciated with using raw animal manure<br>to fertilize edible home gardens."=0D=
+<br>- Mod.LL<br><br>ProMED map:<br>Italy: <a href=3D"https://u19268662.ct.s=
+endgrid.net/ss/c/sSnCkKCWBvais3EuVAOvgy2WOIX7pp1nXnn4AbwuQ3Z6WbkfhqXYXU-aTM=
+PJ8yThZQpsX3gvLHR4csh3GjqXPQ/42y/_aoGov2fRJm4ISVunIVBeg/h5/tE67ywLVl5nNtzUM=
+4-Rm7JZZCVhBypqwzIFz7y-S09Y">https://promedmail.org/promed-post?place=3D871=
+4194,75</a>]<br><br>[See Also:<br>2023=0D<br>----=0D<br>Salmonellosis, st S=
+trathcona - EU, UK, USA suspected tomato source<br>http://promedmail.org/po=
+st/20231122.8713275=0D<br>Salmonellosis, st Enteritidis - EU, UK, USA chick=
+en products, alert<br>http://promedmail.org/post/20231028.8712873=0D<br>Sal=
+monellosis, st Senftenberg - Europe, USA ECDC, tomato source<br>http://prom=
+edmail.org/post/20230728.8711431=0D<br>Salmonellosis - Moldova: (CU)<br>htt=
+p://promedmail.org/post/20230711.8711085=0D<br>Salmonellosis, st Ball - Eur=
+ope, USA: unknown source, 2021-2022<br>http://promedmail.org/post/20230625.=
+8710760=0D<br>Salmonellosis, st Virchow - Europe, USA: chicken kebabs, ECDC=
+,<br>2017-2023 http://promedmail.org/post/20230401.8709275=0D<br>Salmonello=
+sis, st Hartford - USA: unknown source, RFI<br>http://promedmail.org/post/2=
+0230316.8708968=0D<br>Salmonellosis - USA: oyster, ex Florida, alert, recal=
+l<br>http://promedmail.org/post/20230303.8708715=0D<br>Salmonellosis, st En=
+teritidis - Sweden (04): (KA) poultry, eggs<br>recall, control http://prome=
+dmail.org/post/20230222.8708526=0D<br>Salmonellosis, st Enteritidis - Swede=
+n (03): eggs<br>http://promedmail.org/post/20230216.8708433=0D<br>Salmonell=
+osis, st Typhimurium - Ireland: chicken susp<br>http://promedmail.org/post/=
+20230131.8708081=0D<br>Salmonellosis, st Enteritidis - Sweden (02): eggs<br=
+>http://promedmail.org/post/20230128.8708032=0D<br>Salmonellosis, st Enteri=
+tidis - Slovenia: steak tartare<br>http://promedmail.org/post/20230128.8708=
+031=0D<br>Salmonellosis - India: (KL) restaurant, raw egg mayonnaise<br>htt=
+p://promedmail.org/post/20230124.8707955=0D<br>Salmonellosis, st Vitkin & I=
+IIb 61:z52:z53 - USA: bearded dragon<br>http://promedmail.org/post/20230122=
+.8707906=0D<br>2020=0D<br>----=0D<br>Salmonellosis - France: horse meat, mu=
+ltiple serotypes<br>http://promedmail.org/post/20201015.7864777=0D<br>2018=0D=
+<br>----=0D<br>Salmonellosis, st Enteritidis - Belgium, France: chilled hor=
+se meat,<br>RFI http://promedmail.org/post/20180414.5745948]<br>...........=
+......................................ll/rd/jh<br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3DEpOjiwccmf4CAwSyN-Bi1_amkhj47xgcoNxcG_huMSNoMDAwdT=
+AwMBhc9AEX5-6qSHHRCIz9BLlrU9DwHGsJty0ruKONjgXGjrNdENBywcpjJlxtKUZHGDX949hNW=
+5P0OPb6PnmSA7pPCK5AFSqKU3xoBSePw44ZBoSlSjXIo_1tOAuTa7PJFKTB7vjhO3Ek8aWF9H1R=
+f3N7FLmBkKpWPbno1jQVQN3kJWX51tKKXy-W-y2SmkAQ5DL0i8801TD_soflOEDRqMz5Rq8xjGl=
+67Gk2FraxiCGZRbuZ6f7FEuTjCGX-7veQSlLLYUSiEuDvmxVQR72qH3D1_xaUTafbIdCgwR3RaE=
+7a2tAvRO0imZRtHG-JxerrORYsZswtpQJS7PiO9_vtaCxbwqRxU3aH4TdX08oC0wlPT-7v2OJph=
+op7-gAZPqnakpKA_fJZ42fzTrlx354rB2XSwcxfLI51avoFapgpzN__GFEy_Fxp_xDAMe79cKam=
+DUhPrT8_EZuchiioSYo08UX3o0RLifgKgbDE4dq6BrsUHMY_0hawqG5WP7gqIXuw4DxpHIWCgY9=
+sJzgs_1PqTvhKgfJuSucnTN2w4oDwbgJXwNCL9iYXG5o2PDGq079oGseT-RQPv_ehwQnB2YuJTN=
+TB7isCgnUR1GY_-X30P6gydCYT1AlJnAZInjmhAusWd6t8FqPQO0UNkQeMs9K0fK2wwWZsNUZYi=
+xJqdA9pRu7bifGpliFtzTLpbMfySeRD6I5ueP1WJ76_wigGO-BsbVeS9HdEWVAUO1nZw11rwNtl=
+jaLHzkyQ1_LJoeqbCEv74AS5KZcz5AubOjQy4OMsRkg7Ribc7oRD12BD4zOAOShzY03ZG1VebBU=
+elahpBtNp5hehNRq8nrEh1iTcUw3tkTFpXR5WRhZ_YZz3_51HOxrDwCftFr7CNcb56X6TZjGx9P=
+hhq_CfwvB76a7c3nD38P2a44yabl1IDGszp_S7SVaZiPuFDikucsk7zrF6ujv-bcHlDSU2DQt47=
+VqI7dHsfH0srlkSmr30Kygy30gFclteWZUWTjGaSEpwzachtf4IGyG378k2_mog3Ku-LrV8bRMk=
+p3-ZMbxoTJNI5faaoU9Fiv3ZJLkJQsrHSh6U-Ok0o4uiCYvubemglj0RONjJdStoogYqZF09DE0=
+7h6Jq4Y2i_QK45e8BAHllLE9srXG4beACqe3vx9e3X6kQOnwi8BhBM-_U12QMGyC3q_LXGOD1" =
+target=3D"_blank" class=3D"Unsubscribe--unsubscribePreferences" style=3D"fo=
+nt-family:sans-serif;text-decoration:none;">Unsubscribe Preferences</a></di=
+v><br>############################################################<br>#####=
+#######################################################<br><br><img src=3D"=
+https://u19268662.ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/42y/_aoGov2fR=
+Jm4ISVunIVBeg/ho.gif" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=
+=3D"height:1px !important;width:1px !important;border-width:0 !important;ma=
+rgin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;=
+margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !importa=
+nt;padding-right:0 !important;padding-left:0 !important;"/></body>
+</html>
+--77bd453756df9f4938bee6574c35d525a827929ad128872e94a933fad688--

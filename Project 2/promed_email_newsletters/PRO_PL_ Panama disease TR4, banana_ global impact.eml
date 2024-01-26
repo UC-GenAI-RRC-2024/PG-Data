@@ -1,0 +1,649 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a05:640c:2d08:b0:1ee:5ffb:29ea with SMTP id p8csp740900eiu;
+        Tue, 23 Jan 2024 11:51:15 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IEMUPTggB+MYX9vEO2t8iK7SWMXiqIDgQVhYfXqyBb1RPN1w78QMX4yQJil7h6IL/fYGv39
+X-Received: by 2002:a05:6808:ec4:b0:3bd:944a:d2cb with SMTP id q4-20020a0568080ec400b003bd944ad2cbmr488907oiv.48.1706039475191;
+        Tue, 23 Jan 2024 11:51:15 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1706039475; cv=none;
+        d=google.com; s=arc-20160816;
+        b=NT7WG14Ri23eoBaVdJv4isOkMljTbW5JBK3pqa9eNWjCK0bhivm77TNEI5sIJ/lY5w
+         ByPxhvBpq9Rv2/MU3dpkM3DtQHNd4LyNZRol1aARMqKGtNfybGnre2mt4Nql8tUfZkL2
+         U9Zx0it7HyjzdNAm8mLVyG0AioM0lvjNfU9WBpxZA+bZ0MEFV0P6uQhQ7OPSQyv36n1r
+         O3zaN0CDL/WFc5M+3glZ3Gt7ZP5fCZztXacHsZQi6wXquQMsn6cdEkghyOYsHJpKMiyO
+         rqzaMyICWTuLbUr1kgArGT+XoruVJivRnXdtZzfSLhhGgGRdvOd+IqotMnf7+am5PGx7
+         qwYA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=7JWkTFwBBWxMbid82Kv/W2Wi7Qcd1fvFjwUzsqfKK9A=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=gmMmxTsvuAHj/pwKzku6yINdbFzczV4wBjBz+sqAf15lyDGXVx725UqSpRKEKYPUO4
+         IhO4w/UkdQ2I4Makp1AvrP3BWfM8ZESFcUTFsI9+ijNlk1C2mOxny7OoQrHeOllpci/i
+         mWgF99Zy9qIhNgoh6NG6+jGTd8MfmtgXY1BmxeEyU2riBHB6rAxq2sBdxUHjaZFCVquo
+         XD+siWfZ+hbsB0wXmcNxGCMFaFPibmmedJNH7qhtd+kzN0YfSDV0cqpXvM+e/RTsu0t4
+         JQZ9/Yk506p4b3AkldrksbGTaDpobGvMRPaoKJJylMcT+8JI7OkZf5C41448Ug9wYCl+
+         VUEw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=wEyyu9oB;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=b6LQX1WY;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id os26-20020a05620a811a00b0078384b603f1si8046106qkn.749.2024.01.23.11.51.14
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 23 Jan 2024 11:51:15 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=wEyyu9oB;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=b6LQX1WY;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=7JWkTFwBBWxMbid82Kv/W2Wi7Qcd1fvFjwUzsqfKK9A=;
+	b=wEyyu9oBm5GqkTKx1fleXRrMusf7LEib20HvyIQe2qvGvx93nJ2HIHFnu0Vs6vWJ1Mfk
+	R2Ep9PkuxZDFCgefvV7R/GMy4hMEc50x2MFgJ+/hqQo0aWLbRrUL8Sp99VIkAe+p3xsEx4
+	jWZZ0KMq0X6SCrBy7trVzZr8PgTLAli6ZR7W53lIl8TEUQWvBkMEC8McqNzLO5LPAMg7pc
+	KTiPmE8QjL/qwwZkPipsoFE/1A9o57Ol+efgI4/OQ+sqQ5darPW9h/TeygX2CDwz+gl/0k
+	kdSGKToFSU/8csAoixR0mqwp8v0nVMlHIz2bW2XF+/MEON+IWbn8Bg989EUBw24w==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=7JWkTFwBBWxMbid82Kv/W2Wi7Qcd1fvFjwUzsqfKK9A=;
+	b=b6LQX1WYxe0kE15mCzF84Zym2lAy+FsJ0LeFUOtMXD7gmwrrWUyT9s1cAMMZ8316Hkq8
+	Yu+nhpJ7Lu5FcQsTJoNFXMp3iZt7poewJDpFMXeh0azbNm2WXfNcWbe8ruyZPDLaPSAs6x
+	NJ4cdYalxJLd9XgHCApT553AlfRXRdyNs=
+Received: by filterdrecv-75cb66975-dkvwc with SMTP id filterdrecv-75cb66975-dkvwc-1-65B018B2-4C
+        2024-01-23 19:51:14.620265166 +0000 UTC m=+8471384.374296517
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-8 (SG) with HTTP
+	id wvifL57CSWuCkTKmHHo9gQ
+	Tue, 23 Jan 2024 19:51:14.592 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=b62fee47a342f7c798d770f7b270747827c33d0077f3929f54a4bdc443bd
+Date: Tue, 23 Jan 2024 19:51:14 +0000 (UTC)
+From: ProMED Plant <promed-plant@isid.org>
+Mime-Version: 1.0
+Message-ID: <wvifL57CSWuCkTKmHHo9gQ@geopod-ismtpd-8>
+Subject: PRO/PL> Panama disease TR4, banana: global impact
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbKvCl8ppyUAMiP5RVsxU4e1GHJWpgR0=2FEyVHH+VxGv?=
+ =?us-ascii?Q?sYgTuP1ZM9GsQENQXhPK7j+sXryVWeSsI4m7sDd?=
+ =?us-ascii?Q?IHr5mt2Nigvbi2ejE+i1qGX=2FNgEIGNJvDGo3DRr?=
+ =?us-ascii?Q?K9jQI=2FAOPf4aM=2FEyqBxXrSYlpkiB3Pve4P9Ka0W?=
+ =?us-ascii?Q?2KCBP=2FlflpteFBJZrNUEwWp1lVGazupULTe6m2j?=
+ =?us-ascii?Q?Qba=2FTLH8gL7iDe+Twm=2FZiy2X9WOpXiyZMJ9u8b?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUiOnpMxoBKbd1xQrqZppL?=
+ =?us-ascii?Q?dKiuYt7wnmzIsT0HuW86cBZJ0aCLoLnEX62pE0d?=
+ =?us-ascii?Q?F=2F3Qa=2FG9FrkbZhqmpJRh97pV8pWANoV6x=2FZeDPu?=
+ =?us-ascii?Q?TqQjVkI6r1YE9bNjiy6tAbX2MIJ8MJsoqOjKqMC?=
+ =?us-ascii?Q?FNUfqtfar9kte6v1PsE=2FDcPU0Kb5GO0lc=2FoQ64+?=
+ =?us-ascii?Q?MRMGyJZIbXw5pANOIca48N3XilVpwDsgAXzlbz3?=
+ =?us-ascii?Q?0n6EC0q16NzL7b5u31En17kTY4d4n3d50NDqpBL?=
+ =?us-ascii?Q?FEwPYDW=2Fzy7G+EvQG64MCrp94fNrOhXd7pBVEBT?=
+ =?us-ascii?Q?MaRuE=2FT+enV7sgSk1mCorVB=2F7PeuB91nJ107pix?=
+ =?us-ascii?Q?lm13XZx=2F+9aJcPUnAsZSkOv3UiuDok7NtODiCCM?=
+ =?us-ascii?Q?nwFQfByjPZRe2rCVDtRFbQ7m=2F02QgfBRoEITIWn?=
+ =?us-ascii?Q?5ZjPC8VCtL6Qxvr6JZJqxw8pvxONEuN0OVTJ9rK?=
+ =?us-ascii?Q?eo0PUeLjnf7I606fdb4WZIh2jfQkgYGGR6JKsAw?=
+ =?us-ascii?Q?30x08=2FS77yrv5ByjClKWwly7v7DFv0upRcswI9n?=
+ =?us-ascii?Q?HKVgk69ugHtuQ4DzlaZx=2FNUwM6ZcS+iMX4=2FLVlw?=
+ =?us-ascii?Q?sKW0lIiDPo+4PVkOn2APqpxSyQHicI8IGGy+OHo?=
+ =?us-ascii?Q?FFx3qGWHOzidC+8lPesvsuyPW2komr79=2Fbc0SYe?=
+ =?us-ascii?Q?f5g4zSwHipxlmt+4fIHi1er1InZYXQwOCNVyNGP?=
+ =?us-ascii?Q?RtOMSDlRzpihuC1dXMwJler2cB5QSodvAw1q2Cl?=
+ =?us-ascii?Q?MkaNGOM8qSSwnJZRi5HyLmEMcA=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2EymKX=5FrojA?=
+ =?us-ascii?Q?2ECl5PpXfE3BAJnDncLyDCQ055wgqjRhkNoMDAw?=
+ =?us-ascii?Q?dTAwMLU8Zr2XTO97-xJVjCJZzqiJrN1aDYKw059?=
+ =?us-ascii?Q?jvpkeC0GbCarxbvvYfZU-6simtiq2FPGq2e7cLp?=
+ =?us-ascii?Q?rRZHXXhSYspk03FtrMyzB0lWtHWl0WHNRBPo=5FH7?=
+ =?us-ascii?Q?1xFpAaG8PXDQCaJYQ=3D=3D=2EnEMaark=5FQtMomwJyejB?=
+ =?us-ascii?Q?BPrj2U6yQNw9LgV5BV08nTsNoMDAwdTAwMNnxYB?=
+ =?us-ascii?Q?3ddFNA8t0XONIpSAopPLHZw5f-Gxz6DyL2stRt2?=
+ =?us-ascii?Q?6lcj8ex64vXfrwJhU5dj3WkDlo-YLGo7jRBFo2s?=
+ =?us-ascii?Q?THpMY5ltCiHd5PVe5fZ=5FnbTQZ9j2ZeM=5FIaRwCKV?=
+ =?us-ascii?Q?fVmRvVV3e-H6palobkBZWrZUv5JVSRwrgvyQP1N?=
+ =?us-ascii?Q?FP90g9F6PmMZE53BjSHpvq2p-ndlHFAtK4fR2qF?=
+ =?us-ascii?Q?BPGVi0WniMTFM423FIT1sU2C840z401fYFbukUs?=
+ =?us-ascii?Q?U2HM2XDBFfg9Wvh5DfFOXn3qrGJ7wGuwSKnuqlH?=
+ =?us-ascii?Q?uj5I2bBwe5lVnE2I=5FaOLc5I5DUM9FVO8-U-dbgd?=
+ =?us-ascii?Q?UX1x7RoaqsbebLkWVfMQlZuXLWFmtKjmJCXFW-W?=
+ =?us-ascii?Q?64EvbKuRm3dmV6f5kkqzEZSka9L239B2--ScPU9?=
+ =?us-ascii?Q?18YvF00j5Xa-mRvmX8xI3JV4rt9EsvF7oIOOxZ4?=
+ =?us-ascii?Q?C4Ve8bcJFSjou8-MTLaaWm3Hu6PTqtTD=5FVUvr4p?=
+ =?us-ascii?Q?GAUpoRXMWYqvBa9norKG5tJwDfMQ-XmqLJzJMnW?=
+ =?us-ascii?Q?UWjCOB1Cjc68zz8s9is-b9NlwM7foBmMV5hlDE0?=
+ =?us-ascii?Q?502oBCwXcHN3d0HU5-rPCUFoLfLsvoRWZqeq9zS?=
+ =?us-ascii?Q?yCUt30SQrISnmA0lMx=5F30CPK2Z4PRmz11kKDNtD?=
+ =?us-ascii?Q?WrgkCHpUMWVMhXUA-JfZ4slFD-xRhWPVjFOoZ0X?=
+ =?us-ascii?Q?DFOy8stO4SShg1pe-VrYwZfaKVatqTeaeh0gWFG?=
+ =?us-ascii?Q?a3oNhV8tTNAwN1MtC67w9bExVCXaA5lGDsinzbW?=
+ =?us-ascii?Q?Na4QYKYV6v3pwpnfogLCKj185dkD=5FCwhV8wOivl?=
+ =?us-ascii?Q?ICiB9k8wf03cezmDYCgw4yrIufUbuDI5G-LymFX?=
+ =?us-ascii?Q?PWO91iqrsnsmqlWxjyni=5FDgi5arXkpeYn61iV0m?=
+ =?us-ascii?Q?wD8ChibQO7WgIVft2ZNSGjhKk6e1hzi5mZwOTBF?=
+ =?us-ascii?Q?FWvjUX66WNyXU9DhK8EWCjyPrMRo4rFAkSmDDYx?=
+ =?us-ascii?Q?sm8JADB9fwyTK765lEVglxxZxZjACuFi7f14LDN?=
+ =?us-ascii?Q?FbPgAEKTUhVX-JnVmRoS3EY=3E?=
+
+--b62fee47a342f7c798d770f7b270747827c33d0077f3929f54a4bdc443bd
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=us-ascii
+Mime-Version: 1.0
+
+PANAMA DISEASE TROPICAL RACE 4, BANANA: GLOBAL IMPACT
+*****************************************************
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+Date: January 2024
+Source: Food & Agricultural Organisation (FAO) [summ. Mod.DHA,
+edited]
+<https://agfstorage.blob.core.windows.net/misc/FP_com/2024/01/16/Aban1.pdf>
+
+
+[Ref: Food and Agriculture Organization of the United Nations (2023):
+Banana market review preliminary results 2023. FAO, Rome, December
+2023, pp. 1 - 4.]
+
+The spread of plant diseases, importantly the devastating spread of
+the banana fusarium wilt tropical race 4 (TR4) disease in the
+Philippines and its alarming presence in Peru and Venezuela [ProMED
+posts http://promedmail.org/post/20210414.8308193 and
+http://promedmail.org/post/20230206.8708197], continue to cause
+production losses as well as financial strain from the substantial
+costs associated with disease prevention in producing countries.
+
+In Latin America, pressure on growers in Ecuador, the largest exporter
+of bananas globally, was due to additional expenditures to maintain
+rigorous TR4 mitigation measures in view of outbreaks in neighbouring
+Colombia and Peru. Colombia continued to be impacted by higher costs
+stemming from the implementation of TR4 disease mitigation strategies
+as well as from preventative measures.
+
+Exports from Asia may contract due to, amongst other factors, the
+impact of TR4 from 2020 to 2022. The main exporter from the region,
+the Philippines, has seen production severely affected by the spread
+of TR4 in the country. According to information released by the
+Pilipino Banana Growers and Exporters Association in April 2023,
+approximately 15 000 plantations in the Philippines are affected by
+TR4, causing grave concern for the country's banana industry in 2023
+and beyond.
+
+--
+Communicated by:
+ProMED
+
+[Panama disease of banana (PD, also called fungal or fusarium wilt) is
+caused by the soil-borne fungus _Fusarium oxysporum_ (previously f.
+sp. _cubense_). Symptoms include yellowing, wilting, and streaking of
+pseudostems; affected plants die rapidly. The pathogen is spread by
+infected planting material, mechanical means (including human and
+insect activities), soil, and water.
+
+Disease management for PD is difficult and mostly relies on
+phytosanitation for pathogen exclusion. The fungus can survive in the
+soil for decades; consequently, crop rotation with non-hosts is not
+likely to control the disease effectively. No effective chemical or
+cultural control measures are available. Integrated approaches have
+been developed (ProMED post http://promedmail.org/post/20090419.1483),
+which may include cultural practices, certified clean planting
+material and biocontrol agents such as _Trichoderma_ species (for
+example, ProMED post http://promedmail.org/post/20160317.4102576 and
+see link below). Breeding programmes and molecular techniques are
+being used to develop crop cultivars with increased resistance or
+tolerance to the different fungal strains. Constant vigilance is
+required in areas where the fungus is present to prevent flare-ups and
+recognise emerging new strains.
+
+Several races of the pathogen exist, varying in host range. Cavendish
+banana varieties (cultivars within the _Musa_ AAA group, see links
+below) replaced the original eating varieties (such as Gros Michel)
+because they are resistant to the original fungal strain. They include
+most of the current commercial eating bananas. Cavendish-affecting
+strains, such as temperate (subtropical) and tropical (TR4) races 4,
+as well as a new strain of race 1 (ProMED posts
+http://promedmail.org/post/20210105.8075029,
+http://promedmail.org/post/20101223.4510) have emerged since from Asia
+and Oceania.
+
+In recent years, TR4 has been reported in the Middle East, Africa, and
+Asia. A detection in Colombia (ProMED posts
+http://promedmail.org/post/20190820.6630576,
+http://promedmail.org/post/20190712.6564489) was the 1st confirmed
+report of TR4 in the Americas. TR4 is of great concern worldwide;
+development of TR4-resistant cultivars has become a top priority for
+many national banana industries (see previous ProMED posts in the
+archives). Taxonomic revision of TR4 as a separate species is being
+debated (see link below).
+
+Pictures
+PD symptoms on banana:
+<https://www.daf.qld.gov.au/__data/assets/image/0018/51345/5243-Jeff-Daniel=
+ls-Fus-Wilt-TR4.JPG>,
+<https://s3.amazonaws.com/s3.mp-cdn.net/4c/82/45151b125ec633bced8491eb0c87-=
+will-panama-disease-kill-off-bananas-now-there-is-no-new-varieties-of-plant=
+s.jpg>,
+and
+<http://breedingbetterbananas.org/wp-content/uploads/2017/10/1024_TR4-Colla=
+ge-1024x475-881x409.jpg>
+PD-affected plantations:
+<https://www.daf.qld.gov.au/__data/assets/image/0006/168918/Fusarium-wilt-e=
+xternal-symptoms-Suzy-Perry.JPG>,
+<https://cdn.newsapi.com.au/image/v1/09621faae32c6b454b538b57a3641204?width=
+=3D1024>
+and
+<http://www.abc.net.au/reslib/201001/r501587_2654835.jpg>
+_F. o._ f. sp. _cubense_ culture:
+<http://www.ediblegeography.com/wp-content/uploads/2010/03/Panama-Disease.j=
+pg>
+
+Links
+FAO report also available via:
+<https://www.fao.org/markets-and-trade/commodities/bananas/en>
+Summary news story:
+<https://www.freshplaza.com/north-america/article/9592505/preliminary-resul=
+ts-on-developments-in-global-banana-trade-2023/>
+Information on Panama disease:
+<https://doi.org/10.1094/PHP-2000-1204-01-HM>,
+<https://doi.org/10.1094/PHP-2005-1221-01-RV> and
+<http://www.abc.net.au/news/2013-08-29/feature-banana/4922208>
+Information on race TR4:
+<http://www.agriculture.gov.au/pests-diseases-weeds/plant/panama-disease-tr=
+opical-race-4>,
+<https://doi.org/10.3389/fpls.2018.00457>,
+<https://phys.org/news/2018-04-path-panama-disease-fungus.html> and
+<https://www.daf.qld.gov.au/business-priorities/biosecurity/plant/health-pe=
+sts-diseases/a-z-list-of-emergency-plant-pests-and-diseases/panama-disease>
+FAO TR4 Global Network:
+<https://www.fao.org/tr4gn/en/> and
+<https://www.freshfruitportal.com/news/2019/10/07/fao-launches-emergency-pr=
+oject-to-combat-banana-disease-tr4/>
+_F. oxysporum_ taxonomy and synonyms:
+<http://www.indexfungorum.org/Names/NamesRecord.asp?RecordID=3D218372>,
+<http://www.speciesfungorum.org/Names/SynSpecies.asp?RecordID=3D218372>
+and
+<https://doi.org/10.1094/PHYTO-03-21-0089-LE> (review)
+Information on _Trichoderma_ species and use as biocontrol agents:
+<https://biocontrol.entomology.cornell.edu/pathogens/trichoderma.php>
+Cultivars and hybrids of banana and plantain:
+<http://www.plantnames.unimelb.edu.au/Sorting/Musa.html> and
+<http://www.plantnames.unimelb.edu.au/Sorting/Musa-cvs.html>
+- Mod.DHA]
+
+[See Also:
+2023
+----
+Panama disease TR4, banana - St Lucia: alert
+http://promedmail.org/post/20230406.8709351
+Panama disease TR4, banana - Venezuela: 1st rep
+http://promedmail.org/post/20230206.8708197
+2022
+----
+Panama disease TR4, banana - Philippines: (DV)
+http://promedmail.org/post/20221103.8706524
+Panama disease TR4, banana - Australia: (QL)
+http://promedmail.org/post/20220708.8704305
+Panama disease, banana - Viet Nam: pathogen diversity
+http://promedmail.org/post/20220216.8701506
+Panama disease & bunchy top, banana - Pakistan: (SD)
+http://promedmail.org/post/20220214.8701445
+Panama disease TR4, banana - Colombia: (MA)
+http://promedmail.org/post/20220109.8700686
+2021
+----
+Panama disease TR4, banana - Peru (02): 1st rep (PI) conf
+http://promedmail.org/post/20210414.8308193
+Panama disease TR4, banana - Peru: (PI) susp, alert
+http://promedmail.org/post/20210412.8301760
+Panama disease TR1, Cavendish banana - India
+http://promedmail.org/post/20210105.8075029
+2020
+----
+Panama disease TR4, banana - Costa Rica: alert
+http://promedmail.org/post/20200714.7572134
+Panama disease TR4, banana - Philippines: (Mindanao)
+http://promedmail.org/post/20200204.6950644
+2019
+----
+Panama disease TR4, banana - Australia: (QL) spread
+http://promedmail.org/post/20190917.6678061
+Panama disease TR4, banana - Americas (02): (Colombia) conf
+http://promedmail.org/post/20190820.6630576
+Panama disease TR4, banana - Americas: 1st rep (Colombia) susp
+http://promedmail.org/post/20190712.6564489
+Panama disease, banana - Thailand: (CR) susp
+http://promedmail.org/post/20190702.6548142
+Panama disease TR4, banana - Israel
+http://promedmail.org/post/20190411.6415884
+and older items in the archives]
+.................................................dha/tw/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3DjRcz59rN2BfcLtPq9uva_vPNJuaIeYcYeBtAw-7rzl5oMDAwdTAwMN3l1yF=
+aAeSRYjjINAMlFqjYIzbnSZ6e-m8VA6RrbiyI_2ABZZ3iqzJp3N7eb09uP1RApy2561kzPGUt4t=
+92m_slDsXtK5fhEL9IgtCFgB34-OwQAmSaA4euzPddVfO91x2vbEmb8SyK0a7LA1iSvDP4cHQ9Q=
+LFlgsFqo2pjbwbPc7mc4Mjpy7cju97NwwZucWMi2GwUsxU8Sq6wlcw3z811bQk7z-SX3C4HRDdY=
+yX6UIh7hsb7zjG6mywJEAg7MujKKN7P5bV40yq3RGdbp6c3DkdRiMcvYiwn2mlBz8Xp-i9UJl9w=
+MmKr183XnXTbQEEqykBDzYN73DJec6RY7Z1P9s_R9LrEVMdOhtpI-ekwR8ovyL7mPDTYgheiSWa=
+gvAJkv6H5mPjemv7VkpETuA7lWlTDSQeg3N3Iqe4AsYPi4MHHJijS_GQVkIyrwGbSX3rEgKSItq=
+bDxIs89n_A8rEzRd4oDNgyOpe5s-2KTKGDqanvTa4sfmw33Q6S4I8nUfB7QS1XZvFLjzHwNqeMu=
+OQcwFcZGJqQKBV84_MEjedyxibi-BMxWHjBoZ74Bp_562HoWMzR5qX72-t63TN3Z_HDFbOCwrq1=
+CpaHZjn1t4jITAgUVlzBOWtDslOjf2tJwbvKTj7m6TNEp0GTrbhnUpWeDHd1bN90Moe-lhhHDtD=
+KKl5A9OVLPoSMAImikTSA2g8Um5dlKZVrye1rTy9V2p822jfvgaVkXj0hazhLBF0-dQrF-COmIz=
+dLjXVXtzhpMZ-aLfBo5yXqmpe57qSSOH9v4QaBhddkzJOU2Oxh0ytwPygvBtnLnbD9R57ooIspH=
+4lQOBHyWIBh8GD23jI7qgtU_bxWnX540x_Ut13fTa6-dUG4lOK3uUnCHlU5b8mo93Wvm7QQbBuT=
+gmrVgut_YJLBUAMGIXV6Qz6tMjNDNW0516v4jNsad5RVD5gxcONzoJnkmoZ5vTdnmZc8NLzN-rx=
+UUSINrrZQji0U5h8YtLgI4gJL7orfri1TLUPWjCK5kPOSAsZM1PW74mFF2hNKzQY3hNYHioeM5a=
+GCgd_BGvOZI10bXtz35UhsYqWvrDKiKWLfZ4m9DjsPGLSK7GDyEpPXMjG0EiS1lPf_-EyqOlOUX=
+vDHIULv_jODUDFD1ARKvLs1v-kPcbEIy-LI8bxLWbH4=3D )
+############################################################
+############################################################
+
+--b62fee47a342f7c798d770f7b270747827c33d0077f3929f54a4bdc443bd
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>PANAMA DISEASE TROPICAL RACE 4, BANANA: GLOBAL IMPACT<br>************=
+*****************************************<br>A ProMED-mail post<br><a href=
+=3D"https://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisIijpefK5PNj=
+W-mL-YZGnfgDOxU1G3gjwnPSi2Tfv3HA/438/kzvzWjOOQqOhFjqkqGAG3g/h0/eh6Yj7BUwemQ=
+UQsleGp-v00XY0eeCmlTFNZFfp1RaiE">http://www.promedmail.org</a><br>ProMED-ma=
+il is a program of the<br>International Society for Infectious Diseases<br>=
+<a href=3D"https://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisCT5t=
+pD4Upm3qyMCbcYSQvc/438/kzvzWjOOQqOhFjqkqGAG3g/h1/uk1xxMtzsPIMvzUVjosPwtCIPc=
+oVh9HPjeDOVeOZjyE">http://www.isid.org</a><br><br>Date: January 2024=0D<br>=
+Source: Food & Agricultural Organisation (FAO) [summ. Mod.DHA,<br>edited]=0D=
+<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/irpYa2EQ3F36GLL_pppOE=
+Ai0GsyLSWIdVq320Pn9ZWuTy_cKTQOyJdUoY_pVI_52kLiELhqjkV98YcITxohiyim9ryMTE89D=
+YlrwJtGLawTDrNDz7LMdkKvlnc8Pnu1S/438/kzvzWjOOQqOhFjqkqGAG3g/h2/1Lb9EAjNpc3C=
+kuXUEQGYd02S62xv3O0DKAv6TN8YMPo">https://agfstorage.blob.core.windows.net/m=
+isc/FP_com/2024/01/16/Aban1.pdf</a>=0D<br>=0D<br>=0D<br>[Ref: Food and Agri=
+culture Organization of the United Nations (2023):<br>Banana market review =
+preliminary results 2023. FAO, Rome, December<br>2023, pp. 1 - 4.]=0D<br>=0D=
+<br>The spread of plant diseases, importantly the devastating spread of<br>=
+the banana fusarium wilt tropical race 4 (TR4) disease in the<br>Philippine=
+s and its alarming presence in Peru and Venezuela [ProMED<br>posts http://p=
+romedmail.org/post/20210414.8308193 and<br>http://promedmail.org/post/20230=
+206.8708197], continue to cause<br>production losses as well as financial s=
+train from the substantial<br>costs associated with disease prevention in p=
+roducing countries.=0D<br>=0D<br>In Latin America, pressure on growers in E=
+cuador, the largest exporter<br>of bananas globally, was due to additional =
+expenditures to maintain<br>rigorous TR4 mitigation measures in view of out=
+breaks in neighbouring<br>Colombia and Peru. Colombia continued to be impac=
+ted by higher costs<br>stemming from the implementation of TR4 disease miti=
+gation strategies<br>as well as from preventative measures.=0D<br>=0D<br>Ex=
+ports from Asia may contract due to, amongst other factors, the<br>impact o=
+f TR4 from 2020 to 2022. The main exporter from the region,<br>the Philippi=
+nes, has seen production severely affected by the spread<br>of TR4 in the c=
+ountry. According to information released by the<br>Pilipino Banana Growers=
+ and Exporters Association in April 2023,<br>approximately 15 000 plantatio=
+ns in the Philippines are affected by<br>TR4, causing grave concern for the=
+ country's banana industry in 2023<br>and beyond.=0D<br>=0D<br>--=0D<br>Com=
+municated by:=0D<br>ProMED<br><br>[Panama disease of banana (PD, also calle=
+d fungal or fusarium wilt) is<br>caused by the soil-borne fungus _Fusarium =
+oxysporum_ (previously f.<br>sp. _cubense_). Symptoms include yellowing, wi=
+lting, and streaking of<br>pseudostems; affected plants die rapidly. The pa=
+thogen is spread by<br>infected planting material, mechanical means (includ=
+ing human and<br>insect activities), soil, and water.=0D<br>=0D<br>Disease =
+management for PD is difficult and mostly relies on<br>phytosanitation for =
+pathogen exclusion. The fungus can survive in the<br>soil for decades; cons=
+equently, crop rotation with non-hosts is not<br>likely to control the dise=
+ase effectively. No effective chemical or<br>cultural control measures are =
+available. Integrated approaches have<br>been developed (ProMED post http:/=
+/promedmail.org/post/20090419.1483),<br>which may include cultural practice=
+s, certified clean planting<br>material and biocontrol agents such as _Tric=
+hoderma_ species (for<br>example, ProMED post http://promedmail.org/post/20=
+160317.4102576 and<br>see link below). Breeding programmes and molecular te=
+chniques are<br>being used to develop crop cultivars with increased resista=
+nce or<br>tolerance to the different fungal strains. Constant vigilance is<=
+br>required in areas where the fungus is present to prevent flare-ups and<b=
+r>recognise emerging new strains.=0D<br>=0D<br>Several races of the pathoge=
+n exist, varying in host range. Cavendish<br>banana varieties (cultivars wi=
+thin the _Musa_ AAA group, see links<br>below) replaced the original eating=
+ varieties (such as Gros Michel)<br>because they are resistant to the origi=
+nal fungal strain. They include<br>most of the current commercial eating ba=
+nanas. Cavendish-affecting<br>strains, such as temperate (subtropical) and =
+tropical (TR4) races 4,<br>as well as a new strain of race 1 (ProMED posts<=
+br>http://promedmail.org/post/20210105.8075029,<br>http://promedmail.org/po=
+st/20101223.4510) have emerged since from Asia<br>and Oceania.=0D<br>=0D<br=
+>In recent years, TR4 has been reported in the Middle East, Africa, and<br>=
+Asia. A detection in Colombia (ProMED posts<br>http://promedmail.org/post/2=
+0190820.6630576,<br>http://promedmail.org/post/20190712.6564489) was the 1s=
+t confirmed<br>report of TR4 in the Americas. TR4 is of great concern world=
+wide;<br>development of TR4-resistant cultivars has become a top priority f=
+or<br>many national banana industries (see previous ProMED posts in the<br>=
+archives). Taxonomic revision of TR4 as a separate species is being<br>deba=
+ted (see link below).=0D<br>=0D<br>Pictures=0D<br>PD symptoms on banana:=0D=
+<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/TLh_csrC34X_iXpbYoMam=
+y8usJct_No-HZkZ9j989nKU3v8vq7yuf5Q0XeLuDZe9Si1oskHmALGY1iENgoJjR96QSj5mOH1S=
+7YyXOJdhXOEhD9omPpjF8Atinz_FudlGiIaRC4CUWxU7W6DHb_5VRQ/438/kzvzWjOOQqOhFjqk=
+qGAG3g/h3/DOVDSBnSk-se8m--ie7uQquB6tp_viioXtFshGpbmj4">https://www.daf.qld.=
+gov.au/__data/assets/image/0018/51345/5243-Jeff-Daniells-Fus-Wilt-TR4.JPG</=
+a>,=0D<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/h7yixvI7Vw_a8fU=
+sCvNbuJ5YT3ZvMbfxjmDJTrJ-jLTomDgYaroJEwMw9ILj1LZJQIML70GAXjIKC_DJnd-E_uOcTG=
+OUuOlgnJfvpdTf7nY0oqDnnSqkH6HgWsjdc2r0ZRBuF0BqpBd8tcoheZFc8EhYlz5ixyKG5aAae=
+Es-hBKHN-R4q_-UnkCQQZZ8_TRRZ5DRA4MBmQh0Lu5yTWAOEXFBTQ8E325c-ypK7BnzuJ4/438/=
+kzvzWjOOQqOhFjqkqGAG3g/h4/g_uijXLekxR5-MrEMe8vu_6oBwOsXy5ATeBtOBMshzY">http=
+s://s3.amazonaws.com/s3.mp-cdn.net/4c/82/45151b125ec633bced8491eb0c87-will-=
+panama-disease-kill-off-bananas-now-there-is-no-new-varieties-of-plants.jpg=
+</a>,<br>and=0D<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/dnbAVr=
+Z5E6tDPxN_Z5S1u59YrjHzgfNWcj9qR4RKiPbyU_Szx0bQOdMerVMwOoxDCfOAksyW8zZqu3I_r=
+Mgb8xLZWXep38tSsY2wGkIMYgB0VaLNG4vLSP3OFBFHMtlx06-xzRMhW8fwWy4LS4tzpw/438/k=
+zvzWjOOQqOhFjqkqGAG3g/h5/RM9YF5CvVttIrn_7PWmHU5aTT3xA23NN-cJmd5DHBYg">http:=
+//breedingbetterbananas.org/wp-content/uploads/2017/10/1024_TR4-Collage-102=
+4x475-881x409.jpg</a>=0D<br>PD-affected plantations:=0D<br><a href=3D"https=
+://u19268662.ct.sendgrid.net/ss/c/TLh_csrC34X_iXpbYoMamy8usJct_No-HZkZ9j989=
+nKU3v8vq7yuf5Q0XeLuDZe9qBn-kmjhTkUfpmDdmlJhDnhejM-fNJBuMzlU8BrSnT-8yPoeyFhc=
+EEtn3dL3tg8aG0fPCbR_aUZRhi__XrhhMsLm4JKRC-Zer51Bqn3pK4A/438/kzvzWjOOQqOhFjq=
+kqGAG3g/h6/fdKry3LWo11DsYfy4Ro6bdXuvyNePyVDevvgZ1g6tEk">https://www.daf.qld=
+.gov.au/__data/assets/image/0006/168918/Fusarium-wilt-external-symptoms-Suz=
+y-Perry.JPG</a>,=0D<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/jf=
+2l8IGiVWEHUuN2KNp3mfbjwVhE1RabamlOk4KJXx_fbnCqd6-KmX84YbDWkYj59fHDfRmHv4kgh=
+lH6bwtGpVhJoy_IPX-VQhBe0ceE0rCHXvSmEyJpeK_PyH2G8Jvw/438/kzvzWjOOQqOhFjqkqGA=
+G3g/h7/wPqUmtPHeQ7kYhv-HBZBvjSxqz9cbvz3VN3LwcXqb_w">https://cdn.newsapi.com=
+.au/image/v1/09621faae32c6b454b538b57a3641204?width=3D1024</a><br>and=0D<br=
+><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisOaa=
+uNu-ir6cBtT6klMNzLpOgcZ-U7ZZeVrNL9tE00AuFdQNFWSNrtOwbh6yPVzHQA/438/kzvzWjOO=
+QqOhFjqkqGAG3g/h8/MzVwiHAOOf6VB4VpzTEjjMx1wURPl2llCM-E0Xe7hms">http://www.a=
+bc.net.au/reslib/201001/r501587_2654835.jpg</a>=0D<br>_F. o._ f. sp. _cuben=
+se_ culture:=0D<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/wscE2n=
+g5fl6JrPIt48tisM30FGdUCptmdJrB5-c0Iy_lz7gC1hZfKTM6idpFiNPKpEvR0jW8KdWyDyTtl=
+Qd3dBRAQL2zvi5AKRQD4rA_izgs5EB8UvlIHub9fNTfbIJl/438/kzvzWjOOQqOhFjqkqGAG3g/=
+h9/8TbNWcpsOPVLdFxm-5ur0-6r54dsJ2mmvaK8YfpZ2fU">http://www.ediblegeography.=
+com/wp-content/uploads/2010/03/Panama-Disease.jpg</a>=0D<br>=0D<br>Links=0D=
+<br>FAO report also available via:=0D<br><a href=3D"https://u19268662.ct.se=
+ndgrid.net/ss/c/TLh_csrC34X_iXpbYoMam1xLUmsi9pHaBL8YABl79v-Ogcl0a5doOMuKaMM=
+Z0_XLO3I_iQKLQGmkrwbJ9BySH8iv6_hvA_yZSIGGrYYclhM/438/kzvzWjOOQqOhFjqkqGAG3g=
+/h10/PXdIEoplKT4uhT44s-Z1Ex4MMIAG9EAR1BgNE4PXmfg">https://www.fao.org/marke=
+ts-and-trade/commodities/bananas/en</a>=0D<br>Summary news story:=0D<br><a =
+href=3D"https://u19268662.ct.sendgrid.net/ss/c/TLh_csrC34X_iXpbYoMam4x7WL_m=
+sW1fdDg_0JS9ul9Ric1JQV_l4OxTrP2jkgq0BCkR17cky0N94-sAWfVrGszWk6EdNzQJGuNTo6Z=
+DfwV9LFZreooArWzSuRhfBv5SXC66RodUscdrRQhXcxXZvFw-YmApSV1qAzkivM4gVGB55g0G7U=
+xGEqtox1S3wMOE/438/kzvzWjOOQqOhFjqkqGAG3g/h11/p7Vb4H2IYA8QCHq_6J3V3Y_tHyfvO=
+kvxeg66VXR8CPs">https://www.freshplaza.com/north-america/article/9592505/pr=
+eliminary-results-on-developments-in-global-banana-trade-2023/</a>=0D<br>In=
+formation on Panama disease:=0D<br><a href=3D"https://u19268662.ct.sendgrid=
+.net/ss/c/TUIVIg4PCmni5tP3Q8lzBW46q31nd8Rm-739c1VvNYg9MatU0REe2ICUrFQqu4Jmq=
+zGWn1ZEqjcyJfygafnH2A/438/kzvzWjOOQqOhFjqkqGAG3g/h12/6F7JRsnktxfVO43HiM6EOT=
+-8R6_xnjSYRxAxUTHBiLs">https://doi.org/10.1094/PHP-2000-1204-01-HM</a>,=0D<=
+br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/TUIVIg4PCmni5tP3Q8lzBW=
+46q31nd8Rm-739c1VvNYjwUBB0Z6ZscEAwZ2AT1Tv2YX0pssS02dhX8jOkNM-Y3A/438/kzvzWj=
+OOQqOhFjqkqGAG3g/h13/turGd7zAXajbr5lxpOf520HtpkrUGG5-ZobQHCe1Bnw">https://d=
+oi.org/10.1094/PHP-2005-1221-01-RV</a> and=0D<br><a href=3D"https://u192686=
+62.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisI6EnVx6qcOg7OQFeFu1Op8Tz7PE7N2=
+FkpOkLn3WOqJWABRJZYFIxSXheAspYQsgqu1XiUC1_TqQ_0l5H_myff8/438/kzvzWjOOQqOhFj=
+qkqGAG3g/h14/4unop50bfOw9OIprtB38FgwUEkTCSgRCDzVUqfRtYMk">http://www.abc.ne=
+t.au/news/2013-08-29/feature-banana/4922208</a>=0D<br>Information on race T=
+R4:=0D<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPI=
+t48tisOdjqxpCIi-ocep-I9FYJIwfbndhUGsbAPMVZSeU8HNlXQpTkQWrz3XmJzUtDZKa20qCIv=
+r6hTYDPtv-yEFQo7yA5SySm0re53FTtI-8QoDB/438/kzvzWjOOQqOhFjqkqGAG3g/h15/gD6eK=
+ZFbMvgqFLyoXPYrPGXj_FI1FfWo4i4aAYA-cwg">http://www.agriculture.gov.au/pests=
+-diseases-weeds/plant/panama-disease-tropical-race-4</a>,=0D<br><a href=3D"=
+https://u19268662.ct.sendgrid.net/ss/c/TUIVIg4PCmni5tP3Q8lzBbgkZtUSFiEYow3_=
+qyhcVWGSFvLgrLvkC__dKQAX2PU_/438/kzvzWjOOQqOhFjqkqGAG3g/h16/31_wVSQEdLv_XDy=
+zIk_BfQxxjy5YBYFk75JNdf3ZfTw">https://doi.org/10.3389/fpls.2018.00457</a>,=0D=
+<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/0oc7vsq5mmLjPwOs4PjMh=
+9Goa4E0nlaajFuJnEqFfcBoAtU60UcTDfJ272EpRwLPjMu8-tXox-BVhzWwTUyrIVQ5tAW2LhEP=
+JKHxgnAx7xo/438/kzvzWjOOQqOhFjqkqGAG3g/h17/pkCx2PQndskeWeL4KDQ749Cy8TVlwNtS=
+gq9FfyFtBt4">https://phys.org/news/2018-04-path-panama-disease-fungus.html<=
+/a> and=0D<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/TLh_csrC34X=
+_iXpbYoMamy8usJct_No-HZkZ9j989nIY27HXOysfn-8x_B2c2Q8KJcoeYgJhOhAwyhP7rtEXFI=
+BJtH2a220RqzfipsWzs9PGbRR2c5PES3SFNmczK21h-eY25_WyuQF_74MHRVbOeM74BVQ71JT9h=
+s41j-6-RpWeuikHTjX-09mw4dQtG0X72w-Cpe6o_BTUPX7iV4_ktg/438/kzvzWjOOQqOhFjqkq=
+GAG3g/h18/yMH5jttH5a4Zl8ZdPiF6hnpVKx9gKNTHCpmapP0P54c">https://www.daf.qld.=
+gov.au/business-priorities/biosecurity/plant/health-pests-diseases/a-z-list=
+-of-emergency-plant-pests-and-diseases/panama-disease</a>=0D<br>FAO TR4 Glo=
+bal Network:=0D<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/TLh_cs=
+rC34X_iXpbYoMamzvpsNOtAO_bBLghM3dLu86NXXafET0jn1zEyg6I2n1W/438/kzvzWjOOQqOh=
+FjqkqGAG3g/h19/wqtwpZ8weXbgpoqnjKZPIXMGdxG2s0i7co3Dz0LXofI">https://www.fao=
+.org/tr4gn/en/</a> and=0D<br><a href=3D"https://u19268662.ct.sendgrid.net/s=
+s/c/TLh_csrC34X_iXpbYoMam7NkntTQamDOFdclHp-AXvzXLFDWCWJHfRKCBkwWMgcMnEKm79d=
+q3aADf8o6Wjtuftl4wWA7zJtv1EUL0PvOun3tSl6GETeftXpzWfz1xyjzOOenYGAXSVlm963lix=
+9dezrHdYn51CZjqLm3dqfnOx8/438/kzvzWjOOQqOhFjqkqGAG3g/h20/5i4r5wX7xpOqkkQ3TU=
+Ak4mrE2N8qWep7hlCgvDdrGi0">https://www.freshfruitportal.com/news/2019/10/07=
+/fao-launches-emergency-project-to-combat-banana-disease-tr4/</a>=0D<br>_F.=
+ oxysporum_ taxonomy and synonyms:=0D<br><a href=3D"https://u19268662.ct.se=
+ndgrid.net/ss/c/wscE2ng5fl6JrPIt48tisJ-cY0NFcTRibjZsPVrL4XFcFzUAiQLZkRVjVoh=
+hGKWjAe-ViQcs-jq68W_iw75wLPG-D3IJ1SOGplVOoPIZfsI/438/kzvzWjOOQqOhFjqkqGAG3g=
+/h21/eMqb1nv0qNxMrO2URcZin25VHmFPS2I1WYnfOnw7SZI">http://www.indexfungorum.=
+org/Names/NamesRecord.asp?RecordID=3D218372</a>,=0D<br><a href=3D"https://u=
+19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisC3NGyXkpWXAt0acUXJnY0yWb=
+zRIQFLD7ziVDVcroPeNQ2cnas5mn0LSApWXPu_vKKDYXtCCeLFcw81Psb3eJqM/438/kzvzWjOO=
+QqOhFjqkqGAG3g/h22/2DKG4zrnuifbiD3tqEOPyWLhbQmQwgoiwLDci6Pb6BI">http://www.=
+speciesfungorum.org/Names/SynSpecies.asp?RecordID=3D218372</a><br>and=0D<br=
+><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/TUIVIg4PCmni5tP3Q8lzBW46=
+q31nd8Rm-739c1VvNYgHj3Y_RkgYIt5NqDeDvMLI_iHeIWVdTdNOWkGdmzSxpg/438/kzvzWjOO=
+QqOhFjqkqGAG3g/h23/Ccl9MbklNkY5UI72SFqIxacFj6J34xaWEUolX6W0cQ4">https://doi=
+.org/10.1094/PHYTO-03-21-0089-LE</a> (review)=0D<br>Information on _Trichod=
+erma_ species and use as biocontrol agents:=0D<br><a href=3D"https://u19268=
+662.ct.sendgrid.net/ss/c/yz2fdA_g7iMSh8qzYPxBFsuYckE2J8uHqUsnH6sOAC72YjppZ0=
+6WgR1e8Pxpeow4PEnI9LEMd-Do22GNKP868dZI57OU-nzf_sE-LDXTRVg/438/kzvzWjOOQqOhF=
+jqkqGAG3g/h24/97T1jcBft6-sM9eX4t7s2w_Ffd055syuCKgQk7DjSI4">https://biocontr=
+ol.entomology.cornell.edu/pathogens/trichoderma.php</a>=0D<br>Cultivars and=
+ hybrids of banana and plantain:=0D<br><a href=3D"https://u19268662.ct.send=
+grid.net/ss/c/wscE2ng5fl6JrPIt48tisMfSMMt_47leZ98H4yDHjw4KZhxf49gDGE_CPl591=
+MPJfapFTKEtiy1_GfIMI2A1pQ/438/kzvzWjOOQqOhFjqkqGAG3g/h25/DjZpm94vPVUu0qX3Po=
+8Myn17eymMPji3DPvyMqiEzFM">http://www.plantnames.unimelb.edu.au/Sorting/Mus=
+a.html</a> and=0D<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/wscE=
+2ng5fl6JrPIt48tisMfSMMt_47leZ98H4yDHjw4KZhxf49gDGE_CPl591MPJ1KYfcITult6PcYN=
+xsWV-9Hw92lzH9-zNHuMms8GaEjI/438/kzvzWjOOQqOhFjqkqGAG3g/h26/HFKqoW1l_fxlZs3=
+VWZhtCW7ks8Y7X9AoNWeFw9xzLbI">http://www.plantnames.unimelb.edu.au/Sorting/=
+Musa-cvs.html</a>=0D<br>- Mod.DHA]<br><br>[See Also:<br>2023=0D<br>----=0D<=
+br>Panama disease TR4, banana - St Lucia: alert<br>http://promedmail.org/po=
+st/20230406.8709351=0D<br>Panama disease TR4, banana - Venezuela: 1st rep<b=
+r>http://promedmail.org/post/20230206.8708197=0D<br>2022=0D<br>----=0D<br>P=
+anama disease TR4, banana - Philippines: (DV)<br>http://promedmail.org/post=
+/20221103.8706524=0D<br>Panama disease TR4, banana - Australia: (QL)<br>htt=
+p://promedmail.org/post/20220708.8704305=0D<br>Panama disease, banana - Vie=
+t Nam: pathogen diversity<br>http://promedmail.org/post/20220216.8701506=0D=
+<br>Panama disease & bunchy top, banana - Pakistan: (SD)<br>http://promedma=
+il.org/post/20220214.8701445=0D<br>Panama disease TR4, banana - Colombia: (=
+MA)<br>http://promedmail.org/post/20220109.8700686=0D<br>2021=0D<br>----=0D=
+<br>Panama disease TR4, banana - Peru (02): 1st rep (PI) conf<br>http://pro=
+medmail.org/post/20210414.8308193=0D<br>Panama disease TR4, banana - Peru: =
+(PI) susp, alert<br>http://promedmail.org/post/20210412.8301760=0D<br>Panam=
+a disease TR1, Cavendish banana - India<br>http://promedmail.org/post/20210=
+105.8075029=0D<br>2020=0D<br>----=0D<br>Panama disease TR4, banana - Costa =
+Rica: alert<br>http://promedmail.org/post/20200714.7572134=0D<br>Panama dis=
+ease TR4, banana - Philippines: (Mindanao)<br>http://promedmail.org/post/20=
+200204.6950644=0D<br>2019=0D<br>----=0D<br>Panama disease TR4, banana - Aus=
+tralia: (QL) spread<br>http://promedmail.org/post/20190917.6678061=0D<br>Pa=
+nama disease TR4, banana - Americas (02): (Colombia) conf<br>http://promedm=
+ail.org/post/20190820.6630576=0D<br>Panama disease TR4, banana - Americas: =
+1st rep (Colombia) susp<br>http://promedmail.org/post/20190712.6564489=0D<b=
+r>Panama disease, banana - Thailand: (CR) susp<br>http://promedmail.org/pos=
+t/20190702.6548142=0D<br>Panama disease TR4, banana - Israel<br>http://prom=
+edmail.org/post/20190411.6415884=0D<br>and older items in the archives]<br>=
+.................................................dha/tw/jh<br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3DjRcz59rN2BfcLtPq9uva_vPNJuaIeYcYeBtAw-7rzl5oMDAwdT=
+AwMN3l1yFaAeSRYjjINAMlFqjYIzbnSZ6e-m8VA6RrbiyI_2ABZZ3iqzJp3N7eb09uP1RApy256=
+1kzPGUt4t92m_slDsXtK5fhEL9IgtCFgB34-OwQAmSaA4euzPddVfO91x2vbEmb8SyK0a7LA1iS=
+vDP4cHQ9QLFlgsFqo2pjbwbPc7mc4Mjpy7cju97NwwZucWMi2GwUsxU8Sq6wlcw3z811bQk7z-S=
+X3C4HRDdYyX6UIh7hsb7zjG6mywJEAg7MujKKN7P5bV40yq3RGdbp6c3DkdRiMcvYiwn2mlBz8X=
+p-i9UJl9wMmKr183XnXTbQEEqykBDzYN73DJec6RY7Z1P9s_R9LrEVMdOhtpI-ekwR8ovyL7mPD=
+TYgheiSWagvAJkv6H5mPjemv7VkpETuA7lWlTDSQeg3N3Iqe4AsYPi4MHHJijS_GQVkIyrwGbSX=
+3rEgKSItqbDxIs89n_A8rEzRd4oDNgyOpe5s-2KTKGDqanvTa4sfmw33Q6S4I8nUfB7QS1XZvFL=
+jzHwNqeMuOQcwFcZGJqQKBV84_MEjedyxibi-BMxWHjBoZ74Bp_562HoWMzR5qX72-t63TN3Z_H=
+DFbOCwrq1CpaHZjn1t4jITAgUVlzBOWtDslOjf2tJwbvKTj7m6TNEp0GTrbhnUpWeDHd1bN90Mo=
+e-lhhHDtDKKl5A9OVLPoSMAImikTSA2g8Um5dlKZVrye1rTy9V2p822jfvgaVkXj0hazhLBF0-d=
+QrF-COmIzdLjXVXtzhpMZ-aLfBo5yXqmpe57qSSOH9v4QaBhddkzJOU2Oxh0ytwPygvBtnLnbD9=
+R57ooIspH4lQOBHyWIBh8GD23jI7qgtU_bxWnX540x_Ut13fTa6-dUG4lOK3uUnCHlU5b8mo93W=
+vm7QQbBuTgmrVgut_YJLBUAMGIXV6Qz6tMjNDNW0516v4jNsad5RVD5gxcONzoJnkmoZ5vTdnmZ=
+c8NLzN-rxUUSINrrZQji0U5h8YtLgI4gJL7orfri1TLUPWjCK5kPOSAsZM1PW74mFF2hNKzQY3h=
+NYHioeM5aGCgd_BGvOZI10bXtz35UhsYqWvrDKiKWLfZ4m9DjsPGLSK7GDyEpPXMjG0EiS1lPf_=
+-EyqOlOUXvDHIULv_jODUDFD1ARKvLs1v-kPcbEIy-LI8bxLWbH4=3D" target=3D"_blank" =
+class=3D"Unsubscribe--unsubscribePreferences" style=3D"font-family:sans-ser=
+if;text-decoration:none;">Unsubscribe Preferences</a></div><br>############=
+################################################<br>#######################=
+#####################################<br><br><img src=3D"https://u19268662.=
+ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/438/kzvzWjOOQqOhFjqkqGAG3g/ho.g=
+if" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"height:1px !imp=
+ortant;width:1px !important;border-width:0 !important;margin-top:0 !importa=
+nt;margin-bottom:0 !important;margin-right:0 !important;margin-left:0 !impo=
+rtant;padding-top:0 !important;padding-bottom:0 !important;padding-right:0 =
+!important;padding-left:0 !important;"/></body>
+</html>
+--b62fee47a342f7c798d770f7b270747827c33d0077f3929f54a4bdc443bd--

@@ -1,0 +1,500 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a98:c004:0:b0:1eb:e128:bbe3 with SMTP id l4csp581917eic;
+        Tue, 9 Jan 2024 15:03:17 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IGbPpgXhN9Ch/rjo5xpNjUhv/2YfvztSRe5WKXgP+dbS5Lbc6PF3vttxUPf8IyHaP9Bsd//
+X-Received: by 2002:a05:620a:40c9:b0:783:29b3:bf1a with SMTP id g9-20020a05620a40c900b0078329b3bf1amr209333qko.107.1704841396962;
+        Tue, 09 Jan 2024 15:03:16 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1704841396; cv=none;
+        d=google.com; s=arc-20160816;
+        b=RqqytRSTK1MYVDgOnkWXZYYmRCRkzPE4tkW9TKaKzTCYG2b4wfonSlqf+n3Fa+urKT
+         qbikylTO2+gAQVaOht1+Boruw/uhjfn24K0GY0g0TPWrBt+S0RYpkQDriGUdYWsuboDS
+         qQjYNFQVpp5le2nLW05mr72L0r2rb2LJgWZMi7ymslnBuCx0QBTy3dJz/dO1AlRhRrRs
+         H8/lOgy7YPpU8HQeYjGb4yD27+rNgRC5Sk10yznBQcU7MDPSsMPV0gNptOC8y9rd+pH2
+         afhfm6Tq+8qBdd1WguoJjA4mwim3tA/7uXCZ54uR3jppZNRSOCjF+b8UB3U06zVRWrho
+         z3Hw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=U1ZqIx/wyQgZrth7oAeTIyzKergycinDWswZeeKje/g=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=AoG4aJXCoUtpVp6BMo2eea+eh8lsS1Q+BSn/aekkk01WiFn5vd2oPDy3Kq2rcw6/Cz
+         nC6zBHznEyTPOs2gSjqLtaCmhYt8XqVtoIQ6yXuUQx+ucoRjVklSo7+5praxWFPC7bIf
+         RWamGaQOXgJpCnvp+nhOTe5VUVMK2QWNjhVEyTFeb2LBjO8+bzWFhA3v+6ZEicUIT2vL
+         1wsecn6cLplcu06qKqUxvXKOLXa995bOXH2qY4ohRO428ZfOtQpdDdNWpSmDna3xvF6A
+         46xd7E1gry3yvaptStE4gYlYnKtRpJrrvTnrHRtD0yeQGbPGwgD4SOQ0surtkmQiUzrW
+         xgWg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=kvgQNeno;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=cpmG0P03;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id t12-20020a05620a004c00b007810ca77e71si2880367qkt.539.2024.01.09.15.03.16
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 09 Jan 2024 15:03:16 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=kvgQNeno;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=cpmG0P03;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=U1ZqIx/wyQgZrth7oAeTIyzKergycinDWswZeeKje/g=;
+	b=kvgQNenoC9D7Du5WT5THXamutLXEaMUKPkdHU9NElhOw9nTMn2gAH/m//6CdyFo//PR2
+	ZeQa24FNs51vQkKW4bpGsMPS2bQnbhhwfcvQDifR3bDQk9g4otnT2OCTq4X2ci8EtJozbJ
+	lkvY/yzMsFzLG3qhEeIoHvJBaBpRVg30eFTe7cEvlQUe0ON0EfRKtB4zULF7TKkgND8t/W
+	sqqhDw/V94iql60IBpoaDdxLmwouf0k+2QwpmH7ahZjT2KXLBu9ASBy7z4EVrARlJ8RTtl
+	sNFLiLpX4PoVWMbmFzn6cJXKwCE3/0RnCGmTTOFlKK+C3CkIms4zGVsLU9GbF0NQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=U1ZqIx/wyQgZrth7oAeTIyzKergycinDWswZeeKje/g=;
+	b=cpmG0P03ER4tcdCChCUYA2nvjlGH+G/5U5JFpet2JfSD4YByGC0MBrXQGcGuH/fwyC/V
+	mfthjM4YjzIbmVGP5/mznOh146ucCs65xs8rhZPMkjvfyhj5z7+Iz/0NnZfMqT2LmuLFQn
+	3EkMFy1JT28U2ykfhGtEpDs0/TgL0V5y8=
+Received: by filterdrecv-ff8dddcb7-zw64d with SMTP id filterdrecv-ff8dddcb7-zw64d-1-659DD0B2-54
+        2024-01-09 23:03:14.414024598 +0000 UTC m=+4147979.171046635
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-10 (SG) with HTTP
+	id bb2SHji6SHW-hRLG7opeuw
+	Tue, 09 Jan 2024 23:03:14.359 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=0dd340c73a929359cce48711f183a6f7a13cea6ddea438816d72cc80c2be
+Date: Tue, 09 Jan 2024 23:03:16 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <bb2SHji6SHW-hRLG7opeuw@geopod-ismtpd-10>
+Subject: PRO/AH/EDR> E. coli EHEC - USA: (MI, NY) unpasteurized dairy
+ products, ex Pennsylvania
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iBtvoZ=2F4MUvDhyFRvYQoJ4CyyzoxZHU4Vl5ZVSC?=
+ =?us-ascii?Q?H3dk9OXzviehBsDQmKd6PlzNOCsxlXPQNMyv=2FVc?=
+ =?us-ascii?Q?+2TsdjlcTU5G2qdTfOMfTnQScsmz7DEOqV6SaME?=
+ =?us-ascii?Q?Bz8AaNi6TJ18uUrtyyujQ5tfGBZsBaXyy8UPxEW?=
+ =?us-ascii?Q?kHvljxTmhhofDeudeY4dT2zU8Vjo95CEBQx2xB?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUiShGf=2FO8XJWpH34Od4Nd?=
+ =?us-ascii?Q?fxXa6jil96uRcJkF+N+LeVnO1tx80ddOyoyOo=2Fc?=
+ =?us-ascii?Q?Brxcl3ERAm0cOY743=2FFH59DWiSf5OzXORh1DLKt?=
+ =?us-ascii?Q?hb1NMKty3PsA5ju0ZzxCrq1WQuZSEQf=2FJlWtgqv?=
+ =?us-ascii?Q?cZmsyCHlNUZsDQe993K4wJQTflF2yGMYTD+HJ+b?=
+ =?us-ascii?Q?fbQZNGz6OsPnmkufgY8o3sFai=2FxUfUYFFWgP1Tn?=
+ =?us-ascii?Q?yPpGC7mXMRSns70Kn6aqiIK2jdu+SQcdWFTEzwn?=
+ =?us-ascii?Q?UIT+eyggl=2FrGRFYILjrlpZm3ey4wWMlzKkCi=2FXs?=
+ =?us-ascii?Q?YdGkJXPW1ILjsDyDYPeDCCplSVMxfr9ykBI+eVy?=
+ =?us-ascii?Q?AIvlu5oZFjdTuH+KbVLZNTKPoKFEx+cAFbDxo4l?=
+ =?us-ascii?Q?JvjbSfghMKaU7C96TXX7eU=2FsLcQkI7sBB2YGTTY?=
+ =?us-ascii?Q?MP8yioJX7NdVB1M3kSyJoVLMyW7+3Ai9QybcIJG?=
+ =?us-ascii?Q?LD5zlAK+wv+qFVzCBDq7G=2FqWjO=2FDiDMvbQEQv96?=
+ =?us-ascii?Q?C8szewqVzkgKrecDM7zROfvMJ4clS2p8GESygSh?=
+ =?us-ascii?Q?I0SxCL1goJf+5EUqflCkIzNNxyOKnL4JfuY6xQn?=
+ =?us-ascii?Q?vqZMZO=2Fq0kTxtYlzLthXandTUdSRD=2FP8FZUCi42?=
+ =?us-ascii?Q?q2D6EC=2FPvwaWxoy=2FrAJ1l6cP4OACEpRJj5t6gU5?=
+ =?us-ascii?Q?2mi39NEzpfmRnPDrxskECXXoco0yhtMD3ofV+az?=
+ =?us-ascii?Q?50EwOeU8ZWhybWUpwYSrUmJX4CzlRu8Z8szbuUg?=
+ =?us-ascii?Q?kUs5t7+2UhV8RhlbQN2EzQe4=2Fw=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2E8MPCxCDDS?=
+ =?us-ascii?Q?ZDqTNX6DPx1mZa2qBkB8DqZYgdMUww4UPtoMDAw?=
+ =?us-ascii?Q?dTAwMNNOsBe7JSX6d78O1C7J1eQ8KSCidXt98k3?=
+ =?us-ascii?Q?WajZb-5ax3rOunUWO-aeTjtUEwucK8HjTl-hoQA?=
+ =?us-ascii?Q?nA1mpNtZ8e49J6NuGPA=5Fef5eMy0iJC8hvT6VGHe?=
+ =?us-ascii?Q?P5O5TJg=5F8Ym2=5FaLsg=3D=3D=2EGVVNaxyEmYopWN3dVdq?=
+ =?us-ascii?Q?c1itbdEYybhry1q2rz64BWlhoMDAwdTAwMASOBS?=
+ =?us-ascii?Q?aXQFVFUIvv-UJz5ZZsV9hqb1R4HzcPPEYHiHIyu?=
+ =?us-ascii?Q?XacwpXrqqui6kUBaqv=5FFZM86F17qXvjHUECBHem?=
+ =?us-ascii?Q?BU6dOqMSBhNXV9DFZwE=5FQImOpHqMvIFH221YLSM?=
+ =?us-ascii?Q?nCkCbrp9KWMk0rS5kt8RyvKS1AM9bnn2eQRtUtc?=
+ =?us-ascii?Q?PAXQAwnWCfhgayB85Fm1D33RX-qpxx4vReBr3KF?=
+ =?us-ascii?Q?OlRApNPjjehNKIbO46iN8w=5Fljpc8KlUVvDxK8Mc?=
+ =?us-ascii?Q?PVm=5FVfLjlx89BmaAp=5FcyQhqOxQQ4Gzk4sbbgVUp?=
+ =?us-ascii?Q?=5Fny8inj8vpVm-gJhUCezgOBucUkM2xTw2PFHGsd?=
+ =?us-ascii?Q?d=5Fahcdw4hhRDOsGvM34rmCh51PDGyvRZ1Ho93nk?=
+ =?us-ascii?Q?3wyfvg1bILktdTXpqeQRq0f8icC7WmaVVTigWQH?=
+ =?us-ascii?Q?aCtlHTgg0pKb1L4fLhIPEGGnVQF0Zi2z-m3-XIr?=
+ =?us-ascii?Q?xHHNamF5FpqIJgLA2bgx=5F94QVsD=5Fv43wVyWN2BY?=
+ =?us-ascii?Q?7b4816itANXYJqAcJeriTuf2fx-FniWWM-qAylN?=
+ =?us-ascii?Q?v4Tumy-L1civx8YKO4iRILO9GgmUDOT9odxoIvr?=
+ =?us-ascii?Q?SUYsCBOUHYymnd2a1i4rP4JpS8xQkuq2TewsXBl?=
+ =?us-ascii?Q?9kZe4r5BH41Y6zWOOFNoYpe0mtg8PBuFGo88E8q?=
+ =?us-ascii?Q?m1NnuPm2e580zu4DkB8itKYUiOROBrbC2DoUOeH?=
+ =?us-ascii?Q?jfzxwVe0riQabuOEUoNmjCtgcdth2Y4UR6KDhWa?=
+ =?us-ascii?Q?YlRSDl=5FFMwUfsTwCIzmdKHFfypht-AdE=5F5LajQA?=
+ =?us-ascii?Q?R7cf6j1630SI0QJq-AUqx=5Fw5zqf6nXwr-YkSOBX?=
+ =?us-ascii?Q?0G168rJZtWXRiGZbFIyN7O3SCe=5F5ikjXhv6phYY?=
+ =?us-ascii?Q?zdTqmi2POQMLZgCvHShqlc0DF5QZNsUTpxeUARB?=
+ =?us-ascii?Q?wjfSF9icrqj9WVpQQGhL1G=5FfdQWL2ah1Q19VVOd?=
+ =?us-ascii?Q?eySx8gSM8cBg7X-qCrr414r6L3glTg=5FW7Q9Vic8?=
+ =?us-ascii?Q?sbhyzcX0WQsH=5Fmoj=5FdvaPn-9jd0nSDnWg1Xi8vp?=
+ =?us-ascii?Q?2bXhAOOVq3RyBSbC=5FeZcj8DVovhhlsog4JnaGMp?=
+ =?us-ascii?Q?DYJRrg=3D=3D=3E?=
+
+--0dd340c73a929359cce48711f183a6f7a13cea6ddea438816d72cc80c2be
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=us-ascii
+Mime-Version: 1.0
+
+E. COLI EHEC - USA: (MICHIGAN, NEW YORK) UNPASTEURIZED DAIRY PRODUCTS,
+ex PENNSYLVANIA
+***************************************************************************=
+***********
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+Date: Sat 6 Jan 2024
+Source: Food Safety News [abridged, edited]
+<https://www.foodsafetynews.com/2024/01/pennsylvania-ag-officials-search-mi=
+ller-organic-farm-for-the-source-of-shiga-toxins/>
+
+
+The Pennsylvania Department of Agriculture executed a duly issued
+search warrant on Amos Miller and Miller's Organic Farm. The state's
+responsibility was to determine if raw eggnog and other unpasteurized,
+raw dairy products produced by Miller were responsible for positive
+Shiga toxin-producing _E. coli_ tests in Michigan and New York,
+causing human illnesses. It is against federal law to sell raw milk
+and raw dairy products across state lines. Pennsylvania State Police
+provided security for the state agricultural officials who conducted
+the 4 Jan 2024 search.
+
+Last year [2023], Miller's attorney, Robert Barnes, concluded federal
+litigation on behalf of his client by signing off on a Third Consent
+Decree that provided his cooperation going forward. That order, which
+remains in effect, precludes Miller from "conducting livestock/poultry
+slaughter and processing" intended for sale, resale, offer for sale,
+transportation, donation, or distribution to his "customers or
+elsewhere." Miller may "market and sell amenable meats and poultry
+from third-party, USDA-inspected establishments."
+
+In the Third Consent Decree, Miller agreed that USDA's Food Safety and
+Inspection Service has access to all his properties. The federal
+litigation over meat inspection and food safety dated back to 2016 and
+concluded in 2023 with the Consent Decree remaining in effect. When
+the state officials arrived at Miller's Organic Farm, located at
+Bird-in-Hand, PA, the incident was first picked up by The Lancaster
+Patriot, an area website and Facebook page not high on food safety
+regulations.
+
+[Byline: Dan Flynn]
+
+--
+Communicated by:
+ProMED
+
+[Scientifically, unpasteurized dairy products are inherently unsafe.
+
+In the March 2012 issue of Emerging Infectious Diseases (Langer AJ,
+Ayers T, Grass J, et al. Nonpasteurized dairy products, disease
+outbreaks, and state laws -- United States, 1993-2006. Emerg Infect
+Dis. 2012; 18(3): 385-391;
+<http://wwwnc.cdc.gov/eid/article/18/3/11-1370_article>), researchers
+reported on 121 foodborne outbreaks (with 4413 cases of reported
+illness) caused by contaminated dairy products, and 73 (60%) were
+involved with unpasteurized dairy products. A total of 65 (54%)
+involved cheese (42% made from unpasteurized milk) and 56 involved
+fluid milk (82% involved unpasteurized milk). In these outbreaks,
+_Campylobacter_ spp. were responsible for 54% of the outbreaks,
+followed by _Salmonella_ spp. (22%), enterohemorrhagic _E. coli_
+(13%), _Brucella_ spp. (4%), _Listeria_ (4%), and _Shigella_ spp.
+(3%).
+
+Clearly, pasteurized milk can also transmit disease, and 48 outbreaks
+were reported. The source of contamination was reported in only 7
+(14%), of which at least 4 resulted from post-pasteurization
+contamination by an infected food handler.
+
+The reader is directed to the article for additional information and
+discussion.
+
+Classical zoonotic organisms such as _Brucella abortus_, _Brucella
+melitensis_, _Mycobacterium bovis_, _Salmonella_ species, _Listeria
+monocytogenes_, _Campylobacter_ species, _Yersinia_ species,
+_Streptococcus zooepidemicus_, _Coxiella burnetii_, and _E. coli_
+O157:H7 are associated with the ingestion of raw milk. Non-zoonotic
+organisms such as _Streptococcus pyogenes_, _Salmonella_ Typhi,
+_Corynebacterium diphtheriae_, _Shigella_ spp., _Salmonella_ Paratyphi
+A, _Salmonella_ Paratyphi B, enterotoxins from _Staphylococcus
+aureus_, and hepatitis A have also been associated with the ingestion
+of raw milk. - Mod.LL
+
+ProMED maps:
+Michigan, United States:
+<https://promedmail.org/promed-post?place=3D8714146,225>
+New York State, United States:
+<https://promedmail.org/promed-post?place=3D8714146,234>
+Pennsylvania, United States:
+<https://promedmail.org/promed-post?place=3D8714146,240>]
+
+[See Also:
+2023
+----
+E. coli EHEC - USA (17): (CA) restaurant
+http://promedmail.org/post/20231107.8713034
+E. coli EHEC - USA (16): O121, source unknown, FDA
+http://promedmail.org/post/20231104.8712986
+E. coli EHEC - USA (15): O157, unidentified source
+http://promedmail.org/post/20231025.8712820
+E. coli EHEC - USA (14): (CA) restaurant
+http://promedmail.org/post/20231025.8712818
+E. coli EHEC - USA (13): (TN) schoolchildren, animal exp, secondary
+cases, RFI http://promedmail.org/post/20231015.8712635
+E. coli EHEC, Campylobacteriosis - USA (02): (WY) unpasteurized milk
+http://promedmail.org/post/20231014.8712634
+E. coli EHEC - USA (12): (TN) schoolchildren, animal exposure
+http://promedmail.org/post/20231007.8712502
+E. coli EHEC - USA (11): (IL) high school students
+http://promedmail.org/post/20230926.8712328
+E. coli EHEC - USA (10): (IL) school, RFI
+http://promedmail.org/post/20230921.8712258
+E. coli EHEC - USA (09): (AR) O157, university-associated
+http://promedmail.org/post/20230902.8711924
+E. coli EHEC - USA (08): (AR) O157, university-associated
+http://promedmail.org/post/20230901.8711919
+E. coli - USA (02): (UT) Cache County, susp., RFI
+http://promedmail.org/post/20230829.8711883
+E. coli EHEC - USA (07): (AR) University of Arkansas,
+hospitalizations, RFI http://promedmail.org/post/20230825.8711832
+E. coli EHEC - USA (06): (UT) O157, irrigation water susp
+http://promedmail.org/post/20230806.8711587
+E. coli EHEC - USA (05): (TN) O157, goat source, CDC, 2022
+http://promedmail.org/post/20230721.8711296
+E. coli EHEC - USA (04): FDA, O157, unknown source, RFI
+http://promedmail.org/post/20230713.8711129
+E. coli EHEC - USA (03): O157, fast-food chain, lettuce susp, CDC
+http://promedmail.org/post/20230630.8710872
+E. coli EHEC - USA (02): (TN) O157, unpasteurized milk, CDC, 2022
+http://promedmail.org/post/20230428.8709753
+E. coli EHEC - USA (01): O157, REPEXH01 persistent strain
+http://promedmail.org/post/20230301.8708652
+E. coli EHEC, Campylobacteriosis - USA: (OK) unknown source(s)
+http://promedmail.org/post/20230213.8708347]
+.................................................ll/rd/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3Dn6J_-B2wb_uKYLy0NBSVke3vXiet546JtUpD4QCa_exoMDAwdTAwMEdo4pn=
+LXanHpUlscXumX7k1WeG67X_VTfGTL3fnA15zJy6FieaB8sNvqVU0Hv9_P4zx1-3I49JvDDPalv=
+THEL_vMgV1UpodEduU3FRng8pRNXfpTEK76MF8lO_xzfwX06EA5ed5NaKL5GjEHX1L5zecfqejF=
+0e79noGuh8V59nph4Gps44fPj_ZyLUv_HU4ypGOqCrcK0Fg4e2OfIRkZZ6HiCXhtw-yCNvWVRRy=
+9Bu9E8JngUMqi15MfWrlHdGzZQrfQyb9gX6Q_-fJeJyOsud0Xfeo8IJIUS0anTcPmzT6cui89vF=
+yqLKxQ_I6FJ86cEF2pTGuEEYFbvG3vVGu34jlFvbXmM-27BeKwIUlRABsmIQnUZ6X02VkOlsVhF=
+J8jWkaWva6Dwd_r62pYUmBEC01OOrR_9u3Si3gw7Skef9U5n1s6uG6LW3aeY0xUglgXpUENbdsZ=
+9zuZIdQbq101QFAgzApZD0xA86BQI4luyg5I7JIrQFGCqoQqTfGITIJ5U-nQNrVD284BGSdD5Hh=
+ZOEByL0sVCwW0WTbAvbhsF6xIcz1TEx3oC_A4sZJZNdizy-TNcOHlsHfByuQ_Y5u-Y1ar1RF-ln=
+4d65HzmckovN7aSg6UUb6p9tB6UZxc3GSUZWp99sdbt8Nl6piTszas-imH2_QirU9wl0DqPf0yg=
+FsdHovK0uBNf65MqRBxsY8am4TYHXtWbDmhd8aNF51ZWkDMzYMsSzlxVpG3kdPdsMfGXOb549AA=
+5rkbb2gFqE8cv8ihT6XW3VPHIvFulRhPzPlkEc-gl0Ks71Q22aLGtvULDxsKiFJq-BiSGDhHx3i=
+wP2YkKQqtGsI54XOrBVKhGFQ8mD-DxPI1G_QI33FuLdRlaKO94J8R4C62v0BtjlPLY-KW4SP68_=
+zCO1dNol68OdR-tCy3eLwGhDop9SfbpZzXuESRQHMRj6LRH4Fl2nAy5UeUORZqY0KyMEmnV9DzV=
+9GyppXEIPmI2VF971A6bdT4zMihUsuE8VsMLu-KQ_coH1hKo9FRbL2Td5y_uDBBSnWpVSHnNsB1=
+g9GKSv8pKmutU5QLt0zQblUFvaC2B5PVczN1PVMmcpXEy5O59VwmvqKILykZu8t0taaFYF3fZr6=
+lqbobRUs4eSJhkbJaF1ZIkqq3Whpo73A7CaD0rLALr7WEUXnN_VQG-iMUTQLlb0e )
+############################################################
+############################################################
+
+--0dd340c73a929359cce48711f183a6f7a13cea6ddea438816d72cc80c2be
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>E. COLI EHEC - USA: (MICHIGAN, NEW YORK) UNPASTEURIZED DAIRY PRODUCTS=
+,<br>ex PENNSYLVANIA<br>***************************************************=
+***********************************<br>A ProMED-mail post<br><a href=3D"htt=
+ps://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisIijpefK5PNjW-mL-YZ=
+GnfgDOxU1G3gjwnPSi2Tfv3HA/42u/MTGG4sS6R6iU-afodVzeFQ/h0/83JNRo8W8SfzossV34z=
+YXy1zmrvbvBBiPjWRouy-st0">http://www.promedmail.org</a><br>ProMED-mail is a=
+ program of the<br>International Society for Infectious Diseases<br><a href=
+=3D"https://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisCT5tpD4Upm3=
+qyMCbcYSQvc/42u/MTGG4sS6R6iU-afodVzeFQ/h1/0ZHV0npeDYm8toHvRi55-y_yZ-Tzq5jIZ=
+G0SvV7jYdg">http://www.isid.org</a><br><br>Date: Sat 6 Jan 2024=0D<br>Sourc=
+e: Food Safety News [abridged, edited]=0D<br><a href=3D"https://u19268662.c=
+t.sendgrid.net/ss/c/TLh_csrC34X_iXpbYoMam7_KE_k7g5yUf5I4VNdPS-REw1mEQ4sjykg=
+vyQz69PUIsb38eUVKbMx4B0-1nTFUrYGdlon0Pa9RyUGS9psQe1OaRWfqO0rfEFvjBeg2aJGq9q=
+HobmjEomXlG2oJNmftM9YMKzv4gV5iO9xqiJg1KqkfdlfCMZWfMzAoiiJvFycc/42u/MTGG4sS6=
+R6iU-afodVzeFQ/h2/TmKHZCbq6PoICQk6Vp1tK5Wy4r1lXePKxFw0BXI_VSA">https://www.=
+foodsafetynews.com/2024/01/pennsylvania-ag-officials-search-miller-organic-=
+farm-for-the-source-of-shiga-toxins/</a>=0D<br>=0D<br>=0D<br>The Pennsylvan=
+ia Department of Agriculture executed a duly issued<br>search warrant on Am=
+os Miller and Miller's Organic Farm. The state's<br>responsibility was to d=
+etermine if raw eggnog and other unpasteurized,<br>raw dairy products produ=
+ced by Miller were responsible for positive<br>Shiga toxin-producing _E. co=
+li_ tests in Michigan and New York,<br>causing human illnesses. It is again=
+st federal law to sell raw milk<br>and raw dairy products across state line=
+s. Pennsylvania State Police<br>provided security for the state agricultura=
+l officials who conducted<br>the 4 Jan 2024 search.=0D<br>=0D<br>Last year =
+[2023], Miller's attorney, Robert Barnes, concluded federal<br>litigation o=
+n behalf of his client by signing off on a Third Consent<br>Decree that pro=
+vided his cooperation going forward. That order, which<br>remains in effect=
+, precludes Miller from "conducting livestock/poultry<br>slaughter and proc=
+essing" intended for sale, resale, offer for sale,<br>transportation, donat=
+ion, or distribution to his "customers or<br>elsewhere." Miller may "market=
+ and sell amenable meats and poultry<br>from third-party, USDA-inspected es=
+tablishments."=0D<br>=0D<br>In the Third Consent Decree, Miller agreed that=
+ USDA's Food Safety and<br>Inspection Service has access to all his propert=
+ies. The federal<br>litigation over meat inspection and food safety dated b=
+ack to 2016 and<br>concluded in 2023 with the Consent Decree remaining in e=
+ffect. When<br>the state officials arrived at Miller's Organic Farm, locate=
+d at<br>Bird-in-Hand, PA, the incident was first picked up by The Lancaster=
+<br>Patriot, an area website and Facebook page not high on food safety<br>r=
+egulations.=0D<br>=0D<br>[Byline: Dan Flynn]=0D<br>=0D<br>--=0D<br>Communic=
+ated by:=0D<br>ProMED<br><br>[Scientifically, unpasteurized dairy products =
+are inherently unsafe.=0D<br>=0D<br>In the March 2012 issue of Emerging Inf=
+ectious Diseases (Langer AJ,<br>Ayers T, Grass J, et al. Nonpasteurized dai=
+ry products, disease<br>outbreaks, and state laws -- United States, 1993-20=
+06. Emerg Infect<br>Dis. 2012; 18(3): 385-391;<br><a href=3D"https://u19268=
+662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisKNo3yAcdpTuRDGTnW0FVDs0HXUP9l=
+aUMqdU0SKZFJIVmTge1P2WyyGnvno06tZ_bA/42u/MTGG4sS6R6iU-afodVzeFQ/h3/cFbIM27M=
+cnQDDA0cI_ajoqv47wOVX0OPj6DBlMa8B7w">http://wwwnc.cdc.gov/eid/article/18/3/=
+11-1370_article</a>), researchers<br>reported on 121 foodborne outbreaks (w=
+ith 4413 cases of reported<br>illness) caused by contaminated dairy product=
+s, and 73 (60%) were<br>involved with unpasteurized dairy products. A total=
+ of 65 (54%)<br>involved cheese (42% made from unpasteurized milk) and 56 i=
+nvolved<br>fluid milk (82% involved unpasteurized milk). In these outbreaks=
+,<br>_Campylobacter_ spp. were responsible for 54% of the outbreaks,<br>fol=
+lowed by _Salmonella_ spp. (22%), enterohemorrhagic _E. coli_<br>(13%), _Br=
+ucella_ spp. (4%), _Listeria_ (4%), and _Shigella_ spp.<br>(3%).=0D<br>=0D<=
+br>Clearly, pasteurized milk can also transmit disease, and 48 outbreaks<br=
+>were reported. The source of contamination was reported in only 7<br>(14%)=
+, of which at least 4 resulted from post-pasteurization<br>contamination by=
+ an infected food handler.=0D<br>=0D<br>The reader is directed to the artic=
+le for additional information and<br>discussion.=0D<br>=0D<br>Classical zoo=
+notic organisms such as _Brucella abortus_, _Brucella<br>melitensis_, _Myco=
+bacterium bovis_, _Salmonella_ species, _Listeria<br>monocytogenes_, _Campy=
+lobacter_ species, _Yersinia_ species,<br>_Streptococcus zooepidemicus_, _C=
+oxiella burnetii_, and _E. coli_<br>O157:H7 are associated with the ingesti=
+on of raw milk. Non-zoonotic<br>organisms such as _Streptococcus pyogenes_,=
+ _Salmonella_ Typhi,<br>_Corynebacterium diphtheriae_, _Shigella_ spp., _Sa=
+lmonella_ Paratyphi<br>A, _Salmonella_ Paratyphi B, enterotoxins from _Stap=
+hylococcus<br>aureus_, and hepatitis A have also been associated with the i=
+ngestion<br>of raw milk. - Mod.LL<br><br>ProMED maps:<br>Michigan, United S=
+tates:<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/sSnCkKCWBvais3E=
+uVAOvgy2WOIX7pp1nXnn4AbwuQ3Z6WbkfhqXYXU-aTMPJ8yThX5Ke0DdQHiOtSoGTfCvyHw/42u=
+/MTGG4sS6R6iU-afodVzeFQ/h4/Lt8a-Hy55NjTmc1LuEBb2W8X2unpmbQnaHk3iF3Ql08">htt=
+ps://promedmail.org/promed-post?place=3D8714146,225</a><br>New York State, =
+United States:<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/sSnCkKC=
+WBvais3EuVAOvgy2WOIX7pp1nXnn4AbwuQ3Z6WbkfhqXYXU-aTMPJ8yThMr99i_sNCjKLOWaKIJ=
+nObA/42u/MTGG4sS6R6iU-afodVzeFQ/h5/L_JVsTrmin2n9DKv0WVTbxx53vIG4ootqlBqmflW=
+RsY">https://promedmail.org/promed-post?place=3D8714146,234</a><br>Pennsylv=
+ania, United States:<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/s=
+SnCkKCWBvais3EuVAOvgy2WOIX7pp1nXnn4AbwuQ3Z6WbkfhqXYXU-aTMPJ8yThb9C-SDKmc10y=
+vcmc6sgTGA/42u/MTGG4sS6R6iU-afodVzeFQ/h6/XGBicHCb0_U4Ho4ceVToKJkk64leDtfds2=
+kmH-OtE_Q">https://promedmail.org/promed-post?place=3D8714146,240</a>]<br><=
+br>[See Also:<br>2023=0D<br>----=0D<br>E. coli EHEC - USA (17): (CA) restau=
+rant<br>http://promedmail.org/post/20231107.8713034=0D<br>E. coli EHEC - US=
+A (16): O121, source unknown, FDA<br>http://promedmail.org/post/20231104.87=
+12986=0D<br>E. coli EHEC - USA (15): O157, unidentified source<br>http://pr=
+omedmail.org/post/20231025.8712820=0D<br>E. coli EHEC - USA (14): (CA) rest=
+aurant<br>http://promedmail.org/post/20231025.8712818=0D<br>E. coli EHEC - =
+USA (13): (TN) schoolchildren, animal exp, secondary<br>cases, RFI http://p=
+romedmail.org/post/20231015.8712635=0D<br>E. coli EHEC, Campylobacteriosis =
+- USA (02): (WY) unpasteurized milk<br>http://promedmail.org/post/20231014.=
+8712634=0D<br>E. coli EHEC - USA (12): (TN) schoolchildren, animal exposure=
+<br>http://promedmail.org/post/20231007.8712502=0D<br>E. coli EHEC - USA (1=
+1): (IL) high school students<br>http://promedmail.org/post/20230926.871232=
+8=0D<br>E. coli EHEC - USA (10): (IL) school, RFI<br>http://promedmail.org/=
+post/20230921.8712258=0D<br>E. coli EHEC - USA (09): (AR) O157, university-=
+associated<br>http://promedmail.org/post/20230902.8711924=0D<br>E. coli EHE=
+C - USA (08): (AR) O157, university-associated<br>http://promedmail.org/pos=
+t/20230901.8711919=0D<br>E. coli - USA (02): (UT) Cache County, susp., RFI<=
+br>http://promedmail.org/post/20230829.8711883=0D<br>E. coli EHEC - USA (07=
+): (AR) University of Arkansas,<br>hospitalizations, RFI http://promedmail.=
+org/post/20230825.8711832=0D<br>E. coli EHEC - USA (06): (UT) O157, irrigat=
+ion water susp<br>http://promedmail.org/post/20230806.8711587=0D<br>E. coli=
+ EHEC - USA (05): (TN) O157, goat source, CDC, 2022<br>http://promedmail.or=
+g/post/20230721.8711296=0D<br>E. coli EHEC - USA (04): FDA, O157, unknown s=
+ource, RFI<br>http://promedmail.org/post/20230713.8711129=0D<br>E. coli EHE=
+C - USA (03): O157, fast-food chain, lettuce susp, CDC<br>http://promedmail=
+.org/post/20230630.8710872=0D<br>E. coli EHEC - USA (02): (TN) O157, unpast=
+eurized milk, CDC, 2022<br>http://promedmail.org/post/20230428.8709753=0D<b=
+r>E. coli EHEC - USA (01): O157, REPEXH01 persistent strain<br>http://prome=
+dmail.org/post/20230301.8708652=0D<br>E. coli EHEC, Campylobacteriosis - US=
+A: (OK) unknown source(s)<br>http://promedmail.org/post/20230213.8708347]<b=
+r>.................................................ll/rd/jh<br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3Dn6J_-B2wb_uKYLy0NBSVke3vXiet546JtUpD4QCa_exoMDAwdT=
+AwMEdo4pnLXanHpUlscXumX7k1WeG67X_VTfGTL3fnA15zJy6FieaB8sNvqVU0Hv9_P4zx1-3I4=
+9JvDDPalvTHEL_vMgV1UpodEduU3FRng8pRNXfpTEK76MF8lO_xzfwX06EA5ed5NaKL5GjEHX1L=
+5zecfqejF0e79noGuh8V59nph4Gps44fPj_ZyLUv_HU4ypGOqCrcK0Fg4e2OfIRkZZ6HiCXhtw-=
+yCNvWVRRy9Bu9E8JngUMqi15MfWrlHdGzZQrfQyb9gX6Q_-fJeJyOsud0Xfeo8IJIUS0anTcPmz=
+T6cui89vFyqLKxQ_I6FJ86cEF2pTGuEEYFbvG3vVGu34jlFvbXmM-27BeKwIUlRABsmIQnUZ6X0=
+2VkOlsVhFJ8jWkaWva6Dwd_r62pYUmBEC01OOrR_9u3Si3gw7Skef9U5n1s6uG6LW3aeY0xUglg=
+XpUENbdsZ9zuZIdQbq101QFAgzApZD0xA86BQI4luyg5I7JIrQFGCqoQqTfGITIJ5U-nQNrVD28=
+4BGSdD5HhZOEByL0sVCwW0WTbAvbhsF6xIcz1TEx3oC_A4sZJZNdizy-TNcOHlsHfByuQ_Y5u-Y=
+1ar1RF-ln4d65HzmckovN7aSg6UUb6p9tB6UZxc3GSUZWp99sdbt8Nl6piTszas-imH2_QirU9w=
+l0DqPf0ygFsdHovK0uBNf65MqRBxsY8am4TYHXtWbDmhd8aNF51ZWkDMzYMsSzlxVpG3kdPdsMf=
+GXOb549AA5rkbb2gFqE8cv8ihT6XW3VPHIvFulRhPzPlkEc-gl0Ks71Q22aLGtvULDxsKiFJq-B=
+iSGDhHx3iwP2YkKQqtGsI54XOrBVKhGFQ8mD-DxPI1G_QI33FuLdRlaKO94J8R4C62v0BtjlPLY=
+-KW4SP68_zCO1dNol68OdR-tCy3eLwGhDop9SfbpZzXuESRQHMRj6LRH4Fl2nAy5UeUORZqY0Ky=
+MEmnV9DzV9GyppXEIPmI2VF971A6bdT4zMihUsuE8VsMLu-KQ_coH1hKo9FRbL2Td5y_uDBBSnW=
+pVSHnNsB1g9GKSv8pKmutU5QLt0zQblUFvaC2B5PVczN1PVMmcpXEy5O59VwmvqKILykZu8t0ta=
+aFYF3fZr6lqbobRUs4eSJhkbJaF1ZIkqq3Whpo73A7CaD0rLALr7WEUXnN_VQG-iMUTQLlb0e" =
+target=3D"_blank" class=3D"Unsubscribe--unsubscribePreferences" style=3D"fo=
+nt-family:sans-serif;text-decoration:none;">Unsubscribe Preferences</a></di=
+v><br>############################################################<br>#####=
+#######################################################<br><br><img src=3D"=
+https://u19268662.ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/42u/MTGG4sS6R=
+6iU-afodVzeFQ/ho.gif" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=
+=3D"height:1px !important;width:1px !important;border-width:0 !important;ma=
+rgin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;=
+margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !importa=
+nt;padding-right:0 !important;padding-left:0 !important;"/></body>
+</html>
+--0dd340c73a929359cce48711f183a6f7a13cea6ddea438816d72cc80c2be--

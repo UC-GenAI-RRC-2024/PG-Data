@@ -1,0 +1,485 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a98:c004:0:b0:1eb:e128:bbe3 with SMTP id l4csp4029972eic;
+        Mon, 15 Jan 2024 17:35:14 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IFQ0+SptHNwhsBoirf3GwTRncV6Evu+wk7KgK9q2zDI5AnRqQKfsoOREQVmRgwFlraF4bI3
+X-Received: by 2002:a05:6808:f93:b0:3bd:8a20:a0dc with SMTP id o19-20020a0568080f9300b003bd8a20a0dcmr280849oiw.29.1705368914220;
+        Mon, 15 Jan 2024 17:35:14 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1705368914; cv=none;
+        d=google.com; s=arc-20160816;
+        b=Uowgpvmfk0KVRqGcILhHEDbVMBTv+OhICRaGswHlXg3iT88C04SMVcJzUYt56d+taC
+         VfADPPLvKoLkEah4W5oAKXKwqjoYMutxsoTCXQO3ucR/eH7s5UcdLPZ6nYa2zO+1TNVY
+         icVz4daQSNm1IAt0FzWCQ+sgW+ZI8oi+Cl0b5bS/mnJw0IVOVGQMiA+q1muRQPOxC+7M
+         2Gf8sTwPDkh3chNaEGiuow6MVm/M50k3g/jMNjPWFbMIIEry2h5/Xha6yjIJAq86UKVS
+         bZWHcDB8sxZFlDSCHJf8Q742d+bw7N7WZyW/XP1YJXGSAOvvppVSOihSfV8bPKSXNLrd
+         Ky9A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=syUGVgeU9yErp8YPYGtbgDv67d4o8+NqZWe9qxvHILA=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=w8dlsQ42pBc1bjMJLxVAdYMm+XbSe/GKcnI02xVFbfzEsd5MNrwz0dAYy7JzkiiUVE
+         CbLAQ2WVBx0IzKUsIh/rtnSnF6FG6FkheXHAFO6+xSpo1rgwOy+simwLRgXUYywztfiF
+         Ny3h1nUiPPRrH5gAKe5z71ZYa6fKY1LVqJKLT7DFZewZY6RlbRzSjmU0ZHPeOrj4D5dQ
+         Qm5d69Ym+d9aHg1qBJFNkuvewVKThk+6EjQL3OJb84M4IN81ArkI1vHyL+ygCWDmhtNo
+         P7XQEBCiOY4yi+NFSkv++CcrlZiew7r4idXfFrhspV3OSkEjYgU7PEeGfhGeDRErshkU
+         jZzQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=U545TP16;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=heykrNLv;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id i8-20020a056a00004800b006d9cc854bc8si9842228pfk.205.2024.01.15.17.35.13
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 15 Jan 2024 17:35:14 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=U545TP16;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=heykrNLv;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=syUGVgeU9yErp8YPYGtbgDv67d4o8+NqZWe9qxvHILA=;
+	b=U545TP16JdRihUDErfOaUTyMJULQ0LsWWBHfZ0eTJtGZ/c27fYVuzLPiI8bM6inlOZ5X
+	9qIdLICdhIhMB6YcEI8NoHUDC8M+1ezFGto6Se+BvwAoGTP7ghHdRiGpjlEnsIG1bUhAhJ
+	ZfDKupY9/Lubr0L0vF/q4a9FGrvjROJr7EZ5PMEsu11ojsnZBNwuh9b7WTyCHrmWWS7WP7
+	AikNXbAhJFgpzDo625tlTlpwRKBSiWnKDftaRANgL/Ckn3T7dCzNPJ3eEJyyWUfricYlQX
+	rAfCeESl5JKSIFd3HCi79axWe4p90eVxVeSWzqu6mFQvqMhV5R5wPgUYWSlnTEWw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=syUGVgeU9yErp8YPYGtbgDv67d4o8+NqZWe9qxvHILA=;
+	b=heykrNLvfh2n4nBOKaqbuEUREF96RCXUkZnKin2/IYFv3SF2Fw1xbr65eTI+1fTWhejP
+	VcKGZBIwaZH7uOXUm005Bt47Uh/5PkRtYK9rjg8wVHe2EuhsIG2a2AUklByHHdFAafwIMk
+	VsH4MxKPNorRk13/FXylsYN+jkZObH15Y=
+Received: by filterdrecv-868b798575-tl589 with SMTP id filterdrecv-868b798575-tl589-1-65A5DD50-B
+        2024-01-16 01:35:12.200684216 +0000 UTC m=+7800831.110647094
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-30 (SG) with HTTP
+	id 4B_NyLi0S5i5prngzvB-xA
+	Tue, 16 Jan 2024 01:35:12.046 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=5ef09a8703c08f43666ea4e5276e7a5fc9f4245f95ce331cc11195d4ef30
+Date: Tue, 16 Jan 2024 01:35:12 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <4B_NyLi0S5i5prngzvB-xA@geopod-ismtpd-30>
+Subject: PRO/AH/EDR> Syphilis, gonorrhea, chlamydia - Canada: elderly
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iB7P3RumB4N0aWQTKbSlnsTXDWNkxOGwX27R8WQ?=
+ =?us-ascii?Q?jPGVVCKfQDWggKaG9hna682Y2JiclQjfsbzOXob?=
+ =?us-ascii?Q?WLwV02LMRLjBWWMycoccYW=2Fg+f+XMfu0B0T3zEm?=
+ =?us-ascii?Q?dJESCHqtO56=2F662g3Y6E=2FCPn8DowAZwIpy7DbGf?=
+ =?us-ascii?Q?w4vxV8z4gQXw6n1Uk8Ja=2Fqk8xlh5TFQ3tTvwx5?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUiShGf=2FO8XJWpH34Od4Nd?=
+ =?us-ascii?Q?fxXa6jil96uRcJkF+N+LeVnO1tx80ddOyoyOo=2Fc?=
+ =?us-ascii?Q?Brxcl3ERAm0cOY743=2FFH59DWiSf5OzXORh1DLKt?=
+ =?us-ascii?Q?hb1NMKty3PsA5ju0ZzxCrq1WQuZSEQf=2FJlWtgqv?=
+ =?us-ascii?Q?cZmsyCHlNUZsDhqTl2ytmSq2NuwtVCWRGmmDx8i?=
+ =?us-ascii?Q?E3bfmagdxN30DJJFppkUysn1bteNNyTPN23k7TE?=
+ =?us-ascii?Q?4fkYPXkovBN2jDjjYTBGn6niG5BIYB9rakOmKZe?=
+ =?us-ascii?Q?O28IgAoXjmSiELHIJkDrIIH1HckYLFIMQnql2MI?=
+ =?us-ascii?Q?oGH=2FspIuVSe1lZ=2F+w6y5R8zSz3=2F3gDiNPIJH0Do?=
+ =?us-ascii?Q?Jer+ZhIQ=2F6QD0UmKeq76JSAKQRUjHm2u8BK80Ci?=
+ =?us-ascii?Q?xYG37iDCY96y7jzvaZWoTWlO+3qprJsoOl3af1m?=
+ =?us-ascii?Q?NeR96SvxgFSFEowiKe+nk3RIZVV8ds1wGt+tyh9?=
+ =?us-ascii?Q?GFP=2FDq7d=2Fa6P2XmexwjbI5JAyYsvBv1i99BbXC5?=
+ =?us-ascii?Q?lxhzbwDvlcnFFu3vDzsWMqiWbVMhssOARZ8zuD6?=
+ =?us-ascii?Q?tpzipdEqn2to=2FCUJlZzCOwgAUJkDejbOtgx35lt?=
+ =?us-ascii?Q?zppy1VgE4yAxML4ENGRqbrPkCodCuEJITDSnjNO?=
+ =?us-ascii?Q?E9JXg0TpuInMmzFccK4Sw+EwmbO6M6hKTQebHOo?=
+ =?us-ascii?Q?ikB1dsfkVO7TYK3nx5zWMxT4mua+1TfTNK0JVde?=
+ =?us-ascii?Q?7RsKFTkMZ1UB0cF+BU=2FJFv9Vymmj6btL7j95n1J?=
+ =?us-ascii?Q?4WM2G60WarMZVPS6VRT24BPOEg=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2E0SkWtR7we?=
+ =?us-ascii?Q?734aaJWtgsoCt5RKSm6TTXtcx98t94OQfVoMDAw?=
+ =?us-ascii?Q?dTAwMOQdH9m54jGMpQhlLEt3zvBjKplJRLYS4WE?=
+ =?us-ascii?Q?g9tI-ZPXaYhXqlbKgtiCN=5FWIBTNEU4M=5FlCd1NLo?=
+ =?us-ascii?Q?nbz9=5FBoadRh3ZDtlQPIFU0imTw27-VBdfVlrK1f?=
+ =?us-ascii?Q?HfMIy3QC35gr9aT8w=3D=3D=2EbBDQXA6sWx0dKlE0nJ5?=
+ =?us-ascii?Q?RkDlRdwSwucSaI8BpeNVd-lxoMDAwdTAwMBllwi?=
+ =?us-ascii?Q?UhHMhdGj6qD-6M4vtZS=5FGiChHTMYvTP0l09n98n?=
+ =?us-ascii?Q?8qXN98oYJg6iEKmoXPFcy3FaiRsUMZ4XF7Uw7Lg?=
+ =?us-ascii?Q?k2S7hqIuxjUKSZfNBvr9vkyLTdTNh80StaHgwAo?=
+ =?us-ascii?Q?qBQzxMCf-YBIC3XXQu=5FMkkNon9UM7sNB1K8QszI?=
+ =?us-ascii?Q?xGMUOWHMl73XtyKX5LiEYlnpY8WWR-gTsul2N1j?=
+ =?us-ascii?Q?eUhRLud5lnED1QKlucqpA8GmwtIPqEr2Gna=5FRgA?=
+ =?us-ascii?Q?nzh9e5=5FaCZlCJICCSaGEH7JovgkLGg0j=5FdFB-Gx?=
+ =?us-ascii?Q?82FkNH-YpnKkScJMmMcbcQY8iye2sEQbGigV1JU?=
+ =?us-ascii?Q?6i2vYbaHoOKk4LYaWc=5FaVVcmNcoj9ipGrRfc-fe?=
+ =?us-ascii?Q?PWJToP9Afv9HS7sIEqhextUnlMnu-a3znh3UUGe?=
+ =?us-ascii?Q?98sKbezjLoZ87R6XA4ngDpXC0XUZhZCHLS3m9jZ?=
+ =?us-ascii?Q?OYpXjYRN0ovR5OecQu4nDVgHez2n4mxKLf3T-jZ?=
+ =?us-ascii?Q?dasn8CUYWRzayni1fy9YqDZjiXbZscd54U2NgWO?=
+ =?us-ascii?Q?fj1xy6x5tz56iqpsi0f17YZVGeQ-oRiVDkZVpA3?=
+ =?us-ascii?Q?xv5UPvI01A9gksuLRzO4ZFcZyAevB9N-0V=5F115C?=
+ =?us-ascii?Q?k6rL=5Fx87Hg8gSva24olVaEDgcezC6Gp4LOHlYm7?=
+ =?us-ascii?Q?4OCR03PASRjurUg37KjygEf81ooS90nrFhHqKW6?=
+ =?us-ascii?Q?U970MTwakoMqlG37ozMMtvNdzaeNIXqcyKm6t2o?=
+ =?us-ascii?Q?XmJFxp368D8oEzQev5T-K=5FGEtE3sUVi4xwvAgVs?=
+ =?us-ascii?Q?-ZhLkj-bp8fEa5JB5jXnZg-jlgxGKfRV=5F9qwaQx?=
+ =?us-ascii?Q?MQteD3LY=5Fy41pDteYyte2tazpVEzIzDqsMVBy1E?=
+ =?us-ascii?Q?8tl1RmaqW2UeIFRY2Y3AnbzK7N9TkJog-PyGD8c?=
+ =?us-ascii?Q?tx85mfA63KLoYjmMEW79ZFSjJBRVBdO24D5kPIs?=
+ =?us-ascii?Q?cAJ1to0lx8J1AWuq-=5F5i2awdqWJRMHZ6qRj2vAj?=
+ =?us-ascii?Q?jq=5FiZAwW-Sd7WknxIf2MsU64T3I68kcjBLB7QAA?=
+ =?us-ascii?Q?M7jIIvci1zs=5FLIO=5FcSQDlQdXEDEvUHVfjftTdLP?=
+ =?us-ascii?Q?oGJQPA=3D=3D=3E?=
+
+--5ef09a8703c08f43666ea4e5276e7a5fc9f4245f95ce331cc11195d4ef30
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=us-ascii
+Mime-Version: 1.0
+
+SYPHILIS, GONORRHEA, CHLAMYDIA - CANADA: ELDERLY
+************************************************
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+Date: Sat 13 Jan 2024=20
+Source: CK News Today [edited]
+<https://cknewstoday.ca/chatham/news/2024/0/13/sexually-transmitted-infecti=
+ons-on-the-rise>
+
+
+The acting medical officer of health in Chatham-Kent is warning about
+a rise in sexually transmitted infections (STI) among older adults.
+
+Dr. Shanker Nesathurai told the CK Board of Health on Thursday that
+STI cases have increased across Ontario in people over 60 years old.
+
+Dr. Nesathurai said gonorrhea, chlamydia, and syphilis are 3 of the
+most common sexually transmitted diseases across the province.
+
+He said provincewide, gonorrhea cases went from about 60 in 2013 to
+around 300 in 2022, syphilis cases jumped from around 40 in 2013 to
+about 220 in 2022, and chlamydia cases increased from approximately
+150 in 2013 to about 400 in 2022.
+
+Nesathurai noted public health works diligently to manage sexually
+transmitted infections in the community in collaboration with
+community providers, physicians, and nurse practitioners.
+
+"Clearly STIs are most common among adolescents, young adults, and
+middle-aged individuals, but one thing that's not always acknowledged
+is that sexually transmitted infections also occur in people in their
+6th and 7th decades of life," said Nesathurai.
+
+Nesathurai said there are many reasons for the rise in STIs in older
+adults, including increased testing. However, he believes many of the
+factors are cultural, such as less use of condoms because the risk of
+pregnancy at that age is very low.
+
+"Older adults are getting divorced and widowed and they're initiating
+new sexual relationships, many older adults came of age in the 1960s
+and 70s when there were different sexual morals, and there are now
+medications that enhance sexual function, medications like Viagra," he
+said.
+
+Dr. Nesathurai pointed out many people living in retirement homes and
+long-term care facilities are sexually active and that sexually
+transmitted infections remain a public health challenge.
+
+He added that CK Public Health visits long-term care and retirement
+homes and provides education and testing.
+
+[Byline: Paul Pedro]
+
+--
+Communicated by:
+ProMED
+
+[As stated in the article, younger people who are sexually active are
+the focus of most STI interventions, but aging populations are also at
+high risk for STI infections. Educational interventions as well as
+regular testing should be provided to those who are sexually active
+within these care facilities to reduce the number of outbreaks.
+Outbreaks within retirement homes and long-term care facilities could
+lead to increased incidence of complications or severe cases due to
+compromised immune systems. - Mod.CS
+
+ProMED map:
+Canada: <https://promedmail.org/promed-post?place=3D8714257,12>]
+
+[See Also:
+2023
+----
+Syphilis - Canada (06): (AB) increasing incidence, congenital
+http://promedmail.org/post/20230705.8710963
+Syphilis - Canada (05): (BC) incr. incidence, youth, lack of condom
+use http://promedmail.org/post/20230611.8710535
+Syphilis - Canada (04): (AB) rise, congenital
+http://promedmail.org/post/20230408.8709401
+Syphilis - Canada (03): sharp increases, P/S/latent, women,
+congenital, 2017-21 http://promedmail.org/post/20230328.8709179
+Syphilis - Canada (02): (ON) Kenora, Sioux Lookout, 2022, RFI
+http://promedmail.org/post/20230311.8708868
+Syphilis - Canada: (SK) indigenous, women, congenital
+http://promedmail.org/post/20230305.8708742
+2022
+----
+Syphilis, gonorrhea, chlamydia - USA: preliminary surveillance data,
+2021 http://promedmail.org/post/20221004.8705943
+Syphilis, gonorrhea - Canada: (ON) increase, RFI
+http://promedmail.org/post/20220225.8701644
+Syphilis - Canada: (QB) increased incidence, women, congenital, RFI
+http://promedmail.org/post/20220109.8700761
+2021
+----
+Syphilis - Canada (03): (AB) increased incidence, RFI
+http://promedmail.org/post/20210820.8610018
+Syphilis - Canada (02): (NT) homeless, congenital, RFI
+http://promedmail.org/post/20210805.8571723
+Syphilis - Canada: (SK) incr incidence, women, congenital, RFI
+http://promedmail.org/post/20210526.8381023
+2019
+----
+Syphilis - Canada (08): (SK,ON) incr. incidence, indigenous, women,
+meth use http://promedmail.org/post/20191212.6836885
+Syphilis - Canada (07): (AB) incr. incidence, congenital, meth use in
+Edmonton http://promedmail.org/post/20191209.6829997
+Syphilis - Canada (06): (BC) incr. incidence, MSM, women, congenital,
+comment http://promedmail.org/post/20191203.6819623
+Syphilis - Canada (05): (BC) RFI
+http://promedmail.org/post/20191129.6805466
+Syphilis - Canada (04): (AB) RFI
+http://promedmail.org/post/20190718.6574300
+Syphilis - Canada (03): (ON) meth/IDU
+http://promedmail.org/post/20190717.6572287
+Syphilis - Canada (02): (MB) incr. incidence, meth., IDU, women,
+congenital http://promedmail.org/post/20190307.6354666
+Syphilis - Canada: (MB) increased incidence, methamphetamine use, 2018
+http://promedmail.org/post/20190131.6287056
+2017
+----
+Gonococcal dis. chlamydia, syphilis - Canada (02): increased cases,
+background http://promedmail.org/post/20171031.5416876
+Gonococcal dis, chlamydia, syphilis - Canada: (ON) increase, MSM, RFI
+http://promedmail.org/post/20171031.5414788
+2016
+----
+Syphilis, gonococcal disease - Canada: (AB) inc. cases, MSM,
+smartphone apps http://promedmail.org/post/20160507.4208142
+Syphilis - Canada & USA: Bicillin shortage
+http://promedmail.org/post/20160503.4199492
+Syphilis - Canada: (MB) increased incidence, Bicillin shortage
+http://promedmail.org/post/20160501.4195457
+Syphilis, gonococcal dis., chlamydia - Canada: (BC,ON) inc. cases,
+MSM, HIV, RFI http://promedmail.org/post/20160212.4016426]
+.................................................cs/may/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3D0nANJto8KtbTYtnYjUr35sVokm5XHRn0XCUerEUw8jZoMDAwdTAwMEkFz2M=
+66fjpZDBmOUmAEX41no7TufIHTrK6GuyTd5hSIlnlrJd2yqC_xslJoufIvWvTDBWUOPJ_Mflhx4=
+NXa3JB7s2DdHkM8VglIn2dSurbtUA5TDTkD8TZgf5Epy3gS8qwv9rdusCXAbSF7YloPX8mvXG7G=
+Oqq7d5HTApZsjEaDcMgpf5_r3Vt66F1-ls7PET17h8i2zuFa5WxD5TsNyIr5oLOx45uDj_hEU87=
+MOCwJhhn1aPNC4u8g_nQucm6UiRdNL4a6mEb_53dXbv_zuomgJU9Yv2vhzvFhcklG8wxeR08tF4=
+Mg84K0_ETlF6WC70CCHKkHb7y_H1B2NT72ArNQhfuoxlaG1WFZfGtvV7gie62COoiZCL0IjufwJ=
+3OrWbOt0Zq2U0ikGUQTd7XFPGQYtEPJQv7h_OciBtxaCaGuqNXRumYmoDfo1j7krr2d8rGf0FiO=
+bTror3CppqQk9bEtSc1mZ3dQTa8aOTBvgt2DsAziLgiT8Zp8zEkCzCPM0-TRz-7f1Fc8TsQn1WM=
+jcPgDxWeNvBtcs7PhmvpfWFswPY1z1XKuNBhV_zkfgB07ZpdVlbbaNAUg-evuAhb7dkM_klM43g=
+892B6358BfKtDhoogpIg-iWpDqd2Wi4W3LxUF9qcdZmZkmcJ4IeR9toqc-_ospXnLQ_uPGacyTy=
+peq8lZ7WjJq-wahdr3n6eE7uGP2cLOGuO5-KLOuBh-2Pn5Aja6UvAhhvqb0zXczcKYMBWxi-is1=
+M08XqIhCANzr4Eb8SN2aETPaKahANXE2f3JDuC4XtMbn4fEgFXJoK4DwehLvWPG4C6o91dnPDdJ=
+GE17YwyY6QzU6TCew3-miK4caYiXhj-VUij4SWl9_hjSBgURJhX1oFYFsCZnuIJoJXcSXEYKQX5=
+ytI8gpC4ridINu5eWtKMewdrQKKPT7mo6dOf_9WSYfR-cqQKXQ5GOM_-vUbUEdC7ZFOKEbU69Hp=
+LgBIIn1j6mgLWRkdt09APTk_iBtNvdtkxNtN2qu1IBmVL1yW7xWQ0linK_bNymgAKupgaNszz2t=
+CHHJWYC9Q7AQsS8VsqbX3zPIf_wx0hMVBypFJLdpXnUiwsIueEZWJvYFDLQTAaHwMX21HNFzOJm=
+LKhuFsdrhKh6Phb8d3nhg0G_dGClbOhEYzTVbhHpVevOCMqxzvGf42yJ3B6s8qHJ )
+############################################################
+############################################################
+
+--5ef09a8703c08f43666ea4e5276e7a5fc9f4245f95ce331cc11195d4ef30
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>SYPHILIS, GONORRHEA, CHLAMYDIA - CANADA: ELDERLY<br>*****************=
+*******************************<br>A ProMED-mail post<br><a href=3D"https:/=
+/u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisIijpefK5PNjW-mL-YZGnfg=
+DOxU1G3gjwnPSi2Tfv3HA/431/ihCXBqy3SXGBD4zaucJc2g/h0/UM9Xui1ZChLA5S9xBC8r27W=
+frf3IOwtU-8dEBg2LCIs">http://www.promedmail.org</a><br>ProMED-mail is a pro=
+gram of the<br>International Society for Infectious Diseases<br><a href=3D"=
+https://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisCT5tpD4Upm3qyMC=
+bcYSQvc/431/ihCXBqy3SXGBD4zaucJc2g/h1/-NiqZtxbyYgNZ77tpZhLj_shPM8w9s6qZQ5-k=
+15aKGM">http://www.isid.org</a><br><br>Date: Sat 13 Jan 2024=20=0D<br>Sourc=
+e: CK News Today [edited]=0D<br><a href=3D"https://u19268662.ct.sendgrid.ne=
+t/ss/c/jf2l8IGiVWEHUuN2KNp3mQSk_PKb4lcvajf39lYH8Lyj77wUtrXbNAC4f7Zpqn53oyMW=
+WRM7kPg5Ed-uJgOaaqdqOYaj2wvZT01h6LjRoemfVuGba6egHNLyH7L7Dz0ekxq-KX7T61KuFwq=
+GVsqmkg/431/ihCXBqy3SXGBD4zaucJc2g/h2/_RN8WcZQaL5WsiFMfwKKRa4i8DR2Z6gr5-YFP=
+_F600g">https://cknewstoday.ca/chatham/news/2024/0/13/sexually-transmitted-=
+infections-on-the-rise</a>=0D<br>=0D<br>=0D<br>The acting medical officer o=
+f health in Chatham-Kent is warning about<br>a rise in sexually transmitted=
+ infections (STI) among older adults.=0D<br>=0D<br>Dr. Shanker Nesathurai t=
+old the CK Board of Health on Thursday that<br>STI cases have increased acr=
+oss Ontario in people over 60 years old.=0D<br>=0D<br>Dr. Nesathurai said g=
+onorrhea, chlamydia, and syphilis are 3 of the<br>most common sexually tran=
+smitted diseases across the province.=0D<br>=0D<br>He said provincewide, go=
+norrhea cases went from about 60 in 2013 to<br>around 300 in 2022, syphilis=
+ cases jumped from around 40 in 2013 to<br>about 220 in 2022, and chlamydia=
+ cases increased from approximately<br>150 in 2013 to about 400 in 2022.=0D=
+<br>=0D<br>Nesathurai noted public health works diligently to manage sexual=
+ly<br>transmitted infections in the community in collaboration with<br>comm=
+unity providers, physicians, and nurse practitioners.=0D<br>=0D<br>"Clearly=
+ STIs are most common among adolescents, young adults, and<br>middle-aged i=
+ndividuals, but one thing that's not always acknowledged<br>is that sexuall=
+y transmitted infections also occur in people in their<br>6th and 7th decad=
+es of life," said Nesathurai.=0D<br>=0D<br>Nesathurai said there are many r=
+easons for the rise in STIs in older<br>adults, including increased testing=
+. However, he believes many of the<br>factors are cultural, such as less us=
+e of condoms because the risk of<br>pregnancy at that age is very low.=0D<b=
+r>=0D<br>"Older adults are getting divorced and widowed and they're initiat=
+ing<br>new sexual relationships, many older adults came of age in the 1960s=
+<br>and 70s when there were different sexual morals, and there are now<br>m=
+edications that enhance sexual function, medications like Viagra," he<br>sa=
+id.=0D<br>=0D<br>Dr. Nesathurai pointed out many people living in retiremen=
+t homes and<br>long-term care facilities are sexually active and that sexua=
+lly<br>transmitted infections remain a public health challenge.=0D<br>=0D<b=
+r>He added that CK Public Health visits long-term care and retirement<br>ho=
+mes and provides education and testing.=0D<br>=0D<br>[Byline: Paul Pedro]=0D=
+<br>=0D<br>--=0D<br>Communicated by:=0D<br>ProMED<br><br>[As stated in the =
+article, younger people who are sexually active are<br>the focus of most ST=
+I interventions, but aging populations are also at<br>high risk for STI inf=
+ections. Educational interventions as well as<br>regular testing should be =
+provided to those who are sexually active<br>within these care facilities t=
+o reduce the number of outbreaks.<br>Outbreaks within retirement homes and =
+long-term care facilities could<br>lead to increased incidence of complicat=
+ions or severe cases due to<br>compromised immune systems. - Mod.CS<br><br>=
+ProMED map:<br>Canada: <a href=3D"https://u19268662.ct.sendgrid.net/ss/c/sS=
+nCkKCWBvais3EuVAOvgy2WOIX7pp1nXnn4AbwuQ3Z6WbkfhqXYXU-aTMPJ8yThhnzmCb0xGhvh4=
+xHX2d-VlA/431/ihCXBqy3SXGBD4zaucJc2g/h3/8fHucmq3ERJB077eSW6ZD4o2qXJI2oa6yoJ=
+APiFrLhc">https://promedmail.org/promed-post?place=3D8714257,12</a>]<br><br=
+>[See Also:<br>2023=0D<br>----=0D<br>Syphilis - Canada (06): (AB) increasin=
+g incidence, congenital<br>http://promedmail.org/post/20230705.8710963=0D<b=
+r>Syphilis - Canada (05): (BC) incr. incidence, youth, lack of condom<br>us=
+e http://promedmail.org/post/20230611.8710535=0D<br>Syphilis - Canada (04):=
+ (AB) rise, congenital<br>http://promedmail.org/post/20230408.8709401=0D<br=
+>Syphilis - Canada (03): sharp increases, P/S/latent, women,<br>congenital,=
+ 2017-21 http://promedmail.org/post/20230328.8709179=0D<br>Syphilis - Canad=
+a (02): (ON) Kenora, Sioux Lookout, 2022, RFI<br>http://promedmail.org/post=
+/20230311.8708868=0D<br>Syphilis - Canada: (SK) indigenous, women, congenit=
+al<br>http://promedmail.org/post/20230305.8708742=0D<br>2022=0D<br>----=0D<=
+br>Syphilis, gonorrhea, chlamydia - USA: preliminary surveillance data,<br>=
+2021 http://promedmail.org/post/20221004.8705943=0D<br>Syphilis, gonorrhea =
+- Canada: (ON) increase, RFI<br>http://promedmail.org/post/20220225.8701644=0D=
+<br>Syphilis - Canada: (QB) increased incidence, women, congenital, RFI<br>=
+http://promedmail.org/post/20220109.8700761=0D<br>2021=0D<br>----=0D<br>Syp=
+hilis - Canada (03): (AB) increased incidence, RFI<br>http://promedmail.org=
+/post/20210820.8610018=0D<br>Syphilis - Canada (02): (NT) homeless, congeni=
+tal, RFI<br>http://promedmail.org/post/20210805.8571723=0D<br>Syphilis - Ca=
+nada: (SK) incr incidence, women, congenital, RFI<br>http://promedmail.org/=
+post/20210526.8381023=0D<br>2019=0D<br>----=0D<br>Syphilis - Canada (08): (=
+SK,ON) incr. incidence, indigenous, women,<br>meth use http://promedmail.or=
+g/post/20191212.6836885=0D<br>Syphilis - Canada (07): (AB) incr. incidence,=
+ congenital, meth use in<br>Edmonton http://promedmail.org/post/20191209.68=
+29997=0D<br>Syphilis - Canada (06): (BC) incr. incidence, MSM, women, conge=
+nital,<br>comment http://promedmail.org/post/20191203.6819623=0D<br>Syphili=
+s - Canada (05): (BC) RFI<br>http://promedmail.org/post/20191129.6805466=0D=
+<br>Syphilis - Canada (04): (AB) RFI<br>http://promedmail.org/post/20190718=
+.6574300=0D<br>Syphilis - Canada (03): (ON) meth/IDU<br>http://promedmail.o=
+rg/post/20190717.6572287=0D<br>Syphilis - Canada (02): (MB) incr. incidence=
+, meth., IDU, women,<br>congenital http://promedmail.org/post/20190307.6354=
+666=0D<br>Syphilis - Canada: (MB) increased incidence, methamphetamine use,=
+ 2018<br>http://promedmail.org/post/20190131.6287056=0D<br>2017=0D<br>----=0D=
+<br>Gonococcal dis. chlamydia, syphilis - Canada (02): increased cases,<br>=
+background http://promedmail.org/post/20171031.5416876=0D<br>Gonococcal dis=
+, chlamydia, syphilis - Canada: (ON) increase, MSM, RFI<br>http://promedmai=
+l.org/post/20171031.5414788=0D<br>2016=0D<br>----=0D<br>Syphilis, gonococca=
+l disease - Canada: (AB) inc. cases, MSM,<br>smartphone apps http://promedm=
+ail.org/post/20160507.4208142=0D<br>Syphilis - Canada & USA: Bicillin short=
+age<br>http://promedmail.org/post/20160503.4199492=0D<br>Syphilis - Canada:=
+ (MB) increased incidence, Bicillin shortage<br>http://promedmail.org/post/=
+20160501.4195457=0D<br>Syphilis, gonococcal dis., chlamydia - Canada: (BC,O=
+N) inc. cases,<br>MSM, HIV, RFI http://promedmail.org/post/20160212.4016426=
+]<br>.................................................cs/may/jh<br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3D0nANJto8KtbTYtnYjUr35sVokm5XHRn0XCUerEUw8jZoMDAwdT=
+AwMEkFz2M66fjpZDBmOUmAEX41no7TufIHTrK6GuyTd5hSIlnlrJd2yqC_xslJoufIvWvTDBWUO=
+PJ_Mflhx4NXa3JB7s2DdHkM8VglIn2dSurbtUA5TDTkD8TZgf5Epy3gS8qwv9rdusCXAbSF7Ylo=
+PX8mvXG7GOqq7d5HTApZsjEaDcMgpf5_r3Vt66F1-ls7PET17h8i2zuFa5WxD5TsNyIr5oLOx45=
+uDj_hEU87MOCwJhhn1aPNC4u8g_nQucm6UiRdNL4a6mEb_53dXbv_zuomgJU9Yv2vhzvFhcklG8=
+wxeR08tF4Mg84K0_ETlF6WC70CCHKkHb7y_H1B2NT72ArNQhfuoxlaG1WFZfGtvV7gie62COoiZ=
+CL0IjufwJ3OrWbOt0Zq2U0ikGUQTd7XFPGQYtEPJQv7h_OciBtxaCaGuqNXRumYmoDfo1j7krr2=
+d8rGf0FiObTror3CppqQk9bEtSc1mZ3dQTa8aOTBvgt2DsAziLgiT8Zp8zEkCzCPM0-TRz-7f1F=
+c8TsQn1WMjcPgDxWeNvBtcs7PhmvpfWFswPY1z1XKuNBhV_zkfgB07ZpdVlbbaNAUg-evuAhb7d=
+kM_klM43g892B6358BfKtDhoogpIg-iWpDqd2Wi4W3LxUF9qcdZmZkmcJ4IeR9toqc-_ospXnLQ=
+_uPGacyTypeq8lZ7WjJq-wahdr3n6eE7uGP2cLOGuO5-KLOuBh-2Pn5Aja6UvAhhvqb0zXczcKY=
+MBWxi-is1M08XqIhCANzr4Eb8SN2aETPaKahANXE2f3JDuC4XtMbn4fEgFXJoK4DwehLvWPG4C6=
+o91dnPDdJGE17YwyY6QzU6TCew3-miK4caYiXhj-VUij4SWl9_hjSBgURJhX1oFYFsCZnuIJoJX=
+cSXEYKQX5ytI8gpC4ridINu5eWtKMewdrQKKPT7mo6dOf_9WSYfR-cqQKXQ5GOM_-vUbUEdC7ZF=
+OKEbU69HpLgBIIn1j6mgLWRkdt09APTk_iBtNvdtkxNtN2qu1IBmVL1yW7xWQ0linK_bNymgAKu=
+pgaNszz2tCHHJWYC9Q7AQsS8VsqbX3zPIf_wx0hMVBypFJLdpXnUiwsIueEZWJvYFDLQTAaHwMX=
+21HNFzOJmLKhuFsdrhKh6Phb8d3nhg0G_dGClbOhEYzTVbhHpVevOCMqxzvGf42yJ3B6s8qHJ" =
+target=3D"_blank" class=3D"Unsubscribe--unsubscribePreferences" style=3D"fo=
+nt-family:sans-serif;text-decoration:none;">Unsubscribe Preferences</a></di=
+v><br>############################################################<br>#####=
+#######################################################<br><br><img src=3D"=
+https://u19268662.ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/431/ihCXBqy3S=
+XGBD4zaucJc2g/ho.gif" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=
+=3D"height:1px !important;width:1px !important;border-width:0 !important;ma=
+rgin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;=
+margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !importa=
+nt;padding-right:0 !important;padding-left:0 !important;"/></body>
+</html>
+--5ef09a8703c08f43666ea4e5276e7a5fc9f4245f95ce331cc11195d4ef30--

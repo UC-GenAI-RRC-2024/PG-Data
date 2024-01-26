@@ -1,0 +1,500 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a98:c004:0:b0:1eb:e128:bbe3 with SMTP id l4csp4660757eic;
+        Tue, 16 Jan 2024 17:44:15 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IH2IniVY86wp0+YYJhzE+YbDJedU+LszPEQE5hL5+ST4ShiaJILxCtEKXLiFIjQQA4IjkzZ
+X-Received: by 2002:a05:6e02:962:b0:360:8f34:583d with SMTP id q2-20020a056e02096200b003608f34583dmr8616578ilt.94.1705455855645;
+        Tue, 16 Jan 2024 17:44:15 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1705455855; cv=none;
+        d=google.com; s=arc-20160816;
+        b=Tsu8jg4wlA7bxBnFgZXvuLioFYsSYfA6H3MILOz3sDDRw+oulZLL8W+zk8h+IM6u/6
+         N5t5dC4VdKORFo07FLsSIW5iyCetgawCLNwqeGI8rmb4l2eM9lWjJd3xX9j1aSA4LdfI
+         V7u1lghTPaeVB457YBx5DS4iVOy0zze8seLoNgwhtzKUOxtmBQjAnMdA4ib72CxN5mCP
+         tGo3BuKZoqjgpJACoN8VhQJKx45GCB78dKPvUSfx+7TniJtK7ZfO3/GkzlajB/Zp6dCo
+         ilcp+996GyquIDr9O+abxqQYUR2gDAbizb9b1eUMvU6DHce8p44HLdQy5x4vAUbMUnUy
+         HXiw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=oPqgX1MX+5C3pK02k/QxEPpBF2nRDyPXpVHyGh90A68=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=0R0MRpXTiEWgP6q6q4Bj1eAPdXoITbkYmq46ZHcn1a91YUYMLiOs0wt5BPnRdy4th0
+         85nGi7JMh3edXyAIE6kD3YVIozT1LD7v4/P+qi/ekRvNaSeawcJxkdSAZU16n5xfp1/W
+         Rf9sbmdDILA0jKkxa+Huyf2UG/Og8BvOOFqSBHbQjl3WHc7zxJr+leX45H9Y6BXbxQZC
+         uQqI32rqOv9/yTZMWe6FafDeA83SyBbN44pJoz6NYs3D/VfxVWoWJUovzdl2qXc8o5Jg
+         7iNdXSHHSd+OGJMQCC8GcCuQYasMPtUF2fLLbbzSxRV1UDiUCBrFI++sPO+xaKPRjb1V
+         f0Yw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=iSQ9IAgu;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=gIZKvOLl;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id u5-20020a656705000000b005ce0bdac9cbsi12755978pgf.881.2024.01.16.17.44.14
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 16 Jan 2024 17:44:15 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=iSQ9IAgu;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=gIZKvOLl;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=oPqgX1MX+5C3pK02k/QxEPpBF2nRDyPXpVHyGh90A68=;
+	b=iSQ9IAguD/WyKO5HHCn0m5MtRFzKvxWosYYcaHwY9SOHzzDlhxwvz5EBobDofsxLTROm
+	fUpViTN3LJkf3+onkDftVCb4spbP+lO3ot/io4C6dxtzNC/B/yqfcxiE9uuCJoQKFues/g
+	idFzmikXpgSS0oKgbyDsAQHQvWLtEyWFsJYLUe9lVN9NIs8ryEHx+OgULeV1exrbdKmPK5
+	UfHnZh/aTW2ip4iqS61oSrbDnPkrtz2G4DfCrxO8oN66MEDB2EW1IPJXhKL+91nPPFAnNm
+	yE56VcCwXa3qsdCk20zMnOOCxZXvWs1Yz4H50K/Yyto74RAIjgnEWgDpN4az98gA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=oPqgX1MX+5C3pK02k/QxEPpBF2nRDyPXpVHyGh90A68=;
+	b=gIZKvOLlqBROe8dbIIgR5pTySxHz832yAvXYQCTBMgSMn/6MFF0dkXJjlnSv4UjANKfX
+	+r1zWM2YtgqPckj/vZZaT3vTF0sL07zn40C7E34aFYFh6AgqYV/wnxmfo9/xaAoch4xrQ1
+	ii3FSnmJ2mNBllUO4uyzR0XNJ+ZtwqMws=
+Received: by filterdrecv-7db6f87648-hbw8z with SMTP id filterdrecv-7db6f87648-hbw8z-1-65A730EB-4C
+        2024-01-17 01:44:11.975327241 +0000 UTC m=+7887754.703750097
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-36 (SG) with HTTP
+	id XFbrxaGdQc2dkG3XUKfiHQ
+	Wed, 17 Jan 2024 01:44:11.776 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=8b3f83ec99d4d5b5af2367ef2c018e7add614c4cb8d2ef4809ede9278122
+Date: Wed, 17 Jan 2024 01:44:13 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <XFbrxaGdQc2dkG3XUKfiHQ@geopod-ismtpd-36>
+Subject: PRO/AH/EDR> African swine fever - Asia (03): Cambodia (SR) domestic
+ alert
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iBRHzzo+o=2FlnmNqYlkrttnASfYw9FXT9RxE2lRq?=
+ =?us-ascii?Q?iWOuUCTN=2FhB02qPtGEBalGpbaROXZ37U1t=2FTEtp?=
+ =?us-ascii?Q?NoRQrsuAe2h5YSlbIhji151e5ewsO5aWcAd49X6?=
+ =?us-ascii?Q?Ne8JhlU7YSnljtogOOt5g=2FDqGfrulHVqCQQjl8A?=
+ =?us-ascii?Q?alLfGalJgot54j=2F3odp2CJAyFpAeBLHnEz02dB?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUiShGf=2FO8XJWpH34Od4Nd?=
+ =?us-ascii?Q?fxXa6jil96uRcJkF+N+LeVnO1tx80ddOyoyOo=2Fc?=
+ =?us-ascii?Q?Brxcl3ERAm0cOY743=2FFH59DWiSf5OzXORh1DLKt?=
+ =?us-ascii?Q?hb1NMKty3PsA5ju0ZzxCrq1WQuZSEQf=2FJlWtgqv?=
+ =?us-ascii?Q?cZmsyCHlNUZsDADWBN8HFh2CcBnTwsJDnhRRI0Q?=
+ =?us-ascii?Q?Mcg1f1lVNEHXCeQyoxZqXi91FlOI6BpsW7RP3vj?=
+ =?us-ascii?Q?KCqEZSVdrU3dZvYUHWFWp6pGELl4E933ke=2FJqSR?=
+ =?us-ascii?Q?8dsnLGKGitdDB+JTl63WQxGoQ5AY+DjdxbjVMAB?=
+ =?us-ascii?Q?64uKab8zpmKuM=2F6ZUJE7WvurBiFEPd19UjOHxg9?=
+ =?us-ascii?Q?GZGSrVucfrFSEk=2F7XOcvR5SCg550tIUHNqcrjlG?=
+ =?us-ascii?Q?Mu8NadXGjsf35gdhU8zewMQ2ya7lphdkWbgo9AC?=
+ =?us-ascii?Q?Ih5T+=2F5Ctme=2FvRVaxkP2xIOF2Zz=2Fats6Yw+FRwV?=
+ =?us-ascii?Q?Snn4hA9fqW0qPTGIfj+VnPY5a3jzM3=2FHL6pLXzN?=
+ =?us-ascii?Q?LlEpJUAHKwURcmsXEKZGO3hIwMF=2FFXOJg54smIO?=
+ =?us-ascii?Q?WNtJHdDZzMmV9xD0q6y7GVRTyVolvHA0zcpvN7I?=
+ =?us-ascii?Q?jvhU7azvCAdC2Ak6=2FOwjGh6=2FmdOWSr0JH1ce=2Fv2?=
+ =?us-ascii?Q?uQWaDvbn8rc5He+cHOhGlfOAiZZxGJBnPK8dsJW?=
+ =?us-ascii?Q?O2pJwOIueHoqdakhwcHqdxoRUGflcsxuDvEDHpk?=
+ =?us-ascii?Q?7Twb6WoMIm1PYUgaJBZdNnmKy=2FqAOBxnm0GWv72?=
+ =?us-ascii?Q?IRze5se2t2CZvxejT7167Q3eZQ=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2E9HGUohzwl?=
+ =?us-ascii?Q?hlsB0Wbk1sQbV5aIY8trCQrI4ZWB9=5FqzeVoMDAw?=
+ =?us-ascii?Q?dTAwMBADSZGkvUrtB9orrsZpsyVoZqUDFcZ-7wx?=
+ =?us-ascii?Q?mdbplOKBRnJukwZlXpQ5lmmwp-wC33j=5FrHF4gjX?=
+ =?us-ascii?Q?fEtoSNF-dUNHbUAzjkAFP9hK2838iLJ4PFumBhS?=
+ =?us-ascii?Q?MgUraurpe7XkA1oxg=3D=3D=2EkKyUpgmK2M4dbzEa2kk?=
+ =?us-ascii?Q?YdxFQ6eM--JPLt9v3S1tvCXBoMDAwdTAwMMqE8L?=
+ =?us-ascii?Q?vJ7xhmiRGzmMemqxKFO-3J4nY1s-iKIvlG5WiEv?=
+ =?us-ascii?Q?OI15QP0QHbPXdiLuoV0=5Fqa1dZCJsW0HLC48zKku?=
+ =?us-ascii?Q?m65jEqzQN2630KIEjQKBh3fLJYKOjxf1rH48=5FyC?=
+ =?us-ascii?Q?zSPw9xUC5EARhuMgNYrkUIpSq64d8rvO3DpZM2y?=
+ =?us-ascii?Q?xTMjw9o55KWdKLJEIiS4dFvBE6uleC3mDac9Gwe?=
+ =?us-ascii?Q?m1U2v767BHepsbbRRNhnQpa0FpCnffvSo4t87Et?=
+ =?us-ascii?Q?kiVS8yJry5ynuk58G4ngVoeoBQYhDs=5F2=5FccuKx0?=
+ =?us-ascii?Q?P8mMf5Y324utMnYODmSgtGW3O1-lx6-XzYT7jUv?=
+ =?us-ascii?Q?8p4--0VJ0U1tL2M13zezg-5Huzi1DRqaRo1G9Ed?=
+ =?us-ascii?Q?OpLqzd4vFkKPxuCLBiShRSJSxFpjzXPX6W43XO5?=
+ =?us-ascii?Q?kv=5FGzwRpo415AUc975WC4g=5FQs31bEzDXMvU0Qco?=
+ =?us-ascii?Q?LL65JS5UFzcMaMM9GpTxIp33ObB559OOPbB54nk?=
+ =?us-ascii?Q?2q5GPVtvBdyzW41ExRVzb5kHsvdNZuqO=5FdEr9h7?=
+ =?us-ascii?Q?t6wQEyCxv-HgEBfwel-AeNIEBU1coAnQd9kb8vB?=
+ =?us-ascii?Q?radEXNu1PtO2P-uXuxB5ZSWvn1Ivk9=5FwHCTDpya?=
+ =?us-ascii?Q?DvfZ6w7r3OKp00wRoECc4Kd9e7SGvQSsh9LkT0R?=
+ =?us-ascii?Q?WOCD96Fr0NnyfXbjphSKCGmmiP0xIxd9Mp8mqa5?=
+ =?us-ascii?Q?q562YONpHco9vEFRECBIkeOT=5FQ910PWrHETY6tK?=
+ =?us-ascii?Q?HXwROlQqSBxZ1VS7FbHKzDx7PC311iAgCbK4iQu?=
+ =?us-ascii?Q?1XNGh89lZcb3Kxi8lOxYQgNJR9qNJC3D6Y37b0Y?=
+ =?us-ascii?Q?B8ys4GaL8rjUaQIfnOZo5yzqpvzSZh3ZOsSz284?=
+ =?us-ascii?Q?VTUw4g1E3uozW6PoHBk-H74lAFWSK8GDwA4V2Rv?=
+ =?us-ascii?Q?naehUwuno=5FjmAgO-FX8lCsXf7D=5Fh2rxaCz7W7w0?=
+ =?us-ascii?Q?RbslYBPVX=5FBk-xg6EAthfZOQBtlbjTuc1v3T-iz?=
+ =?us-ascii?Q?-9YjCQ4-xR5YjckFjfNPvSIn9UO6PtrK6byKnut?=
+ =?us-ascii?Q?eOVmQ2TkZU5iCJQCgJZfWZ3I5tdLKllyhmPNjDY?=
+ =?us-ascii?Q?0KApAQ=3D=3D=3E?=
+
+--8b3f83ec99d4d5b5af2367ef2c018e7add614c4cb8d2ef4809ede9278122
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=us-ascii
+Mime-Version: 1.0
+
+AFRICAN SWINE FEVER (03): CAMBODIA (SVAY RIENG) DOMESTIC ALERT
+**************************************************************
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+Date: Tue 16 Jan 2024
+Source: Khmer Times [abridged, edited]
+<https://www.khmertimeskh.com/501423480/authorities-on-alert-for-swine-feve=
+r-in-svay-rieng/>
+
+
+Authorities are on the alert for African swine fever, a highly
+contagious and deadly viral disease affecting pigs. Ministry of
+Agriculture officials have started investigations and taken proactive
+measures in Svay Rieng province's Kampong Ror district where many pigs
+have died from the disease.
+
+The officials have collected samples from the pigs' carcasses for
+analysis in Phnom Penh to find the root causes of the deaths. To
+mitigate the situation, the Ministry of Agriculture's General
+Department of Animal Health worked with the local authorities to spray
+disinfectant in pig farms.
+
+Even though African swine fever is not a threat to human health -- it
+cannot be transmitted from pigs to humans -- and a food safety issue,
+the death of the pigs has raised concerns as farmers are reportedly
+refusing to bury the dead pigs but are instead selling the pork to
+residents.
+
+Ministry of Agriculture spokeswoman Im Rachna said more than 70 pigs
+have died from the suspected disease and that samples of the animals
+have been collected for laboratory analysis.
+
+"About 150 pigs are suspected to have African swine fever, and more
+than 70 of them have died. "We buried the dead pigs and took samples
+for analysis at the laboratory in Phnom Penh to clarify whether they
+died of African swine flu or other causes," Rachna said. The affected
+pigs, Rachna said, are owned by 3 farmers in Kampong Ror district.
+
+She said the Ministry acted swiftly to inspect several locations to
+make sure the virus had not spread, adding that health officials are
+keeping close tab on the situation.
+
+"Our first course of action is to thoroughly check every location to
+ensure that the infection does not spread. If we come across any
+cases, we will gather and bury them all to stop them from spreading,"
+she said. She added that the suspected African swine fever is
+contained in the Kampong Ror district and has not spread out of the
+district.
+
+[Byline: Nop Sreymao]
+
+--
+Communicated by:
+ProMED
+via
+ProMED-MBDS
+
+[In Cambodia, "since the Ministry of Agriculture, Forestry and
+Fisheries (MAFF) confirmed the 1st outbreak in Ratanakiri Province in
+April 2019, ASF outbreaks were detected in 5 provinces. The last
+reported outbreak was in July 2019"
+(<https://www.fao.org/animal-health/situation-updates/asf-in-asia-pacific/e=
+n>).
+
+"Svay Rieng is a province in Cambodia. Located in the southeast, the
+province juts into Viet Nam which surrounds it to the north, east and
+south. The only other Cambodian province to border Svay Rieng is Prey
+Veng. The capital is Svay Rieng while the largest city is Bavet, which
+is the international border between Cambodia and Viet Nam"
+(<https://en.wikipedia.org/wiki/Svay_Rieng_province>). - Mod.TTM
+
+ProMED map:
+Cambodia: <https://promedmail.org/promed-post?place=3D8714277,145>]
+
+[See Also:
+African swine fever - Asia (01): Viet Nam, domestic, spread
+http://promedmail.org/post/20240103.8714051
+2023
+----
+African swine fever - Asia (30): Viet Nam (HT) domestic, spread
+http://promedmail.org/post/20231205.8713531
+African swine fever - Asia (26): Viet Nam, domestic, spread
+http://promedmail.org/post/20231123.8713282
+African swine fever - Asia (18): Viet Nam (NA) domestic, spread
+http://promedmail.org/post/20231022.8712768
+2022
+----
+African swine fever - Asia (17): Viet Nam, spread, vaccination trials,
+RFI http://promedmail.org/post/20221016.8706177
+African swine fever - Asia (15): Viet Nam, vaccination trials
+suspended, RFI http://promedmail.org/post/20220827.8705272
+2020
+----
+African swine fever - Asia (22): Viet Nam, spread
+http://promedmail.org/post/20200630.7526692
+2019
+----
+African swine fever - Asia (100): China, S. Korea, Viet Nam,
+Indonesia, FAO http://promedmail.org/post/20191228.6860405
+African swine fever - Asia (99): Taiwan ex Viet Nam, contaminated food
+http://promedmail.org/post/20191226.6858823
+African swine fever - Asia (67): China, Viet Nam, Laos, Cambodia,
+Myanmar, FAO http://promedmail.org/post/20190907.6661044
+African swine fever - Asia (50): Laos (SL) 1st rep, Viet Nam control,
+FAO, OIE http://promedmail.org/post/20190620.6530291
+African swine fever - global control initiative, OIE, FAO
+http://promedmail.org/post/20190528.6491414
+African swine fever - Asia (47): Viet Nam, China, domestic, spread,
+control http://promedmail.org/post/20190527.6489229
+African swine fever - Asia (44): China, Viet Nam, domestic, spread
+http://promedmail.org/post/20190518.6475201
+African swine fever - Asia (38): China, Viet Nam, Cambodia, spread,
+FAO http://promedmail.org/post/20190426.6443298
+African swine fever - Asia (37): Viet Nam (HN) domestic, spread
+http://promedmail.org/post/20190424.6438426
+African swine fever - Asia (32): China, Viet Nam, Cambodia, domestic,
+spread, FAO http://promedmail.org/post/20190413.6420591
+African swine fever - Asia (30): China, Viet Nam, Cambodia, domestic,
+spread, FAO http://promedmail.org/post/20190406.6407781
+African swine fever - Asia (26): China, Viet Nam, domestic, spread,
+control, FAO http://promedmail.org/post/20190331.6395893
+African swine fever - Asia (24): China, Viet Nam, domestic, spread,
+control, FAO http://promedmail.org/post/20190322.6381354
+African swine fever - Asia (23): China, Viet Nam, domestic, Cambodia,
+alert http://promedmail.org/post/20190320.6377843
+African swine fever - Asia (22): China, Mongolia, Viet Nam, domestic,
+FAO http://promedmail.org/post/20190317.6371700
+African swine fever - Asia (21): Viet Nam (HD), China (GX), domestic,
+spread http://promedmail.org/post/20190307.6354194
+African swine fever - Asia (18): Viet Nam (HP) domestic, spread
+http://promedmail.org/post/20190226.6337525
+African swine fever - Asia (14): China, Mongolia, Viet Nam, domestic,
+FAO http://promedmail.org/post/20190222.6331318
+African swine fever - Asia (11): Viet Nam (HY, TB) domestic, 1st rep.
+http://promedmail.org/post/20190219.6324979]
+.................................................st/ttm/rd/st/may/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3DsVYjNsNusbQ1yxcPlmpz7x_8eDjWLKkBMOzePtKtP8VoMDAwdTAwMKBIVxB=
+pa1dyxHCWJKd0oU60-npNQINZUG0SK_euAAdOE61SXjwXRdJzwNx3_b0sW1reYphKsewaUvIxBx=
+e0kiTmMwJb2xuQg_PgsTu45-JEUNze3ezbzGNYT19xoLR9VzOwb8FRvIhH2Mc9afn4U8lTwHgVX=
+N4DmB6gvQqFY-bxRisg98_PjzVfrA4JDaE_8IRMoNCbgYoOB4i4JViQwpYwVKKWAx_NJcgC9jZO=
+7yGHC2202uKFDNNq73oUFBkx9wcHWgiMVhq38eINCfy2aKsjrnGTjYmnSzO_TPr6clcwwWAF-oV=
+Q29LlStpMxpRYne9m1y--e8AOw0JamDe8i_J2NLINIQWY_40yPFVdVgM-6d2_cGsYcoRuMcLPlr=
+_trwA0q8ZBCxZVSZQJbyQjCj_manZOCTWY-IoR-e7ZAVrCxUtxA7tOAg-3nT0J6WZPnd3CavGp4=
+7SVIX6RHcT1Z_zhIJt8jYlRQRZflGpy1imJDjKAFL2cDYaKid_iCasmX1X3xHX4VHf1SQl8mu1E=
+mO1taC_hlESWNdb6PyI_qkMlRr_JQwlBR4rgrIzMsdmSK3kOghH30sPiJNvA5oAVXAIzPxLPkl4=
+TFfbJfWjytYkXjT7BNKWgn0lhhRHWgFt_GhtaG24xBjaY5hMI-tne68lfblCAsBFrx8NNSAV0pD=
+CqAqQW704dkunBljuYCESF4UYmoDIeBtEoK5RRaCot3a_dJjYR-Qe5KchCcbNrSMB-kq70rJZ8_=
+uyftrondhsdo70JZB_lowu3m3DVqr6WI4I2Gsp76oFPuOVnc7A6yQWnVnqwYr2M63VJizyCGyRv=
+2AVJkaFrcvFtMOj-S7ZnFThhsJiA9P9zzU5Ed0LmPphhTinbESMOByqApqxZhtSgAx6hkhLG3IT=
+JtkQw_MjP_zXzhPEsCHJk_8dLmIzEiH0eVtDYKlx7Q9OvRxOdVJT8WgZ0cf9Q1mNbVxel84nHIO=
+f6MA1_1XwzzKgNdyhVAeyX_REfS5ZKkMYV9YfHz03uboSDM94ZTmejQSmIQAM6B5eGxfj1tmHr8=
+323qgrgEFJIGtZGdj_DUhRSL_pH2lpGQ4At_l1vTtBS1DQrai2xIRSYy0NBv4huMVkefI4eQe0U=
+L2EKa6d5NhOjO3WgVZPowSTJrkADYXgJqIx8hKUKsHbSKbS4rzXgAYQNiRaiLj1y )
+############################################################
+############################################################
+
+--8b3f83ec99d4d5b5af2367ef2c018e7add614c4cb8d2ef4809ede9278122
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>AFRICAN SWINE FEVER (03): CAMBODIA (SVAY RIENG) DOMESTIC ALERT<br>***=
+***********************************************************<br>A ProMED-mai=
+l post<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPI=
+t48tisIijpefK5PNjW-mL-YZGnfgDOxU1G3gjwnPSi2Tfv3HA/432/9kv0glMUQouJAK9EfhjcL=
+g/h0/YpHxCNhqioCJaSwDJG9QFwE92dGR4RqWJXlQFzBIkz4">http://www.promedmail.org=
+</a><br>ProMED-mail is a program of the<br>International Society for Infect=
+ious Diseases<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/wscE2ng5=
+fl6JrPIt48tisCT5tpD4Upm3qyMCbcYSQvc/432/9kv0glMUQouJAK9EfhjcLg/h1/7J75tT9gn=
+3GWpk0xg-SvabC-WV36pjMe24nRuveRLQ8">http://www.isid.org</a><br><br>Date: Tu=
+e 16 Jan 2024=0D<br>Source: Khmer Times [abridged, edited]=0D<br><a href=3D=
+"https://u19268662.ct.sendgrid.net/ss/c/TLh_csrC34X_iXpbYoMam2Hzge_fPx4rlos=
+MDD3dmXjC1-9Ve4B-WROTtcFozj7tXjL8GdYrH7uPT5JVqdi7--l2obLFIixjRC0tEVul2OPBJa=
+195yka6za7E_mPHZyi781ebnLjOdYO6o36EgruJA/432/9kv0glMUQouJAK9EfhjcLg/h2/7JzY=
+E1CIAwJrqi3LoKxc4R_aIzqegtYoitUx1wBv2SQ">https://www.khmertimeskh.com/50142=
+3480/authorities-on-alert-for-swine-fever-in-svay-rieng/</a>=0D<br>=0D<br>=0D=
+<br>Authorities are on the alert for African swine fever, a highly<br>conta=
+gious and deadly viral disease affecting pigs. Ministry of<br>Agriculture o=
+fficials have started investigations and taken proactive<br>measures in Sva=
+y Rieng province's Kampong Ror district where many pigs<br>have died from t=
+he disease.=0D<br>=0D<br>The officials have collected samples from the pigs=
+' carcasses for<br>analysis in Phnom Penh to find the root causes of the de=
+aths. To<br>mitigate the situation, the Ministry of Agriculture's General<b=
+r>Department of Animal Health worked with the local authorities to spray<br=
+>disinfectant in pig farms.=0D<br>=0D<br>Even though African swine fever is=
+ not a threat to human health -- it<br>cannot be transmitted from pigs to h=
+umans -- and a food safety issue,<br>the death of the pigs has raised conce=
+rns as farmers are reportedly<br>refusing to bury the dead pigs but are ins=
+tead selling the pork to<br>residents.=0D<br>=0D<br>Ministry of Agriculture=
+ spokeswoman Im Rachna said more than 70 pigs<br>have died from the suspect=
+ed disease and that samples of the animals<br>have been collected for labor=
+atory analysis.=0D<br>=0D<br>"About 150 pigs are suspected to have African =
+swine fever, and more<br>than 70 of them have died. "We buried the dead pig=
+s and took samples<br>for analysis at the laboratory in Phnom Penh to clari=
+fy whether they<br>died of African swine flu or other causes," Rachna said.=
+ The affected<br>pigs, Rachna said, are owned by 3 farmers in Kampong Ror d=
+istrict.=0D<br>=0D<br>She said the Ministry acted swiftly to inspect severa=
+l locations to<br>make sure the virus had not spread, adding that health of=
+ficials are<br>keeping close tab on the situation.=0D<br>=0D<br>"Our first =
+course of action is to thoroughly check every location to<br>ensure that th=
+e infection does not spread. If we come across any<br>cases, we will gather=
+ and bury them all to stop them from spreading,"<br>she said. She added tha=
+t the suspected African swine fever is<br>contained in the Kampong Ror dist=
+rict and has not spread out of the<br>district.=0D<br>=0D<br>[Byline: Nop S=
+reymao]=0D<br>=0D<br>--=0D<br>Communicated by:=0D<br>ProMED=0D<br>via=0D<br=
+>ProMED-MBDS<br><br>[In Cambodia, "since the Ministry of Agriculture, Fores=
+try and<br>Fisheries (MAFF) confirmed the 1st outbreak in Ratanakiri Provin=
+ce in<br>April 2019, ASF outbreaks were detected in 5 provinces. The last<b=
+r>reported outbreak was in July 2019"<br>(<a href=3D"https://u19268662.ct.s=
+endgrid.net/ss/c/TLh_csrC34X_iXpbYoMam1f3hHphMwE_gqG9QMefiOcmtemxmzk7MzMcwf=
+nt-RpfquaeiTZFFZ0V0yZSVOCs7NNcFIUXlRUnCVwWu_JpLnpOkhPaopNh9PYPyE9LDXpC/432/=
+9kv0glMUQouJAK9EfhjcLg/h3/1lTtrnfbXXDI1NA1_UmvxQfTrXewAZUPqPAxHyet2gA">http=
+s://www.fao.org/animal-health/situation-updates/asf-in-asia-pacific/en</a>)=
+.=0D<br>=0D<br>"Svay Rieng is a province in Cambodia. Located in the southe=
+ast, the<br>province juts into Viet Nam which surrounds it to the north, ea=
+st and<br>south. The only other Cambodian province to border Svay Rieng is =
+Prey<br>Veng. The capital is Svay Rieng while the largest city is Bavet, wh=
+ich<br>is the international border between Cambodia and Viet Nam"<br>(<a hr=
+ef=3D"https://u19268662.ct.sendgrid.net/ss/c/u6Jy221DtLTd6phwYNECndCVDGULFc=
+CLoA-Mb23Mb1WyLxuvZ9sgabWLdit7qBkbdVq94pf1Q18Cyy__pQtY4Q/432/9kv0glMUQouJAK=
+9EfhjcLg/h4/AbJV__T4G39zlkHRDdSNvQjgdTNAnmV_DjvRzeHMDHQ">https://en.wikiped=
+ia.org/wiki/Svay_Rieng_province</a>). - Mod.TTM<br><br>ProMED map:<br>Cambo=
+dia: <a href=3D"https://u19268662.ct.sendgrid.net/ss/c/sSnCkKCWBvais3EuVAOv=
+gy2WOIX7pp1nXnn4AbwuQ3Z6WbkfhqXYXU-aTMPJ8yTh24w0oOnfjInRyd9Yyeu9hg/432/9kv0=
+glMUQouJAK9EfhjcLg/h5/QO8zNY2hPDH71MaDbCXRAhNPQg3ekCp4tIxvo8YgUN8">https://=
+promedmail.org/promed-post?place=3D8714277,145</a>]<br><br>[See Also:<br>Af=
+rican swine fever - Asia (01): Viet Nam, domestic, spread<br>http://promedm=
+ail.org/post/20240103.8714051=0D<br>2023=0D<br>----=0D<br>African swine fev=
+er - Asia (30): Viet Nam (HT) domestic, spread<br>http://promedmail.org/pos=
+t/20231205.8713531=0D<br>African swine fever - Asia (26): Viet Nam, domesti=
+c, spread<br>http://promedmail.org/post/20231123.8713282=0D<br>African swin=
+e fever - Asia (18): Viet Nam (NA) domestic, spread<br>http://promedmail.or=
+g/post/20231022.8712768=0D<br>2022=0D<br>----=0D<br>African swine fever - A=
+sia (17): Viet Nam, spread, vaccination trials,<br>RFI http://promedmail.or=
+g/post/20221016.8706177=0D<br>African swine fever - Asia (15): Viet Nam, va=
+ccination trials<br>suspended, RFI http://promedmail.org/post/20220827.8705=
+272=0D<br>2020=0D<br>----=0D<br>African swine fever - Asia (22): Viet Nam, =
+spread<br>http://promedmail.org/post/20200630.7526692=0D<br>2019=0D<br>----=0D=
+<br>African swine fever - Asia (100): China, S. Korea, Viet Nam,<br>Indones=
+ia, FAO http://promedmail.org/post/20191228.6860405=0D<br>African swine fev=
+er - Asia (99): Taiwan ex Viet Nam, contaminated food<br>http://promedmail.=
+org/post/20191226.6858823=0D<br>African swine fever - Asia (67): China, Vie=
+t Nam, Laos, Cambodia,<br>Myanmar, FAO http://promedmail.org/post/20190907.=
+6661044=0D<br>African swine fever - Asia (50): Laos (SL) 1st rep, Viet Nam =
+control,<br>FAO, OIE http://promedmail.org/post/20190620.6530291=0D<br>Afri=
+can swine fever - global control initiative, OIE, FAO<br>http://promedmail.=
+org/post/20190528.6491414=0D<br>African swine fever - Asia (47): Viet Nam, =
+China, domestic, spread,<br>control http://promedmail.org/post/20190527.648=
+9229=0D<br>African swine fever - Asia (44): China, Viet Nam, domestic, spre=
+ad<br>http://promedmail.org/post/20190518.6475201=0D<br>African swine fever=
+ - Asia (38): China, Viet Nam, Cambodia, spread,<br>FAO http://promedmail.o=
+rg/post/20190426.6443298=0D<br>African swine fever - Asia (37): Viet Nam (H=
+N) domestic, spread<br>http://promedmail.org/post/20190424.6438426=0D<br>Af=
+rican swine fever - Asia (32): China, Viet Nam, Cambodia, domestic,<br>spre=
+ad, FAO http://promedmail.org/post/20190413.6420591=0D<br>African swine fev=
+er - Asia (30): China, Viet Nam, Cambodia, domestic,<br>spread, FAO http://=
+promedmail.org/post/20190406.6407781=0D<br>African swine fever - Asia (26):=
+ China, Viet Nam, domestic, spread,<br>control, FAO http://promedmail.org/p=
+ost/20190331.6395893=0D<br>African swine fever - Asia (24): China, Viet Nam=
+, domestic, spread,<br>control, FAO http://promedmail.org/post/20190322.638=
+1354=0D<br>African swine fever - Asia (23): China, Viet Nam, domestic, Camb=
+odia,<br>alert http://promedmail.org/post/20190320.6377843=0D<br>African sw=
+ine fever - Asia (22): China, Mongolia, Viet Nam, domestic,<br>FAO http://p=
+romedmail.org/post/20190317.6371700=0D<br>African swine fever - Asia (21): =
+Viet Nam (HD), China (GX), domestic,<br>spread http://promedmail.org/post/2=
+0190307.6354194=0D<br>African swine fever - Asia (18): Viet Nam (HP) domest=
+ic, spread<br>http://promedmail.org/post/20190226.6337525=0D<br>African swi=
+ne fever - Asia (14): China, Mongolia, Viet Nam, domestic,<br>FAO http://pr=
+omedmail.org/post/20190222.6331318=0D<br>African swine fever - Asia (11): V=
+iet Nam (HY, TB) domestic, 1st rep.<br>http://promedmail.org/post/20190219.=
+6324979]<br>.................................................st/ttm/rd/st/m=
+ay/jh<br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3DsVYjNsNusbQ1yxcPlmpz7x_8eDjWLKkBMOzePtKtP8VoMDAwdT=
+AwMKBIVxBpa1dyxHCWJKd0oU60-npNQINZUG0SK_euAAdOE61SXjwXRdJzwNx3_b0sW1reYphKs=
+ewaUvIxBxe0kiTmMwJb2xuQg_PgsTu45-JEUNze3ezbzGNYT19xoLR9VzOwb8FRvIhH2Mc9afn4=
+U8lTwHgVXN4DmB6gvQqFY-bxRisg98_PjzVfrA4JDaE_8IRMoNCbgYoOB4i4JViQwpYwVKKWAx_=
+NJcgC9jZO7yGHC2202uKFDNNq73oUFBkx9wcHWgiMVhq38eINCfy2aKsjrnGTjYmnSzO_TPr6cl=
+cwwWAF-oVQ29LlStpMxpRYne9m1y--e8AOw0JamDe8i_J2NLINIQWY_40yPFVdVgM-6d2_cGsYc=
+oRuMcLPlr_trwA0q8ZBCxZVSZQJbyQjCj_manZOCTWY-IoR-e7ZAVrCxUtxA7tOAg-3nT0J6WZP=
+nd3CavGp47SVIX6RHcT1Z_zhIJt8jYlRQRZflGpy1imJDjKAFL2cDYaKid_iCasmX1X3xHX4VHf=
+1SQl8mu1EmO1taC_hlESWNdb6PyI_qkMlRr_JQwlBR4rgrIzMsdmSK3kOghH30sPiJNvA5oAVXA=
+IzPxLPkl4TFfbJfWjytYkXjT7BNKWgn0lhhRHWgFt_GhtaG24xBjaY5hMI-tne68lfblCAsBFrx=
+8NNSAV0pDCqAqQW704dkunBljuYCESF4UYmoDIeBtEoK5RRaCot3a_dJjYR-Qe5KchCcbNrSMB-=
+kq70rJZ8_uyftrondhsdo70JZB_lowu3m3DVqr6WI4I2Gsp76oFPuOVnc7A6yQWnVnqwYr2M63V=
+JizyCGyRv2AVJkaFrcvFtMOj-S7ZnFThhsJiA9P9zzU5Ed0LmPphhTinbESMOByqApqxZhtSgAx=
+6hkhLG3ITJtkQw_MjP_zXzhPEsCHJk_8dLmIzEiH0eVtDYKlx7Q9OvRxOdVJT8WgZ0cf9Q1mNbV=
+xel84nHIOf6MA1_1XwzzKgNdyhVAeyX_REfS5ZKkMYV9YfHz03uboSDM94ZTmejQSmIQAM6B5eG=
+xfj1tmHr8323qgrgEFJIGtZGdj_DUhRSL_pH2lpGQ4At_l1vTtBS1DQrai2xIRSYy0NBv4huMVk=
+efI4eQe0UL2EKa6d5NhOjO3WgVZPowSTJrkADYXgJqIx8hKUKsHbSKbS4rzXgAYQNiRaiLj1y" =
+target=3D"_blank" class=3D"Unsubscribe--unsubscribePreferences" style=3D"fo=
+nt-family:sans-serif;text-decoration:none;">Unsubscribe Preferences</a></di=
+v><br>############################################################<br>#####=
+#######################################################<br><br><img src=3D"=
+https://u19268662.ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/432/9kv0glMUQ=
+ouJAK9EfhjcLg/ho.gif" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=
+=3D"height:1px !important;width:1px !important;border-width:0 !important;ma=
+rgin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;=
+margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !importa=
+nt;padding-right:0 !important;padding-left:0 !important;"/></body>
+</html>
+--8b3f83ec99d4d5b5af2367ef2c018e7add614c4cb8d2ef4809ede9278122--

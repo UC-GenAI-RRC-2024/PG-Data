@@ -1,0 +1,384 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a98:d84b:0:b0:1eb:e128:bbe3 with SMTP id b11csp652505eil;
+        Thu, 18 Jan 2024 17:48:14 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IElP33+TIL0eHuJvEoZNoKnKXvdGMBvajzQefEb6/h7lzshMoqmO20S7IwbVWf5mT3+pu+A
+X-Received: by 2002:a05:620a:4608:b0:783:3474:2970 with SMTP id br8-20020a05620a460800b0078334742970mr784462qkb.0.1705628894498;
+        Thu, 18 Jan 2024 17:48:14 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1705628894; cv=none;
+        d=google.com; s=arc-20160816;
+        b=kpQoQCK4zgSGFGmrQ+BDKPUmj2ijdPeWklM41lg7Pj/G8jIhRUp5aCNOa5QeLW9SfV
+         E6V3WidDptDDs+M23OMh3PdBG47DLFL+W+ZMyYExmQtrUYDZW/i88OaBoEQ6WYAMbX5s
+         b5McZSghak30j8ptQeOfwOsc/tHmjdOxofHnYOXmwRbFYAlTpXAfiiw+gYFj6VFFaPWi
+         CY4cgV1idVp/ZR+6M7Ppmto+YZMftPXI/wZmGkBrt7jnIg7RotUsqti3Evj5MkNVbn0A
+         FiCfIWGaFL43//1X6dyuvgTi+0z9dRIsjrMd0Sy5Mu2puuk+rFUfl9sSOQqOiu0kIZw+
+         qkEA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=thhfMc9NUsoS1khN9os5YQbhZTR7JpxqnrJkDo6oVXE=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=o9KBnonAvQ43V+dInLDNBBucDCyxuvnvToI4tCdNoYX576EtzySP/VxyLHK8SgqY3S
+         6QOMdSIHMN/e+Xp7efYz14Zw1dUJvHdwrHwc0fFB+OlRPNl0TJFK9pfcxTwfA568Fu26
+         3VmRjWzsCcn70srjx4lEHH1ppBjwyWSYR7Z2tnQLnTBx1jMKe8WUE6FlNvh60m/1JUpy
+         x5WsQ+efXCFgpT1ctJ3YHafAyFFAg3gntcFe1EIy/6hGreiJ/7CupdEP/6XyOBTFuvue
+         hkjo0wc0V6WLHgRSenirF1Vbdhyn1p3POhB8UhC9aZP8KsIFPlWqWjPUueTrhp4x2kLF
+         yn2Q==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=hbqcDSHW;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=IbfXAGIW;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id b13-20020a05620a126d00b00783077c9af8si14892771qkl.700.2024.01.18.17.48.14
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 18 Jan 2024 17:48:14 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=hbqcDSHW;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=IbfXAGIW;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=thhfMc9NUsoS1khN9os5YQbhZTR7JpxqnrJkDo6oVXE=;
+	b=hbqcDSHWOCYZu7o452DwHHO17o5hqp2Aj33rjQnLEGMQGGpcO6iKay6/oKfsoMHgqzQM
+	96pTr/Sr5XuKCy+vn70qh7THjkE5Qn0AM3duv/8p5/FVjES2+nQKj6HAL3AjgSQZ7h9tnl
+	3bfXcHI8PDEV+TtyCBMcc8JrFXDk9JsvfO8cJP+tBLyJkncWCbh9Be6i5AhcJBfwax50W4
+	6wjkY9GhQhm4tn/GJbqzDxgwWm/w109sHglkdywhYjnmjkNyHKYxnzdMvyU2JwXT0jfGLs
+	1vjpRgHn3+f8t57zW12nCJa5cSJEB+a3njtp+DLvKjFTeeyD26788+ysLk2KaE+w==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=thhfMc9NUsoS1khN9os5YQbhZTR7JpxqnrJkDo6oVXE=;
+	b=IbfXAGIW+94MOQ5zyj+EHsEoyNnrOPbmK12LjLzpv0qjKeJP/Q4qUHl/uAoVpcMJMmge
+	Kq2+pw0G3kZcXF7Pa/MUKjo/YFaFQMBFMZXqG8cNbHK3PAidjLHwmImEoYXHZR7LslOhTM
+	6kqUOLRnGujqspi1KZNHtWDjrN5dMb4dk=
+Received: by filterdrecv-67b59c969b-gzs5g with SMTP id filterdrecv-67b59c969b-gzs5g-1-65A9D4DB-52
+        2024-01-19 01:48:11.909507929 +0000 UTC m=+8060784.022545698
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-19 (SG) with HTTP
+	id w-ETyXVcR8qxoBiyri2Nzg
+	Fri, 19 Jan 2024 01:48:11.889 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=cc34e1a6e939b768443cea3a55b28358bb9c875d0053723e0df32e1193e6
+Date: Fri, 19 Jan 2024 01:48:14 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <w-ETyXVcR8qxoBiyri2Nzg@geopod-ismtpd-19>
+Subject: PRO/EDR> Measles - Nigeria: (AB) conf.
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iBmZWiWKpKmDdeHdDop6AVTtvlX=2FdajJxRDHuRZ?=
+ =?us-ascii?Q?WW=2FpOZcjfTd7dJH04sfCuKovj8OTrb2imGIetQI?=
+ =?us-ascii?Q?zJMYsF6=2FIWdt+PyCzmJyt+e2nwOg7F6b9U2ylZK?=
+ =?us-ascii?Q?T3Ks4A8HNaAkQy7VHN4L0ArV9=2FiYnmaEXnFAOmA?=
+ =?us-ascii?Q?fWxqNZrzmzrZ4xz8I69ipokjGK7WKZETPuDuyY?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUhc93xcG=2F095a5S4+mt=2FG?=
+ =?us-ascii?Q?uYUpctI=2FOGD2dwyi+uvm2j4FCdvuw0l9zcHM8iA?=
+ =?us-ascii?Q?mojOvTXq7jOpDFFNtfsYkHQYACEW8pq1BXXqYmH?=
+ =?us-ascii?Q?oGTsnt6QpE2ZV5WVqnpwfXWoLXx7+4bVtv8g2Cr?=
+ =?us-ascii?Q?ymGRVSKc5Xgh9zTiHcUDgg9v2DjH+JxSqCp3ull?=
+ =?us-ascii?Q?4a5HuEvyJ8XKiDZa5yH0LskThYJHlI89dcK=2FxMu?=
+ =?us-ascii?Q?TOdP6u8vdEdEEEeo=2Fygq3MvCXE2vy+5nBA8yq4h?=
+ =?us-ascii?Q?Glbg3nyC92m8RgPV3PlKwtH11nzqFgWW=2F7Tbsus?=
+ =?us-ascii?Q?olYy0HvzIX+S=2FJvYrGY7ydU+iGmRhPsROZnT2Le?=
+ =?us-ascii?Q?zWWog9E+WcUEJjfJUdnkdxncWSoFh2zGkX92g1S?=
+ =?us-ascii?Q?YPxcUY1DtzDdE4GDkWEb9KeQNQzfoMz00AnpGc1?=
+ =?us-ascii?Q?lj8r+gV5BaWXhtMNf0fViP4Xb167KEH2TQmiuR7?=
+ =?us-ascii?Q?u8Gr=2FG4IyMxfnlxXLiLaIOCGRu1U3sgHhbZmbZS?=
+ =?us-ascii?Q?Rh8mu4JF9FysqeT8veOm7fJ21eckbUSZj2LNh7O?=
+ =?us-ascii?Q?nNwkvSBUWWUDj3Rzd3TYmKLe=2FhuuXDarWSvj36E?=
+ =?us-ascii?Q?nl8sxxgSA1V+NbvfGMvsxzrPxJscRLXNXW1=2F43w?=
+ =?us-ascii?Q?OOnXX7NQflFm2dhER4Ue4jkNxRa1eTNgaNKa1J3?=
+ =?us-ascii?Q?1T41iqm+59UdM44vb4ULuBS7XYgKGnOcflNtQC8?=
+ =?us-ascii?Q?JMqh1YJHFhGPXi8Ac=2F21tjM2yKrMOARnkUl+jwc?=
+ =?us-ascii?Q?Gm0TB1pD936OPxneCQAQfbeGlg=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2EqacjT7X7f?=
+ =?us-ascii?Q?sbf2otTtmVjBhJGqXuqQP4LNeJM2--wQJhoMDAw?=
+ =?us-ascii?Q?dTAwMObWP-0xcHGwXC0DsC-azMn2bSJsAAM2MEj?=
+ =?us-ascii?Q?7Tq7on6hcHxe3YVCFGZ2j=5FjEv-5YTGbouWA-rOY?=
+ =?us-ascii?Q?waIszaS7yW857Vuub4LsarQTfbVIhFBqLQr4Yiv?=
+ =?us-ascii?Q?cC68wBdKqN4=5F-rh7g=3D=3D=2E1E2Vh6QJN=5F-TX1LqwtH?=
+ =?us-ascii?Q?bVQwQ8li5nNgjt-i09FHdrAZoMDAwdTAwMJJ5tg?=
+ =?us-ascii?Q?t4GxNeJLZFVvMR=5FJt6-6MhJQNUbhET1xqiJizC5?=
+ =?us-ascii?Q?Nz7ur7jm5QDk=5FKydfsJFsKvKr3ylygOK2hhTgu5?=
+ =?us-ascii?Q?lgDr2AeAoIkA98CD9z0jkKU3z0UfIKrfGz3U0RV?=
+ =?us-ascii?Q?oQhhqd6cni4uGXv-Gudcu=5FgpF2JRET-XnyxgD33?=
+ =?us-ascii?Q?rbvIXHOSrp6JQ3nS-qtAVTq3weQRvBFeL50WOGq?=
+ =?us-ascii?Q?dKYf6w-wUHEoMJJseC3EMDy=5FkAuygTPhCPHd-Yb?=
+ =?us-ascii?Q?ugrwOtsk2m1MqE2gV99yAPnP4PVusg-hNM7vf31?=
+ =?us-ascii?Q?D6FJoXOno8WGX91-NsBHpBUsjdVsaSBpPxsGdEa?=
+ =?us-ascii?Q?MiZxwSywaP2coABGNvFirObhSOnNDdKbi3dkr8g?=
+ =?us-ascii?Q?vxG4uYld-DcyEDtajT9G6Kf7ZDcOp6=5F4GpRmZFn?=
+ =?us-ascii?Q?jpmexD4h=5FO5K0aOTDPRjJjjfH8ga0hrO3fgOLmj?=
+ =?us-ascii?Q?UbGNJ3721zeACXzYfypZr2lqJKALZF6mfTmdNae?=
+ =?us-ascii?Q?6nyGI-sKPsgn5NdMMOp4j=5Fg8jd9DB5aQP-peqJ7?=
+ =?us-ascii?Q?vftUYMB3As1fEcNTY3gKLsqy3hbRQdXv-oue6kK?=
+ =?us-ascii?Q?k5B7RbFwKgRBBKPfLsyTcKFwG6e8siW-9j-=5F92f?=
+ =?us-ascii?Q?U9sei=5Fudi6u57wcV2ZiXLw1f7=5FeK-zvqYzx5VKV?=
+ =?us-ascii?Q?L3blv8KXDg6etTM-=5F0BxQtYREtL9LreOkKomKE4?=
+ =?us-ascii?Q?eoE11WjaZm2KLVIArOOPnqrr9fXr=5FuzyHSYQ4he?=
+ =?us-ascii?Q?PxhdEjVNFhhD9OFivNecJdMhmg=5Fwq4cKBq1zw-k?=
+ =?us-ascii?Q?sjyas5WdpQ0QovThll=5FNuB-plW9BifhvDGelMZi?=
+ =?us-ascii?Q?CTwj07NXRg6=5F6Pjt3ctdyEoVW8Tchz-7LWEzdgU?=
+ =?us-ascii?Q?7kYfI7jMz-oiYhU1mD9r-0o-Hw8tRKBTXTHUtua?=
+ =?us-ascii?Q?pvPLztr8SNF10I=5FB4gLZG9utTMV=5FkZ3LR5daWkx?=
+ =?us-ascii?Q?C4IDAyt9qoZyXROmrg9MqRRxpUju-XRmR4CIzhD?=
+ =?us-ascii?Q?pLbfN6K69P1FFLZwwITH97OcgMF2ZDAtksxaOPl?=
+ =?us-ascii?Q?jWnpS6ZN1JeCZJ=5FDhW8QkmI=3E?=
+
+--cc34e1a6e939b768443cea3a55b28358bb9c875d0053723e0df32e1193e6
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=us-ascii
+Mime-Version: 1.0
+
+MEASLES - NIGERIA: (ABIA) CONFIRMED
+***********************************
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+Date: Wed 17 Jan 2024
+Source: Leadership [edited]
+<https://leadership.ng/abia-records-3-measles-cases/#:~:text=3DAbia%20State=
+%20has%20recorded%20three,councils%20do%20not%20share%20boundaries.>
+
+
+Abia State has recorded 3 cases of measles in Umunneochi and Arochukwu
+local government areas. The cases occurred in the northern part of the
+state, but the 2 councils do not share boundaries.
+
+The information and strategy commissioner, Okey Kanu, disclosed this
+along with 3 of his colleagues who spoke on the outcome of this week's
+executive council meeting in Umuahia, the state capital. He said that
+the administration had recorded more successes in road rehabilitation
+in Aba and renovation of facilities at Ummunneato and Okpuala Ngwa
+General Hospitals, which will be commissioned soon.
+
+On the measles cases, his health counterpart, Ngozi Okoronkwo, said
+the government was investigating to identify the children and to
+ascertain when the condition started.
+
+"For us, once it gets to that number, it's already declared an
+outbreak. We are trying to identify them and avert any further spread.
+And, as I speak, it is under control," she added.
+
+[Byline: Kalu Eziyi]
+
+--
+Communicated by:
+ProMED
+via
+ProMED-EAFR
+
+[Measles is a highly contagious vaccine-preventable disease. A potent
+vaccine, the measles vaccine is available and sometimes given as a
+triple vaccine with mumps and rubella vaccines (MMR vaccine). The
+report of 3 confirmed cases of measles in Abia state may be an
+indication there are more cases in the communities reporting the
+outbreak. A high vaccine coverage is needed to boost herd immunity and
+prevent an outbreak from occurring. - Mod.AA
+
+ProMED map of Abia State, Nigeria:
+<https://promedmail.org/promed-post?place=3D8714312,18377>]
+
+[See Also:
+Measles - USA (02): multiple states
+http://promedmail.org/post/20240118.8714292
+Measles - Portugal: (LI) imported
+http://promedmail.org/post/20240116.8714250
+Measles - Israel: (north) nosocomial
+http://promedmail.org/post/20240113.8714196
+Measles update (01): USA (PA) multiple potential exposure sites
+http://promedmail.org/post/20240107.8714111
+2023
+----
+Measles update (64): USA, Russia, Azerbaijan
+http://promedmail.org/post/20231226.8713899
+Measles update (31): Americas, Asia, Africa
+http://promedmail.org/post/20230707.8711001
+Measles update (30): W Pacific, Americas, E Mediterranean, Africa,
+int'l travel http://promedmail.org/post/20230704.8710940
+Measles update (29): E Mediterranean, Europe, Africa, Americas, int'l
+travel http://promedmail.org/post/20230624.8710728
+Measles update (28): Americas, E Mediterranean, W Pacific
+http://promedmail.org/post/20230619.8710660
+Measles update (21): global update
+http://promedmail.org/post/20230428.8709755
+Measles update (20): Europe, Asia, Africa, W. Pacific, Americas,
+Middle East http://promedmail.org/post/20230423.8709653]
+.................................................aa/tw/ya/tw/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3Da3dN1BGQWZLDlTDzsYhMfE9Dz3ubfnqlwJH4nEW6gPloMDAwdTAwMNGe5mY=
+xDX52_rWT82aiCVL5XbCgGnRlohtjAMA5dURz3rwtfnrpt3zdmn7pSr7PnbL28AMO8MHYHziG4l=
+Wo5WvfEip7wVUyAM7uWOBKRuYRJ0yOB6zHPyTfGkTQUs5f_-dfYwt_rQpkmu7PT-UtWoYaDSEj5=
+nn2Gm5mJscNCodKB5iy95yNujhqu_4GEWd-kZY60E7-e8q4wAwaU6uEYaV2jQFBeC1nqyhiVQUI=
+0JyA2OwoBDKieYIa1jw2cH7hTVKkPWhIOABV54QYfIX7F1QxY1XEDoN-E3rIMikn6ee9EqHlxu7=
+dO1QV7YJZn5AP0V3yBrxeD-RHhMLlMqiE4JXBgeFqbZvJqbAXTRJ_JFYIAHVsRaTH_0Ux0PZET-=
+-aDN3Tlad2dgO5S5vZBJXGppQocazKn4IzDIQWGXjkmUIkt65rYalal-eNtU935r_tmmM0-eSUY=
+fd11fpGykdtxSHxaSKItgfqTIqyPwEQNFwkv6mbFu2Hvd0aNme9EccQ-Lf3NymxFEIA8C-Hh3dB=
+HzzO5ooAa0wIdBcPnpmDxDQG29CDmmkG_IbG5pJlgmClm8Em__3n7lvzQ1CDowzqa3gs8yyd2LE=
+8Su8KEQhw08nPVu2mObCmyGkJPbS2b0ejCGtnihUmoezZwbyGIxFitkKH0UjXz5sGNIX7cYtR10=
+hcRZH8NffA4mMtgcDxdLdNr2UUaliET0iCLvlqvHOlOojQlQibSXP3TziET0g7WW_6XNXCTXAi8=
+_bq5e6f3LSibjyBKTpzV5nCxUJpOXWQr6G7ANfK4ZgN3zqCQxeWFHXqgPcBGKvcI9IP2JP653nt=
+qrly30QUZlT6wKpOjaqZujr99NSU1uS40_GuzMwShZYWkyVpDqrfi5Xrxq7HJpjZuH0Ijl2mtzT=
+LBZZrG2VRpjmI6XfiB_1MQgWYhAoX47g--FMEfRpXpxOKvZqb6921Kq-oGSOyRxj_gDuC-h-it7=
+pRoj62pT5xZtZqKR5PvG3edypSVHRPOqoEmoqJgg6BnxT_GZAYU1dgEzN8uS1u5KPXhI5zn3wsp=
+nsoWTVbxHco1QlvFuzviiGqT-hxRYB0wnZ3g7-OLMyvFgHtllsSrm1NPpBmQEPzEdH8wBQlBLVw=
+fQbHp-Pn-93RWr0k5Ifl2l6QADWC5ufQWO1_QltTKrs=3D )
+############################################################
+############################################################
+
+--cc34e1a6e939b768443cea3a55b28358bb9c875d0053723e0df32e1193e6
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>MEASLES - NIGERIA: (ABIA) CONFIRMED<br>******************************=
+*****<br>A ProMED-mail post<br><a href=3D"https://u19268662.ct.sendgrid.net=
+/ss/c/wscE2ng5fl6JrPIt48tisIijpefK5PNjW-mL-YZGnfgDOxU1G3gjwnPSi2Tfv3HA/434/=
+3OPM3q9ZSHa4NV8UGGjpWg/h0/upRyyYejTXmjY67vSl6HkNiugAt6An5ILqaeJZT4W1s">http=
+://www.promedmail.org</a><br>ProMED-mail is a program of the<br>Internation=
+al Society for Infectious Diseases<br><a href=3D"https://u19268662.ct.sendg=
+rid.net/ss/c/wscE2ng5fl6JrPIt48tisCT5tpD4Upm3qyMCbcYSQvc/434/3OPM3q9ZSHa4NV=
+8UGGjpWg/h1/wi048eb0ZUtDv-hyhKWfy0DNiqzNJoPtTlqCgSCC5KE">http://www.isid.or=
+g</a><br><br>Date: Wed 17 Jan 2024=0D<br>Source: Leadership [edited]=0D<br>=
+<a href=3D"https://u19268662.ct.sendgrid.net/ss/c/sSnCkKCWBvais3EuVAOvg_vPF=
+Hoi48mt51S4m6qC_86w-ZsUZMt9loDet7nkKizitgQnpDHFvwiKG418bdXihVSAMlvwavNJFiTq=
+KIxD06CEiBx3cGo_66wRTdNJQujwtw7fNuTtyuBVl154e8C7_GspMpsc28BGuZ2vo98ptjSjNbC=
+H2csEprW7rC6KIrG4BfDeTW8sONSZpmgj14aZMQ/434/3OPM3q9ZSHa4NV8UGGjpWg/h2/kFU9u=
+qa88HEUXbJP1pHLHQlXaQihSZvy68cb-qAr39k">https://leadership.ng/abia-records-=
+3-measles-cases/#:~:text=3DAbia%20State%20has%20recorded%20three,councils%2=
+0do%20not%20share%20boundaries.</a>=0D<br>=0D<br>=0D<br>Abia State has reco=
+rded 3 cases of measles in Umunneochi and Arochukwu<br>local government are=
+as. The cases occurred in the northern part of the<br>state, but the 2 coun=
+cils do not share boundaries.=0D<br>=0D<br>The information and strategy com=
+missioner, Okey Kanu, disclosed this<br>along with 3 of his colleagues who =
+spoke on the outcome of this week's<br>executive council meeting in Umuahia=
+, the state capital. He said that<br>the administration had recorded more s=
+uccesses in road rehabilitation<br>in Aba and renovation of facilities at U=
+mmunneato and Okpuala Ngwa<br>General Hospitals, which will be commissioned=
+ soon.=0D<br>=0D<br>On the measles cases, his health counterpart, Ngozi Oko=
+ronkwo, said<br>the government was investigating to identify the children a=
+nd to<br>ascertain when the condition started.=0D<br>=0D<br>"For us, once i=
+t gets to that number, it's already declared an<br>outbreak. We are trying =
+to identify them and avert any further spread.<br>And, as I speak, it is un=
+der control," she added.=0D<br>=0D<br>[Byline: Kalu Eziyi]=0D<br>=0D<br>--=0D=
+<br>Communicated by:=0D<br>ProMED=0D<br>via=0D<br>ProMED-EAFR<br><br>[Measl=
+es is a highly contagious vaccine-preventable disease. A potent<br>vaccine,=
+ the measles vaccine is available and sometimes given as a<br>triple vaccin=
+e with mumps and rubella vaccines (MMR vaccine). The<br>report of 3 confirm=
+ed cases of measles in Abia state may be an<br>indication there are more ca=
+ses in the communities reporting the<br>outbreak. A high vaccine coverage i=
+s needed to boost herd immunity and<br>prevent an outbreak from occurring. =
+- Mod.AA=0D<br>=0D<br>ProMED map of Abia State, Nigeria:<br><a href=3D"http=
+s://u19268662.ct.sendgrid.net/ss/c/sSnCkKCWBvais3EuVAOvgy2WOIX7pp1nXnn4Abwu=
+Q3Z6WbkfhqXYXU-aTMPJ8yTh5fzlEasHe9hnaIPCQr6oeg/434/3OPM3q9ZSHa4NV8UGGjpWg/h=
+3/DfqD67WqKd7ZV_pdw4mSh1dFCrYRC2E_FgzdVyKc6gI">https://promedmail.org/prome=
+d-post?place=3D8714312,18377</a>]<br><br>[See Also:<br>Measles - USA (02): =
+multiple states<br>http://promedmail.org/post/20240118.8714292=0D<br>Measle=
+s - Portugal: (LI) imported<br>http://promedmail.org/post/20240116.8714250=0D=
+<br>Measles - Israel: (north) nosocomial<br>http://promedmail.org/post/2024=
+0113.8714196=0D<br>Measles update (01): USA (PA) multiple potential exposur=
+e sites<br>http://promedmail.org/post/20240107.8714111=0D<br>2023=0D<br>---=
+-=0D<br>Measles update (64): USA, Russia, Azerbaijan<br>http://promedmail.o=
+rg/post/20231226.8713899=0D<br>Measles update (31): Americas, Asia, Africa<=
+br>http://promedmail.org/post/20230707.8711001=0D<br>Measles update (30): W=
+ Pacific, Americas, E Mediterranean, Africa,<br>int'l travel http://promedm=
+ail.org/post/20230704.8710940=0D<br>Measles update (29): E Mediterranean, E=
+urope, Africa, Americas, int'l<br>travel http://promedmail.org/post/2023062=
+4.8710728=0D<br>Measles update (28): Americas, E Mediterranean, W Pacific<b=
+r>http://promedmail.org/post/20230619.8710660=0D<br>Measles update (21): gl=
+obal update<br>http://promedmail.org/post/20230428.8709755=0D<br>Measles up=
+date (20): Europe, Asia, Africa, W. Pacific, Americas,<br>Middle East http:=
+//promedmail.org/post/20230423.8709653]<br>................................=
+.................aa/tw/ya/tw/jh<br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3Da3dN1BGQWZLDlTDzsYhMfE9Dz3ubfnqlwJH4nEW6gPloMDAwdT=
+AwMNGe5mYxDX52_rWT82aiCVL5XbCgGnRlohtjAMA5dURz3rwtfnrpt3zdmn7pSr7PnbL28AMO8=
+MHYHziG4lWo5WvfEip7wVUyAM7uWOBKRuYRJ0yOB6zHPyTfGkTQUs5f_-dfYwt_rQpkmu7PT-Ut=
+WoYaDSEj5nn2Gm5mJscNCodKB5iy95yNujhqu_4GEWd-kZY60E7-e8q4wAwaU6uEYaV2jQFBeC1=
+nqyhiVQUI0JyA2OwoBDKieYIa1jw2cH7hTVKkPWhIOABV54QYfIX7F1QxY1XEDoN-E3rIMikn6e=
+e9EqHlxu7dO1QV7YJZn5AP0V3yBrxeD-RHhMLlMqiE4JXBgeFqbZvJqbAXTRJ_JFYIAHVsRaTH_=
+0Ux0PZET--aDN3Tlad2dgO5S5vZBJXGppQocazKn4IzDIQWGXjkmUIkt65rYalal-eNtU935r_t=
+mmM0-eSUYfd11fpGykdtxSHxaSKItgfqTIqyPwEQNFwkv6mbFu2Hvd0aNme9EccQ-Lf3NymxFEI=
+A8C-Hh3dBHzzO5ooAa0wIdBcPnpmDxDQG29CDmmkG_IbG5pJlgmClm8Em__3n7lvzQ1CDowzqa3=
+gs8yyd2LE8Su8KEQhw08nPVu2mObCmyGkJPbS2b0ejCGtnihUmoezZwbyGIxFitkKH0UjXz5sGN=
+IX7cYtR10hcRZH8NffA4mMtgcDxdLdNr2UUaliET0iCLvlqvHOlOojQlQibSXP3TziET0g7WW_6=
+XNXCTXAi8_bq5e6f3LSibjyBKTpzV5nCxUJpOXWQr6G7ANfK4ZgN3zqCQxeWFHXqgPcBGKvcI9I=
+P2JP653ntqrly30QUZlT6wKpOjaqZujr99NSU1uS40_GuzMwShZYWkyVpDqrfi5Xrxq7HJpjZuH=
+0Ijl2mtzTLBZZrG2VRpjmI6XfiB_1MQgWYhAoX47g--FMEfRpXpxOKvZqb6921Kq-oGSOyRxj_g=
+DuC-h-it7pRoj62pT5xZtZqKR5PvG3edypSVHRPOqoEmoqJgg6BnxT_GZAYU1dgEzN8uS1u5KPX=
+hI5zn3wspnsoWTVbxHco1QlvFuzviiGqT-hxRYB0wnZ3g7-OLMyvFgHtllsSrm1NPpBmQEPzEdH=
+8wBQlBLVwfQbHp-Pn-93RWr0k5Ifl2l6QADWC5ufQWO1_QltTKrs=3D" target=3D"_blank" =
+class=3D"Unsubscribe--unsubscribePreferences" style=3D"font-family:sans-ser=
+if;text-decoration:none;">Unsubscribe Preferences</a></div><br>############=
+################################################<br>#######################=
+#####################################<br><br><img src=3D"https://u19268662.=
+ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/434/3OPM3q9ZSHa4NV8UGGjpWg/ho.g=
+if" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"height:1px !imp=
+ortant;width:1px !important;border-width:0 !important;margin-top:0 !importa=
+nt;margin-bottom:0 !important;margin-right:0 !important;margin-left:0 !impo=
+rtant;padding-top:0 !important;padding-bottom:0 !important;padding-right:0 =
+!important;padding-left:0 !important;"/></body>
+</html>
+--cc34e1a6e939b768443cea3a55b28358bb9c875d0053723e0df32e1193e6--

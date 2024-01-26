@@ -1,0 +1,576 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a05:640c:1195:b0:1eb:e128:bbe3 with SMTP id o21csp114165eip;
+        Wed, 17 Jan 2024 15:09:13 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IExIM5LFD7Ewy+g9PSFRxdx7AP1Iqlps6mMeQm69ney6feT5xlV5KM4j0BZSxItrWa6SVW2
+X-Received: by 2002:a05:620a:26aa:b0:781:2c00:c89d with SMTP id c42-20020a05620a26aa00b007812c00c89dmr12542458qkp.42.1705532953388;
+        Wed, 17 Jan 2024 15:09:13 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1705532953; cv=none;
+        d=google.com; s=arc-20160816;
+        b=zZhIk+kvASZUJxx82eBTnG18vA2xtYAogXGAZ6+KugboFW7gN29Z+k+HclDOUO3g5k
+         2qFQ9EhPAgieW+QTm98oewznPRpWdCnaes7A30E5rko8YbxitIbjYl4P/MTCb//tCFhK
+         Nk7xxHj5vHKXAnTT3Uu9xGuxqS+Q9xEA+TZ0jom/XvfqF5dDOXiXf13ijIpcCvP1j+wN
+         aANDQ0ncEfmHuRyKx2NLxVuCZDslvSsvIryc3IErVPthQTtGt3DWtUf8bVeiM8X5H7HB
+         AcuTOv/DUUwcPkYYy2CQHqlRaFuh67ljyaTR5F0nQ3t03pjz/xXQ6DmQ3f20TXV6tdpK
+         n0qA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=lv1zK9xkOq+CGNR9oxOXYuJfFhQsFCqsWJCjg9Z9nr0=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=PENpvFH0kkbc5BVhJg5joRood6zh2c7G6temhArvZJK8c0VbELyoI7P81NC6jGMbEr
+         fbDJM3yXYZbpdzE/O49f/JhDoeYKCPcqL7AgeB0QIDI02vHqybOmbH5BAElskPxGJBCt
+         kwicqypWbPgaIM2XdToP9LLSANTsyX8TFDB5HSypQ65RwG1O8oOeQeNktlz9PIkMRNcu
+         g/QAZDEn0ga2DI51qBIkV1JWbG8ua8+C9VugWN+DSNTNeQFgQfeOvd8vsOMkcJOMcah2
+         th2KPO4MSsxCgAo/SF6KfxrnamCbMidF6cUryc2oP3jW52UkAeCVjFcgv73uuo9uBknq
+         fWQA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=n8WMkeOY;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b="WBAB72p/";
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id p10-20020a05620a056a00b007833b44dd66si12382752qkp.345.2024.01.17.15.09.13
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 17 Jan 2024 15:09:13 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=n8WMkeOY;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b="WBAB72p/";
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=lv1zK9xkOq+CGNR9oxOXYuJfFhQsFCqsWJCjg9Z9nr0=;
+	b=n8WMkeOYJ7pwLsGZH5yGYf55dcpuIb+/xQt0GN9Ue/ks4cezJG7P/5mvDq4GZ+pkYyKL
+	iamRy8evNRuPb8l7yb5Nz2OoDJu0wTUQ6cUSogUh6IciLHByJTnTMBU86IOMWOzohsN4H7
+	0g/tjzgPI2P2FGsPw7JU9Dzw1zRbqEjBgmQmGf19oV1KtIsHQHf3S+/7lbojcl8s6MKy/b
+	bSmo983v4QbJbaKdeKzRWGo+ypvHY3QvTRJwdkvHO5CU2vdbg3GuDugUQE8XBB+v8lx9Mf
+	nVvLKTxldJ+Mc3zfbZ1kIbyZ9JPXlW7fDJCU/Hi7+9X5SLtZ9+/5KfTV3RajBtBA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=lv1zK9xkOq+CGNR9oxOXYuJfFhQsFCqsWJCjg9Z9nr0=;
+	b=WBAB72p/3u3BiL/lhUC/dVm/aixty31xp5gWc6Bv1sKk7tep4Y/EgmWm4b7rOZbv4od9
+	o2vR1YRfruMKkWX98pT9wdoca4vPRNiYYYkvJB3fk3C2ENoRlKM1Lb3cSuRH5XnYs8Hw0Y
+	zLZHxDE32NMsJpHcMYI28NwF8cVJrHK0Q=
+Received: by filterdrecv-b7c5b88-kr28j with SMTP id filterdrecv-b7c5b88-kr28j-1-65A85E17-3F
+        2024-01-17 23:09:11.730120724 +0000 UTC m=+7964835.475160350
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-28 (SG) with HTTP
+	id YcAfhBAlSoOtbInzpzgqvQ
+	Wed, 17 Jan 2024 23:09:11.720 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=d94986bd4c953e1405b1961628e72b6783222af0da2d9d78c4cfc4d3c66e
+Date: Wed, 17 Jan 2024 23:09:13 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <YcAfhBAlSoOtbInzpzgqvQ@geopod-ismtpd-28>
+Subject: PRO/AH/EDR> Malaria - Cape Verde: elimination, WHO
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iBkbpGTKV+zRaKKGCT7LulpjAmtiowYFi1wfcFA?=
+ =?us-ascii?Q?KqKeu4hUGQoesPDbLRELN9v09vPh9l2L57mM4A3?=
+ =?us-ascii?Q?cJQcIjfL9++8OYrTSjf5HHdiL4X5w13ryraIgpr?=
+ =?us-ascii?Q?+kxdNcmQJNPM7e79bnLrmaXV7KrTWcg5OW1cizD?=
+ =?us-ascii?Q?71lDkWOQ4=2FYTIFfFAd63LB4WlUmK6NHHgL4F=2Fw?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUiShGf=2FO8XJWpH34Od4Nd?=
+ =?us-ascii?Q?fxXa6jil96uRcJkF+N+LeVnO1tx80ddOyoyOo=2Fc?=
+ =?us-ascii?Q?Brxcl3ERAm0cOY743=2FFH59DWiSf5OzXORh1DLKt?=
+ =?us-ascii?Q?hb1NMKty3PsA5ju0ZzxCrq1WQuZSEQf=2FJlWtgqv?=
+ =?us-ascii?Q?cZmsyCHlNUZsD7M8SVDfm5V9nVxMiqzLj9KL7mT?=
+ =?us-ascii?Q?8u2XqKpv23DnzbduVRHzKYolWW4XpnwLKWa6YGp?=
+ =?us-ascii?Q?WlMpjtYeEwkGUVmXC=2Fg6U5j8vzsAufG4vEqFKqu?=
+ =?us-ascii?Q?ESeymsLdAIrB4mfScZ4uJX0hwqZvXwcq+zmEmQD?=
+ =?us-ascii?Q?MWZer9Dt2nkmbq3tWx0585qU4k6lUlcAk0d8QJt?=
+ =?us-ascii?Q?PwnNRLcnJYfHtKvVa7uAO3gqMvcwGTcWc6DcUa5?=
+ =?us-ascii?Q?J4RNwqRobKplep8flXBMRzf0zIV3jvT2PbiNCD1?=
+ =?us-ascii?Q?ovEc+2N2CMo44xLTxPuU4AIo2n3x1G=2FlkioX+d5?=
+ =?us-ascii?Q?1sWIPw=2FLUjSC4T8TYb4RZMxAYm7dzOBRuSMMS5w?=
+ =?us-ascii?Q?48vk54s66EnrBnetCTszAJIBtnX9wgMC0+Ahso0?=
+ =?us-ascii?Q?EjCebT3cOgtt=2F+28AfM3sGkRLJnX8fEFc=2FW6Jmq?=
+ =?us-ascii?Q?Ks6p+XvhK9JcUbWcL=2FXpu5WlWta0M2A1CUCexH3?=
+ =?us-ascii?Q?MLgzvKdkPrXuCgi4A4IEOx+M7P3bOJ9NDrg6AxG?=
+ =?us-ascii?Q?IgKXCCXt2fPuFNPSJz=2FDJt9I9iuaYax9XowO26C?=
+ =?us-ascii?Q?8ZblcwpzgbzIDugwCJ2c0JkRYE606X25BRC4uSc?=
+ =?us-ascii?Q?+LybYEZg3dtADYG+Jf9TkQ10Lw=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2E16e1ipuET?=
+ =?us-ascii?Q?-VaiXa8ZxVgp7wxMjwGjJsuJ3ZjM3=5FK7dtoMDAw?=
+ =?us-ascii?Q?dTAwMJejehhv2tdFaw79CFi6JFVL30NG3OiTPIA?=
+ =?us-ascii?Q?mc9K5iaf1wjN=5Fe95oLFDK6q0tjIeMtefStijvn0?=
+ =?us-ascii?Q?wirBaP7iMezjZq35L506RnVM9d7i-ivrubOOO2a?=
+ =?us-ascii?Q?-0EDEABn-8WY9LuVg=3D=3D=2Eb-ww1M8XU2DeclmHPZa?=
+ =?us-ascii?Q?gxmHYFojLo4DFGjGmZNlxsiRoMDAwdTAwMPurPc?=
+ =?us-ascii?Q?QsqfCohOzD2t8bebuwvAA5O89ohORlw30TupcNy?=
+ =?us-ascii?Q?NNUSsLlQf7gLfh2=5FyXXZLIk2drf3UPhPeswn0g3?=
+ =?us-ascii?Q?vC1oEGfItDUCvlzd8XLJzXIOL=5FJ6glKLCjNM-NK?=
+ =?us-ascii?Q?mbKs3yY5LhBv9NyxszI2EXPGSrJ60M49B3PS031?=
+ =?us-ascii?Q?iXvvsBCGF0IpnFr8Euj7uoehm-VKoDA5w-4ckPZ?=
+ =?us-ascii?Q?kGFC6SsU3qoCyG5jHgF5cWu380cpcGeBuAdqWXJ?=
+ =?us-ascii?Q?yJ9MLDHjpx1s6PETuk9DwTRFVhRwyUQo3XO-1ki?=
+ =?us-ascii?Q?IcRj7yZJffT2kTySutWL96GW=5FWVCP-v=5F-C775J7?=
+ =?us-ascii?Q?PYQ14NNMcHPBITrOEk8gGPue=5FpVw4pqcbK9uWtx?=
+ =?us-ascii?Q?NTSgmbN-9PBL-AHJBWvwXD-Lhtnem7QhAOMjNZK?=
+ =?us-ascii?Q?l11O2jPilOoBMVuraGldf983GQz99XRWUcYrcnb?=
+ =?us-ascii?Q?BWLyUtEb-832F7lgPDIsl9BSE58e1=5FvhPBHp2vb?=
+ =?us-ascii?Q?z2afj7KblnEqVHc-43JIKmRjIAAKFBNQgOfJCQE?=
+ =?us-ascii?Q?HlDWWmZkCnhDOmYJkPqOpotiw6iadi77ZjqC-Mk?=
+ =?us-ascii?Q?-nFDLaDMCOea-qkE5VYtCjJS4gVHlZE-lRPog6T?=
+ =?us-ascii?Q?=5FY4=5FCvbdy-eHkswl4qtGgoCzCoYnYiVTbTj84X9?=
+ =?us-ascii?Q?v24laoPe--X2MK-J787=5FGPbKtNgFw75hrXzstN2?=
+ =?us-ascii?Q?VTS32EnL9HUYW-HVs-puqgI=5FVUn62fWiCzA5xnp?=
+ =?us-ascii?Q?A-QlzyeytNRTnElcmo6-r7XL=5F=5FO-OAj1zqat5pU?=
+ =?us-ascii?Q?Jrs8wSIkK3lE9twN7J4YowiuwJ1pxfCIDmKjS7M?=
+ =?us-ascii?Q?DUwyOy6iINnrUxlIahyvaGFW-GAGy6E5jIMHMzn?=
+ =?us-ascii?Q?=5FWhmEiv7nRw7FOW5gc=5FZufuND3jCaCcnMt3GQWq?=
+ =?us-ascii?Q?CQ9a9Ymiiq6fCs9ol44ngK9oHHEHu=5F38TGJhRzP?=
+ =?us-ascii?Q?JKQMqHrLwVvoU066-5HOc-PnDUEDtdMQ54xXouw?=
+ =?us-ascii?Q?gHyFdS3KsHqBjs-Bp7sekTPln1z304rz823HhtX?=
+ =?us-ascii?Q?qb7V5mejsfQ7vohu5YBKA7525aMmhQoBZ0B4pBs?=
+ =?us-ascii?Q?3zdKhA=3D=3D=3E?=
+
+--d94986bd4c953e1405b1961628e72b6783222af0da2d9d78c4cfc4d3c66e
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=us-ascii
+Mime-Version: 1.0
+
+MALARIA - CAPE VERDE: ELIMINATION, WHO
+**************************************
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+Date: Fri 12 Jan 2024
+Source: WHO [edited]
+<https://www.who.int/news/item/12-01-2024-who-certifies-cabo-verde-as-malar=
+ia-free--marking-a-historic-milestone-in-the-fight-against-malaria>
+
+
+The World Health Organization (WHO) has certified Cabo Verde as a
+malaria-free country, marking a significant achievement in global
+health. With this announcement, Cabo Verde joins the ranks of 43
+countries and one territory that WHO has awarded this certification
+to.
+
+Cabo Verde is the 3rd country to be certified in the WHO African
+region, joining Mauritius and Algeria, which were certified in 1973
+and 2019, respectively. Malaria burden is the highest on the African
+continent, which accounted for approximately 95% of global malaria
+cases and 96% of related deaths in 2021.
+
+Certification of malaria elimination will drive positive development
+on many fronts for Cabo Verde. Systems and structures built for
+malaria elimination have strengthened the health system and will be
+used to fight other mosquito-borne diseases such as dengue fever.
+Travelers from non-malaria endemic regions can now travel to the
+islands of Cabo Verde without fear of local malaria infections and the
+potential inconvenience of preventive treatment measures. This has the
+potential to attract more visitors and boost socio-economic activities
+in a country where tourism accounts for approximately 25% of GDP.
+
+"I salute the government and people of Cabo Verde for their unwavering
+commitment and resilience in their journey to eliminating malaria,"
+said WHO Director-General Dr Tedros Adhanom Ghebreyesus. "WHO's
+certification of Cabo Verde being malaria-free is testament to the
+power of strategic public health planning, collaboration, and
+sustained effort to protect and promote health. Cabo Verde's success
+is the latest in the global fight against malaria, and gives us hope
+that with existing tools, as well as new ones, including vaccines, we
+can dare to dream of a malaria-free world."
+
+Certification of malaria elimination is the official recognition by
+WHO of a country's malaria-free status. The certification is granted
+when a country has shown -- with rigorous, credible evidence -- that
+the chain of indigenous malaria transmission by _Anopheles_ mosquitoes
+has been interrupted nationwide for at least the past 3 consecutive
+years. A country must also demonstrate the capacity to prevent the
+re-establishment of transmission.
+
+"The certification as a malaria-free country has a huge impact, and
+it's taken a long time to get to this point. In terms of the country's
+external image, this is very good, both for tourism and for everyone
+else. The challenge that Cabo Verde has overcome in the health system
+is being recognised", said Cabo Verde Prime Minister Ulisses Correia e
+Silva.
+
+Cabo Verde, an archipelago of 10 islands in the Central Atlantic
+Ocean, has faced significant malaria challenges. Before the 1950s, all
+islands were affected by malaria. Severe epidemics were regular
+occurrences in the most densely populated areas until targeted
+interventions were implemented. Through the targeted use of
+insecticide spraying, the country eliminated malaria twice: in 1967
+and 1983. However, subsequent lapses in vector control led to a return
+of the disease. Since the last peak of malaria cases in the late
+1980s, malaria in Cabo Verde has been confined to 2 islands: Santiago
+and Boa Vista, which have now both been malaria-free since 2017.
+
+"Cabo Verde's achievement is a beacon of hope for the African Region
+and beyond. It demonstrates that with strong political will, effective
+policies, community engagement, and multisectoral collaboration,
+malaria elimination is an achievable goal," said Dr Matshidiso Moeti,
+WHO Regional Director for Africa. "The attainment of this milestone by
+Cabo Verde is an inspiring example for other nations to follow."
+
+Cabo Verde's journey to malaria elimination has been long and received
+a boost with the inclusion of this objective in its national health
+policy in 2007. A strategic malaria plan from 2009 to 2013 laid the
+groundwork for success, focusing on expanded diagnosis, early and
+effective treatment, and the reporting and investigating all cases. To
+stem the tide of imported cases from mainland Africa, diagnosis and
+treatment were provided free of charge to international travelers and
+migrants.
+
+In 2017, the country turned an outbreak into an opportunity. Cabo
+Verde identified problems and made improvements, leading to zero
+indigenous cases for 3 consecutive years.
+
+During the ongoing COVID-19 pandemic, the country safeguarded
+progress. Efforts focused on improving the quality and sustainability
+of vector control and malaria diagnosis, and strengthening malaria
+surveillance, especially at ports and airports, in the capital city,
+and in areas with a risk of malaria re-establishment.
+
+Collaboration between the Ministry of Health and various government
+departments focused on the environment, agriculture, transportation,
+tourism, and more played a pivotal role in Cabo Verde's success. The
+inter-ministerial commission for vector control, chaired by the prime
+minister, was key to elimination. The collaborative effort and the
+commitment of community-based organizations and NGOs demonstrate the
+importance of a holistic approach to public health.
+
+As Cabo Verde celebrates this monumental achievement, the global
+community commends its leaders, healthcare professionals, and citizens
+for their dedication to eliminating malaria and creating a healthier
+future for all.
+
+--
+Communicated by:
+ProMED
+via
+ProMED-EAFR
+
+[This marks a significant accomplishment in addressing the malaria
+epidemic in this west African nation. Undoubtedly, malaria continues
+to be the foremost contributor to illness in this region of the
+continent and a primary driver of poverty. This achievement will not
+only stimulate economic activities in the country but also enhance the
+quality of life for the population. - Mod.RBY
+
+ProMED map of Cape Verde:
+<https://promedmail.org/promed-post?place=3D8714240,15>]
+
+[See Also:
+Malaria - Tanzania: (Zanzibar) re-emergence
+http://promedmail.org/post/20240113.8714213
+2023
+----
+Malaria - Africa (07): Ethiopia (OR) continued increase, RFI
+http://promedmail.org/post/20231001.8712408
+Malaria - Africa (06): Ethiopia, increase, RFI
+http://promedmail.org/post/20230706.8710994
+Malaria - Africa (05): Kenya (MB) fatal, not linked to Anopheles
+stephensi http://promedmail.org/post/20230524.8710210
+Malaria - Africa (04): Kenya (BN), Congo DR (KS), Nigeria (AN), Ghana
+http://promedmail.org/post/20230502.8709805
+Malaria - Africa (03): Ghana, Nigeria, new R21/Matrix-M vaccine
+approved http://promedmail.org/post/20230421.8709605
+Malaria - Africa (02): Sudan, Uganda, increase
+http://promedmail.org/post/20230414.8709477
+Malaria - Africa: Kenya (MB) Anopheles stephensi, 1st rep, alert
+http://promedmail.org/post/20230222.8708528
+Malaria, falciparum - UK: artemisinin resistance, ex Uganda
+http://promedmail.org/post/20230217.8708458
+2022
+----
+Malaria - Africa (05): Ethiopia, Anopheles stephensi
+http://promedmail.org/post/20221102.8706520
+Malaria - Kenya: (KK) http://promedmail.org/post/20220528.8703500
+Malaria - Africa (04): Burundi, increase
+http://promedmail.org/post/20220503.8702997
+World Malaria Day: Africa http://promedmail.org/post/20220501.8702959
+Malaria - Africa (03): vaccine update
+http://promedmail.org/post/20220423.8702794
+Malaria - Africa (02): Mozambique (NS) increase
+http://promedmail.org/post/20220410.8702527
+Malaria - Africa: South Africa (WC)
+http://promedmail.org/post/20220305.8701819
+2021
+----
+Malaria: World Malaria Report 2021
+http://promedmail.org/post/20211219.8700380
+Malaria - Africa: RTS,S/AS01 child vaccine, WHO
+http://promedmail.org/post/20211007.8698896
+Malaria - Uganda: artemisinin resistance
+http://promedmail.org/post/20210924.8698670
+Malaria - Burkina Faso: genetically modified mosquito
+http://promedmail.org/post/20210601.8414384
+Malaria vaccine trial, high efficacy
+http://promedmail.org/post/20210424.8326270
+Malaria, artemisinin resistance - Africa
+http://promedmail.org/post/20210417.8313098
+Invasive mosquito, A. stephensi - Africa: malaria
+http://promedmail.org/post/20210202.8156660
+2020
+----
+Malaria - Namibia (02): (ZA) resurgence
+http://promedmail.org/post/20201204.7992054
+World Malaria Report 2020: Asia
+http://promedmail.org/post/20201130.7982459
+Invasive mosquito - Africa
+http://promedmail.org/post/20200824.7708503
+and other items in the archives]
+.................................................rby/tw/ya/tw/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3DfjSpAIy6fNPYTZQpBDNDAb6z7fStXc1u-hJU6KLBr_doMDAwdTAwMM0qwdL=
+BuHgbBEX1HSwK_uGEQ5jxlG_SznSSz9xGCdfdQK_ynUMG711HFW0t6p5rCe9UToxxyqEusUhf96=
+2T7pc_BReGFakrm3WtBE2z7vJrBCuV8KT61JORGO_thPTocPizSPfdunBsPSqYaQRvqRZ_T0c0c=
+p3iUHn3ad7DIySEkA45GZpKwl1uiCFt4kWEoZ-5s1XJKemasn1bAamMRp0VJXwhKeTW8gvfWypN=
+h2eao-PxuruFpnprlaqnY262cB03uqaGP4ceZiQ2x_VLqfNnN5Y49LTJ1AGJAZaS1ggIpqPjPnY=
+TLw68g-MLPoqd2GKDPHuE3CELD7Ma40YyAwZlepyyarwnqFL19gcpP4iiWgLG9E3PZlCi77s0IJ=
+xsQz-yvfoonFsBRQue8ABw0o4zDv_ttjbdoIX7-vbRm9RqqHd9IMRaAXAolALcVVJHdOEtkxgBg=
+0dR8kPps8dl22_PBu_w1FUvWRTo5GCMCIyLj_xI8QqtJ_rrAeT_PC0VOPnqUFtXXu6RGi1eGKaN=
+WkNT6JGbK1bThU9NvhuMdUq3xg8HHa24-OL-kiSi4FyCK4VxmZ_ehAwLwetpogUg0DyRagVH05X=
+Q-nRp4-vwpAkFhX2IJIH9kyfs7y6XsPfHYbng1GuUr2f-xJkPkNA5t42Q7HB7ZmyPnCtQpmSS6i=
+r4qI8aaBSIoqyIqayZGdftlOb7j1KngoBqRWY1A8vxcyRQC9p1M8n6oNzx5l7Xe5GxSolNaXoRQ=
+ORsMSte2u-4T1cbjYJvPInvk84DUOUT4Zvubx9wTCDTO5j3vqpLs3F1SKmBsnTAYyqspBtkA09E=
+7WJqb8L1bjld78JMqgcn5tAKbyQEy9xSRdBuMrrNfQGL9Joe9VseSHrUsHydDbuV0RF9d98sqZe=
+8TzgOktAsvNaBU3s_uvVhqc_3vxGv6aMKB5DXqMccbr48AW-pWBKPHm9UMXJ-qM_4ZzRuFWFsYz=
+4F-JeiBtBfG28DtLmr_AxkfafNhK7DP0jZzsfCHaXCaUl0eAAX9Ge4fLzucDl60DN4K3DdB-0PA=
+GVJBfEAmETrgKFVI49JYkqDhDOlKiG7-okDxu1jTrQk0NA9pArGbB2_CDAUVDNrtdXK_my9xYjy=
+E8UPvvYs-Jpv24zm9qnrLTcyzI7QyEL06tNYwv1LzJNIpD7Bq_oauyRL-HW58-lD )
+############################################################
+############################################################
+
+--d94986bd4c953e1405b1961628e72b6783222af0da2d9d78c4cfc4d3c66e
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>MALARIA - CAPE VERDE: ELIMINATION, WHO<br>***************************=
+***********<br>A ProMED-mail post<br><a href=3D"https://u19268662.ct.sendgr=
+id.net/ss/c/wscE2ng5fl6JrPIt48tisIijpefK5PNjW-mL-YZGnfgDOxU1G3gjwnPSi2Tfv3H=
+A/432/ggdN5p6xTF6c1YpjTBS3uA/h0/EIAnSWh1V_3vKa5LxXDo2Qg9ZDJ8cxLbPpOZHrmrs_c=
+">http://www.promedmail.org</a><br>ProMED-mail is a program of the<br>Inter=
+national Society for Infectious Diseases<br><a href=3D"https://u19268662.ct=
+.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisCT5tpD4Upm3qyMCbcYSQvc/432/ggdN5p6x=
+TF6c1YpjTBS3uA/h1/HTC1Snhz7AHQBNnkJXP_vi0zdNkSc8HeNRrDa2jOhto">http://www.i=
+sid.org</a><br><br>Date: Fri 12 Jan 2024=0D<br>Source: WHO [edited]=0D<br><=
+a href=3D"https://u19268662.ct.sendgrid.net/ss/c/TLh_csrC34X_iXpbYoMamxCzlv=
+gMKE9BBL3U26Z4UMGXAmAMDEsVF8Du92OBR8-NMsLYrR48pz7ncjAj3uRQmrzFYd_S9yLTZg5yE=
+AiFLkPhW4wRpKpjcrifPoDqjjb0ocZokjdOJmTyj0roePvPu826hhdllfn9ZlKWn00UX2h-I8MW=
+z0jshTAjrCVUFfNZRU-y-454TMsdmwnLBOn_qw/432/ggdN5p6xTF6c1YpjTBS3uA/h2/dCttfH=
+ltM5eq-lZqmUaUpgX48j6O3xZyPjqCwyNWA0Q">https://www.who.int/news/item/12-01-=
+2024-who-certifies-cabo-verde-as-malaria-free--marking-a-historic-milestone=
+-in-the-fight-against-malaria</a>=0D<br>=0D<br>=0D<br>The World Health Orga=
+nization (WHO) has certified Cabo Verde as a<br>malaria-free country, marki=
+ng a significant achievement in global<br>health. With this announcement, C=
+abo Verde joins the ranks of 43<br>countries and one territory that WHO has=
+ awarded this certification<br>to.=0D<br>=0D<br>Cabo Verde is the 3rd count=
+ry to be certified in the WHO African<br>region, joining Mauritius and Alge=
+ria, which were certified in 1973<br>and 2019, respectively. Malaria burden=
+ is the highest on the African<br>continent, which accounted for approximat=
+ely 95% of global malaria<br>cases and 96% of related deaths in 2021.=0D<br=
+>=0D<br>Certification of malaria elimination will drive positive developmen=
+t<br>on many fronts for Cabo Verde. Systems and structures built for<br>mal=
+aria elimination have strengthened the health system and will be<br>used to=
+ fight other mosquito-borne diseases such as dengue fever.<br>Travelers fro=
+m non-malaria endemic regions can now travel to the<br>islands of Cabo Verd=
+e without fear of local malaria infections and the<br>potential inconvenien=
+ce of preventive treatment measures. This has the<br>potential to attract m=
+ore visitors and boost socio-economic activities<br>in a country where tour=
+ism accounts for approximately 25% of GDP.=0D<br>=0D<br>"I salute the gover=
+nment and people of Cabo Verde for their unwavering<br>commitment and resil=
+ience in their journey to eliminating malaria,"<br>said WHO Director-Genera=
+l Dr Tedros Adhanom Ghebreyesus. "WHO's<br>certification of Cabo Verde bein=
+g malaria-free is testament to the<br>power of strategic public health plan=
+ning, collaboration, and<br>sustained effort to protect and promote health.=
+ Cabo Verde's success<br>is the latest in the global fight against malaria,=
+ and gives us hope<br>that with existing tools, as well as new ones, includ=
+ing vaccines, we<br>can dare to dream of a malaria-free world."=0D<br>=0D<b=
+r>Certification of malaria elimination is the official recognition by<br>WH=
+O of a country's malaria-free status. The certification is granted<br>when =
+a country has shown -- with rigorous, credible evidence -- that<br>the chai=
+n of indigenous malaria transmission by _Anopheles_ mosquitoes<br>has been =
+interrupted nationwide for at least the past 3 consecutive<br>years. A coun=
+try must also demonstrate the capacity to prevent the<br>re-establishment o=
+f transmission.=0D<br>=0D<br>"The certification as a malaria-free country h=
+as a huge impact, and<br>it's taken a long time to get to this point. In te=
+rms of the country's<br>external image, this is very good, both for tourism=
+ and for everyone<br>else. The challenge that Cabo Verde has overcome in th=
+e health system<br>is being recognised", said Cabo Verde Prime Minister Uli=
+sses Correia e<br>Silva.=0D<br>=0D<br>Cabo Verde, an archipelago of 10 isla=
+nds in the Central Atlantic<br>Ocean, has faced significant malaria challen=
+ges. Before the 1950s, all<br>islands were affected by malaria. Severe epid=
+emics were regular<br>occurrences in the most densely populated areas until=
+ targeted<br>interventions were implemented. Through the targeted use of<br=
+>insecticide spraying, the country eliminated malaria twice: in 1967<br>and=
+ 1983. However, subsequent lapses in vector control led to a return<br>of t=
+he disease. Since the last peak of malaria cases in the late<br>1980s, mala=
+ria in Cabo Verde has been confined to 2 islands: Santiago<br>and Boa Vista=
+, which have now both been malaria-free since 2017.=0D<br>=0D<br>"Cabo Verd=
+e's achievement is a beacon of hope for the African Region<br>and beyond. I=
+t demonstrates that with strong political will, effective<br>policies, comm=
+unity engagement, and multisectoral collaboration,<br>malaria elimination i=
+s an achievable goal," said Dr Matshidiso Moeti,<br>WHO Regional Director f=
+or Africa. "The attainment of this milestone by<br>Cabo Verde is an inspiri=
+ng example for other nations to follow."=0D<br>=0D<br>Cabo Verde's journey =
+to malaria elimination has been long and received<br>a boost with the inclu=
+sion of this objective in its national health<br>policy in 2007. A strategi=
+c malaria plan from 2009 to 2013 laid the<br>groundwork for success, focusi=
+ng on expanded diagnosis, early and<br>effective treatment, and the reporti=
+ng and investigating all cases. To<br>stem the tide of imported cases from =
+mainland Africa, diagnosis and<br>treatment were provided free of charge to=
+ international travelers and<br>migrants.=0D<br>=0D<br>In 2017, the country=
+ turned an outbreak into an opportunity. Cabo<br>Verde identified problems =
+and made improvements, leading to zero<br>indigenous cases for 3 consecutiv=
+e years.=0D<br>=0D<br>During the ongoing COVID-19 pandemic, the country saf=
+eguarded<br>progress. Efforts focused on improving the quality and sustaina=
+bility<br>of vector control and malaria diagnosis, and strengthening malari=
+a<br>surveillance, especially at ports and airports, in the capital city,<b=
+r>and in areas with a risk of malaria re-establishment.=0D<br>=0D<br>Collab=
+oration between the Ministry of Health and various government<br>department=
+s focused on the environment, agriculture, transportation,<br>tourism, and =
+more played a pivotal role in Cabo Verde's success. The<br>inter-ministeria=
+l commission for vector control, chaired by the prime<br>minister, was key =
+to elimination. The collaborative effort and the<br>commitment of community=
+-based organizations and NGOs demonstrate the<br>importance of a holistic a=
+pproach to public health.=0D<br>=0D<br>As Cabo Verde celebrates this monume=
+ntal achievement, the global<br>community commends its leaders, healthcare =
+professionals, and citizens<br>for their dedication to eliminating malaria =
+and creating a healthier<br>future for all.=0D<br>=0D<br>--=0D<br>Communica=
+ted by:=0D<br>ProMED=0D<br>via=0D<br>ProMED-EAFR<br><br>[This marks a signi=
+ficant accomplishment in addressing the malaria<br>epidemic in this west Af=
+rican nation. Undoubtedly, malaria continues<br>to be the foremost contribu=
+tor to illness in this region of the<br>continent and a primary driver of p=
+overty. This achievement will not<br>only stimulate economic activities in =
+the country but also enhance the<br>quality of life for the population. - M=
+od.RBY=0D<br>=0D<br>ProMED map of Cape Verde:<br><a href=3D"https://u192686=
+62.ct.sendgrid.net/ss/c/sSnCkKCWBvais3EuVAOvgy2WOIX7pp1nXnn4AbwuQ3Z6WbkfhqX=
+YXU-aTMPJ8yTh3H_8e82MYYI7LPxn_3J0Hg/432/ggdN5p6xTF6c1YpjTBS3uA/h3/fWT08lDNL=
+gCUo8THLacScd7lo8cSBa8gw0g71rgnfOQ">https://promedmail.org/promed-post?plac=
+e=3D8714240,15</a>]<br><br>[See Also:<br>Malaria - Tanzania: (Zanzibar) re-=
+emergence<br>http://promedmail.org/post/20240113.8714213=0D<br>2023=0D<br>-=
+---=0D<br>Malaria - Africa (07): Ethiopia (OR) continued increase, RFI<br>h=
+ttp://promedmail.org/post/20231001.8712408=0D<br>Malaria - Africa (06): Eth=
+iopia, increase, RFI<br>http://promedmail.org/post/20230706.8710994=0D<br>M=
+alaria - Africa (05): Kenya (MB) fatal, not linked to Anopheles<br>stephens=
+i http://promedmail.org/post/20230524.8710210=0D<br>Malaria - Africa (04): =
+Kenya (BN), Congo DR (KS), Nigeria (AN), Ghana<br>http://promedmail.org/pos=
+t/20230502.8709805=0D<br>Malaria - Africa (03): Ghana, Nigeria, new R21/Mat=
+rix-M vaccine<br>approved http://promedmail.org/post/20230421.8709605=0D<br=
+>Malaria - Africa (02): Sudan, Uganda, increase<br>http://promedmail.org/po=
+st/20230414.8709477=0D<br>Malaria - Africa: Kenya (MB) Anopheles stephensi,=
+ 1st rep, alert<br>http://promedmail.org/post/20230222.8708528=0D<br>Malari=
+a, falciparum - UK: artemisinin resistance, ex Uganda<br>http://promedmail.=
+org/post/20230217.8708458=0D<br>2022=0D<br>----=0D<br>Malaria - Africa (05)=
+: Ethiopia, Anopheles stephensi<br>http://promedmail.org/post/20221102.8706=
+520=0D<br>Malaria - Kenya: (KK) http://promedmail.org/post/20220528.8703500=0D=
+<br>Malaria - Africa (04): Burundi, increase<br>http://promedmail.org/post/=
+20220503.8702997=0D<br>World Malaria Day: Africa http://promedmail.org/post=
+/20220501.8702959=0D<br>Malaria - Africa (03): vaccine update<br>http://pro=
+medmail.org/post/20220423.8702794=0D<br>Malaria - Africa (02): Mozambique (=
+NS) increase<br>http://promedmail.org/post/20220410.8702527=0D<br>Malaria -=
+ Africa: South Africa (WC)<br>http://promedmail.org/post/20220305.8701819=0D=
+<br>2021=0D<br>----=0D<br>Malaria: World Malaria Report 2021<br>http://prom=
+edmail.org/post/20211219.8700380=0D<br>Malaria - Africa: RTS,S/AS01 child v=
+accine, WHO<br>http://promedmail.org/post/20211007.8698896=0D<br>Malaria - =
+Uganda: artemisinin resistance<br>http://promedmail.org/post/20210924.86986=
+70=0D<br>Malaria - Burkina Faso: genetically modified mosquito<br>http://pr=
+omedmail.org/post/20210601.8414384=0D<br>Malaria vaccine trial, high effica=
+cy<br>http://promedmail.org/post/20210424.8326270=0D<br>Malaria, artemisini=
+n resistance - Africa<br>http://promedmail.org/post/20210417.8313098=0D<br>=
+Invasive mosquito, A. stephensi - Africa: malaria<br>http://promedmail.org/=
+post/20210202.8156660=0D<br>2020=0D<br>----=0D<br>Malaria - Namibia (02): (=
+ZA) resurgence<br>http://promedmail.org/post/20201204.7992054=0D<br>World M=
+alaria Report 2020: Asia<br>http://promedmail.org/post/20201130.7982459=0D<=
+br>Invasive mosquito - Africa<br>http://promedmail.org/post/20200824.770850=
+3=0D<br>and other items in the archives]<br>...............................=
+..................rby/tw/ya/tw/jh<br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3DfjSpAIy6fNPYTZQpBDNDAb6z7fStXc1u-hJU6KLBr_doMDAwdT=
+AwMM0qwdLBuHgbBEX1HSwK_uGEQ5jxlG_SznSSz9xGCdfdQK_ynUMG711HFW0t6p5rCe9UToxxy=
+qEusUhf962T7pc_BReGFakrm3WtBE2z7vJrBCuV8KT61JORGO_thPTocPizSPfdunBsPSqYaQRv=
+qRZ_T0c0cp3iUHn3ad7DIySEkA45GZpKwl1uiCFt4kWEoZ-5s1XJKemasn1bAamMRp0VJXwhKeT=
+W8gvfWypNh2eao-PxuruFpnprlaqnY262cB03uqaGP4ceZiQ2x_VLqfNnN5Y49LTJ1AGJAZaS1g=
+gIpqPjPnYTLw68g-MLPoqd2GKDPHuE3CELD7Ma40YyAwZlepyyarwnqFL19gcpP4iiWgLG9E3PZ=
+lCi77s0IJxsQz-yvfoonFsBRQue8ABw0o4zDv_ttjbdoIX7-vbRm9RqqHd9IMRaAXAolALcVVJH=
+dOEtkxgBg0dR8kPps8dl22_PBu_w1FUvWRTo5GCMCIyLj_xI8QqtJ_rrAeT_PC0VOPnqUFtXXu6=
+RGi1eGKaNWkNT6JGbK1bThU9NvhuMdUq3xg8HHa24-OL-kiSi4FyCK4VxmZ_ehAwLwetpogUg0D=
+yRagVH05XQ-nRp4-vwpAkFhX2IJIH9kyfs7y6XsPfHYbng1GuUr2f-xJkPkNA5t42Q7HB7ZmyPn=
+CtQpmSS6ir4qI8aaBSIoqyIqayZGdftlOb7j1KngoBqRWY1A8vxcyRQC9p1M8n6oNzx5l7Xe5Gx=
+SolNaXoRQORsMSte2u-4T1cbjYJvPInvk84DUOUT4Zvubx9wTCDTO5j3vqpLs3F1SKmBsnTAYyq=
+spBtkA09E7WJqb8L1bjld78JMqgcn5tAKbyQEy9xSRdBuMrrNfQGL9Joe9VseSHrUsHydDbuV0R=
+F9d98sqZe8TzgOktAsvNaBU3s_uvVhqc_3vxGv6aMKB5DXqMccbr48AW-pWBKPHm9UMXJ-qM_4Z=
+zRuFWFsYz4F-JeiBtBfG28DtLmr_AxkfafNhK7DP0jZzsfCHaXCaUl0eAAX9Ge4fLzucDl60DN4=
+K3DdB-0PAGVJBfEAmETrgKFVI49JYkqDhDOlKiG7-okDxu1jTrQk0NA9pArGbB2_CDAUVDNrtdX=
+K_my9xYjyE8UPvvYs-Jpv24zm9qnrLTcyzI7QyEL06tNYwv1LzJNIpD7Bq_oauyRL-HW58-lD" =
+target=3D"_blank" class=3D"Unsubscribe--unsubscribePreferences" style=3D"fo=
+nt-family:sans-serif;text-decoration:none;">Unsubscribe Preferences</a></di=
+v><br>############################################################<br>#####=
+#######################################################<br><br><img src=3D"=
+https://u19268662.ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/432/ggdN5p6xT=
+F6c1YpjTBS3uA/ho.gif" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=
+=3D"height:1px !important;width:1px !important;border-width:0 !important;ma=
+rgin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;=
+margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !importa=
+nt;padding-right:0 !important;padding-left:0 !important;"/></body>
+</html>
+--d94986bd4c953e1405b1961628e72b6783222af0da2d9d78c4cfc4d3c66e--

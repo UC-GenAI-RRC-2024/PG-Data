@@ -1,0 +1,632 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a98:c004:0:b0:1eb:e128:bbe3 with SMTP id l4csp1272847eic;
+        Wed, 10 Jan 2024 17:44:17 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IEq04p8Wmnz99EFV4bDO7ge8Hb+8RjESyZ3fN9eJ/6HOcY7eJxRv/ob6LKa5q3ybq1xlwFS
+X-Received: by 2002:ac8:5f95:0:b0:429:9341:ddf2 with SMTP id j21-20020ac85f95000000b004299341ddf2mr1946qta.29.1704937456649;
+        Wed, 10 Jan 2024 17:44:16 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1704937456; cv=none;
+        d=google.com; s=arc-20160816;
+        b=wJzZvDF3wJoyp+7NOhGM+oYhHU87Uov6gsmWRY4j9wUznpkusfDt0+b+YcsoJCvZcl
+         Q21tFVaPI5nqEs+t62olwhsCirDQ4rKuKZ6pmg9ievGayatZmrLrrPMxh67mYhpiZMkk
+         OrmxCIBqrxFKEsY8OTyPJMumMwzlkvsv1SQcOkza6v2loj8WBg0NkV+Ohrpl6JGWUObP
+         yOje8exD1syHqL9fLBpMmqxegQDDkdAQ8Y1OEqFmaGRb7Rnh+Ka1A9A0w+6yVn9MdtOF
+         kUQanxbhMeZ8YojsHW5UMHkuUisrGugJVqntBEXkwWZDB1nMvlWTCmq5sWO3WTXk52xa
+         Uumw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=jRViCtIWZ2NB392mrsS/F3S17FwFYJgmdie0EShkOAc=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=Kcy1Lyfn/g2Mklx3TCviLHlhdCOeXBv9x5c38sJIdiRb/mR98uxCIm8B62q1dy6MLz
+         HGyE4I/oPa80NgxPxhQIl+wR84cpRLu9JOJ9foQTMvPC4YKVfEHa3MHegMaV+vrWdXem
+         6ZaACGWXoxmzXgO/RQxfhmia2qQbg9EBjHvCbBogctqH8WA5vNwAKPlV7GH+fAmBctRK
+         N7nMCJT/5Nwtle48eVF/nMop5QJCcVnov6ahmYJAvj9UoMsvXo05Y2HkMvlmrh1CPTzj
+         6GfDKXzZ1wgHrQT+7wd6KgJhU+8BCpr9/1YyOfkuKa0qN/WIFIreC6GQCXKTuAp6wgRT
+         F1XA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=X68f3gVg;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=gWw+nuvk;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id u4-20020a05622a198400b00429bcc07136si78607qtc.71.2024.01.10.17.44.16
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 10 Jan 2024 17:44:16 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=X68f3gVg;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=gWw+nuvk;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=jRViCtIWZ2NB392mrsS/F3S17FwFYJgmdie0EShkOAc=;
+	b=X68f3gVgUqaevtIowcN3aGEshvn88lYAaZfT1Y8tlN5Wdtj0d05zXoDlFTLt7of7Om3i
+	28Pz6rPYxR+G4yx5CZy681XbKFUw1nofl1cwJ5GcwNclbrgO6GNGRetfqihXv34qJV2nm1
+	6Hv3Ngg8CLvGHjDzoA+JdxJeq5UUAPHwtpltNQmqf9tM/u8nDEFObxdax4PLem8LLszy/O
+	UBUzbcYVmYfQ5w8XGcGzLpGCCCOHSpj5gwRAj4tTBiKHtJxn8byG/Pv0dmdNHkv3BrU6cR
+	QdTC72fmZhDFhuiihleFiI+HrinNddNmoeNR3JsDCl5LVrkplOH4WSAsGuuCkrQg==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=jRViCtIWZ2NB392mrsS/F3S17FwFYJgmdie0EShkOAc=;
+	b=gWw+nuvkJCeqcCFX5tCX9Uau1j4lUe8u5B4I2/Z3oath8NDtsMGq0CeOSS3vqAPr7Fek
+	4KYQPiT3s+69Rca9Rtcm0VX5U2khhPbE6eyWOJr2RdVu79ZrpfwP4OrHOlnR0hHRfnAF5B
+	r+p+TwAWlW18rQhDZ6KR4E7EVEES5fS8U=
+Received: by filterdrecv-b7c5b88-jpbhf with SMTP id filterdrecv-b7c5b88-jpbhf-1-659F47EE-23
+        2024-01-11 01:44:14.375051616 +0000 UTC m=+7369335.881558973
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-25 (SG) with HTTP
+	id QpJqyow-RR2On1eKBDFr-A
+	Thu, 11 Jan 2024 01:44:14.340 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=04f14b2b4a8967261790b91bbeae5873911717062fdc21b176e90291299e
+Date: Thu, 11 Jan 2024 01:44:16 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <QpJqyow-RR2On1eKBDFr-A@geopod-ismtpd-25>
+Subject: PRO/AH/EDR> COVID-19 update (05): Pakistan, JN.1, variant of interest
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iBKjWxSzWGMJ9f6ni69c7IhrpsDiUwR2hU1kav+?=
+ =?us-ascii?Q?sbeXXELh3EpmsXl7TzEVRCkcLpRBfl9ihRFvjHJ?=
+ =?us-ascii?Q?wx21A5gJntUg9zajf4Zz=2FPtnqkAwtsXfm84HtJh?=
+ =?us-ascii?Q?SC8TKQpuWbHw3Bd4RKfyD=2FA+av6lcp3joN0e765?=
+ =?us-ascii?Q?8w1y9YpVvi28P4vYMJCqpxEjFKT9iXJzwh4J5x?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUiShGf=2FO8XJWpH34Od4Nd?=
+ =?us-ascii?Q?fxXa6jil96uRcJkF+N+LeVnO1tx80ddOyoyOo=2Fc?=
+ =?us-ascii?Q?Brxcl3ERAm0cOY743=2FFH59DWiSf5OzXORh1DLKt?=
+ =?us-ascii?Q?hb1NMKty3PsA5ju0ZzxCrq1WQuZSEQf=2FJlWtgqv?=
+ =?us-ascii?Q?cZmsyCHlNUZsDXYELw3NABlnYHcvCZCAmdKRbNH?=
+ =?us-ascii?Q?DZbd4VYaxeU2NkLgI+1GedeNNw6Yj3y6hKRpNUO?=
+ =?us-ascii?Q?l9zlfgaiAQ+t266US57H9yXrvjeCEvJsXUsDHCd?=
+ =?us-ascii?Q?S9EUluA8lqvBQFpaeBS3dHKgpPKxf5182ZHFPeW?=
+ =?us-ascii?Q?pyUUjc+mGpIVW5ZYM0eXMKRP4lxz4mJBx=2F21jY=2F?=
+ =?us-ascii?Q?mIk6ZVAGz5LDI4z6YvaQ8buCINxXdnGoONlzsZM?=
+ =?us-ascii?Q?nJZdAWxp=2FK1cvRyQVy8C9CZ2h=2Fv6p1vNN1KJznl?=
+ =?us-ascii?Q?KAqaR3kjus9xKVue+LkKtdaySLonh0Rfaq0TdRk?=
+ =?us-ascii?Q?4eJXhmWUsoiceUsoRuUbyoS9n6Ptz6MicH=2FbMID?=
+ =?us-ascii?Q?pvJ=2Fn8Uu6KwiOIyyeQNs0Z=2FEj=2F1M3CFNfqQ2KQD?=
+ =?us-ascii?Q?qNUibpVlZHNX40T9gBrwyAHgAwAzB+7qBy+rgms?=
+ =?us-ascii?Q?NzxqxzpAEpf=2FaivNq7Vj34TyJC1A+EPlkBJJLkH?=
+ =?us-ascii?Q?km4j8wd4z+gZJlc8qQIOL54D70JCWYEOVPh+A9Q?=
+ =?us-ascii?Q?I+WecFHQtkEGFJocgNSwDnMZwPmigZ0vWKPdQ64?=
+ =?us-ascii?Q?axE7kOzZ7IjAmWiJDmjAF4bs41hY4Y8fZLgbpaJ?=
+ =?us-ascii?Q?dKMZr=2F1SVxSH9dWZIE=2FNRZE5=2Fg=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2EeBl5kKr2d?=
+ =?us-ascii?Q?UKw55t2=5F9aKrx-DGNmAv8d8tpdezDLJvjZoMDAw?=
+ =?us-ascii?Q?dTAwMOCmM1rKj3C06Wv04VhGu4kQHzSZvpvCSoc?=
+ =?us-ascii?Q?Izuke=5FsU1eQ8yxxW0TJEzGRTc=5FLAGJGf3exPLeT?=
+ =?us-ascii?Q?zPTmEDOvcicRERNQQwGhv=5FiDQmYCWZyV27gWakg?=
+ =?us-ascii?Q?Qi0hP=5FQ3G-uz-RUjw=3D=3D=2EFyTzoZkmYzv4KMZm9fh?=
+ =?us-ascii?Q?CsQ92ooIZvl-l3OXkRT1D-yJoMDAwdTAwMOpMti?=
+ =?us-ascii?Q?ZP0UWHUcvENEQcWX7VJUqwcfulxtUrXDg58NpPg?=
+ =?us-ascii?Q?pwjCSmFZalP1I0cbPIfdCQRrQueERVUnMTrL1wb?=
+ =?us-ascii?Q?b92MaHyzaL8j0nzMwtdzQbjyHcfH3Nhi-74CCUc?=
+ =?us-ascii?Q?SnXV12DF1D6-MuC3SdAs4p2SGMbKPve2Ix3mHxe?=
+ =?us-ascii?Q?7uYgQv52L14aq0qwG6aN7izqeyPXmHGNZM6exeQ?=
+ =?us-ascii?Q?ENXsj=5FBCTvtL63WI2GdIl1mdTaC0Vu5yv4b=5FSCT?=
+ =?us-ascii?Q?PeYMoPWSQbnX98FzUslyx76sEn72StzPu-zPN12?=
+ =?us-ascii?Q?zKObIKd0U=5FGQm7Dh92rXOhVN172DSejIoYdRFNw?=
+ =?us-ascii?Q?1x6k2Wrw-wI1-fmW379PfVE38xzjKii4dQMwQY4?=
+ =?us-ascii?Q?bi0wOPS9LwUckmBnoqMQ4h=5FvJAsuPINRrGa0=5Fzn?=
+ =?us-ascii?Q?wmYstpCNOyQoEHAxggLYFR=5FkH1GEzAbhWpIf1iK?=
+ =?us-ascii?Q?Yo9iZc11VP5xFlKjGSn=5FGYHm11sY6SaS1bIdjc=5F?=
+ =?us-ascii?Q?v2Jt4dDwDhdJ79Gt3TOrDVrL4nWv4zNTvhGdhlT?=
+ =?us-ascii?Q?9tPGYfzPm2BtKOVWVmR-EEe05ybVmy8-HQ-7EXq?=
+ =?us-ascii?Q?nyBwa=5FT-QBeSpyaf9ho8S3dIUwl-s1nD0lH=5FPog?=
+ =?us-ascii?Q?KL0J6qKKABeAGAPcMhe-lZ-o7RjfQZIo6clKf2p?=
+ =?us-ascii?Q?URnFsec-kGcBSf6D3VBQqqJBbHC=5F2eQPRlmW6Vz?=
+ =?us-ascii?Q?7L40DkfbBqTIA8GtuPIs1f5-2KZCI6cpBSQStQF?=
+ =?us-ascii?Q?-eQX=5F0F0U7aLzkPKnLGdLGf8jTg3RGiIAGe0tui?=
+ =?us-ascii?Q?n5A0f3wLa=5FKuyrJbSdX-OCyaGGlDeneZlDoXQdu?=
+ =?us-ascii?Q?SF7Zhr24FYgsegHDtO2VY55PfR6Jn2109Ohmepp?=
+ =?us-ascii?Q?dVlHOSeQX5xdF9-muGHYLwrSuPO5Ocs94DVoWUy?=
+ =?us-ascii?Q?9BKweiiLJ1XY4nM=5FB2eAAXsojYxvkTMw-ILY-28?=
+ =?us-ascii?Q?lnV4frGQI1QZSWFokBcAK5L=5FRFjO1zSlCRrhNLj?=
+ =?us-ascii?Q?fYIA-Nad=5FarFR-w-thtD66dxi8jJlYJ5KoV0yjj?=
+ =?us-ascii?Q?EJlp152rnb-AC9z98Kmn9NfFU-7C2e0kBHdYlmn?=
+ =?us-ascii?Q?OY9ZaA=3D=3D=3E?=
+
+--04f14b2b4a8967261790b91bbeae5873911717062fdc21b176e90291299e
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=us-ascii
+Mime-Version: 1.0
+
+CORONAVIRUS DISEASE 2019 UPDATE (05): PAKISTAN, JN.1, VARIANT OF
+INTEREST
+*************************************************************************
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+Date: Mon 8 Jan 2023 08:05 PKT
+Source: The Nation [edited]
+<https://www.nation.com.pk/08-Jan-2024/four-cases-of-jn1-virus-detected-in-=
+pakistan>
+
+
+The Ministry of Health's spokesperson has confirmed that 4 cases of
+the JN.1 variant, an omicron sub-variant of the new coronavirus, have
+been identified in Pakistan. According to the spokesperson, all
+affected individuals exhibited mild symptoms, and they have since
+recovered without complications.
+
+The spokesperson added that the World Health Organization (WHO) has
+designated JN.1 as a variant of interest. Caretaker Federal Minister
+for Health Dr Nadeem Jan emphasized that the government is actively
+monitoring the situation. Border health services and national and
+provincial health authorities' labs are on high alert, operating under
+the health minister's directives to closely track the disease's
+developments.
+
+--
+Communicated by:
+ProMED
+via
+ProMED-SoAs
+
+[As indicated in the news report above, the presence of JN.1
+sub-variant has been detected in 4 COVID-19 cases in Pakistan. With
+this report, Pakistan has become the 2nd country in South Asia after
+India reporting the circulation of this more infectious sub-variant.
+It would not be surprising to see a temporal increase of COVID-19
+cases in the country due to spread of this sub-variant because of
+noticing an increasing trend of COVID-19 cases in India suspected to
+be associated with the circulation of it (see archive nos.
+http://promedmail.org/post/20240103.8714031,
+http://promedmail.org/post/20231226.8713894 at
+<https://promedmail.org/?lang=3Dsoas>).
+
+Of note, "JN.1 is closely related to the variant BA.2.86.... It is not
+currently known whether JN.1 infection produces different symptoms
+from other variants. In general, symptoms of COVID-19 tend to be
+similar across variants. The types of symptoms and how severe they are
+usually depend more on a person's immunity and overall health rather
+than which variant causes the infection." - Mod.PKB
+(<https://www.cdc.gov/respiratory-viruses/whats-new/SARS-CoV-2-variant-JN.1=
+.html>)
+
+ProMED map of Pakistan:
+<https://promedmail.org/promed-post?place=3D8714143,140>]
+
+[See Also:
+COVID-19 update (03): Israel, JN.1, new variant
+http://promedmail.org/post/20240104.8714055
+COVID-19 update (02): India
+http://promedmail.org/post/20240103.8714052
+COVID-19 update (01): Cambodia, new JN.1 variant detection
+http://promedmail.org/post/20240101.8714020
+2023
+----
+COVID-19 update (39): Saudi Arabia, JN.1 variant, MOH
+http://promedmail.org/post/20231222.8713858
+COVID-19 update (38): WHO classifies JN.1 coronavirus strain as
+'variant of interest' http://promedmail.org/post/20231220.8713808
+COVID-19 update (37): vaccine comp., selected regions, circ. variants,
+research http://promedmail.org/post/20231219.8713789
+COVID-19 update (36): selected countries/regions, vaccines
+http://promedmail.org/post/20231212.8713666
+COVID-19 update (35): Singapore, increase
+http://promedmail.org/post/20231209.8713618
+COVID-19 update (34): selected country/region updates, variants, WHO
+http://promedmail.org/post/20231130.8713398
+COVID-19 update (33): country updates, vaccines, vaccine refusal, WHO
+update http://promedmail.org/post/20231105.8713000
+COVID-19 update (32): updates, variants, vaccines, antivirals,
+scientific literature http://promedmail.org/post/20231026.8712809
+COVID-19 update (31): BA.2.86 & EG.5, selected regions, vaccines, WHO,
+global http://promedmail.org/post/20231009.8712522
+COVID-19 update (30): omicron EG.5.1, updates, WHO, global
+http://promedmail.org/post/20230815.8711701
+COVID-19 update (29): updates, wastewater surveillance, transmission,
+WHO, global http://promedmail.org/post/20230802.8711526
+COVID-19 update (28): superspread, masks, vaccination, WHO, global
+http://promedmail.org/post/20230724.8711339
+COVID-19 update (27): vaccination, test kit distribution, sequelae,
+WHO, global http://promedmail.org/post/20230717.8711208
+COVID-19 update (26): animal, North America, wild deer as reservoirs
+http://promedmail.org/post/20230713.8711124
+COVID-19 update (25): vaccines, liver disease, sequelae, WHO, global
+http://promedmail.org/post/20230713.8711095
+COVID-19 update (24): long-term effects, EU.1.1, wild bat, WHO, global
+http://promedmail.org/post/20230704.8710946
+COVID-19 update (23): EU transition plan, viral emission, vacc
+hesitancy, GBS, WHO http://promedmail.org/post/20230619.8710662
+COVID-19 update (22): trends, immunity, children, metformin, WHO
+http://promedmail.org/post/20230612.8710546
+COVID-19 update (21): countries, life expectancy, long COVID,
+research, WHO, global http://promedmail.org/post/20230605.8710423
+COVID-19 update (20): countries, Paxlovid, vaccine, WHO
+http://promedmail.org/post/20230530.8710317
+COVID-19 update (19): countries, vaccine composition, XBB1.16, WHO,
+global http://promedmail.org/post/20230522.8710178
+COVID-19 update (18): country/regional, vaccine policies, vaccination,
+WHO, global http://promedmail.org/post/20230516.8710088
+COVID-19 update (17): WHO, USA, India, China, XBB.1.16, research,
+global http://promedmail.org/post/20230508.8709926
+COVID-19 update (16): XBB.1.16, reinfections, microglia, sequelae,
+WHO, global http://promedmail.org/post/20230502.8709789
+COVID-19 update (15): India, XBB.1.16, fetal brain damage, HCW, global
+http://promedmail.org/post/20230417.8709526
+COVID-19 update (14): countries, vaccines, XBB.1.16, long COVID, WHO
+http://promedmail.org/post/20230407.8709377
+COVID-19 update (13): India, surveillance, HCW, rats, infant
+hospitalizations, WHO, global
+http://promedmail.org/post/20230329.8709196
+COVID-19 update (12): countries, variants, susceptibility, vaccines,
+WHO, global http://promedmail.org/post/20230321.8709066
+COVID-19 update (11): country responses, complications, treatment,
+WHO, global http://promedmail.org/post/20230312.8708900
+COVID-19 update (10): Hong Kong, XBB.1.5, Iran, UAE, bivalent vacc
+http://promedmail.org/post/20230308.8708776
+COVID-19 update (09): XBB.1.5, vaccine, WHO
+http://promedmail.org/post/20230228.8708641
+COVID-19 update (08): countries, immunity, vaccines, treatment, masks,
+WHO, global http://promedmail.org/post/20230219.8708482
+COVID-19 update (07): countries, molnupiravir, vaccines, PACS,
+cockroach, WHO http://promedmail.org/post/20230212.8708331
+COVID-19 update (06): China, demographics, symptoms, PACS, WHO
+http://promedmail.org/post/20230204.8708165
+COVID-19 update (05): PHEIC continues, WHO
+http://promedmail.org/post/20230130.8708059
+COVID-19 update (04): PHEIC, China, susp outbreaks, responses,
+vaccines, global http://promedmail.org/post/20230130.8708043
+COVID-19 update (03): China, guidelines, vacc, immunity, sequelae, WHO
+http://promedmail.org/post/20230122.8707910
+COVID-19 update (02): China, XBB.1.5, Hong Kong, mAb, pathogenesis,
+WHO, global http://promedmail.org/post/20230115.8707786
+COVID-19 update (01): China, Hong Kong, XBB.1.5, PAHO, treatment,
+testing, WHO http://promedmail.org/post/20230107.8707667
+2022
+----
+COVID-19 update (193): surge, travel restrictions, screening,
+treatment, WHO http://promedmail.org/post/20221230.8707528
+COVID-19 update (191): omicron BF.7, bivalent vaccines, China, WHO,
+global http://promedmail.org/post/20221224.8707437
+COVID-19 update (190): China, Australia, vaccines, sequelae, WHO,
+global http://promedmail.org/post/20221219.8707306
+COVID-19 update (189): mortality, mAb, intranasal vacc, NPIs,
+sequelae, WHO, global http://promedmail.org/post/20221209.8707146
+COVID-19 update (188): China, omicron BA.2.76, outdoor transmission
+http://promedmail.org/post/20221130.8706983
+COVID-19 update (187): boosters, omicron BQ.1.1, Asia, Australia, WHO,
+global http://promedmail.org/post/20221129.8706920
+COVID-19 update (185): chr. COVID, bladder, recovery, renal, deaths,
+WHO, global http://promedmail.org/post/20221111.8706665
+COVID-19 update (184): vaccination response, disparity, WHO, global
+http://promedmail.org/post/20221104.8706549
+COVID-19 update (183): cardiac events, exercise, US deaths, boosters,
+WHO, global http://promedmail.org/post/20221028.8706414
+COVID-19 update (182): frontline workers, life expectancy,
+subvariants, WHO, global http://promedmail.org/post/20221021.8706286
+COVID-19 update (181): Africa vacc hesitancy, pre-eclampsia, boosters,
+nasal vacc, WHO, global http://promedmail.org/post/20221014.8706143
+COVID-19 update (180): long COVID, neuropsy. illness, Paxlovid,
+subvariants, WHO http://promedmail.org/post/20221007.8706007
+COVID-19 update (170): case severity, boosters, physical activity,
+WHO, global http://promedmail.org/post/20220825.8705236
+COVID-19 update (160): vaccine rollout disparities, smell & taste,
+WHO, global http://promedmail.org/post/20220731.8704776
+COVID-19 update (150): France, omicron 2nd gen variant, paxlovid, WHO,
+global http://promedmail.org/post/20220705.8704255
+COVID-19 update (140): Thailand, human to cat to human transmission
+http://promedmail.org/post/20220612.8703819
+COVID-19 update (130): surveill., cardiac eff., long COVID subtypes,
+WHO, global http://promedmail.org/post/20220601.8703606
+COVID-19 update (120): N Korea, pandemic exit, youth vaccine, US
+deaths, WHO http://promedmail.org/post/20220518.8703327
+COVID-19 update (110): mutations, mental health, China, S Africa,
+Paxlovid, WHO http://promedmail.org/post/20220505.8703018
+COVID-19 update (100): vacc. intervals, deaths, long COVID,
+subvariants, global http://promedmail.org/post/20220420.8702717
+COVID-19 update (90): strategy, 2nd booster, WHO
+http://promedmail.org/post/20220407.8702454
+COVID-19 update (80): animal, USA, deer, transmission
+http://promedmail.org/post/20220325.8702212
+COVID-19 update (70): case count, UK, BA.2, USA, WHO, global
+http://promedmail.org/post/20220312.8701940
+COVID-19 update (60): animal, China, origin, research
+http://promedmail.org/post/20220227.8701690
+COVID-19 update (50): Hong Kong, estrogen risk, maternal vaccine
+benefits, WHO http://promedmail.org/post/20220217.8701501
+COVID-19 update (40): Denmark, rosemary, pregnancy, stroke, WHO
+http://promedmail.org/post/20220205.8701276
+COVID-19 update (30): variants in immuno-comp., stability, endemic,
+WHO http://promedmail.org/post/20220126.8701074
+COVID-19 update (20): Africa vacc., Taiwan, waning immunity,
+persistence, global http://promedmail.org/post/20220117.8700915
+COVID-19 update (10): animal, omicron origin statement, OIE
+http://promedmail.org/post/20220110.8700763
+COVID-19 update (01): omicron severity & changes, Germany, T-cell
+reactivity http://promedmail.org/post/20220101.8700616]
+.................................................pkb/rd/pkb/tw/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3DlQsQUvm2e9Z8Rf4E_Hamsz7z7_qav7ud6jKvbnJLyhxoMDAwdTAwMGsLYFJ=
+upMva8Uink61k6c6MN7gGYXidfGbAtvZxWuhSJgOlb8VCHehVRUJZKa2CmzEE-oICwNxcGNmhTp=
+kWZi5aD-T3UraGNpEJFzh7nPcFTOqO1bicfEe8RU-EoKGLFoq8tJf08mxtrc8QZvMmSsCZTJjkJ=
+hGUKOodL_MrjRgaLiHKyzpZ9_EESaTZ5ETfzSVkPHpqHnrGC3cGXR7e6Spu0bbgxVokHe_9a9N3=
+EF9qsDQQ8ts7GjN3nPhjw4CppmlWPyWqQghh7EiOqEm1LqOxkusHK2Jb4W7M9qgYqBAK_LeuAjk=
+Z9EGlI1SW0-Q6yjB_yNArzBTwQkJYSGVcH1OmT88zSvi1bux-o0O7A-1jJoqNv_SaeYfTeQ5sjp=
+8IukYD-jzkrebj2UHToR0uYU419fkqAwk1artcsn5DTUV_j7FxOOrxihk8DqXqUvGKwHuoCxZd1=
+kksRCp0AS9-rVRi15aqO_1CInyirJ1RdML1IdZo4F6P01FPY6G3e2dXkzJkTTSjZEA5KEY3L6QH=
+FLkW9LkNx3hszrKx_40eu8mvztPZzNEOlalQ9XmSZ_tCpq4KV1KpKH1tWgDOnjST-QveYSDjhc6=
+csW5QLek4cPJZCwAUvXkTlFOxYbQkhwfhEcRpQkCX6E3uZMixSERMwkKLGwR6avtanVGo5y8U_Q=
+vmJbFyL6Zsn0lRGuCDBcYZsoxarVLBtc7V3dq7eixdB92CsOByugRgGMp3yx_4DOQkqtJhqvFzO=
+OIxok8stdYh5QOLAuhMLL4KCjNP_vtu8nD_gAsmgDpNaV1nUWuvMBR6napvED0v68v2xaw9YW1V=
+FVfgEEqelQlSojnCPZLJP6l9AwcijeCxqesYH4C1IIsc9hkNM2ilsH9p7Aa_g3Y0bhoxZ7VXrcT=
+N7ksNGJxIYB9nPHbYBTDsqsmw9ZIoTLhSItaaP33JA8McTHastqw-TX9BbPcxdPnRIbSsUQF0P8=
+8a4jgQNX46aTM5bhzBTy8-LJHNrfbWCCAfgNbCcV8bBqQqZl63DdS2jC5WJzsQy1t_ah8MyB3e8=
+C40FEwBUAupwQYCYLVaUyeK7N2Mt1pYrWnACbTEz_s9fFCDenQ9YduGXIJW6TzZsXCC9JyiGcKd=
+T1rogw1npmgaNoM46uJeAg6aYYC1oIWoNdE_jhm7QXPhaBKAfUy48buxpmLq2ce0 )
+############################################################
+############################################################
+
+--04f14b2b4a8967261790b91bbeae5873911717062fdc21b176e90291299e
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>CORONAVIRUS DISEASE 2019 UPDATE (05): PAKISTAN, JN.1, VARIANT OF<br>I=
+NTEREST<br>****************************************************************=
+*********<br>A ProMED-mail post<br><a href=3D"https://u19268662.ct.sendgrid=
+.net/ss/c/wscE2ng5fl6JrPIt48tisIijpefK5PNjW-mL-YZGnfgDOxU1G3gjwnPSi2Tfv3HA/=
+42w/WiMrC-CvQ6yAydWsz_eArA/h0/wCaUVO2MZVq9Xh4Le21UaJVAyQhV54mny0NRqI_cVMY">=
+http://www.promedmail.org</a><br>ProMED-mail is a program of the<br>Interna=
+tional Society for Infectious Diseases<br><a href=3D"https://u19268662.ct.s=
+endgrid.net/ss/c/wscE2ng5fl6JrPIt48tisCT5tpD4Upm3qyMCbcYSQvc/42w/WiMrC-CvQ6=
+yAydWsz_eArA/h1/stxlKAudXuLTMIg0-wXn93h1vgs_PZ5eCXT1jnUqBTQ">http://www.isi=
+d.org</a><br><br>Date: Mon 8 Jan 2023 08:05 PKT=0D<br>Source: The Nation [e=
+dited]=0D<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/TLh_csrC34X_=
+iXpbYoMam_aIBhVUNkqc5zEAw8O8s-j2hvfbEInlgbr1xlR_uRLBcwvxBfbPtKQla-Pz7f7q2KU=
+CD6cQJ1ujxGdCFJkXi4por9xXCySooRYccplw5Qvi/42w/WiMrC-CvQ6yAydWsz_eArA/h2/7kR=
+3xQ2J3ZHfx7-DeH-UJpEPmdCAxmhnA8BBi3y5v7w">https://www.nation.com.pk/08-Jan-=
+2024/four-cases-of-jn1-virus-detected-in-pakistan</a>=0D<br>=0D<br>=0D<br>T=
+he Ministry of Health's spokesperson has confirmed that 4 cases of<br>the J=
+N.1 variant, an omicron sub-variant of the new coronavirus, have<br>been id=
+entified in Pakistan. According to the spokesperson, all<br>affected indivi=
+duals exhibited mild symptoms, and they have since<br>recovered without com=
+plications.=0D<br>=0D<br>The spokesperson added that the World Health Organ=
+ization (WHO) has<br>designated JN.1 as a variant of interest. Caretaker Fe=
+deral Minister<br>for Health Dr Nadeem Jan emphasized that the government i=
+s actively<br>monitoring the situation. Border health services and national=
+ and<br>provincial health authorities' labs are on high alert, operating un=
+der<br>the health minister's directives to closely track the disease's<br>d=
+evelopments.=0D<br>=0D<br>--=0D<br>Communicated by:=0D<br>ProMED=0D<br>via=0D=
+<br>ProMED-SoAs<br><br>[As indicated in the news report above, the presence=
+ of JN.1<br>sub-variant has been detected in 4 COVID-19 cases in Pakistan. =
+With<br>this report, Pakistan has become the 2nd country in South Asia afte=
+r<br>India reporting the circulation of this more infectious sub-variant.<b=
+r>It would not be surprising to see a temporal increase of COVID-19<br>case=
+s in the country due to spread of this sub-variant because of<br>noticing a=
+n increasing trend of COVID-19 cases in India suspected to<br>be associated=
+ with the circulation of it (see archive nos.<br>http://promedmail.org/post=
+/20240103.8714031,<br>http://promedmail.org/post/20231226.8713894 at<br><a =
+href=3D"https://u19268662.ct.sendgrid.net/ss/c/0oc7vsq5mmLjPwOs4PjMhy8PNnWO=
+X7vm-KABxI_6_SIGGjDAUk_91uRj7G_ai8Eo/42w/WiMrC-CvQ6yAydWsz_eArA/h3/RSLAt9en=
+HxXisp_3XFlJhMHj66Zjzt9W2ZkKN_BCf1U">https://promedmail.org/?lang=3Dsoas</a=
+>).=0D<br>=0D<br>Of note, "JN.1 is closely related to the variant BA.2.86..=
+.. It is not<br>currently known whether JN.1 infection produces different s=
+ymptoms<br>from other variants. In general, symptoms of COVID-19 tend to be=
+<br>similar across variants. The types of symptoms and how severe they are<=
+br>usually depend more on a person's immunity and overall health rather<br>=
+than which variant causes the infection." - Mod.PKB=0D<br>(<a href=3D"https=
+://u19268662.ct.sendgrid.net/ss/c/TLh_csrC34X_iXpbYoMam_PtI61miXazSyoEfBLPy=
+ZKA-oy1NYMDc-KHzSzK198WSueDAT_qLmLlfSgJkC7EAP8LWW62Dhe_YYGeJNRyd5RbE379RzhT=
+FV3CEVH9ZVg9/42w/WiMrC-CvQ6yAydWsz_eArA/h4/-2geYYKGHtHiFWAtoGF06nWE-DLUyjWt=
+ydehvKh3Ovo">https://www.cdc.gov/respiratory-viruses/whats-new/SARS-CoV-2-v=
+ariant-JN.1.html</a>)=0D<br>=0D<br>ProMED map of Pakistan:<br><a href=3D"ht=
+tps://u19268662.ct.sendgrid.net/ss/c/sSnCkKCWBvais3EuVAOvgy2WOIX7pp1nXnn4Ab=
+wuQ3Z6WbkfhqXYXU-aTMPJ8yThkRsYOieSYbBTfno_Xk-tOA/42w/WiMrC-CvQ6yAydWsz_eArA=
+/h5/CLeKTgpap9ClVGpHAIvOA95AyiVR5At-EYOgzgmJ2IU">https://promedmail.org/pro=
+med-post?place=3D8714143,140</a>]<br><br>[See Also:<br>COVID-19 update (03)=
+: Israel, JN.1, new variant<br>http://promedmail.org/post/20240104.8714055=0D=
+<br>COVID-19 update (02): India<br>http://promedmail.org/post/20240103.8714=
+052=0D<br>COVID-19 update (01): Cambodia, new JN.1 variant detection<br>htt=
+p://promedmail.org/post/20240101.8714020=0D<br>2023=0D<br>----=0D<br>COVID-=
+19 update (39): Saudi Arabia, JN.1 variant, MOH<br>http://promedmail.org/po=
+st/20231222.8713858=0D<br>COVID-19 update (38): WHO classifies JN.1 coronav=
+irus strain as<br>'variant of interest' http://promedmail.org/post/20231220=
+.8713808=0D<br>COVID-19 update (37): vaccine comp., selected regions, circ.=
+ variants,<br>research http://promedmail.org/post/20231219.8713789=0D<br>CO=
+VID-19 update (36): selected countries/regions, vaccines<br>http://promedma=
+il.org/post/20231212.8713666=0D<br>COVID-19 update (35): Singapore, increas=
+e<br>http://promedmail.org/post/20231209.8713618=0D<br>COVID-19 update (34)=
+: selected country/region updates, variants, WHO<br>http://promedmail.org/p=
+ost/20231130.8713398=0D<br>COVID-19 update (33): country updates, vaccines,=
+ vaccine refusal, WHO<br>update http://promedmail.org/post/20231105.8713000=0D=
+<br>COVID-19 update (32): updates, variants, vaccines, antivirals,<br>scien=
+tific literature http://promedmail.org/post/20231026.8712809=0D<br>COVID-19=
+ update (31): BA.2.86 & EG.5, selected regions, vaccines, WHO,<br>global ht=
+tp://promedmail.org/post/20231009.8712522=0D<br>COVID-19 update (30): omicr=
+on EG.5.1, updates, WHO, global<br>http://promedmail.org/post/20230815.8711=
+701=0D<br>COVID-19 update (29): updates, wastewater surveillance, transmiss=
+ion,<br>WHO, global http://promedmail.org/post/20230802.8711526=0D<br>COVID=
+-19 update (28): superspread, masks, vaccination, WHO, global<br>http://pro=
+medmail.org/post/20230724.8711339=0D<br>COVID-19 update (27): vaccination, =
+test kit distribution, sequelae,<br>WHO, global http://promedmail.org/post/=
+20230717.8711208=0D<br>COVID-19 update (26): animal, North America, wild de=
+er as reservoirs<br>http://promedmail.org/post/20230713.8711124=0D<br>COVID=
+-19 update (25): vaccines, liver disease, sequelae, WHO, global<br>http://p=
+romedmail.org/post/20230713.8711095=0D<br>COVID-19 update (24): long-term e=
+ffects, EU.1.1, wild bat, WHO, global<br>http://promedmail.org/post/2023070=
+4.8710946=0D<br>COVID-19 update (23): EU transition plan, viral emission, v=
+acc<br>hesitancy, GBS, WHO http://promedmail.org/post/20230619.8710662=0D<b=
+r>COVID-19 update (22): trends, immunity, children, metformin, WHO<br>http:=
+//promedmail.org/post/20230612.8710546=0D<br>COVID-19 update (21): countrie=
+s, life expectancy, long COVID,<br>research, WHO, global http://promedmail.=
+org/post/20230605.8710423=0D<br>COVID-19 update (20): countries, Paxlovid, =
+vaccine, WHO<br>http://promedmail.org/post/20230530.8710317=0D<br>COVID-19 =
+update (19): countries, vaccine composition, XBB1.16, WHO,<br>global http:/=
+/promedmail.org/post/20230522.8710178=0D<br>COVID-19 update (18): country/r=
+egional, vaccine policies, vaccination,<br>WHO, global http://promedmail.or=
+g/post/20230516.8710088=0D<br>COVID-19 update (17): WHO, USA, India, China,=
+ XBB.1.16, research,<br>global http://promedmail.org/post/20230508.8709926=0D=
+<br>COVID-19 update (16): XBB.1.16, reinfections, microglia, sequelae,<br>W=
+HO, global http://promedmail.org/post/20230502.8709789=0D<br>COVID-19 updat=
+e (15): India, XBB.1.16, fetal brain damage, HCW, global<br>http://promedma=
+il.org/post/20230417.8709526=0D<br>COVID-19 update (14): countries, vaccine=
+s, XBB.1.16, long COVID, WHO<br>http://promedmail.org/post/20230407.8709377=0D=
+<br>COVID-19 update (13): India, surveillance, HCW, rats, infant<br>hospita=
+lizations, WHO, global<br>http://promedmail.org/post/20230329.8709196=0D<br=
+>COVID-19 update (12): countries, variants, susceptibility, vaccines,<br>WH=
+O, global http://promedmail.org/post/20230321.8709066=0D<br>COVID-19 update=
+ (11): country responses, complications, treatment,<br>WHO, global http://p=
+romedmail.org/post/20230312.8708900=0D<br>COVID-19 update (10): Hong Kong, =
+XBB.1.5, Iran, UAE, bivalent vacc<br>http://promedmail.org/post/20230308.87=
+08776=0D<br>COVID-19 update (09): XBB.1.5, vaccine, WHO<br>http://promedmai=
+l.org/post/20230228.8708641=0D<br>COVID-19 update (08): countries, immunity=
+, vaccines, treatment, masks,<br>WHO, global http://promedmail.org/post/202=
+30219.8708482=0D<br>COVID-19 update (07): countries, molnupiravir, vaccines=
+, PACS,<br>cockroach, WHO http://promedmail.org/post/20230212.8708331=0D<br=
+>COVID-19 update (06): China, demographics, symptoms, PACS, WHO<br>http://p=
+romedmail.org/post/20230204.8708165=0D<br>COVID-19 update (05): PHEIC conti=
+nues, WHO<br>http://promedmail.org/post/20230130.8708059=0D<br>COVID-19 upd=
+ate (04): PHEIC, China, susp outbreaks, responses,<br>vaccines, global http=
+://promedmail.org/post/20230130.8708043=0D<br>COVID-19 update (03): China, =
+guidelines, vacc, immunity, sequelae, WHO<br>http://promedmail.org/post/202=
+30122.8707910=0D<br>COVID-19 update (02): China, XBB.1.5, Hong Kong, mAb, p=
+athogenesis,<br>WHO, global http://promedmail.org/post/20230115.8707786=0D<=
+br>COVID-19 update (01): China, Hong Kong, XBB.1.5, PAHO, treatment,<br>tes=
+ting, WHO http://promedmail.org/post/20230107.8707667=0D<br>2022=0D<br>----=0D=
+<br>COVID-19 update (193): surge, travel restrictions, screening,<br>treatm=
+ent, WHO http://promedmail.org/post/20221230.8707528=0D<br>COVID-19 update =
+(191): omicron BF.7, bivalent vaccines, China, WHO,<br>global http://promed=
+mail.org/post/20221224.8707437=0D<br>COVID-19 update (190): China, Australi=
+a, vaccines, sequelae, WHO,<br>global http://promedmail.org/post/20221219.8=
+707306=0D<br>COVID-19 update (189): mortality, mAb, intranasal vacc, NPIs,<=
+br>sequelae, WHO, global http://promedmail.org/post/20221209.8707146=0D<br>=
+COVID-19 update (188): China, omicron BA.2.76, outdoor transmission<br>http=
+://promedmail.org/post/20221130.8706983=0D<br>COVID-19 update (187): booste=
+rs, omicron BQ.1.1, Asia, Australia, WHO,<br>global http://promedmail.org/p=
+ost/20221129.8706920=0D<br>COVID-19 update (185): chr. COVID, bladder, reco=
+very, renal, deaths,<br>WHO, global http://promedmail.org/post/20221111.870=
+6665=0D<br>COVID-19 update (184): vaccination response, disparity, WHO, glo=
+bal<br>http://promedmail.org/post/20221104.8706549=0D<br>COVID-19 update (1=
+83): cardiac events, exercise, US deaths, boosters,<br>WHO, global http://p=
+romedmail.org/post/20221028.8706414=0D<br>COVID-19 update (182): frontline =
+workers, life expectancy,<br>subvariants, WHO, global http://promedmail.org=
+/post/20221021.8706286=0D<br>COVID-19 update (181): Africa vacc hesitancy, =
+pre-eclampsia, boosters,<br>nasal vacc, WHO, global http://promedmail.org/p=
+ost/20221014.8706143=0D<br>COVID-19 update (180): long COVID, neuropsy. ill=
+ness, Paxlovid,<br>subvariants, WHO http://promedmail.org/post/20221007.870=
+6007=0D<br>COVID-19 update (170): case severity, boosters, physical activit=
+y,<br>WHO, global http://promedmail.org/post/20220825.8705236=0D<br>COVID-1=
+9 update (160): vaccine rollout disparities, smell & taste,<br>WHO, global =
+http://promedmail.org/post/20220731.8704776=0D<br>COVID-19 update (150): Fr=
+ance, omicron 2nd gen variant, paxlovid, WHO,<br>global http://promedmail.o=
+rg/post/20220705.8704255=0D<br>COVID-19 update (140): Thailand, human to ca=
+t to human transmission<br>http://promedmail.org/post/20220612.8703819=0D<b=
+r>COVID-19 update (130): surveill., cardiac eff., long COVID subtypes,<br>W=
+HO, global http://promedmail.org/post/20220601.8703606=0D<br>COVID-19 updat=
+e (120): N Korea, pandemic exit, youth vaccine, US<br>deaths, WHO http://pr=
+omedmail.org/post/20220518.8703327=0D<br>COVID-19 update (110): mutations, =
+mental health, China, S Africa,<br>Paxlovid, WHO http://promedmail.org/post=
+/20220505.8703018=0D<br>COVID-19 update (100): vacc. intervals, deaths, lon=
+g COVID,<br>subvariants, global http://promedmail.org/post/20220420.8702717=0D=
+<br>COVID-19 update (90): strategy, 2nd booster, WHO<br>http://promedmail.o=
+rg/post/20220407.8702454=0D<br>COVID-19 update (80): animal, USA, deer, tra=
+nsmission<br>http://promedmail.org/post/20220325.8702212=0D<br>COVID-19 upd=
+ate (70): case count, UK, BA.2, USA, WHO, global<br>http://promedmail.org/p=
+ost/20220312.8701940=0D<br>COVID-19 update (60): animal, China, origin, res=
+earch<br>http://promedmail.org/post/20220227.8701690=0D<br>COVID-19 update =
+(50): Hong Kong, estrogen risk, maternal vaccine<br>benefits, WHO http://pr=
+omedmail.org/post/20220217.8701501=0D<br>COVID-19 update (40): Denmark, ros=
+emary, pregnancy, stroke, WHO<br>http://promedmail.org/post/20220205.870127=
+6=0D<br>COVID-19 update (30): variants in immuno-comp., stability, endemic,=
+<br>WHO http://promedmail.org/post/20220126.8701074=0D<br>COVID-19 update (=
+20): Africa vacc., Taiwan, waning immunity,<br>persistence, global http://p=
+romedmail.org/post/20220117.8700915=0D<br>COVID-19 update (10): animal, omi=
+cron origin statement, OIE<br>http://promedmail.org/post/20220110.8700763=0D=
+<br>COVID-19 update (01): omicron severity & changes, Germany, T-cell<br>re=
+activity http://promedmail.org/post/20220101.8700616]<br>..................=
+...............................pkb/rd/pkb/tw/jh<br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3DlQsQUvm2e9Z8Rf4E_Hamsz7z7_qav7ud6jKvbnJLyhxoMDAwdT=
+AwMGsLYFJupMva8Uink61k6c6MN7gGYXidfGbAtvZxWuhSJgOlb8VCHehVRUJZKa2CmzEE-oICw=
+NxcGNmhTpkWZi5aD-T3UraGNpEJFzh7nPcFTOqO1bicfEe8RU-EoKGLFoq8tJf08mxtrc8QZvMm=
+SsCZTJjkJhGUKOodL_MrjRgaLiHKyzpZ9_EESaTZ5ETfzSVkPHpqHnrGC3cGXR7e6Spu0bbgxVo=
+kHe_9a9N3EF9qsDQQ8ts7GjN3nPhjw4CppmlWPyWqQghh7EiOqEm1LqOxkusHK2Jb4W7M9qgYqB=
+AK_LeuAjkZ9EGlI1SW0-Q6yjB_yNArzBTwQkJYSGVcH1OmT88zSvi1bux-o0O7A-1jJoqNv_Sae=
+YfTeQ5sjp8IukYD-jzkrebj2UHToR0uYU419fkqAwk1artcsn5DTUV_j7FxOOrxihk8DqXqUvGK=
+wHuoCxZd1kksRCp0AS9-rVRi15aqO_1CInyirJ1RdML1IdZo4F6P01FPY6G3e2dXkzJkTTSjZEA=
+5KEY3L6QHFLkW9LkNx3hszrKx_40eu8mvztPZzNEOlalQ9XmSZ_tCpq4KV1KpKH1tWgDOnjST-Q=
+veYSDjhc6csW5QLek4cPJZCwAUvXkTlFOxYbQkhwfhEcRpQkCX6E3uZMixSERMwkKLGwR6avtan=
+VGo5y8U_QvmJbFyL6Zsn0lRGuCDBcYZsoxarVLBtc7V3dq7eixdB92CsOByugRgGMp3yx_4DOQk=
+qtJhqvFzOOIxok8stdYh5QOLAuhMLL4KCjNP_vtu8nD_gAsmgDpNaV1nUWuvMBR6napvED0v68v=
+2xaw9YW1VFVfgEEqelQlSojnCPZLJP6l9AwcijeCxqesYH4C1IIsc9hkNM2ilsH9p7Aa_g3Y0bh=
+oxZ7VXrcTN7ksNGJxIYB9nPHbYBTDsqsmw9ZIoTLhSItaaP33JA8McTHastqw-TX9BbPcxdPnRI=
+bSsUQF0P88a4jgQNX46aTM5bhzBTy8-LJHNrfbWCCAfgNbCcV8bBqQqZl63DdS2jC5WJzsQy1t_=
+ah8MyB3e8C40FEwBUAupwQYCYLVaUyeK7N2Mt1pYrWnACbTEz_s9fFCDenQ9YduGXIJW6TzZsXC=
+C9JyiGcKdT1rogw1npmgaNoM46uJeAg6aYYC1oIWoNdE_jhm7QXPhaBKAfUy48buxpmLq2ce0" =
+target=3D"_blank" class=3D"Unsubscribe--unsubscribePreferences" style=3D"fo=
+nt-family:sans-serif;text-decoration:none;">Unsubscribe Preferences</a></di=
+v><br>############################################################<br>#####=
+#######################################################<br><br><img src=3D"=
+https://u19268662.ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/42w/WiMrC-CvQ=
+6yAydWsz_eArA/ho.gif" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=
+=3D"height:1px !important;width:1px !important;border-width:0 !important;ma=
+rgin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;=
+margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !importa=
+nt;padding-right:0 !important;padding-left:0 !important;"/></body>
+</html>
+--04f14b2b4a8967261790b91bbeae5873911717062fdc21b176e90291299e--

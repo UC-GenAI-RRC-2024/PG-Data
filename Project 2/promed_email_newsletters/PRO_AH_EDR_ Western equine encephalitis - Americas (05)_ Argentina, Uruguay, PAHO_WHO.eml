@@ -1,0 +1,1024 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a98:c004:0:b0:1eb:e128:bbe3 with SMTP id l4csp4484117eic;
+        Tue, 16 Jan 2024 10:55:19 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IG1VxTiIBbwdrFpdWVz2OaD90/Ud6Gz0l/nsRlx5V9bbLMaB3yFYLeCiTPAphKQjx7egKmg
+X-Received: by 2002:a05:6214:caa:b0:681:698e:17d8 with SMTP id s10-20020a0562140caa00b00681698e17d8mr3209456qvs.52.1705431318730;
+        Tue, 16 Jan 2024 10:55:18 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1705431318; cv=none;
+        d=google.com; s=arc-20160816;
+        b=u4rw29RUPKt9tHwHMkPi9ZouBaZ+gN/3kobH7wpcc3E9uuZXxb7Gv28aLM5qnGv/4W
+         WwbMhGzRPNGSWkNXutdDrmhQUFy0LGNLb+y6oCeBviYB0eLcLyM8TzgNLkrk0sjLwnQt
+         DfM9n1q0UhMxyjS8/DLNK8a49Mnk21BHtEVgLbo4Ps3x4Zxp535Jf3bacZg38er71v/0
+         L5KjOphLH3qdSEHt+VJu/zPzcKpADSZInHzp9jEQCaYqbCpvwm32CPb+df+HtvnoXZOw
+         AQGXz2mbOZc2GO2MmohSiyfOlTrAOOQBLT0Mkc320GXCwwL5U6LDg0Pgw4+TsNL3kffV
+         JXwg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=zdHiy3FC2sPht6Qx4bve/xkHda39K4Ii0zMLfTdmLRI=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=S3Ca3dpm0A+NbZZAtG2LUJUfwlPzUlUP/l8bFHahmdhRQpZEoF5A1Q78Ylhs8bhPB2
+         7C7HvmdHMeAKSL1bndi0hD+uTyHuAqbvmtvDO/ikf6PRw1dsT4veh0bZ2PJO80k0FKkd
+         dy2CgnugKzDEAslAkrmyvA+cQBfldLLDurVdDQTZ0HhN88yA4M0h/mrCjiZDRvMxThN1
+         xnHWWr3L64Jju7uQJ91Zuvy2gSqe3TO8lR9mm4HTJuF6eVslifuD6yLG8E5OHk3JtzV9
+         Gm5ACwVKS3YPbqfiN8Yb3cMQ4jpaHKol90ttkqIyE2c81FchQ2pPdgY/aG5Dv0moWBAL
+         qGTw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=nS3rr+LR;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b="LLj/AgWg";
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id e5-20020a0cb445000000b0067f61d6a5c9si3986392qvf.440.2024.01.16.10.55.18
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 16 Jan 2024 10:55:18 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=nS3rr+LR;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b="LLj/AgWg";
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=zdHiy3FC2sPht6Qx4bve/xkHda39K4Ii0zMLfTdmLRI=;
+	b=nS3rr+LRlrHoEWwZ6QVicFkyXXcGynR2fmES96VfJqNqerCacROua1o+0/w4FSHgo1Cz
+	lSn6+MFmUZhbn2j+n4avuRTB/YG9erCW1asmXZb1pMlZpvUAP2alOZMDTdxrxszpkJ+7pl
+	YwLlonIu8DYvFSJf37F3VUmjgcDZg80dbvCrzDUTmqfeweq2GYtplI9rbN1o3E2fgwxFMh
+	KWVIcGw1QzVgHijq5+fUc9qki3wI85VHCuTK3WlBpPC49svvDNbteDqQ1MbnBO2WMHAHQy
+	wnMKOLTXSwcmfDklzMV6XzUTvB7cO2BpX7r4S8NwttauqYR2z6XrdefZBbUUhNKQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=zdHiy3FC2sPht6Qx4bve/xkHda39K4Ii0zMLfTdmLRI=;
+	b=LLj/AgWgJ3F+ndrpbYcnc31xVTscyzmXqMrrpZVoHiht50y5CZ+Xf6LX8YpuNt2H3FVb
+	1mezNIbxkj5GzK3eYwdjvVBlPX8tfYbc2/ulTkVA1NR8vpOX8F1RdL335GjK4267mJ8iAm
+	oVpeUVLFmnmZhhPVtc/dfDEgdgoUUvQPA=
+Received: by filterdrecv-b7c5b88-t4m2j with SMTP id filterdrecv-b7c5b88-t4m2j-1-65A6D114-8
+        2024-01-16 18:55:16.116288384 +0000 UTC m=+7863195.374426682
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-21 (SG) with HTTP
+	id ntqVeAtqQ3Kvxw2_rmDFKQ
+	Tue, 16 Jan 2024 18:55:16.101 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=357d2e62d2754fa123eaa9b31685992a813de645d51a21f90b598ba1a04f
+Date: Tue, 16 Jan 2024 18:55:18 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <ntqVeAtqQ3Kvxw2_rmDFKQ@geopod-ismtpd-21>
+Subject: PRO/AH/EDR> Western equine encephalitis - Americas (05): Argentina,
+ Uruguay, PAHO/WHO
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iBmcB4h+NSkqJJJnExnMs69PJH=2FuS40gV7=2FS73Y?=
+ =?us-ascii?Q?bniK8AC+8MJRkDjeSbGtMk1777TiNLDtpWlLD43?=
+ =?us-ascii?Q?=2F8AHy5j63GgNq+q76UDJNw6uxOg5pQB1o66CUuE?=
+ =?us-ascii?Q?lj0Kr0WJ=2FLkC57L8Q2v1Q6kUxsWeyF9CyBbeLmh?=
+ =?us-ascii?Q?Y38cwuxRlJXGw96m8=3D?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUiShGf=2FO8XJWpH34Od4Nd?=
+ =?us-ascii?Q?fxXa6jil96uRcJkF+N+LeVnO1tx80ddOyoyOo=2Fc?=
+ =?us-ascii?Q?Brxcl3ERAm0cOY743=2FFH59DWiSf5OzXORh1DLKt?=
+ =?us-ascii?Q?hb1NMKty3PsA5ju0ZzxCrq1WQuZSEQf=2FJlWtgqv?=
+ =?us-ascii?Q?cZmsyCHlNUZsDLZnmuXWMxEv1Fbbn3LMnZlnKd2?=
+ =?us-ascii?Q?5F0YkkIIQUQpgtR8mrwheTdeeNJIWvaNErDo0eK?=
+ =?us-ascii?Q?HTYD3AS305GbCZ2V+DJmUdVAJj3UU=2FiAOto9KFD?=
+ =?us-ascii?Q?=2FannMGz521RPp0wC=2F6JnwH6tNPvJiTyTGBeZDu6?=
+ =?us-ascii?Q?ogK2ZE3Th4h9b4KSxmLXS2B+=2F=2F1Gk1JshZGSKQx?=
+ =?us-ascii?Q?SjKKj880YQPTfuNvfiXn1GsKcAvMWFbOqfvo15I?=
+ =?us-ascii?Q?uHU3vD132P9GaQQlxyw6b1r3qEze0lZ5BlJj4Pb?=
+ =?us-ascii?Q?JB73BlqBvHKlhtRtCIbaAD9V=2FyR92k+P3wN4HRx?=
+ =?us-ascii?Q?PbxacfczTfXXvWPwnQigBCaAZSSpRQYIZVsq=2FSw?=
+ =?us-ascii?Q?+w93vjCS18CNHDHcjJ5qR3YoxUl498+8vmILy5g?=
+ =?us-ascii?Q?thiid5q7aL9BE=2FZF4Ro+MhYHceN=2FOB=2Fb2nMEp1q?=
+ =?us-ascii?Q?FmQ6M9v6INvrYt18ji3ut6mFTLg2hJ07PyGAcCB?=
+ =?us-ascii?Q?mHyiH5vq1sX3g1DWfi3zzJRibb=2FpXyq1P9XyqUG?=
+ =?us-ascii?Q?kXxYqqPGRShe8Ey9a6X6mESTtSNZL6q9i39iBQC?=
+ =?us-ascii?Q?8yLKr2kdR1gDKtx7Ar6aaitUpBJejHdLBCL45Ha?=
+ =?us-ascii?Q?sfgWacyTRxLKhykOn6gYkfjVfg=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2Ef8zaABV5e?=
+ =?us-ascii?Q?GD-MOy7Vyml3=5FYVh=5FJkT8GOawMotsUlk2BoMDAw?=
+ =?us-ascii?Q?dTAwMDxcSg6CVgu9p8E=5F7cforSSZhrYiujXU1pL?=
+ =?us-ascii?Q?sRIjVcU94nBAjDI=5Fw5kvRBolx=5FBsrdAfYYxdHvV?=
+ =?us-ascii?Q?GL-nfdhGfYNRm-2C3GeY-qTmLAAvPhRjYNur0yg?=
+ =?us-ascii?Q?jKLCcJkVW2kiJAaUA=3D=3D=2EcB-ptac9RXSp=5F-8aX7i?=
+ =?us-ascii?Q?fYOOuFTJL06mThU8zpKWOElZoMDAwdTAwMOdGZs?=
+ =?us-ascii?Q?ue9nS88G9nir0gqf33h2Ka5BPoWqP-yzkCSOtuj?=
+ =?us-ascii?Q?OcBP-=5Fg64lj=5Fct6S2ySzjz-Z0lmrrrUqD2Uh0tU?=
+ =?us-ascii?Q?dLy60o3Z0UyXStV7WjJBkbRzG7KNaqc5rQhQ=5F6x?=
+ =?us-ascii?Q?FoTB7A-sER3Kj8OWNMjARORTNZ7Y5SWn1EddqIa?=
+ =?us-ascii?Q?sSICMbrJNXAMV4Eo4RXuifn3Y2CN86irwgs710w?=
+ =?us-ascii?Q?VpMQjKukPZ7tdgI=5FYsXSFgBA226x6a0OI4VWvOn?=
+ =?us-ascii?Q?ZcSfXAfsn1lpyM9YgblCq-DUK2LNDWPiwip0=5F4R?=
+ =?us-ascii?Q?iYh5=5FJA44v2nrvTzBS=5FyQHqrSZTtHiXzgnOUGva?=
+ =?us-ascii?Q?vifSjj-MAnokkEOo5Ninl3s1CUSg22fEKwNAx4M?=
+ =?us-ascii?Q?TUFurIATyFY0Y3zmAB93gTiM7ctVx4Sa=5FOqTaBk?=
+ =?us-ascii?Q?VCDlZtcgVzJMd=5FGJIgIF8AVpRDn=5FAvz1LnbobBM?=
+ =?us-ascii?Q?d41kLq1CCte=5F8u7H=5FlNNGiIDXyLfxDx3xiWGa3z?=
+ =?us-ascii?Q?GC86dnLcmopnfMLQQes-i=5FYmqZ=5Ff9l5V5x43ZR6?=
+ =?us-ascii?Q?mfqZu8TxmRXC8xfUQpiuUqpy83Has7cuS6ZIWZE?=
+ =?us-ascii?Q?Bb7J5agi1zTwWxVL3=5FUUaY1PlnlDt=5FSUko-oH3k?=
+ =?us-ascii?Q?=5FSXMIAUQkfB81vIIsbnR2PR-i4E56-LTENQTHmr?=
+ =?us-ascii?Q?BBS-Rb5B-i=5FHDGTZTvuiObRmkYk=5FCArqQNUAivT?=
+ =?us-ascii?Q?K9Be9NZY00dD5r9VTp-8AXfIQNye=5Fyi1=5Fw=5FUS3K?=
+ =?us-ascii?Q?qSWIEAS37wqZ8UVSC1Jb6iOn7FmUcsEa5tiYqIy?=
+ =?us-ascii?Q?iZ7kBkyvapkE9maMU2f6TwxLr41ye0JE8h3OtTW?=
+ =?us-ascii?Q?msdKF7m2Cib1a-s=5FZEJQU2SBHi0ohxDce5igZ8w?=
+ =?us-ascii?Q?N53bNp3GhbY3TNQNT2ZZ4VPjxyRlTitGWbmit-j?=
+ =?us-ascii?Q?4SZye6qo3i=5FpQybcJ0QseDQ6p9EPRllim02ZZQ4?=
+ =?us-ascii?Q?U-ZIURVcC9JI99UdPH34yb7sA1g3h6OYKwtmvSh?=
+ =?us-ascii?Q?5vNAm1VITO9-r9EjMzE5z=5FpghiqAwOm6uAm9di6?=
+ =?us-ascii?Q?LDP3E375tVM8M3iZsIk1aiaLf6-uc=5FiyAQf=5F-tr?=
+ =?us-ascii?Q?YHxfcg=3D=3D=3E?=
+
+--357d2e62d2754fa123eaa9b31685992a813de645d51a21f90b598ba1a04f
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=iso-8859-1
+Mime-Version: 1.0
+
+WESTERN EQUINE ENCEPHALITIS - AMERICAS (05): ARGENTINA, URUGUAY,
+PAHO/WHO
+*************************************************************************
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+Date: Wed 10 Jan 2024
+Source: Pan American Health Organization (PAHO)/World Health
+Organization (WHO) [edited]
+<https://www.paho.org/en/documents/epidemiological-update-western-equine-en=
+cephalitis-region-americas-10-january-2024>
+
+
+Epidemiological Update -- Western Equine Encephalitis in the Region of
+the Americas
+---------------------------------------------------------------------------=
+-----
+
+Summary of the situation
+------------------------
+On 19 Dec 2023, the Pan American Health Organization/World Health
+Organization (PAHO/WHO) warned about the risk to human health
+associated with the circulation of the western equine encephalitis
+virus (WEE) (1). From that date until 9 Jan 2024, 374 additional
+outbreaks (equine outbreak: occurrence of one or more cases of WEE in
+equines) in animals were reported (338 in Argentina and 36 in Uruguay)
+and 21 human cases, all of them in Argentina (2-6).
+
+Cases in animals
+----------------
+In Argentina, from 25 Nov 2023 to 9 Jan 2024, the National Food Safety
+and Quality Service (SENASA as per its acronym in Spanish) confirmed
+1258 outbreaks [equine cases] (40 diagnosed by laboratory and 1218 by
+clinical and epidemiology) which are registered in 15 provinces:
+Buenos Aires, Catamarca, Chaco, Corrientes, C=F3rdoba, Entre R=EDos,
+Formosa, La Pampa, La Rioja, Mendoza, R=EDo Negro, Santa Fe, San Luis,
+Santiago del Estero and Salta. The highest proportion of cases in
+animals was recorded in the province of Buenos Aires, which accounts
+for 60% of confirmed cases (2,6).
+
+In Uruguay, from 5 Dec 2023 to 9 Jan 2024, the Ministry of Livestock,
+Agriculture and Fisheries (MGAP as per its acronym in Spanish)
+confirmed 56 cases in equines in 15 departments of the country:
+Artigas, Canelones, Durazno, Flores, Lavalleja, Montevideo, Paysand=FA,
+R=EDo Negro, Rivera, Rocha, Salto, San Jos=E9, Soriano, Tacuaremb=F3 and
+Treinta y Tres. The highest proportion of cases was recorded in the
+department of Paysand=FA, which accounts for 23% of confirmed cases
+(4).
+
+Human WEE cases
+---------------
+In Argentina, a human case of western equine encephalitis was reported
+in the country on 20 Dec 2023, after more than 2 decades without
+reported cases. The case corresponds to a 32-year-old man, a rural
+worker, resident of the province of Santa Fe, who presented the onset
+of symptoms on 19 Nov [2023] (headache, myalgia, dizziness,
+disorientation, and sudden onset fever). On 24 Nov [2023], he received
+medical attention at a public health facility in the province. He
+required intensive care and mechanical ventilation for 12 days and was
+discharged on 20 Dec 2023 (3,5,7).
+
+In addition, and as a result of the active search up to
+epidemiological week (EW) 52, 91 suspected cases were reported in 11
+provinces, of which 21 were laboratory-confirmed, including one death.
+The confirmed cases come from the provinces of Buenos Aires (n =3D 11),
+Santa F=E9 (n =3D 8), Entre R=EDos (n =3D 1) and Santiago del Estero (n =3D=
+ 1)
+(Figure 1 and Figure 2) (5,7).
+
+Figure 1 [table; see source URL for all figures]. Human cases of
+Western equine encephalitis by probable place of infection (province),
+up to EW 52, 2023, Argentina.
+
+Figure 2 [map]. Geographic distribution by locality of exposure of
+confirmed cases of WEE in humans [in] Argentina by symptom onset EW*
+and eco-regions, up to EW 1 of 2024.
+
+Regarding the distribution of cases by epidemiological week, 71% of
+cases occurred between EW 49 and 51 of 2023. The first case occurred
+in EW 46, with one fatal case in EW 48 (Figure 3) (7).
+
+Figure 3 [graph]. Distribution of confirmed cases of WEE by EW of
+symptom onset. EW 46 of 2023 to EW 1 of 2024, Argentina
+
+Of the cases 90% were male (n =3D 19). The age range is from 9 months to
+75 years, with the highest proportion of cases in the group over 60
+years of age, with 33% (n =3D 7), followed by the group between 50 and
+59 years of age with 29% (n =3D 6) (Figure 4) (7).
+
+Figure 4 [graph]. Distribution of WEE cases by age and sex, up to EW 1
+of 2024, Argentina.
+
+Regarding the reported symptoms, 86% had sudden onset fever (n =3D 18),
+76% headache (n =3D 16), 52% vomiting (n =3D 11), 48% mental confusion (n
+=3D 10), 43% drowsiness (n =3D 9), 38% other neurological manifestations
+(n =3D 8), 38% myalgias (n =3D 8), 19% tremors (n =3D 4), 14% had
+prostration (n =3D 3) and 14% reported no symptoms (n =3D 3) (Figure 5)
+(7).
+
+Figure 5 [graph]. Distribution of symptoms presented in confirmed
+cases of WEE in humans, up to EW 1 2024, Argentina.
+
+In all cases, confirmation was made through specific neutralizing
+antibodies in serum and cerebrospinal fluid (CSF) samples. All
+confirmed cases required hospitalization, of these, 8 required care in
+intensive care unit and 13 in general hospitalization. To date, 9
+cases have been discharged, 11 remain hospitalized and 1 has died. The
+fatal case corresponds to a 66-year-old man, with a previous diagnosis
+of diabetes, resident of the rural area in the province of Santa Fe,
+who onset symptoms on 26 Nov 2023 and died on 22 Dec 2023 (7).
+
+Regarding the history of exposure, in the cases for which this
+information is available (n =3D 7), 3 correspond to people who work as
+veterinarians, 2 construction workers, and 2 reported having carried
+out outdoor recreational activities (7).
+
+No human cases have been reported in Uruguay to date. The last human
+case of WEE reported in Uruguay was in 2009 (8).
+
+Figure 6 [map]. Geographic distribution of cases of Western Equine
+Encephalitis in humans and equines, up to EW 1 2024, Argentina and
+Uruguay.
+
+Figure 6 shows that the distribution of cases in humans is recorded in
+areas of Argentina with the highest number of suspected and confirmed
+cases in animals (2,4,6).
+
+Recommendations
+---------------
+On 19 Dec 2023, the Pan American Health Organization/World Health
+Organization (PAHO/WHO) issued an epidemiological alert on the risk to
+human health associated with the circulation of this virus and the
+high potential for spread to other countries in the Region of the
+Americas; alerting Member States to the importance of strengthening
+epidemiological surveillance and diagnosis of equine encephalitis,
+intersectoral coordination, surveillance and vector control in the
+Region (1).
+
+Below is a summary of the main recommendations for diagnosis,
+surveillance, prevention measures, and risk communication.
+
+Laboratory diagnosis of WEE in humans (9)
+-----------------------------------------
+The diagnosis of WEEV infection requires confirmation through
+laboratory techniques since the clinical presentation is not specific.
+These laboratory methods include virological (direct) diagnostic
+methods by nucleic acid amplification or potentially cell culture and
+serological (indirect) methods, which aim at detecting antibodies
+produced against the virus. Generally, samples for diagnosis include
+serum and cerebrospinal fluid (CSF). CSF should only be collected in
+cases with neurological symptoms and by clinical indication.
+
+Biosafety
+---------
+Fresh biological samples, of any type, should be considered
+potentially infectious. Samples should be processed and handled
+exclusively by trained professionals after a local risk assessment,
+considering all biosafety indications and appropriate personal
+protective equipment. Any procedure involving sample manipulation
+should be conducted in certified Class II biosafety cabinets. The
+manipulation of extracted RNA does not require biosafety cabinets.
+Additionally, all necessary precautions should be taken to prevent
+percutaneous exposure. The manipulation of materials or cultures with
+high viral load and/or high volume should be considered only after a
+local risk assessment considering the necessary containment measures
+is conducted.
+
+Virological methods
+-------------------
+The detection of viral RNA can be performed on serum and CSF samples
+using real-time or endpoint RT-PCR with specific primers (and probes)
+for WEEV. Generic protocols (pan-alphavirus) can also be used,
+followed by specific RT-PCR or nucleotide sequencing.
+
+Viral isolation is carried out using the same types of samples as
+RT-PCR. Mammalian cell lines (e.g., Vero cells) and mosquito cells
+(e.g., C6/36 cells) are used. In general, viral isolation is not
+routinely applied nor is it a requirement for diagnostic confirmation.
+Technical complexity, containment requirements, costs, as well as the
+need to identify isolated viruses by RT-PCR or immunofluorescence,
+limit the use and timeliness of the diagnosis by viral isolation. In
+fatal cases, RT-PCR (or viral isolation) can also be performed on
+tissue samples (in particular, nervous system tissue).
+
+A positive result by RT-PCR (or viral isolation) confirms the
+infection. However, viremia in WEEV infections is low and of short
+duration. Furthermore, if the case is detected in the neurological
+phase, the virus is likely no longer present in the blood. Therefore,
+a negative result does not rule out infection and, in cases of
+clinical and epidemiological suspicion, serological methods should be
+used. Differential diagnosis by molecular methods, particularly for
+other arboviruses that can cause neurological syndromes, should also
+be considered. Depending on the epidemiological situation, other
+viruses such as Eastern Equine Encephalitis (EEE) and Venezuelan
+Equine Encephalitis (VEE) could be considered as well as neurotropic
+flaviviruses (e.g. West Nile virus, St. Louis encephalitis virus)
+could be considered (Figure 7).
+
+While RT-PCR generally has a low sensitivity due to the [low] level
+and duration of viremia (it may be possible to detect the viral RNA up
+to 3 days after the onset of symptoms, at most 5 days), its high
+specificity and fast turnaround make it an important tool in the
+detecting WEEV infections. In an outbreak context with compatible
+symptoms, detection by RT-PCR in at least one case allows for the
+identification of the etiological agent.
+
+Serological methods
+-------------------
+IgM antibody detection is performed by ELISA using in-house
+methodologies. Detection can be performed in both serum and CSF. The
+kinetics of antibody production have not been fully described.
+However, it is likely that antibody detection can be performed early
+after the onset of symptoms, particularly neurological ones (Figure
+7).=20
+
+Antibody detection may be limited by potential cross-reactivity
+between WEEV and other alphaviruses; therefore, in cases with clinical
+and epidemiological suspicion, a positive result for IgM is considered
+a probable case of WEEV infection. Nevertheless, the specificity of
+IgM detection is estimated to be relatively high.
+
+The potential cross-reactivity can be assessed by conducting
+differential IgM serological tests for other alphaviruses,
+particularly chikungunya (CHIKV), always taking into account the
+epidemiological context. In cases of positivity to more than one
+alphavirus, additional clinical and epidemiological criteria should be
+used for the final interpretation of the case. Cases of
+cross-reactivity can also be evaluated by neutralization assays such
+as the plaque reduction neutralization test (PRNT) or
+microneutralization, ideally using paired samples (acute and
+convalescent samples collected with more than 7-10 days of difference,
+convalescent sample collected more than 14 days after the onset of
+symptoms). Depending on the epidemiological situation in the area
+where the infection likely happened, it is recommended to detect in
+parallel neutralizing antibodies against WEEV, EEEV, VEEV, CHIKV and
+Mayaro (MAYV) (Figure 7). Finally, the detection of specific
+antibodies in CSF confirms WEEV infection in a case with neurological
+manifestations.
+
+Sample storage
+--------------
+- Serum and CSF samples:
+*Keep refrigerated (2-8=B0C) if processed (or sent to a reference
+laboratory) within 48 hours.
+*Keep frozen (-10 to -20=B0C) if processed after 48 hours or within 7
+days.
+*Keep frozen (-70=B0C or less) if processed more than 1 week after
+collection. The sample is adequately preserved at -70=B0C for extended
+periods of time.
+- Tissue samples: freeze and ship on dry ice.
+- Avoid multiple freeze-thaw cycles.
+
+Figure 7 [diagram] . Algorithm for laboratory confirmation of Western
+Equine Encephalitis (WEE) virus infection.
+
+Human case surveillance
+-----------------------
+In areas at risk or with active outbreaks, it is recommended to
+implement or strengthen surveillance through the search for compatible
+neurological syndromes that do not have another defined diagnosis,
+taking into account the incubation period, geographical area and
+environmental conditions.
+
+Patient management and infection prevention measures in health
+facilities
+-------------------------------------------------------------------------
+There is no specific antiviral treatment. Most infections are
+characterized by a mild clinical presentation in which treatment is
+symptomatic. Patients presenting with neurologic symptoms should be
+evaluated by a specialist and require close monitoring.
+
+Prevention measures
+-------------------
+The preventive actions listed below must be organized within the
+framework of One Health, considering the inter-institutional and
+comprehensive action between animal health, human health, and the
+environment.
+
+Managing the environment
+------------------------
+Considering the ecology and biology of the main vectors of the WEE
+virus, the main prevention measure is the modification of the
+environment and the environmental management of the environment,
+seeking to reduce the number of mosquitoes and their contact with
+equids and humans. These measures include:
+- Filling or draining water collections, ponds, or temporary flooding
+sites that may serve as sites of female oviposition and breeding sites
+for mosquito larvae.
+- Elimination of weeds around the premises to reduce mosquito resting
+and shelter sites.
+- The equids can be protected by sheltering them in barns with
+mosquito nets, especially at times when mosquitoes are most active.
+- Avoid gatherings and movements of horses at fairs, sporting events,
+and similar activities.
+- Despite the fact that the main vectors do not have indoor habits, it
+is advisable to protect homes with mosquito nets on doors and windows;
+in this way other arboviruses are also prevented.
+
+Vector control
+--------------
+Vector control measures for WEE should be considered within the
+framework of Integrated Vector Management (IVM). It is important to
+consider that the decision to carry out vector control activities with
+insecticides depends on entomological surveillance data and the
+variables that may condition an increase in the risk of transmission,
+including insecticide resistance data.
+- Insecticide spraying may be considered as an additional measure and,
+where technically feasible, in areas of transmission where high
+mosquito populations are detected. The methodology should be
+established based on the ecology and behavior of the local vectors.
+
+Vaccination for equids
+----------------------
+Vaccines are available for equids. It is advisable to seek high
+vaccination coverage in susceptible equids in areas considered at risk
+and to carry out annual vaccination boosters in these equines.
+
+Personal protective measures
+----------------------------
+- Use of clothing that covers the legs and arms, especially in homes
+where someone is sick.
+- Use of repellents containing DEET, IR3535 or Icaridin, which may be
+applied to exposed skin or clothing; their use must be in strict
+accordance with the instructions on the product label.
+- Use wire mesh/mosquito netting on doors and windows.
+- Use of insecticide-treated or non-insecticide nets for daytime
+sleepers (e.g., pregnant women, infants, bedridden, elderly, and night
+shift workers).
+- During outbreaks, outdoor activities should be avoided during the
+mosquitoes' peak feeding period (dawn and dusk).
+
+References
+----------
+1. Pan American Health Organization/World Health Organization.
+Epidemiological alert: Risk to human health associated with Western
+Equine Encephalitis Virus infection in Equines, 19 December 2023.
+Washington, DC.: PAHO/WHO; 2023. Available from
+<https://www.paho.org/en/documents/epidemiological-alert-risk-human-healtha=
+ssociated-western-equine-encephalitis-virus>
+2. National Food Safety and Quality Service of Argentina. National
+Directorate of Animal Health. Dynamic dashboard with information on
+ongoing outbreaks of Western Equine Encephalomyelitis. Buenos Aires:
+SENASA; 2023 (accessed 9 Jan 2023). Available in Spanish from
+<https://qliksensebycores.senasa.gob.ar/sense/app/4c5153a2-24a4-4876-9c63-1=
+1f02c0350df/sheet/6c6d7b32-830d-41dd-b222-b2697148c623/state/analysis>
+3. Ministry of Health of the Argentine Republic. One human case of
+Western Equine Encephalitis was detected. 20 Dec 2023. Buenos Aires:
+MSAL; 2023. Press release. Available in Spanish from
+<https://www.argentina.gob.ar/noticias/sedetecto-un-caso-humano-de-encefali=
+tis-equina-del-oeste>
+4. Ministry of Livestock, Agriculture and Fisheries of Uruguay. Press
+Release: Encephalomyelitis Situation Report in Uruguay of 9 Jan 2024.
+Montevideo: MGAP. Available in Spanish from
+<https://www.gub.uy/ministerio-ganaderia-agriculturapesca/comunicacion/noti=
+cias/9012024-informe-situacion-actualizadoencefalomielitis-uruguay>
+5. Ministry of Health of the Argentine Republic. National
+Epidemiological Bulletin, epidemiological week 52, 2023. Western
+Equine Encephalitis (WEE) Update. Number 685. January 2024. Buenos
+Aires: MSAL; 2024. Available in Spanish from
+<https://bancos.salud.gob.ar/recurso/boletin-epidemiologico-nacional-n-685-=
+se-52-2023>
+6. Ministry of Health of the Argentine Republic. Equine
+Encephalomyelitis. 10 Jan 2024. Buenos Aires: MSAL; 2023. Press
+release. Available in Spanish from
+<https://www.argentina.gob.ar/senasa/encefalomielitis-equinas>
+7. Argentina International Health Regulations (IHR) National Focal
+Point (NFP). Communications received on 27 December 2023 and 9 January
+2024 via email. Buenos Aires; 27 Dec 2023 and 9 Jan 2024.
+Unpublished.
+8. Delfraro A, Burgue=F1o A, Morel N, et al. Fatal human case of
+Western equine encephalitis, Uruguay. Emerg Infect Dis (PMC3321764).
+2011 May. Available from
+<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3321764/>
+9. Pan American Health Organization/World Health Organization.
+Laboratory Guidelines for the Detection and Diagnosis of Human
+Infection with Western Equine Encephalitis Virus. 20 Dec 2023.
+Washington, D.C.: PAHO/WHO; 2023. Available from
+<https://www.paho.org/en/documents/laboratory-guidelines-detection-anddiagn=
+osis-western-equine-encephalitis-virus-human>
+
+--
+Communicated by:
+ProMED
+
+[The above report provides a broad overview and an update of the WEE
+human and equine outbreak in Argentina and reports the equine cases in
+Uruguay. Readers interested in seeing the figures cited in the above
+text can access them at the source URL. The report makes a strong case
+for the need for a holistic, One Health approach in dealing with
+outbreaks like this one. Although there are comments about mosquito
+vectors and the need to consider the ecology and biology of the main
+vectors of the WEE virus in order to control them, it is curious that
+the species of mosquitoes transmitting WEE virus in this outbreak are
+not mentioned in the review above or in the previous reports that have
+come to ProMED. If in fact mosquito surveillance is being carried out
+with detection of virus in them, ProMED would be interested in these
+findings. - Mod.TY
+
+ProMED maps:
+Argentina: <https://promedmail.org/promed-post?place=3D8714236,4>
+Uruguay: <https://promedmail.org/promed-post?place=3D8714236,11>]
+
+[See Also:
+Western equine encephalitis - Americas (04): Argentina (BA) fatal
+http://promedmail.org/post/20240113.8714180
+Western equine encephalitis - Americas (03): Argentina (BA) human,
+horse http://promedmail.org/post/20240113.8714176
+Western equine encephalitis - Americas (02): (Argentina) human,
+equine, vectors http://promedmail.org/post/20240103.8714032
+Western equine encephalitis - Americas (01): (Argentina, Paraguay)
+horse http://promedmail.org/post/20240103.8714036
+2023
+----
+Western equine encephalitis - Argentina (04): human, horse, WHO
+summary http://promedmail.org/post/20231229.8713965
+Western equine encephalitis - Argentina (03): (BA) 1st detection in
+sheep http://promedmail.org/post/20231223.8713863
+Western equine encephalitis - Argentina (02): (SF) human
+http://promedmail.org/post/20231220.8713826
+Western equine encephalitis - Americas: Argentina, Uruguay, horse
+http://promedmail.org/post/20231214.8713710
+Western equine encephalitis - Argentina: horse
+http://promedmail.org/post/20231201.8713440]
+.................................................ty/rd/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3DYUE173YFh5BK6xB5-qowF934wH5zQLSFLCOVgk5cKmBoMDAwdTAwMLR8Gdy=
+c_cpDVgx2sQ9omtOVoqMhMD_dXgbA-IM_np6xV1AT9eEgl-pYZxgqKGhRXrA3Ndjipjy3IqofyJ=
+iv7K7pGhrL8uYjE-G9ytF_W0Wdk0bY5o1xpZf9dMSAV__8rCMlpkTQQI9LgnBv3lGuYdEG5eHhy=
+u5W3bIzDLEDkkDU3ZMbpvnKVZXzksmj2K367Wd23R3MIS3Q76bJzmrbfJXXS76vq18-Ti-Qlac-=
+n1mQtXyAKvfApluMLcHotCnlGysQ6KW2HJCYo3eMe7ZQOVax-HELj2Js1B6sgHaT8wtm_lsb3rQ=
+_Jgq7suqzoXleavrE-VEBr7h8jNv_XmHXo-ng0-I4D2ZCYS328hpDwSqL2h7S8n12Qvre8y73KI=
+c3nwznpN9_Snzyi7iAzyuDTZ1I31nyFXkJtoEGAB0BygsXAAPrTpzH3-eSw_gGXt50VuHQ31MmT=
+GhYrww1QKxdP5FEI1Cjyw9BZJLqcq-DXcu95a2IkQVrMgCLzCGDK1FJnyvXnh7yMklDM1q4M4Lq=
+6aJD0j8vuKIqPEJ72al1vmsFufxi93PscjQjO9XIbo4_diRemZY7Qauy3l7Q50bkbgehDJnGxin=
+MGXPGmYTpqMSVqARLCSrTGj8vOG7npRcdV4cLXpwD5AE4TxQVLumUXCWCueicwToQ3rkZWyQcCu=
+dO0VOyA9DDlJvSTC2BBn_gDXhSrR4XEooJIYD70nhitzu8m7TA2IWVYAq3WiA-dlLH27azbLIwl=
+IcRdJczG72CezBb6aBupOWimxhym87hOA_cXdxR8ofQtIQDH2pHKWxAW9wUVHTDrBPA-0aGmhUE=
+Bj4PwmMTuz7GL7xFOmRHCtM72Ge7hfCRcpQOk4LsLOYx24y_sWtCfQ22XG1aHBQQZKSxJ1R4Nr0=
+Dp5BLEggCZrz5XcayIBTqiDo2_9wdoXA8_MaXiO-OnFrq0yh6Djp8udp6DD-JKY7L1CWVrFYuH2=
+IqZ9gmmmHysxe5o0aefbfyBH8BZL7lJi-ggbaJ8BIHFc8okoZ5BkYeb3hzCuA5R-RLrmJ_ezSPp=
+hq9rC5mugn8td5bQAW-m7HLr0JVytx18KyK5qr7Qafi6YzLvP8t_LMcuzFwqKpLwiWqRDB2m612=
+9GWEXF90Sl43nHiyxBQimarbZgBs0puahw_9nl_taCRkDzWNPhBIuLGztjjnomkh )
+############################################################
+############################################################
+
+--357d2e62d2754fa123eaa9b31685992a813de645d51a21f90b598ba1a04f
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=iso-8859-1
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>WESTERN EQUINE ENCEPHALITIS - AMERICAS (05): ARGENTINA, URUGUAY,<br>P=
+AHO/WHO<br>****************************************************************=
+*********<br>A ProMED-mail post<br><a href=3D"https://u19268662.ct.sendgrid=
+.net/ss/c/wscE2ng5fl6JrPIt48tisIijpefK5PNjW-mL-YZGnfgDOxU1G3gjwnPSi2Tfv3HA/=
+431/IURtswoaTESmz9a6HzhIPQ/h0/Ce9mZPgq7_s6yXwIcx87CmWpigxHogQKi0SpPy2W7ug">=
+http://www.promedmail.org</a><br>ProMED-mail is a program of the<br>Interna=
+tional Society for Infectious Diseases<br><a href=3D"https://u19268662.ct.s=
+endgrid.net/ss/c/wscE2ng5fl6JrPIt48tisCT5tpD4Upm3qyMCbcYSQvc/431/IURtswoaTE=
+Smz9a6HzhIPQ/h1/TLaTdZ1_OsocqwnFzpmW55BTpSmRkASL12xWohiJyvI">http://www.isi=
+d.org</a><br><br>Date: Wed 10 Jan 2024=0D<br>Source: Pan American Health Or=
+ganization (PAHO)/World Health<br>Organization (WHO) [edited]=0D<br><a href=
+=3D"https://u19268662.ct.sendgrid.net/ss/c/TLh_csrC34X_iXpbYoMam6uWvBZ1T4jW=
+wqkry5sFB8MN_NqdC9CJLLoReoZjLnwm7tG2wip65XJWL0HKNFWm8braRh7tvqLKRVDpdSlERnl=
+4xujjBW0YmZDVBef5lAWTXtHDbumEnCuaoHeISO3qgcaSaBY_d3Gui1WRJpzrlmU/431/IURtsw=
+oaTESmz9a6HzhIPQ/h2/l0fJrM2NI7CPLmuRHsAmJmW2mmv-3S2l5Jkw0gEa-r4">https://ww=
+w.paho.org/en/documents/epidemiological-update-western-equine-encephalitis-=
+region-americas-10-january-2024</a>=0D<br>=0D<br>=0D<br>Epidemiological Upd=
+ate -- Western Equine Encephalitis in the Region of<br>the Americas=0D<br>-=
+---------------------------------------------------------------------------=
+----=0D<br>=0D<br>Summary of the situation=0D<br>------------------------=0D=
+<br>On 19 Dec 2023, the Pan American Health Organization/World Health<br>Or=
+ganization (PAHO/WHO) warned about the risk to human health<br>associated w=
+ith the circulation of the western equine encephalitis<br>virus (WEE) (1). =
+From that date until 9 Jan 2024, 374 additional<br>outbreaks (equine outbre=
+ak: occurrence of one or more cases of WEE in<br>equines) in animals were r=
+eported (338 in Argentina and 36 in Uruguay)<br>and 21 human cases, all of =
+them in Argentina (2-6).=0D<br>=0D<br>Cases in animals=0D<br>--------------=
+--=0D<br>In Argentina, from 25 Nov 2023 to 9 Jan 2024, the National Food Sa=
+fety<br>and Quality Service (SENASA as per its acronym in Spanish) confirme=
+d<br>1258 outbreaks [equine cases] (40 diagnosed by laboratory and 1218 by<=
+br>clinical and epidemiology) which are registered in 15 provinces:<br>Buen=
+os Aires, Catamarca, Chaco, Corrientes, C=F3rdoba, Entre R=EDos,<br>Formosa=
+, La Pampa, La Rioja, Mendoza, R=EDo Negro, Santa Fe, San Luis,<br>Santiago=
+ del Estero and Salta. The highest proportion of cases in<br>animals was re=
+corded in the province of Buenos Aires, which accounts<br>for 60% of confir=
+med cases (2,6).=0D<br>=0D<br>In Uruguay, from 5 Dec 2023 to 9 Jan 2024, th=
+e Ministry of Livestock,<br>Agriculture and Fisheries (MGAP as per its acro=
+nym in Spanish)<br>confirmed 56 cases in equines in 15 departments of the c=
+ountry:<br>Artigas, Canelones, Durazno, Flores, Lavalleja, Montevideo, Pays=
+and=FA,<br>R=EDo Negro, Rivera, Rocha, Salto, San Jos=E9, Soriano, Tacuarem=
+b=F3 and<br>Treinta y Tres. The highest proportion of cases was recorded in=
+ the<br>department of Paysand=FA, which accounts for 23% of confirmed cases=
+<br>(4).=0D<br>=0D<br>Human WEE cases=0D<br>---------------=0D<br>In Argent=
+ina, a human case of western equine encephalitis was reported<br>in the cou=
+ntry on 20 Dec 2023, after more than 2 decades without<br>reported cases. T=
+he case corresponds to a 32-year-old man, a rural<br>worker, resident of th=
+e province of Santa Fe, who presented the onset<br>of symptoms on 19 Nov [2=
+023] (headache, myalgia, dizziness,<br>disorientation, and sudden onset fev=
+er). On 24 Nov [2023], he received<br>medical attention at a public health =
+facility in the province. He<br>required intensive care and mechanical vent=
+ilation for 12 days and was<br>discharged on 20 Dec 2023 (3,5,7).=0D<br>=0D=
+<br>In addition, and as a result of the active search up to<br>epidemiologi=
+cal week (EW) 52, 91 suspected cases were reported in 11<br>provinces, of w=
+hich 21 were laboratory-confirmed, including one death.<br>The confirmed ca=
+ses come from the provinces of Buenos Aires (n =3D 11),<br>Santa F=E9 (n =
+=3D 8), Entre R=EDos (n =3D 1) and Santiago del Estero (n =3D 1)<br>(Figure=
+ 1 and Figure 2) (5,7).=0D<br>=0D<br>Figure 1 [table; see source URL for al=
+l figures]. Human cases of<br>Western equine encephalitis by probable place=
+ of infection (province),<br>up to EW 52, 2023, Argentina.=0D<br>=0D<br>Fig=
+ure 2 [map]. Geographic distribution by locality of exposure of<br>confirme=
+d cases of WEE in humans [in] Argentina by symptom onset EW*<br>and eco-reg=
+ions, up to EW 1 of 2024.=0D<br>=0D<br>Regarding the distribution of cases =
+by epidemiological week, 71% of<br>cases occurred between EW 49 and 51 of 2=
+023. The first case occurred<br>in EW 46, with one fatal case in EW 48 (Fig=
+ure 3) (7).=0D<br>=0D<br>Figure 3 [graph]. Distribution of confirmed cases =
+of WEE by EW of<br>symptom onset. EW 46 of 2023 to EW 1 of 2024, Argentina=0D=
+<br>=0D<br>Of the cases 90% were male (n =3D 19). The age range is from 9 m=
+onths to<br>75 years, with the highest proportion of cases in the group ove=
+r 60<br>years of age, with 33% (n =3D 7), followed by the group between 50 =
+and<br>59 years of age with 29% (n =3D 6) (Figure 4) (7).=0D<br>=0D<br>Figu=
+re 4 [graph]. Distribution of WEE cases by age and sex, up to EW 1<br>of 20=
+24, Argentina.=0D<br>=0D<br>Regarding the reported symptoms, 86% had sudden=
+ onset fever (n =3D 18),<br>76% headache (n =3D 16), 52% vomiting (n =3D 11=
+), 48% mental confusion (n<br>=3D 10), 43% drowsiness (n =3D 9), 38% other =
+neurological manifestations<br>(n =3D 8), 38% myalgias (n =3D 8), 19% tremo=
+rs (n =3D 4), 14% had<br>prostration (n =3D 3) and 14% reported no symptoms=
+ (n =3D 3) (Figure 5)<br>(7).=0D<br>=0D<br>Figure 5 [graph]. Distribution o=
+f symptoms presented in confirmed<br>cases of WEE in humans, up to EW 1 202=
+4, Argentina.=0D<br>=0D<br>In all cases, confirmation was made through spec=
+ific neutralizing<br>antibodies in serum and cerebrospinal fluid (CSF) samp=
+les. All<br>confirmed cases required hospitalization, of these, 8 required =
+care in<br>intensive care unit and 13 in general hospitalization. To date, =
+9<br>cases have been discharged, 11 remain hospitalized and 1 has died. The=
+<br>fatal case corresponds to a 66-year-old man, with a previous diagnosis<=
+br>of diabetes, resident of the rural area in the province of Santa Fe,<br>=
+who onset symptoms on 26 Nov 2023 and died on 22 Dec 2023 (7).=0D<br>=0D<br=
+>Regarding the history of exposure, in the cases for which this<br>informat=
+ion is available (n =3D 7), 3 correspond to people who work as<br>veterinar=
+ians, 2 construction workers, and 2 reported having carried<br>out outdoor =
+recreational activities (7).=0D<br>=0D<br>No human cases have been reported=
+ in Uruguay to date. The last human<br>case of WEE reported in Uruguay was =
+in 2009 (8).=0D<br>=0D<br>Figure 6 [map]. Geographic distribution of cases =
+of Western Equine<br>Encephalitis in humans and equines, up to EW 1 2024, A=
+rgentina and<br>Uruguay.=0D<br>=0D<br>Figure 6 shows that the distribution =
+of cases in humans is recorded in<br>areas of Argentina with the highest nu=
+mber of suspected and confirmed<br>cases in animals (2,4,6).=0D<br>=0D<br>R=
+ecommendations=0D<br>---------------=0D<br>On 19 Dec 2023, the Pan American=
+ Health Organization/World Health<br>Organization (PAHO/WHO) issued an epid=
+emiological alert on the risk to<br>human health associated with the circul=
+ation of this virus and the<br>high potential for spread to other countries=
+ in the Region of the<br>Americas; alerting Member States to the importance=
+ of strengthening<br>epidemiological surveillance and diagnosis of equine e=
+ncephalitis,<br>intersectoral coordination, surveillance and vector control=
+ in the<br>Region (1).=0D<br>=0D<br>Below is a summary of the main recommen=
+dations for diagnosis,<br>surveillance, prevention measures, and risk commu=
+nication.=0D<br>=0D<br>Laboratory diagnosis of WEE in humans (9)=0D<br>----=
+-------------------------------------=0D<br>The diagnosis of WEEV infection=
+ requires confirmation through<br>laboratory techniques since the clinical =
+presentation is not specific.<br>These laboratory methods include virologic=
+al (direct) diagnostic<br>methods by nucleic acid amplification or potentia=
+lly cell culture and<br>serological (indirect) methods, which aim at detect=
+ing antibodies<br>produced against the virus. Generally, samples for diagno=
+sis include<br>serum and cerebrospinal fluid (CSF). CSF should only be coll=
+ected in<br>cases with neurological symptoms and by clinical indication.=0D=
+<br>=0D<br>Biosafety=0D<br>---------=0D<br>Fresh biological samples, of any=
+ type, should be considered<br>potentially infectious. Samples should be pr=
+ocessed and handled<br>exclusively by trained professionals after a local r=
+isk assessment,<br>considering all biosafety indications and appropriate pe=
+rsonal<br>protective equipment. Any procedure involving sample manipulation=
+<br>should be conducted in certified Class II biosafety cabinets. The<br>ma=
+nipulation of extracted RNA does not require biosafety cabinets.<br>Additio=
+nally, all necessary precautions should be taken to prevent<br>percutaneous=
+ exposure. The manipulation of materials or cultures with<br>high viral loa=
+d and/or high volume should be considered only after a<br>local risk assess=
+ment considering the necessary containment measures<br>is conducted.=0D<br>=0D=
+<br>Virological methods=0D<br>-------------------=0D<br>The detection of vi=
+ral RNA can be performed on serum and CSF samples<br>using real-time or end=
+point RT-PCR with specific primers (and probes)<br>for WEEV. Generic protoc=
+ols (pan-alphavirus) can also be used,<br>followed by specific RT-PCR or nu=
+cleotide sequencing.=0D<br>=0D<br>Viral isolation is carried out using the =
+same types of samples as<br>RT-PCR. Mammalian cell lines (e.g., Vero cells)=
+ and mosquito cells<br>(e.g., C6/36 cells) are used. In general, viral isol=
+ation is not<br>routinely applied nor is it a requirement for diagnostic co=
+nfirmation.<br>Technical complexity, containment requirements, costs, as we=
+ll as the<br>need to identify isolated viruses by RT-PCR or immunofluoresce=
+nce,<br>limit the use and timeliness of the diagnosis by viral isolation. I=
+n<br>fatal cases, RT-PCR (or viral isolation) can also be performed on<br>t=
+issue samples (in particular, nervous system tissue).=0D<br>=0D<br>A positi=
+ve result by RT-PCR (or viral isolation) confirms the<br>infection. However=
+, viremia in WEEV infections is low and of short<br>duration. Furthermore, =
+if the case is detected in the neurological<br>phase, the virus is likely n=
+o longer present in the blood. Therefore,<br>a negative result does not rul=
+e out infection and, in cases of<br>clinical and epidemiological suspicion,=
+ serological methods should be<br>used. Differential diagnosis by molecular=
+ methods, particularly for<br>other arboviruses that can cause neurological=
+ syndromes, should also<br>be considered. Depending on the epidemiological =
+situation, other<br>viruses such as Eastern Equine Encephalitis (EEE) and V=
+enezuelan<br>Equine Encephalitis (VEE) could be considered as well as neuro=
+tropic<br>flaviviruses (e.g. West Nile virus, St. Louis encephalitis virus)=
+<br>could be considered (Figure 7).=0D<br>=0D<br>While RT-PCR generally has=
+ a low sensitivity due to the [low] level<br>and duration of viremia (it ma=
+y be possible to detect the viral RNA up<br>to 3 days after the onset of sy=
+mptoms, at most 5 days), its high<br>specificity and fast turnaround make i=
+t an important tool in the<br>detecting WEEV infections. In an outbreak con=
+text with compatible<br>symptoms, detection by RT-PCR in at least one case =
+allows for the<br>identification of the etiological agent.=0D<br>=0D<br>Ser=
+ological methods=0D<br>-------------------=0D<br>IgM antibody detection is =
+performed by ELISA using in-house<br>methodologies. Detection can be perfor=
+med in both serum and CSF. The<br>kinetics of antibody production have not =
+been fully described.<br>However, it is likely that antibody detection can =
+be performed early<br>after the onset of symptoms, particularly neurologica=
+l ones (Figure<br>7).=20=0D<br>=0D<br>Antibody detection may be limited by =
+potential cross-reactivity<br>between WEEV and other alphaviruses; therefor=
+e, in cases with clinical<br>and epidemiological suspicion, a positive resu=
+lt for IgM is considered<br>a probable case of WEEV infection. Nevertheless=
+, the specificity of<br>IgM detection is estimated to be relatively high.=0D=
+<br>=0D<br>The potential cross-reactivity can be assessed by conducting<br>=
+differential IgM serological tests for other alphaviruses,<br>particularly =
+chikungunya (CHIKV), always taking into account the<br>epidemiological cont=
+ext. In cases of positivity to more than one<br>alphavirus, additional clin=
+ical and epidemiological criteria should be<br>used for the final interpret=
+ation of the case. Cases of<br>cross-reactivity can also be evaluated by ne=
+utralization assays such<br>as the plaque reduction neutralization test (PR=
+NT) or<br>microneutralization, ideally using paired samples (acute and<br>c=
+onvalescent samples collected with more than 7-10 days of difference,<br>co=
+nvalescent sample collected more than 14 days after the onset of<br>symptom=
+s). Depending on the epidemiological situation in the area<br>where the inf=
+ection likely happened, it is recommended to detect in<br>parallel neutrali=
+zing antibodies against WEEV, EEEV, VEEV, CHIKV and<br>Mayaro (MAYV) (Figur=
+e 7). Finally, the detection of specific<br>antibodies in CSF confirms WEEV=
+ infection in a case with neurological<br>manifestations.=0D<br>=0D<br>Samp=
+le storage=0D<br>--------------=0D<br>- Serum and CSF samples:=0D<br>*Keep =
+refrigerated (2-8=B0C) if processed (or sent to a reference<br>laboratory) =
+within 48 hours.=0D<br>*Keep frozen (-10 to -20=B0C) if processed after 48 =
+hours or within 7<br>days.=0D<br>*Keep frozen (-70=B0C or less) if processe=
+d more than 1 week after<br>collection. The sample is adequately preserved =
+at -70=B0C for extended<br>periods of time.=0D<br>- Tissue samples: freeze =
+and ship on dry ice.=0D<br>- Avoid multiple freeze-thaw cycles.=0D<br>=0D<b=
+r>Figure 7 [diagram] . Algorithm for laboratory confirmation of Western<br>=
+Equine Encephalitis (WEE) virus infection.=0D<br>=0D<br>Human case surveill=
+ance=0D<br>-----------------------=0D<br>In areas at risk or with active ou=
+tbreaks, it is recommended to<br>implement or strengthen surveillance throu=
+gh the search for compatible<br>neurological syndromes that do not have ano=
+ther defined diagnosis,<br>taking into account the incubation period, geogr=
+aphical area and<br>environmental conditions.=0D<br>=0D<br>Patient manageme=
+nt and infection prevention measures in health<br>facilities=0D<br>--------=
+-----------------------------------------------------------------=0D<br>The=
+re is no specific antiviral treatment. Most infections are<br>characterized=
+ by a mild clinical presentation in which treatment is<br>symptomatic. Pati=
+ents presenting with neurologic symptoms should be<br>evaluated by a specia=
+list and require close monitoring.=0D<br>=0D<br>Prevention measures=0D<br>-=
+------------------=0D<br>The preventive actions listed below must be organi=
+zed within the<br>framework of One Health, considering the inter-institutio=
+nal and<br>comprehensive action between animal health, human health, and th=
+e<br>environment.=0D<br>=0D<br>Managing the environment=0D<br>-------------=
+-----------=0D<br>Considering the ecology and biology of the main vectors o=
+f the WEE<br>virus, the main prevention measure is the modification of the<=
+br>environment and the environmental management of the environment,<br>seek=
+ing to reduce the number of mosquitoes and their contact with<br>equids and=
+ humans. These measures include:=0D<br>- Filling or draining water collecti=
+ons, ponds, or temporary flooding<br>sites that may serve as sites of femal=
+e oviposition and breeding sites<br>for mosquito larvae.=0D<br>- Eliminatio=
+n of weeds around the premises to reduce mosquito resting<br>and shelter si=
+tes.=0D<br>- The equids can be protected by sheltering them in barns with<b=
+r>mosquito nets, especially at times when mosquitoes are most active.=0D<br=
+>- Avoid gatherings and movements of horses at fairs, sporting events,<br>a=
+nd similar activities.=0D<br>- Despite the fact that the main vectors do no=
+t have indoor habits, it<br>is advisable to protect homes with mosquito net=
+s on doors and windows;<br>in this way other arboviruses are also prevented=
+.=0D<br>=0D<br>Vector control=0D<br>--------------=0D<br>Vector control mea=
+sures for WEE should be considered within the<br>framework of Integrated Ve=
+ctor Management (IVM). It is important to<br>consider that the decision to =
+carry out vector control activities with<br>insecticides depends on entomol=
+ogical surveillance data and the<br>variables that may condition an increas=
+e in the risk of transmission,<br>including insecticide resistance data.=0D=
+<br>- Insecticide spraying may be considered as an additional measure and,<=
+br>where technically feasible, in areas of transmission where high<br>mosqu=
+ito populations are detected. The methodology should be<br>established base=
+d on the ecology and behavior of the local vectors.=0D<br>=0D<br>Vaccinatio=
+n for equids=0D<br>----------------------=0D<br>Vaccines are available for =
+equids. It is advisable to seek high<br>vaccination coverage in susceptible=
+ equids in areas considered at risk<br>and to carry out annual vaccination =
+boosters in these equines.=0D<br>=0D<br>Personal protective measures=0D<br>=
+----------------------------=0D<br>- Use of clothing that covers the legs a=
+nd arms, especially in homes<br>where someone is sick.=0D<br>- Use of repel=
+lents containing DEET, IR3535 or Icaridin, which may be<br>applied to expos=
+ed skin or clothing; their use must be in strict<br>accordance with the ins=
+tructions on the product label.=0D<br>- Use wire mesh/mosquito netting on d=
+oors and windows.=0D<br>- Use of insecticide-treated or non-insecticide net=
+s for daytime<br>sleepers (e.g., pregnant women, infants, bedridden, elderl=
+y, and night<br>shift workers).=0D<br>- During outbreaks, outdoor activitie=
+s should be avoided during the<br>mosquitoes' peak feeding period (dawn and=
+ dusk).=0D<br>=0D<br>References=0D<br>----------=0D<br>1. Pan American Heal=
+th Organization/World Health Organization.<br>Epidemiological alert: Risk t=
+o human health associated with Western<br>Equine Encephalitis Virus infecti=
+on in Equines, 19 December 2023.<br>Washington, DC.: PAHO/WHO; 2023. Availa=
+ble from<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/TLh_csrC34X_i=
+XpbYoMam6uWvBZ1T4jWwqkry5sFB8MN_NqdC9CJLLoReoZjLnwmHSYkW96dJqS58GQIi4eJpjVW=
+Z47nJixkzLzAkEzOfsTFcHKaqw7xzXeQTw47BKW6XpW8dxW81etBSIRy7sm-BsJdBSnH4K593yB=
+uXwL4PTg/431/IURtswoaTESmz9a6HzhIPQ/h3/gaXJ_Ucy9WrKySSdvtEIUyxiijlr3ajFyVYP=
+vMgnqvQ">https://www.paho.org/en/documents/epidemiological-alert-risk-human=
+-healthassociated-western-equine-encephalitis-virus</a>=0D<br>2. National F=
+ood Safety and Quality Service of Argentina. National<br>Directorate of Ani=
+mal Health. Dynamic dashboard with information on<br>ongoing outbreaks of W=
+estern Equine Encephalomyelitis. Buenos Aires:<br>SENASA; 2023 (accessed 9 =
+Jan 2023). Available in Spanish from<br><a href=3D"https://u19268662.ct.sen=
+dgrid.net/ss/c/1abEAj23gf8R1iCCHGBZD3nQIetXyDNoDSY5-ZNeFWBbrP7wcQUnH5GByshj=
+vkJYNkoWf0zTWmgZOaSifCvSyYv_e3yFbiRqoY-RwixKOvnzOpRQ8It5Jhq8Ajo6e_RlyqA7a0j=
+PiDOXcXjlP8erXPnxjITnENHeOJYx5Ip8l_LCjg4JB4DI0FKOKFPBf98NrBcq9Ve4b2TjSKyG78=
+fFLQ/431/IURtswoaTESmz9a6HzhIPQ/h4/ZRk0e_fbqzUQ-vZREhiP4vFuppER_Kc71fPARIlC=
+hsE">https://qliksensebycores.senasa.gob.ar/sense/app/4c5153a2-24a4-4876-9c=
+63-11f02c0350df/sheet/6c6d7b32-830d-41dd-b222-b2697148c623/state/analysis</=
+a>=0D<br>3. Ministry of Health of the Argentine Republic. One human case of=
+<br>Western Equine Encephalitis was detected. 20 Dec 2023. Buenos Aires:<br=
+>MSAL; 2023. Press release. Available in Spanish from<br><a href=3D"https:/=
+/u19268662.ct.sendgrid.net/ss/c/TLh_csrC34X_iXpbYoMamxVCI_4HCUVc_pmGGUPIFT2=
+xiwza3fl8rOmRBHNhEOLTpgV0cITz119iAexLFpOTiXuU8nisXSwPptVevGUQJfW5uyjHTQcgQz=
+2JIFcvzQ6R5YDlr_f_H25dXeK69lPYig/431/IURtswoaTESmz9a6HzhIPQ/h5/x7cg1xY4AXDg=
+9j_H09e5tdrn7OYpEgyXFJwmrkz39Jg">https://www.argentina.gob.ar/noticias/sede=
+tecto-un-caso-humano-de-encefalitis-equina-del-oeste</a>=0D<br>4. Ministry =
+of Livestock, Agriculture and Fisheries of Uruguay. Press<br>Release: Encep=
+halomyelitis Situation Report in Uruguay of 9 Jan 2024.<br>Montevideo: MGAP=
+. Available in Spanish from<br><a href=3D"https://u19268662.ct.sendgrid.net=
+/ss/c/TLh_csrC34X_iXpbYoMam6tyYbT8abFaxOL05bS_63Cmf82Qjlr64m04-XQfwJ_GEDGEE=
+-52unPRYA7apG31t-TVFjZ5max4ex3x823aA6j-xWvHR4_QWZl2BX-S0q_8RNCZ7w5BYS0kwtTV=
+6Wx0gm3M6Tt9LJn0bU0S9zJcrgpRJKYSgK-6YssR0ful2Dx6GGZbLs80-s3Oj0T_VP4Kbg/431/=
+IURtswoaTESmz9a6HzhIPQ/h6/Q9p_ZnVEWQvaTfg78WCksuhvC70QovfYgbkUnMilGtA">http=
+s://www.gub.uy/ministerio-ganaderia-agriculturapesca/comunicacion/noticias/=
+9012024-informe-situacion-actualizadoencefalomielitis-uruguay</a>=0D<br>5. =
+Ministry of Health of the Argentine Republic. National<br>Epidemiological B=
+ulletin, epidemiological week 52, 2023. Western<br>Equine Encephalitis (WEE=
+) Update. Number 685. January 2024. Buenos<br>Aires: MSAL; 2024. Available =
+in Spanish from<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/yz2fdA=
+_g7iMSh8qzYPxBFn9GVyMNIFpy7ONWlW_rP6krkcr1Yir8YObGVL1lLe8kR63uuGm5TzfEec8FR=
+LfTEyrkAXfRxiVUVyrZu631RVuw-cUt-gOjjR72qnfsONTL/431/IURtswoaTESmz9a6HzhIPQ/=
+h7/GgcNp5MtBvSk6vCJVmNUjZhRSLhJbeaqg7F6PfN-lOI">https://bancos.salud.gob.ar=
+/recurso/boletin-epidemiologico-nacional-n-685-se-52-2023</a>=0D<br>6. Mini=
+stry of Health of the Argentine Republic. Equine<br>Encephalomyelitis. 10 J=
+an 2024. Buenos Aires: MSAL; 2023. Press<br>release. Available in Spanish f=
+rom<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/TLh_csrC34X_iXpbYo=
+MamxVCI_4HCUVc_pmGGUPIFT1e5LoBLLqNHqs9rjgJSnXA-a8qYVkKo5qGqBn7sUx9vdYFntRWL=
+e0faxlqPk6XCu0/431/IURtswoaTESmz9a6HzhIPQ/h8/jxOlB0UQpIdY6zc6Ch80KJZn7ea141=
+FmSuYDt3ezP6s">https://www.argentina.gob.ar/senasa/encefalomielitis-equinas=
+</a>=0D<br>7. Argentina International Health Regulations (IHR) National Foc=
+al<br>Point (NFP). Communications received on 27 December 2023 and 9 Januar=
+y<br>2024 via email. Buenos Aires; 27 Dec 2023 and 9 Jan 2024.<br>Unpublish=
+ed.=0D<br>8. Delfraro A, Burgue=F1o A, Morel N, et al. Fatal human case of<=
+br>Western equine encephalitis, Uruguay. Emerg Infect Dis (PMC3321764).<br>=
+2011 May. Available from<br><a href=3D"https://u19268662.ct.sendgrid.net/ss=
+/c/TLh_csrC34X_iXpbYoMam4A9fsUj-JRKIq2pLg5MiPRQWNbIZpN1XI6qfCoZzhjjfiiKYDOh=
+jyQgd9NSodEjIw/431/IURtswoaTESmz9a6HzhIPQ/h9/QyHkWA8_O6ihbNy5Ps7HxhZjKWa9DP=
+Zwi6unlagPR0g">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3321764/</a>=0D=
+<br>9. Pan American Health Organization/World Health Organization.<br>Labor=
+atory Guidelines for the Detection and Diagnosis of Human<br>Infection with=
+ Western Equine Encephalitis Virus. 20 Dec 2023.<br>Washington, D.C.: PAHO/=
+WHO; 2023. Available from<br><a href=3D"https://u19268662.ct.sendgrid.net/s=
+s/c/TLh_csrC34X_iXpbYoMam6uWvBZ1T4jWwqkry5sFB8PMh1gMM1R_B1RTvlRHc3vPd8XpOa1=
+g8BZ2v4GdCwYxyMhnRMYnh4AVZD1HbNOpRcqqE6960EjQolKlW1A20ckSb4s_2R4Kk7TpqfxozD=
+st2E-WcEwTU7uFwdLoATLB-M4/431/IURtswoaTESmz9a6HzhIPQ/h10/A1pIOZ14zof5t2v0V1=
+F6Ykg8-ktwKA-rmpwl6ApQCDs">https://www.paho.org/en/documents/laboratory-gui=
+delines-detection-anddiagnosis-western-equine-encephalitis-virus-human</a>=0D=
+<br>=0D<br>--=0D<br>Communicated by:=0D<br>ProMED<br><br>[The above report =
+provides a broad overview and an update of the WEE<br>human and equine outb=
+reak in Argentina and reports the equine cases in<br>Uruguay. Readers inter=
+ested in seeing the figures cited in the above<br>text can access them at t=
+he source URL. The report makes a strong case<br>for the need for a holisti=
+c, One Health approach in dealing with<br>outbreaks like this one. Although=
+ there are comments about mosquito<br>vectors and the need to consider the =
+ecology and biology of the main<br>vectors of the WEE virus in order to con=
+trol them, it is curious that<br>the species of mosquitoes transmitting WEE=
+ virus in this outbreak are<br>not mentioned in the review above or in the =
+previous reports that have<br>come to ProMED. If in fact mosquito surveilla=
+nce is being carried out<br>with detection of virus in them, ProMED would b=
+e interested in these<br>findings. - Mod.TY<br><br>ProMED maps:<br>Argentin=
+a: <a href=3D"https://u19268662.ct.sendgrid.net/ss/c/sSnCkKCWBvais3EuVAOvgy=
+2WOIX7pp1nXnn4AbwuQ3Z6WbkfhqXYXU-aTMPJ8yThMRKFgg2JrTUnemSRKQ1c5A/431/IURtsw=
+oaTESmz9a6HzhIPQ/h11/elCTXMW7Aml1ceR_5_GXfE8R5FIxuMH6GCzFTismDqI">https://p=
+romedmail.org/promed-post?place=3D8714236,4</a><br>Uruguay: <a href=3D"http=
+s://u19268662.ct.sendgrid.net/ss/c/sSnCkKCWBvais3EuVAOvgy2WOIX7pp1nXnn4Abwu=
+Q3Z6WbkfhqXYXU-aTMPJ8yTh9onJnd3LnVl065e9jJLEZw/431/IURtswoaTESmz9a6HzhIPQ/h=
+12/UXT6Du9tWaA31sFpMR7pOlldk9BitZXBX3n7k7OwKZs">https://promedmail.org/prom=
+ed-post?place=3D8714236,11</a>]<br><br>[See Also:<br>Western equine encepha=
+litis - Americas (04): Argentina (BA) fatal<br>http://promedmail.org/post/2=
+0240113.8714180=0D<br>Western equine encephalitis - Americas (03): Argentin=
+a (BA) human,<br>horse http://promedmail.org/post/20240113.8714176=0D<br>We=
+stern equine encephalitis - Americas (02): (Argentina) human,<br>equine, ve=
+ctors http://promedmail.org/post/20240103.8714032=0D<br>Western equine ence=
+phalitis - Americas (01): (Argentina, Paraguay)<br>horse http://promedmail.=
+org/post/20240103.8714036=0D<br>2023=0D<br>----=0D<br>Western equine enceph=
+alitis - Argentina (04): human, horse, WHO<br>summary http://promedmail.org=
+/post/20231229.8713965=0D<br>Western equine encephalitis - Argentina (03): =
+(BA) 1st detection in<br>sheep http://promedmail.org/post/20231223.8713863=0D=
+<br>Western equine encephalitis - Argentina (02): (SF) human<br>http://prom=
+edmail.org/post/20231220.8713826=0D<br>Western equine encephalitis - Americ=
+as: Argentina, Uruguay, horse<br>http://promedmail.org/post/20231214.871371=
+0=0D<br>Western equine encephalitis - Argentina: horse<br>http://promedmail=
+.org/post/20231201.8713440]<br>............................................=
+.....ty/rd/jh<br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3DYUE173YFh5BK6xB5-qowF934wH5zQLSFLCOVgk5cKmBoMDAwdT=
+AwMLR8Gdyc_cpDVgx2sQ9omtOVoqMhMD_dXgbA-IM_np6xV1AT9eEgl-pYZxgqKGhRXrA3Ndjip=
+jy3IqofyJiv7K7pGhrL8uYjE-G9ytF_W0Wdk0bY5o1xpZf9dMSAV__8rCMlpkTQQI9LgnBv3lGu=
+YdEG5eHhyu5W3bIzDLEDkkDU3ZMbpvnKVZXzksmj2K367Wd23R3MIS3Q76bJzmrbfJXXS76vq18=
+-Ti-Qlac-n1mQtXyAKvfApluMLcHotCnlGysQ6KW2HJCYo3eMe7ZQOVax-HELj2Js1B6sgHaT8w=
+tm_lsb3rQ_Jgq7suqzoXleavrE-VEBr7h8jNv_XmHXo-ng0-I4D2ZCYS328hpDwSqL2h7S8n12Q=
+vre8y73KIc3nwznpN9_Snzyi7iAzyuDTZ1I31nyFXkJtoEGAB0BygsXAAPrTpzH3-eSw_gGXt50=
+VuHQ31MmTGhYrww1QKxdP5FEI1Cjyw9BZJLqcq-DXcu95a2IkQVrMgCLzCGDK1FJnyvXnh7yMkl=
+DM1q4M4Lq6aJD0j8vuKIqPEJ72al1vmsFufxi93PscjQjO9XIbo4_diRemZY7Qauy3l7Q50bkbg=
+ehDJnGxinMGXPGmYTpqMSVqARLCSrTGj8vOG7npRcdV4cLXpwD5AE4TxQVLumUXCWCueicwToQ3=
+rkZWyQcCudO0VOyA9DDlJvSTC2BBn_gDXhSrR4XEooJIYD70nhitzu8m7TA2IWVYAq3WiA-dlLH=
+27azbLIwlIcRdJczG72CezBb6aBupOWimxhym87hOA_cXdxR8ofQtIQDH2pHKWxAW9wUVHTDrBP=
+A-0aGmhUEBj4PwmMTuz7GL7xFOmRHCtM72Ge7hfCRcpQOk4LsLOYx24y_sWtCfQ22XG1aHBQQZK=
+SxJ1R4Nr0Dp5BLEggCZrz5XcayIBTqiDo2_9wdoXA8_MaXiO-OnFrq0yh6Djp8udp6DD-JKY7L1=
+CWVrFYuH2IqZ9gmmmHysxe5o0aefbfyBH8BZL7lJi-ggbaJ8BIHFc8okoZ5BkYeb3hzCuA5R-RL=
+rmJ_ezSPphq9rC5mugn8td5bQAW-m7HLr0JVytx18KyK5qr7Qafi6YzLvP8t_LMcuzFwqKpLwiW=
+qRDB2m6129GWEXF90Sl43nHiyxBQimarbZgBs0puahw_9nl_taCRkDzWNPhBIuLGztjjnomkh" =
+target=3D"_blank" class=3D"Unsubscribe--unsubscribePreferences" style=3D"fo=
+nt-family:sans-serif;text-decoration:none;">Unsubscribe Preferences</a></di=
+v><br>############################################################<br>#####=
+#######################################################<br><br><img src=3D"=
+https://u19268662.ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/431/IURtswoaT=
+ESmz9a6HzhIPQ/ho.gif" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=
+=3D"height:1px !important;width:1px !important;border-width:0 !important;ma=
+rgin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;=
+margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !importa=
+nt;padding-right:0 !important;padding-left:0 !important;"/></body>
+</html>
+--357d2e62d2754fa123eaa9b31685992a813de645d51a21f90b598ba1a04f--

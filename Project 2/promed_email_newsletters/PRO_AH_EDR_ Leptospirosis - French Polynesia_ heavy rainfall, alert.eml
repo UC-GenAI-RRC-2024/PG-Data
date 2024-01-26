@@ -1,0 +1,470 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a98:c004:0:b0:1eb:e128:bbe3 with SMTP id l4csp3456129eic;
+        Sun, 14 Jan 2024 18:00:28 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IFzzOe7h7yeJ3okZPwErDvg+cxmLqNQPQRgmmx7A9MajsNt5bwnqfXOMdP2uRcg9Vc9LfzD
+X-Received: by 2002:a05:622a:450:b0:429:e568:e02e with SMTP id o16-20020a05622a045000b00429e568e02emr2781342qtx.21.1705284028307;
+        Sun, 14 Jan 2024 18:00:28 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1705284028; cv=none;
+        d=google.com; s=arc-20160816;
+        b=TAWKy3JFbgaZSFTbdBGYv4pcfap57ZKR2cGnJBzpyBcTH7X+bL39jnptWmCjo8JmTo
+         /hKEqWpd+rjvx8UZLDi/oTf2BhU/zbBi4obW8/1j0WWaUdX0mPv5BJOBH7RaJ/EOqvkZ
+         6PSnAGtyxMY8+62MQET19XTDEymLAnyZGfqQPjazepZ248TwaPP0Of/e0GDmKDI5EPaL
+         Vwi+CTWul6ju4UqmBbITAmWLKkUpLVKUPh4sgpSkojGi2TTgbkbxfcbIpoIpLc/d9OPl
+         oY0v5Jm7FunEPOBc80w3s70aHsc8/22M3RP2jQUbLVhcvZ3fC23Bn/nyMstQiM/ILb5c
+         6FfA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=+yYdRrcuHYYWcc3SLvar+cUVg2w8WdqMdxTmxTHeVq4=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=vUHM9rZXKDewmT2WwNa6A0w6QM9i09xY+nCLhWk9yYH+FBUQDslOMl0gQiQHCnNTw7
+         a6DRbzlY1OeWuBHENLlN92HQ0r1guKuOYgo2+4iy1EuynCZJG4Tji0693KZATx+HHavA
+         H2J6daCJcevY5ScR8rGp62uRuzoUxCXs5SkSYMhIUdOVrBTB7kJ1fnMD1SwnLi9mS+Y4
+         wkbTDbvVZle1Q4Zmq4Mps4IN6bUhiSXiGypFQA8raEDvWvj6+NQZ8xfMvCYPei0eHNMK
+         W3lwfyhs+cs3pMVR0+QdHJRR1AKtJ/jwxw6Tc3YZPDFO2gWJCw+pU+53wSKq4XdfVZOT
+         D0Zw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=w3LUfGql;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=MRJTbzeQ;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id b7-20020a05622a020700b00429be6281f3si7465755qtx.354.2024.01.14.18.00.27
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sun, 14 Jan 2024 18:00:28 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=w3LUfGql;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=MRJTbzeQ;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=+yYdRrcuHYYWcc3SLvar+cUVg2w8WdqMdxTmxTHeVq4=;
+	b=w3LUfGqlwms4zmWDPQi5T3RzqT6Vxkfj2UnEGBBMMicRrK1GJd0WcPwuJV91jpntgSt1
+	icTB75QtAkTH+xRMOBuxWaQyAqaUSypZ6PDmvpQge4R4xnMSAkQYsGbGjh82xku2Lvfz+j
+	1sMRGN+v1F9E1woaMuGvGU8GEfN/2OViZIAi95jjldEcidsI3X6cCGd4EAJejoYNyWbjRA
+	6epu08XN7dULlt198aDZspf4QiwmLebaCsGkLazzPfxh2bdQnRxzKArq52X2hTWLtzROiV
+	YDWTjMDR4/cAT0HU1OYmAT2X5htgo6WymIa/EVSRwSshkTkTolPd7TcSjVa2TQ4g==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=+yYdRrcuHYYWcc3SLvar+cUVg2w8WdqMdxTmxTHeVq4=;
+	b=MRJTbzeQ3hIfgRSJ2cDrIiZu3JyYCsD60qQPMpaheb/FvAXruZG7ZvSL7PF1BrOQxDMK
+	3xzxhb4hPG5D4A5LOipZXQWKfyLQOlv0n27CwL788IMWzhBznOGaZN2Gs0sk/OEJr2SgiY
+	HLTDNTF5wqbsyUyIYWyw/RqiyJtDl0bR0=
+Received: by filterdrecv-5579bc58-qpjw5 with SMTP id filterdrecv-5579bc58-qpjw5-1-65A491B7-81
+        2024-01-15 02:00:23.813614702 +0000 UTC m=+7715922.202304986
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-21 (SG) with HTTP
+	id WBxzboOZQvuHA9LYuRr9EQ
+	Mon, 15 Jan 2024 02:00:23.630 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=92a770db1c340d86a36748391175d671f577e85e621ceead7978728744bc
+Date: Mon, 15 Jan 2024 02:00:25 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <WBxzboOZQvuHA9LYuRr9EQ@geopod-ismtpd-21>
+Subject: PRO/AH/EDR> Leptospirosis - French Polynesia: heavy rainfall, alert
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iBZFOtEHK2QI5nH428skjgbLMrNraqq1TwwhIJ=2F?=
+ =?us-ascii?Q?VRrVuN2Jj4v=2FNwTVHn7+pRE58XSlRmIKBgPFNNK?=
+ =?us-ascii?Q?pzQpatvZD4q+FHJF=2FV1NAexZ=2F+SD6MsUjMnY43V?=
+ =?us-ascii?Q?l2u4u3bTiVrDQZjB8fVkOyOe3+Zg+CYbsHUoD+p?=
+ =?us-ascii?Q?xJbZODD2QZfUS=2Fd374p17Hqh1rCE12aoKxQi21?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUiShGf=2FO8XJWpH34Od4Nd?=
+ =?us-ascii?Q?fxXa6jil96uRcJkF+N+LeVnO1tx80ddOyoyOo=2Fc?=
+ =?us-ascii?Q?Brxcl3ERAm0cOY743=2FFH59DWiSf5OzXORh1DLKt?=
+ =?us-ascii?Q?hb1NMKty3PsA5ju0ZzxCrq1WQuZSEQf=2FJlWtgqv?=
+ =?us-ascii?Q?cZmsyCHlNUZsD=2FZIXwp94JBDASHl+EZLhFiUKKW?=
+ =?us-ascii?Q?cJP9hHNHN9qNYCaS1yMIwe7gX10IHWL=2FmC3r9A=2F?=
+ =?us-ascii?Q?T9z9zGqRns6HojogC7Qscb4Hx8igb2to+7aMjjg?=
+ =?us-ascii?Q?EVeZTciOsgBwndvk8ewCxoBVLyJn=2FANc7EmAe=2Fx?=
+ =?us-ascii?Q?2UABMmDaALzy8oFrGaUKWH7pLVrnlBR0ZI=2FKY6i?=
+ =?us-ascii?Q?pj0axwz3PvD=2FLxvxr7skiCqhQX9GIdR58nlDoV4?=
+ =?us-ascii?Q?GY58kkbpzz57W49B3Af3uSfuxA3tn=2Fxhh0dkf3w?=
+ =?us-ascii?Q?nh7BXvU+3yJRnBPRhwOtbYsJcvIXbl10wZBF=2FG6?=
+ =?us-ascii?Q?HrbjQMjrgY1cWm29J6c22wFDr63II+yP5VuoDKm?=
+ =?us-ascii?Q?19gaEFcKLNP3gj2TmI=2Ffn+0DUcp6xTh0QOpcm5j?=
+ =?us-ascii?Q?90q6GAAHPcN8g=2Fz2CFbSOxgtUB81hMs9MFGx37t?=
+ =?us-ascii?Q?QUDEgiOThIDDpGi19xEFfbIUb38ZxOrGf3qtkcf?=
+ =?us-ascii?Q?z43x4zr+cE7mtJoaU1phl1ExFqTspbSOvnocJ7B?=
+ =?us-ascii?Q?FfqN1QEGpGz+2bHTsD7CrJ8GQH1wJyOBsRa=2F1DV?=
+ =?us-ascii?Q?vSGEt9LAXMORcAFjd5pUEUzFLg7Br+jRXS9hMAK?=
+ =?us-ascii?Q?nTuu5iv=2FhkZzddUOfnaWiIRzhQ=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2EOWKhFijgt?=
+ =?us-ascii?Q?IrGGV0qBb5jRETdYSgfP6cgjD4FDCisoaJoMDAw?=
+ =?us-ascii?Q?dTAwMHEGCges3ftYLFyhlTHGlUV72alXeSKNR6q?=
+ =?us-ascii?Q?CFm8Ky680Tw-pVqiZ0aZ=5FZRl44OAP3GPmijroc=5F?=
+ =?us-ascii?Q?d58qLDWhvjJyK5bQBTpmKHzmAn=5FA6Ir3JLXO3R0?=
+ =?us-ascii?Q?bLOQSJ3GF9HrxFd-Q=3D=3D=2E6dLMOZtOxVXYda8C=5Fzc?=
+ =?us-ascii?Q?j8Va1mhfP8mP0O8gqMKaQvqdoMDAwdTAwMPnO63?=
+ =?us-ascii?Q?wx2rDAxF2sc4yysidmR7IU3XAD25WMHf8py55xg?=
+ =?us-ascii?Q?R4GidAUeNSRlkxB4fc0jlWrwS6rbsWOzibFdxdW?=
+ =?us-ascii?Q?j0jc3=5FDqxBrgdXfjc2=5FJ1iV-1UJ5i24rf6hCn78?=
+ =?us-ascii?Q?jfgxyuMuf6f7HtFchD7S1sKkaimJ-brp0GtUeQH?=
+ =?us-ascii?Q?d=5FSDudlB8yPS-TLfVhx3X4kMg=5FlgAl=5FZdFWuqSx?=
+ =?us-ascii?Q?ohXJLe1P9Z3j9gGRLjIHa7CAewAFmrcaW=5Fl0lk3?=
+ =?us-ascii?Q?XlVxoobewyeSHp0NgEl85mwBWP4QbrKt1fHVYm1?=
+ =?us-ascii?Q?L07Rt0aPLtZGVqMjg092tNAzvV9ipQZWlOvp59w?=
+ =?us-ascii?Q?Xvu51Zt=5FfmWUHiSXX3l7P2cPm5NUhLePdQI5raW?=
+ =?us-ascii?Q?fgyKuqFP7zfGamLOriDjQzVksBi3fFvHvloERoy?=
+ =?us-ascii?Q?dhUb1dsCVXsLWJlBpBZ7vT2rpLsWXsbJr-NPE03?=
+ =?us-ascii?Q?zTTMBv2MPkl6Z=5FBzUv1x9kowfZBz1JxdatRcsaY?=
+ =?us-ascii?Q?AJZDBOHsoJ4zqgJ9FKvKSH4EutN6lN8xVgjsR0B?=
+ =?us-ascii?Q?gr1RwfEhjjkOP9YXrZYxwvf6cu73foV7QVoF466?=
+ =?us-ascii?Q?FPeV0MHh6iNomVQNaXZ6AQSlew6leGaMR38fBP2?=
+ =?us-ascii?Q?tEu2jccFKKqYVusntK5lEpzmWfDJ-LbIRGGO-Um?=
+ =?us-ascii?Q?hBu6j2ijuVzPrgjp2eiGyxs1IS5mjVh7Dlm0MLX?=
+ =?us-ascii?Q?uJGVJA5pzzP0xPYusYcXsa6iRYNFBQa4Cnfc2Kv?=
+ =?us-ascii?Q?-MksO2ZJjp2ZPVjudRvi=5FQnM9L5J18VAZumwnp0?=
+ =?us-ascii?Q?m=5Fvozi0ThLLbwQ7FzaYh2vvq1LqDxWzvTwsYyzD?=
+ =?us-ascii?Q?Eludh7UWHol8IOlVv1030nZoSRXvIf8go3MZOtl?=
+ =?us-ascii?Q?dMtKgwvsJ6eu49dQalzTQ5JRIAF4LjzYnUU34Wy?=
+ =?us-ascii?Q?3vsTXFPPpl0UTCV4D2KRgp2GogAQdaIrp3nDIZU?=
+ =?us-ascii?Q?241tlOaYbSqWOXUqeLF=5Fi4GDWFGqR6TW5pLDTFl?=
+ =?us-ascii?Q?Qwh3GFIgjqqgDeuOL2aXO8YH6HAubifC7QCDMkv?=
+ =?us-ascii?Q?a8GXSXatymTFN6HNQ2aV0lm6rPgdD8kQhGJRGth?=
+ =?us-ascii?Q?GucpyA=3D=3D=3E?=
+
+--92a770db1c340d86a36748391175d671f577e85e621ceead7978728744bc
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=utf-8
+Mime-Version: 1.0
+
+LEPTOSPIROSIS - FRENCH POLYNESIA: HEAVY RAINFALL, ALERT
+*******************************************************
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+Date: Thu 11 Jan 2024 16:15 TAHT
+Source: Tahiti Info [in French, machine trans., edited]
+<https://www.tahiti-infos.com/Les-cas-de-leptospirose-en-forte-hausse_a2216=
+67.html>
+
+
+Eight cases of leptospirosis were identified during the first week of
+2024 in Tahiti, Raiatea and Huahine.
+
+It is an "epidemic wave" which can be attributed to the rainy episodes
+that have occurred recently in the Windward Islands and the Leeward
+Islands, estimate the health authorities in the latest weekly
+monitoring bulletin released Thursday [11 Jan 2024] by the Directorate
+of Health. Eight cases of leptospirosis -- a record figure over a week
+-- were identified in 39 samples between 1-7 Jan [2024]; 7 cases
+confirmed by PCR and 1 probable case were declared. Of these 8
+infections, 5 hospitalizations were reported, for a hospitalization
+rate of 62.5%.
+
+Among the 117 cases reported in 2023, the majority (64%) are active
+men aged 15 to 65. The majority of cases are located in Tahiti (60%),
+Raiatea (22%) and Huahine (6%). Two deaths from leptospirosis were
+reported in 2023: one in week 44 (a person over 60 years old) and one
+in week 51 (a person over 55 years old).
+
+The rainy season being a risk factor for leptospirosis, it is
+recommended that health professionals prescribe an RT-PCR immediately
+in the event of any suspicion of leptospirosis, followed by
+probabilistic antibiotic therapy (amoxicillin).
+
+[Byline: Jean-Pierre Viatge]
+
+--
+Communicated by:
+ProMED
+
+["French Polynesia is an overseas collectivity of France and its sole
+overseas country. It comprises 121 geographically dispersed islands
+and atolls stretching over more than 2000 kilometres (1200 mi) in the
+South Pacific Ocean. The total land area of French Polynesia is 3521
+square kilometres (1359 sq mi), with a population of 278 786 (August
+2022 census)."
+
+"French Polynesia is divided into 5 groups of islands:
+- the Society Islands archipelago, comprising the Windward Islands and
+the Leeward Islands
+- the Tuamotu Archipelago
+- the Gambier Islands
+- the Marquesas Islands
+- the Austral Islands.
+
+"Among its 121 islands and atolls, 75 were inhabited at the 2017
+census. Tahiti, which is in the Society Islands group, is the most
+populous island, being home to nearly 69% of the population of French
+Polynesia as of 2017. Papeete, located on Tahiti, is the capital of
+French Polynesia" (<https://en.wikipedia.org/wiki/French_Polynesia>).
+
+Leptospirosis data from 2007-2017 was summarized in the abstract below
+from <http://tinyurl.com/4zubsrfx>:
+"Leptospirosis is a worldwide zoonosis with higher incidence in
+tropical areas and is a neglected disease in the Pacific region.
+French Polynesia (FP) is a French overseas territory located in the
+South Pacific. Data on the epidemiology in FP are scarce. In this
+study, we describe our understanding of leptospirosis epidemiology in
+FP and discuss the prospects concerning this disease and its
+surveillance to better address preventive actions. We report 11 years
+of surveillance data between 1 Jan 2007 and 31 Dec 2017. Over the
+study period, 1356 confirmed and probable leptospirosis cases were
+reported. The mean annual incidence rate was 46.0 (95% confidence
+interval, 43.6-48.5) cases per 100 =E2=80=89000 inhabitants. We registered
+864 (63.7%) hospitalizations; of these, at least 270 (19.9%) were in
+the intensive care unit, and 24 patients (1.8%) died. Even if the
+incidence of leptospirosis is lower in FP compared to most of other
+Pacific countries and territories, our data confirm that the disease
+is highly endemic in FP. Despite all the preventive measures taken,
+leptospirosis remains a major public health concern in FP, thus
+highlighting the need to maintain intensive leptospirosis
+surveillance, medical staff training and provision of information to
+the general population."
+- Mod.JH
+
+ProMED map:
+French Polynesia, French Polynesia:
+<https://promedmail.org/promed-post?place=3D8714233,31048>]
+
+[See Also:
+2023
+----
+Leptospirosis - Fiji (02): heavy rainfall, flooding, fatal, alert
+http://promedmail.org/post/20230628.8710840
+Leptospirosis - Vanuatu, Fiji: heavy rainfall, flooding
+http://promedmail.org/post/20230322.8709101
+Leptospirosis - Fiji: (NO)
+http://promedmail.org/post/20230316.8708967
+2022
+----
+Leptospirosis - Fiji (05): fatal, more cases
+http://promedmail.org/post/20220524.8703449
+Leptospirosis - Fiji (04): fatal, more cases
+http://promedmail.org/post/20220403.8702385
+Leptospirosis - Fiji (03): fatal, more cases
+http://promedmail.org/post/20220326.8702241
+Leptospirosis - Fiji (02): illegal piggeries/improper wastewater
+disposal, flooding http://promedmail.org/post/20220319.8702072
+Leptospirosis - Fiji: fatal, flood-related
+http://promedmail.org/post/20220215.8701482
+2020
+----
+Leptospirosis - Fiji: (CE, NO) USA travel alert
+http://promedmail.org/post/20200928.7819377
+2019
+----
+Leptospirosis - Fiji: (CE) flood-related
+http://promedmail.org/post/20190129.6284444
+2016
+----
+Leptospirosis - Fiji (02): more cases, flood
+http://promedmail.org/post/20160813.4413510]
+.................................................mo/jh/rd/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3D1jym1XVPzlgLsuxad0myNy_A51P8qpI43WrflO33yPBoMDAwdTAwMGs5UOo=
+tXIl3fVxa71KknVSvP8p1Tz0KkJLUQ31bRRNAYJPu2twLOrlIPBA9ps4A0AW-klqCmU0aQCDG82=
+aPCiwhfGH5gqX5qSjMAvD98IYDqgKnCgxGrZh_xZr4lV_A9WO7vQrJWNlKA3g5H2AgUrYTiFWaK=
+TEdivu6P_1FljApEFBeNrsLKDTGwYr9o_uV0kjzJw1u8HZw8cdJbwvuHgPDr3tdr_B28iZilDaR=
+IsAn6eR5_HH38jKc6s46Jzs66Jle5hrFeMiIcq6CQccK3-M_6hyEHsGpKLQvZyl5j4wn4R1Ri3e=
+fVDyB8VFP5xBqQuroyhgCwCr7x2CZ0UcmAMgsR-1y2LPL-ru77BkR4wAaeLSKs5Y6WoS1f2hbVS=
+nAthmtA5yS_vMNA9nx-QJpnOTZqC6KoxXg9S6ZivcEBAUZpLj6TkR7ahaRz6yU1G60xpwX5HQpM=
+8sR6ID0A_ra4fkZCRcU1G4Pky0PJ5B-5hQhUkG6D2D9IrQtn5KEET91p69rnOS_6kcDjV4tX_Rc=
+d5a3DgM3cyF4EsVwK5DpZgzPUa2CrBQIUA79UxVqvKw2y_GNLn69NMbZxJXh7foST3AAnrcivMS=
+0jZRpag-JVPGrOn_cJ3UyOqxsZ0V4R4_7zPiRNkNT9fXWJMycFZnOlziiDvKEKJpLlVPxZ2r-fn=
+pEvmqNB3gQEteA3VtA5ZgjX-npHjjmDwbBZJmXJyBz0fP5RZ-S4h0mGC2kOCybEjHKU3Ij7HLpY=
+PW8WQfp2wPBEffZR_kSsM82YOk5HbGiftIHweZOa1qAtleSPS-JxnkpcUJehZPUEqpNUnNZxWSU=
+F272Zp6XP79hZcM0dQhGgXiv-w7Kq4qtrLthLarUFlgK3peLExUArBSoOiFdXNdbUjFJNd8oK2P=
+Go9WL4ppEK7Vo-oafIl1PxTtKW55WFas1zTVnRkQC8CfCtC7f8nWpvZ4vofBkMUQw8MCrGjmCOX=
+LzeqLid8FaYVg5MSEKjh1V8YQ6yi0pj8w0Z4vb7UsH3oqWHOIfObH2Y3yPzlYP7y2b5W4luX3Ol=
+G67GxroTvaPo_2i5yHiyxtBALEFWivYaaVVJRjxgUrea90QjnkdcvMQhquQCMU530Te_k7SXAUm=
+Bh2njmS14mZ1OKmP0i7ATWsSkGijeETIzAR-yYReeZbA_HEBKvdC1rxtkhSyIw7y )
+############################################################
+############################################################
+
+--92a770db1c340d86a36748391175d671f577e85e621ceead7978728744bc
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>LEPTOSPIROSIS - FRENCH POLYNESIA: HEAVY RAINFALL, ALERT<br>**********=
+*********************************************<br>A ProMED-mail post<br><a h=
+ref=3D"https://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisIijpefK5=
+PNjW-mL-YZGnfgDOxU1G3gjwnPSi2Tfv3HA/430/rqFpoP7jSaiJ5U15XXUC2w/h0/uv1Qjkmes=
+yBLNxslnWGoW4WY3yjpelJJBxraq_jfE1Y">http://www.promedmail.org</a><br>ProMED=
+-mail is a program of the<br>International Society for Infectious Diseases<=
+br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisC=
+T5tpD4Upm3qyMCbcYSQvc/430/rqFpoP7jSaiJ5U15XXUC2w/h1/T8Nyj-rbjOJd156EcbzH9YM=
+oNzeSYZEQAeXDiseBI_Y">http://www.isid.org</a><br><br>Date: Thu 11 Jan 2024 =
+16:15 TAHT=0D<br>Source: Tahiti Info [in French, machine trans., edited]=0D=
+<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/TLh_csrC34X_iXpbYoMam=
+2NTGJQ1kzH5exx49nGKQQgS2DCeIWLc29bY_9Ccy9AXeBr_k0kfIqfRESs21DWX-fwTk3-k8EVN=
+rs1vuE8KugtA1GLFYLk80SPuNmudT9q7/430/rqFpoP7jSaiJ5U15XXUC2w/h2/mqs9cNNoye8i=
+fJyRr6FApoUDS8X9EFD7RyxnCo7I-wA">https://www.tahiti-infos.com/Les-cas-de-le=
+ptospirose-en-forte-hausse_a221667.html</a>=0D<br>=0D<br>=0D<br>Eight cases=
+ of leptospirosis were identified during the first week of<br>2024 in Tahit=
+i, Raiatea and Huahine.=0D<br>=0D<br>It is an "epidemic wave" which can be =
+attributed to the rainy episodes<br>that have occurred recently in the Wind=
+ward Islands and the Leeward<br>Islands, estimate the health authorities in=
+ the latest weekly<br>monitoring bulletin released Thursday [11 Jan 2024] b=
+y the Directorate<br>of Health. Eight cases of leptospirosis -- a record fi=
+gure over a week<br>-- were identified in 39 samples between 1-7 Jan [2024]=
+; 7 cases<br>confirmed by PCR and 1 probable case were declared. Of these 8=
+<br>infections, 5 hospitalizations were reported, for a hospitalization<br>=
+rate of 62.5%.=0D<br>=0D<br>Among the 117 cases reported in 2023, the major=
+ity (64%) are active<br>men aged 15 to 65. The majority of cases are locate=
+d in Tahiti (60%),<br>Raiatea (22%) and Huahine (6%). Two deaths from lepto=
+spirosis were<br>reported in 2023: one in week 44 (a person over 60 years o=
+ld) and one<br>in week 51 (a person over 55 years old).=0D<br>=0D<br>The ra=
+iny season being a risk factor for leptospirosis, it is<br>recommended that=
+ health professionals prescribe an RT-PCR immediately<br>in the event of an=
+y suspicion of leptospirosis, followed by<br>probabilistic antibiotic thera=
+py (amoxicillin).=0D<br>=0D<br>[Byline: Jean-Pierre Viatge]=0D<br>=0D<br>--=0D=
+<br>Communicated by:=0D<br>ProMED<br><br>["French Polynesia is an overseas =
+collectivity of France and its sole<br>overseas country. It comprises 121 g=
+eographically dispersed islands<br>and atolls stretching over more than 200=
+0 kilometres (1200 mi) in the<br>South Pacific Ocean. The total land area o=
+f French Polynesia is 3521<br>square kilometres (1359 sq mi), with a popula=
+tion of 278 786 (August<br>2022 census)."=0D<br>=0D<br>"French Polynesia is=
+ divided into 5 groups of islands:=0D<br>- the Society Islands archipelago,=
+ comprising the Windward Islands and<br>the Leeward Islands=0D<br>- the Tua=
+motu Archipelago=0D<br>- the Gambier Islands=0D<br>- the Marquesas Islands=0D=
+<br>- the Austral Islands.=0D<br>=0D<br>"Among its 121 islands and atolls, =
+75 were inhabited at the 2017<br>census. Tahiti, which is in the Society Is=
+lands group, is the most<br>populous island, being home to nearly 69% of th=
+e population of French<br>Polynesia as of 2017. Papeete, located on Tahiti,=
+ is the capital of<br>French Polynesia" (<a href=3D"https://u19268662.ct.se=
+ndgrid.net/ss/c/u6Jy221DtLTd6phwYNECndCVDGULFcCLoA-Mb23Mb1UlaMLsurniCfke9xq=
+1h5n85xBerfF36_y9INCb0gtlQg/430/rqFpoP7jSaiJ5U15XXUC2w/h3/7Yf-De-ky45pVwgsZ=
+r9QghrAhidl8mhsa2SNpmcl8QY">https://en.wikipedia.org/wiki/French_Polynesia<=
+/a>).=0D<br>=0D<br>Leptospirosis data from 2007-2017 was summarized in the =
+abstract below<br>from <a href=3D"https://u19268662.ct.sendgrid.net/ss/c/Dg=
+IMzhc9xO6P0drrFfDxwfYmwYtDX2L7vNjY_orxcHW1e2AbKaWTCjJhF_s_hzfR/430/rqFpoP7j=
+SaiJ5U15XXUC2w/h4/D6QncbBUy1u9gT1FLw9Nh3988Bcl27QvN2RaaWtLSC0">http://tinyu=
+rl.com/4zubsrfx</a>:=0D<br>"Leptospirosis is a worldwide zoonosis with high=
+er incidence in<br>tropical areas and is a neglected disease in the Pacific=
+ region.<br>French Polynesia (FP) is a French overseas territory located in=
+ the<br>South Pacific. Data on the epidemiology in FP are scarce. In this<b=
+r>study, we describe our understanding of leptospirosis epidemiology in<br>=
+FP and discuss the prospects concerning this disease and its<br>surveillanc=
+e to better address preventive actions. We report 11 years<br>of surveillan=
+ce data between 1 Jan 2007 and 31 Dec 2017. Over the<br>study period, 1356 =
+confirmed and probable leptospirosis cases were<br>reported. The mean annua=
+l incidence rate was 46.0 (95% confidence<br>interval, 43.6-48.5) cases per=
+ 100 =E2=80=89000 inhabitants. We registered<br>864 (63.7%) hospitalization=
+s; of these, at least 270 (19.9%) were in<br>the intensive care unit, and 2=
+4 patients (1.8%) died. Even if the<br>incidence of leptospirosis is lower =
+in FP compared to most of other<br>Pacific countries and territories, our d=
+ata confirm that the disease<br>is highly endemic in FP. Despite all the pr=
+eventive measures taken,<br>leptospirosis remains a major public health con=
+cern in FP, thus<br>highlighting the need to maintain intensive leptospiros=
+is<br>surveillance, medical staff training and provision of information to<=
+br>the general population."=0D<br>- Mod.JH<br><br>ProMED map:<br>French Pol=
+ynesia, French Polynesia:<br><a href=3D"https://u19268662.ct.sendgrid.net/s=
+s/c/sSnCkKCWBvais3EuVAOvgy2WOIX7pp1nXnn4AbwuQ3Z6WbkfhqXYXU-aTMPJ8yThJShq0zT=
+wlYiIgp2m-n5RgA/430/rqFpoP7jSaiJ5U15XXUC2w/h5/utCWFMZnFA6Cn2lvaa3agBPyxAUX5=
+l2b00cjRkGhqqk">https://promedmail.org/promed-post?place=3D8714233,31048</a=
+>]<br><br>[See Also:<br>2023=0D<br>----=0D<br>Leptospirosis - Fiji (02): he=
+avy rainfall, flooding, fatal, alert<br>http://promedmail.org/post/20230628=
+.8710840=0D<br>Leptospirosis - Vanuatu, Fiji: heavy rainfall, flooding<br>h=
+ttp://promedmail.org/post/20230322.8709101=0D<br>Leptospirosis - Fiji: (NO)=
+<br>http://promedmail.org/post/20230316.8708967=0D<br>2022=0D<br>----=0D<br=
+>Leptospirosis - Fiji (05): fatal, more cases<br>http://promedmail.org/post=
+/20220524.8703449=0D<br>Leptospirosis - Fiji (04): fatal, more cases<br>htt=
+p://promedmail.org/post/20220403.8702385=0D<br>Leptospirosis - Fiji (03): f=
+atal, more cases<br>http://promedmail.org/post/20220326.8702241=0D<br>Lepto=
+spirosis - Fiji (02): illegal piggeries/improper wastewater<br>disposal, fl=
+ooding http://promedmail.org/post/20220319.8702072=0D<br>Leptospirosis - Fi=
+ji: fatal, flood-related<br>http://promedmail.org/post/20220215.8701482=0D<=
+br>2020=0D<br>----=0D<br>Leptospirosis - Fiji: (CE, NO) USA travel alert<br=
+>http://promedmail.org/post/20200928.7819377=0D<br>2019=0D<br>----=0D<br>Le=
+ptospirosis - Fiji: (CE) flood-related<br>http://promedmail.org/post/201901=
+29.6284444=0D<br>2016=0D<br>----=0D<br>Leptospirosis - Fiji (02): more case=
+s, flood<br>http://promedmail.org/post/20160813.4413510]<br>...............=
+..................................mo/jh/rd/jh<br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3D1jym1XVPzlgLsuxad0myNy_A51P8qpI43WrflO33yPBoMDAwdT=
+AwMGs5UOotXIl3fVxa71KknVSvP8p1Tz0KkJLUQ31bRRNAYJPu2twLOrlIPBA9ps4A0AW-klqCm=
+U0aQCDG82aPCiwhfGH5gqX5qSjMAvD98IYDqgKnCgxGrZh_xZr4lV_A9WO7vQrJWNlKA3g5H2Ag=
+UrYTiFWaKTEdivu6P_1FljApEFBeNrsLKDTGwYr9o_uV0kjzJw1u8HZw8cdJbwvuHgPDr3tdr_B=
+28iZilDaRIsAn6eR5_HH38jKc6s46Jzs66Jle5hrFeMiIcq6CQccK3-M_6hyEHsGpKLQvZyl5j4=
+wn4R1Ri3efVDyB8VFP5xBqQuroyhgCwCr7x2CZ0UcmAMgsR-1y2LPL-ru77BkR4wAaeLSKs5Y6W=
+oS1f2hbVSnAthmtA5yS_vMNA9nx-QJpnOTZqC6KoxXg9S6ZivcEBAUZpLj6TkR7ahaRz6yU1G60=
+xpwX5HQpM8sR6ID0A_ra4fkZCRcU1G4Pky0PJ5B-5hQhUkG6D2D9IrQtn5KEET91p69rnOS_6kc=
+DjV4tX_Rcd5a3DgM3cyF4EsVwK5DpZgzPUa2CrBQIUA79UxVqvKw2y_GNLn69NMbZxJXh7foST3=
+AAnrcivMS0jZRpag-JVPGrOn_cJ3UyOqxsZ0V4R4_7zPiRNkNT9fXWJMycFZnOlziiDvKEKJpLl=
+VPxZ2r-fnpEvmqNB3gQEteA3VtA5ZgjX-npHjjmDwbBZJmXJyBz0fP5RZ-S4h0mGC2kOCybEjHK=
+U3Ij7HLpYPW8WQfp2wPBEffZR_kSsM82YOk5HbGiftIHweZOa1qAtleSPS-JxnkpcUJehZPUEqp=
+NUnNZxWSUF272Zp6XP79hZcM0dQhGgXiv-w7Kq4qtrLthLarUFlgK3peLExUArBSoOiFdXNdbUj=
+FJNd8oK2PGo9WL4ppEK7Vo-oafIl1PxTtKW55WFas1zTVnRkQC8CfCtC7f8nWpvZ4vofBkMUQw8=
+MCrGjmCOXLzeqLid8FaYVg5MSEKjh1V8YQ6yi0pj8w0Z4vb7UsH3oqWHOIfObH2Y3yPzlYP7y2b=
+5W4luX3OlG67GxroTvaPo_2i5yHiyxtBALEFWivYaaVVJRjxgUrea90QjnkdcvMQhquQCMU530T=
+e_k7SXAUmBh2njmS14mZ1OKmP0i7ATWsSkGijeETIzAR-yYReeZbA_HEBKvdC1rxtkhSyIw7y" =
+target=3D"_blank" class=3D"Unsubscribe--unsubscribePreferences" style=3D"fo=
+nt-family:sans-serif;text-decoration:none;">Unsubscribe Preferences</a></di=
+v><br>############################################################<br>#####=
+#######################################################<br><br><img src=3D"=
+https://u19268662.ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/430/rqFpoP7jS=
+aiJ5U15XXUC2w/ho.gif" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=
+=3D"height:1px !important;width:1px !important;border-width:0 !important;ma=
+rgin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;=
+margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !importa=
+nt;padding-right:0 !important;padding-left:0 !important;"/></body>
+</html>
+--92a770db1c340d86a36748391175d671f577e85e621ceead7978728744bc--

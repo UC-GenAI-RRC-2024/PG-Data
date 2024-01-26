@@ -1,0 +1,382 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a98:c004:0:b0:1eb:e128:bbe3 with SMTP id l4csp3969404eic;
+        Mon, 15 Jan 2024 14:51:14 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IESpbnueepP4etcnY6iUQNhn84hisbK24zksuZdpx/NgldTynBxvPRvPsu4c1dPBYURBA1l
+X-Received: by 2002:a05:6830:e81:b0:6dd:db92:7835 with SMTP id dp1-20020a0568300e8100b006dddb927835mr5490049otb.75.1705359074362;
+        Mon, 15 Jan 2024 14:51:14 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1705359074; cv=none;
+        d=google.com; s=arc-20160816;
+        b=yMXnoumUocYcvL6+U9du8mv1PRgFbpEhPSNaUrCSZyTcZdSas0SkH6NSB4uN9eD4Og
+         Lfw8GeAI0PHwGX/By62EYjNUcXe62xvomBlXSpFvBCUIRF7f8XoGbnrxHVz1IGtMX30i
+         /qqm5GUWvDRc2dQsVmQC/LzyB17HK/8boHruxbB2r6Q4K9K/xTnAALBvPUVGybwIvIQR
+         aD6OgVcV6MTGaq63p5T00CeGjh2EOE5z+kdFw6jQBP7DszMK6LiEyrP01HXpM7IaQIJw
+         KwzsqaZvSZombSZRu0AT2L6vFr8cHw9G1PUPAhP7GzYLa1KUuojmSf4112gdbAFqLQJD
+         LmKg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=on/kiPurVn5vcaHy0osRZkacviUENLEItOB6qBa7Kc4=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=jNMfAr0R+0il9p8TJ/oWNUOxD9GZmMKSmoWAgdeifasZ19BS1TT/7e8qwqxUmUM4uw
+         iE94oCpiDB9WgyDTIBqViMxEwaRMcNKSygWTi+BDgnybTVin1Y0I/oCW5VdIM/1xFiKg
+         e1bp4ATt/WNJ4Zmjzi4dAEVdjbrIBPSlFVNeuAb+APjPE40MlFwT/zT8eajeZLN0ATnI
+         pYoVjjocL0bHnvQgbj+PNBhPuKU6PNURqXm0Pi+HD5sj+A31P5eF25zbYOXVGVL7Haxw
+         tP5bk9Lc4g1dLWPvoCxtC2EuJhYuPHhCD+yZ0Yf7SLRgOSa39MAzX5VPf7YbHoizxuPN
+         k8cw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=TKZ3CfB3;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=eI3Gxw4w;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id v6-20020a05622a130600b00429f6bca330si1791942qtk.366.2024.01.15.14.51.13
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 15 Jan 2024 14:51:14 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=TKZ3CfB3;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=eI3Gxw4w;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=on/kiPurVn5vcaHy0osRZkacviUENLEItOB6qBa7Kc4=;
+	b=TKZ3CfB3Tr9pL6SEwsf+BIcbhnEm7/CuI8N29HrQx+rimy2XGsJDp73b4jq/sVYPdPib
+	aMsBuCGhI27uynqGSbDi7JCxzsnrXLWejrryl3Xruzy4ih6wOLTf6vnKyrjJQUxQcq0U42
+	sPohjhxooQ+UIyCsCg4qnN+V9ma5ORzTpDWLXNrzad6R9MxGEANlBfFm7958ZGxMkOhaFs
+	pXBoUgy4QgalLY1Dri0sqWPtC7mGrDY+2/dyN07Cx3axdIswNfiRzvu/npBf1HVVHC6xZp
+	6fXX+IX75afXryzjohI/QO0jeZYAnVfJj+aLtkv6PKeKkR638XNL4+KaxuzC/SRQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=on/kiPurVn5vcaHy0osRZkacviUENLEItOB6qBa7Kc4=;
+	b=eI3Gxw4wE30P0OWjZjahsYXZkPKcPLR9Soikcn/U3GRA07XMwAp9oHNEzp9vd9F0guZq
+	daadS6E6RtFEgM/iN5g3IqkojZ8i1tv7uFpjZrlh7xjLrdHD0a+pgU4HLJ7S67/PixM7VU
+	HW4Y0KxhlQ+QVRF+WjOSQn2EEn2YyYjOQ=
+Received: by filterdrecv-canary-8494898689-mtmgw with SMTP id filterdrecv-canary-8494898689-mtmgw-1-65A5B6DF-24
+        2024-01-15 22:51:11.570892888 +0000 UTC m=+7791012.111026025
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-28 (SG) with HTTP
+	id Xe9DnXyUStqigM4MigriWA
+	Mon, 15 Jan 2024 22:51:11.416 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=7884268441d3d8b849bee46552ebf4a59797cbcb4b0412940e5588430234
+Date: Mon, 15 Jan 2024 22:51:13 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <Xe9DnXyUStqigM4MigriWA@geopod-ismtpd-28>
+Subject: PRO/EDR> Foodborne illness - =?UTF-8?B?VMO8cmtpeWU6?= (SU) RFI
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iB=2F3gi9Snnq+TMgCmN0ICqEPPhSXIqqApiH4m5r?=
+ =?us-ascii?Q?AbUA5FwgYqFgzRuT6evnSuVte3br3TIcU2uElaA?=
+ =?us-ascii?Q?bfvApB04GvC9M7Coxchsa+ZV7M1vxfIJncyWZJo?=
+ =?us-ascii?Q?hFs1gXZ0DQWmubCraEbryb+Dt88MybK8jG3ankb?=
+ =?us-ascii?Q?gtuhM3eoFmzewJINjAGtm2iMGqgGUo09IcL2aG?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUhc93xcG=2F095a5S4+mt=2FG?=
+ =?us-ascii?Q?uYUpctI=2FOGD2dwyi+uvm2j4FCdvuw0l9zcHM8iA?=
+ =?us-ascii?Q?mojOvTXq7jOpDFFNtfsYkHQYACEW8pq1BXXqYmH?=
+ =?us-ascii?Q?oGTsnt6QpE2ZV5WVqnpwfXWoLXx7+4bTz0zE24k?=
+ =?us-ascii?Q?w0FSytsONWbexHuDxhkg+gEj+maC6BG5IbAlO5X?=
+ =?us-ascii?Q?FDo083Qq16FVHSBaWAII2ZIMDMrHvhYbDZuvcOm?=
+ =?us-ascii?Q?Qns52OIsDCVnYkGes4EGJ0lEtP+uy883Ls4qiL4?=
+ =?us-ascii?Q?12Gkpmd4BoN=2FT4Fwpt0WBH9kEsQw3RxAWsYAaND?=
+ =?us-ascii?Q?WeTA5cNEB6hP9Yza41zlEMLKPYNIsdpIkuRCIrs?=
+ =?us-ascii?Q?w2CDOfPFLz9qggzH6J2ogZQ6U4MM0fsQf0usBLn?=
+ =?us-ascii?Q?Z6IMaJSPjkbnoBIi3FdVfAThEFtSXt7G9wPy1jE?=
+ =?us-ascii?Q?jSbAXDWDXb+M9XrO0ITdCD1U5O4XkOMyxzFCz2T?=
+ =?us-ascii?Q?8r2jg1xaAIfVgoXUmmVxJrlpVKpYPwdy5M7LXeP?=
+ =?us-ascii?Q?24rMXyGwMFu=2F0chfFok44m6aS4vUv1LjcOGnUNu?=
+ =?us-ascii?Q?a2TH3rwSodB2mNpttn3DubKeYMbashpsvRkc5Wx?=
+ =?us-ascii?Q?5kLQxqAjeRi5yEFfqSXE16x9+HmLrAIeq3Ybt+T?=
+ =?us-ascii?Q?uvAwhs4jq4EuSyKQH=2FoVWMrmOL0+fEj0Nz6V9YH?=
+ =?us-ascii?Q?awh7LDVA1asjRLdNsJTNV1d=2F=2F0dH3a7ROHVmmIv?=
+ =?us-ascii?Q?UGlyhSp5VjzjGhL6pmWYUdNQujyXYhfg=2FFaDvGP?=
+ =?us-ascii?Q?VdOWz+itzcG1Rr+8Kpsd3YLrcg=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2EwBusq4Qah?=
+ =?us-ascii?Q?1jbjx0nCEwPigeZYDHuhOB3sWJcrU-aAdBoMDAw?=
+ =?us-ascii?Q?dTAwMBKO9HRX4MkTgx2bD1K5F4gkh1HuCu=5FOe0z?=
+ =?us-ascii?Q?sPJK=5FtFuHatCT2iEoEd0fIEo-TPHqwuPRSzb7Ov?=
+ =?us-ascii?Q?ItP-BAzVQbptbYxFn0IWPJPEcZIU1hf5KR9V7Mx?=
+ =?us-ascii?Q?enRYYJyYWBXGZdKKg=3D=3D=2EB4fyZHm44p415QiMH4P?=
+ =?us-ascii?Q?6dhHMXjwP1YhFv7IkXzUPP=5FxoMDAwdTAwMI6=5FPX?=
+ =?us-ascii?Q?deDX2sFnadVvA9f2HaJHi42KYElruntYmDFDVUO?=
+ =?us-ascii?Q?2vFsWg4hoZ0ksKFE2oYvKklnNVZuR9kDk5RtJEC?=
+ =?us-ascii?Q?yQLpiFyLDfg3CdkSF9Ur0fDM7YSozfg9bmQ9IfL?=
+ =?us-ascii?Q?mqEQ4lePPijNEYwzLQGpGwfBD75bquinUZQ4RZq?=
+ =?us-ascii?Q?sjTejRY1SxlomPf2aXJl23siZryYHBWBN2jSL6-?=
+ =?us-ascii?Q?j=5FHY1ov99UqLS7EmqomdZ51y9inWi2G4pzJLfbx?=
+ =?us-ascii?Q?LD97nklQXqJHQDIJp5smQjqyvaZau2pD6vG1sy4?=
+ =?us-ascii?Q?s3NDuhaJT9d1U7qRvybw1S8j0IM9IhouW-LzAYF?=
+ =?us-ascii?Q?ESXBuF31wSdLgW8a4jmthvqMIhdRyg1mfvsTIom?=
+ =?us-ascii?Q?uYQKh2ZJ76hZmti23rMXEhpsZcxsc3SxN30TTt0?=
+ =?us-ascii?Q?wx=5FVwP4eQYeFWW6c8x8IIssN2jlq6yoHnjrBOdj?=
+ =?us-ascii?Q?xaWJrYRjqeoTquEKjuiPm2-pcyCHZE6UgeFblKs?=
+ =?us-ascii?Q?PblgD4KdNzuseTyUsntOrtXCid1USzO5kbsgC-f?=
+ =?us-ascii?Q?Sb8CCz0jxEFqXf6=5Fj2RTeSs6AdMXYSRGiXjOMsv?=
+ =?us-ascii?Q?2VcRqzSpau7zNIHtdASt63vf3lhTS9V2R0EMaNQ?=
+ =?us-ascii?Q?7SuuYuuXctY3jm73b2dhSP8do2vGWwYLSB6eL9Q?=
+ =?us-ascii?Q?SvhZBu6MXhUFXjSoKUW6B8aBI-ttTa5pnIgbYfq?=
+ =?us-ascii?Q?VQbZLMGeqv-PDwAcPDlAVR8gr7-N2NP1fzJI3Db?=
+ =?us-ascii?Q?gUzrGQQD9LFyjrhpNDMTxy6WGbBI5tDwbt7Afu2?=
+ =?us-ascii?Q?=5F2YuBYEFIoj6Yiiy2tcNpIjH6Os0bKHrJnPOmRZ?=
+ =?us-ascii?Q?DkoyMUPPJ04sblHi4UKaobfp0sZCQdVcbgLIJ5l?=
+ =?us-ascii?Q?muCKRO-lGzq7ktT7qfcOx-AxUeHyZwQuaxOEZ2V?=
+ =?us-ascii?Q?KUMoA8OOg2H1rgLfiiwWapmRPfTrY=5FHVg2mDpw0?=
+ =?us-ascii?Q?NmN9PL11EP82K9Spv0QxD2xvgH9m7nGWEZiJ7pR?=
+ =?us-ascii?Q?iYmlXORA5t2tWAyQcZiuGCshR397FssXRkTaQok?=
+ =?us-ascii?Q?IuVXsy7CfsRDIJyHrBdzatxFArc9jmW3FdnXnUz?=
+ =?us-ascii?Q?IVrhCw=3D=3D=3E?=
+
+--7884268441d3d8b849bee46552ebf4a59797cbcb4b0412940e5588430234
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=utf-8
+Mime-Version: 1.0
+
+FOODBORNE ILLNESS - TURKIYE: (SANLIURFA) REQUEST FOR INFORMATION
+****************************************************************
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+Date: Thu 11 Jan 2024
+Source: Rudaw [in Kurdish, trans. Mod.NS, edited]
+<https://www.rudaw.net/sorani/kurdistan/1001202432>
+
+
+Several students suffered from food poisoning in a school in Siverek
+town in Sanl=C4=B1urfa province, T=C3=BCrkiye.
+
+A total of 55 students from Kemal Karakayali Primary School in Siverek
+town of Sanl=C4=B1urfa were taken to the town's teaching hospital on
+Wednesday [10 Jan 2024]. Doctors at the hospital quickly examined the
+students and found that they had been poisoned by eating the school
+lunch.
+
+According to reports, the students fell ill after 3 hours of eating
+lunch and suffered from abdominal pain and vomiting. The school
+administration called the health authorities, and the students were
+taken to hospital by ambulance. Several students are in unstable
+condition.
+
+After the incident, Siverek police launched an investigation into the
+company that prepares daily food for this school and several other
+schools.
+
+The education director in Siverek said 39 students have been
+discharged from the hospital. The other 16 students may remain under
+medical supervision.
+
+--
+Communicated by:
+ProMED
+via
+ProMED-MENA
+
+[The report above does not provide enough information to help in
+determining the cause of this foodborne illness incident.
+
+ProMED would appreciate receiving further information from
+knowledgeable sources about this foodborne illness incident, including
+the type of food eaten and the results of any laboratory tests. -
+Mod.NS
+
+ProMED map of Turkiye:
+<https://promedmail.org/promed-post?place=3D8714185,2393>]
+
+[See Also:
+Foodborne illness - Jordan: (AZ) RFI
+http://promedmail.org/post/20240115.8714251
+2023
+----
+Foodborne illness - Iraq (03): (SL) mushroom poisoning, new cases
+http://promedmail.org/post/20231229.8713962
+Foodborne illness - Iraq (02): (KA) RFI
+http://promedmail.org/post/20231229.8713959
+Foodborne illness - Jordan: (IR, BA) mushroom poisoning, new cases
+http://promedmail.org/post/20231228.8713958
+Foodborne illness - Australia: (VI) mushrooms, fatal
+http://promedmail.org/post/20230810.8711644
+2022
+----
+Foodborne illness - Syria: (LA) mushroom poisoning
+http://promedmail.org/post/20221212.8707214
+Undiagnosed deaths - Myanmar: poisoning susp, RFI
+http://promedmail.org/post/20221204.8707039
+Foodborne illness - China: (Hong Kong) wild mushrooms, susp
+http://promedmail.org/post/20220526.8703473
+2020
+----
+Foodborne illness - Nepal: (JA) fatal, mushrooms, susp.
+http://promedmail.org/post/20200729.7622590
+and other items in the archives]
+.................................................ns/rd/gmm/tw/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3DfnTvr-Y89AQr2iPBPy-d2AET11nf-FmYITrgU5TyuOFoMDAwdTAwMMUSVwC=
+bSljcZtynVbgIewkdtWnyLW_Hoo2JCKPEgrFTMSww63CLdRGrgSV5e5jnd1CKxNfEc2okjzsHhQ=
+no7ZizFMRAcq5u07A5GR7Ac13zuX9ArkUl0q0cNn1nKAub1OTFIC_g-CHMTQLhmG0finYgXoTbm=
+-NMyjuoe_jOcURKnJu3Ts2DvANm0n-mNQwB_ctZup5iuI6vYroI2ZTAOup2lZezsJtambtr2h3z=
+S-Vm1wT8WPac6p-NbWdsP_ZH7kggur790bojyYx675rRq9rx_vtFJPC0F_yYLfB7sWlbDb6oSJY=
+4TU9jDrpL7cLZowyPwZL0ZnXH9yudDdhvIH0IU3L8WlmEpZjfHugCSUBW7q38a3uKo6KVh0MzAH=
+CJDPjCwtggMKbWeQ8oDfhFC_ZPwfOEQecgliXOmv2My0_L2ixsGJmABv0Vb9xv9G12Jf-Lb-fmn=
+TKM0XTykdmHx8I9Ns5Rzp4RE8cCC_-W23h64A1Ov8SECS7oq0xqKYu5F4PAiAqCtzju03vSjyNN=
+Oxqno_EVqsbOdPhJSlI4FB_JSl7cFwREwtGseLguSlElCiHtFD1I1ipaRHk44IqpOM5ivuNp_E5=
+EMJMp4xa9xjcxQEYkM1tbZ48kFQFFnOzdMyU4r0Op7kOG5A5gbTui8uRGRnltiyTg9KYnzCDCh8=
+CR4LnxuoT1BRotss_35HQmkz2vASc5EYYPTIFCi2hz-RPt9H6SmQx1xoaOeRHgzmBu502vaPJ2Q=
+B6GB_oPtrxU_uj1w1lmp_2ao6viJPSDJ_fUSi2nT1ctOvLboHbJAru4GQZJYDODvv-iX1bo4nkp=
+5hX6Xkf_asZIMvaRXUDi8vraqKFVzVObKCl9VK-D7jLQrXSkob6ezWozhfB-MNziEg13kOufioJ=
+xnu4WYUR8MmvFuoSiEUjyvaj-RhO3guQDC4ej-UZGL_D4I_tuivj2FRtAUB3TrUs-erEhYCg3h1=
+WESwqybDBNw7iFUvgQVx6Gg1_D4PvpaKnJ5dVM8xMgNYUsTozbUrJI_n0KcGVTPGz-D5sg4fNDB=
+gDwwlw30Z4Zswj1-V3Y1rF_gW-zCAn3xwhYvP6sFEWO61pOfNXoABod3QS1iZE8fVZcm2nKiL1J=
+_5W1ygnPZazmNDDir_uLJvQPza9TS2U_cgtm6M2KAhk=3D )
+############################################################
+############################################################
+
+--7884268441d3d8b849bee46552ebf4a59797cbcb4b0412940e5588430234
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>FOODBORNE ILLNESS - TURKIYE: (SANLIURFA) REQUEST FOR INFORMATION<br>*=
+***************************************************************<br>A ProMED=
+-mail post<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6=
+JrPIt48tisIijpefK5PNjW-mL-YZGnfgDOxU1G3gjwnPSi2Tfv3HA/430/Wp_XlpNmSj-mJaWOS=
+-A1UQ/h0/MbcD0OlM9GTGT6q8jTOVPQBOjscuZwrL42ridulJd5U">http://www.promedmail=
+.org</a><br>ProMED-mail is a program of the<br>International Society for In=
+fectious Diseases<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/wscE=
+2ng5fl6JrPIt48tisCT5tpD4Upm3qyMCbcYSQvc/430/Wp_XlpNmSj-mJaWOS-A1UQ/h1/4zhiK=
+47BfgYHdjPUwxcvvHieXngYZOzv-2SnxBxxroA">http://www.isid.org</a><br><br>Date=
+: Thu 11 Jan 2024=0D<br>Source: Rudaw [in Kurdish, trans. Mod.NS, edited]=0D=
+<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/TLh_csrC34X_iXpbYoMam=
+yBobIUziny22C0-OAgPE8Bk3Yrpfo9tS7B8xzXJU0U78-5LDBCj2JeRY1q0QMXeqg/430/Wp_Xl=
+pNmSj-mJaWOS-A1UQ/h2/Sgtoleda4b3JAiwF1Vz0DsxyRfl1V7z4ptcpnpQopPk">https://w=
+ww.rudaw.net/sorani/kurdistan/1001202432</a>=0D<br>=0D<br>=0D<br>Several st=
+udents suffered from food poisoning in a school in Siverek<br>town in Sanl=
+=C4=B1urfa province, T=C3=BCrkiye.=0D<br>=0D<br>A total of 55 students from=
+ Kemal Karakayali Primary School in Siverek<br>town of Sanl=C4=B1urfa were =
+taken to the town's teaching hospital on<br>Wednesday [10 Jan 2024]. Doctor=
+s at the hospital quickly examined the<br>students and found that they had =
+been poisoned by eating the school<br>lunch.=0D<br>=0D<br>According to repo=
+rts, the students fell ill after 3 hours of eating<br>lunch and suffered fr=
+om abdominal pain and vomiting. The school<br>administration called the hea=
+lth authorities, and the students were<br>taken to hospital by ambulance. S=
+everal students are in unstable<br>condition.=0D<br>=0D<br>After the incide=
+nt, Siverek police launched an investigation into the<br>company that prepa=
+res daily food for this school and several other<br>schools.=0D<br>=0D<br>T=
+he education director in Siverek said 39 students have been<br>discharged f=
+rom the hospital. The other 16 students may remain under<br>medical supervi=
+sion.=0D<br>=0D<br>--=0D<br>Communicated by:=0D<br>ProMED=0D<br>via=0D<br>P=
+roMED-MENA<br><br>[The report above does not provide enough information to =
+help in<br>determining the cause of this foodborne illness incident.=0D<br>=0D=
+<br>ProMED would appreciate receiving further information from<br>knowledge=
+able sources about this foodborne illness incident, including<br>the type o=
+f food eaten and the results of any laboratory tests. -<br>Mod.NS=0D<br>=0D=
+<br>ProMED map of Turkiye:<br><a href=3D"https://u19268662.ct.sendgrid.net/=
+ss/c/sSnCkKCWBvais3EuVAOvgy2WOIX7pp1nXnn4AbwuQ3Z6WbkfhqXYXU-aTMPJ8yThjsSaB7=
+6PYKmwtWMHCWFXYw/430/Wp_XlpNmSj-mJaWOS-A1UQ/h3/a_7mxg8DyU7JanB2awj7FpNGiiWr=
+zksnavbr5mIolNM">https://promedmail.org/promed-post?place=3D8714185,2393</a=
+>]<br><br>[See Also:<br>Foodborne illness - Jordan: (AZ) RFI<br>http://prom=
+edmail.org/post/20240115.8714251=0D<br>2023=0D<br>----=0D<br>Foodborne illn=
+ess - Iraq (03): (SL) mushroom poisoning, new cases<br>http://promedmail.or=
+g/post/20231229.8713962=0D<br>Foodborne illness - Iraq (02): (KA) RFI<br>ht=
+tp://promedmail.org/post/20231229.8713959=0D<br>Foodborne illness - Jordan:=
+ (IR, BA) mushroom poisoning, new cases<br>http://promedmail.org/post/20231=
+228.8713958=0D<br>Foodborne illness - Australia: (VI) mushrooms, fatal<br>h=
+ttp://promedmail.org/post/20230810.8711644=0D<br>2022=0D<br>----=0D<br>Food=
+borne illness - Syria: (LA) mushroom poisoning<br>http://promedmail.org/pos=
+t/20221212.8707214=0D<br>Undiagnosed deaths - Myanmar: poisoning susp, RFI<=
+br>http://promedmail.org/post/20221204.8707039=0D<br>Foodborne illness - Ch=
+ina: (Hong Kong) wild mushrooms, susp<br>http://promedmail.org/post/2022052=
+6.8703473=0D<br>2020=0D<br>----=0D<br>Foodborne illness - Nepal: (JA) fatal=
+, mushrooms, susp.<br>http://promedmail.org/post/20200729.7622590=0D<br>and=
+ other items in the archives]<br>..........................................=
+.......ns/rd/gmm/tw/jh<br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3DfnTvr-Y89AQr2iPBPy-d2AET11nf-FmYITrgU5TyuOFoMDAwdT=
+AwMMUSVwCbSljcZtynVbgIewkdtWnyLW_Hoo2JCKPEgrFTMSww63CLdRGrgSV5e5jnd1CKxNfEc=
+2okjzsHhQno7ZizFMRAcq5u07A5GR7Ac13zuX9ArkUl0q0cNn1nKAub1OTFIC_g-CHMTQLhmG0f=
+inYgXoTbm-NMyjuoe_jOcURKnJu3Ts2DvANm0n-mNQwB_ctZup5iuI6vYroI2ZTAOup2lZezsJt=
+ambtr2h3zS-Vm1wT8WPac6p-NbWdsP_ZH7kggur790bojyYx675rRq9rx_vtFJPC0F_yYLfB7sW=
+lbDb6oSJY4TU9jDrpL7cLZowyPwZL0ZnXH9yudDdhvIH0IU3L8WlmEpZjfHugCSUBW7q38a3uKo=
+6KVh0MzAHCJDPjCwtggMKbWeQ8oDfhFC_ZPwfOEQecgliXOmv2My0_L2ixsGJmABv0Vb9xv9G12=
+Jf-Lb-fmnTKM0XTykdmHx8I9Ns5Rzp4RE8cCC_-W23h64A1Ov8SECS7oq0xqKYu5F4PAiAqCtzj=
+u03vSjyNNOxqno_EVqsbOdPhJSlI4FB_JSl7cFwREwtGseLguSlElCiHtFD1I1ipaRHk44IqpOM=
+5ivuNp_E5EMJMp4xa9xjcxQEYkM1tbZ48kFQFFnOzdMyU4r0Op7kOG5A5gbTui8uRGRnltiyTg9=
+KYnzCDCh8CR4LnxuoT1BRotss_35HQmkz2vASc5EYYPTIFCi2hz-RPt9H6SmQx1xoaOeRHgzmBu=
+502vaPJ2QB6GB_oPtrxU_uj1w1lmp_2ao6viJPSDJ_fUSi2nT1ctOvLboHbJAru4GQZJYDODvv-=
+iX1bo4nkp5hX6Xkf_asZIMvaRXUDi8vraqKFVzVObKCl9VK-D7jLQrXSkob6ezWozhfB-MNziEg=
+13kOufioJxnu4WYUR8MmvFuoSiEUjyvaj-RhO3guQDC4ej-UZGL_D4I_tuivj2FRtAUB3TrUs-e=
+rEhYCg3h1WESwqybDBNw7iFUvgQVx6Gg1_D4PvpaKnJ5dVM8xMgNYUsTozbUrJI_n0KcGVTPGz-=
+D5sg4fNDBgDwwlw30Z4Zswj1-V3Y1rF_gW-zCAn3xwhYvP6sFEWO61pOfNXoABod3QS1iZE8fVZ=
+cm2nKiL1J_5W1ygnPZazmNDDir_uLJvQPza9TS2U_cgtm6M2KAhk=3D" target=3D"_blank" =
+class=3D"Unsubscribe--unsubscribePreferences" style=3D"font-family:sans-ser=
+if;text-decoration:none;">Unsubscribe Preferences</a></div><br>############=
+################################################<br>#######################=
+#####################################<br><br><img src=3D"https://u19268662.=
+ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/430/Wp_XlpNmSj-mJaWOS-A1UQ/ho.g=
+if" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"height:1px !imp=
+ortant;width:1px !important;border-width:0 !important;margin-top:0 !importa=
+nt;margin-bottom:0 !important;margin-right:0 !important;margin-left:0 !impo=
+rtant;padding-top:0 !important;padding-bottom:0 !important;padding-right:0 =
+!important;padding-left:0 !important;"/></body>
+</html>
+--7884268441d3d8b849bee46552ebf4a59797cbcb4b0412940e5588430234--

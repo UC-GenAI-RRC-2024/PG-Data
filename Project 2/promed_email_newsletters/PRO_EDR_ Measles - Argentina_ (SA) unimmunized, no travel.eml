@@ -1,0 +1,545 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a05:640c:3013:b0:1ee:4bd3:5fc9 with SMTP id z19csp264482eiw;
+        Sat, 20 Jan 2024 13:58:22 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IFOh8LiozAKSRn2SSHkHyC1gAzJk5YXfVjCrNh/xeZiNXKI8IN9mojiuCUoQrliTINo3TMu
+X-Received: by 2002:a05:620a:24c1:b0:783:3499:8011 with SMTP id m1-20020a05620a24c100b0078334998011mr3478112qkn.88.1705787902036;
+        Sat, 20 Jan 2024 13:58:22 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1705787902; cv=none;
+        d=google.com; s=arc-20160816;
+        b=mTdGO6tyEijgfjVDzyGJyRSZvKNr0f0nG88e0FRmn3giyQn1RhcVSIO+uh7/O/+B3x
+         ZuXwvvOU4xfIPyq0Izqm9PTfZQUSme+FIxa9asm3TmoyWFlmLQnNkjELqeeyRkXzT8YO
+         KNF6LCUcyHci98NkOIublx9Ss1tNmt/ajCUreBv2VJprsPVguf6r6PG6VhccpgoNKvUN
+         z/P60o3doMkf3PabUfaCRKTF7EJaMTHCh9Bv0mtNp/uZhISShJCkGbVRinjM6bj6g+65
+         qsaP7hkF+YzwXErkM136YzWGMy6amB2YDmU2y1pe5YIsgr1a9gl+7Vem4AUrOdT/mEf9
+         MaKQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=jv8codeHQ3Dj/32G6C2EsiwvcwcvkniTf42MIz0ueZY=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=gqT08RYnPQ2cCKb1KW9dbWOPKrMQVK2cCJlUgzZtz9CIKKaffo8xnGtgBb1lmb5U/c
+         pCAbNCNu3jsFhRKDbstmjadFZAp6EedmDsOaSC26VE4HALzpMlajXyL0svAAKQXv9d3L
+         mqWl/UBTuaECVpbtSnc1Q+ZKtN6R1wRMMAAiGA9hun6jh67hahCnYkxh+gyxWPUtHxdM
+         3S2zj8S8EH4/G2VnE9tSfum43jf2vk9tq72SLfHXmFSSb5etc5CRvyJQzpsDkklr4H5q
+         kD6+/g1HYbqrPeEgNAjiEPxkSLND8w53PboFx4y/lNHTDEEpmXleHzByf3u9sCdL0OjI
+         e0dA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=SCNSP2tN;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=qsBph1rz;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id x3-20020a05620a0ec300b0078329ba5054si2185958qkm.193.2024.01.20.13.58.21
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sat, 20 Jan 2024 13:58:22 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=SCNSP2tN;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=qsBph1rz;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=jv8codeHQ3Dj/32G6C2EsiwvcwcvkniTf42MIz0ueZY=;
+	b=SCNSP2tNT5QTntZXCAO9d3Wtcthg2fqHb6nNPE7606obBJ2WqSMleDv4HyTukP+BKwbl
+	Ab2sqOWXmtZVmHyf8bFuzY/y6QdACDk0TkFn2suHZMWaK7aMKgIcGjsL6Me2bRHZlyoBXq
+	y7hlTf/u0VeZhhTP+P6Qr59m9hV5P6m8mZSYKOVVbrC9SlcIb0hVywf7vSaPobo+/ELrgU
+	C0VK5KX0qWRc4lAiasGyWlVpbeJTpzonr0tjS9t2dlDwx/FCDr6cGiYbbLD+f66FUYXykK
+	xLuGVeIYnSQKrydWE9J+64i4fcMEzKiNyqPCsubo0qD8XiajI2Izz7gSPFZJGBnA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=jv8codeHQ3Dj/32G6C2EsiwvcwcvkniTf42MIz0ueZY=;
+	b=qsBph1rzIXhQFyTfQ3nVKX1Y2McFPRSfDVZIVzIzgvcfW9X8ngiIc8rxfc8Vw2IbvNQ4
+	1ZPnrjYny0s9MjWKEqNgFuPvshezv+Bfbt3BuJm3o+B+kAMOpSv0A3hkTNRr5G1ffkUoQ8
+	LjoiK2woEEvWjUNlGOXCTGo1F5nc+ZS1o=
+Received: by filterdrecv-7d848c6fdf-bp8p2 with SMTP id filterdrecv-7d848c6fdf-bp8p2-1-65AC41FC-7
+        2024-01-20 21:58:20.152051628 +0000 UTC m=+8219792.195965574
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-4 (SG) with HTTP
+	id P4kkDRoKQjSHgHCN9UakEw
+	Sat, 20 Jan 2024 21:58:20.132 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=14b9818168bac48943b28384dd1512061905640e11cae292e6f8c2193c65
+Date: Sat, 20 Jan 2024 21:58:21 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <P4kkDRoKQjSHgHCN9UakEw@geopod-ismtpd-4>
+Subject: PRO/EDR> Measles - Argentina: (SA) unimmunized, no travel
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iB21BGAEAwZp8S1ndw4QulSNcSpZJc+dAwuEi1S?=
+ =?us-ascii?Q?qqgF7dS9M2lw=2F5V+bli34KU1QkPek8T3SXuJMzt?=
+ =?us-ascii?Q?wH2Amr=2FhHNob7rSPqH4yBPHTZ=2Fb4KM2ZoaMcNhS?=
+ =?us-ascii?Q?YWbgWNLH23DkftrLITUYCiyqjRbaopAoD40XHaB?=
+ =?us-ascii?Q?5broC3FNKvlSWqSmfoqm+bnssHaw0aCcN9jEKz?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUhc93xcG=2F095a5S4+mt=2FG?=
+ =?us-ascii?Q?uYUpctI=2FOGD2dwyi+uvm2j4FCdvuw0l9zcHM8iA?=
+ =?us-ascii?Q?mojOvTXq7jOpDFFNtfsYkHQYACEW8pq1BXXqYmH?=
+ =?us-ascii?Q?oGTsnt6QpE2ZV5WVqnpwfXWoLXx7+4YTE7Z=2Fero?=
+ =?us-ascii?Q?U2yujr2Nvw9iY7sBT51qIZvM0f7gGBM0W8aHobK?=
+ =?us-ascii?Q?KfHAuJ+7X7MQKCgn3C+Kam=2Fh61KoqNyWMZzv3w5?=
+ =?us-ascii?Q?+qcAWt0zCLjWejAiN=2F0R=2FwSe+nLtlHnmIg7Yb5g?=
+ =?us-ascii?Q?hWUBMCv0uS3NaJciZvcFOvvqu0dz6rRaE9c3Be7?=
+ =?us-ascii?Q?KLNvDsOx8WT+uem7YrlkUZ9LcGlGaIJKaMuKE2y?=
+ =?us-ascii?Q?qds4iYTRAJ+1emnQpHXtJpPj04gBJ7rkRBXOJ+z?=
+ =?us-ascii?Q?ctKBUCQAq1VT1yguGLAo+jpjST9YzZdLnR5hUqp?=
+ =?us-ascii?Q?YBclh=2Fh8D0qRdqGD2NCHsorxjRTPo7ek7xPVw=2Fj?=
+ =?us-ascii?Q?mNYx35OYo7vk97LnMMFVS+RXbdCuYTLmrVas9ZN?=
+ =?us-ascii?Q?doqFPaQH7bdH1BqgiIr1TTPR5E1eTx+HGPN06qS?=
+ =?us-ascii?Q?ZHDSWcl5t0WqfpLjzKVwqSG6bZaAfhi53aQ859x?=
+ =?us-ascii?Q?sW=2F5STuEKtzySTvkR0A+Mb=2FCU6+mindpHZkL8V6?=
+ =?us-ascii?Q?kCv0MbobXVll+ytGX1ZvRFtcugSHWpsgNgHiIMf?=
+ =?us-ascii?Q?LAaivXNfdwb2E90cUUh0=2F3umGEteSVsxqr10U00?=
+ =?us-ascii?Q?1eD=2FwuRmOm7Iqw0nQ+m0saEwqRdiqIex47HMCxZ?=
+ =?us-ascii?Q?zJVSxmlaj0I4DO25ASI0wwYsdQ=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2E4LKAdsRXX?=
+ =?us-ascii?Q?Lbr-NGQaCbYdq6Edjb0JW6FYMv=5FxOpCwQRoMDAw?=
+ =?us-ascii?Q?dTAwMKfIlulvslZiVv0YEqQ9ND9swmUY9U6sk1Y?=
+ =?us-ascii?Q?EryR1yZ2KrcREr9syPRYaALXbI1URN4z3MZS7n3?=
+ =?us-ascii?Q?8Hd1R9bDsNxHgZTtPjjAoNOaowc50udkKDu5Ro1?=
+ =?us-ascii?Q?eMYkDLys1W3ldNUNA=3D=3D=2Ev=5F76xpIJ8f5xyQ33rfK?=
+ =?us-ascii?Q?fdHsr7KzPA8CA2IbZVj-iL65oMDAwdTAwMCIAT5?=
+ =?us-ascii?Q?wd22tAp6UYoAb6CRmhYdqYGqiuuGC3NrnOn8s0y?=
+ =?us-ascii?Q?2ah75nFka7=5FeNrqv1LfAJfCktkeIG2fWjA8s4xK?=
+ =?us-ascii?Q?d2avRAiVd7L5XM0y4S7oK5mcWuPqvRA-=5FSUP63I?=
+ =?us-ascii?Q?jTXtm=5FfXGGys2POKWjq1s0k2PY4RALx7lOEGSAC?=
+ =?us-ascii?Q?V=5FnZhv2dMh5bI7STqw7e7PKONY0QcOfWDKodCzg?=
+ =?us-ascii?Q?8CDSYPLQQ1qz3npOmfB6Kk5npFvqHJYIEDmEWRp?=
+ =?us-ascii?Q?AhCivPvq=5Fi5yi=5FjTFRO03fwg8n2dG8GHjHmJAi9?=
+ =?us-ascii?Q?Ye4kTMjZBHm3gUJzNGuIVHjDOV0BtF-SrLRomZy?=
+ =?us-ascii?Q?tkVURiNovCsVeX3sxdYGFEWKtRZPvJRYNmn6jo7?=
+ =?us-ascii?Q?yvmGcMhdra1lvoyrLpKFe73oqDelGRDIHGRDhHg?=
+ =?us-ascii?Q?PSwXYmDxm0vWUfVlwq07o3bBU=5FrEcyp-F5fZcrz?=
+ =?us-ascii?Q?8iQ5unQPHZ-UpGe0b2RFjB1L0zHUM=5FCm-lnmo99?=
+ =?us-ascii?Q?ww8-C2w1J1r-WhmFAAJXpfcKoSiGNPFQGirxokX?=
+ =?us-ascii?Q?XHmFd4ZHnOSC8lerzR7QVbCRzKRAMlLIkdXdO0v?=
+ =?us-ascii?Q?uFsSVwgLJu9RKdViR122IttqMukn-U-WjwaWwqq?=
+ =?us-ascii?Q?iHiPgRCaQoQG7caM2IX8=5FZR99zM-c9KcuPW-EJH?=
+ =?us-ascii?Q?VzvDXfeqQSc=5FCQypiLYkCjCVunkWv7u8qsPWSsZ?=
+ =?us-ascii?Q?qarFMziAmZfNjQH3XS0or2LNA1VhCL-WDq7-gbL?=
+ =?us-ascii?Q?npg1dN=5FWHDEpJlcsuPzHt8rcdCfJRoBe55QrTsk?=
+ =?us-ascii?Q?Fx-4cpbekRUztYpQcd7QTbkQT5NDfwhHaL1JTSh?=
+ =?us-ascii?Q?f0ZJUxz-EI=5FXwGvN8XVeTrkA7Jc1YmejER4b3fg?=
+ =?us-ascii?Q?R9zHRfVNtvq1KY-T8kJ7VfMPm03Y3IZMO5yx=5FWD?=
+ =?us-ascii?Q?tTQw9VbyapdKe-AQAp=5F=5F12GOo1iRQPDQLK9JtAo?=
+ =?us-ascii?Q?VRptGv95sUtbeqRUoyAx98eCL9Dq540fAoo9Tvp?=
+ =?us-ascii?Q?frW=5FVRDUBc=5FyEEJURfhiC4pRtWOhMZf4qDAt7p9?=
+ =?us-ascii?Q?N6tg-AinLru7iAdJDtiAaMM=3E?=
+
+--14b9818168bac48943b28384dd1512061905640e11cae292e6f8c2193c65
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=iso-8859-1
+Mime-Version: 1.0
+
+MEASLES - ARGENTINA: (SALTA) UNIMMUNIZED, NO TRAVEL
+***************************************************
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+Date: Fri 19 Jan 2024
+Source: T=E9lam [in Spanish, machine trans., edited]
+<https://www.telam.com.ar/notas/202401/653050-el-ministerio-de-salud-de-sal=
+ta-confirmo-un-caso-de-sarampion-en-un-nino.html>
+
+
+A 19-month-old child who was not vaccinated, was treated in the
+private sector, and has no travel history was confirmed this Friday
+[19 Jan 2024] by the Anlis-Malbr=E1n National Reference Laboratory for
+infection by serology and detection of the measles virus, the Ministry
+of Health, Salta, reported.
+
+Last Tuesday [16 Jan 2024], a private health worker from Salta
+notified the National Health Surveillance System of a case of febrile
+exanthematous illness, suspected of measles, for which the
+epidemiological investigation and control actions began. This is a
+child who was not vaccinated against measles, had no travel history,
+and, from the initial investigation, there was no contact with
+suspected cases before the onset of symptoms.
+
+"The child presented fever, rash, cough, and conjunctivitis on 2 Jan
+[2024]; 3 days later he consulted and was hospitalized for pneumonia
+in a private clinic, presenting isolation of pneumococcus in a
+respiratory sample. On 9 Jan [2024], a serum sample was taken, and on
+16 Jan [2024], positive IgM for measles was reported in a private
+laboratory," said spokespersons for the Salta health ministry.
+
+This serum sample, along with others for viral detection, were
+referred to the Anlis-Malbr=E1n National Reference Laboratory, which
+confirmed the infection by serology and detection of measles virus by
+RT-PCR in urine and nasopharyngeal aspirate. The provincial Ministry
+of Health indicated that studies to genotype the virus are being
+developed.
+
+The local and provincial rapid response teams (ERRA) are currently
+carrying out the epidemiological investigation and the corresponding
+outbreak control actions. For this reason, the Salta health
+authorities emphasized that, to sustain the achievements of measles
+elimination and avoid the reintroduction of the virus to the country,
+it is necessary to achieve and sustain high vaccination coverage with
+2 doses of measles vaccine (with or without the mumps and rubella
+vaccines) and a sensitive surveillance system capable of timely
+detecting suspicious cases and thus preventing their spread.
+
+According to the national calendar, the vaccination schedule
+establishes that, from 12 months to 4 years, one dose of triple viral
+vaccine (measles, mumps, rubella) must be accredited. Those over 5
+years of age, adolescents, and adults born after 1965 must have at
+least 2 doses of vaccine with a measles component applied after one
+year of age (double or triple viral) or have positive IgG serology for
+measles.
+
+--
+Communicated by:
+ProMED
+via
+ProMED-ESP
+
+[Generally, the rubeola virus is acquired by an unvaccinated traveler
+from an area where measles circulates commonly and then presents in a
+developed country where measles is uncommon due to an aggressive
+vaccination program. It is often the case, in my experience, that the
+index case is seen in a primary care setting like an emergency room
+and is not promptly diagnosed and isolated, so secondary cases in
+individuals not vaccinated by choice or too young to be vaccinated
+occur. What is notable here is that there was no travel. It is
+important to trace where the infant was and who the infant was exposed
+to.
+
+Additionally, originally the live attenuated measles vaccine, which
+requires a cold chain, was even more heat unstable than now, and a
+large outbreak of measles occurred in the 1980s in some individuals
+who were likely immunized with vaccine that was improperly stored. In
+addition to a formulation that was somewhat more heat stable, the
+measles vaccine is now given as a 2-shot sequence instead of one.
+Although some of the cases presented somewhat atypically, I personally
+saw cases of classical measles with the high fever and descending rash
+that were overtly misdiagnosed by others.
+
+A relatively recent review of this potentially fatal preventable
+disease follows:
+
+Moss WJ. Measles. Lancet. 2017; 390(10111): 2490-2502;
+<https://doi.org/10.1016/S0140-6736(17)31463-0>.
+---------------------------------------------------------------------------=
+---------------------------
+Abstract
+-------
+"Measles is a highly contagious disease that results from infection
+with measles virus and is still responsible for more than 100 000
+deaths every year, down from more than 2 million deaths annually
+before the introduction and widespread use of measles vaccine. Measles
+virus is transmitted by the respiratory route, and illness begins with
+fever, cough, coryza, and conjunctivitis followed by a characteristic
+rash. Complications of measles affect most organ systems, with
+pneumonia accounting for most measles-associated morbidity and
+mortality. The management of patients with measles includes provision
+of vitamin A. Measles is best prevented through vaccination, and the
+major reductions in measles incidence and mortality have renewed
+interest in regional elimination and global eradication. However,
+urgent efforts are needed to increase stagnating global coverage with
+2 doses of measles vaccine through advocacy, education, and the
+strengthening of routine immunisation systems. Use of combined
+measles-rubella vaccines provides an opportunity to eliminate rubella
+and congenital rubella syndrome. Ongoing research efforts, including
+the development of point-of-care diagnostics and microneedle patches,
+will facilitate progress towards measles elimination and
+eradication."
+
+Salta is a province of Argentina, located in the northwest of the
+country. Neighboring provinces are, clockwise from the east, Formosa,
+Chaco, Santiago del Estero, Tucum=E1n, and Catamarca. It lies south of
+and partially surrounds Jujuy province. To the north it borders
+Bolivia and Paraguay, and to the west lies Chile. - Mod.LL
+
+ProMED map:
+Salta, Argentina:
+<https://promedmail.org/promed-post?place=3D8714361,44291>]
+
+[See Also:
+Measles - Malaysia (01): (SA) low vaccination coverage
+http://promedmail.org/post/20240120.8714352
+Measles - UK (01): national incident declaration
+http://promedmail.org/post/20240120.8714349
+Measles - Canada (01): (SK) international travel
+http://promedmail.org/post/20240120.8714348
+Measles - USA (03): (GA) international travel, RFI
+http://promedmail.org/post/20240120.8714347
+Measles - USA (02): multiple states
+http://promedmail.org/post/20240118.8714292
+Measles - Portugal: (LI) imported
+http://promedmail.org/post/20240116.8714250
+Measles - Israel: (north) nosocomial
+http://promedmail.org/post/20240113.8714196
+Measles update (01): USA (PA) multiple potential exposure sites
+http://promedmail.org/post/20240107.8714111
+2023
+----
+Measles update (16): Australia, USA (UT), Malaysia, Africa (Libya)
+http://promedmail.org/post/20230330.8709238
+Measles update (15): South Africa, Philippines, Sudan (West Darfur)
+RFI http://promedmail.org/post/20230324.8709124
+Measles update (14): India (MP, JH) Armenia, WHO
+http://promedmail.org/post/20230316.8708981
+Measles update (13): Indonesia (CP) Samoa, Mauritania (NT)
+http://promedmail.org/post/20230312.8708895
+Measles update (11): Ghana, South Africa, India, USA
+http://promedmail.org/post/20230227.8708629
+Measles update (05): Indonesia, India, South Africa, research
+http://promedmail.org/post/20230130.8708055
+Measles update (04): India, Afghanistan, USA
+http://promedmail.org/post/20230123.8707937
+Measles update (03): Afghanistan, Serbia, India, DRC
+http://promedmail.org/post/20230117.8707833
+Measles update (02): India (UP), South Africa (GT)
+http://promedmail.org/post/20230109.8707703
+Measles update (01): Russia (SA), India (MH), USA (OH)
+http://promedmail.org/post/20230101.8707573]
+.................................................jt/ll/tw/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3DaUVh7zZQLcf-YJNBM9lBtKLSu2v_OSZQZgYiTvOGX-hoMDAwdTAwMGxZqa5=
+e5IxQK_HjA-sJjkflMc-zI2mvpoOILTVqo1dTEe1BtLaoCJlELyVqQ3WgzFitAkpe_OuLfMAw7c=
+tWv6v0iDaaLAiXvkAxZxHM_8PzSK3Kev4FZJAm_CT-ut8rEA7bIKMF6r6KtM3TawNteGAwQVc_L=
+S7Vd_FwwkWVUBhDc5M0SXs0O27vb8WxH5GJ_0ai_bnj993SzYyAt9WKuYX-iGF-E58t1GI-vDQZ=
+K8Fd5mvTKk2tyWu-pY3McqJmwKFEdKZah6y0qv_PxYBqi4W1HQTBOIxEpiGIXXKWJvcKN2HU2Lq=
+wb3lyi3dR4a6zJg5xUbsw_O7zC8W6CA_aSsGeEtUlUZeh6x3eAE822WGRRDpep4takO-ARSAwOo=
+pO_EPTfgKWvWOmpEMD31eeBZ2bBeZgc9PqzJ7g-hJOG8_hs_-wHNj8u2ufjZZpxyvbW-V7VUW4D=
+KhZNM0HJEf7oGOFAO_6i9C9MCT2rHV_PbiUZXIHmn5HGN8SI2vYIuZJ8XVwiXpUQh8w5NhL4xxp=
+7gHfE2MegYzMRecCa_2-prvFGWB4wJCr1lExU3VtNjpsdN6h3mj_LHmuwlYKs4wlmD9Jv-RB8QC=
+hxdeQc6jxVFscqDgdol6tToQ0bCj5ee34_-9FB9ikxwbiP49F2cIy_0GpQDAQxs-OkNqQBoN_2I=
+Nma45PAgM2ntPAvjwOC0en6AfmZWy4L7IddP-MSpNYBwTqitFUB_m3-2H-6i3XNW9tpavcWtYuQ=
+zEH5wn06B_fi9AkbKJj1oU1iblcCgfWbFAxVsRq74CCdFVT6LBAYeVQ0UpMdDilKy2ewPeicL56=
+KLBWBBRGIeR2jiKoyhRjVcFgxw2wGxMlFx9g-iIEcKmb2ty_cFHRUxJ6R7cMlOC3zj50cw2WV2f=
+2qaqC1fnp6duQA1MzSAla6o1QbgMWL8w0woXzIDI_wFWFRTn6CBOjvoRmWzwJtlYEVRZV87gdqa=
+uj7uwl6cUuDgTPTtNBMfcUszjNfVLjMcIGcFbWARdyqEYmb5gwYRiVfjV7R-TMVEdlWJEjQX-1Y=
+bEVCMwYSNewAh-M936dhVDF6mgIkQOcdsTdvR3piBhY8VcuqkXq-36ncSwvWFXIMucZAxfuzws8=
+FAFGPXE_uttelXOjWsLZek_8XCaVkNLH4fZd7zThN2k=3D )
+############################################################
+############################################################
+
+--14b9818168bac48943b28384dd1512061905640e11cae292e6f8c2193c65
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=iso-8859-1
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>MEASLES - ARGENTINA: (SALTA) UNIMMUNIZED, NO TRAVEL<br>**************=
+*************************************<br>A ProMED-mail post<br><a href=3D"h=
+ttps://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisIijpefK5PNjW-mL-=
+YZGnfgDOxU1G3gjwnPSi2Tfv3HA/435/zxLkq134QX2fWo4C7SUJUw/h0/1wBwML4hOUSa4iiUe=
+xqmd3sK9jRUdU9q3crlZPnaPXo">http://www.promedmail.org</a><br>ProMED-mail is=
+ a program of the<br>International Society for Infectious Diseases<br><a hr=
+ef=3D"https://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisCT5tpD4Up=
+m3qyMCbcYSQvc/435/zxLkq134QX2fWo4C7SUJUw/h1/NbhxMKp3yZ-YHA89Q9WzCC8SYcioD_z=
+YPMZJKjxX02k">http://www.isid.org</a><br><br>Date: Fri 19 Jan 2024=0D<br>So=
+urce: T=E9lam [in Spanish, machine trans., edited]=0D<br><a href=3D"https:/=
+/u19268662.ct.sendgrid.net/ss/c/TLh_csrC34X_iXpbYoMam_PZzkzvKt9jq8BnF7RlvN0=
+1dNMI4UoVYlVgeNr_e-FHUbh4aBAlWXP19r-twpnfm3o4OaSmgvKaiemL6uIobqhAKlf1pksLxN=
+qh0roTyBN-rqTF7gi5MLpbIHuXHUOJLlG97h48MsTPJs0C-YVSAN1gM3bXeEMyu5JfY7ebTmPf/=
+435/zxLkq134QX2fWo4C7SUJUw/h2/avz1u_jrUJMDmoHQlA4TaTMDNPMhgOlUjFJyGw5g5v8">=
+https://www.telam.com.ar/notas/202401/653050-el-ministerio-de-salud-de-salt=
+a-confirmo-un-caso-de-sarampion-en-un-nino.html</a>=0D<br>=0D<br>=0D<br>A 1=
+9-month-old child who was not vaccinated, was treated in the<br>private sec=
+tor, and has no travel history was confirmed this Friday<br>[19 Jan 2024] b=
+y the Anlis-Malbr=E1n National Reference Laboratory for<br>infection by ser=
+ology and detection of the measles virus, the Ministry<br>of Health, Salta,=
+ reported.=0D<br>=0D<br>Last Tuesday [16 Jan 2024], a private health worker=
+ from Salta<br>notified the National Health Surveillance System of a case o=
+f febrile<br>exanthematous illness, suspected of measles, for which the<br>=
+epidemiological investigation and control actions began. This is a<br>child=
+ who was not vaccinated against measles, had no travel history,<br>and, fro=
+m the initial investigation, there was no contact with<br>suspected cases b=
+efore the onset of symptoms.=0D<br>=0D<br>"The child presented fever, rash,=
+ cough, and conjunctivitis on 2 Jan<br>[2024]; 3 days later he consulted an=
+d was hospitalized for pneumonia<br>in a private clinic, presenting isolati=
+on of pneumococcus in a<br>respiratory sample. On 9 Jan [2024], a serum sam=
+ple was taken, and on<br>16 Jan [2024], positive IgM for measles was report=
+ed in a private<br>laboratory," said spokespersons for the Salta health min=
+istry.=0D<br>=0D<br>This serum sample, along with others for viral detectio=
+n, were<br>referred to the Anlis-Malbr=E1n National Reference Laboratory, w=
+hich<br>confirmed the infection by serology and detection of measles virus =
+by<br>RT-PCR in urine and nasopharyngeal aspirate. The provincial Ministry<=
+br>of Health indicated that studies to genotype the virus are being<br>deve=
+loped.=0D<br>=0D<br>The local and provincial rapid response teams (ERRA) ar=
+e currently<br>carrying out the epidemiological investigation and the corre=
+sponding<br>outbreak control actions. For this reason, the Salta health<br>=
+authorities emphasized that, to sustain the achievements of measles<br>elim=
+ination and avoid the reintroduction of the virus to the country,<br>it is =
+necessary to achieve and sustain high vaccination coverage with<br>2 doses =
+of measles vaccine (with or without the mumps and rubella<br>vaccines) and =
+a sensitive surveillance system capable of timely<br>detecting suspicious c=
+ases and thus preventing their spread.=0D<br>=0D<br>According to the nation=
+al calendar, the vaccination schedule<br>establishes that, from 12 months t=
+o 4 years, one dose of triple viral<br>vaccine (measles, mumps, rubella) mu=
+st be accredited. Those over 5<br>years of age, adolescents, and adults bor=
+n after 1965 must have at<br>least 2 doses of vaccine with a measles compon=
+ent applied after one<br>year of age (double or triple viral) or have posit=
+ive IgG serology for<br>measles.=0D<br>=0D<br>--=0D<br>Communicated by:=0D<=
+br>ProMED=0D<br>via=0D<br>ProMED-ESP<br><br>[Generally, the rubeola virus i=
+s acquired by an unvaccinated traveler<br>from an area where measles circul=
+ates commonly and then presents in a<br>developed country where measles is =
+uncommon due to an aggressive<br>vaccination program. It is often the case,=
+ in my experience, that the<br>index case is seen in a primary care setting=
+ like an emergency room<br>and is not promptly diagnosed and isolated, so s=
+econdary cases in<br>individuals not vaccinated by choice or too young to b=
+e vaccinated<br>occur. What is notable here is that there was no travel. It=
+ is<br>important to trace where the infant was and who the infant was expos=
+ed<br>to.=0D<br>=0D<br>Additionally, originally the live attenuated measles=
+ vaccine, which<br>requires a cold chain, was even more heat unstable than =
+now, and a<br>large outbreak of measles occurred in the 1980s in some indiv=
+iduals<br>who were likely immunized with vaccine that was improperly stored=
+. In<br>addition to a formulation that was somewhat more heat stable, the<b=
+r>measles vaccine is now given as a 2-shot sequence instead of one.<br>Alth=
+ough some of the cases presented somewhat atypically, I personally<br>saw c=
+ases of classical measles with the high fever and descending rash<br>that w=
+ere overtly misdiagnosed by others.=0D<br>=0D<br>A relatively recent review=
+ of this potentially fatal preventable<br>disease follows:=0D<br>=0D<br>Mos=
+s WJ. Measles. Lancet. 2017; 390(10111): 2490-2502;<br><a href=3D"https://u=
+19268662.ct.sendgrid.net/ss/c/TUIVIg4PCmni5tP3Q8lzBb5MugwcowHsZrFMKbC9gdZXj=
+JfO1ofBkVp65S9HwcsP0B9TU-cN1rQReYPuBfmk_w/435/zxLkq134QX2fWo4C7SUJUw/h3/Pld=
+HiNmpFRw9MUHTqDQiW5Qd75Ok9MKobRWrE2vN9gs">https://doi.org/10.1016/S0140-673=
+6(17)31463-0</a>.=0D<br>---------------------------------------------------=
+---------------------------------------------------=0D<br>Abstract=0D<br>--=
+-----=0D<br>"Measles is a highly contagious disease that results from infec=
+tion<br>with measles virus and is still responsible for more than 100 000<b=
+r>deaths every year, down from more than 2 million deaths annually<br>befor=
+e the introduction and widespread use of measles vaccine. Measles<br>virus =
+is transmitted by the respiratory route, and illness begins with<br>fever, =
+cough, coryza, and conjunctivitis followed by a characteristic<br>rash. Com=
+plications of measles affect most organ systems, with<br>pneumonia accounti=
+ng for most measles-associated morbidity and<br>mortality. The management o=
+f patients with measles includes provision<br>of vitamin A. Measles is best=
+ prevented through vaccination, and the<br>major reductions in measles inci=
+dence and mortality have renewed<br>interest in regional elimination and gl=
+obal eradication. However,<br>urgent efforts are needed to increase stagnat=
+ing global coverage with<br>2 doses of measles vaccine through advocacy, ed=
+ucation, and the<br>strengthening of routine immunisation systems. Use of c=
+ombined<br>measles-rubella vaccines provides an opportunity to eliminate ru=
+bella<br>and congenital rubella syndrome. Ongoing research efforts, includi=
+ng<br>the development of point-of-care diagnostics and microneedle patches,=
+<br>will facilitate progress towards measles elimination and<br>eradication=
+."=0D<br>=0D<br>Salta is a province of Argentina, located in the northwest =
+of the<br>country. Neighboring provinces are, clockwise from the east, Form=
+osa,<br>Chaco, Santiago del Estero, Tucum=E1n, and Catamarca. It lies south=
+ of<br>and partially surrounds Jujuy province. To the north it borders<br>B=
+olivia and Paraguay, and to the west lies Chile. - Mod.LL<br><br>ProMED map=
+:<br>Salta, Argentina:<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c=
+/sSnCkKCWBvais3EuVAOvgy2WOIX7pp1nXnn4AbwuQ3Z6WbkfhqXYXU-aTMPJ8yThczCD4sOABK=
+_nx1zLC_c-tg/435/zxLkq134QX2fWo4C7SUJUw/h4/9c7mxw4KkpUpZq1IygTl79CHNeqv5P3F=
+i9S0ycnPBZ8">https://promedmail.org/promed-post?place=3D8714361,44291</a>]<=
+br><br>[See Also:<br>Measles - Malaysia (01): (SA) low vaccination coverage=
+<br>http://promedmail.org/post/20240120.8714352=0D<br>Measles - UK (01): na=
+tional incident declaration<br>http://promedmail.org/post/20240120.8714349=0D=
+<br>Measles - Canada (01): (SK) international travel<br>http://promedmail.o=
+rg/post/20240120.8714348=0D<br>Measles - USA (03): (GA) international trave=
+l, RFI<br>http://promedmail.org/post/20240120.8714347=0D<br>Measles - USA (=
+02): multiple states<br>http://promedmail.org/post/20240118.8714292=0D<br>M=
+easles - Portugal: (LI) imported<br>http://promedmail.org/post/20240116.871=
+4250=0D<br>Measles - Israel: (north) nosocomial<br>http://promedmail.org/po=
+st/20240113.8714196=0D<br>Measles update (01): USA (PA) multiple potential =
+exposure sites<br>http://promedmail.org/post/20240107.8714111=0D<br>2023=0D=
+<br>----=0D<br>Measles update (16): Australia, USA (UT), Malaysia, Africa (=
+Libya)<br>http://promedmail.org/post/20230330.8709238=0D<br>Measles update =
+(15): South Africa, Philippines, Sudan (West Darfur)<br>RFI http://promedma=
+il.org/post/20230324.8709124=0D<br>Measles update (14): India (MP, JH) Arme=
+nia, WHO<br>http://promedmail.org/post/20230316.8708981=0D<br>Measles updat=
+e (13): Indonesia (CP) Samoa, Mauritania (NT)<br>http://promedmail.org/post=
+/20230312.8708895=0D<br>Measles update (11): Ghana, South Africa, India, US=
+A<br>http://promedmail.org/post/20230227.8708629=0D<br>Measles update (05):=
+ Indonesia, India, South Africa, research<br>http://promedmail.org/post/202=
+30130.8708055=0D<br>Measles update (04): India, Afghanistan, USA<br>http://=
+promedmail.org/post/20230123.8707937=0D<br>Measles update (03): Afghanistan=
+, Serbia, India, DRC<br>http://promedmail.org/post/20230117.8707833=0D<br>M=
+easles update (02): India (UP), South Africa (GT)<br>http://promedmail.org/=
+post/20230109.8707703=0D<br>Measles update (01): Russia (SA), India (MH), U=
+SA (OH)<br>http://promedmail.org/post/20230101.8707573]<br>................=
+.................................jt/ll/tw/jh<br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3DaUVh7zZQLcf-YJNBM9lBtKLSu2v_OSZQZgYiTvOGX-hoMDAwdT=
+AwMGxZqa5e5IxQK_HjA-sJjkflMc-zI2mvpoOILTVqo1dTEe1BtLaoCJlELyVqQ3WgzFitAkpe_=
+OuLfMAw7ctWv6v0iDaaLAiXvkAxZxHM_8PzSK3Kev4FZJAm_CT-ut8rEA7bIKMF6r6KtM3TawNt=
+eGAwQVc_LS7Vd_FwwkWVUBhDc5M0SXs0O27vb8WxH5GJ_0ai_bnj993SzYyAt9WKuYX-iGF-E58=
+t1GI-vDQZK8Fd5mvTKk2tyWu-pY3McqJmwKFEdKZah6y0qv_PxYBqi4W1HQTBOIxEpiGIXXKWJv=
+cKN2HU2Lqwb3lyi3dR4a6zJg5xUbsw_O7zC8W6CA_aSsGeEtUlUZeh6x3eAE822WGRRDpep4tak=
+O-ARSAwOopO_EPTfgKWvWOmpEMD31eeBZ2bBeZgc9PqzJ7g-hJOG8_hs_-wHNj8u2ufjZZpxyvb=
+W-V7VUW4DKhZNM0HJEf7oGOFAO_6i9C9MCT2rHV_PbiUZXIHmn5HGN8SI2vYIuZJ8XVwiXpUQh8=
+w5NhL4xxp7gHfE2MegYzMRecCa_2-prvFGWB4wJCr1lExU3VtNjpsdN6h3mj_LHmuwlYKs4wlmD=
+9Jv-RB8QChxdeQc6jxVFscqDgdol6tToQ0bCj5ee34_-9FB9ikxwbiP49F2cIy_0GpQDAQxs-Ok=
+NqQBoN_2INma45PAgM2ntPAvjwOC0en6AfmZWy4L7IddP-MSpNYBwTqitFUB_m3-2H-6i3XNW9t=
+pavcWtYuQzEH5wn06B_fi9AkbKJj1oU1iblcCgfWbFAxVsRq74CCdFVT6LBAYeVQ0UpMdDilKy2=
+ewPeicL56KLBWBBRGIeR2jiKoyhRjVcFgxw2wGxMlFx9g-iIEcKmb2ty_cFHRUxJ6R7cMlOC3zj=
+50cw2WV2f2qaqC1fnp6duQA1MzSAla6o1QbgMWL8w0woXzIDI_wFWFRTn6CBOjvoRmWzwJtlYEV=
+RZV87gdqauj7uwl6cUuDgTPTtNBMfcUszjNfVLjMcIGcFbWARdyqEYmb5gwYRiVfjV7R-TMVEdl=
+WJEjQX-1YbEVCMwYSNewAh-M936dhVDF6mgIkQOcdsTdvR3piBhY8VcuqkXq-36ncSwvWFXIMuc=
+ZAxfuzws8FAFGPXE_uttelXOjWsLZek_8XCaVkNLH4fZd7zThN2k=3D" target=3D"_blank" =
+class=3D"Unsubscribe--unsubscribePreferences" style=3D"font-family:sans-ser=
+if;text-decoration:none;">Unsubscribe Preferences</a></div><br>############=
+################################################<br>#######################=
+#####################################<br><br><img src=3D"https://u19268662.=
+ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/435/zxLkq134QX2fWo4C7SUJUw/ho.g=
+if" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"height:1px !imp=
+ortant;width:1px !important;border-width:0 !important;margin-top:0 !importa=
+nt;margin-bottom:0 !important;margin-right:0 !important;margin-left:0 !impo=
+rtant;padding-top:0 !important;padding-bottom:0 !important;padding-right:0 =
+!important;padding-left:0 !important;"/></body>
+</html>
+--14b9818168bac48943b28384dd1512061905640e11cae292e6f8c2193c65--

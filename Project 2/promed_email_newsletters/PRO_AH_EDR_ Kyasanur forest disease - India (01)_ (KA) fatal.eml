@@ -1,0 +1,487 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a98:c004:0:b0:1eb:e128:bbe3 with SMTP id l4csp1137491eic;
+        Wed, 10 Jan 2024 12:06:22 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IEsve9Tn7YKEJa1Lxnsy2BEtEOtEdnlSlaB7sgiicjnkW08YZAJ8tFY27w9CXVayUppwFLh
+X-Received: by 2002:a17:90b:2306:b0:28c:be8e:ac7c with SMTP id mt6-20020a17090b230600b0028cbe8eac7cmr59790pjb.16.1704917182240;
+        Wed, 10 Jan 2024 12:06:22 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1704917182; cv=none;
+        d=google.com; s=arc-20160816;
+        b=RfAnuAxw9+aWlI/SJ2hv1gTl3n4C8Rh7GxzW8sNxiW3xdMW2IOlkxLrFC9DORjXT9u
+         XfI6QtXxoCZh/zVD7MUzye6o792jrh0HxhDiwS/fiioEGJBv5uLrzTyZzvo5MX+x1AS/
+         LphEGgkUwLPf0q+bLaykFKptKXta5FEjQ3Yov8tDussd6/pxHh5+ulDlFQk1SKzHESpA
+         FDFF2E0brgVYoWjue+GGwcvnBttwx3s0UbG4cPpm6YOJX6i1EugKUV/F8vi/qEu1sivW
+         LmJhcH5dD3cNx55SXeKwdMUHZGNlP/GKEfESutJdFwmBfkP8HbHmZkR6qvX/GTCFQ4Jw
+         7peg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=BgNfTXvLaSXkKlUoD9akdowiQ2WB6Wm6M0TP2K6xRdA=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=SSB+hMr4nCKhR+pef0K95537wS4wwMonWb8QxHY559F5ZQG5dIiWeHLfZKK5hJQGHn
+         QgHV7anBYE4FrIg9obuJB9Tcgp8Qb1He55+BF+m+hr96mRqqfWDo8nLerhEEuCAK0x+O
+         nIfA/STR6IkS4W9JxBDzTywg0q9Fn2WLiRGozAUS6pdHGGRQZsTRKkkXJ4QQzAY6lTz/
+         RkIbYY1Nw+XrZV76JloUPL0baevb3obvmOnXagODpTrxXndIsik0Y1mqMgucqjgFAH8i
+         0tXnKq301RO7Fj8Wi/2QHX2sxohnU11XzR2C7gCdQ6qRnCp1Px1zSt0V0MVop3exZpYr
+         aJnQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=R6vlkc3Z;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=RNHBwd8L;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id oj9-20020a17090b4d8900b0028c86e12f01si2288901pjb.41.2024.01.10.12.06.21
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 10 Jan 2024 12:06:22 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=R6vlkc3Z;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=RNHBwd8L;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=BgNfTXvLaSXkKlUoD9akdowiQ2WB6Wm6M0TP2K6xRdA=;
+	b=R6vlkc3ZTdfQbxO2CKu8RvuPjY1I8vmvQYycY8bK25l3xdZeKg/Nvwqhe5eTFSFjUTfg
+	FugJvMOI8lqWoeM0aLi/DsbyqaeEkyGU/XhgIyRkOSHXWKiY71C+Z7KCBO0oiIFWJWwl3J
+	O/UjTM1BCL5YNEnu0JvKsEDnyH9NMCDQbkIYyO3kNYsLBw8qMG9fxKlIjKpwLGwDu9IVoP
+	ORL3y5HfI3lc1EzN8QekoE91pgFF2d9hy5Vyib0J0p+lPXdkem+UdAkJsAEGhvgkhPZs9f
+	lObDSdOEXart3jzmGoz0GNLWQdxFLyX0uH6hkTzXuqqrLgFKLYbMaNHhCqthDrSg==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=BgNfTXvLaSXkKlUoD9akdowiQ2WB6Wm6M0TP2K6xRdA=;
+	b=RNHBwd8LkHkv9Vk2LJ5DP2TvEosuqTbzUY9mj7HPVzwcZeFe1LZ6Pj3kst/+bWITvLrZ
+	dv/EpETsYBVKTqcuOi3/IcEPcazzPgok7ayWW40n8YorJb9xXysmo8vd9kU3eqMDmw7Iqa
+	82QJ02iMhwVP+oXKmBtMj9GSVAEIDHGF4=
+Received: by filterdrecv-868b798575-8wdds with SMTP id filterdrecv-868b798575-8wdds-1-659EF8B9-1
+        2024-01-10 20:06:17.098234115 +0000 UTC m=+7349089.581920548
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-26 (SG) with HTTP
+	id so38ZfL4T5q8zDNLfQ_HFA
+	Wed, 10 Jan 2024 20:06:16.972 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=a0a3d1bbc5129346ba23d4b4bbbf614717cb03c00883c0fc26c24e6e2766
+Date: Wed, 10 Jan 2024 20:06:20 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <so38ZfL4T5q8zDNLfQ_HFA@geopod-ismtpd-26>
+Subject: PRO/AH/EDR> Kyasanur forest disease - India (01): (KA) fatal
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iBX4iRx7kY0ydQNy=2FHcuhQs+N5f58qh2QWo4BLs?=
+ =?us-ascii?Q?QxNQS=2FAOj3AOGGOrMkKAey8uEHQBqreOfoQZSiQ?=
+ =?us-ascii?Q?R0316xaaLaR8yeyF2QgNsxb3T0mSfGKLlLsiBAl?=
+ =?us-ascii?Q?6Tf728wprclzB5DsZcxZp7TzSD=2FNAQeknmk7QXQ?=
+ =?us-ascii?Q?WGBmhM7vjABL4GtJUZZZ67Owff9+Ra9WHFFNGu?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUiShGf=2FO8XJWpH34Od4Nd?=
+ =?us-ascii?Q?fxXa6jil96uRcJkF+N+LeVnO1tx80ddOyoyOo=2Fc?=
+ =?us-ascii?Q?Brxcl3ERAm0cOY743=2FFH59DWiSf5OzXORh1DLKt?=
+ =?us-ascii?Q?hb1NMKty3PsA5ju0ZzxCrq1WQuZSEQf=2FJlWtgqv?=
+ =?us-ascii?Q?cZmsyCHlNUZsDb99WHOMdvT0o56BDkpnOK0gj6h?=
+ =?us-ascii?Q?xVzJxOaGokmngRh38Tykwz7Bin8gTFvLAW+qxWz?=
+ =?us-ascii?Q?QK3T3Aqxu8jTNLRc1UBitsjhwNCZ0wKHBRkA=2FMF?=
+ =?us-ascii?Q?lfLllVL2U3W3S9axU4llSC70FV8oWEw4YQU2bz=2F?=
+ =?us-ascii?Q?SksGiMZw8dx358Vm+XgxCzxY4eRbN=2FUKLX=2Fn6iq?=
+ =?us-ascii?Q?FfjwhiBdpdF7TzQx=2FnErdi5VJ2yIH5L1lOf1Gsl?=
+ =?us-ascii?Q?yX8J8E115RH3OEJJDCsaMT0YLsvWVJaoxWAnFXJ?=
+ =?us-ascii?Q?=2FlJERvl7N8PUtruIPDnmuI62Dt1S14ZNanOVUHB?=
+ =?us-ascii?Q?hU61zX7Gtg+9e6taVPCiZ5jLbYC0OPpc8cSRfKM?=
+ =?us-ascii?Q?aD+NL90INthKBWVUNfRrkT8ri1uxQ+Bsa25lMAD?=
+ =?us-ascii?Q?oZ5ZpJ3eMos8SceZ4Y4ec2OqgI5wNbCjcnHX0gt?=
+ =?us-ascii?Q?tapK4nqgfl9alItELRXRVVGX8pw1AduSXwk3pLQ?=
+ =?us-ascii?Q?rp7VUQo3Vr6jlhb+vCEyKY8CLGHerhkgOFFJ=2FAN?=
+ =?us-ascii?Q?RwctPlGXxX3y+2tiYSzchGOA1+fvOIgEvNNX0mF?=
+ =?us-ascii?Q?Zif=2FkCa3q3PBd3bDGdgSQ0rDZQqaKnuw9tqFsEr?=
+ =?us-ascii?Q?8TM738fTleMXG+eP2AyrhElrMg=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2E6EHEg9syx?=
+ =?us-ascii?Q?JUN2CaEwXGnNWYFLBy9xqvsEDK=5Fk-VFSBBoMDAw?=
+ =?us-ascii?Q?dTAwMNemljmI88Eb3p-7MT=5FbM29WtSZVnuyKf0e?=
+ =?us-ascii?Q?4Z8iBdDy81u2VDtM6KK7opH4sNBpXY4mdWV8coF?=
+ =?us-ascii?Q?3V8oyUbYVV7fzvyih=5Fzd7UjPF3=5FZwm4iYD3va6p?=
+ =?us-ascii?Q?IMIFLMAJxwu2bKLoA=3D=3D=2EpMP0u0aH63c6OxyeZRE?=
+ =?us-ascii?Q?=5FH9O2mlXdy4WRoUXeEkGr97hoMDAwdTAwMK=5FOil?=
+ =?us-ascii?Q?Qa3xGIXRt109rK50VOVpAh6oKWIJ5j5927Gqy4g?=
+ =?us-ascii?Q?XOflRdBuT-ljAXKK553QfVZBz-SMzXF95e=5F9Bkb?=
+ =?us-ascii?Q?HHcRPOwss3we0IP2Hv69Ub73xvo0OIkDNoUUKco?=
+ =?us-ascii?Q?28ThDJzlpeL0tCB-hMAtBxtUvHoVyhtzjpyLPCa?=
+ =?us-ascii?Q?C8jAiK6RtmPi0cByoXmNG4AebOVVqpBQYp1FXvH?=
+ =?us-ascii?Q?b5qbIhMfWWfCJcR=5F1E=5F3GD0FM11PyJ4Uzkvy59i?=
+ =?us-ascii?Q?M0z0J3VJzkXs1rjzbKjpLTDotPmmYa0vT1Vhz1Q?=
+ =?us-ascii?Q?Ai3zR=5F=5F0OCwkh0WF4mXB4L658rRa=5FAGtzzbPy9e?=
+ =?us-ascii?Q?m6JiIjlCzbTRLZ13FdOvKvOKZevRzfhPXXvbWEJ?=
+ =?us-ascii?Q?LELCW=5F8mcTi6RhVWl-wL54M4S3fEQt5xenbMtfy?=
+ =?us-ascii?Q?25HbKFLByS=5F6bYg6KdiI96yhVn8Dre6yvnVeJ6N?=
+ =?us-ascii?Q?TXRfhm4ZiiuyNWazO3DzRAFBL0LLlqoMxhVgohw?=
+ =?us-ascii?Q?0mRWyzKVdmyAaNzI1vv6K0IVSGhVb5nOZhCPkvv?=
+ =?us-ascii?Q?CdPcTW5azf=5F2u2tBApuzMqN0jbhi9FLJ=5F6t27l=5F?=
+ =?us-ascii?Q?rjkIyMVpkvM1MBGYoRNM3bWfpaWZ3dBzgPMIg3x?=
+ =?us-ascii?Q?nK-7ywTyzK9RkYGxGkEoeJtpS1ZGUfGK05mC52W?=
+ =?us-ascii?Q?ihsuDFYU5RIcZ5z99IV4pcYROqw3r00hVacXHKy?=
+ =?us-ascii?Q?yffh1kvPW1kC9mNu6QUtCiOPVyoVR7pIqWDtzHN?=
+ =?us-ascii?Q?v1iEPZMGIDkbD=5FNdT2eeBxcuCoJTFnk95-StTNs?=
+ =?us-ascii?Q?KbqX-TPgr4iFuv1ltrtRsnd7pwZwHButDbiNWiz?=
+ =?us-ascii?Q?hWxTmfq2Bsy835wi2NUQr0Ij55D2=5FLgJOEViRgm?=
+ =?us-ascii?Q?zWHUfC6kmI4kOJ6aFvF2T444LZ8RmnaUpdcagkr?=
+ =?us-ascii?Q?=5Frb6YfKMLoo72jPsDYy6sLEUuw97j6NnZnyC9ZN?=
+ =?us-ascii?Q?li95phOkVEKUiQwLXC6iwO2YcP166DyVcEI7Mva?=
+ =?us-ascii?Q?-3741-w9CAl2-Exa-jbpgeuzOlcd3pQs8edUkFW?=
+ =?us-ascii?Q?5zy4PqMc362SctbHMGcnIJVh4vSvM8rH0=5F3QOLf?=
+ =?us-ascii?Q?SlgKmw=3D=3D=3E?=
+
+--a0a3d1bbc5129346ba23d4b4bbbf614717cb03c00883c0fc26c24e6e2766
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=us-ascii
+Mime-Version: 1.0
+
+KYASANUR FOREST DISEASE - INDIA (01): (KARNATAKA) FATAL
+*******************************************************
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+Date: Sun 7 Jan 2024
+Source: The New Indian Express, Express News Service [edited]
+<https://www.newindianexpress.com/states/karnataka/2024/jan/07/19-year-old-=
+girl-tests-positive-for-kyasanur-forest-disease-in-karnatakasshivamogga-264=
+8824.html>
+
+
+A 2nd case of Kyasanur Forest disease (KFD) has been reported from a
+village under Sampekatte Primary Health Centre in Hosanagara taluk [a
+subdivision of Shivamogga district in Karnataka state]. A 19-year-old
+girl has tested positive for the disease and is currently admitted to
+Kasturba Medical College and Hospital in Manipal, according to
+District Health Officer Dr Rajesh Suragihalli.
+
+Dr Suragihalli told The New Indian Express that the girl was initially
+admitted with a viral infection and in an unconscious state at McGann
+Hospital on 1 Jan 2024. She had a low haemoglobin level and was being
+treated in the hospital's ICU.=20
+
+"Initially, the girl tested negative for KFD, but after 3 to 4 days,
+she tested positive for KFD," the DHO said.
+
+Given the severity of the girl's condition, she was transferred to KMC
+Manipal, with the medical expenses covered by the health department.
+Dr Suragihalli said that the girl regained consciousness on Sunday [7
+Jan 2024], and the treatment is ongoing.
+
+The DHO also noted that the girl's sister has tested positive for
+dengue and is currently admitted to a Thirthahalli hospital. This year
+[2024], the department has screened over 1000 people for KFD, with
+only 2 individuals testing positive for the virus.=20
+
+--
+Communicated by:
+ProMED
+via
+ProMED-SoAs
+
+[Kyasanur Forest disease (KFD) is caused by Kyasanur Forest disease
+virus (KFDV), a member of the virus family Flaviviridae. KFDV was
+identified in 1957 when it was isolated from a sick monkey from the
+Kyasanur Forest in Karnataka State, India
+(<https://www.cdc.gov/vhf/kyasanur/pdf/factsheet.pdf>).
+
+The virus is transmitted to humans through the bite of a tick or when
+humans come in contact with an infected animal
+(<https://ncdc.mohfw.gov.in/WriteReadData/linkimages/KFDPamphlet.pdf>).
+
+People who frequently visit forests, such as hunters, farmers, wood
+cutters, or forest workers, are at high risk of acquiring the disease
+(<https://ccari.icar.gov.in/Extension%20Folder%20No.%2093.pdf>).
+
+Shivamogga district, also known as Shimoga district, is a district in
+the Karnataka state of India
+(<https://en.wikipedia.org/wiki/Shimoga_district>). - Mod.GS
+
+Subsequent reports have indicated the patient mentioned above
+succumbed to the disease although there are several discrepancies in
+reporting regarding her age and the timeline.
+<https://thesouthfirst.com/health/first-kyasanur-forest-disease-death-in-20=
+24-reported-in-karnataka/>
+- Mod.JH
+
+ProMED map:
+India: <https://promedmail.org/promed-post?place=3D8714161,142>]
+
+[See Also:
+2023
+----
+Kyasanur forest disease - India (02): (KA) 2nd case of 2023
+http://promedmail.org/post/20231217.8713771
+Kyasanur forest disease - India: (KA)
+http://promedmail.org/post/20230127.8708003
+2022
+----
+Kyasanur forest disease - India (05): (MH)
+http://promedmail.org/post/20220724.8704585
+Kyasanur forest disease - India (04): (KA) fatal
+http://promedmail.org/post/20220510.8703072
+Kyasanur Forest disease - India (03): (KA)
+http://promedmail.org/post/20220409.8702517
+Kyasanur Forest disease - India (02): (KL)
+http://promedmail.org/post/20220209.8701366
+Kyasanur Forest disease - India: (KA)
+http://promedmail.org/post/20220123.8701040
+2021
+----
+Kyasanur Forest disease - India: (KL)
+http://promedmail.org/post/20210215.8192106
+2020
+----
+Kyasanur Forest disease - India (18): (KA) human
+http://promedmail.org/post/20200418.7239986
+Kyasanur Forest disease - India (17): (KA) human
+http://promedmail.org/post/20200414.7209346
+Kyasanur Forest disease - India (16): (KA)
+http://promedmail.org/post/20200407.7195641
+Kyasanur Forest disease - India (15): (KA) update
+http://promedmail.org/post/20200405.7187120
+Kyasanur Forest disease - India (14): (KA)
+http://promedmail.org/post/20200317.7100468
+Kyasanur Forest disease - India (13): (KA)
+http://promedmail.org/post/20200312.7076230
+Kyasanur Forest disease - India (12): (KA) fatal
+http://promedmail.org/post/20200310.7072688
+Kyasanur Forest disease - India (11): (KA)
+http://promedmail.org/post/20200303.7039714
+Kyasanur Forest disease - India (10): (KL)
+http://promedmail.org/post/20200229.7029092
+Kyasanur Forest disease - India: (KA) human, monkey, effective control
+http://promedmail.org/post/20200103.6868759
+2019
+----
+Kyasanur Forest disease - India (17): (KA) vaccination
+http://promedmail.org/post/20190704.6551352
+Kyasanur Forest disease - India (16): (KA) update
+http://promedmail.org/post/20190509.6459758
+Kyasanur Forest disease - India (15): (KA) fatal
+http://promedmail.org/post/20190505.6453748
+Kyasanur Forest disease - India (14): (KL) fatal
+http://promedmail.org/post/20190430.6450000
+Kyasanur Forest disease - India (13): (KA) fatal
+http://promedmail.org/post/20190330.6394566]
+.................................................gs/tw/pkb/may/ty/sb/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3DSNw61DexztTsNHojsp8dBLg6zm4GvwX4uAr6yLTbW9poMDAwdTAwMNrVJot=
+b9njFmcJge4xC1Trg1R8F-S7ZkubwZkDiFvWf3oH_ZDTNXigBrB1lmSZxIHU07UHQk-pztWjyjM=
+VO4AWt8841aiNoWrM7VEob19ePr0NF2yxd7oNhq13M208o3UZVJ-1M2vMqGVdVRiUlpxQJcdzPS=
+e002xWPi1TX-8A5RAppXfk9Du3bJwsd9p1P8EWIMXxwS-b6-u6Qmr2e9VOUmm_QpddORd6n2nrc=
+zQby_Oppwuu169A0gpiz72NcI6EU8KybJ0HfMbDRV-F2-5ULx8gDmMJ8hmBe6O7Ix0weJYeDbRm=
+5Ni32DzLf4b0nusmj_lfqghxQMY7uQVuB6GSfUxkuNof8-FW-Qz9it6b4m0vohipyIiUDtXUi8T=
+yjSEh8CVC3BvACSCEoKiCi4VWaseW9fXsHdw-TZsOdJglRpgPr6Vh9mte82h6YJxRlG7lkTgurO=
+HDt-WcASLfBh2J3Z7r_67J5np_SezZfo7tr2R_uA2uIeUfinepn1e4w2_Sc7njoIOvYQms_20P3=
+uqA8EDxWPlTD45vlbMjdxHikeSE1wmNFJBON_JCZGEEDwO0ARSpP8k_vnuYyD97ySsyvDzm8yep=
+3uSMii6I9zhkFNypi9GzV82LdlB0ZZ1tv4MX_cWW9Li21taP1D3nwhd04Kg_-A22TxDzDWIFphV=
+S4kblYwGR2pRoJBIi3RGmzuGXMQDEF60MgUgx3XUZRWDkJvo-WtR27_KfyWSVeWZ8uroilSFJQ5=
+bOY33UEj2RJKdtcNRnJwUH2EDxmJpZUiBiU8gqgaTb-xh5uJEkaMVjfV537hC7c-NbMGzD6xSNZ=
+TjpibBVn6v0ahQV8QvXqe7mCc7L-6qI1Spd8DjbZE5m-ZgPQd0eYRX3kgXzDeXQ83Nt1rrd1lC4=
+ylQuUzteaLw0oAMkXcxOgYRnPV8PY1ZUom0_QqsSdviwGFp-FXSAShoLeUZxmX3gvCtN8B4gUys=
+6A1PMdh_xFJ_yTmV27bkf8ZS9NJSNDgyEYPM4Ae_NX1MrqyHqvXw9eydNb924KiElJblOW7f4yV=
+2eGPZEGbzJ3yi87pkHl4NuhRPqSm9ZbnkYE0xYnGz-UFzLfs_aOmRt4_PeT3UI6U9cFHJYg7A7A=
+hUZdDqwEaDVTCy_JLNv66duQgjkmNs41eY1rYqGN_D9YJ39igUZq-iQ2DbOCDjhD )
+############################################################
+############################################################
+
+--a0a3d1bbc5129346ba23d4b4bbbf614717cb03c00883c0fc26c24e6e2766
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>KYASANUR FOREST DISEASE - INDIA (01): (KARNATAKA) FATAL<br>**********=
+*********************************************<br>A ProMED-mail post<br><a h=
+ref=3D"https://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisIijpefK5=
+PNjW-mL-YZGnfgDOxU1G3gjwnPSi2Tfv3HA/42v/7rIaEA3URiGa9FgTrDECwA/h0/Q6Vm-8tCE=
+wdoBoSCneChs5zSqvO04Kj4yXbrtX_ENxc">http://www.promedmail.org</a><br>ProMED=
+-mail is a program of the<br>International Society for Infectious Diseases<=
+br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisC=
+T5tpD4Upm3qyMCbcYSQvc/42v/7rIaEA3URiGa9FgTrDECwA/h1/b8nULhHnRKu-e6DadT-IPlu=
+RWis5i1d8jUKCaN606X4">http://www.isid.org</a><br><br>Date: Sun 7 Jan 2024=0D=
+<br>Source: The New Indian Express, Express News Service [edited]=0D<br><a =
+href=3D"https://u19268662.ct.sendgrid.net/ss/c/TLh_csrC34X_iXpbYoMam3CLeDZb=
+P5tWjttTLr-6QFmycDRwqgsEI2vQqYpIJxUUkoou1pyNYo5eLcLYuI2nrmt5_HQ9a2o5pw5dmFe=
+mSISAk3ISqVZe5ys9GaPepvgWITRtAQAV5wWov3cn3gg_jGgzE1Hhv6-1GuwBopCuGi5FOq_LlO=
+xkZmD6WEgv2L0uKxstPMXdPI1rPjtjyS3scEsrv5VWvRT97M0OiQ7F8hk/42v/7rIaEA3URiGa9=
+FgTrDECwA/h2/lcGOusF7OakarOh7NwFOGuI5Nglyq2ZZTECJqHuWE-0">https://www.newin=
+dianexpress.com/states/karnataka/2024/jan/07/19-year-old-girl-tests-positiv=
+e-for-kyasanur-forest-disease-in-karnatakasshivamogga-2648824.html</a>=0D<b=
+r>=0D<br>=0D<br>A 2nd case of Kyasanur Forest disease (KFD) has been report=
+ed from a<br>village under Sampekatte Primary Health Centre in Hosanagara t=
+aluk [a<br>subdivision of Shivamogga district in Karnataka state]. A 19-yea=
+r-old<br>girl has tested positive for the disease and is currently admitted=
+ to<br>Kasturba Medical College and Hospital in Manipal, according to<br>Di=
+strict Health Officer Dr Rajesh Suragihalli.=0D<br>=0D<br>Dr Suragihalli to=
+ld The New Indian Express that the girl was initially<br>admitted with a vi=
+ral infection and in an unconscious state at McGann<br>Hospital on 1 Jan 20=
+24. She had a low haemoglobin level and was being<br>treated in the hospita=
+l's ICU.=20=0D<br>=0D<br>"Initially, the girl tested negative for KFD, but =
+after 3 to 4 days,<br>she tested positive for KFD," the DHO said.=0D<br>=0D=
+<br>Given the severity of the girl's condition, she was transferred to KMC<=
+br>Manipal, with the medical expenses covered by the health department.<br>=
+Dr Suragihalli said that the girl regained consciousness on Sunday [7<br>Ja=
+n 2024], and the treatment is ongoing.=0D<br>=0D<br>The DHO also noted that=
+ the girl's sister has tested positive for<br>dengue and is currently admit=
+ted to a Thirthahalli hospital. This year<br>[2024], the department has scr=
+eened over 1000 people for KFD, with<br>only 2 individuals testing positive=
+ for the virus.=20=0D<br>=0D<br>--=0D<br>Communicated by:=0D<br>ProMED=0D<b=
+r>via=0D<br>ProMED-SoAs<br><br>[Kyasanur Forest disease (KFD) is caused by =
+Kyasanur Forest disease<br>virus (KFDV), a member of the virus family Flavi=
+viridae. KFDV was<br>identified in 1957 when it was isolated from a sick mo=
+nkey from the<br>Kyasanur Forest in Karnataka State, India<br>(<a href=3D"h=
+ttps://u19268662.ct.sendgrid.net/ss/c/TLh_csrC34X_iXpbYoMam8oZ-RAsM3X9sczNw=
+7tZlwKp9FFYVaRxYAr3JP6iVs9HtrHVU4XFHGuHiPoaJGBTuw/42v/7rIaEA3URiGa9FgTrDECw=
+A/h3/Up4uS9h4-PGHwd0ipuxLkDXXtqtwRr1QyCOsuo5NPTI">https://www.cdc.gov/vhf/k=
+yasanur/pdf/factsheet.pdf</a>).=0D<br>=0D<br>The virus is transmitted to hu=
+mans through the bite of a tick or when<br>humans come in contact with an i=
+nfected animal<br>(<a href=3D"https://u19268662.ct.sendgrid.net/ss/c/MKq6Vg=
+KU8EpKB9-MN4UVgREnnk7bcGz5NbUKCEW8ank1ZixLKfQlmKLWUzmDLBC0wkzYf6FIjpkVISWMH=
+KBg-OTuzM0t0ZwqdmVcqx0fQKw/42v/7rIaEA3URiGa9FgTrDECwA/h4/M5i8bCGRNjzYZMHnD8=
+3uyljpLvqQ44O9MZBiF9atG_4">https://ncdc.mohfw.gov.in/WriteReadData/linkimag=
+es/KFDPamphlet.pdf</a>).=0D<br>=0D<br>People who frequently visit forests, =
+such as hunters, farmers, wood<br>cutters, or forest workers, are at high r=
+isk of acquiring the disease=0D<br>(<a href=3D"https://u19268662.ct.sendgri=
+d.net/ss/c/jf2l8IGiVWEHUuN2KNp3mXrYa7gY8zFaunr0v5Ptu_9Z9kN75h1V2eLscWsVxjNw=
+G16wICjmvP-37tBMJD4YWG8AGKgH8hcMghiNhpI-iEc/42v/7rIaEA3URiGa9FgTrDECwA/h5/M=
+1Mthb7oOGFMPITsE1e4JWyhYFVtOagc2RNM4dqH9qk">https://ccari.icar.gov.in/Exten=
+sion%20Folder%20No.%2093.pdf</a>).=0D<br>=0D<br>Shivamogga district, also k=
+nown as Shimoga district, is a district in<br>the Karnataka state of India<=
+br>(<a href=3D"https://u19268662.ct.sendgrid.net/ss/c/u6Jy221DtLTd6phwYNECn=
+dCVDGULFcCLoA-Mb23Mb1W55lruxnKOQXE30MgzECYgZQriFVII4vOmBzDXeBBoJA/42v/7rIaE=
+A3URiGa9FgTrDECwA/h6/Csnp2XTIS2h6g4lCYsd8ZBaFufBRFOpEi4hDJoNb8vg">https://e=
+n.wikipedia.org/wiki/Shimoga_district</a>). - Mod.GS=0D<br>=0D<br>Subsequen=
+t reports have indicated the patient mentioned above<br>succumbed to the di=
+sease although there are several discrepancies in<br>reporting regarding he=
+r age and the timeline.<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/=
+c/n2BLS7Nz6isdK7W6nsHw66S7mFdIPVvEAKiwoEKj6kJKPrn8IXBx6o0JxlxRGTFP4LrKEoSSC=
+KKN_dgRkyh0Gx3LZa2_XCyJFl66L1pn_Av7D3e7P2bUh66NdoEbA_1JQzJNiAvqv4UPj_Oyyhtt=
+Jw/42v/7rIaEA3URiGa9FgTrDECwA/h7/H38sAhc0tthIBtKzvmlOF56G3te5ppIbdB8VsXE2S-=
+8">https://thesouthfirst.com/health/first-kyasanur-forest-disease-death-in-=
+2024-reported-in-karnataka/</a><br>- Mod.JH<br><br>ProMED map:<br>India: <a=
+ href=3D"https://u19268662.ct.sendgrid.net/ss/c/sSnCkKCWBvais3EuVAOvgy2WOIX=
+7pp1nXnn4AbwuQ3Z6WbkfhqXYXU-aTMPJ8yThNyg8HUDu_OfbrL3d-OhgDQ/42v/7rIaEA3URiG=
+a9FgTrDECwA/h8/jCj27iShuA5HoLda0hqZwUY54HSAHnnm5X46n4zjS7I">https://promedm=
+ail.org/promed-post?place=3D8714161,142</a>]<br><br>[See Also:<br>2023=0D<b=
+r>----=0D<br>Kyasanur forest disease - India (02): (KA) 2nd case of 2023<br=
+>http://promedmail.org/post/20231217.8713771=0D<br>Kyasanur forest disease =
+- India: (KA)<br>http://promedmail.org/post/20230127.8708003=0D<br>2022=0D<=
+br>----=0D<br>Kyasanur forest disease - India (05): (MH)<br>http://promedma=
+il.org/post/20220724.8704585=0D<br>Kyasanur forest disease - India (04): (K=
+A) fatal<br>http://promedmail.org/post/20220510.8703072=0D<br>Kyasanur Fore=
+st disease - India (03): (KA)<br>http://promedmail.org/post/20220409.870251=
+7=0D<br>Kyasanur Forest disease - India (02): (KL)<br>http://promedmail.org=
+/post/20220209.8701366=0D<br>Kyasanur Forest disease - India: (KA)<br>http:=
+//promedmail.org/post/20220123.8701040=0D<br>2021=0D<br>----=0D<br>Kyasanur=
+ Forest disease - India: (KL)<br>http://promedmail.org/post/20210215.819210=
+6=0D<br>2020=0D<br>----=0D<br>Kyasanur Forest disease - India (18): (KA) hu=
+man<br>http://promedmail.org/post/20200418.7239986=0D<br>Kyasanur Forest di=
+sease - India (17): (KA) human<br>http://promedmail.org/post/20200414.72093=
+46=0D<br>Kyasanur Forest disease - India (16): (KA)<br>http://promedmail.or=
+g/post/20200407.7195641=0D<br>Kyasanur Forest disease - India (15): (KA) up=
+date<br>http://promedmail.org/post/20200405.7187120=0D<br>Kyasanur Forest d=
+isease - India (14): (KA)<br>http://promedmail.org/post/20200317.7100468=0D=
+<br>Kyasanur Forest disease - India (13): (KA)<br>http://promedmail.org/pos=
+t/20200312.7076230=0D<br>Kyasanur Forest disease - India (12): (KA) fatal<b=
+r>http://promedmail.org/post/20200310.7072688=0D<br>Kyasanur Forest disease=
+ - India (11): (KA)<br>http://promedmail.org/post/20200303.7039714=0D<br>Ky=
+asanur Forest disease - India (10): (KL)<br>http://promedmail.org/post/2020=
+0229.7029092=0D<br>Kyasanur Forest disease - India: (KA) human, monkey, eff=
+ective control<br>http://promedmail.org/post/20200103.6868759=0D<br>2019=0D=
+<br>----=0D<br>Kyasanur Forest disease - India (17): (KA) vaccination<br>ht=
+tp://promedmail.org/post/20190704.6551352=0D<br>Kyasanur Forest disease - I=
+ndia (16): (KA) update<br>http://promedmail.org/post/20190509.6459758=0D<br=
+>Kyasanur Forest disease - India (15): (KA) fatal<br>http://promedmail.org/=
+post/20190505.6453748=0D<br>Kyasanur Forest disease - India (14): (KL) fata=
+l<br>http://promedmail.org/post/20190430.6450000=0D<br>Kyasanur Forest dise=
+ase - India (13): (KA) fatal<br>http://promedmail.org/post/20190330.6394566=
+]<br>.................................................gs/tw/pkb/may/ty/sb/j=
+h<br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3DSNw61DexztTsNHojsp8dBLg6zm4GvwX4uAr6yLTbW9poMDAwdT=
+AwMNrVJotb9njFmcJge4xC1Trg1R8F-S7ZkubwZkDiFvWf3oH_ZDTNXigBrB1lmSZxIHU07UHQk=
+-pztWjyjMVO4AWt8841aiNoWrM7VEob19ePr0NF2yxd7oNhq13M208o3UZVJ-1M2vMqGVdVRiUl=
+pxQJcdzPSe002xWPi1TX-8A5RAppXfk9Du3bJwsd9p1P8EWIMXxwS-b6-u6Qmr2e9VOUmm_Qpdd=
+ORd6n2nrczQby_Oppwuu169A0gpiz72NcI6EU8KybJ0HfMbDRV-F2-5ULx8gDmMJ8hmBe6O7Ix0=
+weJYeDbRm5Ni32DzLf4b0nusmj_lfqghxQMY7uQVuB6GSfUxkuNof8-FW-Qz9it6b4m0vohipyI=
+iUDtXUi8TyjSEh8CVC3BvACSCEoKiCi4VWaseW9fXsHdw-TZsOdJglRpgPr6Vh9mte82h6YJxRl=
+G7lkTgurOHDt-WcASLfBh2J3Z7r_67J5np_SezZfo7tr2R_uA2uIeUfinepn1e4w2_Sc7njoIOv=
+YQms_20P3uqA8EDxWPlTD45vlbMjdxHikeSE1wmNFJBON_JCZGEEDwO0ARSpP8k_vnuYyD97ySs=
+yvDzm8yep3uSMii6I9zhkFNypi9GzV82LdlB0ZZ1tv4MX_cWW9Li21taP1D3nwhd04Kg_-A22Tx=
+DzDWIFphVS4kblYwGR2pRoJBIi3RGmzuGXMQDEF60MgUgx3XUZRWDkJvo-WtR27_KfyWSVeWZ8u=
+roilSFJQ5bOY33UEj2RJKdtcNRnJwUH2EDxmJpZUiBiU8gqgaTb-xh5uJEkaMVjfV537hC7c-Nb=
+MGzD6xSNZTjpibBVn6v0ahQV8QvXqe7mCc7L-6qI1Spd8DjbZE5m-ZgPQd0eYRX3kgXzDeXQ83N=
+t1rrd1lC4ylQuUzteaLw0oAMkXcxOgYRnPV8PY1ZUom0_QqsSdviwGFp-FXSAShoLeUZxmX3gvC=
+tN8B4gUys6A1PMdh_xFJ_yTmV27bkf8ZS9NJSNDgyEYPM4Ae_NX1MrqyHqvXw9eydNb924KiElJ=
+blOW7f4yV2eGPZEGbzJ3yi87pkHl4NuhRPqSm9ZbnkYE0xYnGz-UFzLfs_aOmRt4_PeT3UI6U9c=
+FHJYg7A7AhUZdDqwEaDVTCy_JLNv66duQgjkmNs41eY1rYqGN_D9YJ39igUZq-iQ2DbOCDjhD" =
+target=3D"_blank" class=3D"Unsubscribe--unsubscribePreferences" style=3D"fo=
+nt-family:sans-serif;text-decoration:none;">Unsubscribe Preferences</a></di=
+v><br>############################################################<br>#####=
+#######################################################<br><br><img src=3D"=
+https://u19268662.ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/42v/7rIaEA3UR=
+iGa9FgTrDECwA/ho.gif" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=
+=3D"height:1px !important;width:1px !important;border-width:0 !important;ma=
+rgin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;=
+margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !importa=
+nt;padding-right:0 !important;padding-left:0 !important;"/></body>
+</html>
+--a0a3d1bbc5129346ba23d4b4bbbf614717cb03c00883c0fc26c24e6e2766--

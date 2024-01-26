@@ -1,0 +1,629 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a98:c004:0:b0:1eb:e128:bbe3 with SMTP id l4csp581296eic;
+        Tue, 9 Jan 2024 15:02:13 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IGDYGQJpmFoxGPA/rR71h/JwnS22Yj5mXSdDFzmPg+GYOOC40mXFpaN2hS20cDe3A+huABG
+X-Received: by 2002:a4a:9019:0:b0:595:b689:247e with SMTP id i25-20020a4a9019000000b00595b689247emr152269oog.8.1704841333384;
+        Tue, 09 Jan 2024 15:02:13 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1704841333; cv=none;
+        d=google.com; s=arc-20160816;
+        b=qEvqv1q2BVglCwhaw6J+IyO+xY6S/VkqQxa3nIqBXGikwj0lVIOxgFq0LKkcF/2Bc7
+         opTX3OOyffptKORtU98awBLQGawnXaDgtu6UTcoPJCx5SZjwsGNA3W/d964gc++ex/z+
+         CIhRSinJX7NjJakUOwKuuC2c+/jvzQ0g4U6RhUg9Ei9wkI2QKQIOSK+fcHk+5bI/Ko4T
+         w1NIHVTY617c3RKhmqcRlsvd7LgXn5I5e7ZT4qUIW5BUX6Qul7kPG/bK5taQLKbS2UH/
+         R3U/omUVirC5dI+YRYfsc7q5mildX0PThBVjvZ/29BMZhTZIrd7F2LgE94TOPKiNqqUp
+         y32A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=DB2qO6m9gIwBAXEbK7k6HBWIByR4l2yBhXtsZqQmhds=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=c0sKZ1lXh+ceurt4QB+LTQ5trKWZlpwI64ADGP5IAYb8aB6fGC7T95P/3GaDE0Hon8
+         f9EGuKijqzImFkazd6SVjhpH59TNBySrlMooj3FiZ51Lk4dJHg4GXyI/UaQt9VhqjfI9
+         1P5wwKhwpJoZTBdX/9GSMsCYbNeNt9myUxUvoI/64YnoG2Dpmpcb2sy/RC/CXk9druSZ
+         RCH4eHSoaMwjr4bzoN6yVeQJnuVrLl+EhQvZTMSvcg9FZ0r0bYllsJl/IRvrVC5bYXmn
+         HzU0mEua37/eYSoTDElc5cXGpwJOwY+1rqTxqEZ37FTtH8PUkceavK6stq07Zyd+q9wq
+         3ZOg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=s3us9mm+;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=TYZYDrMS;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id f197-20020a4a58ce000000b00594f9025a59si806813oob.5.2024.01.09.15.02.12
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 09 Jan 2024 15:02:13 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=s3us9mm+;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=TYZYDrMS;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=DB2qO6m9gIwBAXEbK7k6HBWIByR4l2yBhXtsZqQmhds=;
+	b=s3us9mm+hfp9UdzZo1dBoCW4G3FclBaE1TLeOGQx1Lz+dZB8psy+JHzYmDiOlhi0LWnI
+	XnLFM13PQwoFwq0eqFlZcrufxDoIy8skv4ePOBrrmNppeVsrM8bddAUsLY1CVwxawUDYg9
+	mWVNgUUjaYk+rDVjdVEFlcv5EnUdE9BkvGHijNIfwEkyGfyYOBpoYiMOxvV4fCe48atOBV
+	BdjpGnsyvmxpaTLz+DUP53J8NUWDPqiuuA9TJ6pUw/DWOkhz7XIXtKyeQc71BDwronpikf
+	W0LL2MUNY3LMdyhUWiWabdu1Wm/UmCOlA1INDTXHick8ug504GVviUk5VmxXRv4w==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=DB2qO6m9gIwBAXEbK7k6HBWIByR4l2yBhXtsZqQmhds=;
+	b=TYZYDrMSjDp56Cyjb4JiWAc1l9fbL6nWwVuo+c0mEqOWvq8O4oOIIPdaMAim53tIozgD
+	s/ORhBRM7aKboqM+BAK9g7SwKRp+CrmZaTz6ftT+aE67ppMGCXd2xIn4eKSsBgF04gnZgd
+	FKiOk72zqj4/mewQz2xzmbN3xF5uwWvOw=
+Received: by filterdrecv-d66b9b67c-kb9m5 with SMTP id filterdrecv-d66b9b67c-kb9m5-1-659DD073-60
+        2024-01-09 23:02:11.506354476 +0000 UTC m=+7273233.459150300
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-1 (SG) with HTTP
+	id cy6Ud4U3Q3qsL_-Wn0EJVA
+	Tue, 09 Jan 2024 23:02:11.261 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=7fd3e18427948735f7130e9180dfcaed3579413825f0bc89090494494e92
+Date: Tue, 09 Jan 2024 23:02:11 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <cy6Ud4U3Q3qsL_-Wn0EJVA@geopod-ismtpd-1>
+Subject: PRO/AH/EDR> Oropouche and Mayaro viruses - Brazil: (AC)
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iBTYZJydTA6q4ojWwP8hG7sHQYcPH7=2F20X3E3KF?=
+ =?us-ascii?Q?zCtbo6aEqnEezwVRSQA0Zs5ARN0wAqmAT+sKqff?=
+ =?us-ascii?Q?DrZMcrQfyr8cMOyeb8sMyQoi+IBjwWQhvbBCK8l?=
+ =?us-ascii?Q?bQGWfwuYpgqcquJ+YbVVg5EyeWMh8kq8HNc5z3o?=
+ =?us-ascii?Q?vrXH1AlxoPMZoKaVSYRA=2F38ornHfZAhSJNOTkm?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUiShGf=2FO8XJWpH34Od4Nd?=
+ =?us-ascii?Q?fxXa6jil96uRcJkF+N+LeVnO1tx80ddOyoyOo=2Fc?=
+ =?us-ascii?Q?Brxcl3ERAm0cOY743=2FFH59DWiSf5OzXORh1DLKt?=
+ =?us-ascii?Q?hb1NMKty3PsA5ju0ZzxCrq1WQuZSEQf=2FJlWtgqv?=
+ =?us-ascii?Q?cZmsyCHlNUZsDrOvnzeApqgE18XjnJazJkYQ0cP?=
+ =?us-ascii?Q?B0fcd4aK5S=2Fnkzdb1vPzNHIGQkfB31DW5eQbmxR?=
+ =?us-ascii?Q?2Uv6elsXwJSSEd1RQEw01miSZXXAWOkntOnW4xf?=
+ =?us-ascii?Q?nJjopERWYGTsqs=2FU2HXVR87U42hoVwxvcMr9nkE?=
+ =?us-ascii?Q?SJNL5kNy+Mg66gk1a3Wah8z43g=2FbsqD=2FpJahTsB?=
+ =?us-ascii?Q?C6dJ2rEda4LHm6joOBEdqk2Qm4X4DdMHOwm6toI?=
+ =?us-ascii?Q?Nw1=2FUam6OzbHAyMfJ8Tg+EUPCHxH2Y4q6CUyxS2?=
+ =?us-ascii?Q?BlOSH=2FZeWmFmS+Xwtg39ZCBJH0Gk+CB00Fc=2F5Oo?=
+ =?us-ascii?Q?6wG3g6tXH5cHCliXOxvuo+p5xuLm3l7PcVgEiwN?=
+ =?us-ascii?Q?tyEUgcraQDUjH0VuP2tt2=2FPPZmrNMMpcXTfWjNs?=
+ =?us-ascii?Q?+dsGnBMoxE0MG5IfyvgTHNZeHcqXVyGocxxRtEE?=
+ =?us-ascii?Q?hAn5gmim9xS9ElS54NW4bovXiZ89sSZJIETTvMn?=
+ =?us-ascii?Q?VMwdz01cBcqbTsV4kBBjMqNTc10xkEhJDRl31I=2F?=
+ =?us-ascii?Q?X3GDzaPBNPqzm7=2FGfzIHrSK29=2Ffy0BwN52z0VZf?=
+ =?us-ascii?Q?yG0FGBV6D6FcFqdXqAZuBj5JhxcFlAsUQCYktum?=
+ =?us-ascii?Q?lriuNjMeoIjVyK8d1CyAQgk6dQ=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2EQBQkf6-3K?=
+ =?us-ascii?Q?T3lhMYsx2ONUgcZ-vPMJSm4hjLEpLzHHyJoMDAw?=
+ =?us-ascii?Q?dTAwMAONqfERWrGiv=5FWAraR7Ju=5FCa5plTk89rQe?=
+ =?us-ascii?Q?rt1PqgO7QFvleymUH1KF9RtbNq6VSMyoPuxxtMr?=
+ =?us-ascii?Q?hHPMJbSlKDokIA3kt4AXa2FlfxviblkpRld31MA?=
+ =?us-ascii?Q?PVFtgrZFtQ6EcgJCw=3D=3D=2ErHlsgreYkIbJkJraObh?=
+ =?us-ascii?Q?tiNjGMGw9rnRFsiV93zwwbkxoMDAwdTAwMPmOnm?=
+ =?us-ascii?Q?FUSNP8WECInsaZ08tSVrx8tz2ACmyEOgIh0dhV1?=
+ =?us-ascii?Q?=5FfQYCy-dM7U=5Fs5oI7-aZBO3ilVQqKmj-Bab=5Fplw?=
+ =?us-ascii?Q?2b4BlMjF-bzzguEol5K6ydT2jBJNEzzhM4gQggI?=
+ =?us-ascii?Q?7z=5F1IarYPoHvnnArTACqRCo-mGqSrtcwtlr3NGh?=
+ =?us-ascii?Q?EFw7zyRDvkJvIqLDZ-QArpNxJLtDxu5AG7jPguf?=
+ =?us-ascii?Q?x3oFfU9M46nb5Mes2MuuUPsMjCdhgH7kfq5LMKr?=
+ =?us-ascii?Q?rM2NUEaWRZNHR36yzA1xxzi-dE4oIYmH8GJMqUF?=
+ =?us-ascii?Q?nUnTFgarRECrVSQEUx3eZkzrSHAwP0L=5Fzh7rtoT?=
+ =?us-ascii?Q?bxgEwwsiWZyGlfVzbPAX06=5FkPGaNStyszJ9PDl-?=
+ =?us-ascii?Q?ylM7oYPuGyTrhI-RlwSuh4Bju-sBLuPediCRAqL?=
+ =?us-ascii?Q?Orz0dV5NJCr-=5FJgUU7lb4WrtjNvpsUBejV4-oWd?=
+ =?us-ascii?Q?YvKBO-qeL52Gac6lybPNzPSSY-ZjCNH3sItjufJ?=
+ =?us-ascii?Q?=5Fa8UO=5FByI774XjwNUu1NesuQdJlAJxbwpjRV7cI?=
+ =?us-ascii?Q?sIaCcM7PYN=5FV6iCrgAh8V8JIujB4sEnz=5F3g1fHj?=
+ =?us-ascii?Q?VolbXA2PH7eKB4bfcp1p=5FItXCW2IsHlB8GUT2mD?=
+ =?us-ascii?Q?Xoywjqlb35ZotR319y-jR7YO8=5FhyYcfGmsBfzr=5F?=
+ =?us-ascii?Q?=5FZmFidfft75wGPvu07fFcljxlv6xtG3atM0-JA1?=
+ =?us-ascii?Q?GnR0b7LoG5-QmZILGUmUZawL6beiXVx3ETuBgDQ?=
+ =?us-ascii?Q?G9B0DrRVXxnc-WvLReKdNfS4tYbBPhgN17Bqqmx?=
+ =?us-ascii?Q?CL-h4CQtQoQm7uwK-SYWHX2ZtQiefvkgAT04sE4?=
+ =?us-ascii?Q?m1YcePSbXs2r1k9OJ3ErkhcoorKcGsm3Hiq5j0i?=
+ =?us-ascii?Q?vqvxvgYmDnrCtdJaMIPYSLHVm8L1QEREJ4We7K7?=
+ =?us-ascii?Q?FuyBLha7EMYYVGZxMjjQgS-pWPmONL508i3sWjX?=
+ =?us-ascii?Q?jvAYwQjTHcjmIL1vhXdedmv2-cWWBFXCCbU0J37?=
+ =?us-ascii?Q?Q4m-izJwtoc8xJiNd6tG6fqq7uVlJId7mrJWwwi?=
+ =?us-ascii?Q?pHmWIwfGDbIBZ2nfdSCAm=5FT6XZoED3JDgH=5FiO4f?=
+ =?us-ascii?Q?1uLiSA=3D=3D=3E?=
+
+--7fd3e18427948735f7130e9180dfcaed3579413825f0bc89090494494e92
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=iso-8859-1
+Mime-Version: 1.0
+
+OROPOUCHE AND MAYARO VIRUSES - BRAZIL: (ACRE)
+*********************************************
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+Date: Wed 3 Jan 2024
+Source: G1 [in Portuguese, trans. Mod.TY, edited]
+<http://tinyurl.com/bp58b6zz>
+
+
+Acre reached 60 confirmed cases of Oropouche and Mayaro infections,
+detected in 10 municipalities in the last month of 2023. According to
+data provided to G1 by the Acre State Department of Health (Sesacre),
+the state reached 60 cases by 2 Dec 2023.
+
+As a result, Acre recorded an increase in relation to the first total
+released by Sesacre in November last year [2023]. Up to then, there
+were 6 cities with confirmed cases, with 48 recorded cases in total.
+
+The first registered cases of these infections occurred in April
+[2023]. According to the survey, the cases were detected in the
+following municipalities.
+
+Oropouche:
+Location / No. cases
+--------------------
+Acrel=E2ndia / 8
+Brasil=E9ia / 1
+Feij=F3 / 3 (does not appear in the first total count)
+Manoel Urbano / 8 (+5 cases)
+Porto Acre / 5
+Rio Branco / 32
+Sena Madureira / 1
+
+Mayaro:
+Location / No. cases
+--------------------
+Cruzeiro do Sul / 3
+M=E2ncio Lima / 1 (does not appear in the first total count)
+Rio Branco / 1
+
+The 2 viruses cause symptoms similar to those of dengue, transmitted
+by the _Aedes aegypti_ mosquito. Mayaro is even called chikungunya's
+"cousin." (See the symptoms below).
+
+Oropouche fever is an arbovirus, that is, a virus transmitted by
+mosquitoes, which presents symptoms similar to dengue, although with a
+much lower risk of bleeding complications and death. Rarely, cases may
+be complicated by viral (benign) meningitis. The main mosquito that
+transmits the disease among humans is _Culicoides paraensis_, better
+known as "maruim." Preventive measures consist of avoiding their
+proliferation of and contact with these mosquitoes, similar to
+precautions against dengue fever.
+
+Mayaro is endemic (has a continuous presence) in Amazonia and is
+normally transmitted by mosquitoes of the _Haemagogus_ genus, which
+live in the forests and are also known for spreading sylvan [forest]
+yellow fever. It is a different profile from _Aedes aegypti_, the
+vector of dengue, zika, chikungunya and urban yellow fever -- as it
+lives in cities.
+
+"They are febrile syndromes and are very similar to the symptoms of
+dengue, with fever, body pain, pain behind the eyes and we are
+noticing that there are cases with symptoms on the skin. People are
+appearing with spots on the skin too. The exam only showed negative
+for dengue and we decided to test the differential diagnosis, as we
+call it," explained the head of the Health Surveillance Department,
+Edvan Meneses, at the time of the release of the first report.
+
+The coordinator highlighted that Acre had not recorded cases of the
+virus in the urban areas for a long time. He highlighted that the
+cases were found more in rural areas, and explained the possible
+reasons for the locality of infections. "It could be due to the fact
+that the city is deeper into the forest, but also due to changes in
+the mosquito's life cycle. Now, we are realizing that there are more
+houses, we saw that a lot of people went hunting [in the forest], as
+is the case with yellow fever. This is surprising for us to notice
+[cases] in urban areas, where we find more dengue, zika and
+chikungunya," he confirmed.
+
+Because of the lack of confirmation in urban areas, the coordinator
+said that the Ministry of Health did not send samples for tests. "We
+couldn't know in a broad sense because we didn't test because it
+wasn't [recognized as] an endemic disease here. We may have had cases,
+but they were underreported due to lack of testing," he said.
+
+With the new recorded cases, the specialist said that a reorganization
+of the health network will be carried out with training of
+professionals, lectures and alerts about viruses to begin the work of
+raising awareness and combating infections.
+
+"They were isolated cases; we didn't have that number of cases in the
+urban area. It's not a new disease, but it wasn't in our area. We're
+going to train the entire network about Mayaro and Oropouche, even the
+names are difficult, so it's a whole movement for training our
+network, reorganization, leaving the diagnosis to the units, the
+medication and it was something we were not expecting. There are 2
+more arboviruses for us to work on during this epidemiological
+period," he said.
+
+Symptoms
+--------
+Oropouche virus [infection]:
+- Fever
+- Headache
+- Pain in the body and joints
+- In some cases, the patient may experience vomiting
+
+Mayaro virus [infection]:
+- Fever
+- Headache
+- Body and joint pain
+- In some cases, the patient may experience vomiting
+
+The infection generates symptoms similar to those caused by
+chikungunya [virus infection], such as high fever and joint pain,
+which makes diagnosis difficult.
+
+[Byline: Victor Lebre]
+
+--
+Communicated by:
+ProMED
+
+[Given the large numbers of dengue cases in Brazil and the recent
+chikungunya  and Zika virus outbreaks there, it is not surprising that
+these 3 viruses probably have been the default diagnosis in febrile
+cases, often without laboratory confirmation, as the above report
+mentions. The result is that Oropouche and Mayaro virus infections are
+almost certainly underreported not only in Brazil but in the tropical
+Americas where the respective arthropod vectors occur.
+
+Oropouche virus [OROV] is endemic in the Amazon Basin, and human cases
+have been documented in Brazil, Peru, Ecuador, Panama, and Trinidad
+and Tobago. Reports of cases in these countries have been sporadic but
+likely underdiagnosed. Because fever with a rash is typical of dengue
+fever, yellow fever, chikungunya, and Zika virus infections, timely
+laboratory support is essential to make a differential diagnosis.
+
+Although _Culicoides paraensis_, the vector of Oropouche virus, occurs
+from the northern USA to Argentina, human cases have been recognized
+only in the Amazon Basin and Trinidad and Tobago. One wonders if there
+is a possibility that cases are occurring in other countries where
+this vector midge is found, but go undiagnosed or misdiagnosed as
+dengue fever, yellow fever, chikungunya, or Zika virus infections.
+Perhaps OROV diagnostic capability in all tropical areas where the
+vector occurs would reveal more cases.
+
+An image of _Culicoides paraensis_ can be seen at
+<http://tinyurl.com/ycy4pwrc>.
+
+Mayaro virus (MAYV) is endemic in Brazil. It has been found to cause
+human disease in Par=E1 state and in other areas in Brazil. The first
+report of Mayaro virus cases was in 1955, in an outbreak in Par=E1
+state, Brazil. In 2011, thousands of cases of Mayaro fever were
+reported in an outbreak that occurred in Manaus, Amazonas, Brazil.
+
+As Mod.JT noted in an early ProMED post (20110220.0557), MAYV, of the
+_Alphavirus_ genus, Togaviridae family, is endemic in tropical areas
+of South America (Trinidad, Suriname, French Guyana, Brazil, Peru,
+Bolivia, and Venezuela). In 2016, a MAYV infection occurred in a child
+in Haiti. The transmission cycle is very similar to that of the yellow
+fever virus, using primates as reservoirs and _Haemagogus_ mosquitoes
+as vectors.
+
+MAYV has been associated with a variety of mosquitoes that are
+possible vectors that can transmit it to humans. MAYV has been
+isolated from _Aedes aegypti_ and _Culex quinquefasciatus_ captured in
+the field in Brazil. _Anopheles_ mosquitoes have been implicated as
+important virus vectors (see references below).
+
+References
+----------
+1. Brustolin M, Pujhari S, Henderson CA, Rasgon JL. _Anopheles_
+mosquitoes may drive invasion and transmission of Mayaro virus across
+geographically diverse regions. PLoS Negl Trop Dis. 2018; 12(11):
+e0006895; <https://doi.org/10.1371/journal.pntd.0006895>
+2. Serra OP, Cardoso BF, Ribeiro AL, et al. Mayaro virus and dengue
+virus 1 and 4 natural infection in culicids from Cuiaba, state of Mato
+Grosso, Brazil. Mem Inst Oswaldo Cruz. 2016; 111(1): 20-9;
+<http://dx.doi.org/10.1590/0074-02760150270>
+
+The steps being taken in Acre state, mentioned above, should help
+define the extent and incidence of infections by Oropouche and Mayaro
+viruses in that state. - Mod.TY
+
+ProMED map:
+Acre, Brazil:
+<https://promedmail.org/promed-post?place=3D8714129,10553>]
+
+[See Also:
+2021
+----
+Mayaro virus - Brazil: (PA) 2021
+http://promedmail.org/post/20220128.8701133
+Oropouche virus - Brazil: (PI)
+http://promedmail.org/post/20210428.8334573
+2017
+----
+Oropouche virus - Brazil (02)
+http://promedmail.org/post/20170824.5270872
+Oropouche - Brazil http://promedmail.org/post/20170814.5247798
+Mayaro virus disease - Brazil
+http://promedmail.org/post/20170913.5312944
+2016
+----
+Mayaro virus disease - Brazil
+http://promedmail.org/post/20161128.4658296
+2015
+----
+Mayaro virus disease - Brazil (GO) RFI
+http://promedmail.org/post/20150705.3485723
+2011
+----
+Mayaro virus disease - Brazil: (AM)
+http://promedmail.org/post/20110222.0587
+2009
+----
+Oropouche fever - Brazil (02): (AP)
+http://promedmail.org/post/20090808.2816
+Oropouche fever - Brazil: (AP)
+http://promedmail.org/post/20090806.2782]
+.................................................ty/rd/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3DGxriYA2Q9Nl1Hmkm7mxre1eTUqVtQfpAyinenHgsCHJoMDAwdTAwMEHJ8b1=
+GtFQXNXVRxRqwnD6jJtdMqwoqQQ-3ItfC9QzDxPS3O01Uv0msUygmq5U6IZg29TTmBE25N-GlFx=
+YVoFqWItHUvCU4jVkN0ljiLaBU-U_Fg2-Wzn68keCIq2hop7FHGxcdQuS6WarGKTjV6PA1G1dQm=
+eQrNKB2x3W-7wVOqeoVmf5yHOsZlysfLRiOK958Ec_Iifabz9BOmnhopacbSUFV2HnCgqRoRXnz=
+RKP4sL0svgqb8c2Nxg3SLb29dUcN_n2oXAeXVIDFjfQU7IaCkqm2f_sKYodUaj-rs-I-R--ktFp=
+cxp4D24FJk-GLnuv6FE0oUp8mbLxCWXhD55X9t7TcsUUIxigIiM7WGhRBk5EsvJVVDXuRkbpbwD=
+XoLWkTT5QBT8XpoGvaMHjzlybzG---fdwD9jOJaKDueg3ipGg584hkoeHfYzMo3W03uYC5yRA36=
+tkMBA-6E1YmCaMrJ_-AO39oZlvf6oM5Htsflfm2_86y1tBqD70PgWqV9u6a_2LQnLupInvlitK6=
+-CB_W4uK1lt4p7yVyDMEzoeel7U8Pn2nwpdTrzIPZjJMyIGE6pfoGEsO_EhHjtVr-pdvbgE5yUN=
+DhnwWfsCYxrrzu4tfyX24FZvzQb7eeEGXatZc4Ro2TpN26_MoYeKvEqJ7d6HoCMdGa1pjaWujzq=
+1An9wbIH5LXkoEIf5pYxPm1CukN0ZCdsG_UmL7Bg-BHE0C4_8fKmbpQ-KYiFX_2HmomDKpWQDTl=
+c2CWJMn8dR5GrqFzfG_e0gLsesBIyaDqcu7OVkM74iDK3bkMvBjxnZu8V6_cTnEPssGYxcRAh53=
+Hj-T9rqWX_WcGr-i5aAWHI6yzTYAHxkOyf45RuBjCJ7QbmyUK4llaZpqKHxFpt5LLcgZ_b-njlg=
+j9URRYTXfjkjPVpWlew7R_hcrfc_i6sF94tVSeklH1ZcND9ALkpWU-dWNuqW_KuI40AfI_4ITVN=
+HG-nZVsMF3-TLBooE9GO_V7eQdR8yENMnPfSLI9OwVl-I5ppfCLwG0vaw9XeyVjWsYzu-ypLZvF=
+jAWU7HKsIkE6xH1G3G3dunkkmpjl6Eb6iZvzvvelGPbRnnPvCIsaXFf9VdM7BJLZTcMLVOknBHE=
+DQ4AQCYRBJazgSCK4HdX4chfhnZw6NoUb3Si53lwzGzq1Ea1sb_J1dZn5EtAzlnW )
+############################################################
+############################################################
+
+--7fd3e18427948735f7130e9180dfcaed3579413825f0bc89090494494e92
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=iso-8859-1
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>OROPOUCHE AND MAYARO VIRUSES - BRAZIL: (ACRE)<br>********************=
+*************************<br>A ProMED-mail post<br><a href=3D"https://u1926=
+8662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisIijpefK5PNjW-mL-YZGnfgDOxU1G=
+3gjwnPSi2Tfv3HA/42u/zw3J8cCoRUeHcluotqQRqw/h0/hj601B9mtI9jyivs7snHJqLlCXn8r=
+q1cP0g5SI6DxG0">http://www.promedmail.org</a><br>ProMED-mail is a program o=
+f the<br>International Society for Infectious Diseases<br><a href=3D"https:=
+//u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisCT5tpD4Upm3qyMCbcYSQv=
+c/42u/zw3J8cCoRUeHcluotqQRqw/h1/FvcZ2JbSG97qQyT-DEYkVk0GTvSLpJ3Z5bQo0IUZHIA=
+">http://www.isid.org</a><br><br>Date: Wed 3 Jan 2024=0D<br>Source: G1 [in =
+Portuguese, trans. Mod.TY, edited]=0D<br><a href=3D"https://u19268662.ct.se=
+ndgrid.net/ss/c/DgIMzhc9xO6P0drrFfDxwUvzQQa5Iu0Jxk_SC2O4ZB8qEkIsWQ5y_vB8xF-=
+lFi3h/42u/zw3J8cCoRUeHcluotqQRqw/h2/fVa2CdYfD9NPWNZeE1BQHjnwWXxEFC56SjsTCVu=
+55rM">http://tinyurl.com/bp58b6zz</a>=0D<br>=0D<br>=0D<br>Acre reached 60 c=
+onfirmed cases of Oropouche and Mayaro infections,<br>detected in 10 munici=
+palities in the last month of 2023. According to<br>data provided to G1 by =
+the Acre State Department of Health (Sesacre),<br>the state reached 60 case=
+s by 2 Dec 2023.=0D<br>=0D<br>As a result, Acre recorded an increase in rel=
+ation to the first total<br>released by Sesacre in November last year [2023=
+]. Up to then, there<br>were 6 cities with confirmed cases, with 48 recorde=
+d cases in total.=0D<br>=0D<br>The first registered cases of these infectio=
+ns occurred in April<br>[2023]. According to the survey, the cases were det=
+ected in the<br>following municipalities.=0D<br>=0D<br>Oropouche:=0D<br>Loc=
+ation / No. cases=0D<br>--------------------=0D<br>Acrel=E2ndia / 8=0D<br>B=
+rasil=E9ia / 1=0D<br>Feij=F3 / 3 (does not appear in the first total count)=0D=
+<br>Manoel Urbano / 8 (+5 cases)=0D<br>Porto Acre / 5=0D<br>Rio Branco / 32=0D=
+<br>Sena Madureira / 1=0D<br>=0D<br>Mayaro:=0D<br>Location / No. cases=0D<b=
+r>--------------------=0D<br>Cruzeiro do Sul / 3=0D<br>M=E2ncio Lima / 1 (d=
+oes not appear in the first total count)=0D<br>Rio Branco / 1=0D<br>=0D<br>=
+The 2 viruses cause symptoms similar to those of dengue, transmitted<br>by =
+the _Aedes aegypti_ mosquito. Mayaro is even called chikungunya's<br>"cousi=
+n." (See the symptoms below).=0D<br>=0D<br>Oropouche fever is an arbovirus,=
+ that is, a virus transmitted by<br>mosquitoes, which presents symptoms sim=
+ilar to dengue, although with a<br>much lower risk of bleeding complication=
+s and death. Rarely, cases may<br>be complicated by viral (benign) meningit=
+is. The main mosquito that<br>transmits the disease among humans is _Culico=
+ides paraensis_, better<br>known as "maruim." Preventive measures consist o=
+f avoiding their<br>proliferation of and contact with these mosquitoes, sim=
+ilar to<br>precautions against dengue fever.=0D<br>=0D<br>Mayaro is endemic=
+ (has a continuous presence) in Amazonia and is<br>normally transmitted by =
+mosquitoes of the _Haemagogus_ genus, which<br>live in the forests and are =
+also known for spreading sylvan [forest]<br>yellow fever. It is a different=
+ profile from _Aedes aegypti_, the<br>vector of dengue, zika, chikungunya a=
+nd urban yellow fever -- as it<br>lives in cities.=0D<br>=0D<br>"They are f=
+ebrile syndromes and are very similar to the symptoms of<br>dengue, with fe=
+ver, body pain, pain behind the eyes and we are<br>noticing that there are =
+cases with symptoms on the skin. People are<br>appearing with spots on the =
+skin too. The exam only showed negative<br>for dengue and we decided to tes=
+t the differential diagnosis, as we<br>call it," explained the head of the =
+Health Surveillance Department,<br>Edvan Meneses, at the time of the releas=
+e of the first report.=0D<br>=0D<br>The coordinator highlighted that Acre h=
+ad not recorded cases of the<br>virus in the urban areas for a long time. H=
+e highlighted that the<br>cases were found more in rural areas, and explain=
+ed the possible<br>reasons for the locality of infections. "It could be due=
+ to the fact<br>that the city is deeper into the forest, but also due to ch=
+anges in<br>the mosquito's life cycle. Now, we are realizing that there are=
+ more<br>houses, we saw that a lot of people went hunting [in the forest], =
+as<br>is the case with yellow fever. This is surprising for us to notice<br=
+>[cases] in urban areas, where we find more dengue, zika and<br>chikungunya=
+," he confirmed.=0D<br>=0D<br>Because of the lack of confirmation in urban =
+areas, the coordinator<br>said that the Ministry of Health did not send sam=
+ples for tests. "We<br>couldn't know in a broad sense because we didn't tes=
+t because it<br>wasn't [recognized as] an endemic disease here. We may have=
+ had cases,<br>but they were underreported due to lack of testing," he said=
+.=0D<br>=0D<br>With the new recorded cases, the specialist said that a reor=
+ganization<br>of the health network will be carried out with training of<br=
+>professionals, lectures and alerts about viruses to begin the work of<br>r=
+aising awareness and combating infections.=0D<br>=0D<br>"They were isolated=
+ cases; we didn't have that number of cases in the<br>urban area. It's not =
+a new disease, but it wasn't in our area. We're<br>going to train the entir=
+e network about Mayaro and Oropouche, even the<br>names are difficult, so i=
+t's a whole movement for training our<br>network, reorganization, leaving t=
+he diagnosis to the units, the<br>medication and it was something we were n=
+ot expecting. There are 2<br>more arboviruses for us to work on during this=
+ epidemiological<br>period," he said.=0D<br>=0D<br>Symptoms=0D<br>--------=0D=
+<br>Oropouche virus [infection]:=0D<br>- Fever=0D<br>- Headache=0D<br>- Pai=
+n in the body and joints=0D<br>- In some cases, the patient may experience =
+vomiting=0D<br>=0D<br>Mayaro virus [infection]:=0D<br>- Fever=0D<br>- Heada=
+che=0D<br>- Body and joint pain=0D<br>- In some cases, the patient may expe=
+rience vomiting=0D<br>=0D<br>The infection generates symptoms similar to th=
+ose caused by<br>chikungunya [virus infection], such as high fever and join=
+t pain,<br>which makes diagnosis difficult.=0D<br>=0D<br>[Byline: Victor Le=
+bre]=0D<br>=0D<br>--=0D<br>Communicated by:=0D<br>ProMED<br><br>[Given the =
+large numbers of dengue cases in Brazil and the recent<br>chikungunya  and =
+Zika virus outbreaks there, it is not surprising that<br>these 3 viruses pr=
+obably have been the default diagnosis in febrile<br>cases, often without l=
+aboratory confirmation, as the above report<br>mentions. The result is that=
+ Oropouche and Mayaro virus infections are<br>almost certainly underreporte=
+d not only in Brazil but in the tropical<br>Americas where the respective a=
+rthropod vectors occur.=0D<br>=0D<br>Oropouche virus [OROV] is endemic in t=
+he Amazon Basin, and human cases<br>have been documented in Brazil, Peru, E=
+cuador, Panama, and Trinidad<br>and Tobago. Reports of cases in these count=
+ries have been sporadic but<br>likely underdiagnosed. Because fever with a =
+rash is typical of dengue<br>fever, yellow fever, chikungunya, and Zika vir=
+us infections, timely<br>laboratory support is essential to make a differen=
+tial diagnosis.=0D<br>=0D<br>Although _Culicoides paraensis_, the vector of=
+ Oropouche virus, occurs<br>from the northern USA to Argentina, human cases=
+ have been recognized<br>only in the Amazon Basin and Trinidad and Tobago. =
+One wonders if there<br>is a possibility that cases are occurring in other =
+countries where<br>this vector midge is found, but go undiagnosed or misdia=
+gnosed as<br>dengue fever, yellow fever, chikungunya, or Zika virus infecti=
+ons.<br>Perhaps OROV diagnostic capability in all tropical areas where the<=
+br>vector occurs would reveal more cases.=0D<br>=0D<br>An image of _Culicoi=
+des paraensis_ can be seen at<br><a href=3D"https://u19268662.ct.sendgrid.n=
+et/ss/c/DgIMzhc9xO6P0drrFfDxwb4vnlWByeIK_Yi9mBw2IfAspAUSHSELr5hiN1Qqp0Wn/42=
+u/zw3J8cCoRUeHcluotqQRqw/h3/zVXgw4z77WMTu3D4yyD78fTTTF9HKRWnLFFS8zP-CvQ">ht=
+tp://tinyurl.com/ycy4pwrc</a>.=0D<br>=0D<br>Mayaro virus (MAYV) is endemic =
+in Brazil. It has been found to cause<br>human disease in Par=E1 state and =
+in other areas in Brazil. The first<br>report of Mayaro virus cases was in =
+1955, in an outbreak in Par=E1<br>state, Brazil. In 2011, thousands of case=
+s of Mayaro fever were<br>reported in an outbreak that occurred in Manaus, =
+Amazonas, Brazil.=0D<br>=0D<br>As Mod.JT noted in an early ProMED post (201=
+10220.0557), MAYV, of the<br>_Alphavirus_ genus, Togaviridae family, is end=
+emic in tropical areas<br>of South America (Trinidad, Suriname, French Guya=
+na, Brazil, Peru,<br>Bolivia, and Venezuela). In 2016, a MAYV infection occ=
+urred in a child<br>in Haiti. The transmission cycle is very similar to tha=
+t of the yellow<br>fever virus, using primates as reservoirs and _Haemagogu=
+s_ mosquitoes<br>as vectors.=0D<br>=0D<br>MAYV has been associated with a v=
+ariety of mosquitoes that are<br>possible vectors that can transmit it to h=
+umans. MAYV has been<br>isolated from _Aedes aegypti_ and _Culex quinquefas=
+ciatus_ captured in<br>the field in Brazil. _Anopheles_ mosquitoes have bee=
+n implicated as<br>important virus vectors (see references below).=0D<br>=0D=
+<br>References=0D<br>----------=0D<br>1. Brustolin M, Pujhari S, Henderson =
+CA, Rasgon JL. _Anopheles_<br>mosquitoes may drive invasion and transmissio=
+n of Mayaro virus across<br>geographically diverse regions. PLoS Negl Trop =
+Dis. 2018; 12(11):<br>e0006895; <a href=3D"https://u19268662.ct.sendgrid.ne=
+t/ss/c/TUIVIg4PCmni5tP3Q8lzBW5NAcOuTuxSXVCQQNeudQpcOvz8KEcwZcAmW34Xb2yfTpbT=
+D2lT5ZZNlCbM91OwpA/42u/zw3J8cCoRUeHcluotqQRqw/h4/JmoB_EbSFGKDbmqLMtKpEmt-a2=
+XUb4cXyDY2YIyQKXw">https://doi.org/10.1371/journal.pntd.0006895</a>=0D<br>2=
+. Serra OP, Cardoso BF, Ribeiro AL, et al. Mayaro virus and dengue<br>virus=
+ 1 and 4 natural infection in culicids from Cuiaba, state of Mato<br>Grosso=
+, Brazil. Mem Inst Oswaldo Cruz. 2016; 111(1): 20-9;<br><a href=3D"https://=
+u19268662.ct.sendgrid.net/ss/c/VK-lmH02123vjL5hL9eW5imgmQeAolLQfA2G6VfToIZY=
+VOulAykkJmkCgkEVWV22_NKg03GTXS_kVskHbBqy_A/42u/zw3J8cCoRUeHcluotqQRqw/h5/LT=
+rQmqV0f8nReWv6OGEtPmK1TEI0bI5sx-nQywvrvNA">http://dx.doi.org/10.1590/0074-0=
+2760150270</a>=0D<br>=0D<br>The steps being taken in Acre state, mentioned =
+above, should help<br>define the extent and incidence of infections by Orop=
+ouche and Mayaro<br>viruses in that state. - Mod.TY<br><br>ProMED map:<br>A=
+cre, Brazil:<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/sSnCkKCWB=
+vais3EuVAOvgy2WOIX7pp1nXnn4AbwuQ3Z6WbkfhqXYXU-aTMPJ8yThZQKed1oOjWY6W8dI0OIK=
+zQ/42u/zw3J8cCoRUeHcluotqQRqw/h6/_dRbfEidt7WQz2D-e_zOrwCRKCRP8U3nG1705sodZz=
+k">https://promedmail.org/promed-post?place=3D8714129,10553</a>]<br><br>[Se=
+e Also:<br>2021=0D<br>----=0D<br>Mayaro virus - Brazil: (PA) 2021<br>http:/=
+/promedmail.org/post/20220128.8701133=0D<br>Oropouche virus - Brazil: (PI)<=
+br>http://promedmail.org/post/20210428.8334573=0D<br>2017=0D<br>----=0D<br>=
+Oropouche virus - Brazil (02)<br>http://promedmail.org/post/20170824.527087=
+2=0D<br>Oropouche - Brazil http://promedmail.org/post/20170814.5247798=0D<b=
+r>Mayaro virus disease - Brazil<br>http://promedmail.org/post/20170913.5312=
+944=0D<br>2016=0D<br>----=0D<br>Mayaro virus disease - Brazil<br>http://pro=
+medmail.org/post/20161128.4658296=0D<br>2015=0D<br>----=0D<br>Mayaro virus =
+disease - Brazil (GO) RFI<br>http://promedmail.org/post/20150705.3485723=0D=
+<br>2011=0D<br>----=0D<br>Mayaro virus disease - Brazil: (AM)<br>http://pro=
+medmail.org/post/20110222.0587=0D<br>2009=0D<br>----=0D<br>Oropouche fever =
+- Brazil (02): (AP)<br>http://promedmail.org/post/20090808.2816=0D<br>Oropo=
+uche fever - Brazil: (AP)<br>http://promedmail.org/post/20090806.2782]<br>.=
+................................................ty/rd/jh<br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3DGxriYA2Q9Nl1Hmkm7mxre1eTUqVtQfpAyinenHgsCHJoMDAwdT=
+AwMEHJ8b1GtFQXNXVRxRqwnD6jJtdMqwoqQQ-3ItfC9QzDxPS3O01Uv0msUygmq5U6IZg29TTmB=
+E25N-GlFxYVoFqWItHUvCU4jVkN0ljiLaBU-U_Fg2-Wzn68keCIq2hop7FHGxcdQuS6WarGKTjV=
+6PA1G1dQmeQrNKB2x3W-7wVOqeoVmf5yHOsZlysfLRiOK958Ec_Iifabz9BOmnhopacbSUFV2Hn=
+CgqRoRXnzRKP4sL0svgqb8c2Nxg3SLb29dUcN_n2oXAeXVIDFjfQU7IaCkqm2f_sKYodUaj-rs-=
+I-R--ktFpcxp4D24FJk-GLnuv6FE0oUp8mbLxCWXhD55X9t7TcsUUIxigIiM7WGhRBk5EsvJVVD=
+XuRkbpbwDXoLWkTT5QBT8XpoGvaMHjzlybzG---fdwD9jOJaKDueg3ipGg584hkoeHfYzMo3W03=
+uYC5yRA36tkMBA-6E1YmCaMrJ_-AO39oZlvf6oM5Htsflfm2_86y1tBqD70PgWqV9u6a_2LQnLu=
+pInvlitK6-CB_W4uK1lt4p7yVyDMEzoeel7U8Pn2nwpdTrzIPZjJMyIGE6pfoGEsO_EhHjtVr-p=
+dvbgE5yUNDhnwWfsCYxrrzu4tfyX24FZvzQb7eeEGXatZc4Ro2TpN26_MoYeKvEqJ7d6HoCMdGa=
+1pjaWujzq1An9wbIH5LXkoEIf5pYxPm1CukN0ZCdsG_UmL7Bg-BHE0C4_8fKmbpQ-KYiFX_2Hmo=
+mDKpWQDTlc2CWJMn8dR5GrqFzfG_e0gLsesBIyaDqcu7OVkM74iDK3bkMvBjxnZu8V6_cTnEPss=
+GYxcRAh53Hj-T9rqWX_WcGr-i5aAWHI6yzTYAHxkOyf45RuBjCJ7QbmyUK4llaZpqKHxFpt5LLc=
+gZ_b-njlgj9URRYTXfjkjPVpWlew7R_hcrfc_i6sF94tVSeklH1ZcND9ALkpWU-dWNuqW_KuI40=
+AfI_4ITVNHG-nZVsMF3-TLBooE9GO_V7eQdR8yENMnPfSLI9OwVl-I5ppfCLwG0vaw9XeyVjWsY=
+zu-ypLZvFjAWU7HKsIkE6xH1G3G3dunkkmpjl6Eb6iZvzvvelGPbRnnPvCIsaXFf9VdM7BJLZTc=
+MLVOknBHEDQ4AQCYRBJazgSCK4HdX4chfhnZw6NoUb3Si53lwzGzq1Ea1sb_J1dZn5EtAzlnW" =
+target=3D"_blank" class=3D"Unsubscribe--unsubscribePreferences" style=3D"fo=
+nt-family:sans-serif;text-decoration:none;">Unsubscribe Preferences</a></di=
+v><br>############################################################<br>#####=
+#######################################################<br><br><img src=3D"=
+https://u19268662.ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/42u/zw3J8cCoR=
+UeHcluotqQRqw/ho.gif" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=
+=3D"height:1px !important;width:1px !important;border-width:0 !important;ma=
+rgin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;=
+margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !importa=
+nt;padding-right:0 !important;padding-left:0 !important;"/></body>
+</html>
+--7fd3e18427948735f7130e9180dfcaed3579413825f0bc89090494494e92--

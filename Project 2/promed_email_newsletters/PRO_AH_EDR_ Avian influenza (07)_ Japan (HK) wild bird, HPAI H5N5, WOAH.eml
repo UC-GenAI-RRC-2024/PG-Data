@@ -1,0 +1,547 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a98:c004:0:b0:1eb:e128:bbe3 with SMTP id l4csp2559549eic;
+        Fri, 12 Jan 2024 18:01:14 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IGOpHR5MiIkIxqWJ1UQnX//5DOSPW3Wy1gava40tevLQN5VUxb+YqvWE7ueG1POqkdKtFC0
+X-Received: by 2002:a05:622a:54a:b0:429:d42b:8bf9 with SMTP id m10-20020a05622a054a00b00429d42b8bf9mr1286740qtx.101.1705111273802;
+        Fri, 12 Jan 2024 18:01:13 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1705111273; cv=none;
+        d=google.com; s=arc-20160816;
+        b=Wsy0YJrOkEi+IqgawayQgJlRsho5c1QBhu6n+oWaWGZWNrcT6ApcDl+LMSfdVQRsOa
+         3FUyJDldiKuWTKIxB0xItWygRZ/QGcYSur/V14k9hTUsWnSZnDUhI1tvs52xBRdA7MGd
+         vMdd6lCdJmWRYcm6wJqqtsU0holyjJGcCm5LT9FaV6MvBDr6Hle6/IptL5J+F/uhomZf
+         2RVf37Snez93RsKv8yQgrQSSUimXd8JzLGh27gZ/IoW6ZyRJBcqpTg6euFwpz6HGdFdo
+         ejFrFhvogNL/xgfreVMXrrafRXhygxSgvjxI3Fn+HK3ERv3/pVufeFJYrZEwNsroryuq
+         qomg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=c4djZHfVCxGf8ImhHV2RhQTaDvAJmgdSWBI+7ql6LoQ=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=cEZ/P7pKMIIwpiXcP2PgmNsDmW/ukWhD3SLjoT/sJx2IhdyMHmedmSEibB3yk2jnjg
+         RlA/oE9wC1Ipw1XbufsRPho8gIxy/MfVVerds2wB4x8dSe+cIc2thsrIXgqJxuCBS6jW
+         GDHKZ1kSWEwTqMnfEZdJJ2YuvTlRnbU1Oq7outm5UMWpTMQvb70lJU47bo7xQ0+GTsmo
+         QRiJXxkW1nwd+6V8xNlGWO0w3DyCBtviNIRAHNoyTXEuOquiOhptX3/SujsQc5km4FCt
+         hd/oA++ZhBLUoz7cx9BDYiadaBNeLwFCaNehPKrntYLP87vEEuspr+ZyYQgjZ+Oq4ZXQ
+         9y9A==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=OiZhq+i6;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=LkWRejka;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id ge17-20020a05622a5c9100b00429c8b97e90si3743818qtb.614.2024.01.12.18.01.13
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 12 Jan 2024 18:01:13 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=OiZhq+i6;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=LkWRejka;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=c4djZHfVCxGf8ImhHV2RhQTaDvAJmgdSWBI+7ql6LoQ=;
+	b=OiZhq+i6Wi/qhClaISOkycMskU9d7GNBpT52IvjO/57VUcr/jSYWBm6vwJdg47DLD/t/
+	APNF+QO1WuL6olrLC9m2fu/gxu/7obCSGxoaS7fWhDPjmaJNkXRX1UOjPLiCbwfO2t9iEV
+	dlyk9Rrvg8dXVh4SAPzerPiyeDqbz+RCnJm56aQWTD6tZBBu6CTsbqaN3p5C06zQd/K7Vr
+	C9rJaJlaCo+XW8XfC7yO9U7Q4vL5YkQxbysI0Y8CS+qQEAyi4sw5mQcohHFQEzsPv2y3SZ
+	uGv9fTaijGqmiry7Ulk3dfrQQnMpzrNh4N9gMLI2wVYf6YkPmO0viGvYmj3rx/IA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=c4djZHfVCxGf8ImhHV2RhQTaDvAJmgdSWBI+7ql6LoQ=;
+	b=LkWRejkalNXTpc5cOmR0SLkXgbaRIZfhgNynWegiAo5X4uPuZ1AreIIo8GsX71QFY5FD
+	nOIW2buNcJyQHIo2OZv1Wor8r55+kKKkAiXv6WdfeF0eSC1nWikCgAeBC9m1O3jSc+2KYj
+	+MUpfLI59n78/nfAD+7ywEM3nYnfrluBE=
+Received: by filterdrecv-b84d646b4-zxc6z with SMTP id filterdrecv-b84d646b4-zxc6z-1-65A1EEE7-22
+        2024-01-13 02:01:11.330599509 +0000 UTC m=+7543169.365306409
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-21 (SG) with HTTP
+	id Ma6W4sKsT_uU5GadbCxe8w
+	Sat, 13 Jan 2024 02:01:11.162 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=f4214814acceca03610078cd307fb893d32fbf417ce4913e0271e04b9626
+Date: Sat, 13 Jan 2024 02:01:12 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <Ma6W4sKsT_uU5GadbCxe8w@geopod-ismtpd-21>
+Subject: PRO/AH/EDR> Avian influenza (07): Japan (HK) wild bird, HPAI H5N5,
+ WOAH
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iB=2FMpfxzIqzadhlh4DBfJy7NZxyvhvACUlBm3Sp?=
+ =?us-ascii?Q?xSKlumTu=2Fe7rwnM=2FIkXGkA8+vGSoTQqoK0LxLuC?=
+ =?us-ascii?Q?XBLnpRVUaufVLeN+WH8E3eszzWX=2FxQcxLjsQMAq?=
+ =?us-ascii?Q?RaUPhaOwJKXBQNU2ZTGCV0beq0fCyEa59NxNU+y?=
+ =?us-ascii?Q?EknB9vOFL=2FTUyMiMr2EXpI+5yW76kacHYjPF2g?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUiShGf=2FO8XJWpH34Od4Nd?=
+ =?us-ascii?Q?fxXa6jil96uRcJkF+N+LeVnO1tx80ddOyoyOo=2Fc?=
+ =?us-ascii?Q?Brxcl3ERAm0cOY743=2FFH59DWiSf5OzXORh1DLKt?=
+ =?us-ascii?Q?hb1NMKty3PsA5ju0ZzxCrq1WQuZSEQf=2FJlWtgqv?=
+ =?us-ascii?Q?cZmsyCHlNUZsDcQDVorctpgVrFpCZI8a1avIJvh?=
+ =?us-ascii?Q?1ChODTyQ0PCwrFLCtuk1Cx3cA95=2FwE68ddbTnSl?=
+ =?us-ascii?Q?EFGMNA9lkV9EYDe6k23LiWfCkq5nMwOAS=2FFNHXW?=
+ =?us-ascii?Q?+tw0xlnWnkwOIm3mHis1Wn=2F3p33QwIpHBle1d=2FO?=
+ =?us-ascii?Q?=2FUnJie84tsDPITdVVU899Z5r65bSn=2FkySoVhT+P?=
+ =?us-ascii?Q?fBEf0cN3zGwzAjKGkLj1tXCxRo9kTLMDh8a1u9n?=
+ =?us-ascii?Q?gBi90rSf10FufAbZm04KXP1PeBtbN8AysLpt0S0?=
+ =?us-ascii?Q?Dnk=2FKeANdCa17djJ6qXzBqsKYuwpn88fExPWBnr?=
+ =?us-ascii?Q?h4Gpnxs3KdNzdeTHLfi17tCfvwL1aixHhYoS5Aw?=
+ =?us-ascii?Q?sbUC0Xff7gKlcCF6wGsUCChDSdxv3v=2Ft6hXC5XR?=
+ =?us-ascii?Q?OpgaqyR8X8Ju01CqjF5kUstrcETmPC=2F0DiC+UxA?=
+ =?us-ascii?Q?=2F+xg9WyCOuglMfq+FOo3xaeXf7e6tRCIQqXG6pU?=
+ =?us-ascii?Q?FiA6iH=2F2b4KQ=2F=2FWaLnM6Ly0MAH6yAmGv9Y5u1Ak?=
+ =?us-ascii?Q?xNG78H6sI=2FJqdG3HT+cYf2tsXk1Qd33rMrFobnX?=
+ =?us-ascii?Q?IeqymgO23Lc9yAGJLI2yj6yW5WJAlezjkySjzZJ?=
+ =?us-ascii?Q?KwoHNhcvgEq05ex84igaccplOw=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2EntwCnonqW?=
+ =?us-ascii?Q?kzbqmWZm6asVxnvMIog8SSldTmNV6aS50FoMDAw?=
+ =?us-ascii?Q?dTAwMDUhNIJ47-jTWkXXRs8GpyhknvU0k9KERTN?=
+ =?us-ascii?Q?87MUqApoyQtHJzhlI-YYrDPRhfwoIfZzzkSc7uR?=
+ =?us-ascii?Q?V5GVNYy5c7CppTBcja3Lb6aYEBJU9zegfS=5FtglE?=
+ =?us-ascii?Q?vDJutUi1U93wjwAnQ=3D=3D=2EonI=5FfyFgBMyTSdU=5F9Sf?=
+ =?us-ascii?Q?Di=5Fjal7PDVqSrVGMk2IK2FhBoMDAwdTAwMCAdRO?=
+ =?us-ascii?Q?nZwxJLHTsFL1X7tRxx7aiP=5FtFT9zMJbHjE=5FM7Vu?=
+ =?us-ascii?Q?D0HpCa=5FUMeiov23bMDDvWZD4EXdSPsRXpo97MlB?=
+ =?us-ascii?Q?jwWV2J2gbG5e63BndRrOeboCLDRPcpkEJvdjbjz?=
+ =?us-ascii?Q?pnNow0bF-A9lVuagbXzCC2lCnmaczj3XpHQdvVv?=
+ =?us-ascii?Q?M43hklMkXn0zDlns9S8D9tmKrCWIRua0Q1M3vf7?=
+ =?us-ascii?Q?fF84IoGWTjbvKx5z9IVe3ccjk6e4R6RU8qvdVFW?=
+ =?us-ascii?Q?DRGYJfQImjucrG-AM6RcQQInw-vpcZNvIWb9l6d?=
+ =?us-ascii?Q?AyjhQruoA6-OsugOckiRmEu747n7uCBHd6vkj42?=
+ =?us-ascii?Q?ECHzTHMcLdO-q9HFQKmcp3rQpD2rq-OtOLRFpI-?=
+ =?us-ascii?Q?JRlMaz90Gu2L-8ywzwkLro9T0dWGRm3MPiH48aq?=
+ =?us-ascii?Q?lMcFhgvzBYr8SB2CWLDFS1VOSUi5GYGkkK0I4du?=
+ =?us-ascii?Q?=5F9SlvZuh8H1IGpDi9rRrT6e=5F0FhtZwcJlsQTHOX?=
+ =?us-ascii?Q?v-asoICQP0s23PGfW1VyxyfsIlgxzunjiX5MRqg?=
+ =?us-ascii?Q?tpf0RuffxQjtQooWBwoo8MXqoR=5Fn3MYPly-37cY?=
+ =?us-ascii?Q?zTCHiJInfaFDYeRwJcqkiMlXRWx83diJX8mRv7v?=
+ =?us-ascii?Q?DcwZ=5FrCJy=5FfHxHLWCB4AjcQDxXr7vYsRDt3PWnG?=
+ =?us-ascii?Q?x9d=5FDX4V96YrsC6D=5FZlN-a5nF6Ls=5Fd2uJsKCMHy?=
+ =?us-ascii?Q?J5qG3v=5FmOXthZyw6iYKx0i824bnUBJGpXITc6x4?=
+ =?us-ascii?Q?83Q8gDXk1mNvBxrJJH9TiN8AvZeftAdkp9LfDUk?=
+ =?us-ascii?Q?bGZ1Hf1IfNrjw5lKhaV3TBH7r6X7lpzbzJm0gZR?=
+ =?us-ascii?Q?BRDjX09JHYd=5FIjQsrN9edG1=5FGonmbx9=5FOwxD0Sr?=
+ =?us-ascii?Q?Pq-gY9DnCuGOJ83seYaRkWTmn2=5F3tkVb4AXSCcB?=
+ =?us-ascii?Q?NTWjyA5ypCC5IJhS4VLkLdGqxrqWgN-FWF9LLKG?=
+ =?us-ascii?Q?8wmEIVa2gn69aj-naAqart4Uot1mP2FsgissODD?=
+ =?us-ascii?Q?HqUW-paYa2G1NfuTIjtUHWpUgSzrardl2bKicWL?=
+ =?us-ascii?Q?5jTPsEQvEcnf-7uodZz3DqbIIpjxe2=5FDNi2lrn1?=
+ =?us-ascii?Q?iLbQUw=3D=3D=3E?=
+
+--f4214814acceca03610078cd307fb893d32fbf417ce4913e0271e04b9626
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=us-ascii
+Mime-Version: 1.0
+
+AVIAN INFLUENZA (06): JAPAN (HOKKAIDO) WILD BIRD, HPAI H5N5, WOAH
+*****************************************************************
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+Date: Wed 10 Jan 2024
+Source: WOAH-WAHIS (World Animal Health Information System) [edited]
+<https://wahis.woah.org/#/in-review/5482>
+
+
+Japan - Influenza A viruses of high pathogenicity (Inf. with)
+(non-poultry including wild birds) (2017-) - Immediate notification
+---------------------------------------------------------------------------=
+-----
+General information
+Report type: Immediate notification
+Started: 19 Dec 2023
+Confirmed: 27 Dec 2023
+Reported: 10 Jan 2024
+Reason for notification: New strain in the country
+Date of last occurrence: -
+Disease: Influenza A viruses of high pathogenicity (Inf. with)
+(non-poultry including wild birds) (2017-)
+Causal agent: Highly pathogenic avian influenza virus
+Genotype/serotype/subtype: H5N5
+Nature of diagnosis: Clinical, laboratory
+Event status: Ongoing
+This event pertains to a defined zone within the country.
+
+Outbreak location: Japan, Hokkaido, Erimo-Town3
+Started: 19 Dec 2023
+Epidemiological unit: Not applicable
+Total animals affected
+Species / Susceptible / Cases / Deaths / Killed and disposed of /
+Slaughtered or killed for commercial use / Vaccinated
+Large-billed crow (wild) / - / 1 / 1 / - / - / - /
+
+Epidemiology
+Source of event or origin of infection: Unknown or inconclusive
+Epidemiological comments: No epidemiological comment
+
+Control measures at event level
+Domestic animals, applied: Surveillance within the restricted zone
+Wild animals, applied: Surveillance within the restricted zone;
+disinfection; official disposal of carcasses, by-products and waste;
+surveillance outside the restricted zone
+
+Diagnostic test results
+Test name / Laboratory / Species sampled / Number of outbreaks sampled
+/ First result date / Latest result date / Result
+Real-time reverse transcription polymerase chain reaction (rRT-PCR) /
+Laboratory designated by Ministry of the Environment / Large-billed
+crow / 27 Dec 2023 / 27 Dec 2023 / Positive
+
+[The location of the outbreak can be seen on the interactive map
+included in the WOAH report at the source URL above.]
+
+--
+Communicated by:
+ProMED
+via
+ProMED-MBDS
+
+[The WOAH reported the 1st case of the H5N5 virus circulating in wild
+birds in Japan.
+
+"Migratory wild birds, especially waterfowls, are the natural host and
+reservoir of avian influenza viruses. Within their respiratory or
+intestinal tracts, they can carry different avian influenza virus
+strains. Depending on the virus strain and the species of bird, the
+virus can be harmless or fatal to the wild bird. When birds have
+little or no symptoms of the virus, it allows them to spread the
+viruses between neighbouring countries or over long distances, along
+their migratory pathways. Wild birds also play a major role in avian
+influenza viruses' evolution and maintenance during low seasons.
+
+"The main wild species involved in the viral cycle of avian influenza
+are waterfowls, gulls, and shorebirds; however, the virus seems to
+pass easily between different bird species. Direct exposure of farmed
+birds to wild birds is a likely transmission route of the virus.=20
+Therefore, it is critical to limit their exposure to wild birds to
+lessen the risk of introduction of avian influenza into flocks"
+(<https://www.woah.org/en/disease/avian-influenza/>). - Mod.TTM]
+
+[See Also:
+Avian influenza (06): Asia (China, South Korea, Japan) HPAI H5N1,
+bird, FAO-EMPRES-i http://promedmail.org/post/20240111.8714170
+Avian influenza (03): Japan (GF) poultry, HPAI, South Korea (CN) HPAI
+H5N1, duck http://promedmail.org/post/20240107.8714113
+2023
+----
+Avian influenza (200): Japan (SG) HPAI H5N6, wild bird, WOAH
+http://promedmail.org/post/20231227.8713938
+Avian influenza (199): China (Hong Kong) wild bird, HPAI H5N1,
+FAO-EMPRES-i http://promedmail.org/post/20231224.8713876
+Avian influenza (195): Taiwan (YL) HPAI H5N1, poultry, FAO-EMPRES-i
+http://promedmail.org/post/20231215.8713738
+Avian influenza (193): China (FJ) wild bird, HPAI H5N1, WOAH
+http://promedmail.org/post/20231214.8713727
+Avian influenza (191): China (HK) wild bird, HPAI H5N1, WOAH
+http://promedmail.org/post/20231212.8713668
+Avian influenza (190): South Korea (CB) HPAI H5N1, bird, WOAH
+http://promedmail.org/post/20231210.8713622
+Avian influenza (186): Japan (ST, KS) bird, HPAI H5N1, FAO-EMPRES-i
+http://promedmail.org/post/20231207.8713573
+Avian influenza (184): Japan (TK) HPAI H5, wild bird
+http://promedmail.org/post/20231206.8713543
+Avian influenza (182): Asia (Japan) HPAI, poultry, spread
+http://promedmail.org/post/20231204.8713490
+Avian influenza (177): Japan (IB) poultry, spread, H5
+http://promedmail.org/post/20231128.8713377
+Avian influenza (176): Japan (SG) poultry, cull
+http://promedmail.org/post/20231127.8713361
+Avian influenza (172): Asia (Cambodia) poultry, HPAI H5N1
+http://promedmail.org/post/20231118.8713214
+Avian influenza (167): Asia (Japan) wild bird, HPAI H5N1, FAO-EMPRES-i
+http://promedmail.org/post/20231109.8713065
+Avian influenza (161): Asia (Japan) HPAI H5, wild bird, FAO-EMPRES-i
+http://promedmail.org/post/20231027.8712856
+Avian influenza (151): Asia (Japan) H5, large-billed crow
+http://promedmail.org/post/20231012.8712593
+Avian influenza (98): Asia (Japan) poultry, self-declared freedom from
+HPAI, WOAH http://promedmail.org/post/20230626.8710799
+Avian influenza (73): Asia (Japan) wild bird, HPAI H5N8, WOAH
+http://promedmail.org/post/20230424.8709671
+Avian influenza (10): Asia (Philippines, Japan) poultry, HPAI H5N1,
+H5N2, WOAH http://promedmail.org/post/20230121.8707878
+2022
+----
+Avian influenza (240): Japan (AO) poultry, HPAI H5N1, spread, control
+http://promedmail.org/post/20221217.8707321
+Avian influenza (223): Asia (S. Korea, Japan) poultry, HPAI H5N1,
+spread http://promedmail.org/post/20221129.8706961
+Avian influenza (209): Asia (Japan) wild bird, HPAI H5N2, WOAH
+http://promedmail.org/post/20221111.8706678
+Avian influenza (204): Japan (IB) poultry, HPAI H5N1, recurrence,
+spread http://promedmail.org/post/20221106.8706582
+Avian influenza (180): Asia (Japan) wild bird, HPAI H5N1, WOAH
+http://promedmail.org/post/20221003.8705932
+Avian influenza (85): Asia (Japan) crow, fox, HPAI H5
+http://promedmail.org/post/20220406.8702440
+Avian influenza (63): Asia (Japan) wild bird, HPAI H5, OIE
+http://promedmail.org/post/20220309.8701900
+Avian influenza (37): Asia (Japan) wild bird, HPAI H5N1, OIE
+http://promedmail.org/post/20220208.8701340
+2021
+----
+Avian influenza (162): Japan (KS) wild bird, HPAI H5N8, OIE
+http://promedmail.org/post/20211127.8699918
+Avian influenza (153): Japan (HG) poultry, HPAI H5N1, spread
+http://promedmail.org/post/20211118.8699747
+Avian influenza (152): Japan (KS) poultry, HPAI H5N1, OIE
+http://promedmail.org/post/20211118.8699736
+Avian influenza (148): Japan (AK) poultry, HPAI H5N8, OIE
+http://promedmail.org/post/20211115.8699682
+Avian influenza (146): Japan (AK, KS) poultry, HPAI H5
+http://promedmail.org/post/20211112.8699631
+Avian influenza (35): Japan (CH), Nepal (KT), poultry, HPAI H5N8
+http://promedmail.org/post/20210213.8189507
+2020
+----
+Avian influenza (117): Japan, wild bird, HPAI H5N8, OIE
+http://promedmail.org/post/20201224.8044403
+Avian influenza (110): poultry, HPAI, Japan, H5, South Korea (CN)
+H5N8, spread http://promedmail.org/post/20201215.8021132
+Avian influenza (92): Japan (KG) poultry, HPAI H5N8, susp
+http://promedmail.org/post/20201122.7962047
+Avian influenza (81): Japan (KG) poultry, HPAI H5N8, OIE
+http://promedmail.org/post/20201109.7928569]
+.................................................ttm/rd/st/may/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3D2mzzxtUVtRLZE73luIfjZJ7rHHNRoQ5pKM0tlixBdGJoMDAwdTAwMOdfQIO=
+njedj6WFmvKCGz3cyVom9WH8Ae03dYJjrTRVoKi1C5bvxpoFmOnss2yDxZ78uEz5CrGFocLNIq-=
+Jw8A2a8TnfyfuoNQhqC7RufFUawzFbyfvzhcBiORyQC0F1ovOaKbD7Vurc5PVLF8kc6y6wa9bO9=
+wuiDbViYXTXKJdXMKb9ww64Ul3qmbrtjAAJHe7pXq-fOtbn34_PKeGm9qobOz4YhIg-swKHFCmR=
+g-2IbVxV1_YkolxXToxYhmXW4Orykjnz7HAVC94F-_iwEzy54awX9nfuQkW2JAfIvxAytwgnoZ1=
+ExomC-7gN9s5FD-lmezon1f_HgF0nKiUWQ7KNRYuH-6GSBGxfoC7dFg9Yp_6nNn5Phv-hZPzd25=
+gI4_6YesJhtmXCyb8YPBjhw4beGXIAJ6BpQiZ7dMmEzU0JbLlPn9JtLjyEYNAqv7wT-sDHo8Mf2=
+L-bdfKYFgzbUF-xSpbZgyvuxbr0Mbxcp5kIrLjVmvtYbQI5c5eI1OBzs3yD2GQcSlMHOxeuM3no=
+c9f4PJv-xosGBK7VkKkdesFLkv12JsYJh1NwkmVZHlbkE8OGSdPJmfn2nQStZH-q5HZVn1oOYnl=
+gdrZofejaacVAedDWQ6m8Rj9V6jcKWABdhtlmnu4_vWNJUws5VTp4IgOfrA58sMeVPyApEnNX6d=
+9R92H8GyhLW8InfehlWA_bNFXwmCtPNf8HpVHmwT9hI-w4nQtPBScFZGQIJEPvO8q7YFGXEVEx_=
+x3hY69ZngGQx0oNy86lYmty29NIotLLYywInZdEkdUNpqu2sRUfAJcSS_GfBemQQDvgK0Kp2XfG=
+WKZJTYILaW0wZoUcj0XDb1TpU9dlJB7K450c_tVB2_f_DwwFuG2zZ_54zvIB_VAnAr8ZTN-azYK=
+UGi4n9dL3xFTrDCyS9q17ShJ4nNlNRNioq5epPr_r0pBOjU8gbqOu0phcHxgH_43CIRAfkHnV0z=
+ZOgUgG9ltzK1gnXYaN_CKtwTcumv-MKFp2AvBe1BKLve69C2LGzeubHoV1EKxqx5c7g_KPuewBO=
+AEfmOLEwACjatvMmyasz7k_QhnPmFCMVeVhRDgxkTfv7Yfkvbi1e9Cp4fv66Ze9bmkhrjPM-fcL=
+qsNXog8NJ8P-Efda3w1KxcQa1rRfKjo6r2SF8I4mj6_4SgWOvRbc7xuqyVaWzOX0 )
+############################################################
+############################################################
+
+--f4214814acceca03610078cd307fb893d32fbf417ce4913e0271e04b9626
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>AVIAN INFLUENZA (06): JAPAN (HOKKAIDO) WILD BIRD, HPAI H5N5, WOAH<br>=
+*****************************************************************<br>A ProM=
+ED-mail post<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/wscE2ng5f=
+l6JrPIt48tisIijpefK5PNjW-mL-YZGnfgDOxU1G3gjwnPSi2Tfv3HA/42y/SDywf4uLTSexzQH=
+ffeFmfQ/h0/TFqYoWKASNrPGJ3OgF_FytJchP1xGX_M7XssEiXzshQ">http://www.promedma=
+il.org</a><br>ProMED-mail is a program of the<br>International Society for =
+Infectious Diseases<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/ws=
+cE2ng5fl6JrPIt48tisCT5tpD4Upm3qyMCbcYSQvc/42y/SDywf4uLTSexzQHffeFmfQ/h1/ucH=
+Tul9oZq-nQY0NUMEjPTZbhugRaViFiqs3OZVfoAQ">http://www.isid.org</a><br><br>Da=
+te: Wed 10 Jan 2024=0D<br>Source: WOAH-WAHIS (World Animal Health Informati=
+on System) [edited]=0D<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c=
+/TLh_csrC34X_iXpbYoMam-hfNBcjkmqx8p5hLSO19IMDffvPUY8ZUAUQ4ApPdM9a/42y/SDywf=
+4uLTSexzQHffeFmfQ/h2/cGtf8VcxeoSy0V6tUPA4ZGqfFxqmWXfimkToKqsha8Q">https://w=
+ahis.woah.org/#/in-review/5482</a>=0D<br>=0D<br>=0D<br>Japan - Influenza A =
+viruses of high pathogenicity (Inf. with)<br>(non-poultry including wild bi=
+rds) (2017-) - Immediate notification=0D<br>-------------------------------=
+-------------------------------------------------=0D<br>General information=0D=
+<br>Report type: Immediate notification=0D<br>Started: 19 Dec 2023=0D<br>Co=
+nfirmed: 27 Dec 2023=0D<br>Reported: 10 Jan 2024=0D<br>Reason for notificat=
+ion: New strain in the country=0D<br>Date of last occurrence: -=0D<br>Disea=
+se: Influenza A viruses of high pathogenicity (Inf. with)<br>(non-poultry i=
+ncluding wild birds) (2017-)=0D<br>Causal agent: Highly pathogenic avian in=
+fluenza virus=0D<br>Genotype/serotype/subtype: H5N5=0D<br>Nature of diagnos=
+is: Clinical, laboratory=0D<br>Event status: Ongoing=0D<br>This event perta=
+ins to a defined zone within the country.=0D<br>=0D<br>Outbreak location: J=
+apan, Hokkaido, Erimo-Town3=0D<br>Started: 19 Dec 2023=0D<br>Epidemiologica=
+l unit: Not applicable=0D<br>Total animals affected=0D<br>Species / Suscept=
+ible / Cases / Deaths / Killed and disposed of /<br>Slaughtered or killed f=
+or commercial use / Vaccinated=0D<br>Large-billed crow (wild) / - / 1 / 1 /=
+ - / - / - /=0D<br>=0D<br>Epidemiology=0D<br>Source of event or origin of i=
+nfection: Unknown or inconclusive=0D<br>Epidemiological comments: No epidem=
+iological comment=0D<br>=0D<br>Control measures at event level=0D<br>Domest=
+ic animals, applied: Surveillance within the restricted zone=0D<br>Wild ani=
+mals, applied: Surveillance within the restricted zone;<br>disinfection; of=
+ficial disposal of carcasses, by-products and waste;<br>surveillance outsid=
+e the restricted zone=0D<br>=0D<br>Diagnostic test results=0D<br>Test name =
+/ Laboratory / Species sampled / Number of outbreaks sampled<br>/ First res=
+ult date / Latest result date / Result=0D<br>Real-time reverse transcriptio=
+n polymerase chain reaction (rRT-PCR) /<br>Laboratory designated by Ministr=
+y of the Environment / Large-billed<br>crow / 27 Dec 2023 / 27 Dec 2023 / P=
+ositive=0D<br>=0D<br>[The location of the outbreak can be seen on the inter=
+active map<br>included in the WOAH report at the source URL above.]=0D<br>=0D=
+<br>--=0D<br>Communicated by:=0D<br>ProMED=0D<br>via=0D<br>ProMED-MBDS<br><=
+br>[The WOAH reported the 1st case of the H5N5 virus circulating in wild<br=
+>birds in Japan.=0D<br>=0D<br>"Migratory wild birds, especially waterfowls,=
+ are the natural host and<br>reservoir of avian influenza viruses. Within t=
+heir respiratory or<br>intestinal tracts, they can carry different avian in=
+fluenza virus<br>strains. Depending on the virus strain and the species of =
+bird, the<br>virus can be harmless or fatal to the wild bird. When birds ha=
+ve<br>little or no symptoms of the virus, it allows them to spread the<br>v=
+iruses between neighbouring countries or over long distances, along<br>thei=
+r migratory pathways. Wild birds also play a major role in avian<br>influen=
+za viruses' evolution and maintenance during low seasons.=0D<br>=0D<br>"The=
+ main wild species involved in the viral cycle of avian influenza<br>are wa=
+terfowls, gulls, and shorebirds; however, the virus seems to<br>pass easily=
+ between different bird species. Direct exposure of farmed<br>birds to wild=
+ birds is a likely transmission route of the virus.=20=0D<br>Therefore, it =
+is critical to limit their exposure to wild birds to<br>lessen the risk of =
+introduction of avian influenza into flocks"<br>(<a href=3D"https://u192686=
+62.ct.sendgrid.net/ss/c/TLh_csrC34X_iXpbYoMam2-QLiHwCJ8Scfe29XK2hdxQ3sDcmhY=
+fRyIfOv-0SfICTSTk_FBk7IulVLP-cqEcIA/42y/SDywf4uLTSexzQHffeFmfQ/h3/jiNE2uVdS=
+4LW51wGgrKmXNVTkp5Lqnlue3xeMHmCyzw">https://www.woah.org/en/disease/avian-i=
+nfluenza/</a>). - Mod.TTM]<br><br>[See Also:<br>Avian influenza (06): Asia =
+(China, South Korea, Japan) HPAI H5N1,<br>bird, FAO-EMPRES-i http://promedm=
+ail.org/post/20240111.8714170=0D<br>Avian influenza (03): Japan (GF) poultr=
+y, HPAI, South Korea (CN) HPAI<br>H5N1, duck http://promedmail.org/post/202=
+40107.8714113=0D<br>2023=0D<br>----=0D<br>Avian influenza (200): Japan (SG)=
+ HPAI H5N6, wild bird, WOAH<br>http://promedmail.org/post/20231227.8713938=0D=
+<br>Avian influenza (199): China (Hong Kong) wild bird, HPAI H5N1,<br>FAO-E=
+MPRES-i http://promedmail.org/post/20231224.8713876=0D<br>Avian influenza (=
+195): Taiwan (YL) HPAI H5N1, poultry, FAO-EMPRES-i<br>http://promedmail.org=
+/post/20231215.8713738=0D<br>Avian influenza (193): China (FJ) wild bird, H=
+PAI H5N1, WOAH<br>http://promedmail.org/post/20231214.8713727=0D<br>Avian i=
+nfluenza (191): China (HK) wild bird, HPAI H5N1, WOAH<br>http://promedmail.=
+org/post/20231212.8713668=0D<br>Avian influenza (190): South Korea (CB) HPA=
+I H5N1, bird, WOAH<br>http://promedmail.org/post/20231210.8713622=0D<br>Avi=
+an influenza (186): Japan (ST, KS) bird, HPAI H5N1, FAO-EMPRES-i<br>http://=
+promedmail.org/post/20231207.8713573=0D<br>Avian influenza (184): Japan (TK=
+) HPAI H5, wild bird<br>http://promedmail.org/post/20231206.8713543=0D<br>A=
+vian influenza (182): Asia (Japan) HPAI, poultry, spread<br>http://promedma=
+il.org/post/20231204.8713490=0D<br>Avian influenza (177): Japan (IB) poultr=
+y, spread, H5<br>http://promedmail.org/post/20231128.8713377=0D<br>Avian in=
+fluenza (176): Japan (SG) poultry, cull<br>http://promedmail.org/post/20231=
+127.8713361=0D<br>Avian influenza (172): Asia (Cambodia) poultry, HPAI H5N1=
+<br>http://promedmail.org/post/20231118.8713214=0D<br>Avian influenza (167)=
+: Asia (Japan) wild bird, HPAI H5N1, FAO-EMPRES-i<br>http://promedmail.org/=
+post/20231109.8713065=0D<br>Avian influenza (161): Asia (Japan) HPAI H5, wi=
+ld bird, FAO-EMPRES-i<br>http://promedmail.org/post/20231027.8712856=0D<br>=
+Avian influenza (151): Asia (Japan) H5, large-billed crow<br>http://promedm=
+ail.org/post/20231012.8712593=0D<br>Avian influenza (98): Asia (Japan) poul=
+try, self-declared freedom from<br>HPAI, WOAH http://promedmail.org/post/20=
+230626.8710799=0D<br>Avian influenza (73): Asia (Japan) wild bird, HPAI H5N=
+8, WOAH<br>http://promedmail.org/post/20230424.8709671=0D<br>Avian influenz=
+a (10): Asia (Philippines, Japan) poultry, HPAI H5N1,<br>H5N2, WOAH http://=
+promedmail.org/post/20230121.8707878=0D<br>2022=0D<br>----=0D<br>Avian infl=
+uenza (240): Japan (AO) poultry, HPAI H5N1, spread, control<br>http://prome=
+dmail.org/post/20221217.8707321=0D<br>Avian influenza (223): Asia (S. Korea=
+, Japan) poultry, HPAI H5N1,<br>spread http://promedmail.org/post/20221129.=
+8706961=0D<br>Avian influenza (209): Asia (Japan) wild bird, HPAI H5N2, WOA=
+H<br>http://promedmail.org/post/20221111.8706678=0D<br>Avian influenza (204=
+): Japan (IB) poultry, HPAI H5N1, recurrence,<br>spread http://promedmail.o=
+rg/post/20221106.8706582=0D<br>Avian influenza (180): Asia (Japan) wild bir=
+d, HPAI H5N1, WOAH<br>http://promedmail.org/post/20221003.8705932=0D<br>Avi=
+an influenza (85): Asia (Japan) crow, fox, HPAI H5<br>http://promedmail.org=
+/post/20220406.8702440=0D<br>Avian influenza (63): Asia (Japan) wild bird, =
+HPAI H5, OIE<br>http://promedmail.org/post/20220309.8701900=0D<br>Avian inf=
+luenza (37): Asia (Japan) wild bird, HPAI H5N1, OIE<br>http://promedmail.or=
+g/post/20220208.8701340=0D<br>2021=0D<br>----=0D<br>Avian influenza (162): =
+Japan (KS) wild bird, HPAI H5N8, OIE<br>http://promedmail.org/post/20211127=
+.8699918=0D<br>Avian influenza (153): Japan (HG) poultry, HPAI H5N1, spread=
+<br>http://promedmail.org/post/20211118.8699747=0D<br>Avian influenza (152)=
+: Japan (KS) poultry, HPAI H5N1, OIE<br>http://promedmail.org/post/20211118=
+.8699736=0D<br>Avian influenza (148): Japan (AK) poultry, HPAI H5N8, OIE<br=
+>http://promedmail.org/post/20211115.8699682=0D<br>Avian influenza (146): J=
+apan (AK, KS) poultry, HPAI H5<br>http://promedmail.org/post/20211112.86996=
+31=0D<br>Avian influenza (35): Japan (CH), Nepal (KT), poultry, HPAI H5N8<b=
+r>http://promedmail.org/post/20210213.8189507=0D<br>2020=0D<br>----=0D<br>A=
+vian influenza (117): Japan, wild bird, HPAI H5N8, OIE<br>http://promedmail=
+.org/post/20201224.8044403=0D<br>Avian influenza (110): poultry, HPAI, Japa=
+n, H5, South Korea (CN)<br>H5N8, spread http://promedmail.org/post/20201215=
+.8021132=0D<br>Avian influenza (92): Japan (KG) poultry, HPAI H5N8, susp<br=
+>http://promedmail.org/post/20201122.7962047=0D<br>Avian influenza (81): Ja=
+pan (KG) poultry, HPAI H5N8, OIE<br>http://promedmail.org/post/20201109.792=
+8569]<br>.................................................ttm/rd/st/may/jh<=
+br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3D2mzzxtUVtRLZE73luIfjZJ7rHHNRoQ5pKM0tlixBdGJoMDAwdT=
+AwMOdfQIOnjedj6WFmvKCGz3cyVom9WH8Ae03dYJjrTRVoKi1C5bvxpoFmOnss2yDxZ78uEz5Cr=
+GFocLNIq-Jw8A2a8TnfyfuoNQhqC7RufFUawzFbyfvzhcBiORyQC0F1ovOaKbD7Vurc5PVLF8kc=
+6y6wa9bO9wuiDbViYXTXKJdXMKb9ww64Ul3qmbrtjAAJHe7pXq-fOtbn34_PKeGm9qobOz4YhIg=
+-swKHFCmRg-2IbVxV1_YkolxXToxYhmXW4Orykjnz7HAVC94F-_iwEzy54awX9nfuQkW2JAfIvx=
+AytwgnoZ1ExomC-7gN9s5FD-lmezon1f_HgF0nKiUWQ7KNRYuH-6GSBGxfoC7dFg9Yp_6nNn5Ph=
+v-hZPzd25gI4_6YesJhtmXCyb8YPBjhw4beGXIAJ6BpQiZ7dMmEzU0JbLlPn9JtLjyEYNAqv7wT=
+-sDHo8Mf2L-bdfKYFgzbUF-xSpbZgyvuxbr0Mbxcp5kIrLjVmvtYbQI5c5eI1OBzs3yD2GQcSlM=
+HOxeuM3noc9f4PJv-xosGBK7VkKkdesFLkv12JsYJh1NwkmVZHlbkE8OGSdPJmfn2nQStZH-q5H=
+ZVn1oOYnlgdrZofejaacVAedDWQ6m8Rj9V6jcKWABdhtlmnu4_vWNJUws5VTp4IgOfrA58sMeVP=
+yApEnNX6d9R92H8GyhLW8InfehlWA_bNFXwmCtPNf8HpVHmwT9hI-w4nQtPBScFZGQIJEPvO8q7=
+YFGXEVEx_x3hY69ZngGQx0oNy86lYmty29NIotLLYywInZdEkdUNpqu2sRUfAJcSS_GfBemQQDv=
+gK0Kp2XfGWKZJTYILaW0wZoUcj0XDb1TpU9dlJB7K450c_tVB2_f_DwwFuG2zZ_54zvIB_VAnAr=
+8ZTN-azYKUGi4n9dL3xFTrDCyS9q17ShJ4nNlNRNioq5epPr_r0pBOjU8gbqOu0phcHxgH_43CI=
+RAfkHnV0zZOgUgG9ltzK1gnXYaN_CKtwTcumv-MKFp2AvBe1BKLve69C2LGzeubHoV1EKxqx5c7=
+g_KPuewBOAEfmOLEwACjatvMmyasz7k_QhnPmFCMVeVhRDgxkTfv7Yfkvbi1e9Cp4fv66Ze9bmk=
+hrjPM-fcLqsNXog8NJ8P-Efda3w1KxcQa1rRfKjo6r2SF8I4mj6_4SgWOvRbc7xuqyVaWzOX0" =
+target=3D"_blank" class=3D"Unsubscribe--unsubscribePreferences" style=3D"fo=
+nt-family:sans-serif;text-decoration:none;">Unsubscribe Preferences</a></di=
+v><br>############################################################<br>#####=
+#######################################################<br><br><img src=3D"=
+https://u19268662.ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/42y/SDywf4uLT=
+SexzQHffeFmfQ/ho.gif" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=
+=3D"height:1px !important;width:1px !important;border-width:0 !important;ma=
+rgin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;=
+margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !importa=
+nt;padding-right:0 !important;padding-left:0 !important;"/></body>
+</html>
+--f4214814acceca03610078cd307fb893d32fbf417ce4913e0271e04b9626--

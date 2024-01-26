@@ -1,0 +1,417 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a05:640c:2d08:b0:1ee:5ffb:29ea with SMTP id p8csp176580eiu;
+        Mon, 22 Jan 2024 14:30:16 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IGu2NJQ2LZOI4pFSovCXXsaNrFTMVqaIifWNjks5gTuciRV/Lbjt4NQZD8mNgazGo0PwUhK
+X-Received: by 2002:a05:620a:1250:b0:783:8a5b:16cf with SMTP id a16-20020a05620a125000b007838a5b16cfmr6847150qkl.69.1705962616335;
+        Mon, 22 Jan 2024 14:30:16 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1705962616; cv=none;
+        d=google.com; s=arc-20160816;
+        b=sUE8Gi1Qr7dK+qneTHJJfbsGN7mg7/YF5t7scYdkv7EZIGlIrD82wyUJB0zT+FVMbf
+         ljOOJvFb+FiCfZXDIE13ShLfu2yjn11bQdl7vOhahb8LVdeHIzVlZvpUlg/RYGnc/swl
+         gw+sCUoVC7YXMdjXAWaCm7r3gGwf9lyRK6FwBbIYgZBjEBnsiPxIB4UPeIoXbpsda5Gi
+         rRkrSxTNQDIcmYhiWQe/mFFNZsY9uyn3/dDOw2BJlMrN/prVVgBBgWuRJoI2+EDsWL9i
+         MQdSYtigVOk6TbsrZMmEOAUblxbMWREnB2e2t/Mt5oGOZXQLMr0KMICPMqJ/Spc508ht
+         12QQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=7RZb7jgTwrZaf5H8+bkkUFDe2Ydl1YAF9J49sZ3O3Xk=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=XmstMk07Y+Ujb++qw7r0w8AFl8Wpjs6binGfbvLCZs8Cg6M8jo90BxVYccNkQx5hmk
+         zPASkwJGqgvu5wyGUjiTVvWR+5laxKrWzfK9fRpyEGvlsdOsRm1cw33pvySaCTWwTPbx
+         O10bbslXM8R2QX9I6UPaMu+JX7FtEfFSSgYZEET/M3Hm3yX+ttMwQ2m1pDlQZ0S6X+Fc
+         vXGtsvLAXFPo4+XmnYj9rmpZ5zMVpmafsZ7MHNVBK2wNFUC+GdKjUBOMJfscq8htsdmZ
+         fR7FBGVjlQLuhtHyAPVNaTcokC+FIYr47mIoqnssfK+uIOCjgvAWmDbTeOv3Sy4Zi4M0
+         0Xrw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=PGrvMbm8;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=tyJC+ztA;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id v16-20020a05620a0f1000b00781784aa6b4si7183898qkl.303.2024.01.22.14.30.16
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 22 Jan 2024 14:30:16 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=PGrvMbm8;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=tyJC+ztA;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=7RZb7jgTwrZaf5H8+bkkUFDe2Ydl1YAF9J49sZ3O3Xk=;
+	b=PGrvMbm8HlozIJcrXR7DEpZNmBVZPHQh+23ha19Mjt3/1Igbaz9U5qvnOB1JZ8KXsGoj
+	4lUlDsYYc1qP8N1Vw+96TdYVH9tX+Vy7M2fYeyiK06+PZQDLRafHLNYfxkI+xCnozt/zRW
+	TMwq+4C+oalme4V+4+A9916UsR73jZzRYf5sG5HZHEE0cj0befOxO8KtSQqEt+0I2Q9b08
+	inSOerv3hWm3w2aCJnBzM9+58gjlXHtLxKUkHUsGX/uWSp95n6e8mGaRKUuQ2KZY479uxu
+	iSkvuFBAMKpteuaVFEP0lS0BJUTsFidBi5so5odZuSiIv8YB7qW/L/dnLvg/k4gw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=7RZb7jgTwrZaf5H8+bkkUFDe2Ydl1YAF9J49sZ3O3Xk=;
+	b=tyJC+ztA4CyrbhBAyGA/OvjIbOvXKYIlecPJaHItiRysbV5UUl4n0Aa42LZQkgrmpvX3
+	aVVgMWj7ixJfYv90hBjBPs/8gvgtGidiyxntC/Qk6JxgPPBULxS2Bs/ZZnGCISK0obEi+2
+	V0yMq8zdVHaOQ5ddeqKdqU6tTPab/fhkg=
+Received: by filterdrecv-7775b5c455-7x4cr with SMTP id filterdrecv-7775b5c455-7x4cr-1-65AEEC75-5
+        2024-01-22 22:30:13.035114941 +0000 UTC m=+8394499.595819123
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-2 (SG) with HTTP
+	id ptiuQKHdS6GHCjmHmlv4cQ
+	Mon, 22 Jan 2024 22:30:12.995 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=4776d764a58eecb8f2cedb34463fbadf5f30812370a638f5fc27462e7158
+Date: Mon, 22 Jan 2024 22:30:15 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <ptiuQKHdS6GHCjmHmlv4cQ@geopod-ismtpd-2>
+Subject: PRO/EDR> Poliomyelitis update (02): Africa, cVDPV1, cVDPV2
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iBLhOwKr6iv=2FhAR918BsyIdPGhLTi9FLGwhY0rT?=
+ =?us-ascii?Q?SIjIhebeUhcEic7pHPfyZpaw4KHgWALKJf0DMzJ?=
+ =?us-ascii?Q?X3AO3EP2r2EL2CEeb1=2FP+X7ePQm6yH7TkGY1w=2FU?=
+ =?us-ascii?Q?a4mei1=2FFSBwFMEU+DH6t6WaWGc33+Y974nckUZT?=
+ =?us-ascii?Q?aZrVxohZQ5B=2FRjMVXMfPiahPaW+8jEchAo1fPM?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUhc93xcG=2F095a5S4+mt=2FG?=
+ =?us-ascii?Q?uYUpctI=2FOGD2dwyi+uvm2j4FCdvuw0l9zcHM8iA?=
+ =?us-ascii?Q?mojOvTXq7jOpDFFNtfsYkHQYACEW8pq1BXXqYmH?=
+ =?us-ascii?Q?oGTsnt6QpE2ZV5WVqnpwfXWoLXx7+4aEHzJDDAY?=
+ =?us-ascii?Q?ZJNDvoHrT1kUlS6ZP9IB64Hou5X7jatYo+VzLGi?=
+ =?us-ascii?Q?eTqlTDpD2c0b4mB92aFdeSOX7=2FBZE66nLIezjkh?=
+ =?us-ascii?Q?SgU=2FOYoXVQ5Y2Zn+23VDw94mzAs7SYYuntl40Mu?=
+ =?us-ascii?Q?hv5cO+pCeDEd31nZQG+HV8qeFQ4zgKDgGs3FoPh?=
+ =?us-ascii?Q?rAeWogVLNmYTEVXWo8sgrTDgCuT1RCUMqA3RICz?=
+ =?us-ascii?Q?KGODtexKJA2yLm3MlVsJEXzxoLFwvXtDl8XxLr2?=
+ =?us-ascii?Q?F2MNP9J5X9E89zSqGFbiQXaLH1LuBFK3jRDtokP?=
+ =?us-ascii?Q?P6JCEl2c60+SD2Q=2FWkrkviSaG6laBDoRvA2wr4g?=
+ =?us-ascii?Q?cYThiNUpWE7CQcd+nRlarCwaD3MEhwG4yydCVkr?=
+ =?us-ascii?Q?U4t50qgwbsCUpF8KNEagQJ5n+EmQRXmeFuS=2FANl?=
+ =?us-ascii?Q?jI27vNn83ANBIJlJ2NhEDAGu20KgAwXTpXHbL2V?=
+ =?us-ascii?Q?WcJVPI0Jz6lgNpS8YbSzA4pdP2R7TSWMH225yz6?=
+ =?us-ascii?Q?GGfM2V5VkDWIHdTtHd6SkVy7tZQSvCMlUsMiJKb?=
+ =?us-ascii?Q?MI=2FdLx1uyp6uXBmg263T2u08bd8lAaVTrlvYBTk?=
+ =?us-ascii?Q?n41sUwwlh2jIl9mIYSOXwN0ztXYqUxsAEXHdczk?=
+ =?us-ascii?Q?DhG+hrlvoZ9gpnKbp0VVj814qw=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2Ed3OgQvudk?=
+ =?us-ascii?Q?yggc-DoMKCz9DE6FOEFH1ikkqOZrTZTMIRoMDAw?=
+ =?us-ascii?Q?dTAwMEA9h7r9p6Is54G-jaVpmUgAAc46F7XItmH?=
+ =?us-ascii?Q?fn0SgjuTr=5Fr9PPRwkNhLffrOPEOGmjj8ZIBzptE?=
+ =?us-ascii?Q?gU63TyFPfvO7b0S7odnkpeJkuev1CyMNjeWVwRg?=
+ =?us-ascii?Q?E8pCOcPzXdV3CeO1A=3D=3D=2Eft-kL-L0hy1WPXGm=5FMK?=
+ =?us-ascii?Q?J2sioVomgJzeGk6kyxTRgD0xoMDAwdTAwMAQUwz?=
+ =?us-ascii?Q?5-sjojslIIXa41n7KbZTXU1HYV40UDWYttOb9Ax?=
+ =?us-ascii?Q?GQhIATMhKVQYxCfIDeAoW61VQLEtU-djIxaIFXg?=
+ =?us-ascii?Q?S460nPEBBciQtjbLtMCs=5FogFV=5FsYP17xO2=5FSpEA?=
+ =?us-ascii?Q?SQ=5FQP3boT=5FU16sWKOgGD5vQwY8T91nvY7exG-gF?=
+ =?us-ascii?Q?=5FYG1w1d2y19UW2vqa0qCV3Azm0Mh17jNQNh4ZFj?=
+ =?us-ascii?Q?EQO=5FrVqnAOgVNB8ejN4r9D4rn7uYS3M0PuVobLg?=
+ =?us-ascii?Q?h=5FXeUu=5FkKPYPtZCKC1J1p0Kzyfv=5FxvUWHYqCXec?=
+ =?us-ascii?Q?VP2TeY=5Fd81lvrKCZ=5Ft7ySP1F4aJTvc5YgwBCuKk?=
+ =?us-ascii?Q?oSKBIMfTGv7dM11CslTMPO2pnq5=5FA5cXUjy1hXq?=
+ =?us-ascii?Q?xkbSLWS-1xwFEAMnSxX95WGBsobruu-oX5RzI8k?=
+ =?us-ascii?Q?taVwJ2P7JB1byjheEFBlt0OqZDJMc=5FjevSdQxcV?=
+ =?us-ascii?Q?58ks-h2XPPkdbp60eQK=5FbfT8V2dKjt=5Fjlqi22fo?=
+ =?us-ascii?Q?3JeDTIYXYcVQb=5Fzk2Ash2OF-tpzJNUMW2l3fW=5F-?=
+ =?us-ascii?Q?uSgCOe8M-7=5FxK8lZyLAfxAtkxelz=5F7mYW9j8NNk?=
+ =?us-ascii?Q?VNXoS=5FnVfWmddmEMxZmiKu=5FJVVSNe08ZozgxzT0?=
+ =?us-ascii?Q?MepYQZ6mkGsQqtAKzq5wX9cZDxHfgdj01BwBFSz?=
+ =?us-ascii?Q?u=5FkhdvTotiMHynp58FM4=5FBhrG74c3iKQQnZX=5F5M?=
+ =?us-ascii?Q?kKxeUnIsvWzZrxrr9xigIaVtyhDnTOL0KI4EQYV?=
+ =?us-ascii?Q?TLB=5FhMPIkD14rqbgqiFya=5FhHiCiUm5VVJlWZHa9?=
+ =?us-ascii?Q?xdoBlek3GU1o94A8O2wPxr1G7FX5HHfzb71SnGB?=
+ =?us-ascii?Q?97u=5FniwEBCJH3JyQ4g51ViUT53qYfSrwskBXQ1R?=
+ =?us-ascii?Q?eiCgmBTd-JehMC5SGM6=5FQ6ZzKTaOhxgWMgwBPpd?=
+ =?us-ascii?Q?zvHVwnCQI8ZmIc23MmjqmlghDrcBOgMW20V-LW=5F?=
+ =?us-ascii?Q?L=5FiLH0mJmuq3FVWOldsMz3xtt=5FOuaAFNiMnvq9-?=
+ =?us-ascii?Q?Ne79lxR-wxiw7=5FVUvi8O1K2JwWX5UYwelGYpEJG?=
+ =?us-ascii?Q?V3EimQwXqj-fWmClHRN9HYg=3E?=
+
+--4776d764a58eecb8f2cedb34463fbadf5f30812370a638f5fc27462e7158
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=iso-8859-1
+Mime-Version: 1.0
+
+POLIOMYELITIS UPDATE (02): AFRICA, CIRCULATING VACCINE-DERIVED
+POLIOVIRUS TYPE 1, CIRCULATING VACCINE-DERIVED POLIOVIRUS TYPE 2
+***************************************************************************=
+****************************************************
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+Date: Fri 19 Jan 2024
+Source: Center for Infectious Disease Research and Policy (CIDRAP)
+[abridged, edited]
+<https://www.cidrap.umn.edu/six-african-nations-report-total-20-new-polio-c=
+ases>
+
+
+Chad, C=F4te d'Ivoire, the Democratic Republic of the Congo (DRC),
+Mozambique, Nigeria, and South Sudan all reported new polio cases this
+week, according to an update yesterday [18 Jan 2024] from the Global
+Polio Eradication Initiative [GPEI].
+
+All involved circulating vaccine-derived poliovirus type 1 (cVDPV1) or
+type 2 (cVDPV2) and were confirmed in 2023.
+
+Chad confirmed 1 cVDPV2 case in Mandoul, bringing its number of 2023
+cases to 51. The DRC reported 4 cVDPV1 cases in Tanganyika, bringing
+its 2023 cases to 101, and 1 cVDPV2 case in Tshopo, raising the 2023
+total to 118. C=F4te d'Ivoire reported 1 cVDPV2 case in Haut-Sassandra,
+bringing the country's 2023 cases to 6.
+
+Mozambique had 1 cVDPV1 case in Zambezia, for a total of 4 for 2023.
+Nigeria confirmed 6 cVDPV2 cases, 1 in Kano and 5 in Katsina, bringing
+its 2023 total to 70. And South Sudan recorded 1 cVDPV2 case in
+Central Equatoria, which doubled its 2023 total.
+
+[Byline: Jim Wappes]
+
+--
+Communicated by:
+ProMED-EAFR
+
+[This post updates the epidemic of poliomyelitis in Africa, either
+related vaccine-derived poliovirus type 1 (cVDPV1) or type 2 (cVDPV2),
+in 6 African countries. - Mod.RBY
+
+ProMED map of Africa:
+<https://promedmail.org/promed-post?place=3D8714354,6075>]
+
+[See Also:
+2023
+----
+Poliomyelitis update (37): Africa, cVDPV2 Nigeria, cVDPV1 and cVDPV2
+Congo DR http://promedmail.org/post/20231214.8713703
+Poliomyelitis update (32): cVDPV1, cVDPV2, Congo DR, Pakistan, Africa
+CDC http://promedmail.org/post/20230824.8711822
+Poliomyelitis update (31): cVDPV1, cVDPV2, Congo DR
+http://promedmail.org/post/20230810.8711632
+Poliomyelitis update (30): cVDPV, Nigeria (ZA)
+http://promedmail.org/post/20230810.8711629
+Poliomyelitis update (28): cVDPV2 Kenya, Tanzania, global, Pakistan,
+WHO, RFI http://promedmail.org/post/20230731.8711483
+Poliomyelitis update (27): AFP Malawi, AFP cVDPV2 Kenya, global, RFI
+http://promedmail.org/post/20230720.8711261
+Poliomyelitis update (25): WPV1 AFP, cVDPV2 AFP, ES, eradication,
+chronic inf http://promedmail.org/post/20230610.8710505
+20230604.8710402
+Poliomyelitis update (23): WPV1 AFP (Afghanistan), cVDPV2 AFP (Central
+African Republic), violence
+http://promedmail.org/post/20230602.8710355
+Poliomyelitis update (22): WPV1 AFP, WPV1 ES, cVDPV1 AFP, ES, cVDPV2
+AFP, ES, RFI http://promedmail.org/post/20230526.8710248
+Poliomyelitis update (21): WPV1 AFP; WPV1 ES, cVDPV1 AFP, ES; cVDPV2
+AFP, ES http://promedmail.org/post/20230525.8710235
+Poliomyelitis update (20): WPV1 ES, cVDPV1 AFP, cVDPV2 ES, Indonesia,
+Burundi, Congo DR http://promedmail.org/post/20230422.8709635
+Poliomyelitis update (19): cVDPV1 AFP; cVDPV2 AFP, ES, WPV1 SE Africa,
+violence http://promedmail.org/post/20230417.8709548
+Poliomyelitis update (18): Peru, add'l AFP case, cVDPV1 susp, regional
+update, RFI http://promedmail.org/post/20230410.8709422
+Poliomyelitis update (17): WPV1, cVDPV1&2, VDPV outbreaks 2021-2022
+http://promedmail.org/post/20230407.8709373
+Poliomyelitis update (12): nOPV2-assoc cVDPV2 (Burundi,DRC), WPV1 ES,
+cVDPV2 AFP http://promedmail.org/post/20230317.8708985
+Poliomyelitis update (08): WPV1 ES, cVDPV2 AFP & ES, Pakistan vacc.,
+Nigeria cVDPV http://promedmail.org/post/20230209.8708270
+Poliomyelitis update (07): WPV1 ES, cVDPV2 AFP & ES, lab accident,
+PHEIC http://promedmail.org/post/20230206.8708199
+Poliomyelitis update (06): WPV1 ES, cVDPV1 AFP, cVDPV2 ES
+http://promedmail.org/post/20230128.8708021
+Poliomyelitis update (04): cVDPV1 (Congo DR), cVDPV2 AFP (Congo DR),
+ES (USA) http://promedmail.org/post/20230114.8707785
+Poliomyelitis update (02): WPV1 ES, cVDPV1 AFP & ES, cVDPV2 AFP & ES,
+violence http://promedmail.org/post/20230106.8707649]
+.................................................rb/tw/ya/tw/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3DZgJOK2kY18ORzfIugJ26BRbvPA1koS4-aM7dF0mFw5JoMDAwdTAwMFnGqxL=
+pLMKSFAKzYPOiKUOzPwVUSDrIS7GdV3w8_s3WLXDLYdWt18N_T2VHs01gtEENDD1D691p6JHAL1=
+C_B4-_u9QAUxWusheV7cYKna3kIXi-96VdKmu-T_p7Qw5OFv9Rj9XDLxIKM08fw0-YKvWmye9h_=
+wiyWkKWCimfHa1OfX7kyBppM03-EShNJpIAAUHvf3IYzDa3WuYeDV8NCk9hwYf_8Ad_fuciW-fK=
+4pXjOhNc2af4edgNQoD-B2DEl6KcbZCDoITTUpuRK09cTat65B-KeS75rmY4Tq6QnZuGqeNkiFZ=
+gKhzl7kz7bwBmS_hGNUn6aavwBiVVC0FuT1JOph1tJm7DvVwKBn9_nWnOD7PZuyZ-hFlI2CVXvk=
+537M90lidAKKXnMCPGMY9jFHEPHrqd8pAPiv6L9vJHTfXt_m8IZamPHERr3yGrDzKBGgGXlEqEK=
+zR6qE7jo1gbmrZshVFsu3hLlij-CAdh9BjvOIZCl9ZE4mTk-bYCF7I66oQveS8DvNnYx9MxRG6W=
+IiJryFJWNUHE_VEcSNl9VEK4J7XvOSsnMvcP8EskakRbGUhsG4FvHGlGeWO-rTVPGcdrhglgbUR=
+p0cPJ4uLA8yRFIFfb4UcUR44xIyPkDKqoEmp2UrYr3pQZencGaOrK5rEOxQYmWeJURP_An2w-c_=
+WiTatAXNBhAURNWQJjqWNnHLOMHaiI6eQMbC_H62ePDtatRFk9Lvl14IQpV-U3mSKGh0cxP_QZn=
+FsH0OxwCKTHL6FU2eaCYH9jJ8wUXiNl3N7dJFsZqSRK3i9QruQvnvxdgkBHJ3UEPmCZhK1TXd_X=
+cT_y4MEUSFCuDmqbD9K7hdlWgryfQsdalMGhBbuGafJDpPaS879hP1qX8LznAzh9aZQrUUM2dPc=
+nuwib9r9uy_sMKNTvtKAnRgeba1zDlH_A-6P3xhZFjKb-DiUUP1_0C1GfKi00kZLIY064zEmz42=
+0iRin2VMIX3jJ1u5aH05s-WUwe-NCWq8xyaVAlABVgb9Bp-npk2nmRNmkNhkQHVyYcBGE0gN8TC=
+2rqBmnSyuzZ30r5QRoNXgoLAmL2_kj-yrsbfJw4o4ylAIDLQ5ibLpessjlp__-5DpC0fRT_pfwf=
+VgjOzulEfkBLKrhULpRfxubfIWaM2AE930eog0p-62c=3D )
+############################################################
+############################################################
+
+--4776d764a58eecb8f2cedb34463fbadf5f30812370a638f5fc27462e7158
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=iso-8859-1
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>POLIOMYELITIS UPDATE (02): AFRICA, CIRCULATING VACCINE-DERIVED<br>POL=
+IOVIRUS TYPE 1, CIRCULATING VACCINE-DERIVED POLIOVIRUS TYPE 2<br>**********=
+***************************************************************************=
+******************************************<br>A ProMED-mail post<br><a href=
+=3D"https://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisIijpefK5PNj=
+W-mL-YZGnfgDOxU1G3gjwnPSi2Tfv3HA/437/1gbRLTySStOd33QhN6C1dg/h0/Wh-7rjsaB7CR=
+-IMFlj1juKB49fhq_Isk5ZU8iWUgjpA">http://www.promedmail.org</a><br>ProMED-ma=
+il is a program of the<br>International Society for Infectious Diseases<br>=
+<a href=3D"https://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisCT5t=
+pD4Upm3qyMCbcYSQvc/437/1gbRLTySStOd33QhN6C1dg/h1/8tmqCmH7W-6_6vDnZpzJz9EPVm=
+u4wfreOfy6UZZZ-GQ">http://www.isid.org</a><br><br>Date: Fri 19 Jan 2024=0D<=
+br>Source: Center for Infectious Disease Research and Policy (CIDRAP)<br>[a=
+bridged, edited]=0D<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/TL=
+h_csrC34X_iXpbYoMam1B6JfPDl-dNY0xjb47_2RV79utIdHMoruYJp7Vr_-BqQxMd-4EQyE1dI=
+fPI_U1rfeVbh4QPi9A6D3U2bWYOYYG3IZ2XA0-fmjlC_R2AubW8/437/1gbRLTySStOd33QhN6C=
+1dg/h2/5qp9RP9yKH2Mrjxry0V7oV63H8DWoFxVy3z1ZFMrvy4">https://www.cidrap.umn.=
+edu/six-african-nations-report-total-20-new-polio-cases</a>=0D<br>=0D<br>=0D=
+<br>Chad, C=F4te d'Ivoire, the Democratic Republic of the Congo (DRC),<br>M=
+ozambique, Nigeria, and South Sudan all reported new polio cases this<br>we=
+ek, according to an update yesterday [18 Jan 2024] from the Global<br>Polio=
+ Eradication Initiative [GPEI].=0D<br>=0D<br>All involved circulating vacci=
+ne-derived poliovirus type 1 (cVDPV1) or<br>type 2 (cVDPV2) and were confir=
+med in 2023.=0D<br>=0D<br>Chad confirmed 1 cVDPV2 case in Mandoul, bringing=
+ its number of 2023<br>cases to 51. The DRC reported 4 cVDPV1 cases in Tang=
+anyika, bringing<br>its 2023 cases to 101, and 1 cVDPV2 case in Tshopo, rai=
+sing the 2023<br>total to 118. C=F4te d'Ivoire reported 1 cVDPV2 case in Ha=
+ut-Sassandra,<br>bringing the country's 2023 cases to 6.=0D<br>=0D<br>Mozam=
+bique had 1 cVDPV1 case in Zambezia, for a total of 4 for 2023.<br>Nigeria =
+confirmed 6 cVDPV2 cases, 1 in Kano and 5 in Katsina, bringing<br>its 2023 =
+total to 70. And South Sudan recorded 1 cVDPV2 case in<br>Central Equatoria=
+, which doubled its 2023 total.=0D<br>=0D<br>[Byline: Jim Wappes]=0D<br>=0D=
+<br>--=0D<br>Communicated by:=0D<br>ProMED-EAFR<br><br>[This post updates t=
+he epidemic of poliomyelitis in Africa, either<br>related vaccine-derived p=
+oliovirus type 1 (cVDPV1) or type 2 (cVDPV2),<br>in 6 African countries. - =
+Mod.RBY=0D<br>=0D<br>ProMED map of Africa:<br><a href=3D"https://u19268662.=
+ct.sendgrid.net/ss/c/sSnCkKCWBvais3EuVAOvgy2WOIX7pp1nXnn4AbwuQ3Z6WbkfhqXYXU=
+-aTMPJ8yThQxVx12ckzUlNGMi8kvHJjA/437/1gbRLTySStOd33QhN6C1dg/h3/Md5kQG0IvRdv=
+okIIoSGnz6QM30VThleshG72E6YED7I">https://promedmail.org/promed-post?place=
+=3D8714354,6075</a>]<br><br>[See Also:<br>2023=0D<br>----=0D<br>Poliomyelit=
+is update (37): Africa, cVDPV2 Nigeria, cVDPV1 and cVDPV2<br>Congo DR http:=
+//promedmail.org/post/20231214.8713703=0D<br>Poliomyelitis update (32): cVD=
+PV1, cVDPV2, Congo DR, Pakistan, Africa<br>CDC http://promedmail.org/post/2=
+0230824.8711822=0D<br>Poliomyelitis update (31): cVDPV1, cVDPV2, Congo DR<b=
+r>http://promedmail.org/post/20230810.8711632=0D<br>Poliomyelitis update (3=
+0): cVDPV, Nigeria (ZA)<br>http://promedmail.org/post/20230810.8711629=0D<b=
+r>Poliomyelitis update (28): cVDPV2 Kenya, Tanzania, global, Pakistan,<br>W=
+HO, RFI http://promedmail.org/post/20230731.8711483=0D<br>Poliomyelitis upd=
+ate (27): AFP Malawi, AFP cVDPV2 Kenya, global, RFI<br>http://promedmail.or=
+g/post/20230720.8711261=0D<br>Poliomyelitis update (25): WPV1 AFP, cVDPV2 A=
+FP, ES, eradication,<br>chronic inf http://promedmail.org/post/20230610.871=
+0505=0D<br>20230604.8710402=0D<br>Poliomyelitis update (23): WPV1 AFP (Afgh=
+anistan), cVDPV2 AFP (Central<br>African Republic), violence<br>http://prom=
+edmail.org/post/20230602.8710355=0D<br>Poliomyelitis update (22): WPV1 AFP,=
+ WPV1 ES, cVDPV1 AFP, ES, cVDPV2<br>AFP, ES, RFI http://promedmail.org/post=
+/20230526.8710248=0D<br>Poliomyelitis update (21): WPV1 AFP; WPV1 ES, cVDPV=
+1 AFP, ES; cVDPV2<br>AFP, ES http://promedmail.org/post/20230525.8710235=0D=
+<br>Poliomyelitis update (20): WPV1 ES, cVDPV1 AFP, cVDPV2 ES, Indonesia,<b=
+r>Burundi, Congo DR http://promedmail.org/post/20230422.8709635=0D<br>Polio=
+myelitis update (19): cVDPV1 AFP; cVDPV2 AFP, ES, WPV1 SE Africa,<br>violen=
+ce http://promedmail.org/post/20230417.8709548=0D<br>Poliomyelitis update (=
+18): Peru, add'l AFP case, cVDPV1 susp, regional<br>update, RFI http://prom=
+edmail.org/post/20230410.8709422=0D<br>Poliomyelitis update (17): WPV1, cVD=
+PV1&2, VDPV outbreaks 2021-2022<br>http://promedmail.org/post/20230407.8709=
+373=0D<br>Poliomyelitis update (12): nOPV2-assoc cVDPV2 (Burundi,DRC), WPV1=
+ ES,<br>cVDPV2 AFP http://promedmail.org/post/20230317.8708985=0D<br>Poliom=
+yelitis update (08): WPV1 ES, cVDPV2 AFP & ES, Pakistan vacc.,<br>Nigeria c=
+VDPV http://promedmail.org/post/20230209.8708270=0D<br>Poliomyelitis update=
+ (07): WPV1 ES, cVDPV2 AFP & ES, lab accident,<br>PHEIC http://promedmail.o=
+rg/post/20230206.8708199=0D<br>Poliomyelitis update (06): WPV1 ES, cVDPV1 A=
+FP, cVDPV2 ES<br>http://promedmail.org/post/20230128.8708021=0D<br>Poliomye=
+litis update (04): cVDPV1 (Congo DR), cVDPV2 AFP (Congo DR),<br>ES (USA) ht=
+tp://promedmail.org/post/20230114.8707785=0D<br>Poliomyelitis update (02): =
+WPV1 ES, cVDPV1 AFP & ES, cVDPV2 AFP & ES,<br>violence http://promedmail.or=
+g/post/20230106.8707649]<br>...............................................=
+..rb/tw/ya/tw/jh<br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3DZgJOK2kY18ORzfIugJ26BRbvPA1koS4-aM7dF0mFw5JoMDAwdT=
+AwMFnGqxLpLMKSFAKzYPOiKUOzPwVUSDrIS7GdV3w8_s3WLXDLYdWt18N_T2VHs01gtEENDD1D6=
+91p6JHAL1C_B4-_u9QAUxWusheV7cYKna3kIXi-96VdKmu-T_p7Qw5OFv9Rj9XDLxIKM08fw0-Y=
+KvWmye9h_wiyWkKWCimfHa1OfX7kyBppM03-EShNJpIAAUHvf3IYzDa3WuYeDV8NCk9hwYf_8Ad=
+_fuciW-fK4pXjOhNc2af4edgNQoD-B2DEl6KcbZCDoITTUpuRK09cTat65B-KeS75rmY4Tq6QnZ=
+uGqeNkiFZgKhzl7kz7bwBmS_hGNUn6aavwBiVVC0FuT1JOph1tJm7DvVwKBn9_nWnOD7PZuyZ-h=
+FlI2CVXvk537M90lidAKKXnMCPGMY9jFHEPHrqd8pAPiv6L9vJHTfXt_m8IZamPHERr3yGrDzKB=
+GgGXlEqEKzR6qE7jo1gbmrZshVFsu3hLlij-CAdh9BjvOIZCl9ZE4mTk-bYCF7I66oQveS8DvNn=
+Yx9MxRG6WIiJryFJWNUHE_VEcSNl9VEK4J7XvOSsnMvcP8EskakRbGUhsG4FvHGlGeWO-rTVPGc=
+drhglgbURp0cPJ4uLA8yRFIFfb4UcUR44xIyPkDKqoEmp2UrYr3pQZencGaOrK5rEOxQYmWeJUR=
+P_An2w-c_WiTatAXNBhAURNWQJjqWNnHLOMHaiI6eQMbC_H62ePDtatRFk9Lvl14IQpV-U3mSKG=
+h0cxP_QZnFsH0OxwCKTHL6FU2eaCYH9jJ8wUXiNl3N7dJFsZqSRK3i9QruQvnvxdgkBHJ3UEPmC=
+ZhK1TXd_XcT_y4MEUSFCuDmqbD9K7hdlWgryfQsdalMGhBbuGafJDpPaS879hP1qX8LznAzh9aZ=
+QrUUM2dPcnuwib9r9uy_sMKNTvtKAnRgeba1zDlH_A-6P3xhZFjKb-DiUUP1_0C1GfKi00kZLIY=
+064zEmz420iRin2VMIX3jJ1u5aH05s-WUwe-NCWq8xyaVAlABVgb9Bp-npk2nmRNmkNhkQHVyYc=
+BGE0gN8TC2rqBmnSyuzZ30r5QRoNXgoLAmL2_kj-yrsbfJw4o4ylAIDLQ5ibLpessjlp__-5DpC=
+0fRT_pfwfVgjOzulEfkBLKrhULpRfxubfIWaM2AE930eog0p-62c=3D" target=3D"_blank" =
+class=3D"Unsubscribe--unsubscribePreferences" style=3D"font-family:sans-ser=
+if;text-decoration:none;">Unsubscribe Preferences</a></div><br>############=
+################################################<br>#######################=
+#####################################<br><br><img src=3D"https://u19268662.=
+ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/437/1gbRLTySStOd33QhN6C1dg/ho.g=
+if" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"height:1px !imp=
+ortant;width:1px !important;border-width:0 !important;margin-top:0 !importa=
+nt;margin-bottom:0 !important;margin-right:0 !important;margin-left:0 !impo=
+rtant;padding-top:0 !important;padding-bottom:0 !important;padding-right:0 =
+!important;padding-left:0 !important;"/></body>
+</html>
+--4776d764a58eecb8f2cedb34463fbadf5f30812370a638f5fc27462e7158--

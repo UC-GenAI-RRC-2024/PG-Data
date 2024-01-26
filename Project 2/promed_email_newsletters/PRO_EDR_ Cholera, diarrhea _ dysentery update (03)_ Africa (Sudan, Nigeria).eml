@@ -1,0 +1,500 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a05:640c:1195:b0:1eb:e128:bbe3 with SMTP id o21csp125694eip;
+        Wed, 17 Jan 2024 15:36:17 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IFOAyTpdKTbupmEzBXShB9eWvkt2qVV11JifTPgFgZ7b3XmSsrRvBHbkwmuLDsiMaF4eu/A
+X-Received: by 2002:a05:620a:20d4:b0:781:1959:23b4 with SMTP id f20-20020a05620a20d400b00781195923b4mr9806047qka.157.1705534577235;
+        Wed, 17 Jan 2024 15:36:17 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1705534577; cv=none;
+        d=google.com; s=arc-20160816;
+        b=uzweGpvsP5EGWay4wwYAcgg9tuY1oSEUVT9DMAVNG+7ybUrjtk1zKlgkLrVNA1vIUz
+         vN3UsfBjNuRoTrU7LOvT1lzzF3KJPAKBEWbkTyzULvzHFwmjQDd0YQgKSf3TFBloU2us
+         rL/KAQuvN0uD2aC0Y3OKtYOQvIgSrdnqka+7mfYwyrIQLnJuufrPeXaNDq6cIYkKiJlI
+         cGmbSL/THolsXYSSdfM+L3WT7BiIDGBN5V8V/NaatfFqo1UHXzhQ9W/vqhHNdMFXUFFW
+         MKh3P9u0sI5UOnOFoX/Wg0u3YtJkgGC5iEbJi6fwYEts0rKdATqIl91V/U0K/WLtqBeJ
+         4MtQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=ZLL9/ooHhBrw94Lmw89D8Uc1xzA0M7fPOzeVK8SqOfI=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=KkpsO5NaJwlO1PtNn22pvvTHVch2pEk+p6upNlOWAAXBwor3i6VJyoOKndBiu0gFtS
+         qlYMNj5Naf2mIkbdHbQL+wXoUA6JReu0JEts32mwbvFpl1bOdkhSgyNN7Di0tVNYPO6f
+         +3YIoIXI+wy5jAKEiiZNnFDzPW48YwZrynEb+VHcd1MqB1kvRxfha5MWCQ6a9A/AJ0Oz
+         mSvvGVstVLSUtb5FimQDn7bqzPdoMBLAPwhTNrqxPrbYLy9XF9M08EJtMMUtourEgzqT
+         PT1Fau/R95VrVdStqQeAy9NMrVm2mrQHLoNkMhaYu3eb0SnIMD0/0Kr1tRPRhfdnl0Ut
+         WkaA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=knlbP3oG;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=GmNQ6RAV;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id u13-20020a05620a120d00b0078310e04b6csi12221124qkj.634.2024.01.17.15.36.17
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 17 Jan 2024 15:36:17 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=knlbP3oG;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=GmNQ6RAV;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=ZLL9/ooHhBrw94Lmw89D8Uc1xzA0M7fPOzeVK8SqOfI=;
+	b=knlbP3oGdq/l8+Vbr3BLFacXkcgKk49AN0WcUNezX0nSOI9PJ1MbaCN9eAAqk26tIzxU
+	I92rU1eJb7Coceaun8LQjj+3TIHWmbUQjLHuoWSHS5FHdg+Lu/K30Oo+qn0+bySmIVBARn
+	EqO+z3/Xo+09XHG46uKfr48yyWQCzWdDkX+r1hXs6fhR+WEUx0NQNITC2nxy7ekUQjRQQ3
+	c7PZ+Uz4SfTRBRGrRtdsA4mMY6LFpuaJkG6ZliIwXzuzhrz9Dp72bHfkcV8JJg/NxgeYx6
+	FafzFlyxTrwCFO8pXVToHAb5d07hzst90qcxleFEK99KjVHxMvafPJzzt1ob6skw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=ZLL9/ooHhBrw94Lmw89D8Uc1xzA0M7fPOzeVK8SqOfI=;
+	b=GmNQ6RAVQEh9mXQzB7UQgigLsS5F9wGsrmTvCTqMoAGN5uwbly24z4bOWw+OtuK8rKIa
+	XT5hqWpGSNt1mR66eRYwK+iYd/T4yeavdIKsRV2Wxdgf2uHVoUNR2q1KWUHyaI0DBA8VjH
+	pkvtvWsJDQzUktDbWNHPrc9SHnDxJQCeo=
+Received: by filterdrecv-647c69fd5c-rvk7g with SMTP id filterdrecv-647c69fd5c-rvk7g-1-65A8646F-28
+        2024-01-17 23:36:15.323626082 +0000 UTC m=+7966453.810762207
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-8 (SG) with HTTP
+	id VuVqer1jTzqQU8NjlOL-rQ
+	Wed, 17 Jan 2024 23:36:15.306 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=90f3aab49206851625ec2e39dec7689cd536b60732f2b455d7eddea8b379
+Date: Wed, 17 Jan 2024 23:36:17 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <VuVqer1jTzqQU8NjlOL-rQ@geopod-ismtpd-8>
+Subject: PRO/EDR> Cholera, diarrhea & dysentery update (03): Africa (Sudan,
+ Nigeria)
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iBrCcitE4pE1jjqOcKG0=2FeoYiYYzCCHPCtcgyMw?=
+ =?us-ascii?Q?Z+amvFyYOVoaNZgPEAy+8m2hkA5mtYXts81kDSg?=
+ =?us-ascii?Q?NK6T7uzxS0MynE0nWm2JJyWu=2F6+qMtYYOWV1po9?=
+ =?us-ascii?Q?J6kSirGTce8CxCIgfBic2Vh0nS2DqayIkC4Jp+N?=
+ =?us-ascii?Q?nB7WY2yYLJVMnkdXlhXuu+ZAAKWojXXTA0Hdcp?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUhc93xcG=2F095a5S4+mt=2FG?=
+ =?us-ascii?Q?uYUpctI=2FOGD2dwyi+uvm2j4FCdvuw0l9zcHM8iA?=
+ =?us-ascii?Q?mojOvTXq7jOpDFFNtfsYkHQYACEW8pq1BXXqYmH?=
+ =?us-ascii?Q?oGTsnt6QpE2ZV5WVqnpwfXWoLXx7+4Y1KXOU9lP?=
+ =?us-ascii?Q?FarmlJ9MOcvWnFgqufR2A+Q0qNYPEsWJhYk5aAQ?=
+ =?us-ascii?Q?DN=2FUbRLY2KEKEIcF+026sV39X+6=2FRXfIkIKzfz8?=
+ =?us-ascii?Q?OXIKmAQXljOI1HsgEwOtlrMnHXh75d0MaYQqzma?=
+ =?us-ascii?Q?i1Ym2Yqp9t2ujZTW+R1OGaVFnzw5LFT7CwO0hIh?=
+ =?us-ascii?Q?0fyV1LbvcFKRS0ULnlPFeS=2FIBcuJf0C4xL2n4JU?=
+ =?us-ascii?Q?1eO9C51TWQWjZdXEqAh3EiZNqNLnzoLsOnt8tsL?=
+ =?us-ascii?Q?F4ZTr1gv+XLoOc4xUKrzFdfUuNk4vxGipOpR=2FoX?=
+ =?us-ascii?Q?VB8tx984ujjNiEqj4JikfTMq5q3hOjJR7IFSvzZ?=
+ =?us-ascii?Q?G+QxobXLy892QUo+og9dQT8uCkj1RuJjKRfYyhL?=
+ =?us-ascii?Q?SOeToZdODBQmlsyxMj6l=2F4B4avJZeEfWF6qDKmx?=
+ =?us-ascii?Q?E14=2FCUWDbxHoRFM5Fv4ihOpLID=2FzltgyOsip87n?=
+ =?us-ascii?Q?6iKTTmXFF7MNBLJVzr=2F5uMShd08rAeDt6Jt7LEj?=
+ =?us-ascii?Q?NsJ8X3YF5ALFS74SLgQAij3P82NhWOAifnRM3hp?=
+ =?us-ascii?Q?1b+CnNpF8ht5fwgA1OwWRPw+ayDU1IGcgaLa8pB?=
+ =?us-ascii?Q?VjqxLo1aw9Z2AbFl1+oZsM6sqe1xWFBzlHChaHA?=
+ =?us-ascii?Q?y0z+PzewQOf+UF7Tvxwb5E39AQ=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2Ez0kxOvWRD?=
+ =?us-ascii?Q?IOyFEgaHFiZNq46YzFwNokqRbHK9lRD2GFoMDAw?=
+ =?us-ascii?Q?dTAwMH9gUsflfZTSw2RTNXh7RyNM3RBSVvLF25i?=
+ =?us-ascii?Q?igVWnbG59CsaqTHRZ3MvwBSHR5kSlcr2wSfNwBZ?=
+ =?us-ascii?Q?kVJV9Nsvpv9K8OUBXr8vBn3S48wtm8MgpSKOhj6?=
+ =?us-ascii?Q?tWPkzI1Bexra2M9mA=3D=3D=2EvE98ysTI0ob1E=5FXz0H6?=
+ =?us-ascii?Q?JpUVAzt4MUMB7C6sMU0vIeeJoMDAwdTAwMP9BBc?=
+ =?us-ascii?Q?m47vZLzbjvPDEJlvZ9MS387GvGXAxNDXxeZZ4dY?=
+ =?us-ascii?Q?jc3mecyB6BOATytxy49vFF7HudLJtEXNUPsCz4a?=
+ =?us-ascii?Q?uftS1vcWo=5FdkLsWdN7a-2MOS1OJjEjAURZUXBvY?=
+ =?us-ascii?Q?BKJHRWnMdApng81k8F9nMsNVRquXTpq3H1eoziY?=
+ =?us-ascii?Q?ahxHz2E8Tz2jiS-KpEeMIQfkFJJ-uMQ6sUw0oMg?=
+ =?us-ascii?Q?iXKfsmudi4OpNq6s=5Fe7TgJhzurfq6s2TKQ-2bIy?=
+ =?us-ascii?Q?pJFKChwyYeirs9zWnueRcR4Pc8=5FD1oTwfzmMtXz?=
+ =?us-ascii?Q?GAARk9XJnIc0GFhZ0g2hevtC9fUyvf9yMSxLo9l?=
+ =?us-ascii?Q?jNUW8fOsXZQJrtOzghgfQrebl-Me5EPQBpBNgQN?=
+ =?us-ascii?Q?l=5FQVBO985L212VYobo28LrsADqTD7DBba65=5F43B?=
+ =?us-ascii?Q?JXueIoECkXnly0HztjSYBZdsw2ORbHSi2yfGcUC?=
+ =?us-ascii?Q?n2LIVjFxicWyIrkCzQOGHV9IfFBW8uq0FWNUw56?=
+ =?us-ascii?Q?YzRPLCbhAHnnQgBAxi-mzCkxK4d8da9V9j=5F6pFC?=
+ =?us-ascii?Q?Nr3kw1ey7FtQ6bMmsAyEmYfTZmGIWY-sDiSdTki?=
+ =?us-ascii?Q?fq4tqAd8sqELbmV8yhjPg=5FGk7P0ynhMYvaa84jP?=
+ =?us-ascii?Q?pNij=5FWO9O7uKIJksAY=5FIaDW4lf1ripfiG7OLUB2?=
+ =?us-ascii?Q?j9VmJ4L13Yx3pUw2jChmjr2g6Xu2fVfm-30LT4q?=
+ =?us-ascii?Q?2fxjVj2SfFgM4es0SsEEqQJ3tjNwMGsgX6vpRka?=
+ =?us-ascii?Q?O=5FT66nYCFrivTfgsdYMNXVAfBKcq=5FMPSqnAXutB?=
+ =?us-ascii?Q?UsB4guj5r4c=5FFwvIDrca-lKYP8vT71UV2ZIbuia?=
+ =?us-ascii?Q?RdogC54iekIhBzY4KwxvpRHJFobR8RjSfIVbVc2?=
+ =?us-ascii?Q?yQJo9SPQWJ142Hh7BpbBYRNnkegaU8GDDJMhVI5?=
+ =?us-ascii?Q?EKGPvPXyz=5Fln5EmQHG05oJGUV5BqrNI6iIXX62n?=
+ =?us-ascii?Q?bFcxTISkk8T1RYPhI1Q-Sr-MERsXhFNMbNRgjjv?=
+ =?us-ascii?Q?sRWmHFr3MqJLYbEc1brWmZMwDLIPhJ3mT77FyJp?=
+ =?us-ascii?Q?r0fq1eEFqwpGtnc42LG1=5FIWAT9-mFdS10JJX7BV?=
+ =?us-ascii?Q?Lpct3A=3D=3D=3E?=
+
+--90f3aab49206851625ec2e39dec7689cd536b60732f2b455d7eddea8b379
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=us-ascii
+Mime-Version: 1.0
+
+CHOLERA, DIARRHEA & DYSENTERY UPDATE (03): AFRICA (SUDAN, NIGERIA)
+******************************************************************
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+In this update:
+[1] Sudan
+[2] Nigeria
+
+******
+[1] Sudan
+Date: Tue 16 Jan 2024
+Source: Cairo24 [in Arabic, trans. Mod.MM, abridged, edited]
+<https://www.cairo24.com/1938683>
+
+
+The Department of Emergencies and Epidemic Control, Sudanese Ministry
+of Health, River Nile state, has announced the detection of 4 new
+cases of cholera in Atbara locality and 6 cases in Eldamir locality,
+with the cumulative number of confirmed cholera cases reaching 10
+cases in the state according to local media sources.
+
+--
+Communicated by:
+ProMED
+via
+ProMED-MENA
+
+[Cholera is an acute diarrheal infection caused by ingestion of food
+or water contaminated with _Vibrio cholerae_ bacteria. Currently Sudan
+is experiencing an ongoing armed conflict in most of its states, with
+huge numbers of displaced people living in camps who are at high risk
+of cholera disease because of overcrowding and poor hygiene and
+sanitation conditions. Measures to prevent and control cholera
+outbreaks include enforcing monitoring measures, ensuring the safety
+of drinking water and food, promoting hygiene awareness, and
+strengthening disease surveillance. The use of cholera vaccines is an
+important added prevention and control strategy. - Mod.MM
+
+ProMED map of River Nile, Sudan:
+<https://promedmail.org/promed-post?place=3D8714271,30886>]
+
+******
+[2] Nigeria
+Date: Sat 13 Jan 2024
+Source: Daily Post [edited]
+<https://dailypost.ng/2024/01/13/three-confirmed-cases-of-cholera-recorded-=
+in-cross-river/>
+
+
+Three confirmed cases of cholera have been recorded in Biase and
+Obubra local government areas [LGAs] of Cross River State.
+
+The Commissioner for Health, Dr Henry Egbe Ayuk, confirmed the
+outbreak of the disease in the state in a statement released on
+Saturday [13 Jan 2024]. The commissioner said impure water sources and
+unopened fruits are some of the factors that led to the outbreak.
+
+Ayuk said that a response committee has been put together by the
+Surveillance Unit and Logistic Management Coordinating Unit of the
+State Ministry of Health. He said the committee will be positioned in
+the 2 LGAs to handle the drugs donated by the National Centre for
+Disease Control (NCDC) to contain the outbreak. The commissioner added
+that an emergency operation centre has been activated.
+
+According to him, the state epidemiologist, Dr Blessing Ekpenyong, who
+is equally the incident manager, will coordinate the process.
+
+Ayuk disclosed that the LGA rapid response team has already been
+deployed to affected wards for case investigation and line listing of
+reported cases in order to contain the spread of the disease.
+
+He said, "We would like to urge members of the public to adhere
+strictly to all measures against the disease by avoiding impure
+drinking water, unripened fruits, and contaminated foods.
+
+"The state rapid response team will always be on hand for deployment
+to any affected area should new cases be reported."
+
+[Byline: Asare Asare]
+
+--
+Communicated by:
+ProMED
+via
+ProMED-EAFR
+
+[Cross River state in South Nigeria has reported another cholera
+outbreak after battling several cholera outbreaks in 2023. Poor
+potable water supply, poor food hygiene, and lack of and nonuse of
+standard basic sanitation provide a mix of risk factors for cholera
+outbreaks in low-resource settings. There is a need for the
+improvement of safe water supplies, improved food hygiene, provision
+of and use of basic sanitation to curb incessant outbreaks of cholera
+in these settings. - Mod.AA
+
+ProMED map of Cross River State, Nigeria:
+<https://promedmail.org/promed-post?place=3D8714238,12029>]
+
+[See Also:
+Cholera, diarrhea & dysentery update (02): Africa (Zambia) update
+http://promedmail.org/post/20240106.8714105
+2023
+----
+Cholera, diarrhea & dysentery update (33): Africa (Zambia) fatal
+http://promedmail.org/post/20231228.8713950
+Cholera, diarrhea & dysentery update (32): Africa (Sudan) increasing,
+fatal, MOH http://promedmail.org/post/20231227.8713943
+Cholera, diarrhea & dysentery update (30): Yemen, increasing
+incidence, NGO http://promedmail.org/post/20231219.8713796
+Cholera, diarrhea & dysentery update (29): Sudan, cases increase, MOH
+update http://promedmail.org/post/20231211.8713650
+Cholera, diarrhea & dysentery update (27): Africa (Sudan) case
+increase http://promedmail.org/post/20231210.8713628
+Cholera, diarrhea & dysentery update (26): Africa (Ethiopia) increase,
+fatal http://promedmail.org/post/20231207.8713569
+Cholera, diarrhea & dysentery update (24): Africa (Sudan)
+http://promedmail.org/post/20231115.8713179
+Cholera, dengue - Sudan: (KH, GZ, GD) fatal
+http://promedmail.org/post/20231031.8712921
+Cholera, diarrhea & dysentery update (22): Africa (Nigeria) fatal
+http://promedmail.org/post/20231024.8712800
+Cholera, diarrhea & dysentery update (21): Africa (Sudan) increase,
+fatal, WHO http://promedmail.org/post/20231021.8712750
+Cholera, diarrhea & dysentery update (14): Europe (Italy) Africa
+(South Africa) http://promedmail.org/post/20230713.8711116
+Cholera, diarrhea & dysentery update (11): Africa, WHO global cases
+http://promedmail.org/post/20230517.8710097
+Cholera, diarrhea & dysentery update (08): Americas, Asia, Africa
+http://promedmail.org/post/20230326.8709160
+Cholera, diarrhea & dysentery update (06): Americas, Asia, Africa
+http://promedmail.org/post/20230208.8708226
+Cholera, diarrhea & dysentery update (05): Africa
+http://promedmail.org/post/20230126.8707972
+Cholera, diarrhea & dysentery update (04): Asia, Africa
+http://promedmail.org/post/20230121.8707899
+Cholera, diarrhea & dysentery update (01): Africa, Asia
+http://promedmail.org/post/20230108.8707678
+Cholera, diarrhea & dysentery update (06): Americas, Asia, Africa
+http://promedmail.org/post/20230208.8708226]
+.................................................mm/rd/gmm/tu/rd/ya/tw/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3DCcyJq88GB2vT1jNe4zJuGS_OZpywFEYtYSN0epdyUwZoMDAwdTAwMGYnHKX=
+cXQnvRPPMMkxcNmhF8v4GiXrZyTYKINx8ZML5gMiV5dkGvEFdBYv8lhXkHw-4nKrSGexs8pZKfg=
+0ZcaBKY2J16FzvuhfOBrU7UHMw42aKeh42EM83oy43xdK59gjv63dEGKqWg9zI35rf5w1VIwTKE=
+5BdKSGdBvtHpMf7pifJJ87lRIY2eK3QqBZUBfVDn5GmepvggNf-_cviOus-TXznKJyNirjM7cXh=
+Qp8sqVvIMnSL6tBiXZ5AXPpVXcY2G61iQKTe-q82k9vAgs7XPOin59txGMa1bUV_yaqgvmkAENE=
+u1BYYEBGyX-ML8HWbBihxFmh-XhrnGVxxv_pxMwfJjntMa8qv-8u9VjUzyy4QAKxkacL7Q-2amJ=
+it1P2_XH15qOhFfgWx9jo83uuA48SDQLmWZwzkL7kaoibfzIps1dfhUA6zUGQ8Tx8_s2A7l-Ck3=
+pHvjlfMxYZP7zotUp6pV1SNP1Njg-sMacDtO1IQI5mWU-inM_qOFYrFOJLTDKOBpK8MWfVCT6G_=
+t7t96YyRJl2fiC8atj7fT1Rm4J-Tih2aPUo_vgFA8FvIruYVwjLyf_62RxY2hCa-E7SWsK7SVwe=
+RB3iYtxcYUqK2B_FyCoETGuAbWgWGT0IWm6k0dm9WNpFmmKEHOauF0AUV3Roj_K70zbX0gHilCJ=
+z9CO5Xkv_TdT6OuCO9DkLH8lW_gI_U3TMaDLOPhM35eb_6mDugAQ44AkJ-88BoqfxpTiM6fUHbV=
+_E_uwyLxqiNDg5e9Q7ggvzRCwcDel_WQuET_XYkhhYFyXZ-yMmTF3j5dJIOCHRGto55R3G-xsNu=
+pU4TPc1_KuLvwO3-KvJY4Uojz1A5tAczL-uhMo-k-gCE-LrGOJmE3nYgYmq_Hdfbixez9hx2M7b=
+cU34xR3zbwQjjIqzk3oMhCj1JVw020yAhYK6bq3JhOh4zdDCgwXRIbDQ02c1RX8vx3G5VjseQ44=
+HYycWrWun0QRC54UiOHbBDv5X1Q_Dp0IemYtkQ_IcY-Kz-NXlKmkksu4VGjOJ18jXA69PIgZms7=
+p5DANS7zYgZRdI_WQJ0T-ntXq2anMbqtjoB9Kc6saVJkiADNCou31zIJhEsO26Ah77qeWejKNWi=
+8gE8iQWL7fNA0Zpy9xFP1rM9u28nN5Ki4OYPn3IAfkw=3D )
+############################################################
+############################################################
+
+--90f3aab49206851625ec2e39dec7689cd536b60732f2b455d7eddea8b379
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>CHOLERA, DIARRHEA & DYSENTERY UPDATE (03): AFRICA (SUDAN, NIGERIA)<br=
+>******************************************************************<br>A Pr=
+oMED-mail post<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/wscE2ng=
+5fl6JrPIt48tisIijpefK5PNjW-mL-YZGnfgDOxU1G3gjwnPSi2Tfv3HA/432/WpHK4nvZQ9y3Z=
+MKFm0g4vw/h0/DSFgAlNbOrzGVn2V7gzhf01kxGyuwLksD1TM8YLqeAM">http://www.promed=
+mail.org</a><br>ProMED-mail is a program of the<br>International Society fo=
+r Infectious Diseases<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/=
+wscE2ng5fl6JrPIt48tisCT5tpD4Upm3qyMCbcYSQvc/432/WpHK4nvZQ9y3ZMKFm0g4vw/h1/g=
+4uQeT_IeA7rHGaARa0yo2naQ7XxBSEjT1XNRL3Zwwk">http://www.isid.org</a><br><br>=
+In this update:=0D<br>[1] Sudan=0D<br>[2] Nigeria=0D<br>=0D<br>******=0D<br=
+>[1] Sudan=0D<br>Date: Tue 16 Jan 2024=0D<br>Source: Cairo24 [in Arabic, tr=
+ans. Mod.MM, abridged, edited]=0D<br><a href=3D"https://u19268662.ct.sendgr=
+id.net/ss/c/TLh_csrC34X_iXpbYoMam7BljZ6C2p9riB8R9L6xU7-RtgGxZeSSZiVlg04kjSi=
+9/432/WpHK4nvZQ9y3ZMKFm0g4vw/h2/_KenANWgtkAZtC2eYn1_0bZBojl1HxSalI413-KmYP8=
+">https://www.cairo24.com/1938683</a>=0D<br>=0D<br>=0D<br>The Department of=
+ Emergencies and Epidemic Control, Sudanese Ministry<br>of Health, River Ni=
+le state, has announced the detection of 4 new<br>cases of cholera in Atbar=
+a locality and 6 cases in Eldamir locality,<br>with the cumulative number o=
+f confirmed cholera cases reaching 10<br>cases in the state according to lo=
+cal media sources.=0D<br>=0D<br>--=0D<br>Communicated by:=0D<br>ProMED=0D<b=
+r>via=0D<br>ProMED-MENA=0D<br>=0D<br>[Cholera is an acute diarrheal infecti=
+on caused by ingestion of food<br>or water contaminated with _Vibrio choler=
+ae_ bacteria. Currently Sudan<br>is experiencing an ongoing armed conflict =
+in most of its states, with<br>huge numbers of displaced people living in c=
+amps who are at high risk<br>of cholera disease because of overcrowding and=
+ poor hygiene and<br>sanitation conditions. Measures to prevent and control=
+ cholera<br>outbreaks include enforcing monitoring measures, ensuring the s=
+afety<br>of drinking water and food, promoting hygiene awareness, and<br>st=
+rengthening disease surveillance. The use of cholera vaccines is an<br>impo=
+rtant added prevention and control strategy. - Mod.MM=0D<br>=0D<br>ProMED m=
+ap of River Nile, Sudan:<br><a href=3D"https://u19268662.ct.sendgrid.net/ss=
+/c/sSnCkKCWBvais3EuVAOvgy2WOIX7pp1nXnn4AbwuQ3Z6WbkfhqXYXU-aTMPJ8yThLiJpOrSu=
+PsbRO98CA2DTlg/432/WpHK4nvZQ9y3ZMKFm0g4vw/h3/wigfIaUcpY8h_hpMpgAlsd93VW4vV1=
+0Ph9wUjUT2dyg">https://promedmail.org/promed-post?place=3D8714271,30886</a>=
+]=0D<br>=0D<br>******=0D<br>[2] Nigeria=0D<br>Date: Sat 13 Jan 2024=0D<br>S=
+ource: Daily Post [edited]=0D<br><a href=3D"https://u19268662.ct.sendgrid.n=
+et/ss/c/TUIVIg4PCmni5tP3Q8lzBRu7ngHbvQmfSUIUWpOt2Yw_wkHnyCQJrt3BgJkSVq_txPf=
+2j__3SVmFywEbb9DY-Rd3XRuBkVMy_zGYXrMMUS1-_MMdUz1BO1XuiheNL2Yp8UWuVHHcmrEsvy=
+8bj0OlQg/432/WpHK4nvZQ9y3ZMKFm0g4vw/h4/bVl1Ed16PLqHU1lWzP8Cfy0w-GfgI1UnwQcF=
+3Mft9Mo">https://dailypost.ng/2024/01/13/three-confirmed-cases-of-cholera-r=
+ecorded-in-cross-river/</a>=0D<br>=0D<br>=0D<br>Three confirmed cases of ch=
+olera have been recorded in Biase and<br>Obubra local government areas [LGA=
+s] of Cross River State.=0D<br>=0D<br>The Commissioner for Health, Dr Henry=
+ Egbe Ayuk, confirmed the<br>outbreak of the disease in the state in a stat=
+ement released on<br>Saturday [13 Jan 2024]. The commissioner said impure w=
+ater sources and<br>unopened fruits are some of the factors that led to the=
+ outbreak.=0D<br>=0D<br>Ayuk said that a response committee has been put to=
+gether by the<br>Surveillance Unit and Logistic Management Coordinating Uni=
+t of the<br>State Ministry of Health. He said the committee will be positio=
+ned in<br>the 2 LGAs to handle the drugs donated by the National Centre for=
+<br>Disease Control (NCDC) to contain the outbreak. The commissioner added<=
+br>that an emergency operation centre has been activated.=0D<br>=0D<br>Acco=
+rding to him, the state epidemiologist, Dr Blessing Ekpenyong, who<br>is eq=
+ually the incident manager, will coordinate the process.=0D<br>=0D<br>Ayuk =
+disclosed that the LGA rapid response team has already been<br>deployed to =
+affected wards for case investigation and line listing of<br>reported cases=
+ in order to contain the spread of the disease.=0D<br>=0D<br>He said, "We w=
+ould like to urge members of the public to adhere<br>strictly to all measur=
+es against the disease by avoiding impure<br>drinking water, unripened frui=
+ts, and contaminated foods.=0D<br>=0D<br>"The state rapid response team wil=
+l always be on hand for deployment<br>to any affected area should new cases=
+ be reported."=0D<br>=0D<br>[Byline: Asare Asare]=0D<br>=0D<br>--=0D<br>Com=
+municated by:=0D<br>ProMED=0D<br>via=0D<br>ProMED-EAFR<br><br>[Cross River =
+state in South Nigeria has reported another cholera<br>outbreak after battl=
+ing several cholera outbreaks in 2023. Poor<br>potable water supply, poor f=
+ood hygiene, and lack of and nonuse of<br>standard basic sanitation provide=
+ a mix of risk factors for cholera<br>outbreaks in low-resource settings. T=
+here is a need for the<br>improvement of safe water supplies, improved food=
+ hygiene, provision<br>of and use of basic sanitation to curb incessant out=
+breaks of cholera<br>in these settings. - Mod.AA=0D<br>=0D<br>ProMED map of=
+ Cross River State, Nigeria:<br><a href=3D"https://u19268662.ct.sendgrid.ne=
+t/ss/c/sSnCkKCWBvais3EuVAOvgy2WOIX7pp1nXnn4AbwuQ3Z6WbkfhqXYXU-aTMPJ8yThsf__=
+V8P0wMzWAGoXo8e_zg/432/WpHK4nvZQ9y3ZMKFm0g4vw/h5/wp4I1tFMGKEQdzGizDTh5rk2EF=
+5vKTtfUO-kYf0_XpU">https://promedmail.org/promed-post?place=3D8714238,12029=
+</a>]<br><br>[See Also:<br>Cholera, diarrhea & dysentery update (02): Afric=
+a (Zambia) update<br>http://promedmail.org/post/20240106.8714105=0D<br>2023=0D=
+<br>----=0D<br>Cholera, diarrhea & dysentery update (33): Africa (Zambia) f=
+atal<br>http://promedmail.org/post/20231228.8713950=0D<br>Cholera, diarrhea=
+ & dysentery update (32): Africa (Sudan) increasing,<br>fatal, MOH http://p=
+romedmail.org/post/20231227.8713943=0D<br>Cholera, diarrhea & dysentery upd=
+ate (30): Yemen, increasing<br>incidence, NGO http://promedmail.org/post/20=
+231219.8713796=0D<br>Cholera, diarrhea & dysentery update (29): Sudan, case=
+s increase, MOH<br>update http://promedmail.org/post/20231211.8713650=0D<br=
+>Cholera, diarrhea & dysentery update (27): Africa (Sudan) case<br>increase=
+ http://promedmail.org/post/20231210.8713628=0D<br>Cholera, diarrhea & dyse=
+ntery update (26): Africa (Ethiopia) increase,<br>fatal http://promedmail.o=
+rg/post/20231207.8713569=0D<br>Cholera, diarrhea & dysentery update (24): A=
+frica (Sudan)<br>http://promedmail.org/post/20231115.8713179=0D<br>Cholera,=
+ dengue - Sudan: (KH, GZ, GD) fatal<br>http://promedmail.org/post/20231031.=
+8712921=0D<br>Cholera, diarrhea & dysentery update (22): Africa (Nigeria) f=
+atal<br>http://promedmail.org/post/20231024.8712800=0D<br>Cholera, diarrhea=
+ & dysentery update (21): Africa (Sudan) increase,<br>fatal, WHO http://pro=
+medmail.org/post/20231021.8712750=0D<br>Cholera, diarrhea & dysentery updat=
+e (14): Europe (Italy) Africa<br>(South Africa) http://promedmail.org/post/=
+20230713.8711116=0D<br>Cholera, diarrhea & dysentery update (11): Africa, W=
+HO global cases<br>http://promedmail.org/post/20230517.8710097=0D<br>Choler=
+a, diarrhea & dysentery update (08): Americas, Asia, Africa<br>http://prome=
+dmail.org/post/20230326.8709160=0D<br>Cholera, diarrhea & dysentery update =
+(06): Americas, Asia, Africa<br>http://promedmail.org/post/20230208.8708226=0D=
+<br>Cholera, diarrhea & dysentery update (05): Africa<br>http://promedmail.=
+org/post/20230126.8707972=0D<br>Cholera, diarrhea & dysentery update (04): =
+Asia, Africa<br>http://promedmail.org/post/20230121.8707899=0D<br>Cholera, =
+diarrhea & dysentery update (01): Africa, Asia<br>http://promedmail.org/pos=
+t/20230108.8707678=0D<br>Cholera, diarrhea & dysentery update (06): America=
+s, Asia, Africa<br>http://promedmail.org/post/20230208.8708226]<br>........=
+.........................................mm/rd/gmm/tu/rd/ya/tw/jh<br></body=
+>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3DCcyJq88GB2vT1jNe4zJuGS_OZpywFEYtYSN0epdyUwZoMDAwdT=
+AwMGYnHKXcXQnvRPPMMkxcNmhF8v4GiXrZyTYKINx8ZML5gMiV5dkGvEFdBYv8lhXkHw-4nKrSG=
+exs8pZKfg0ZcaBKY2J16FzvuhfOBrU7UHMw42aKeh42EM83oy43xdK59gjv63dEGKqWg9zI35rf=
+5w1VIwTKE5BdKSGdBvtHpMf7pifJJ87lRIY2eK3QqBZUBfVDn5GmepvggNf-_cviOus-TXznKJy=
+NirjM7cXhQp8sqVvIMnSL6tBiXZ5AXPpVXcY2G61iQKTe-q82k9vAgs7XPOin59txGMa1bUV_ya=
+qgvmkAENEu1BYYEBGyX-ML8HWbBihxFmh-XhrnGVxxv_pxMwfJjntMa8qv-8u9VjUzyy4QAKxka=
+cL7Q-2amJit1P2_XH15qOhFfgWx9jo83uuA48SDQLmWZwzkL7kaoibfzIps1dfhUA6zUGQ8Tx8_=
+s2A7l-Ck3pHvjlfMxYZP7zotUp6pV1SNP1Njg-sMacDtO1IQI5mWU-inM_qOFYrFOJLTDKOBpK8=
+MWfVCT6G_t7t96YyRJl2fiC8atj7fT1Rm4J-Tih2aPUo_vgFA8FvIruYVwjLyf_62RxY2hCa-E7=
+SWsK7SVweRB3iYtxcYUqK2B_FyCoETGuAbWgWGT0IWm6k0dm9WNpFmmKEHOauF0AUV3Roj_K70z=
+bX0gHilCJz9CO5Xkv_TdT6OuCO9DkLH8lW_gI_U3TMaDLOPhM35eb_6mDugAQ44AkJ-88Boqfxp=
+TiM6fUHbV_E_uwyLxqiNDg5e9Q7ggvzRCwcDel_WQuET_XYkhhYFyXZ-yMmTF3j5dJIOCHRGto5=
+5R3G-xsNupU4TPc1_KuLvwO3-KvJY4Uojz1A5tAczL-uhMo-k-gCE-LrGOJmE3nYgYmq_Hdfbix=
+ez9hx2M7bcU34xR3zbwQjjIqzk3oMhCj1JVw020yAhYK6bq3JhOh4zdDCgwXRIbDQ02c1RX8vx3=
+G5VjseQ44HYycWrWun0QRC54UiOHbBDv5X1Q_Dp0IemYtkQ_IcY-Kz-NXlKmkksu4VGjOJ18jXA=
+69PIgZms7p5DANS7zYgZRdI_WQJ0T-ntXq2anMbqtjoB9Kc6saVJkiADNCou31zIJhEsO26Ah77=
+qeWejKNWi8gE8iQWL7fNA0Zpy9xFP1rM9u28nN5Ki4OYPn3IAfkw=3D" target=3D"_blank" =
+class=3D"Unsubscribe--unsubscribePreferences" style=3D"font-family:sans-ser=
+if;text-decoration:none;">Unsubscribe Preferences</a></div><br>############=
+################################################<br>#######################=
+#####################################<br><br><img src=3D"https://u19268662.=
+ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/432/WpHK4nvZQ9y3ZMKFm0g4vw/ho.g=
+if" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"height:1px !imp=
+ortant;width:1px !important;border-width:0 !important;margin-top:0 !importa=
+nt;margin-bottom:0 !important;margin-right:0 !important;margin-left:0 !impo=
+rtant;padding-top:0 !important;padding-bottom:0 !important;padding-right:0 =
+!important;padding-left:0 !important;"/></body>
+</html>
+--90f3aab49206851625ec2e39dec7689cd536b60732f2b455d7eddea8b379--

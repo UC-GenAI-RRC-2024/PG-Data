@@ -1,0 +1,841 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a98:d84b:0:b0:1eb:e128:bbe3 with SMTP id b11csp82849eil;
+        Wed, 17 Jan 2024 22:19:22 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IEQrsDApunCiPQG3QNfTK45ZZ/vuJ+BOyzFZKaw3vWLA3v9slE20V6d0iUKS8pPl/ob0neV
+X-Received: by 2002:a05:620a:838b:b0:783:5129:1b3c with SMTP id pb11-20020a05620a838b00b0078351291b3cmr330897qkn.151.1705558761764;
+        Wed, 17 Jan 2024 22:19:21 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1705558761; cv=none;
+        d=google.com; s=arc-20160816;
+        b=GstpaLTm6Iijc0jYOZwLk1r7A6JS5zgxeIlIIStfkakkz8pTAIv9k8dbSgZ7I6/Nwr
+         MNFtWtzDtQyAaAKhBImGtK2DF6iOzj2xn5ucMnxWdz8VV/z86GSrcGzGZKsvMp0xrEgc
+         Wqyn1Nm1kl41K4uMbxldG83X2ssAVD2O+WMZe3O2SVRHOvGL81iGQAJix/eFGHrC5Kxy
+         456YXSekxnEA/q4xKPiiklL5yXjeo78POAuLBEvhOTIHqkUP2y3gotQiretxKHQAHSuK
+         hH2m7QXYNVXYgPqJnOUBVc7OYS0TEStOOVrJ4gXkr79OQbZ1akW7Tv3kYidYlq21wBij
+         ouIQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=a6nn1TxO4y9XZ7sUqDZEWzB+l7EZoqRgXHjd+dGN+gw=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=LDitZ85nA6QJms5+RrRdVgpBu+99OJ0xapHxbAEQcGeX6xmWzyYo5/Uyt8T9DHwuGF
+         HrS8uztzVA/3P086Skl5YbfHSfXdgjNUwNIsziJVUiNFbDRUgtvJhUIYQf6yvV2Jrlcg
+         5VmSfC1v314Lau3qzIkJH+qy+3qmNrCgb4rH/DhVQlz6hUIOMcd4IDT0sc63bBrjue1w
+         ZvyL/AERbvQHLsobYf+qbGBsAtWMVOBux6uePKn6H/Pkll3vQ/5mKJbG8pL+IaDHNo7U
+         4/GeHhvISTB1VH17DGUANy+KBVxLADa14zFJDUTzHhfISiXvl9CcoPbgxiAgLcvhuN2d
+         bRwQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=ELIoTwBR;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=AWTDfM2M;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id u11-20020a05620a120b00b007835a6907bfsi7628479qkj.389.2024.01.17.22.19.21
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 17 Jan 2024 22:19:21 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=ELIoTwBR;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=AWTDfM2M;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=a6nn1TxO4y9XZ7sUqDZEWzB+l7EZoqRgXHjd+dGN+gw=;
+	b=ELIoTwBRdsFKfgQuKmIznpNzFr++yjF4Tr+ktKYBx/gJGBDjPMPhUiJNwZTSgKdCumod
+	j4NTz6kEvGGLHDe+csRKKOMX84UkzA/4RLMZex4ZrcugTYdSuclb4ffriKWiiSYpHWgruS
+	n2jvZL9+h6MLUzba0NnPhZ7RfF2UioC2FtAImbuae6L3tHIN2G6rVYXYqLyIcG++vqJI16
+	fuQG8oJwwm0wLgAZ6akpXw6DEXffNW3V9nJ7XOuRB4hc4PomyM4hxVWS2Hj+h2mn1VYWsA
+	1ZR5GcyIphvjCDHGsymSj03L9tCT5EuaQgVVRoKyb2ZzfM3VnpdtuK4xve+HcJLw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=a6nn1TxO4y9XZ7sUqDZEWzB+l7EZoqRgXHjd+dGN+gw=;
+	b=AWTDfM2MTjID4BYJE0ra3eTmo4tPIuz1M+jV7eY0DMfqkcqHsgiPj9r4V8kb+ZZg8dG6
+	xEN15JVSa9hwoLb1cUKuyGYk28seyZu3ndDDpJslOIMVPvioMzdmuRtI5uZITrzj7+Cw8z
+	Lw3qISS+3S4fPpLtckHZHszkJMjUq3tk8=
+Received: by filterdrecv-8db964b6b-64nsw with SMTP id filterdrecv-8db964b6b-64nsw-1-65A8C2E6-33
+        2024-01-18 06:19:18.813969487 +0000 UTC m=+7990650.804333703
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-2 (SG) with HTTP
+	id UC-_GB5wSmSCRFkbzx7xKw
+	Thu, 18 Jan 2024 06:19:18.757 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=45b2fc98b9a3a3bf5e3815b3b658ba9da469df4526ad2217fb14723b3784
+Date: Thu, 18 Jan 2024 06:19:21 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <UC-_GB5wSmSCRFkbzx7xKw@geopod-ismtpd-2>
+Subject: PRO/EDR> Measles - USA (02): multiple states
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iBjKC+Aa9qqhihT2zm4EpUjnWlAAXoCB0msGbE7?=
+ =?us-ascii?Q?Tob2XafCzTzFr5lHCxPQcCMKtov8oxphnYf6knb?=
+ =?us-ascii?Q?n5WnA0hQZdereApi7r10hVJsWsSUJFY45PAAumc?=
+ =?us-ascii?Q?pY6AkLyP+z4PRCQrImCWYqytjimCul1fSWlFn5m?=
+ =?us-ascii?Q?Jv=2F4i6=2FmzK92vTzPHg5suwCfhuiDcmzI3mr0HL?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUhc93xcG=2F095a5S4+mt=2FG?=
+ =?us-ascii?Q?uYUpctI=2FOGD2dwyi+uvm2j4FCdvuw0l9zcHM8iA?=
+ =?us-ascii?Q?mojOvTXq7jOpDFFNtfsYkHQYACEW8pq1BXXqYmH?=
+ =?us-ascii?Q?oGTsnt6QpE2ZV5WVqnpwfXWoLXx7+4Z7k82JlaC?=
+ =?us-ascii?Q?rLM5nLbgb0mAV8b+FMAy235gOx0WtXiCXpAitCB?=
+ =?us-ascii?Q?l8Q=2FleGrcrdUOHNXI8jwnoMYxVG+b3e0jM6DR8B?=
+ =?us-ascii?Q?f7OIViF40oRW0rTnlVU=2Fn6YBtRMvEhWetQlrGjB?=
+ =?us-ascii?Q?mn9Lx8onk12rZnldW9l0rKs4F0nvRWonEIb7zCh?=
+ =?us-ascii?Q?R3h7G33m6BWVTuFM57gq2feEFnHjPxfquXiqnYf?=
+ =?us-ascii?Q?56OaEl7edWgVtdOi44p0DeyuxTSzq0czNrBOeTs?=
+ =?us-ascii?Q?C0CKPQ30qstdA7Hsp1EqnTCKZKRxgi4YAxPq9=2Fz?=
+ =?us-ascii?Q?vkW5TKBRbk+CbvjU8Xj9QDmLgeyxrI7nhVb=2F3NH?=
+ =?us-ascii?Q?WqSnixTd+ppZwizaRSeZlTAScu6Vyj1mSQWiljJ?=
+ =?us-ascii?Q?r9BsHO5pNSaarPKYOJw=2FXRQZtWSOoYxiKuzDj6v?=
+ =?us-ascii?Q?waY=2Fe7OQV7iQow1NvefztnmZV4TyQ7hlmmyaAoh?=
+ =?us-ascii?Q?tBY71M0Qej9HcG6ufi+F2BdaJjbz8Njh+AzC+mg?=
+ =?us-ascii?Q?hzV+PeJDpdlDT2T1ApwiTpP0GUahrYBKeXT1=2FN6?=
+ =?us-ascii?Q?OWmixp54AKlazXX+tpcz2Sz+FxfEs=2FGuit13Y8t?=
+ =?us-ascii?Q?zlJQ60kwovrgkjTklcj=2FTkcc7DFTZGJpDIBz2q3?=
+ =?us-ascii?Q?Xti8wBbIhNpkJ+=2F+MihSR6vaGA=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2E5MyNP7Ie-?=
+ =?us-ascii?Q?8pEPjixMayKmUkIZq-vj0Nh122z5VhBNpVoMDAw?=
+ =?us-ascii?Q?dTAwMIQa1CAwkYxVXOuO9WrWwMmO4JvSL2ubn-r?=
+ =?us-ascii?Q?Aj8=5F7osJ4HgXvARd4EJibIQmOyYd9J7D=5FAXEmsv?=
+ =?us-ascii?Q?BLD4Dl5YWv=5F8NU9drEo6=5Flr9RlibTv7HKp-AvC4?=
+ =?us-ascii?Q?MEhxsqELRg3TudxZg=3D=3D=2EE4jILnRHgj7ae5gk9Ud?=
+ =?us-ascii?Q?YGkx3WSjWXPbFYdK4qVm3eI5oMDAwdTAwMIrJej?=
+ =?us-ascii?Q?R3uRtQy2Q-BnUq3g1qmFJwb88t4EW85OmANCbJs?=
+ =?us-ascii?Q?iNC5PScLzVOvFm27BqdNxvNZpKQO67TK55LBNCX?=
+ =?us-ascii?Q?FGhsvP6-YDGKNNIPTFkqo0u1l-9DfoAn4kwvF=5F2?=
+ =?us-ascii?Q?VRcyw0FTG=5Fr4cqpbznV7Gb2d2LkgCq44h3tO=5FbM?=
+ =?us-ascii?Q?=5FjaEmtoKLfxnBQcwuzkbD1GpNzxTt8TisLMdyEm?=
+ =?us-ascii?Q?jB1ftL5lgp8wZkE49jHafx2zNhWcZo5VWxscme=5F?=
+ =?us-ascii?Q?UybmsPe4I4ryiwknKQbPcFIfhQdTfqdh9DUcsFZ?=
+ =?us-ascii?Q?prjo=5F2JUSPMNWHFDso-zpWwjTwbxFy2vL=5F8VJ5K?=
+ =?us-ascii?Q?Rrjg1WD4nRji24YfiNDr7hf7eJFl5r0geGAkMCr?=
+ =?us-ascii?Q?IQRpO4szvmf65Heq9ZzVaDL660llgQQMCmE9DRj?=
+ =?us-ascii?Q?hXTKTHOJuk0gq2p1QNoZn9en0RYtBfbahviWSx3?=
+ =?us-ascii?Q?gMQ21mlpLtkPlFJ0E1od2JdyzCp=5FnHxyxuUqqDl?=
+ =?us-ascii?Q?PyfiB3F-T1Y0fFkQDclcNOeBMEW0xcMtj4kB1xa?=
+ =?us-ascii?Q?pM2z5=5FxhGJkdOuE66a1ljRtiCpu8n81UyRYSHx9?=
+ =?us-ascii?Q?H1XL8HHaNfjt5qYDqF5BeLPBEdRkDpQznu0PJNU?=
+ =?us-ascii?Q?Utg3svqDkfKmahm=5FvFH0eDQJdRmpaTo7llKo-U-?=
+ =?us-ascii?Q?fBzGeExP7=5FVXsVQ0Ns00z0vwD1cFEs9TtU3eY1p?=
+ =?us-ascii?Q?RWXSVVME6OZYCJYNuN1W0ogyO0SqjoWyWVop62-?=
+ =?us-ascii?Q?Cx6iU1kVkN98-L8JjM3ilD5MSv3FZ-=5FrZBxhfE3?=
+ =?us-ascii?Q?f8RoSaqS2NowqSjJLMpJTIMMw9s5714eru7Dqch?=
+ =?us-ascii?Q?KOQZSA22ZppgIGmp5gMMXnEZGClR9TpnyTYjUpm?=
+ =?us-ascii?Q?rSB7qW2s04GHMOFinFisjUh3Ea9KNb7y-npts8C?=
+ =?us-ascii?Q?Bo8jQJ3r-zr=5FPywG88MHtB2vBDxPta-8eY=5F5OWn?=
+ =?us-ascii?Q?oFuEjTSi1G=5Fkl5nXtRsSJwqfdeXmUcryOREmGR1?=
+ =?us-ascii?Q?2eA4vosP-RlCq1BraaNqhpBV0lSn1Z6KZNVdzn6?=
+ =?us-ascii?Q?-67C2kEppEssMVUf5AvRxk5=3E?=
+
+--45b2fc98b9a3a3bf5e3815b3b658ba9da469df4526ad2217fb14723b3784
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=us-ascii
+Mime-Version: 1.0
+
+MEASLES - USA (02): MULTIPLE STATES (NEW JERSEY, PENNSYLVANIA,
+WASHINGTON DC, MISSOURI, WASHINGTON)
+***************************************************************************=
+************************
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+In this update:
+[1] New Jersey case/Pennsylvania update
+[2] Washington DC: international traveler
+[3] Missouri: Clay County
+[4] Washington: Clark and Wahkiakum counties
+
+******
+[1] New Jersey case/Pennsylvania update
+Date: Thu 17 Jan 2024
+Source: Asbury Park Press [edited]
+<https://www.app.com/story/news/health/2024/01/17/measles-outbreak-new-jers=
+ey-philadelphia-measles-vaccine-age/72253408007/>
+
+
+A measles case has been confirmed in New Jersey while 9 have been
+identified in Philadelphia.
+
+The New Jersey case was identified in Camden County, and as of 17 Jan
+2024, it remains the only confirmed incident in the state.
+
+"Given the serious consequences of measles and the ease with which it
+can be spread, we will be engaged in a large investigative effort
+centered on locating and ensuring the immune status of those
+individuals who may have been in contact with this patient," said
+Camden County health officer Paschal Nwako in a statement.
+
+While Camden is the closest New Jersey county to Philadelphia, health
+authorities haven't been able to find a connection between the
+infected patient here and the ongoing outbreak in Philadelphia.
+
+The state Department of Health is currently working to find the source
+of the infection and to locate and notify people who might have been
+exposed to the infected resident.
+
+So far, authorities know that a Camden County resident who was exposed
+to measles visited 2 healthcare facilities, one on 5 Jan 2024 and
+another on 8 Jan 2024. The time and place of the visits were:
+- 5 Jan 2024: Cooper University Healthcare Pediatrics in Voorhees
+Township from 11:35 a.m. to 2:32 p.m.
+- 8 Jan 2024: Emergency department at Jefferson South Jersey Stratford
+Hospital in Stratford from 8 p.m. to 12:38 a.m.
+
+This is the first confirmed case of measles reported in New Jersey
+since March 2023.
+
+Health officials in Delaware said that 20 to 30 people may have been
+exposed to measles by an infectious person at Nemours Children's
+Hospital in Wilmington on 29 Dec 2023.
+
+In Virginia and Washington, DC, authorities issued a news release
+warning travelers who earlier this year [2024] went through Dulles
+International Airport and the Ronald Reagan Washington National
+Airport of a possible exposure to a person with measles. The person
+had recently returned to the U.S. from abroad.
+
+The U.S. measles cases are rising amid a measles outbreak in the U.K.,
+where more than 1600 people were infected in 2023 and some 50 patients
+have been hospitalized there in the past month.
+
+Experts agree that the 2-dose measles vaccine - available since 1963 -
+is the best way to prevent the viral infection.
+
+Why has measles become common again?
+------------------------------------
+While progress has been made toward the global eradication of measles,
+millions of children missed their measles vaccine during the COVID-19
+pandemic. That caused a spike of 43% more cases in 2022 compared to
+2021, the CDC reported.
+
+The decline in vaccination rates during the pandemic caused large
+outbreaks in some 37 countries, causing 128 000 deaths, the World
+Health Organization reported.
+
+In 2019, before the pandemic, the CDC recorded 1274 individual cases
+of measles that were confirmed in 31 states, the greatest number of
+cases reported in the U.S. since 1992.
+
+Back then, 12 cases were identified in Ocean and Monmouth counties.
+
+What is measles and how does it spread?
+---------------------------------------
+Measles is an airborne viral illness, considered one of the world's
+most contagious diseases. It can lead to severe complications and
+death, especially in children under 5 and pregnant women.
+
+As an airborne virus, it spreads through tiny nasal and throat
+droplets in the air and on surfaces after those who are infected
+sneeze or cough. Once the virus is in the air or on surfaces, it can
+remain active for up to 2 hours.
+
+Measles symptoms usually begin 10 to 14 days after exposure. The first
+phase of symptoms typically lasts between 4 and 7 days and includes:
+- Runny nose
+- Cough
+- Red and watery eyes
+- Small white spots inside the cheeks
+
+Then comes a reddish rash. It usually starts on the face and upper
+neck, spreading to hands and feet over 3 days. The rash can be itchy
+and lasts around 6 days before fading.
+
+Other symptoms include:
+- Swollen eyes
+- Fever
+- Loss of appetite
+- Fatigue
+
+Measles can leave children extremely vulnerable as the virus also
+weakens their immune system. That can lead to complications,
+including:
+- Severe diarrhea
+- Brain infections
+- Ear infections
+- Pneumonia
+- Blindness
+
+What can parents do to minimize risk?
+-------------------------------------
+Vaccination is the most effective way to prevent measles. The vaccine
+comes in 2 doses that are usually administered before age 2.
+
+If your child is infected with measles, keeping them well-nourished
+and providing vitamin A supplements can reduce the risk of
+complications, according to the World Health Organization.
+
+Washing hands often and using N95 facemasks can reduce the risk of
+contracting measles, according to the Occupational Safety and Health
+Administration.
+
+The measles vaccine is considered safe and affordable and often is
+combined with immunization for mumps and rubella.
+
+Any person that is not immune to the virus can get measles regardless
+of age. Measles infections tends to be more severe in children under
+5, pregnant women and adults over 30.
+
+[Byline: Juan Carlos Castillo]
+
+--
+Communicated by:
+ProMED
+
+******
+[2] Washington DC: international traveler
+Date: Tue 16 Jan 2024
+Source: Fox News Baltimore [edited]
+<https://foxbaltimore.com/news/local/health-warning-issued-after-confirmed-=
+measles-case-passed-through-dc-area-airports-dulles-international-ronald-re=
+agan-washington-national-january-3-and-4-dc-health-virginia-department>
+
+
+Health officials issued a warning over a "potential measles exposure"
+after a "confirmed case" of a person who traveled through 2 airports
+at the nation's capital.
+
+DC Health stated Tuesday [16 Jan 2024] it was notified of the case.
+The infected person was returning from "international travel" and
+traveled through 2 DC area airports on 3 Jan 2024.
+
+That person reportedly was in the international arrivals area of the
+main terminal at Dulles International Airport from between 4 p.m. and
+8 p.m. on 3 Jan 2024.
+
+Then the following day, the person was at Ronald Reagan Washington
+National Airport's Terminal A between 2:30 p.m. and 6:30 p.m.
+
+DC Health's warning comes after the Virginia Department of Health
+sounded the alarm on Friday [12 Jan 2024] regarding the same possible
+measles exposure.
+
+Health officials reminded the public that the "threat of transmission
+is low." They did warn those who have not received the measles vaccine
+may be at risk for developing the disease.
+
+If you believe you were at one of these locations at the time of the
+potential exposure, DC Health recommends:
+
+Anyone who was exposed and is at risk of developing measles should
+watch for symptoms, as described below, until 25 Jan 2024. Those
+symptoms listed are:
+- Fever of 103F-105F
+- Anorexia
+- Fatigue
+- Cough
+- Conjunctivitis
+- Bluish-gray spots in the mouth
+- Telltale rash
+
+If you notice symptoms of measles, immediately isolate yourself by
+staying home and away from others. Officials stressed those who may be
+infected to immediately contact their healthcare provider.
+
+Call ahead before going to your healthcare provider's office or the
+emergency room to notify them that you may have been exposed to
+measles and ask them to call the health department. This will help
+protect other patients and staff.
+
+If you have received 2 doses of a measles vaccine, or were born before
+1957, you are protected and do not need to take any action, according
+to the statement issued by DC Health.
+
+If you have an immunocompromising condition, please consult with your
+healthcare provider if you have questions or develop symptoms.
+
+If you have received only one dose of a measles vaccine, you are very
+likely to be protected and your risk of being infected with measles
+from any of these exposures is very low. However, to achieve complete
+immunity, contact your healthcare provider about getting a second
+vaccine dose.
+
+The incubation period of measles from exposure to the onset of
+symptoms ranges from 7-12 days. The rash appears 2-4 days after the
+onset of symptoms and lasts 3-5 days. The rash starts at the hairline
+and then proceeds to the face and upper neck, later spreading down the
+body and outward to the extremities. Sometimes immunocompromised
+patients do not develop a rash. Patients are contagious from 4 days
+before the rash appears through 4 days after the rash appears. The
+virus is transmitted when an infected person breathes, coughs or
+sneezes. The measles virus can remain infectious in the air and on
+surfaces for up to 2 hours after an infected person leaves an area.
+
+[Byline: Jamel Valencia]
+
+--
+Communicated by:
+ProMED
+
+******
+[3] Missouri: Clay County
+Date: Fri 12 Jan 2024
+Source: KMBC [edited]
+<https://www.kmbc.com/article/clay-county-missouri-public-health-center-say=
+s-a-confirmed-case-of-measles-reported/46367902>
+
+
+The Clay County Public Health Center has been notified of a confirmed
+case of measles. A Liberty, Missouri resident recently tested
+positive.
+
+The health center said Friday [12 Jan 2024] the individual was at
+Kansas City International Airport on Thursday, 4 Jan 2024, and North
+Kansas City Hospital from 5-6 Jan 2024.
+
+Individuals in these areas, on these dates, may have been exposed:
+- Terminal B, general concourse, and baggage claim at KCI on 4 Jan
+2024 from 6:15 p.m. to 9 p.m. Passengers on that flight have been
+contacted by health officials.
+- North Kansas City Hospital Emergency Department waiting area,
+patient processing, and observation on 5 Jan 2024 from 8:26 a.m. to
+4:15 p.m.
+- North Kansas City Hospital second-floor admission unit on 5 Jan 2024
+from 2:15 p.m. to 8:30 pm.
+- North Kansas City Hospital eighth floor pavilion medical & surgical
+patient unit from 5 Jan 2024 at 6:30 p.m. to 6 Jan 2024 at 8:30 p.m.
+
+Health officials are encouraging anyone who may have been in those
+areas to watch for symptoms of measles until 27 Jan 2024.
+
+Symptoms include a high fever, cough, runny nose, and red and watery
+eyes. A red rash appears usually 3 to 5 days after the symptoms
+start.
+
+To report a case, call the County Public Health Center at
+816-476-4120.
+
+[Byline: Nick Sloan]
+
+--
+Communicated by:
+ProMED
+
+******
+[4] Washington: Clark and Wahkiakum counties
+Date: Thu 11 Jan 2024
+Source: KOIN [edited]
+<https://www.koin.com/news/health/measles-cases-in-sw-washington-prompt-tri=
+-county-health-alert/>
+
+
+Health experts are sounding the alarm after 6 measles cases have been
+discovered in southwest Washington.
+
+As of last weekend, these new cases have been identified in Clark and
+Wahkiakum counties. That prompted tri-county health departments --
+which includes Multnomah, Clackamas and Washington counties -- to send
+an alert to local clinicians Wednesday [10 Jan 2024].
+
+"We haven't had any confirmed cases here in the tri-county area, so I
+think the risk of the general population is low," said Dr. Richard
+Bruno, a Multnomah County health officer. "But out of abundance of
+caution, wanted to make sure that clinicians knew to keep an eye out
+for anybody presenting with measles like symptoms."
+
+According to the CDC, measles symptoms include high fever, cough,
+runny nose, and watery eyes.
+
+Measles rash appears 3 to 5 days after the first symptoms.
+
+[Byline: Jenna Deml]
+
+--
+Communicated by:
+ProMED
+
+[Low vaccination rates and international travel continue to be the
+primary drivers of measles cases in the United States and abroad. A
+renewed focus on what were previously non-controversial public health
+vaccinations is desperately needed to combat the ongoing
+anti-vaccination movement, which only gained momentum as COVID-19
+vaccine misinformation spread. - Mod.JH
+
+ProMED maps:
+New Jersey, United States:
+<https://promedmail.org/promed-post?place=3D8714292,232>
+Philadelphia, Pennsylvania, United States:
+<https://promedmail.org/promed-post?place=3D8714292,257>
+Washington, D.C., United States:
+<https://promedmail.org/promed-post?place=3D8714292,65423>
+Washington, United States:
+<https://promedmail.org/promed-post?place=3D8714292,64069>
+Missouri, United States:
+<https://promedmail.org/promed-post?place=3D8714292,227>]
+
+[See Also:
+Measles update (01): USA (PA) multiple potential exposure sites
+http://promedmail.org/post/20240107.8714111
+2023
+----
+Measles update (64): USA, Russia, Azerbaijan
+http://promedmail.org/post/20231226.8713899
+Measles update (31): Americas, Asia, Africa
+http://promedmail.org/post/20230707.8711001
+Measles update (30): W Pacific, Americas, E Mediterranean, Africa,
+int'l travel http://promedmail.org/post/20230704.8710940
+Measles update (29): E Mediterranean, Europe, Africa, Americas, int'l
+travel http://promedmail.org/post/20230624.8710728
+Measles update (28): Americas, E Mediterranean, W Pacific
+http://promedmail.org/post/20230619.8710660
+Measles update (21): global update
+http://promedmail.org/post/20230428.8709755
+Measles update (20): Europe, Asia, Africa, W. Pacific, Americas,
+Middle East http://promedmail.org/post/20230423.8709653]
+.................................................jh/ll/jh/rd/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3DB0r3IPgn8gSDkp8exynA10P44J6_-o3KssHJg5PEQGloMDAwdTAwMPrwzGr=
+id2uSuS-u0CyPTMgW05Fedn-aLvrElGtnAOvL-63TtpTm3hNuPflyh71JT67DFzlQvta9RBf2Bv=
+VVW-HjG5A5dJ5Mo002uXHiC2iS4Vt8aGMGazG-nevg0t99dS4uaAXGhk-wOMQGl-BoObCRGd9V3=
+RMPKKvcerCeIy67ecw0uDI4tSNVAHUqG2XsikxS-gfonLpRTVmg5JWoMaDpxDG2_yd269ex3SfW=
+FoIORrVDL7K8PI2zGSiwyKgZKlyJ0sU-GFNvBVMXjTCknwAO0hOfMop1D1IiRDjO54hniUEQa0d=
+e4R66dxglSiZzWjQMiK355UX90Ti7qhKB4_us9hiOSsOSoY_WW9XLYR4S7xRlVQD0DyDD3crnfd=
+OM3a1dZZHOZAVcCxJiAKPnWusL0W-d801-Rl2RosCkqbV5-zEDQjhx7sFk_FrkH0HGxoGuyCwOU=
+bHx2ibTxDuY7Jj6fB0TPlfrqn8qcvkL65Cn8wmKukpgDIIVV8a88Re-1IEtQfzLK_PfNiIgEOxu=
+uAPaD6sLwpGccz17kOzBicGV8zw5lck3_exTNssoZUXSWwP4MoH6_kQfT_Ue_QWtTCMeoU2dMBo=
+004KPLHwrC0nA5JbXuYOj1Lvudetm4I4ajJYlCdgX6Qsu502RESRsJ8y_DxLFxI2gdVKspM-gln=
+5gdxwICIPIow1f3LP8ApcehIa3y7HCXiJi5omjptrH3r02I7qffzrTz27CD32hucZcP3BqU3us4=
+qDqMY-fg5mvKh8bQjkVCoRG9PT8Olv3YHtaJxUisc4Jnu9P3y9AKRycrgA-X-DRGDdq9WtHSC8F=
+Hsm_6svpk2h3cjHzII9wy2hDLthKGXyCPv695yCj3zr4CKo1osRsG6HVoDl3cy3WPXYWsyiMmU5=
+Kd_aOerjzC3YxUdwi8Qw_um4pO0vq1HyIUxsH4zXVbn4e8mKidhT5m8D4SOba-40M_wpSNDoKrZ=
+Q5BrTUqjkVg3Ixil8aYYJGndlho9VuqYUBiWvisKy0VzYxo1yqP5XOsch4eKG033_QF7gDeWanT=
+24B96MevNQNUfrASLWBC8gTISVm__LsztyOxxSrJ1Mta6h1-teT9GVuaMc4O-PPE-DewfFNVOW8=
+4LbXsb-DCfMn6OTAF6ojl3_VKRCZpCJ3O3f9EFTIBIQ=3D )
+############################################################
+############################################################
+
+--45b2fc98b9a3a3bf5e3815b3b658ba9da469df4526ad2217fb14723b3784
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>MEASLES - USA (02): MULTIPLE STATES (NEW JERSEY, PENNSYLVANIA,<br>WAS=
+HINGTON DC, MISSOURI, WASHINGTON)<br>**************************************=
+*************************************************************<br>A ProMED-m=
+ail post<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6Jr=
+PIt48tisIijpefK5PNjW-mL-YZGnfgDOxU1G3gjwnPSi2Tfv3HA/433/V6waKEAzQ8GLc6NCxrp=
+yIQ/h0/PxxKJAUKqmwObtiDTUsFlA7u0rmDSJCzxCOwJm47qUY">http://www.promedmail.o=
+rg</a><br>ProMED-mail is a program of the<br>International Society for Infe=
+ctious Diseases<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/wscE2n=
+g5fl6JrPIt48tisCT5tpD4Upm3qyMCbcYSQvc/433/V6waKEAzQ8GLc6NCxrpyIQ/h1/xfqZPwO=
+KckwVVJMP97JduC4vBzdeegVOkkOmjIrLVsA">http://www.isid.org</a><br><br>In thi=
+s update:=0D<br>[1] New Jersey case/Pennsylvania update=0D<br>[2] Washingto=
+n DC: international traveler=0D<br>[3] Missouri: Clay County=0D<br>[4] Wash=
+ington: Clark and Wahkiakum counties=0D<br>=0D<br>******=0D<br>[1] New Jers=
+ey case/Pennsylvania update=0D<br>Date: Thu 17 Jan 2024=0D<br>Source: Asbur=
+y Park Press [edited]=0D<br><a href=3D"https://u19268662.ct.sendgrid.net/ss=
+/c/TLh_csrC34X_iXpbYoMam0toWsuT8L3XqeS6GbPl0JxjYYLI2l85Z63GyA28fSFRAnwmMBOX=
+IBQwYZvePpJse3PiXL7oWUdT7p9ar5QYDY0eFVy56ZaVPHb5J-Noy6zQqDN0Cz5EXX4EbZkMG5B=
+YkM_34tND9mpRAvOlIOkBi8V1-17dhCGRpeiARJ4XbNg5/433/V6waKEAzQ8GLc6NCxrpyIQ/h2=
+/qRYP2RjjqNedKE4YdlcuVYlUh-tdVYvilviKWcSQji4">https://www.app.com/story/new=
+s/health/2024/01/17/measles-outbreak-new-jersey-philadelphia-measles-vaccin=
+e-age/72253408007/</a>=0D<br>=0D<br>=0D<br>A measles case has been confirme=
+d in New Jersey while 9 have been<br>identified in Philadelphia.=0D<br>=0D<=
+br>The New Jersey case was identified in Camden County, and as of 17 Jan<br=
+>2024, it remains the only confirmed incident in the state.=0D<br>=0D<br>"G=
+iven the serious consequences of measles and the ease with which it<br>can =
+be spread, we will be engaged in a large investigative effort<br>centered o=
+n locating and ensuring the immune status of those<br>individuals who may h=
+ave been in contact with this patient," said<br>Camden County health office=
+r Paschal Nwako in a statement.=0D<br>=0D<br>While Camden is the closest Ne=
+w Jersey county to Philadelphia, health<br>authorities haven't been able to=
+ find a connection between the<br>infected patient here and the ongoing out=
+break in Philadelphia.=0D<br>=0D<br>The state Department of Health is curre=
+ntly working to find the source<br>of the infection and to locate and notif=
+y people who might have been<br>exposed to the infected resident.=0D<br>=0D=
+<br>So far, authorities know that a Camden County resident who was exposed<=
+br>to measles visited 2 healthcare facilities, one on 5 Jan 2024 and<br>ano=
+ther on 8 Jan 2024. The time and place of the visits were:=0D<br>- 5 Jan 20=
+24: Cooper University Healthcare Pediatrics in Voorhees<br>Township from 11=
+:35 a.m. to 2:32 p.m.=0D<br>- 8 Jan 2024: Emergency department at Jefferson=
+ South Jersey Stratford<br>Hospital in Stratford from 8 p.m. to 12:38 a.m.=0D=
+<br>=0D<br>This is the first confirmed case of measles reported in New Jers=
+ey<br>since March 2023.=0D<br>=0D<br>Health officials in Delaware said that=
+ 20 to 30 people may have been<br>exposed to measles by an infectious perso=
+n at Nemours Children's<br>Hospital in Wilmington on 29 Dec 2023.=0D<br>=0D=
+<br>In Virginia and Washington, DC, authorities issued a news release<br>wa=
+rning travelers who earlier this year [2024] went through Dulles<br>Interna=
+tional Airport and the Ronald Reagan Washington National<br>Airport of a po=
+ssible exposure to a person with measles. The person<br>had recently return=
+ed to the U.S. from abroad.=0D<br>=0D<br>The U.S. measles cases are rising =
+amid a measles outbreak in the U.K.,<br>where more than 1600 people were in=
+fected in 2023 and some 50 patients<br>have been hospitalized there in the =
+past month.=0D<br>=0D<br>Experts agree that the 2-dose measles vaccine - av=
+ailable since 1963 -<br>is the best way to prevent the viral infection.=0D<=
+br>=0D<br>Why has measles become common again?=0D<br>----------------------=
+--------------=0D<br>While progress has been made toward the global eradica=
+tion of measles,<br>millions of children missed their measles vaccine durin=
+g the COVID-19<br>pandemic. That caused a spike of 43% more cases in 2022 c=
+ompared to<br>2021, the CDC reported.=0D<br>=0D<br>The decline in vaccinati=
+on rates during the pandemic caused large<br>outbreaks in some 37 countries=
+, causing 128 000 deaths, the World<br>Health Organization reported.=0D<br>=0D=
+<br>In 2019, before the pandemic, the CDC recorded 1274 individual cases<br=
+>of measles that were confirmed in 31 states, the greatest number of<br>cas=
+es reported in the U.S. since 1992.=0D<br>=0D<br>Back then, 12 cases were i=
+dentified in Ocean and Monmouth counties.=0D<br>=0D<br>What is measles and =
+how does it spread?=0D<br>---------------------------------------=0D<br>Mea=
+sles is an airborne viral illness, considered one of the world's<br>most co=
+ntagious diseases. It can lead to severe complications and<br>death, especi=
+ally in children under 5 and pregnant women.=0D<br>=0D<br>As an airborne vi=
+rus, it spreads through tiny nasal and throat<br>droplets in the air and on=
+ surfaces after those who are infected<br>sneeze or cough. Once the virus i=
+s in the air or on surfaces, it can<br>remain active for up to 2 hours.=0D<=
+br>=0D<br>Measles symptoms usually begin 10 to 14 days after exposure. The =
+first<br>phase of symptoms typically lasts between 4 and 7 days and include=
+s:=0D<br>- Runny nose=0D<br>- Cough=0D<br>- Red and watery eyes=0D<br>- Sma=
+ll white spots inside the cheeks=0D<br>=0D<br>Then comes a reddish rash. It=
+ usually starts on the face and upper<br>neck, spreading to hands and feet =
+over 3 days. The rash can be itchy<br>and lasts around 6 days before fading=
+.=0D<br>=0D<br>Other symptoms include:=0D<br>- Swollen eyes=0D<br>- Fever=0D=
+<br>- Loss of appetite=0D<br>- Fatigue=0D<br>=0D<br>Measles can leave child=
+ren extremely vulnerable as the virus also<br>weakens their immune system. =
+That can lead to complications,<br>including:=0D<br>- Severe diarrhea=0D<br=
+>- Brain infections=0D<br>- Ear infections=0D<br>- Pneumonia=0D<br>- Blindn=
+ess=0D<br>=0D<br>What can parents do to minimize risk?=0D<br>--------------=
+-----------------------=0D<br>Vaccination is the most effective way to prev=
+ent measles. The vaccine<br>comes in 2 doses that are usually administered =
+before age 2.=0D<br>=0D<br>If your child is infected with measles, keeping =
+them well-nourished<br>and providing vitamin A supplements can reduce the r=
+isk of<br>complications, according to the World Health Organization.=0D<br>=0D=
+<br>Washing hands often and using N95 facemasks can reduce the risk of<br>c=
+ontracting measles, according to the Occupational Safety and Health<br>Admi=
+nistration.=0D<br>=0D<br>The measles vaccine is considered safe and afforda=
+ble and often is<br>combined with immunization for mumps and rubella.=0D<br=
+>=0D<br>Any person that is not immune to the virus can get measles regardle=
+ss<br>of age. Measles infections tends to be more severe in children under<=
+br>5, pregnant women and adults over 30.=0D<br>=0D<br>[Byline: Juan Carlos =
+Castillo]=0D<br>=0D<br>--=0D<br>Communicated by:=0D<br>ProMED=0D<br>=0D<br>=
+******=0D<br>[2] Washington DC: international traveler=0D<br>Date: Tue 16 J=
+an 2024=0D<br>Source: Fox News Baltimore [edited]=0D<br><a href=3D"https://=
+u19268662.ct.sendgrid.net/ss/c/1SBR61Kp8oRewHa1jScxqUo0Z-q1QXDMzA3X2RTIs_Pc=
+h9WRIYToALpY54krnRsLEXTYcKGEC-vN36Q-hYtboScGvVtRBgkEOdExPlNfZuZL8RXA3-rjngt=
+7Ys3XRoSVuxr_Tr47mU4B4OyRSrUjO0yGpZzIunE_LFbWlHd2_jpaHxNsOiV4aDmxrjlOlbbPP6=
+GEdDLB_Ay6eTb6YGZRnh4xdhOpM7k0lbZW2f9nQFY7fZGRa1PwITgUGLTkVrSOK42gjjW9B3jIO=
+JYhclM5-4fq_U7b0yP_viebq2VfD9RqL38oindCj3DPzxZDk2NF/433/V6waKEAzQ8GLc6NCxrp=
+yIQ/h3/pgDI_jJ9UnAzDY_SyJGIk8K92KjXL6yNXz3vM_tvxD8">https://foxbaltimore.co=
+m/news/local/health-warning-issued-after-confirmed-measles-case-passed-thro=
+ugh-dc-area-airports-dulles-international-ronald-reagan-washington-national=
+-january-3-and-4-dc-health-virginia-department</a>=0D<br>=0D<br>=0D<br>Heal=
+th officials issued a warning over a "potential measles exposure"<br>after =
+a "confirmed case" of a person who traveled through 2 airports<br>at the na=
+tion's capital.=0D<br>=0D<br>DC Health stated Tuesday [16 Jan 2024] it was =
+notified of the case.<br>The infected person was returning from "internatio=
+nal travel" and<br>traveled through 2 DC area airports on 3 Jan 2024.=0D<br=
+>=0D<br>That person reportedly was in the international arrivals area of th=
+e<br>main terminal at Dulles International Airport from between 4 p.m. and<=
+br>8 p.m. on 3 Jan 2024.=0D<br>=0D<br>Then the following day, the person wa=
+s at Ronald Reagan Washington<br>National Airport's Terminal A between 2:30=
+ p.m. and 6:30 p.m.=0D<br>=0D<br>DC Health's warning comes after the Virgin=
+ia Department of Health<br>sounded the alarm on Friday [12 Jan 2024] regard=
+ing the same possible<br>measles exposure.=0D<br>=0D<br>Health officials re=
+minded the public that the "threat of transmission<br>is low." They did war=
+n those who have not received the measles vaccine<br>may be at risk for dev=
+eloping the disease.=0D<br>=0D<br>If you believe you were at one of these l=
+ocations at the time of the<br>potential exposure, DC Health recommends:=0D=
+<br>=0D<br>Anyone who was exposed and is at risk of developing measles shou=
+ld<br>watch for symptoms, as described below, until 25 Jan 2024. Those<br>s=
+ymptoms listed are:=0D<br>- Fever of 103F-105F=0D<br>- Anorexia=0D<br>- Fat=
+igue=0D<br>- Cough=0D<br>- Conjunctivitis=0D<br>- Bluish-gray spots in the =
+mouth=0D<br>- Telltale rash=0D<br>=0D<br>If you notice symptoms of measles,=
+ immediately isolate yourself by<br>staying home and away from others. Offi=
+cials stressed those who may be<br>infected to immediately contact their he=
+althcare provider.=0D<br>=0D<br>Call ahead before going to your healthcare =
+provider's office or the<br>emergency room to notify them that you may have=
+ been exposed to<br>measles and ask them to call the health department. Thi=
+s will help<br>protect other patients and staff.=0D<br>=0D<br>If you have r=
+eceived 2 doses of a measles vaccine, or were born before<br>1957, you are =
+protected and do not need to take any action, according<br>to the statement=
+ issued by DC Health.=0D<br>=0D<br>If you have an immunocompromising condit=
+ion, please consult with your<br>healthcare provider if you have questions =
+or develop symptoms.=0D<br>=0D<br>If you have received only one dose of a m=
+easles vaccine, you are very<br>likely to be protected and your risk of bei=
+ng infected with measles<br>from any of these exposures is very low. Howeve=
+r, to achieve complete<br>immunity, contact your healthcare provider about =
+getting a second<br>vaccine dose.=0D<br>=0D<br>The incubation period of mea=
+sles from exposure to the onset of<br>symptoms ranges from 7-12 days. The r=
+ash appears 2-4 days after the<br>onset of symptoms and lasts 3-5 days. The=
+ rash starts at the hairline<br>and then proceeds to the face and upper nec=
+k, later spreading down the<br>body and outward to the extremities. Sometim=
+es immunocompromised<br>patients do not develop a rash. Patients are contag=
+ious from 4 days<br>before the rash appears through 4 days after the rash a=
+ppears. The<br>virus is transmitted when an infected person breathes, cough=
+s or<br>sneezes. The measles virus can remain infectious in the air and on<=
+br>surfaces for up to 2 hours after an infected person leaves an area.=0D<b=
+r>=0D<br>[Byline: Jamel Valencia]=0D<br>=0D<br>--=0D<br>Communicated by:=0D=
+<br>ProMED=0D<br>=0D<br>******=0D<br>[3] Missouri: Clay County=0D<br>Date: =
+Fri 12 Jan 2024=0D<br>Source: KMBC [edited]=0D<br><a href=3D"https://u19268=
+662.ct.sendgrid.net/ss/c/TLh_csrC34X_iXpbYoMam_rmRHwfpOmHX7q_VfmHkfZ8LMwzk6=
+pxaokxm8R_BRKQBJ6oFO4ahA8NxjZjszXrEZJLetTzs3W024UhD1Ki2uH_w8VSiE0lhzAcMjYLN=
+9OBZMM3ByFE2DjDXbecmdxifZSZq7J5LzJ2Wr83JNe2Pq-tAhVuLMYCYRJa_l5N-X2v/433/V6w=
+aKEAzQ8GLc6NCxrpyIQ/h4/3smGSdILvdr44Jdz6kZfLjsRxVj5Bg-0dy-MyLSleKI">https:/=
+/www.kmbc.com/article/clay-county-missouri-public-health-center-says-a-conf=
+irmed-case-of-measles-reported/46367902</a>=0D<br>=0D<br>=0D<br>The Clay Co=
+unty Public Health Center has been notified of a confirmed<br>case of measl=
+es. A Liberty, Missouri resident recently tested<br>positive.=0D<br>=0D<br>=
+The health center said Friday [12 Jan 2024] the individual was at<br>Kansas=
+ City International Airport on Thursday, 4 Jan 2024, and North<br>Kansas Ci=
+ty Hospital from 5-6 Jan 2024.=0D<br>=0D<br>Individuals in these areas, on =
+these dates, may have been exposed:=0D<br>- Terminal B, general concourse, =
+and baggage claim at KCI on 4 Jan<br>2024 from 6:15 p.m. to 9 p.m. Passenge=
+rs on that flight have been<br>contacted by health officials.=0D<br>- North=
+ Kansas City Hospital Emergency Department waiting area,<br>patient process=
+ing, and observation on 5 Jan 2024 from 8:26 a.m. to<br>4:15 p.m.=0D<br>- N=
+orth Kansas City Hospital second-floor admission unit on 5 Jan 2024<br>from=
+ 2:15 p.m. to 8:30 pm.=0D<br>- North Kansas City Hospital eighth floor pavi=
+lion medical & surgical<br>patient unit from 5 Jan 2024 at 6:30 p.m. to 6 J=
+an 2024 at 8:30 p.m.=0D<br>=0D<br>Health officials are encouraging anyone w=
+ho may have been in those<br>areas to watch for symptoms of measles until 2=
+7 Jan 2024.=0D<br>=0D<br>Symptoms include a high fever, cough, runny nose, =
+and red and watery<br>eyes. A red rash appears usually 3 to 5 days after th=
+e symptoms<br>start.=0D<br>=0D<br>To report a case, call the County Public =
+Health Center at<br>816-476-4120.=0D<br>=0D<br>[Byline: Nick Sloan]=0D<br>=0D=
+<br>--=0D<br>Communicated by:=0D<br>ProMED=0D<br>=0D<br>******=0D<br>[4] Wa=
+shington: Clark and Wahkiakum counties=0D<br>Date: Thu 11 Jan 2024=0D<br>So=
+urce: KOIN [edited]=0D<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c=
+/TLh_csrC34X_iXpbYoMam4R8ESqmYbtF6T1ACw36_GrhTIzYJ1PpsjsR3xcRuicsZuyoTSHm96=
+Kn_cSdNA04g3mmM0CHQDkdnXjOOSkQ0FF8IQwxJOXfAFzoHkQafK5mQcedA7EJle_q6qz2_qoli=
+A/433/V6waKEAzQ8GLc6NCxrpyIQ/h5/tMeC3akNJSqaGry0lluDEi5wea9yGO3AfP3SVSgSxHQ=
+">https://www.koin.com/news/health/measles-cases-in-sw-washington-prompt-tr=
+i-county-health-alert/</a>=0D<br>=0D<br>=0D<br>Health experts are sounding =
+the alarm after 6 measles cases have been<br>discovered in southwest Washin=
+gton.=0D<br>=0D<br>As of last weekend, these new cases have been identified=
+ in Clark and<br>Wahkiakum counties. That prompted tri-county health depart=
+ments --<br>which includes Multnomah, Clackamas and Washington counties -- =
+to send<br>an alert to local clinicians Wednesday [10 Jan 2024].=0D<br>=0D<=
+br>"We haven't had any confirmed cases here in the tri-county area, so I<br=
+>think the risk of the general population is low," said Dr. Richard<br>Brun=
+o, a Multnomah County health officer. "But out of abundance of<br>caution, =
+wanted to make sure that clinicians knew to keep an eye out<br>for anybody =
+presenting with measles like symptoms."=0D<br>=0D<br>According to the CDC, =
+measles symptoms include high fever, cough,<br>runny nose, and watery eyes.=0D=
+<br>=0D<br>Measles rash appears 3 to 5 days after the first symptoms.=0D<br=
+>=0D<br>[Byline: Jenna Deml]=0D<br>=0D<br>--=0D<br>Communicated by:=0D<br>P=
+roMED<br><br>[Low vaccination rates and international travel continue to be=
+ the<br>primary drivers of measles cases in the United States and abroad. A=
+<br>renewed focus on what were previously non-controversial public health<b=
+r>vaccinations is desperately needed to combat the ongoing<br>anti-vaccinat=
+ion movement, which only gained momentum as COVID-19<br>vaccine misinformat=
+ion spread. - Mod.JH<br><br>ProMED maps:<br>New Jersey, United States:<br><=
+a href=3D"https://u19268662.ct.sendgrid.net/ss/c/sSnCkKCWBvais3EuVAOvgy2WOI=
+X7pp1nXnn4AbwuQ3Z6WbkfhqXYXU-aTMPJ8yTh_Wn78D_Al3WVs7qYsdClmg/433/V6waKEAzQ8=
+GLc6NCxrpyIQ/h6/MPI0GJ911bcoemBCOxKqs83Je_tTFbwIpFHPwmniBDY">https://promed=
+mail.org/promed-post?place=3D8714292,232</a><br>Philadelphia, Pennsylvania,=
+ United States:<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/sSnCkK=
+CWBvais3EuVAOvgy2WOIX7pp1nXnn4AbwuQ3Z6WbkfhqXYXU-aTMPJ8yThkf3MncmlOslh2-p5P=
+Yu_TA/433/V6waKEAzQ8GLc6NCxrpyIQ/h7/0PynqDEUtz7sT6fFIqrKTow2qSZQVFEjS9AQSRg=
+Jhcs">https://promedmail.org/promed-post?place=3D8714292,257</a><br>Washing=
+ton, D.C., United States:<br><a href=3D"https://u19268662.ct.sendgrid.net/s=
+s/c/sSnCkKCWBvais3EuVAOvgy2WOIX7pp1nXnn4AbwuQ3Z6WbkfhqXYXU-aTMPJ8yThyBTu15x=
+2TsTrPuH2TScaSw/433/V6waKEAzQ8GLc6NCxrpyIQ/h8/j6yN7Pwsgo_QBjonxBPDHhda-2hdH=
+BwVIm8KFHb4cww">https://promedmail.org/promed-post?place=3D8714292,65423</a=
+><br>Washington, United States:<br><a href=3D"https://u19268662.ct.sendgrid=
+.net/ss/c/sSnCkKCWBvais3EuVAOvgy2WOIX7pp1nXnn4AbwuQ3Z6WbkfhqXYXU-aTMPJ8yThy=
+ZrwROF4_uL_uYLwHDHfEg/433/V6waKEAzQ8GLc6NCxrpyIQ/h9/8hc2GoSBs_3IK75o55FC7gg=
+PZe2z4eVqc-Ob8BudmRY">https://promedmail.org/promed-post?place=3D8714292,64=
+069</a><br>Missouri, United States:<br><a href=3D"https://u19268662.ct.send=
+grid.net/ss/c/sSnCkKCWBvais3EuVAOvgy2WOIX7pp1nXnn4AbwuQ3Z6WbkfhqXYXU-aTMPJ8=
+yThcCcWWI2C2Xxbc79Mfyw6VA/433/V6waKEAzQ8GLc6NCxrpyIQ/h10/WiMmoZNFCHgP-2kaAh=
+LuAcovA-isL08gTEyYkLgcoBg">https://promedmail.org/promed-post?place=3D87142=
+92,227</a>]<br><br>[See Also:<br>Measles update (01): USA (PA) multiple pot=
+ential exposure sites<br>http://promedmail.org/post/20240107.8714111=0D<br>=
+2023=0D<br>----=0D<br>Measles update (64): USA, Russia, Azerbaijan<br>http:=
+//promedmail.org/post/20231226.8713899=0D<br>Measles update (31): Americas,=
+ Asia, Africa<br>http://promedmail.org/post/20230707.8711001=0D<br>Measles =
+update (30): W Pacific, Americas, E Mediterranean, Africa,<br>int'l travel =
+http://promedmail.org/post/20230704.8710940=0D<br>Measles update (29): E Me=
+diterranean, Europe, Africa, Americas, int'l<br>travel http://promedmail.or=
+g/post/20230624.8710728=0D<br>Measles update (28): Americas, E Mediterranea=
+n, W Pacific<br>http://promedmail.org/post/20230619.8710660=0D<br>Measles u=
+pdate (21): global update<br>http://promedmail.org/post/20230428.8709755=0D=
+<br>Measles update (20): Europe, Asia, Africa, W. Pacific, Americas,<br>Mid=
+dle East http://promedmail.org/post/20230423.8709653]<br>..................=
+...............................jh/ll/jh/rd/jh<br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3DB0r3IPgn8gSDkp8exynA10P44J6_-o3KssHJg5PEQGloMDAwdT=
+AwMPrwzGrid2uSuS-u0CyPTMgW05Fedn-aLvrElGtnAOvL-63TtpTm3hNuPflyh71JT67DFzlQv=
+ta9RBf2BvVVW-HjG5A5dJ5Mo002uXHiC2iS4Vt8aGMGazG-nevg0t99dS4uaAXGhk-wOMQGl-Bo=
+ObCRGd9V3RMPKKvcerCeIy67ecw0uDI4tSNVAHUqG2XsikxS-gfonLpRTVmg5JWoMaDpxDG2_yd=
+269ex3SfWFoIORrVDL7K8PI2zGSiwyKgZKlyJ0sU-GFNvBVMXjTCknwAO0hOfMop1D1IiRDjO54=
+hniUEQa0de4R66dxglSiZzWjQMiK355UX90Ti7qhKB4_us9hiOSsOSoY_WW9XLYR4S7xRlVQD0D=
+yDD3crnfdOM3a1dZZHOZAVcCxJiAKPnWusL0W-d801-Rl2RosCkqbV5-zEDQjhx7sFk_FrkH0HG=
+xoGuyCwOUbHx2ibTxDuY7Jj6fB0TPlfrqn8qcvkL65Cn8wmKukpgDIIVV8a88Re-1IEtQfzLK_P=
+fNiIgEOxuuAPaD6sLwpGccz17kOzBicGV8zw5lck3_exTNssoZUXSWwP4MoH6_kQfT_Ue_QWtTC=
+MeoU2dMBo004KPLHwrC0nA5JbXuYOj1Lvudetm4I4ajJYlCdgX6Qsu502RESRsJ8y_DxLFxI2gd=
+VKspM-gln5gdxwICIPIow1f3LP8ApcehIa3y7HCXiJi5omjptrH3r02I7qffzrTz27CD32hucZc=
+P3BqU3us4qDqMY-fg5mvKh8bQjkVCoRG9PT8Olv3YHtaJxUisc4Jnu9P3y9AKRycrgA-X-DRGDd=
+q9WtHSC8FHsm_6svpk2h3cjHzII9wy2hDLthKGXyCPv695yCj3zr4CKo1osRsG6HVoDl3cy3WPX=
+YWsyiMmU5Kd_aOerjzC3YxUdwi8Qw_um4pO0vq1HyIUxsH4zXVbn4e8mKidhT5m8D4SOba-40M_=
+wpSNDoKrZQ5BrTUqjkVg3Ixil8aYYJGndlho9VuqYUBiWvisKy0VzYxo1yqP5XOsch4eKG033_Q=
+F7gDeWanT24B96MevNQNUfrASLWBC8gTISVm__LsztyOxxSrJ1Mta6h1-teT9GVuaMc4O-PPE-D=
+ewfFNVOW84LbXsb-DCfMn6OTAF6ojl3_VKRCZpCJ3O3f9EFTIBIQ=3D" target=3D"_blank" =
+class=3D"Unsubscribe--unsubscribePreferences" style=3D"font-family:sans-ser=
+if;text-decoration:none;">Unsubscribe Preferences</a></div><br>############=
+################################################<br>#######################=
+#####################################<br><br><img src=3D"https://u19268662.=
+ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/433/V6waKEAzQ8GLc6NCxrpyIQ/ho.g=
+if" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"height:1px !imp=
+ortant;width:1px !important;border-width:0 !important;margin-top:0 !importa=
+nt;margin-bottom:0 !important;margin-right:0 !important;margin-left:0 !impo=
+rtant;padding-top:0 !important;padding-bottom:0 !important;padding-right:0 =
+!important;padding-left:0 !important;"/></body>
+</html>
+--45b2fc98b9a3a3bf5e3815b3b658ba9da469df4526ad2217fb14723b3784--

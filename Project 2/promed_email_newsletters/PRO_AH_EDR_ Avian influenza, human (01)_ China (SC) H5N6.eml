@@ -1,0 +1,555 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:adf:d054:0:b0:337:6aa4:e765 with SMTP id v20csp128864wrh;
+        Wed, 17 Jan 2024 18:10:20 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IGsD/G0HMOS9u1gZmnPpyDDyvS57MJsq7WHBDIbvh1FAQYH60uWZZax5HcYwLUSHdmSWDmT
+X-Received: by 2002:a05:620a:22c6:b0:783:420f:4d2a with SMTP id o6-20020a05620a22c600b00783420f4d2amr78536qki.118.1705543820287;
+        Wed, 17 Jan 2024 18:10:20 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1705543820; cv=none;
+        d=google.com; s=arc-20160816;
+        b=SZoJKq2+JWYo4/128hBQ4aAv8oz101UfFN48DIihodMnia86Pfv9WnxQkoGyhzfBWS
+         E5w+iQHNbgBwEn/KqAQ+G/ffUpwuiIat0ZUUj0SfK7ikNdoF1P1A/TJMmkNLjaTq2IXw
+         jek+Zjy4zGW/cNpOpCo5ZhpJ0TIUFLOucWtc+a0dsBDS1/1/vzbbrBBgjOfP6JRnvTZe
+         Xqsuifa1YfE0Zw7RkSllm/ppKvq14zvVuObLbZOuLkiSUcdIipDikbIRRZv/QfQCQNaN
+         z4+ig3CJWGPufVUAm0JvyyCUpv3ydGAnr2+q8ajxzNkosSaWMsBP0Dedx3X9+wSBoyFD
+         jRig==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=/Wr6kpyFNzNbABKj/D9wcO1cigLF+NQr6kkyLyjpg2E=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=Ah9PxkSIlD5YDsxrWSgpdwqq5NXlnhRzv0gbWPVdIEV1n1cn9LUjGrpkRPD+R1XFbj
+         sIo+C48x3cXyjtDhH1z6vrNgqVWsUA3CU/vtyLl8QBHR9z+Buz4B6DhM+XKvZMnUCqIk
+         5zMM0Mkh7rQd4ZatE16eoak/nqrtzZzdh+0NNTSQeF6rs+0xNYk1a/JPGOMKJNK7RFWQ
+         nQBwjnN7MNuAR4T6NuMvhglHRoi7Po6MEqu9lzV5pM+k5lHNebyHVPHzNzxMkZZZsa5o
+         Y2MotgTz24WwInWmSZpZha6pJ+mV9n2Y0tU02DMXSxK6m2lbbJolGvSMyG8giZQMkRMD
+         gIog==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=eqrv4jyy;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=DyTJHxfK;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id qp26-20020a05620a389a00b00783741f0308si1960554qkn.573.2024.01.17.18.10.20
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 17 Jan 2024 18:10:20 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=eqrv4jyy;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=DyTJHxfK;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=/Wr6kpyFNzNbABKj/D9wcO1cigLF+NQr6kkyLyjpg2E=;
+	b=eqrv4jyyfJnHGRrhc53r3Dj9R8IiGUJQmToqzvVEkl7Gavq1sJ6hptQMcN2zM6f7KTLN
+	npjHV+7E6awR5GK6eUMxcjPJBb5OTjHYp74rNPeNwztyL900+wY0trhugcebM+3WoWEsm9
+	WrsbTQQdG2Bar3tb1qeT3fx2N9vqgqvtSE3HH00UeJGwj2VWFKmzVoqPz8GZ2m8IOIX99+
+	TsAaG0/oNkhggMgDez16SaonyqG8BnZf8saS4dXD0HwrN4anKNw+nygAR9QX/uAD2HVzfg
+	hX4Tr3dr0QZw0GO8hZLdHvqITUnzKvRMICiIUXG+zd6E2oWHoCQw44YbSXeu9SsA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=/Wr6kpyFNzNbABKj/D9wcO1cigLF+NQr6kkyLyjpg2E=;
+	b=DyTJHxfKlpZUPyRab5G7RCRwnhFyTsbWgVFUZkE2VObk8XwpwDBcVJ7CT7kDu8/eEjjD
+	NN7SBREkdNIodGUj1Iv9b5kxPYQJ/0QU3Isqq9cFzZwBx352OsMzCEZKktNMmTi9W3QaDY
+	2KQMLUrIcoNVDXelKooute+AXJLa7a1MU=
+Received: by filterdrecv-75cb66975-hkgpg with SMTP id filterdrecv-75cb66975-hkgpg-1-65A88888-BD
+        2024-01-18 02:10:16.9992039 +0000 UTC m=+7975698.822566680
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-23 (SG) with HTTP
+	id 2t9_IMyeQl2DTpsTOpW0pg
+	Thu, 18 Jan 2024 02:10:16.959 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=ea82e21b92cab6c692b343fd3e2629ae4bce4050fdb8552b93ea7a1363bf
+Date: Thu, 18 Jan 2024 02:10:19 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <2t9_IMyeQl2DTpsTOpW0pg@geopod-ismtpd-23>
+Subject: PRO/AH/EDR> Avian influenza, human (01): China (SC) H5N6
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iBlNZGzoML5BJBMDOv6wRlwg4i8NuwJBZ4rBh84?=
+ =?us-ascii?Q?dLNbXZJySwHMxVo7lFyLC3etnlJ=2F5VBNGdLHWHv?=
+ =?us-ascii?Q?lfhXOjGo+eKDd9MisiTvgDf0B5IDOcIn8Ijplco?=
+ =?us-ascii?Q?5azx64GT6750UtfgNrhSq9jGcvn7MG8TSB07d60?=
+ =?us-ascii?Q?V93UytnX0H63H0+HoPlu5WWb=2FHYjVRtunJ4IJj?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUiShGf=2FO8XJWpH34Od4Nd?=
+ =?us-ascii?Q?fxXa6jil96uRcJkF+N+LeVnO1tx80ddOyoyOo=2Fc?=
+ =?us-ascii?Q?Brxcl3ERAm0cOY743=2FFH59DWiSf5OzXORh1DLKt?=
+ =?us-ascii?Q?hb1NMKty3PsA5ju0ZzxCrq1WQuZSEQf=2FJlWtgqv?=
+ =?us-ascii?Q?cZmsyCHlNUZsDGy+sbFoFC1fNT25y3Cg3f9yiqt?=
+ =?us-ascii?Q?3PzVLyuEs6KAEp3X9c4z4bsG3vN5xQuaIt6IDmt?=
+ =?us-ascii?Q?kOB040Y7gp42nCS4M9ghpnRQFTO0DpDlwsVRKpp?=
+ =?us-ascii?Q?FTPQcSCnxTGZpTPfHDJ9E0zVOQ4Xsfd9HwJRWrA?=
+ =?us-ascii?Q?1R0UhGygvp4YVrxN12bhH6W9meCKfIMOa3OHbnH?=
+ =?us-ascii?Q?fuPs1fKOA2+GhwtfA92rYg6+dcT5eTf0JiXPbhj?=
+ =?us-ascii?Q?6vFKHp=2FRkapcAmwv7sYJpW+nd898e6Kkt0Lqr1z?=
+ =?us-ascii?Q?Xuuq2oMCbyFL=2FWvhefql19n8KY1xR9yZ1WGV5ev?=
+ =?us-ascii?Q?2tAQIf9uIpAqfEQF0gtU2PC1jwG3XRybno5SDR9?=
+ =?us-ascii?Q?vC+KI6OCtubz3LyAUP3bJxkU5=2FQHhwouR0XHKKh?=
+ =?us-ascii?Q?bbb3Z88UlAO7sOgfJKe3uvDVqjvu0t7vadNK9pA?=
+ =?us-ascii?Q?L9jI6HWDnItWrwpup5t5f2O4mzc4qkYqc4GAEir?=
+ =?us-ascii?Q?DFcZmFUVIYessmuth4E506q42qNpwXhrvu+VD4c?=
+ =?us-ascii?Q?KAZarIZ7NNfIM12zVD7YSYtQmZZdMt5Ldyek=2F+K?=
+ =?us-ascii?Q?Q2VWouJSItIad6giWFhCUpH7qRFoqw1B77GaG1k?=
+ =?us-ascii?Q?5FgMitGZVAfq2GnAM3bzL+dj4g=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2EJ1zQrYocf?=
+ =?us-ascii?Q?=5FHsXP8dBWbNblB19fbB49Acktd7K=5F41Gv9oMDAw?=
+ =?us-ascii?Q?dTAwMFswwyOioPfJemdEKN018mZr=5Fgdvmz0doUt?=
+ =?us-ascii?Q?WzAKm03Ixc8laHG5zoFr64B84yYxcbbiIDhm5ya?=
+ =?us-ascii?Q?3QQszHFzaBizOheNY19m6YH5YbxEVyjzkkNcGeo?=
+ =?us-ascii?Q?=5FLQdFS-e3LEs15ydg=3D=3D=2EP74WJAY7If78KH3iN-p?=
+ =?us-ascii?Q?2MCdyIs45A-R843122NXU4shoMDAwdTAwMPtvH-?=
+ =?us-ascii?Q?5s5s5qgaQKWWQ46cIyHVsLR53GLnWJflC1IehUK?=
+ =?us-ascii?Q?50j5qgxuNwNQTpfuC3WfkMXHrTuIbLAUnrYfhVy?=
+ =?us-ascii?Q?zj01pzXUhXn3SA4cUGg=5FYQ7KKE5otfnmet07yT0?=
+ =?us-ascii?Q?Lufs9MdSZV=5FnZ9llC-TRY1c5eDF4kTId4J7GOWk?=
+ =?us-ascii?Q?6QltzE=5FicEfD1g=5FP0sJXMcGHmt8Xy2Sc5wa4Od0?=
+ =?us-ascii?Q?eMOjWSuP8od8jXfixJdDtz4IqWwzk1KYFMZiAVa?=
+ =?us-ascii?Q?KtywOMhFtQY8t9VSnl006Neh8iGQRYOwVs3Uk4S?=
+ =?us-ascii?Q?N-ESZg3QAqSzB9dtPLy268MT2SIEoYy8DUSHxbX?=
+ =?us-ascii?Q?WHigPbeL8HIwk-W4NOEIiB-QVGblr4YZi2e2fWO?=
+ =?us-ascii?Q?0XsVpLvkgzaJ4XpphPokOsVYatDlfdNfczt1Zco?=
+ =?us-ascii?Q?vRmk=5F3tU7FH8jy4pcAFV6KDSCGcM-FfARI5STP7?=
+ =?us-ascii?Q?Y9wmA3G96qocUHYOj3V92b4ROOZZ8XWLDwdlzDQ?=
+ =?us-ascii?Q?=5FZUjxXVdkM8EACihzL8ESBBonTJMonCzIgmfAiS?=
+ =?us-ascii?Q?ys3Phrw6-IcsbQ1sgBcs9Ldk9zygKstt8Waif5X?=
+ =?us-ascii?Q?SqaljB7QSmDTnTrXU2I-vWGfB-TkaUg6Yid2gH8?=
+ =?us-ascii?Q?5o6=5F-A1yRKH2V0ONejEqdFuCjXdOkxPKJNmffig?=
+ =?us-ascii?Q?ToNgmV=5F00MLquZz=5FAgT=5F8XSPcib-5ILh8G3Osrc?=
+ =?us-ascii?Q?GXxzGBlSrL7G7lzpxWtDvL=5FFqwmyKRLHEcktiFJ?=
+ =?us-ascii?Q?oWOH2w5zo1SktILJGqcAZaADtEH=5FvKmmyvIAYbZ?=
+ =?us-ascii?Q?xWpXZ2MQLdyJcUWEzEawLWLqIuDvZHVB3ifuKaE?=
+ =?us-ascii?Q?qpWXQT6BN9CygToV4nQgCY=5FLKe37sVsCHpQQj4y?=
+ =?us-ascii?Q?3UNz9k5Sx0L6MO=5FzAahn=5FeUgu2Vc6BXQIFhXG9t?=
+ =?us-ascii?Q?NawiDyYwsszyAYGOk-VUMciJQnGRtg-eAE7iqTv?=
+ =?us-ascii?Q?sMULJgGaMjRhT7uSMsJz2H2bftpBxIe6pmCyoPx?=
+ =?us-ascii?Q?cjvUW93-GV6lIfR5ZLccQJ7=5FjUxUPRN5RdkmNl0?=
+ =?us-ascii?Q?aubcuLgYKi9CWq1kC4YieIrphHWM562QB5UCDkm?=
+ =?us-ascii?Q?AOSZHQ=3D=3D=3E?=
+
+--ea82e21b92cab6c692b343fd3e2629ae4bce4050fdb8552b93ea7a1363bf
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=us-ascii
+Mime-Version: 1.0
+
+AVIAN INFLUENZA, HUMAN (01): CHINA (SICHUAN) H5N6
+*************************************************
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+Date: Wed 17 Jan 2024
+Source: Center for Infectious Disease Research & Policy (CIDRAP)
+[edited]
+<https://www.cidrap.umn.edu/avian-influenza-bird-flu/h5n6-avian-flu-hospita=
+lizes-woman-china>
+
+
+A 59-year-old woman from China's Sichuan province is hospitalized in
+serious condition with H5N6 avian flu, Hong Kong's Centre for Health
+Protection said today [17 Jan 2024].
+
+The woman is from Ziyang City. Her symptoms began on [25 Nov 2023],
+and she was hospitalized 4 days later [29 Nov 2023]. An investigation
+revealed that she had visited a live-poultry market before her
+symptoms began.
+
+Her illness marks China's 8th human H5N6 infection of 2023 and the
+country's 89th since the virus was first detected in humans in 2014.
+China reported its last H5N6 case in the middle of December [2023],
+which also involved a woman from Sichuan province. That patient, who
+died from her infection, had also visited a live-poultry market before
+she became ill.
+
+Highly pathogenic H5N6 avian flu is known to circulate in poultry in
+some Asian countries, but only China and Laos have reported human
+cases, which are often severe or fatal. Most patients have had contact
+with poultry or had been exposed to poultry environments.
+
+[Byline: Lisa Schnirring]
+
+--
+Communicated by:
+ProMED
+via
+ProMED-MBDS
+
+[Based on WHO Avian Influenza Weekly Update Number 929 dated 12 Jan
+2024, "between 5 Jan 2024 and 11 Jan 2024, one new case of human
+infection with avian influenza A(H5N6) virus was reported to WHO in
+the Western Pacific Region. To date, a total of 90
+laboratory-confirmed cases of human infection with influenza A(H5N6)
+virus including 35 deaths (CFR 39%) have been reported to WHO in the
+Western Pacific Region since 2014. The last case was reported from
+China, with an onset date of 25 Nov 2023."
+
+"The rise in the number of reported human cases of A(H5N6) infection
+may reflect the continued circulation of the virus in birds, and
+enhanced surveillance system and diagnostic capacity as a direct
+outcome of the response to the COVID-19 pandemic. The zoonotic threat
+remains elevated due to the spread of the viruses among birds.
+However, the overall pandemic risk associated with A(H5) is considered
+not significantly changed in comparison to previous years. WHO
+recommends that Member States remain vigilant and consider mitigation
+steps to reduce human exposure to potentially infected birds to reduce
+the risk of additional zoonotic infection"
+(<https://cdn.who.int/media/docs/default-source/wpro---documents/emergency/=
+surveillance/avian-influenza/ai_20240112.pdf>).
+
+"All A(H5N6) viruses sequenced from human cases in China with illness
+onset after February 2021 were HPAI viruses belonging to HA genetic
+clade 2.3.4.4b. One case that occurred in February 2021 belonged to
+clade 2.3.4.4h, which had been commonly detected in birds up to that
+time. Genetic sequencing of viruses from 11 cases indicated all gene
+segments to be derived from avian virus lineages, with some gene
+segments related to previously identified HPAI A(H5N1) and A(H5N8)
+viruses. Amino acid residues associated with mammalian adaptation were
+detected in the PB2 genes (E627K and D701D/N) of 2 viruses, and one
+virus had an HA1 substitution of Q226L (H3 numbering), which is
+associated with increased human cell receptor binding. These molecular
+markers were not identified in viruses collected from environmental
+surfaces or poultry, indicating that these amino acid substitutions
+occurred sporadically during human infection"
+(<https://cdn.who.int/media/docs/default-source/influenza/avian-and-other-z=
+oonotic-influenza/a(h5n6)-risk-assessment.pdf>).
+- Mod.ST
+
+ProMED map:
+Sichuan Province, China:
+<https://promedmail.org/promed-post?place=3D8714293,350>]
+
+[See Also:
+2023
+----
+Avian influenza, human (28): China (SC) H5N6, fatal, RFI
+http://promedmail.org/post/20231224.8713877
+Avian influenza, human (21): China (CQ) H5N6, fatal, RFI
+http://promedmail.org/post/20230928.8712348
+Avian influenza, human (20): China (SC) H5N6, RFI
+http://promedmail.org/post/20230824.8711819
+Avian influenza, human (19): China (GX) H5N6, poultry exposure, RFI
+http://promedmail.org/post/20230725.8711361
+Avian influenza, human (18): China (SC) H9N2, RFI
+http://promedmail.org/post/20230612.8710545
+Avian influenza, human (09): China (JS) H5N1
+http://promedmail.org/post/20230303.8708695
+Avian influenza, human (08): China (GD) H5N6, H9N2, RFI
+http://promedmail.org/post/20230302.8708673
+Avian influenza, human (01): China (HN) H5N6, 2022
+http://promedmail.org/post/20230108.8707682
+2022
+----
+Avian influenza, human (09): Asia (China) H9N2
+http://promedmail.org/post/20220306.8701796
+Avian influenza, human (06): Asia (China) H9N2, H5N6
+http://promedmail.org/post/20220131.8701114
+Avian influenza, human (05): Asia (China) H9N2
+http://promedmail.org/post/20220123.8700993
+Avian influenza, human (02): Asia (China) H9N2
+http://promedmail.org/post/20220109.8700749
+2021
+----
+Avian influenza, human (24): China (GZ) H9N2
+http://promedmail.org/post/20211124.8699804
+Avian influenza, human (17): China (HN) H9N2
+http://promedmail.org/post/20210906.8647141
+Avian influenza, human (08): China (GD) H9N2
+http://promedmail.org/post/20210508.8345139
+Avian influenza, human (07): China (FJ, HU) H9N2
+http://promedmail.org/post/20210425.8327505
+Avian influenza, human (01): China (GD) H9N2, alert
+http://promedmail.org/post/20210120.8111218
+2020
+----
+Avian influenza, human (05): China (GD) H9N2, new case
+http://promedmail.org/post/20201004.7835005
+Avian influenza, human (04): China (FJ, SD) H9N2, new cases
+http://promedmail.org/post/20200530.7392699
+Avian influenza, human (03): China (GD) H9N2, WHO
+http://promedmail.org/post/20200407.7195272
+Avian influenza, human (02): Senegal, India, H9N2, WHO, RFI
+http://promedmail.org/post/20200309.7059887
+Avian influenza, human: China (Hong Kong) H9N2
+http://promedmail.org/post/20200208.6967624
+2019
+----
+Avian influenza, human (11): China (FJ, AH) H9N2
+http://promedmail.org/post/20191211.6834041
+Avian influenza, human (03): China (HN) H9N2, 2018
+http://promedmail.org/post/20190205.6295949
+2018
+----
+Avian influenza, human (24): China (GD, GX) H9N2
+http://promedmail.org/post/20181226.6223398
+Avian influenza, human (13): China (GD) H9N2
+http://promedmail.org/post/20180801.5940642
+2017
+----
+Avian influenza, human (65): China (GD) H9N2, human-animal interface,
+WHO http://promedmail.org/post/20170812.5242688
+2016
+----
+Avian influenza, human (60): China (JX) H9N2
+http://promedmail.org/post/20160912.4481431
+Avian influenza, human (59): China (YN) H9N2
+http://promedmail.org/post/20160901.4451359
+Avian influenza, human (51): China (GD) H9N2
+http://promedmail.org/post/20160621.4299567
+Avian influenza, human (31): China H7N9, avian flu update, China (FJ)
+H7N9, China (SC) H9N2 http://promedmail.org/post/20160318.4101269
+2015
+----
+Avian influenza, human (130): China (AH, HN) H9N2
+http://promedmail.org/post/20151217.3867941
+2014
+----
+Avian influenza, human (78): China, H7N9, new cases, H9N2 control
+http://promedmail.org/post/20140227.2304226
+Avian influenza, human (02): China (HK) H9N2 ex (HN)
+http://promedmail.org/post/20140102.2148327]
+.................................................ttm/st/tw/st/rd/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3DbPddCkC1TA8TjlnnhXFRrBGdnMW0n4_delXXehAGgKloMDAwdTAwMGCFw2a=
+CjZ3BBHjOlGOjIPktX5LNe8aH7NuGd3fPSVLy_a9UuYjXy9cBwTmNgKeQRDoxhbOKwt6aJcSnkE=
+Q49_4bR80lQ6tfUCW7XQ90w2o7v9x9h1hK6ZMTvofd0oe3kkeNJct24t5zEnv47_zjinfqrJqq1=
+zhlzWv8HFGUWzWTabRxe5VWPGDHx7uKJEUKZ9bNUd9da3MKPje1ML_lMcRxI7iO-cPtkim2xhPD=
+R2Fss9FUtM6rVw-b9AYSQ2z02dBjNXXf4QUoMBTOGa4w5X1sjOd8jQjIS9ZiMedD05pgVm13lDa=
+0UHgr9fpaVPDnYR0EvSgu2o_Dvs7cPUg8Y_yObx-_m3i2USHLHwxapImBpR0WCZEh2JSWxFalx9=
+aCGAhm4bw3l0syW4fBfkY-AztQjWrfkytnqUDWxY_Wn1fMSNLK1WbUr3z0otjZfc5kY8cCdOl-q=
+0Jjf75uVoKijnbIcj3sUc6ub42KKpw4cRpubnY5s0VAUeM6VRizKYAUsXmn196cqeQcJ-2ESOVb=
+vSWQwmkX6eckId1mT9GERAFqWSbFrVzip_Jmv4ghKCVlHn8rX2PDeOZ90XdD_eV_okSJTFowk-K=
+h3nZyWeKVVeZtWaSafgULzamZ5xbAmuKRI-pK_xw4RUJhOTPtGmSx0rLDBJAz_SG0mAff7YvKAP=
+0pWGKB0xy3I1n8uSrdPbmIWqcrQRNo2JfHXXFhphOU1LxCVa7cZfC1lMIqxqyLijO4kuHF8PS0Y=
+W46U-rBq88A2R3FSukqDoYsMADIxybN0TMhHlInY_iOdB4n8UCxiSG7WhGDEaJv8FFM76bbFaX6=
+TO3DiOO5MSA83NhrRniz8exSGCO0cV0WuwYyyP_EjwALCeYjg6cYH5FE2pAEKzTmDZsjjEWySiD=
+XTlYy1gtw6GepuMZ3yHF6xQlflihu7SiUQVLQipBu_c-TD3ZFOy7fWNSOhQ6snQ1je0pV-w2LrP=
+VZOGTu7_DbeyqApWZsypdDUVEbfJ4d2btjZUryp8ihak4yQlK4IERlm7nghjHU54j-DArM3e6n_=
+M9xUE5SYsFhs1Tr5yxWtfD5emnHm8ZsQByzF2QJ7gzf8-nRm-N_DDqO5xpeGMvjnZ3Paup-Or6F=
+IR4FK1R_1FWCiLyR4oUZWOzhlpKIvvAYqFbGC88mRTQEjRhyDaimWAmEokyiHtYw )
+############################################################
+############################################################
+
+--ea82e21b92cab6c692b343fd3e2629ae4bce4050fdb8552b93ea7a1363bf
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>AVIAN INFLUENZA, HUMAN (01): CHINA (SICHUAN) H5N6<br>****************=
+*********************************<br>A ProMED-mail post<br><a href=3D"https=
+://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisIijpefK5PNjW-mL-YZGn=
+fgDOxU1G3gjwnPSi2Tfv3HA/433/ieJha0vuQouZB-TMl9YM5Q/h0/dl_aTRcSjzEdMa0_VVUxL=
+zwf7ESItAqmsw0HfOb-i-s">http://www.promedmail.org</a><br>ProMED-mail is a p=
+rogram of the<br>International Society for Infectious Diseases<br><a href=
+=3D"https://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisCT5tpD4Upm3=
+qyMCbcYSQvc/433/ieJha0vuQouZB-TMl9YM5Q/h1/jbdAkyOeywLpRTU-tfynrJd-gJv2ZL9pC=
+dIzysecCWw">http://www.isid.org</a><br><br>Date: Wed 17 Jan 2024=0D<br>Sour=
+ce: Center for Infectious Disease Research & Policy (CIDRAP)<br>[edited]=0D=
+<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/TLh_csrC34X_iXpbYoMam=
+1B6JfPDl-dNY0xjb47_2RUsu16IB8cKhNeZnm5YwrJpKRodBv7vm0UHVxOgWgH1gjyVklwWOKL8=
+hnyVqjqXnwJHu5uNI_cqcwW2ZEz8_a1LshqP18OhHWijVasleHNUUA/433/ieJha0vuQouZB-TM=
+l9YM5Q/h2/pO8bsFx0fRt68g4rtWx61Nyn37SWVCZE8LulVMNDz80">https://www.cidrap.u=
+mn.edu/avian-influenza-bird-flu/h5n6-avian-flu-hospitalizes-woman-china</a>=0D=
+<br>=0D<br>=0D<br>A 59-year-old woman from China's Sichuan province is hosp=
+italized in<br>serious condition with H5N6 avian flu, Hong Kong's Centre fo=
+r Health<br>Protection said today [17 Jan 2024].=0D<br>=0D<br>The woman is =
+from Ziyang City. Her symptoms began on [25 Nov 2023],<br>and she was hospi=
+talized 4 days later [29 Nov 2023]. An investigation<br>revealed that she h=
+ad visited a live-poultry market before her<br>symptoms began.=0D<br>=0D<br=
+>Her illness marks China's 8th human H5N6 infection of 2023 and the<br>coun=
+try's 89th since the virus was first detected in humans in 2014.<br>China r=
+eported its last H5N6 case in the middle of December [2023],<br>which also =
+involved a woman from Sichuan province. That patient, who<br>died from her =
+infection, had also visited a live-poultry market before<br>she became ill.=0D=
+<br>=0D<br>Highly pathogenic H5N6 avian flu is known to circulate in poultr=
+y in<br>some Asian countries, but only China and Laos have reported human<b=
+r>cases, which are often severe or fatal. Most patients have had contact<br=
+>with poultry or had been exposed to poultry environments.=0D<br>=0D<br>[By=
+line: Lisa Schnirring]=0D<br>=0D<br>--=0D<br>Communicated by:=0D<br>ProMED=0D=
+<br>via=0D<br>ProMED-MBDS<br><br>[Based on WHO Avian Influenza Weekly Updat=
+e Number 929 dated 12 Jan<br>2024, "between 5 Jan 2024 and 11 Jan 2024, one=
+ new case of human<br>infection with avian influenza A(H5N6) virus was repo=
+rted to WHO in<br>the Western Pacific Region. To date, a total of 90<br>lab=
+oratory-confirmed cases of human infection with influenza A(H5N6)<br>virus =
+including 35 deaths (CFR 39%) have been reported to WHO in the<br>Western P=
+acific Region since 2014. The last case was reported from<br>China, with an=
+ onset date of 25 Nov 2023."=0D<br>=0D<br>"The rise in the number of report=
+ed human cases of A(H5N6) infection<br>may reflect the continued circulatio=
+n of the virus in birds, and<br>enhanced surveillance system and diagnostic=
+ capacity as a direct<br>outcome of the response to the COVID-19 pandemic. =
+The zoonotic threat<br>remains elevated due to the spread of the viruses am=
+ong birds.<br>However, the overall pandemic risk associated with A(H5) is c=
+onsidered<br>not significantly changed in comparison to previous years. WHO=
+<br>recommends that Member States remain vigilant and consider mitigation<b=
+r>steps to reduce human exposure to potentially infected birds to reduce<br=
+>the risk of additional zoonotic infection"<br>(<a href=3D"https://u1926866=
+2.ct.sendgrid.net/ss/c/jf2l8IGiVWEHUuN2KNp3mTxn0E4X-Xuf82QXP1_BG2w8sf2gn_W0=
+gf6rYHhNn5nXe4rMgi_-TVMdUgH0bTDfEADNfmH209uJlcqSnwEzJgcRst2hHIVovLR2KfNDiYV=
+XYJYPqN1vV9EcjUqlFLCf_pwPuSkVAGuVTGSTKnfVx3s/433/ieJha0vuQouZB-TMl9YM5Q/h3/=
+3JsvMVk6QSih9erlOtjXzCPsX-fiz9QTdCIz12AVt4Q">https://cdn.who.int/media/docs=
+/default-source/wpro---documents/emergency/surveillance/avian-influenza/ai_=
+20240112.pdf</a>).=0D<br>=0D<br>"All A(H5N6) viruses sequenced from human c=
+ases in China with illness<br>onset after February 2021 were HPAI viruses b=
+elonging to HA genetic<br>clade 2.3.4.4b. One case that occurred in Februar=
+y 2021 belonged to<br>clade 2.3.4.4h, which had been commonly detected in b=
+irds up to that<br>time. Genetic sequencing of viruses from 11 cases indica=
+ted all gene<br>segments to be derived from avian virus lineages, with some=
+ gene<br>segments related to previously identified HPAI A(H5N1) and A(H5N8)=
+<br>viruses. Amino acid residues associated with mammalian adaptation were<=
+br>detected in the PB2 genes (E627K and D701D/N) of 2 viruses, and one<br>v=
+irus had an HA1 substitution of Q226L (H3 numbering), which is<br>associate=
+d with increased human cell receptor binding. These molecular<br>markers we=
+re not identified in viruses collected from environmental<br>surfaces or po=
+ultry, indicating that these amino acid substitutions<br>occurred sporadica=
+lly during human infection"<br>(<a href=3D"https://u19268662.ct.sendgrid.ne=
+t/ss/c/jf2l8IGiVWEHUuN2KNp3mTxn0E4X-Xuf82QXP1_BG2w8sf2gn_W0gf6rYHhNn5nXn4JH=
+1Uu4PLwptMSi2P-w6eIZGSk-LbETSosVmr5QY9iUOYQcYLK8FZdiYQEe8DwmlM7IFIDvN9ctdQj=
+jwqSaiU78-5eNXY2NdwjBtzCAKyA/433/ieJha0vuQouZB-TMl9YM5Q/h4/CfFiWFup38vd64lg=
+MOrqdkm-gQuvkm1jeMw8o3hGZ4I">https://cdn.who.int/media/docs/default-source/=
+influenza/avian-and-other-zoonotic-influenza/a(h5n6)-risk-assessment.pdf</a=
+>).<br>- Mod.ST<br><br>ProMED map:<br>Sichuan Province, China:<br><a href=
+=3D"https://u19268662.ct.sendgrid.net/ss/c/sSnCkKCWBvais3EuVAOvgy2WOIX7pp1n=
+Xnn4AbwuQ3Z6WbkfhqXYXU-aTMPJ8yThK8XILV8OmU871ZSf4qlruw/433/ieJha0vuQouZB-TM=
+l9YM5Q/h5/fpNHy5YOhYIu3LqpHK8yIDPCeSI_qKH65ZYYAiFfmeo">https://promedmail.o=
+rg/promed-post?place=3D8714293,350</a>]<br><br>[See Also:<br>2023=0D<br>---=
+-=0D<br>Avian influenza, human (28): China (SC) H5N6, fatal, RFI<br>http://=
+promedmail.org/post/20231224.8713877=0D<br>Avian influenza, human (21): Chi=
+na (CQ) H5N6, fatal, RFI<br>http://promedmail.org/post/20230928.8712348=0D<=
+br>Avian influenza, human (20): China (SC) H5N6, RFI<br>http://promedmail.o=
+rg/post/20230824.8711819=0D<br>Avian influenza, human (19): China (GX) H5N6=
+, poultry exposure, RFI<br>http://promedmail.org/post/20230725.8711361=0D<b=
+r>Avian influenza, human (18): China (SC) H9N2, RFI<br>http://promedmail.or=
+g/post/20230612.8710545=0D<br>Avian influenza, human (09): China (JS) H5N1<=
+br>http://promedmail.org/post/20230303.8708695=0D<br>Avian influenza, human=
+ (08): China (GD) H5N6, H9N2, RFI<br>http://promedmail.org/post/20230302.87=
+08673=0D<br>Avian influenza, human (01): China (HN) H5N6, 2022<br>http://pr=
+omedmail.org/post/20230108.8707682=0D<br>2022=0D<br>----=0D<br>Avian influe=
+nza, human (09): Asia (China) H9N2<br>http://promedmail.org/post/20220306.8=
+701796=0D<br>Avian influenza, human (06): Asia (China) H9N2, H5N6<br>http:/=
+/promedmail.org/post/20220131.8701114=0D<br>Avian influenza, human (05): As=
+ia (China) H9N2<br>http://promedmail.org/post/20220123.8700993=0D<br>Avian =
+influenza, human (02): Asia (China) H9N2<br>http://promedmail.org/post/2022=
+0109.8700749=0D<br>2021=0D<br>----=0D<br>Avian influenza, human (24): China=
+ (GZ) H9N2<br>http://promedmail.org/post/20211124.8699804=0D<br>Avian influ=
+enza, human (17): China (HN) H9N2<br>http://promedmail.org/post/20210906.86=
+47141=0D<br>Avian influenza, human (08): China (GD) H9N2<br>http://promedma=
+il.org/post/20210508.8345139=0D<br>Avian influenza, human (07): China (FJ, =
+HU) H9N2<br>http://promedmail.org/post/20210425.8327505=0D<br>Avian influen=
+za, human (01): China (GD) H9N2, alert<br>http://promedmail.org/post/202101=
+20.8111218=0D<br>2020=0D<br>----=0D<br>Avian influenza, human (05): China (=
+GD) H9N2, new case<br>http://promedmail.org/post/20201004.7835005=0D<br>Avi=
+an influenza, human (04): China (FJ, SD) H9N2, new cases<br>http://promedma=
+il.org/post/20200530.7392699=0D<br>Avian influenza, human (03): China (GD) =
+H9N2, WHO<br>http://promedmail.org/post/20200407.7195272=0D<br>Avian influe=
+nza, human (02): Senegal, India, H9N2, WHO, RFI<br>http://promedmail.org/po=
+st/20200309.7059887=0D<br>Avian influenza, human: China (Hong Kong) H9N2<br=
+>http://promedmail.org/post/20200208.6967624=0D<br>2019=0D<br>----=0D<br>Av=
+ian influenza, human (11): China (FJ, AH) H9N2<br>http://promedmail.org/pos=
+t/20191211.6834041=0D<br>Avian influenza, human (03): China (HN) H9N2, 2018=
+<br>http://promedmail.org/post/20190205.6295949=0D<br>2018=0D<br>----=0D<br=
+>Avian influenza, human (24): China (GD, GX) H9N2<br>http://promedmail.org/=
+post/20181226.6223398=0D<br>Avian influenza, human (13): China (GD) H9N2<br=
+>http://promedmail.org/post/20180801.5940642=0D<br>2017=0D<br>----=0D<br>Av=
+ian influenza, human (65): China (GD) H9N2, human-animal interface,<br>WHO =
+http://promedmail.org/post/20170812.5242688=0D<br>2016=0D<br>----=0D<br>Avi=
+an influenza, human (60): China (JX) H9N2<br>http://promedmail.org/post/201=
+60912.4481431=0D<br>Avian influenza, human (59): China (YN) H9N2<br>http://=
+promedmail.org/post/20160901.4451359=0D<br>Avian influenza, human (51): Chi=
+na (GD) H9N2<br>http://promedmail.org/post/20160621.4299567=0D<br>Avian inf=
+luenza, human (31): China H7N9, avian flu update, China (FJ)<br>H7N9, China=
+ (SC) H9N2 http://promedmail.org/post/20160318.4101269=0D<br>2015=0D<br>---=
+-=0D<br>Avian influenza, human (130): China (AH, HN) H9N2<br>http://promedm=
+ail.org/post/20151217.3867941=0D<br>2014=0D<br>----=0D<br>Avian influenza, =
+human (78): China, H7N9, new cases, H9N2 control<br>http://promedmail.org/p=
+ost/20140227.2304226=0D<br>Avian influenza, human (02): China (HK) H9N2 ex =
+(HN)<br>http://promedmail.org/post/20140102.2148327]<br>...................=
+..............................ttm/st/tw/st/rd/jh<br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3DbPddCkC1TA8TjlnnhXFRrBGdnMW0n4_delXXehAGgKloMDAwdT=
+AwMGCFw2aCjZ3BBHjOlGOjIPktX5LNe8aH7NuGd3fPSVLy_a9UuYjXy9cBwTmNgKeQRDoxhbOKw=
+t6aJcSnkEQ49_4bR80lQ6tfUCW7XQ90w2o7v9x9h1hK6ZMTvofd0oe3kkeNJct24t5zEnv47_zj=
+infqrJqq1zhlzWv8HFGUWzWTabRxe5VWPGDHx7uKJEUKZ9bNUd9da3MKPje1ML_lMcRxI7iO-cP=
+tkim2xhPDR2Fss9FUtM6rVw-b9AYSQ2z02dBjNXXf4QUoMBTOGa4w5X1sjOd8jQjIS9ZiMedD05=
+pgVm13lDa0UHgr9fpaVPDnYR0EvSgu2o_Dvs7cPUg8Y_yObx-_m3i2USHLHwxapImBpR0WCZEh2=
+JSWxFalx9aCGAhm4bw3l0syW4fBfkY-AztQjWrfkytnqUDWxY_Wn1fMSNLK1WbUr3z0otjZfc5k=
+Y8cCdOl-q0Jjf75uVoKijnbIcj3sUc6ub42KKpw4cRpubnY5s0VAUeM6VRizKYAUsXmn196cqeQ=
+cJ-2ESOVbvSWQwmkX6eckId1mT9GERAFqWSbFrVzip_Jmv4ghKCVlHn8rX2PDeOZ90XdD_eV_ok=
+SJTFowk-Kh3nZyWeKVVeZtWaSafgULzamZ5xbAmuKRI-pK_xw4RUJhOTPtGmSx0rLDBJAz_SG0m=
+Aff7YvKAP0pWGKB0xy3I1n8uSrdPbmIWqcrQRNo2JfHXXFhphOU1LxCVa7cZfC1lMIqxqyLijO4=
+kuHF8PS0YW46U-rBq88A2R3FSukqDoYsMADIxybN0TMhHlInY_iOdB4n8UCxiSG7WhGDEaJv8FF=
+M76bbFaX6TO3DiOO5MSA83NhrRniz8exSGCO0cV0WuwYyyP_EjwALCeYjg6cYH5FE2pAEKzTmDZ=
+sjjEWySiDXTlYy1gtw6GepuMZ3yHF6xQlflihu7SiUQVLQipBu_c-TD3ZFOy7fWNSOhQ6snQ1je=
+0pV-w2LrPVZOGTu7_DbeyqApWZsypdDUVEbfJ4d2btjZUryp8ihak4yQlK4IERlm7nghjHU54j-=
+DArM3e6n_M9xUE5SYsFhs1Tr5yxWtfD5emnHm8ZsQByzF2QJ7gzf8-nRm-N_DDqO5xpeGMvjnZ3=
+Paup-Or6FIR4FK1R_1FWCiLyR4oUZWOzhlpKIvvAYqFbGC88mRTQEjRhyDaimWAmEokyiHtYw" =
+target=3D"_blank" class=3D"Unsubscribe--unsubscribePreferences" style=3D"fo=
+nt-family:sans-serif;text-decoration:none;">Unsubscribe Preferences</a></di=
+v><br>############################################################<br>#####=
+#######################################################<br><br><img src=3D"=
+https://u19268662.ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/433/ieJha0vuQ=
+ouZB-TMl9YM5Q/ho.gif" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=
+=3D"height:1px !important;width:1px !important;border-width:0 !important;ma=
+rgin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;=
+margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !importa=
+nt;padding-right:0 !important;padding-left:0 !important;"/></body>
+</html>
+--ea82e21b92cab6c692b343fd3e2629ae4bce4050fdb8552b93ea7a1363bf--

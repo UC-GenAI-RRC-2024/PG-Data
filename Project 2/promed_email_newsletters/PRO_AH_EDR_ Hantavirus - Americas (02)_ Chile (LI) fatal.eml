@@ -1,0 +1,481 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a98:c004:0:b0:1eb:e128:bbe3 with SMTP id l4csp1272207eic;
+        Wed, 10 Jan 2024 17:42:15 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IGb/oXNx8JXmu+GjK1uyP9JXAodRkMzob7EN+PH0MR/JcWi06XLra+h4GBR+kcUNKgsYOPg
+X-Received: by 2002:a05:6214:2a8a:b0:681:942:25db with SMTP id jr10-20020a0562142a8a00b00681094225dbmr393753qvb.82.1704937335695;
+        Wed, 10 Jan 2024 17:42:15 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1704937335; cv=none;
+        d=google.com; s=arc-20160816;
+        b=ou2WW+YkvDpqeJ55Zf849XklqrO0qx3HuRgucI51VSj1gWryTkhgL8N0GuJQEpqF7Q
+         /UWXibF5OBl5+N1pM/AiQne7Rs2WqkeGb2gBoTAMCgzL7yztnK+PTUl5KRQqtXhqgiXz
+         Tl6dprO+ylPYc5gbGTd5urmkWPhW2priKeDJB8+dTVhZwna3SXyXZTXfk/B1tRSeQYdc
+         GO1IZJjn9AaZY2VKy7LRz/zem7Eq2WQAsJW39Df4ooTGwymrh3hFxzusSp3C8S2DgGxE
+         mDLDFtGnPOoWKc+jVX2f17qxEeNBFbMP+w5lVstnCsitiLKyH6IoPI+kEKn0MRfMD1W6
+         MaTQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=/pC+/Y1J2mSEVhmfUf3HgUZryACl5v8JOkinH1YitDQ=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=CflIDNt0FacPJ/2wb9wuG8mcaTcj3Mb/YDVoJGZ8Jj3eQS6UxiS5S/z/8X97FGRWBa
+         60819SotUVwUH92WCPOgf1T1MI2XIGCXgguHjr/uE3p/ByOqP++eo3Wf1XxJUT43ypxd
+         TQ6JI3d+qCKgnMFTSd+b2/+KM0c404tPchyeDG5V5kjxeEyVB6iDSToGun4qezK+GVnx
+         4Xz6IzmRxFuQhsXzbqZB2coBLh5LfeK9EKNNCGnzp4uW3pISMbosHlnamw6jKLbABd9G
+         dDI+g1B4P/O1iO00aKUJoWYIbsezNLAVRVC+yx0PVqAIH8uk6k0ZhqgLoX+HwNalaexB
+         r6Ug==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=UVBdEgVv;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=nJXwvndE;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id h16-20020a0cab10000000b0067f0540d19asi5343150qvb.444.2024.01.10.17.42.15
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 10 Jan 2024 17:42:15 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=UVBdEgVv;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=nJXwvndE;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=/pC+/Y1J2mSEVhmfUf3HgUZryACl5v8JOkinH1YitDQ=;
+	b=UVBdEgVv5WSm7E2dg1AngKUhI/W17Xth0O8n2HADn08bnYR2Vj1/w0L0c3aITlZm4JGL
+	WjuXmttte84D5xtIQtCbggDbowW/gkzuapdoWDyJ08k/nMcCjn+97Yc43aNI4bmQ1pBRoR
+	oWOusH7/HI2xwEmO6IQc8+ywZ8VT7E9qaDnI8TW4u3geBi06JrmqDXyFc+0fyDK/r+2oWJ
+	YQMi/l23d6zcCwyyRb+BRsmV67btsCTuzghVx99AyttY0JbEEVwUkazl3gsbPSyhZJ1w77
+	LmTHnwvjVkZLEWQIyq2zwuZIGx5PUS6wrB9rseYON8UUd45xdm+PJczZSuLcVUJg==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=/pC+/Y1J2mSEVhmfUf3HgUZryACl5v8JOkinH1YitDQ=;
+	b=nJXwvndE29ru1zhm9TLe4ShJr/aPeSC/rAUn6re9RzzPQ1q3uGJkEljqGdR6DrHgZ5vT
+	sRvxtdjI0k31Ocphbv26ecyT7rZPNEE/XnQeFCnfX59s4JARIMZONuChrHbAM9wjuFu15t
+	+eQe50pzTrcrOFqLT43lM4rThW/v5AqSw=
+Received: by filterdrecv-67b59c969b-g4nns with SMTP id filterdrecv-67b59c969b-g4nns-1-659F4774-72
+        2024-01-11 01:42:12.899432993 +0000 UTC m=+7369236.844876305
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-6 (SG) with HTTP
+	id 9SPad5apRTeguP_U33kvPQ
+	Thu, 11 Jan 2024 01:42:12.885 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=33e8a561ebd848215884b588eab3e57271af4cfe41467372d43a5fdeeacd
+Date: Thu, 11 Jan 2024 01:42:15 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <9SPad5apRTeguP_U33kvPQ@geopod-ismtpd-6>
+Subject: PRO/AH/EDR> Hantavirus - Americas (02): Chile (LI) fatal
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iB0QC0=2FLNb8tIZaOc9H7A+ru0uriov=2F01ujK4z8?=
+ =?us-ascii?Q?xPElRRYb0g3LIWVtpFT5Xcx1UGxJevNT7pYR3fq?=
+ =?us-ascii?Q?DAKoE6M=2FkwIgUMW9wF=2FoeXXxtSGioMXKtx0huFl?=
+ =?us-ascii?Q?701jb+HQUiQ2Nkqo2Ln9xOR9mInSlfXxsZPk5NM?=
+ =?us-ascii?Q?wRsEqResAvWmsTmEtMMN7FU80aPiV8agFHMu9b?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUiShGf=2FO8XJWpH34Od4Nd?=
+ =?us-ascii?Q?fxXa6jil96uRcJkF+N+LeVnO1tx80ddOyoyOo=2Fc?=
+ =?us-ascii?Q?Brxcl3ERAm0cOY743=2FFH59DWiSf5OzXORh1DLKt?=
+ =?us-ascii?Q?hb1NMKty3PsA5ju0ZzxCrq1WQuZSEQf=2FJlWtgqv?=
+ =?us-ascii?Q?cZmsyCHlNUZsDbs2EDdCZNd3cmyUe4CcUVIAIOz?=
+ =?us-ascii?Q?Qw2XSAjFzCvb8R+Ncv8gje=2Fb7onkGQWgfR+usWB?=
+ =?us-ascii?Q?HsG3Np8ZyL2EIKsFRGDHfyo5j22m8HI+Ao8Bm=2F2?=
+ =?us-ascii?Q?MpfUm=2FECLwZ+jXCg96zQBoSpIOhe01sYDbZ5KO5?=
+ =?us-ascii?Q?WGOWL9QZyTvdXUM9+Y7EZIQ5yK=2Fxht74hI3+5ie?=
+ =?us-ascii?Q?r8G0hg=2Fp9yJk7rlhDNtE9YaEqnrQtJ8XFPqylGL?=
+ =?us-ascii?Q?BzLnkFjzKTuHprrvrlx5I+X5gF63Hw5X7Pa+NiF?=
+ =?us-ascii?Q?Y5CodB0fdsTXwRiWsrKN8jvq7eHQj+uLgLOtd08?=
+ =?us-ascii?Q?UqkfBzHIeQ3CuSYSvAeff+Hk69IaXKp2n26KVQZ?=
+ =?us-ascii?Q?aqaAXBzNLWWpkfTppssJmjLUDdBdLGd1CXAP1Uj?=
+ =?us-ascii?Q?Wp86Mpbs0bqR+Wd=2F2WNnLad5kmcZMYwezNtmCNi?=
+ =?us-ascii?Q?X+pfiBuFTcxNGBqYefXyF2RdJoZbbt3GOJplL73?=
+ =?us-ascii?Q?Asuj7+DN5xsNJSYQxh9sZnZi3Ql2UXlU2LsXYvt?=
+ =?us-ascii?Q?8Bxl2c+g5C9t6udg0PP7FFFwT=2FSmmiPpFr4S08O?=
+ =?us-ascii?Q?SY0qWUQtJF2E471I+oAzmAO2=2FDVLqAp5NMO+AW6?=
+ =?us-ascii?Q?tnUMyu=2Fi7yv8QU5=2F9KZFA7PF8A=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2E=5FOhxE71Ri?=
+ =?us-ascii?Q?g-trYJN-BamZkl2EqASSiUFWpGm9kMs-NRoMDAw?=
+ =?us-ascii?Q?dTAwMOxuDTFyoQsEsHkddQOfVsuDBLpnchHoMrY?=
+ =?us-ascii?Q?xM2RlVc8vavv3qrCM6cPVWd7bsuzqz4Qq2jl42m?=
+ =?us-ascii?Q?vlz=5F=5FRZ56SMiikzhwcpHkkUEKeDvdkwRitKh6zz?=
+ =?us-ascii?Q?W7oG7H2gGRl2hsP3A=3D=3D=2ElWZQAp9Dsqkzj-QY-Er?=
+ =?us-ascii?Q?DyRzAUCurb-Kp8tf2imbbPYRoMDAwdTAwMBgICR?=
+ =?us-ascii?Q?qa49xaCr9G8lW-5aC6BRij7Mu5=5FjRp2IdJ2DOIR?=
+ =?us-ascii?Q?=5F=5FoXXUEEXJIjtrgwl86FSVJpbxlWQoDrETxvsso?=
+ =?us-ascii?Q?twj7QpCyLqmpgq0gGWsLr9HD9d9jKdt7i42KeoP?=
+ =?us-ascii?Q?CFUTELNDzxLBaAa-KzpEWfHjWuilrT5uD=5FZz01l?=
+ =?us-ascii?Q?NxwphynXmSaAFfmDhvrzVi2qsN1HuGrMGcskLQp?=
+ =?us-ascii?Q?e4yPvEDTXnKbWk60vVuNkiTPcQaveFV5ZbzInSi?=
+ =?us-ascii?Q?14mQdoU303BNRVHG80I5D-9aOAJ3sDazgkpGC5V?=
+ =?us-ascii?Q?QWAqzLoXOdrn9Uw4JE61bEXU2vMlvJjbiRN3lae?=
+ =?us-ascii?Q?HWTAbqLdwSOyDrehbIphh3fyZBltvysmiVzub2q?=
+ =?us-ascii?Q?MSnajdZ1AbEVqtmjnJ267ahHF=5FlyQGVeLDxK8xR?=
+ =?us-ascii?Q?9Zb1f9MWkamOMBd4RvCdcHmTDHrc7a1eqaiO6de?=
+ =?us-ascii?Q?PG4hZU7NxAGgaM505Oc3EyMOz3wOWNO3uvxg9Xt?=
+ =?us-ascii?Q?yDkir3kHpr=5FMosiI5xz6i6ny3=5Flz2ns-knf4Bdx?=
+ =?us-ascii?Q?ggHDJlozjy12N2VqDlp3xni0c=5FSNo4XlG4U4E9L?=
+ =?us-ascii?Q?3SahZqpW8W2AdNKmEuYsHbEowGYM4yegcVXJ0tr?=
+ =?us-ascii?Q?697TFsyddqJ81-KiRsabDRLicpk419hCKR37DtY?=
+ =?us-ascii?Q?AyCAvL1IYyVyfJgHVNL9L8uxQ3hztZW4C6TNe5I?=
+ =?us-ascii?Q?PGDGyYASob3cTaGV0yoVlRcHH=5F6AKtrlFKLME6O?=
+ =?us-ascii?Q?MPUB9q8ssLBUy3DqONzHc9UUj6IB4xLMtVJ-vL1?=
+ =?us-ascii?Q?UfEaiZ-IdQ1brp=5FZb67bcaDBRGMP70Lp3XjsP8q?=
+ =?us-ascii?Q?TUFL7Vb0i=5FcFpd9nbneDP9lLzZgP7IlyPD=5Fo5De?=
+ =?us-ascii?Q?ePO=5F10l7sCEjSAxcyER-QkYEKcNrlJImGo4WrD2?=
+ =?us-ascii?Q?X3=5F0cY0T-drHnfINWuOV5bdq6RkrVTUAzqIv0jj?=
+ =?us-ascii?Q?FIb-zCQTTLP2xYggNnv-1amgHtKa984RwlxOfFk?=
+ =?us-ascii?Q?=5FuCj8cEZ3D6i78jLbEBGuDLb=5FZu9TUk7zdunfKK?=
+ =?us-ascii?Q?RFhWv1gPMFGPN=5F4A1hW7V24Esd4O=5FqDyFbp0NtI?=
+ =?us-ascii?Q?5=5FDAsg=3D=3D=3E?=
+
+--33e8a561ebd848215884b588eab3e57271af4cfe41467372d43a5fdeeacd
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=iso-8859-1
+Mime-Version: 1.0
+
+HANTAVIRUS - AMERICAS (02): CHILE (LIBERTADOR GENERAL BERNARDO
+O'HIGGINS) FATAL
+***************************************************************************=
+****
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+Date: Tue 9 Jan 2024 12:30 CLST
+Source: El Rancag=FCino [in Spanish, trans. Mod.TY, edited]
+<https://www.elrancaguino.cl/2024/01/09/confirman-primera-muerte-del-ano-po=
+r-hantavirus/>
+
+
+Through a press release, the Ministerial Secretary of Health of our
+region confirmed the first death of the year from a Hantavirus
+[infection]. The victim is a 47-year-old man from the Santa Cruz
+community who, according to what has been investigated by the health
+entity, was infected at a job, working on the construction of a
+house.
+
+Along these same lines, the Health Authority called on the inhabitants
+of the region to take precautions to avoid further hantavirus
+infections. "We would like to remind citizens that in recreational
+activities, such as going to campsites or trekking, we must be very
+cautious, not circulating in places that are not established [for
+hiking]. If we are going to go to a shed or a house where we have not
+entered for a long time, we have to open the doors and windows while
+using a mask, also allow the air to enter for at least half an hour
+and then clean surfaces. In terms of work, it is important to use
+personal protection," the authority stated.
+
+Hantavirus is an infection considered an endemic zoonosis and is
+associated with the long-tailed mouse (_Oligoryzomys longicaudatus_),
+a wild mouse from rural areas that is present in the O'Higgins region.
+The infected mouse transmits the virus through urine, feces and
+saliva, and it is transmitted to humans mainly through the respiratory
+route.
+
+The disease is spread by:
+- Breathing in fresh or dried droplets, or air contaminated by saliva,
+urine, or droppings from an infected mouse.
+- Eating food or drinking water contaminated with urine, feces or
+saliva of these rodents.
+- Having direct contact with droppings or secretions of infected mice
+(for example, touching mice, live or dead, with bare hands; direct
+contact of wounds with mice or their urine, saliva, or feces).
+- Touching any object on which the virus has been deposited (tools,
+utensils, furniture, clothing) and then bringing your hand close to
+your nose, eyes or mouth.
+- Being bitten by an infected mouse.
+
+Respiratory infection occurs in closed places and with the recent
+presence of mice but transmission is rare in open places, exposed to
+wind and sun.
+
+The incubation period of the hantavirus is variable. The person may
+present symptoms in a period between 5 and 45 days from when they
+become infected.
+
+Some symptoms are high fever, headache and body ache. There may also
+be gastrointestinal [and respiratory] discomfort. They are not
+immediate and can appear up to 6 weeks after being exposed to the
+virus.
+
+--
+Communicated by:
+ProMED
+
+[This is the first case of a hantavirus infection reported in the
+O'Higgins region this year (2024), but there was an additional case
+there in December of last year (2023) (see Hantavirus - Americas (01):
+Chile (LI) http://promedmail.org/post/20240102.87140232023) and an
+even earlier one in April 2023 (see Hantavirus - Americas (15): Chile
+(LI) http://promedmail.org/post/20230408.8709398), a 28-year-old
+agricultural worker who resided in the Coltauco commune and was
+hospitalized at the Hospital del T=F3rax in the Metropolitan Region.
+
+Although not specified in this or previous reports from this and other
+regions, the hantavirus involved in this case no doubt is Andes virus
+and the rodent host of this virus is named in the above report. This
+virus is endemic in Chile. The patient likely came into contact with
+areas inhabited by the rodent reservoir of the virus in the region,
+which is why the O'Higgins health official is advising the residents
+of the area take measures to prevent contact with the rodent or its
+excrement.
+
+Andes virus is rarely transmitted directly from person to person and
+only through close physical contact, usually within the family. This
+is why contacts are warned about possible risk of infection. The
+commonest source of the infection is the long-tailed pygmy rice rat.
+Images of the long-tailed pygmy rice rat (_Oligoryzomys
+longicaudatus_), the sigmodontine rodent host of Andes hantavirus, can
+be seen at
+<https://en.wikipedia.org/wiki/Oligoryzomys_longicaudatus#/media/File:Raton=
+_colilarga.jpg>.
+- Mod.TY
+
+ProMED map:
+Chile: <https://promedmail.org/promed-post?place=3D8714156,7>]
+
+[See Also:
+Hantavirus - Americas (01): Chile (LI)
+http://promedmail.org/post/20240102.87140232023
+2023
+----
+Hantavirus - Americas (42): Chile (BI)
+http://promedmail.org/post/20231220.8713817
+Hantavirus - Americas (40): Chile (LG) fatal, RFI
+http://promedmail.org/post/20231127.8713355
+Hantavirus - Americas (39): Chile (RM) fatal
+http://promedmail.org/post/20231117.8713200
+Hantavirus - Americas (26): Chile (AR)
+http://promedmail.org/post/20230813.8711681
+Hantavirus - Americas (19): Chile (LG)
+http://promedmail.org/post/20230515.8710078
+Hantavirus - Americas (15): Chile (LI)
+http://promedmail.org/post/20230408.8709398
+Hantavirus - Americas (11): Chile (LL)
+http://promedmail.org/post/20230319.8709023
+Hantavirus - Americas (11): Chile (LL)
+http://promedmail.org/post/20230319.8709023
+Hantavirus - Americas (08): Chile (AR)
+http://promedmail.org/post/20230304.8708716
+Hantavirus - Americas (06): Chile (BI)
+http://promedmail.org/post/20230217.8708446
+Hantavirus - Americas (05): Chile (ML) susp
+http://promedmail.org/post/20230209.8708261
+Hantavirus - Americas (01): Chile (AI)
+http://promedmail.org/post/20230101.8707565]
+.................................................mo/jh/ty/rd/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3DqpvJQOMAsZEJhlURFJ2hkXltmJPju-WCj6zwTS9dy7VoMDAwdTAwMEn19sj=
+H860O8F5kfnaZ3a4Dm6el6x6SZdFI29BCuApNZkMTP_fQUV1NVlLpwDHemkw4BXdtWf0n9Op7UT=
+CM_5XupP-05z1h5FQ5n4IAKuHerY6HX7-MHAABJ3k1ue6wHdX8mvqF6LYJ5JbS2YOZn2w0sB9fH=
+mIN6vPWnU42w5xwBiaQ24RiNlzLgs-K4Mlbf2kJOBqYjEXVNBrnvSIOroiXTTQBgJktCRRXxlTP=
+3NKm2vMhcSP6z_gmJk1yDkEjNyaIgiYLUUPkQPDV_Vc7lzsKwPPLGg0CMptUaiyGGxqKZPfSFAf=
+mo66y5M97CnEqI2p04Hhuuvu2HoncVpc6TUgfMraLIPYFHTv7w4BsmIzKFg3P4xdupTO-9BvHM6=
+sZKWNJeA_Vle3iSSRM2WqDmdSRkSVoTy-sSLQnAWvPFKXlZFPnFsd5RUIbpoxKauJgQVQckfaEI=
+SwIYdke86javWcDIdCEgJQ0GXfCv_yqar090BukKC2fyUFJoCF5qPWEvA-fCqGZEZegMSImX_FY=
+h5pXkPXlnTFvziX9bHP9aEfhlh23RdBDPqgPRwSVTYCphqxms-MF-oInoMFqIIb74D2Mc1STN6_=
+qNegxp-Qp6GUFw0w70p6Mvrp24foiR4ZxpUxpTDOAyFPOjlPJgW1zb4reKYIsffefIeSojDHeSx=
+4t5ytagtWHfDUcJbiZRPrvT-nB51u24RqJfwgTvOXEKDVVHqqSKC0MNdqo6NPtu5YIyRNLe35_P=
+5iZvNonepxThsRJHCHQ5KeIQzZ2ko8QsCwv9rX4gjHog7ZlM71WVhgiNhWNY4obXu2EYdYQfOyj=
+acz8lowNk9KnOMAdIx_57FeP1VXZmQFmRRHta0AuiQz6T7_5acJIwx6DsNWJzCoF_DYUshp39Xn=
+Ybydiw_k2oYi0qKqprEoW_ZkyMX3Nm9-RF77qlLIb2uX3jL1-sr8Y-5FxvT1ky_gt1R6imwJn7X=
+atnJCGdP2Dygv9ZDGTBCSEU1Mo8aMhfhoGK3CWsFcxKTNBxnmKswyBlzJODguBgTg3gVsv-rJ2f=
+EgMN6ufWKzoIBXuMs8iALJ68Zl5lU_pCYBU0jMSzmKHIep2ztHXrynTL6KPq1kJTgYrjvSXfGL0=
+o4lELl92LzSqfaUXmmUF6MOaXee-kDpA1IQzG7sp8tSwYZcunfxTk4xPiig7KFJo )
+############################################################
+############################################################
+
+--33e8a561ebd848215884b588eab3e57271af4cfe41467372d43a5fdeeacd
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=iso-8859-1
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>HANTAVIRUS - AMERICAS (02): CHILE (LIBERTADOR GENERAL BERNARDO<br>O'H=
+IGGINS) FATAL<br>**********************************************************=
+*********************<br>A ProMED-mail post<br><a href=3D"https://u19268662=
+.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisIijpefK5PNjW-mL-YZGnfgDOxU1G3gjw=
+nPSi2Tfv3HA/42w/8fJzQpEJQ9ChhVQpjdAp5Q/h0/BavABP1ppW4JBRmsskXpzLn4SRFtoO5Yy=
+tFQdbuFuAI">http://www.promedmail.org</a><br>ProMED-mail is a program of th=
+e<br>International Society for Infectious Diseases<br><a href=3D"https://u1=
+9268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisCT5tpD4Upm3qyMCbcYSQvc/42=
+w/8fJzQpEJQ9ChhVQpjdAp5Q/h1/3moaICAxtb7ZnBJJINkiiWobPoGwmtQVbzQrv2PRH6w">ht=
+tp://www.isid.org</a><br><br>Date: Tue 9 Jan 2024 12:30 CLST=0D<br>Source: =
+El Rancag=FCino [in Spanish, trans. Mod.TY, edited]=0D<br><a href=3D"https:=
+//u19268662.ct.sendgrid.net/ss/c/TLh_csrC34X_iXpbYoMam_VTgssiNDNnxgMNxroh-5=
+V1VsfJ1iaU_0DwVHwF0JS5PTwxq70HcfYo1WsEfxGNH4K6oPFEJiuG33ZjwId_jFKyeP7Q2NXBc=
+9-FxoyFyfeu/42w/8fJzQpEJQ9ChhVQpjdAp5Q/h2/w6tkNZDwhXMl-k4NL1RBuP1GfWM2Jxc4i=
+idgXt1gOfM">https://www.elrancaguino.cl/2024/01/09/confirman-primera-muerte=
+-del-ano-por-hantavirus/</a>=0D<br>=0D<br>=0D<br>Through a press release, t=
+he Ministerial Secretary of Health of our<br>region confirmed the first dea=
+th of the year from a Hantavirus<br>[infection]. The victim is a 47-year-ol=
+d man from the Santa Cruz<br>community who, according to what has been inve=
+stigated by the health<br>entity, was infected at a job, working on the con=
+struction of a<br>house.=0D<br>=0D<br>Along these same lines, the Health Au=
+thority called on the inhabitants<br>of the region to take precautions to a=
+void further hantavirus<br>infections. "We would like to remind citizens th=
+at in recreational<br>activities, such as going to campsites or trekking, w=
+e must be very<br>cautious, not circulating in places that are not establis=
+hed [for<br>hiking]. If we are going to go to a shed or a house where we ha=
+ve not<br>entered for a long time, we have to open the doors and windows wh=
+ile<br>using a mask, also allow the air to enter for at least half an hour<=
+br>and then clean surfaces. In terms of work, it is important to use<br>per=
+sonal protection," the authority stated.=0D<br>=0D<br>Hantavirus is an infe=
+ction considered an endemic zoonosis and is<br>associated with the long-tai=
+led mouse (_Oligoryzomys longicaudatus_),<br>a wild mouse from rural areas =
+that is present in the O'Higgins region.<br>The infected mouse transmits th=
+e virus through urine, feces and<br>saliva, and it is transmitted to humans=
+ mainly through the respiratory<br>route.=0D<br>=0D<br>The disease is sprea=
+d by:=0D<br>- Breathing in fresh or dried droplets, or air contaminated by =
+saliva,<br>urine, or droppings from an infected mouse.=0D<br>- Eating food =
+or drinking water contaminated with urine, feces or<br>saliva of these rode=
+nts.=0D<br>- Having direct contact with droppings or secretions of infected=
+ mice<br>(for example, touching mice, live or dead, with bare hands; direct=
+<br>contact of wounds with mice or their urine, saliva, or feces).=0D<br>- =
+Touching any object on which the virus has been deposited (tools,<br>utensi=
+ls, furniture, clothing) and then bringing your hand close to<br>your nose,=
+ eyes or mouth.=0D<br>- Being bitten by an infected mouse.=0D<br>=0D<br>Res=
+piratory infection occurs in closed places and with the recent<br>presence =
+of mice but transmission is rare in open places, exposed to<br>wind and sun=
+.=0D<br>=0D<br>The incubation period of the hantavirus is variable. The per=
+son may<br>present symptoms in a period between 5 and 45 days from when the=
+y<br>become infected.=0D<br>=0D<br>Some symptoms are high fever, headache a=
+nd body ache. There may also<br>be gastrointestinal [and respiratory] disco=
+mfort. They are not<br>immediate and can appear up to 6 weeks after being e=
+xposed to the<br>virus.=0D<br>=0D<br>--=0D<br>Communicated by:=0D<br>ProMED=
+<br><br>[This is the first case of a hantavirus infection reported in the<b=
+r>O'Higgins region this year (2024), but there was an additional case<br>th=
+ere in December of last year (2023) (see Hantavirus - Americas (01):<br>Chi=
+le (LI) http://promedmail.org/post/20240102.87140232023) and an<br>even ear=
+lier one in April 2023 (see Hantavirus - Americas (15): Chile<br>(LI) http:=
+//promedmail.org/post/20230408.8709398), a 28-year-old<br>agricultural work=
+er who resided in the Coltauco commune and was<br>hospitalized at the Hospi=
+tal del T=F3rax in the Metropolitan Region.=0D<br>=0D<br>Although not speci=
+fied in this or previous reports from this and other<br>regions, the hantav=
+irus involved in this case no doubt is Andes virus<br>and the rodent host o=
+f this virus is named in the above report. This<br>virus is endemic in Chil=
+e. The patient likely came into contact with<br>areas inhabited by the rode=
+nt reservoir of the virus in the region,<br>which is why the O'Higgins heal=
+th official is advising the residents<br>of the area take measures to preve=
+nt contact with the rodent or its<br>excrement.=0D<br>=0D<br>Andes virus is=
+ rarely transmitted directly from person to person and<br>only through clos=
+e physical contact, usually within the family. This<br>is why contacts are =
+warned about possible risk of infection. The<br>commonest source of the inf=
+ection is the long-tailed pygmy rice rat.<br>Images of the long-tailed pygm=
+y rice rat (_Oligoryzomys<br>longicaudatus_), the sigmodontine rodent host =
+of Andes hantavirus, can<br>be seen at<br><a href=3D"https://u19268662.ct.s=
+endgrid.net/ss/c/u6Jy221DtLTd6phwYNECndCVDGULFcCLoA-Mb23Mb1Vfkofx8Dn6zD6NBQ=
+3iUTduuKaelySus_fSXxyAGBnPjEqfSwRO68L3OXPtGnCPle0IdMT7dqoWf3DsDYJlv7Kp/42w/=
+8fJzQpEJQ9ChhVQpjdAp5Q/h3/jW7Iw66ANMoiqhixH8lVqypVRW90l22AEnHhbn98_Ac">http=
+s://en.wikipedia.org/wiki/Oligoryzomys_longicaudatus#/media/File:Raton_coli=
+larga.jpg</a>.<br>- Mod.TY<br><br>ProMED map:<br>Chile: <a href=3D"https://=
+u19268662.ct.sendgrid.net/ss/c/sSnCkKCWBvais3EuVAOvgy2WOIX7pp1nXnn4AbwuQ3Z6=
+WbkfhqXYXU-aTMPJ8yThoiaH77bNReXhqu9kncRQaw/42w/8fJzQpEJQ9ChhVQpjdAp5Q/h4/ld=
+ZDbrW56ZY8PCIMzXh848DCwlL7BOmIURd6Nq4e_bQ">https://promedmail.org/promed-po=
+st?place=3D8714156,7</a>]<br><br>[See Also:<br>Hantavirus - Americas (01): =
+Chile (LI)<br>http://promedmail.org/post/20240102.87140232023=0D<br>2023=0D=
+<br>----=0D<br>Hantavirus - Americas (42): Chile (BI)<br>http://promedmail.=
+org/post/20231220.8713817=0D<br>Hantavirus - Americas (40): Chile (LG) fata=
+l, RFI<br>http://promedmail.org/post/20231127.8713355=0D<br>Hantavirus - Am=
+ericas (39): Chile (RM) fatal<br>http://promedmail.org/post/20231117.871320=
+0=0D<br>Hantavirus - Americas (26): Chile (AR)<br>http://promedmail.org/pos=
+t/20230813.8711681=0D<br>Hantavirus - Americas (19): Chile (LG)<br>http://p=
+romedmail.org/post/20230515.8710078=0D<br>Hantavirus - Americas (15): Chile=
+ (LI)<br>http://promedmail.org/post/20230408.8709398=0D<br>Hantavirus - Ame=
+ricas (11): Chile (LL)<br>http://promedmail.org/post/20230319.8709023=0D<br=
+>Hantavirus - Americas (11): Chile (LL)<br>http://promedmail.org/post/20230=
+319.8709023=0D<br>Hantavirus - Americas (08): Chile (AR)<br>http://promedma=
+il.org/post/20230304.8708716=0D<br>Hantavirus - Americas (06): Chile (BI)<b=
+r>http://promedmail.org/post/20230217.8708446=0D<br>Hantavirus - Americas (=
+05): Chile (ML) susp<br>http://promedmail.org/post/20230209.8708261=0D<br>H=
+antavirus - Americas (01): Chile (AI)<br>http://promedmail.org/post/2023010=
+1.8707565]<br>.................................................mo/jh/ty/rd/=
+jh<br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3DqpvJQOMAsZEJhlURFJ2hkXltmJPju-WCj6zwTS9dy7VoMDAwdT=
+AwMEn19sjH860O8F5kfnaZ3a4Dm6el6x6SZdFI29BCuApNZkMTP_fQUV1NVlLpwDHemkw4BXdtW=
+f0n9Op7UTCM_5XupP-05z1h5FQ5n4IAKuHerY6HX7-MHAABJ3k1ue6wHdX8mvqF6LYJ5JbS2YOZ=
+n2w0sB9fHmIN6vPWnU42w5xwBiaQ24RiNlzLgs-K4Mlbf2kJOBqYjEXVNBrnvSIOroiXTTQBgJk=
+tCRRXxlTP3NKm2vMhcSP6z_gmJk1yDkEjNyaIgiYLUUPkQPDV_Vc7lzsKwPPLGg0CMptUaiyGGx=
+qKZPfSFAfmo66y5M97CnEqI2p04Hhuuvu2HoncVpc6TUgfMraLIPYFHTv7w4BsmIzKFg3P4xdup=
+TO-9BvHM6sZKWNJeA_Vle3iSSRM2WqDmdSRkSVoTy-sSLQnAWvPFKXlZFPnFsd5RUIbpoxKauJg=
+QVQckfaEISwIYdke86javWcDIdCEgJQ0GXfCv_yqar090BukKC2fyUFJoCF5qPWEvA-fCqGZEZe=
+gMSImX_FYh5pXkPXlnTFvziX9bHP9aEfhlh23RdBDPqgPRwSVTYCphqxms-MF-oInoMFqIIb74D=
+2Mc1STN6_qNegxp-Qp6GUFw0w70p6Mvrp24foiR4ZxpUxpTDOAyFPOjlPJgW1zb4reKYIsffefI=
+eSojDHeSx4t5ytagtWHfDUcJbiZRPrvT-nB51u24RqJfwgTvOXEKDVVHqqSKC0MNdqo6NPtu5YI=
+yRNLe35_P5iZvNonepxThsRJHCHQ5KeIQzZ2ko8QsCwv9rX4gjHog7ZlM71WVhgiNhWNY4obXu2=
+EYdYQfOyjacz8lowNk9KnOMAdIx_57FeP1VXZmQFmRRHta0AuiQz6T7_5acJIwx6DsNWJzCoF_D=
+YUshp39XnYbydiw_k2oYi0qKqprEoW_ZkyMX3Nm9-RF77qlLIb2uX3jL1-sr8Y-5FxvT1ky_gt1=
+R6imwJn7XatnJCGdP2Dygv9ZDGTBCSEU1Mo8aMhfhoGK3CWsFcxKTNBxnmKswyBlzJODguBgTg3=
+gVsv-rJ2fEgMN6ufWKzoIBXuMs8iALJ68Zl5lU_pCYBU0jMSzmKHIep2ztHXrynTL6KPq1kJTgY=
+rjvSXfGL0o4lELl92LzSqfaUXmmUF6MOaXee-kDpA1IQzG7sp8tSwYZcunfxTk4xPiig7KFJo" =
+target=3D"_blank" class=3D"Unsubscribe--unsubscribePreferences" style=3D"fo=
+nt-family:sans-serif;text-decoration:none;">Unsubscribe Preferences</a></di=
+v><br>############################################################<br>#####=
+#######################################################<br><br><img src=3D"=
+https://u19268662.ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/42w/8fJzQpEJQ=
+9ChhVQpjdAp5Q/ho.gif" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=
+=3D"height:1px !important;width:1px !important;border-width:0 !important;ma=
+rgin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;=
+margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !importa=
+nt;padding-right:0 !important;padding-left:0 !important;"/></body>
+</html>
+--33e8a561ebd848215884b588eab3e57271af4cfe41467372d43a5fdeeacd--

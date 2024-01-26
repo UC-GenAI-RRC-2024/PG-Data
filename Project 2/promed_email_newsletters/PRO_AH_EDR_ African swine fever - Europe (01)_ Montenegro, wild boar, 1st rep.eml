@@ -1,0 +1,563 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a98:d84b:0:b0:1eb:e128:bbe3 with SMTP id b11csp499449eil;
+        Thu, 18 Jan 2024 11:45:18 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IGQ0sS6hLHJnHG+f+t8jKZeROvVOa4SEybMlTuXxoS01G6iNF4dDAC+kWhtraX85Of9qmy4
+X-Received: by 2002:a05:620a:4892:b0:783:2020:82b0 with SMTP id ea18-20020a05620a489200b00783202082b0mr217839qkb.99.1705607117887;
+        Thu, 18 Jan 2024 11:45:17 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1705607117; cv=none;
+        d=google.com; s=arc-20160816;
+        b=gVotc11whS89B1WChzpIXRbXxW1OszLyG30LCbAVtMYhGcjD0Oab/cacLv0G+19wsg
+         1KdxFkdk6kVEB4wVP6/cx6G09tav9LcBvjGrNxQIOzoXnm4BQfVZVMFl++AWI9CZM9jo
+         fS+fl7iYoa/H/uH/yHURP9g/wE2XakwUV/pRn1pep0FECRr/5loFqQwpiStNUkF380Hd
+         qjNtWv+QRme91lwDix05f4FU2MAG6doVxlzdL3ZkL1ZgsIaEUVYdU2pUE14nuRve+ny7
+         PGSgqgNOF7yj2amnJYiCp6PYyidnPLcuQaiMj7tbxuhdEXsrsEf2WzV4Ofh0xeRyLlaG
+         hbzw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=xzItpcl+OO9vHRygHzPxFCrRT5f1bjhUMcPRJgQyOHE=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=bjpqJai3gqfIiaqNbKaB+ivBs2JlK713hZ2Y/zF9E0xAFfhU8CyrwhVUNIVLodPK3G
+         1l+g03LvfKDOy4xWpUyD+hKu5v0Rxpl0QDjzh6gnudBg+vrfzvHvfnkJS3f30qXplZik
+         1/oiF30MWTwT1ldDlvB2/txi5+5dMvh79nBx2cBgklVYoKud0xrhmI5ErML4HoZ/RQoF
+         Hq8RxHrM+zFGoJQl9Jn/C2yvVKc13zq3ubZ/aloNTGAxEt5gN6++XzAjZh32OPMQ/WxM
+         hYaXE52EkY/XMaHVh+8LOjEAefo91cZ2Y4thjepHxtMS3DbVQJnkT4VoVxvvQsC7l+/+
+         jD0g==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=iZOnzjji;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=xLT0ZGqB;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id dt9-20020a05620a478900b007815c7aa50bsi14361036qkb.263.2024.01.18.11.45.17
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 18 Jan 2024 11:45:17 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=iZOnzjji;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=xLT0ZGqB;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=xzItpcl+OO9vHRygHzPxFCrRT5f1bjhUMcPRJgQyOHE=;
+	b=iZOnzjji4cCCpni3DWEToLL013TlVZtnqVnFTtWvYsAxdr0J2ubgZgl+vSa+8g3tA+dh
+	uZy4tHGLUce9UW1uM1ukdGOtwpHJOkZXs8YQo+23XaKb826V990VMoEhB0v60B05SEbyQl
+	MPc3BsOSXQt7uE5MCYw6N43+OMYvhPt/qVV7CUrqw8CX1fnOdxFfbm+AbvXnreaG/is+uA
+	8MndekclbG4JbgOYEwHWpxpbCvotLbsD/b5dYPp6OO2RzYTUYDnb7ei3QBqjgGn9+2sPXG
+	ZCfvJUaAcYNWUlJr5Q8hyt1UGBW60pSJsYBpY4BDIKkSvJ74pLPT6pOCn8l/QZMQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=xzItpcl+OO9vHRygHzPxFCrRT5f1bjhUMcPRJgQyOHE=;
+	b=xLT0ZGqBlkOq6qn6gEGlfEpEqhSC1yx6FHHJJp/uvc1FMMI/GAhXtvlky2X1iP3U8yIT
+	TLIx2g+cAlWUBAhUrwFzpmk2s8ZFpXAPmWoyx38bKineKL7StVPlvLzWl3lMSXzsGgFBHd
+	wWcwdWNYwEkI6Z2ALYEpbqQ2XJCPVV6iY=
+Received: by filterdrecv-74bdf4d586-s6w2m with SMTP id filterdrecv-74bdf4d586-s6w2m-1-65A97FCC-12
+        2024-01-18 19:45:16.083393132 +0000 UTC m=+8038992.258630165
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-15 (SG) with HTTP
+	id eH7FaUeVQ9-ljwOnpCwsPA
+	Thu, 18 Jan 2024 19:45:16.074 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=6fd25ebc639f9c0053a57bf4e87ae0e39f0936ab6e2ee3abcf309e3c71e4
+Date: Thu, 18 Jan 2024 19:45:17 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <eH7FaUeVQ9-ljwOnpCwsPA@geopod-ismtpd-15>
+Subject: PRO/AH/EDR> African swine fever - Europe (01): Montenegro, wild boar,
+ 1st rep
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iBnr26x0X+XyXk59NtXEzX+UcOhptApf=2FjaAJ0Z?=
+ =?us-ascii?Q?DDsBfuewtXb+36LkRNnIRVDFRrF5wQMO9OhjaVY?=
+ =?us-ascii?Q?DSTmerh107QzCNRfGL7VSluhXk19fR5ENtP=2F4=2Fp?=
+ =?us-ascii?Q?toAEXqEULhPKy22mVeHEA4ALlgT=2FEtK8WIzxKlt?=
+ =?us-ascii?Q?jJ8xJp10KPt4kjzA9A5w8bdn6m96bfvEkfik34?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUiShGf=2FO8XJWpH34Od4Nd?=
+ =?us-ascii?Q?fxXa6jil96uRcJkF+N+LeVnO1tx80ddOyoyOo=2Fc?=
+ =?us-ascii?Q?Brxcl3ERAm0cOY743=2FFH59DWiSf5OzXORh1DLKt?=
+ =?us-ascii?Q?hb1NMKty3PsA5ju0ZzxCrq1WQuZSEQf=2FJlWtgqv?=
+ =?us-ascii?Q?cZmsyCHlNUZsDr3K1oQgGBEr2a8xQ=2FMKKjxM0TE?=
+ =?us-ascii?Q?0G4oL9Nc+4WN7FzukPkSNaP7ZO=2FPFAC=2FEmXHBXw?=
+ =?us-ascii?Q?2V2cSDZlTJYPY8iUcVUjPOiueFwt=2FLN+Ogc6H3Y?=
+ =?us-ascii?Q?FIz2tQEkC0yZtfXyCbc+awUoqBfAAXwTsdZH0sh?=
+ =?us-ascii?Q?r3LWBp7JIs2tR07o7MLTkMKPCRqSp9WE385M7HH?=
+ =?us-ascii?Q?b2Z3P7MJufvZF10na8KToKRbHcDM31=2FOXfodlEt?=
+ =?us-ascii?Q?wxgBKk9Dn18V3ynuUklEx=2FnHjX9P4LC=2FWSkPbRV?=
+ =?us-ascii?Q?ZKkEVukCaI3DyWZnPVb0O2VG8FlZHpG2WxLfVK8?=
+ =?us-ascii?Q?xZZBoJmVv8g1WU3kZAmB4VVtxiBUdOsJolF++Ar?=
+ =?us-ascii?Q?u6n0qT2h7y+IE6IGUJfmsf2LfJE0wjFF6=2F7Z=2F84?=
+ =?us-ascii?Q?v5SanRgbS8QAylxyn0mdV9a+oqD7onJ0hP4xVyf?=
+ =?us-ascii?Q?yooRiwXCiGI8iaxj=2F6K+JMSFTsaR8RHk=2FaGvmf=2F?=
+ =?us-ascii?Q?eOskopzvB5euWVv1ZE0WJo25zKPrC9Dakr8FsYX?=
+ =?us-ascii?Q?QpxIyqB5TlvMnHvO1eKjZAwEBQ0HUSdi0KEV61w?=
+ =?us-ascii?Q?GuwAhoSDsFF+3MmNhEpGLVFEJfy0YUzQm+=2FabN5?=
+ =?us-ascii?Q?=2FP=2FocNml2xAQeq3S45vi7cMNnA=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2EB86pnPBN9?=
+ =?us-ascii?Q?Q-BBwMWO1HhYBcHuj4f03eL1yCQQi61-oloMDAw?=
+ =?us-ascii?Q?dTAwMPmTXABGvxXPYSNtiU4QJ4ZHBB5ePEQ2kA5?=
+ =?us-ascii?Q?eJTgUzsAhj-BywpaqvQs2b7=5Fc0R=5FkNGSRsPnvZp?=
+ =?us-ascii?Q?mN90eo2dCh4I3TqphkmzCCKFYo2meOwc9gZPi3G?=
+ =?us-ascii?Q?3OXOlhK6vnAf3Ip-g=3D=3D=2EnzKq5gPqdrGZ8UwVZrY?=
+ =?us-ascii?Q?VuRRhmXflq3yW2-InfoaEOnZoMDAwdTAwMMYuco?=
+ =?us-ascii?Q?waSkw=5FFgfuSdghMowqS0OH5T9yYCqfEyj14BTKy?=
+ =?us-ascii?Q?7G6w6NPquIIpEoUojO7oSIiprP2q6kifxpS=5FF=5FZ?=
+ =?us-ascii?Q?=5F6NkzrqLLS0C4VsCWuhxY05LIn-DNwOoTCjKyq6?=
+ =?us-ascii?Q?XIkTSLGJOugonfhzmKrm3apXTzS1ZkrMmYv2wq=5F?=
+ =?us-ascii?Q?VWq=5FImDBtD7Odx1S3F1fI4aSUaebPFN4Kzy07xp?=
+ =?us-ascii?Q?SECdNZFREqbB2zxVk46JK7GIJ7GmmhjdCkcuC5A?=
+ =?us-ascii?Q?oCjDr3n-fZGffgsldGU0Q-oGF1xSC7HO1=5F1-kNp?=
+ =?us-ascii?Q?dTc=5Fr7=5FUSoOO-bUJpuFwooY6OkSfiR4SsM2b9mJ?=
+ =?us-ascii?Q?wVYXjuCTH2IIOWyd0Q4-zJuN8ypRshX7Qq8BB=5Ft?=
+ =?us-ascii?Q?SIx6f4jD8BHOLJE7Rj1k4X=5F9h7=5Fs=5F06W=5FPhQFSO?=
+ =?us-ascii?Q?oalb5prEuMjM=5FrRVYODoWHZy0HTQiYGlr3mNsO5?=
+ =?us-ascii?Q?PZMxrBOY7DDdY1d1S53hUG0mJEDzllSA56ubEFT?=
+ =?us-ascii?Q?i-JHwQD9WaR5lvxdLinA9E4CHqjTdVmY98eX6z4?=
+ =?us-ascii?Q?gEO0BTVcJSk6ZQgxtUkl3ufwNJ6lSmOKpMDYkml?=
+ =?us-ascii?Q?DKz7rh7a2vUEQAGLj9y=5FtFS-W0rQE9FApaNE69p?=
+ =?us-ascii?Q?r4jjJU1YlOVOmC8u3gtKu6zUDkZX4dey6IqRSCj?=
+ =?us-ascii?Q?sL=5FmPi5DGTxx1RkUOG8xb1h14CMMmA-KmCA1=5FqU?=
+ =?us-ascii?Q?y8zlTOY9oZmb8UX3yqDIQ1SzkrG-FPGlMbDaXmM?=
+ =?us-ascii?Q?e597ss2S3v7b5wXfBHD5MrpsE19wyMq2YwFKFWn?=
+ =?us-ascii?Q?8FGMQheQJLMeZ10MYYUXsfd=5FsX1frvMu1rN26Jk?=
+ =?us-ascii?Q?LWRsT9Y2GSTxvUBphbwB3KRheqFY5AtZoUwxbYz?=
+ =?us-ascii?Q?PqugVsavhrAWOYeOamPxY4JxmLtSbj9MO2dY3aa?=
+ =?us-ascii?Q?tOZYBSECWDCQA=5Fg=5FCX450857MPdutD1GkKQe6nh?=
+ =?us-ascii?Q?lQAll7U5XEd4RXpKoVnI3=5FKIOFe9POilOpGpXvn?=
+ =?us-ascii?Q?AXHveiErgUQzp5PGrpcXox=5FRtNpYTMkRGuuCY=5F3?=
+ =?us-ascii?Q?CUUjlJ1kV9BHRsbUal4k88mUgvJJ20eZi59QXkx?=
+ =?us-ascii?Q?sjgiZQ=3D=3D=3E?=
+
+--6fd25ebc639f9c0053a57bf4e87ae0e39f0936ab6e2ee3abcf309e3c71e4
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=utf-8
+Mime-Version: 1.0
+
+AFRICAN SWINE FEVER - EUROPE (01): MONTENEGRO, WILD BOAR, FIRST REPORT
+**********************************************************************
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+Date: Sun 14 Jan 2024
+Source: Ministry of Agriculture, Forestry and Water Management,
+Montenegro [in Serbian, machine trans., edited]
+<https://www.gov.me/clanak/potvrden-prvi-slucaj-africke-kuge-svinja-kod-div=
+ljih-svinja-u-crnoj-gori-2>
+
+
+The presence of the African swine fever virus, for the 1st time in
+Montenegro, has been confirmed in 2 dead wild boar, found in the
+territory of the municipality of Nik=C5=A1i=C4=87, in the border area with
+Bosnia and Herzegovina. Namely, the "Nik=C5=A1i=C4=87" Veterinary Clinic, o=
+n
+12 Jan [2024], received information about the discovery of 2 dead wild
+boars from the Bratogo=C5=A1t hunting society. Upon receipt of the
+notification, VA Nik=C5=A1i=C4=87, by order of the veterinary inspector, in
+cooperation with the hunting society, carried out sampling and
+harmless removal of the carcasses. Appropriate samples for laboratory
+testing were delivered to the Specialist Veterinary Laboratory in
+Podgorica, which immediately upon receipt performed the necessary
+diagnostic tests. On 14 Jan 2024, the Specialist Veterinary Laboratory
+determined [confirmed] the presence of the African swine fever virus
+in the samples of both carcasses through prescribed diagnostic tests.
+
+According to data from the World Organization for Animal Health
+(WOAH), the disease has been present in Europe since 2007 and is
+spreading unstoppably across the European continent in domestic and
+wild pigs. In neighboring countries, it appeared for the 1st time in
+2019 in the Republic of Serbia, followed by North Macedonia (2022),
+Bosnia and Herzegovina, Croatia, and Kosovo (2023), and it was
+expected that the disease would also appear in Montenegro.
+
+Since 2019, given the appearance of the disease in the region, as well
+as the specifics of this virus, the lack of an adequate vaccine and
+therapy against this disease, the Directorate for Food Safety,
+Veterinary and Phytosanitary Affairs, in cooperation with the
+veterinary service and the Hunting Association, has continuously
+implemented a campaign to raise awareness, training and simulation
+exercises, as well as all other necessary preventive measures aimed at
+reducing the risk of disease occurrence in Montenegro, i.e. early
+detection and timely response in case of disease occurrence. All these
+activities evidently contributed to the later appearance of the
+disease in our territory.
+
+This disease is not a zoonosis, that is, people cannot get sick from
+the African swine fever virus, but the meat of infected animals is not
+suitable for consumption.
+
+African swine fever, which only affects domestic and wild pigs, with a
+mortality rate of almost 100%, spreads rapidly and causes great
+economic losses. The disease is most often spread by the contact of
+sick people with healthy pigs, contaminated food, water and mats,
+clothes, shoes, equipment and means of transport, as well as the
+corpses of dead or slaughtered animals.
+
+In order to limit and suppress the disease in a timely manner, it is
+extremely important that every carcass, i.e., dead wild boar, is
+reported to the Administration, so that it can be removed in a
+harmless way by the competent veterinary service, thus reducing the
+possibility of new cases.
+
+The program of mandatory animal health protection measures provides
+for a fee of EUR 40.00 [USD 43.46] for information on the discovery of
+a dead wild boar. The found carcass is reported to the Directorate for
+Food Safety, Veterinary and Phytosanitary Affairs at the hotline
+number 067 666 632. After that, if the report is verified, sampling,
+diagnostic testing, and all prescribed measures are taken.
+
+Also, we remind you that every pig keeper is obliged to report any
+change in health status, as well as any death of pigs on the farm, to
+the competent veterinary clinic. After going to the field, and at the
+expense of the Administration for Food Safety, Veterinary and
+Phytosanitary Affairs, the veterinarian will take samples and send
+them to the Specialist Veterinary Laboratory in order to rule out or
+confirm the disease in a timely manner.
+
+Pig owners are recommended to fully cooperate with the veterinary
+service and apply biosecurity measures on the farm, in accordance with
+the recommendations of the veterinary service, which include the
+following:
+
+- compliance with regulations on animal identification, animal
+movement, and traffic;
+- keeping pigs in such a way as to prevent direct contact of domestic
+pigs with wild pigs and other wild animals;
+- avoid grazing pigs and letting pigs out in an open area that is not
+protected by a fence or in some other way;
+- do not feed pigs with ruminants;
+- persons who have been in contact with wild boars must thoroughly
+wash and disinfect their clothes and shoes;
+- mandatory reporting of every sick or dead domestic or wild pig to
+the competent veterinarian;
+- barriers placed at the entrance and exit to the facility where pigs
+are kept;
+- measures implemented to remove ectoparasites and protect animals
+from ticks;
+- preventive disinfection of the barn (floors and walls) by spraying
+with milk of lime or other suitable disinfectant;
+- proper disposal of manure as well as, in the case of slaughtering
+for own needs, proper disposal of byproducts (burying, burning).
+
+In order to minimize the risk of disease spread, we appeal to pig
+keepers, hunters, and other subjects to observe all prescribed
+measures and recommendations, especially biosecurity measures.
+
+The Directorate for Food Safety, Veterinary and Phytosanitary Affairs
+will monitor the situation on the ground daily and will inform the
+public in a timely manner.
+
+--
+Communicated by:
+ProMED
+
+[African swine fever (ASF) is a devastating hemorrhagic fever of pigs
+with extremely high mortality rates. In affected countries, it causes
+huge economic losses. ASF is believed to have evolved in a sylvatic
+cycle that occurs in eastern and southern Africa between common
+warthogs (_Phacochoerus africanus_) and argasid ticks of the
+_Ornithodoros moubata_ complex that share their burrows. But the tick
+is not necessary for the ASF virus transmission. Pigs in the acute
+stage of infection develop high viremia and shed large amounts of
+virus in various secretions and excretions. The virus can tolerate a
+wide range of temperature and pH. Pigs can become infected through
+direct contact with infected pigs or materials contaminated by
+infected pigs and eating uncooked meat products derived from infected
+pigs, as well as when infected _Ornithodoros_ ticks feed on them.
+
+The importance of wildlife reservoirs for disease maintenance has been
+clearly demonstrated. In Eastern Europe, the disease spread into the
+local wild boar populations. - Mod.PMB
+
+ProMED map:
+Nik=C5=A1i=C4=87, Montenegro:
+<https://promedmail.org/promed-post?place=3D8714302,55431>]
+
+[See Also:
+2023
+----
+African swine fever - Europe (26): Italy (ER) wild boar
+http://promedmail.org/post/20231113.8713135
+African swine fever - Europe (25): Sweden, wild boar
+http://promedmail.org/post/20230929.8712364
+African swine fever - Europe (23): Sweden (VM) spread, reader comment
+http://promedmail.org/post/20230910.8712052
+African swine fever - Europe (22): Sweden (VM) wild boar
+http://promedmail.org/post/20230907.8712014
+African swine fever - Europe (21): Italy (LM)
+http://promedmail.org/post/20230829.8711887
+African swine fever - Europe (12): Italy (LB) wild boar, WOAH
+http://promedmail.org/post/20230512.8710014
+2022
+----
+African swine fever - Europe (15): Italy (LZ) domestic, control
+http://promedmail.org/post/20220611.8703812
+African swine fever - Europe (12): Italy (Rome), wild boar
+http://promedmail.org/post/20220509.8703149
+African swine fever - Europe (11): Italy (LZ) wild boar, OIE
+http://promedmail.org/post/20220508.8703125
+African swine fever - Europe (10): Italy (RM) wild boar, susp., RFI
+http://promedmail.org/post/20220506.8703075
+African swine fever - Europe (05): Italy (PM) wild boar, spread
+http://promedmail.org/post/20220116.8700895
+African swine fever - Europe (03): Italy (PM) wild boar, OIE
+http://promedmail.org/post/20220111.8700787
+African swine fever - Europe (02): Italy (PM) wild boar
+http://promedmail.org/post/20220110.8700778
+2021
+----
+African swine fever - Europe (38): Italy (SD)
+http://promedmail.org/post/20211210.8700181]
+.................................................mo/pmb/tw/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3DvJdv5Cn75DbA5h1Gd1FYDkeFsve9Pp3wZQT2CTNA1cZoMDAwdTAwMHVIRvO=
+8qzyfoZXb59PQeaV_yFX_vmEDSMtN6XRWJW6c5JXVw0-kn8EpF5JUtHFlZnx_c2V-p4JkO5BuSi=
+C83znJFggg3gtjl2JLbyPzzNuh24FCj7h7Yuc0fNkTyg9att3WkaYGXN5Ja5aoqyEbJYMh1RlCr=
+k4DjpVdvdCQXAkV7wR598CsFR7egseaQcklOpV2MYoMfI6yJ8bWHZ6q6vO5CTQLhi-wxRKCqS1U=
+3U9WrBKlUo-1Yq80UvaInRYYbcg8bkwUhnqr4joagJ42iCbVGO0ziI2NXZH9hH-SHuq11e0Q2aF=
+5zHjyc4GM9hBaLm8ZhwqGfIVYQaywYrmYxf7MiJ8KhLVO8Lj7baRsTpKn6d24g6NkLp1nA1KoIC=
+K9XFDdb28hKKBmHgLEyexaUFY9NdBSFwMhawgZ4wCQRLPtTF59q0sIsf8e3i0_it0UOZIHFch8g=
+j2XB0WmUkTgZfH0AIeu0yAikb6i50AXjo3rpc7fnPOyNU6qb88kvweog597BdBjJFC22CfyywXF=
+G1HC9wzmxzvwjVQGM6C0ZPR8QjiWpXQgC4m4a6W9OqTMnyCR9OopPmYQIqP6WIgyCTnpLMJ8-WK=
+vBMUPOk_qjRZgyFEWgPHMqkfNMZz7pUqMqa4eWvdz8nzG48fcjPlNVDLYFcZOnBIvMyCqzWBAPb=
+FEgGFifG6ZBtejkd_rOCqRY7ylV7mnW_aoKXiq3Y6kUVqyHtBbXwAryNLWDzHIUSUv9iGc_vEjK=
+Ghve3EZS-wXG6g8WUAbq63H07h0eiBTWMWZUZlOm9NEBKzy8opQ2ku723iRyx75F-LOwOye0i5T=
+QIi73hnf5jO4kM7CagOEO7L-fKM4qnfrIK27kTN5DH_Fr0pgtq0rnaYOLWOQsE1yamA5CwsAsaX=
+LztNW2svLTYBkERr1vuRu0e-q9IDuXZs3GntN34wRenU31kFq5Kf30LsMivf5-ZhafKORft4akt=
+NkOf6vQ9UsAcwJW5m0IUcc2sOfhI04H32gJruhVVNjz8PYOShfa3EqVLSyCKaInmS1HA34Z2lro=
+rgFs8FvUo-jYDJ_kTR2T4hMAhLnGQonLWXfSOSjEdywMAvWBtje1ZX8QaS1Xic8DXmGn0Q0nUeP=
+TQQP0BIkpU3OGMNSwIseZdEgLaaQVZN5h1w2ud8z2JOW5LxqsiqnBq-EWA0QYkmM )
+############################################################
+############################################################
+
+--6fd25ebc639f9c0053a57bf4e87ae0e39f0936ab6e2ee3abcf309e3c71e4
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>AFRICAN SWINE FEVER - EUROPE (01): MONTENEGRO, WILD BOAR, FIRST REPOR=
+T<br>**********************************************************************=
+<br>A ProMED-mail post<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c=
+/wscE2ng5fl6JrPIt48tisIijpefK5PNjW-mL-YZGnfgDOxU1G3gjwnPSi2Tfv3HA/433/weKV2=
+4dLS3yYxF2aZmv3sw/h0/WtWw_F4sHZ1YseUqMz94k6o0wSZp4FbTUKnJWjtplAU">http://ww=
+w.promedmail.org</a><br>ProMED-mail is a program of the<br>International So=
+ciety for Infectious Diseases<br><a href=3D"https://u19268662.ct.sendgrid.n=
+et/ss/c/wscE2ng5fl6JrPIt48tisCT5tpD4Upm3qyMCbcYSQvc/433/weKV24dLS3yYxF2aZmv=
+3sw/h1/Y13O7V6FZW3n3_v3v4e9zLkfgd1nkircaHEOlg4QhVo">http://www.isid.org</a>=
+<br><br>Date: Sun 14 Jan 2024=0D<br>Source: Ministry of Agriculture, Forest=
+ry and Water Management,<br>Montenegro [in Serbian, machine trans., edited]=0D=
+<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/TLh_csrC34X_iXpbYoMam=
+yZPDYycOCYSjGZQI65-SzKrzcCZ8Eblt7QFRER7nhyyrvCdmLBGoioX2xsUpS75MiOsm-CHVIWY=
+by3zDsyVYD-ZU0v-xMqgwcL_lDMftozhRwwqWgllIJJHIY8E7qVl0Q/433/weKV24dLS3yYxF2a=
+Zmv3sw/h2/liW77oLPsJT6pIxn-FlX2GzGL3KSRx5eqPADTtttr70">https://www.gov.me/c=
+lanak/potvrden-prvi-slucaj-africke-kuge-svinja-kod-divljih-svinja-u-crnoj-g=
+ori-2</a>=0D<br>=0D<br>=0D<br>The presence of the African swine fever virus=
+, for the 1st time in<br>Montenegro, has been confirmed in 2 dead wild boar=
+, found in the<br>territory of the municipality of Nik=C5=A1i=C4=87, in the=
+ border area with<br>Bosnia and Herzegovina. Namely, the "Nik=C5=A1i=C4=87"=
+ Veterinary Clinic, on<br>12 Jan [2024], received information about the dis=
+covery of 2 dead wild<br>boars from the Bratogo=C5=A1t hunting society. Upo=
+n receipt of the<br>notification, VA Nik=C5=A1i=C4=87, by order of the vete=
+rinary inspector, in<br>cooperation with the hunting society, carried out s=
+ampling and<br>harmless removal of the carcasses. Appropriate samples for l=
+aboratory<br>testing were delivered to the Specialist Veterinary Laboratory=
+ in<br>Podgorica, which immediately upon receipt performed the necessary<br=
+>diagnostic tests. On 14 Jan 2024, the Specialist Veterinary Laboratory<br>=
+determined [confirmed] the presence of the African swine fever virus<br>in =
+the samples of both carcasses through prescribed diagnostic tests.=0D<br>=0D=
+<br>According to data from the World Organization for Animal Health<br>(WOA=
+H), the disease has been present in Europe since 2007 and is<br>spreading u=
+nstoppably across the European continent in domestic and<br>wild pigs. In n=
+eighboring countries, it appeared for the 1st time in<br>2019 in the Republ=
+ic of Serbia, followed by North Macedonia (2022),<br>Bosnia and Herzegovina=
+, Croatia, and Kosovo (2023), and it was<br>expected that the disease would=
+ also appear in Montenegro.=0D<br>=0D<br>Since 2019, given the appearance o=
+f the disease in the region, as well<br>as the specifics of this virus, the=
+ lack of an adequate vaccine and<br>therapy against this disease, the Direc=
+torate for Food Safety,<br>Veterinary and Phytosanitary Affairs, in coopera=
+tion with the<br>veterinary service and the Hunting Association, has contin=
+uously<br>implemented a campaign to raise awareness, training and simulatio=
+n<br>exercises, as well as all other necessary preventive measures aimed at=
+<br>reducing the risk of disease occurrence in Montenegro, i.e. early<br>de=
+tection and timely response in case of disease occurrence. All these<br>act=
+ivities evidently contributed to the later appearance of the<br>disease in =
+our territory.=0D<br>=0D<br>This disease is not a zoonosis, that is, people=
+ cannot get sick from<br>the African swine fever virus, but the meat of inf=
+ected animals is not<br>suitable for consumption.=0D<br>=0D<br>African swin=
+e fever, which only affects domestic and wild pigs, with a<br>mortality rat=
+e of almost 100%, spreads rapidly and causes great<br>economic losses. The =
+disease is most often spread by the contact of<br>sick people with healthy =
+pigs, contaminated food, water and mats,<br>clothes, shoes, equipment and m=
+eans of transport, as well as the<br>corpses of dead or slaughtered animals=
+.=0D<br>=0D<br>In order to limit and suppress the disease in a timely manne=
+r, it is<br>extremely important that every carcass, i.e., dead wild boar, i=
+s<br>reported to the Administration, so that it can be removed in a<br>harm=
+less way by the competent veterinary service, thus reducing the<br>possibil=
+ity of new cases.=0D<br>=0D<br>The program of mandatory animal health prote=
+ction measures provides<br>for a fee of EUR 40.00 [USD 43.46] for informati=
+on on the discovery of<br>a dead wild boar. The found carcass is reported t=
+o the Directorate for<br>Food Safety, Veterinary and Phytosanitary Affairs =
+at the hotline<br>number 067 666 632. After that, if the report is verified=
+, sampling,<br>diagnostic testing, and all prescribed measures are taken.=0D=
+<br>=0D<br>Also, we remind you that every pig keeper is obliged to report a=
+ny<br>change in health status, as well as any death of pigs on the farm, to=
+<br>the competent veterinary clinic. After going to the field, and at the<b=
+r>expense of the Administration for Food Safety, Veterinary and<br>Phytosan=
+itary Affairs, the veterinarian will take samples and send<br>them to the S=
+pecialist Veterinary Laboratory in order to rule out or<br>confirm the dise=
+ase in a timely manner.=0D<br>=0D<br>Pig owners are recommended to fully co=
+operate with the veterinary<br>service and apply biosecurity measures on th=
+e farm, in accordance with<br>the recommendations of the veterinary service=
+, which include the<br>following:=0D<br>=0D<br>- compliance with regulation=
+s on animal identification, animal<br>movement, and traffic;=0D<br>- keepin=
+g pigs in such a way as to prevent direct contact of domestic<br>pigs with =
+wild pigs and other wild animals;=0D<br>- avoid grazing pigs and letting pi=
+gs out in an open area that is not<br>protected by a fence or in some other=
+ way;=0D<br>- do not feed pigs with ruminants;=0D<br>- persons who have bee=
+n in contact with wild boars must thoroughly<br>wash and disinfect their cl=
+othes and shoes;=0D<br>- mandatory reporting of every sick or dead domestic=
+ or wild pig to<br>the competent veterinarian;=0D<br>- barriers placed at t=
+he entrance and exit to the facility where pigs<br>are kept;=0D<br>- measur=
+es implemented to remove ectoparasites and protect animals<br>from ticks;=0D=
+<br>- preventive disinfection of the barn (floors and walls) by spraying<br=
+>with milk of lime or other suitable disinfectant;=0D<br>- proper disposal =
+of manure as well as, in the case of slaughtering<br>for own needs, proper =
+disposal of byproducts (burying, burning).=0D<br>=0D<br>In order to minimiz=
+e the risk of disease spread, we appeal to pig<br>keepers, hunters, and oth=
+er subjects to observe all prescribed<br>measures and recommendations, espe=
+cially biosecurity measures.=0D<br>=0D<br>The Directorate for Food Safety, =
+Veterinary and Phytosanitary Affairs<br>will monitor the situation on the g=
+round daily and will inform the<br>public in a timely manner.=0D<br>=0D<br>=
+--=0D<br>Communicated by:=0D<br>ProMED<br><br>[African swine fever (ASF) is=
+ a devastating hemorrhagic fever of pigs<br>with extremely high mortality r=
+ates. In affected countries, it causes<br>huge economic losses. ASF is beli=
+eved to have evolved in a sylvatic<br>cycle that occurs in eastern and sout=
+hern Africa between common<br>warthogs (_Phacochoerus africanus_) and argas=
+id ticks of the<br>_Ornithodoros moubata_ complex that share their burrows.=
+ But the tick<br>is not necessary for the ASF virus transmission. Pigs in t=
+he acute<br>stage of infection develop high viremia and shed large amounts =
+of<br>virus in various secretions and excretions. The virus can tolerate a<=
+br>wide range of temperature and pH. Pigs can become infected through<br>di=
+rect contact with infected pigs or materials contaminated by<br>infected pi=
+gs and eating uncooked meat products derived from infected<br>pigs, as well=
+ as when infected _Ornithodoros_ ticks feed on them.=0D<br>=0D<br>The impor=
+tance of wildlife reservoirs for disease maintenance has been<br>clearly de=
+monstrated. In Eastern Europe, the disease spread into the<br>local wild bo=
+ar populations. - Mod.PMB<br><br>ProMED map:<br>Nik=C5=A1i=C4=87, Montenegr=
+o:<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/sSnCkKCWBvais3EuVAO=
+vgy2WOIX7pp1nXnn4AbwuQ3Z6WbkfhqXYXU-aTMPJ8yThY_Oj810eMrR-TDgaQVY-7Q/433/weK=
+V24dLS3yYxF2aZmv3sw/h3/8GmKijS299_YZ4VKZ_tk4pO60sDXMMvdOLhbLC_Mblo">https:/=
+/promedmail.org/promed-post?place=3D8714302,55431</a>]<br><br>[See Also:<br=
+>2023=0D<br>----=0D<br>African swine fever - Europe (26): Italy (ER) wild b=
+oar<br>http://promedmail.org/post/20231113.8713135=0D<br>African swine feve=
+r - Europe (25): Sweden, wild boar<br>http://promedmail.org/post/20230929.8=
+712364=0D<br>African swine fever - Europe (23): Sweden (VM) spread, reader =
+comment<br>http://promedmail.org/post/20230910.8712052=0D<br>African swine =
+fever - Europe (22): Sweden (VM) wild boar<br>http://promedmail.org/post/20=
+230907.8712014=0D<br>African swine fever - Europe (21): Italy (LM)<br>http:=
+//promedmail.org/post/20230829.8711887=0D<br>African swine fever - Europe (=
+12): Italy (LB) wild boar, WOAH<br>http://promedmail.org/post/20230512.8710=
+014=0D<br>2022=0D<br>----=0D<br>African swine fever - Europe (15): Italy (L=
+Z) domestic, control<br>http://promedmail.org/post/20220611.8703812=0D<br>A=
+frican swine fever - Europe (12): Italy (Rome), wild boar<br>http://promedm=
+ail.org/post/20220509.8703149=0D<br>African swine fever - Europe (11): Ital=
+y (LZ) wild boar, OIE<br>http://promedmail.org/post/20220508.8703125=0D<br>=
+African swine fever - Europe (10): Italy (RM) wild boar, susp., RFI<br>http=
+://promedmail.org/post/20220506.8703075=0D<br>African swine fever - Europe =
+(05): Italy (PM) wild boar, spread<br>http://promedmail.org/post/20220116.8=
+700895=0D<br>African swine fever - Europe (03): Italy (PM) wild boar, OIE<b=
+r>http://promedmail.org/post/20220111.8700787=0D<br>African swine fever - E=
+urope (02): Italy (PM) wild boar<br>http://promedmail.org/post/20220110.870=
+0778=0D<br>2021=0D<br>----=0D<br>African swine fever - Europe (38): Italy (=
+SD)<br>http://promedmail.org/post/20211210.8700181]<br>....................=
+.............................mo/pmb/tw/jh<br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3DvJdv5Cn75DbA5h1Gd1FYDkeFsve9Pp3wZQT2CTNA1cZoMDAwdT=
+AwMHVIRvO8qzyfoZXb59PQeaV_yFX_vmEDSMtN6XRWJW6c5JXVw0-kn8EpF5JUtHFlZnx_c2V-p=
+4JkO5BuSiC83znJFggg3gtjl2JLbyPzzNuh24FCj7h7Yuc0fNkTyg9att3WkaYGXN5Ja5aoqyEb=
+JYMh1RlCrk4DjpVdvdCQXAkV7wR598CsFR7egseaQcklOpV2MYoMfI6yJ8bWHZ6q6vO5CTQLhi-=
+wxRKCqS1U3U9WrBKlUo-1Yq80UvaInRYYbcg8bkwUhnqr4joagJ42iCbVGO0ziI2NXZH9hH-SHu=
+q11e0Q2aF5zHjyc4GM9hBaLm8ZhwqGfIVYQaywYrmYxf7MiJ8KhLVO8Lj7baRsTpKn6d24g6NkL=
+p1nA1KoICK9XFDdb28hKKBmHgLEyexaUFY9NdBSFwMhawgZ4wCQRLPtTF59q0sIsf8e3i0_it0U=
+OZIHFch8gj2XB0WmUkTgZfH0AIeu0yAikb6i50AXjo3rpc7fnPOyNU6qb88kvweog597BdBjJFC=
+22CfyywXFG1HC9wzmxzvwjVQGM6C0ZPR8QjiWpXQgC4m4a6W9OqTMnyCR9OopPmYQIqP6WIgyCT=
+npLMJ8-WKvBMUPOk_qjRZgyFEWgPHMqkfNMZz7pUqMqa4eWvdz8nzG48fcjPlNVDLYFcZOnBIvM=
+yCqzWBAPbFEgGFifG6ZBtejkd_rOCqRY7ylV7mnW_aoKXiq3Y6kUVqyHtBbXwAryNLWDzHIUSUv=
+9iGc_vEjKGhve3EZS-wXG6g8WUAbq63H07h0eiBTWMWZUZlOm9NEBKzy8opQ2ku723iRyx75F-L=
+OwOye0i5TQIi73hnf5jO4kM7CagOEO7L-fKM4qnfrIK27kTN5DH_Fr0pgtq0rnaYOLWOQsE1yam=
+A5CwsAsaXLztNW2svLTYBkERr1vuRu0e-q9IDuXZs3GntN34wRenU31kFq5Kf30LsMivf5-Zhaf=
+KORft4aktNkOf6vQ9UsAcwJW5m0IUcc2sOfhI04H32gJruhVVNjz8PYOShfa3EqVLSyCKaInmS1=
+HA34Z2lrorgFs8FvUo-jYDJ_kTR2T4hMAhLnGQonLWXfSOSjEdywMAvWBtje1ZX8QaS1Xic8DXm=
+Gn0Q0nUePTQQP0BIkpU3OGMNSwIseZdEgLaaQVZN5h1w2ud8z2JOW5LxqsiqnBq-EWA0QYkmM" =
+target=3D"_blank" class=3D"Unsubscribe--unsubscribePreferences" style=3D"fo=
+nt-family:sans-serif;text-decoration:none;">Unsubscribe Preferences</a></di=
+v><br>############################################################<br>#####=
+#######################################################<br><br><img src=3D"=
+https://u19268662.ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/433/weKV24dLS=
+3yYxF2aZmv3sw/ho.gif" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=
+=3D"height:1px !important;width:1px !important;border-width:0 !important;ma=
+rgin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;=
+margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !importa=
+nt;padding-right:0 !important;padding-left:0 !important;"/></body>
+</html>
+--6fd25ebc639f9c0053a57bf4e87ae0e39f0936ab6e2ee3abcf309e3c71e4--

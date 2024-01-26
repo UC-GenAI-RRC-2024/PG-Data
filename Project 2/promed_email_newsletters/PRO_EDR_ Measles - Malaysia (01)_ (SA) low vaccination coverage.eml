@@ -1,0 +1,442 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a05:640c:3013:b0:1ee:4bd3:5fc9 with SMTP id z19csp197769eiw;
+        Sat, 20 Jan 2024 10:31:16 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IExzjW8zontu8+1zn1ng1cvlgQs8c7+JedCq/hwQ3Ff1iv+8OzFo285FYTGVTas3KmwxHxW
+X-Received: by 2002:a81:a088:0:b0:5ff:9236:10df with SMTP id x130-20020a81a088000000b005ff923610dfmr1028445ywg.84.1705775476349;
+        Sat, 20 Jan 2024 10:31:16 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1705775476; cv=none;
+        d=google.com; s=arc-20160816;
+        b=qEumsYzf925igL9Xtw2umpEhhq6YHH/WqpWRf1XpACwzTFmda69kH3vNV+DOJvlxYR
+         wqQfY3oj1uD9ZGUqdq44fNa7BKnd8uPlkeTkckEQRizT0E7jx8TmJz46KEHIV1J1YQhu
+         MHu2RlFp4BDSWZ2povZrY/d2WAaRQ5uVPsH8YPx54Z+u9T2LlrWtF1f1KO1ZAFoLuKT8
+         qi6HlJ8GH2yufhAPBYCXaIo8HSbBoXy01ymdu/cmNe5p9MuSYn4Yxor8DBf8ijEZHFa2
+         nSgxbYVKZtai43d3iA0WhOEP4nGeQjU23UbQ0yvmi8USxSE4l13qzMtDS9caijeuJp/F
+         Txrw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=f4rKJNXdvCgC/irrKZzABEPGpsg2bHQqPizaDaRlJqE=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=SVsVQ0H8B7F3I89K3vZiPgSueqbDjqOpOLalDrrOL02cN0Y1ThRitshTOFR3JlLkIb
+         UO+0ch6e5vAb9tf6ZSEI2V4uRuVGFBOB37WTlAKwfKWYBRr05gB0iOgHeeRgUVAm5jz8
+         IIQBx+Rht/whaOpbURrFMDsL2V3m3DCh/NgFW59qpB8Y0FF60IYonVQx/5hnHXp2OdRm
+         xZ43byOccFnNO2lLsBBRWrLb5qkYoZETn/J7GrtXQphXTdn0tGTP+pSO88doxpqVJSI8
+         aTB4DXKQE0zfHA+pnQm8zVhRTXXBmJtiGps8zAmbjs7ANbsj6e3QAaAgQuFyc5HJQY0H
+         yJ7w==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=Nik6Hlcv;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=V3T1VmGu;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id u21-20020a817915000000b005ff86b34629si3635897ywc.118.2024.01.20.10.31.16
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sat, 20 Jan 2024 10:31:16 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=Nik6Hlcv;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=V3T1VmGu;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=f4rKJNXdvCgC/irrKZzABEPGpsg2bHQqPizaDaRlJqE=;
+	b=Nik6Hlcv4v7oCWCLBiUCNqsq2xuKYuRxylMT/1z3oJ4DfxnrwUywk6DOQuL3VkuhJiH1
+	U8mW+h34SIIHTenR6vC9O6Za0kIKWkrl7nSnCys/iQ+e7XUFUwzejy7E+M3XbTs6KLrF5k
+	96IubnTug9JgXN7i8wdytfgANpG1M2GgiSH+1h2bvKDMZGXhcPNzN+pQSsN7wATWGo4XjM
+	CnWL3+WwxW3InICT92A5Q3MQdXNNagltCEEW1vDSI86NE/AsH6BHHDdR2da+v08OzdLe8B
+	BfFBIih7qtl+FP5pLpLBjhFqMHkjpEv7WMw5VpSfyeM6qO1RvGcGfg2uqfsNXNCg==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=f4rKJNXdvCgC/irrKZzABEPGpsg2bHQqPizaDaRlJqE=;
+	b=V3T1VmGubs1h72MCy+h8kJVSchT5igVRlSmVj2Ce1LWMazqElXB95qGPUXzzHumir7O6
+	7zrdPF6LqhE8GT54sn2WjLBGXlc2DY3llhw6kVbLFrkiW6NWgd8vIPxLXHUXlsjG3Xdp4N
+	dtp1jea9h19q93/JV7AlA6P7xnDXuRdnQ=
+Received: by filterdrecv-788ff8d457-tf64c with SMTP id filterdrecv-788ff8d457-tf64c-1-65AC116F-89
+        2024-01-20 18:31:11.803491203 +0000 UTC m=+8207378.071613343
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-17 (SG) with HTTP
+	id ErrH49XdQ4eVG7CMstSqzQ
+	Sat, 20 Jan 2024 18:31:11.782 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=ba965a3a14cc888f8b082a8c7f8b8348aba6c8810c71a1b057d6a41adb64
+Date: Sat, 20 Jan 2024 18:31:15 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <ErrH49XdQ4eVG7CMstSqzQ@geopod-ismtpd-17>
+Subject: PRO/EDR> Measles - Malaysia (01): (SA) low vaccination coverage
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iBNkvc=2FlMqDymVqTXL05jhGLufzcblVHgStcmnO?=
+ =?us-ascii?Q?shUK4GIFlRVxjojCaCN1H91A2ZNYUKg+w+=2FQlLZ?=
+ =?us-ascii?Q?kua7oXKNXgs9QDhfjmLWtd6S2cRQLn=2FASXISq0P?=
+ =?us-ascii?Q?DA0SuzZluYFsvWhMzwY2+cCPyTCppjZuuOw640I?=
+ =?us-ascii?Q?YwLhXSzSTPTWejYJJzshtOZX6H4iND627QgXGe?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUhc93xcG=2F095a5S4+mt=2FG?=
+ =?us-ascii?Q?uYUpctI=2FOGD2dwyi+uvm2j4FCdvuw0l9zcHM8iA?=
+ =?us-ascii?Q?mojOvTXq7jOpDFFNtfsYkHQYACEW8pq1BXXqYmH?=
+ =?us-ascii?Q?oGTsnt6QpE2ZV5WVqnpwfXWoLXx7+4Zov7rw2Vw?=
+ =?us-ascii?Q?HM9KaCS5zU4IF8SOKyCUvwH6uqsunMK=2FALT9Vbt?=
+ =?us-ascii?Q?+Tnc+E8lqcaruhRzUrkaGm2Vo+A8AaSDwE13Rr9?=
+ =?us-ascii?Q?DejCf=2F8a3GKpB98eLQcTgC0mHUvxlFWSDA4VTmt?=
+ =?us-ascii?Q?olxqnQchwwIK7JStCX8TpQAZxj+anIjeLv84c2I?=
+ =?us-ascii?Q?BO7iWaTXeb=2F7e8ds2YySiXoaMQ0cqxbRP1eeJZU?=
+ =?us-ascii?Q?hvTtHSAAHHyziVSMQhBsOnZT+tFMqvLR5GSupYL?=
+ =?us-ascii?Q?FEoCvdrAuBrkqCX8Lz4D6ZtqvU8=2FQBUJyKDzgrm?=
+ =?us-ascii?Q?R51=2FVDF1ddHdD+cDkBNKEJuQqVZMKyRFnYc=2Fqyj?=
+ =?us-ascii?Q?j5dUE4sOTIasEZD6iXSomt8PgPTdvaCvkmlBaKF?=
+ =?us-ascii?Q?sgDOCCd9zECcjZRveMEFRdOI6ymYh+NYDWbHXJC?=
+ =?us-ascii?Q?DS07ykAvkgpe5S9=2FPTABa2H+DGWKlz42BBHIMHT?=
+ =?us-ascii?Q?KZ7uxL+iq20a9SIU5kpJnX2gvYYt5adoKuzOkFk?=
+ =?us-ascii?Q?1sxlufcZd0UtLletkspAn=2FIUwJNk=2FWqlBFC0iG8?=
+ =?us-ascii?Q?iLE4+x=2Fq7SrAfQEB8c2N83lXx8wb7hkd5TQHMNR?=
+ =?us-ascii?Q?mGUVMzLwxu8QyZxg3SO9FSPayOcokb+B+EM8XeC?=
+ =?us-ascii?Q?KV0RQoX12qbjOT4GXKF=2F5sUx8Q=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2Ev0B8=5FxuGk?=
+ =?us-ascii?Q?y6KYLjSkLKfpZeRSzKxJYetaMM5LQB44x1oMDAw?=
+ =?us-ascii?Q?dTAwMADsk4pni8d3GDQ6xCUBFrztuSVc0doBCWa?=
+ =?us-ascii?Q?ulk=5FnxPN2r4lno12U9HEIYfHKnAeI1XGYTK1UFZ?=
+ =?us-ascii?Q?09AW4jq0b-16OoU2lCoNrcC6lUqmFwtA5HPLFex?=
+ =?us-ascii?Q?8pckT8loerGjiQ65Q=3D=3D=2ExB8YNYcIjybg9NIgju9?=
+ =?us-ascii?Q?LViejO57cXvqxODsr2nuIgx9oMDAwdTAwMPNREH?=
+ =?us-ascii?Q?NH-fVs94uInWgaxGgwLokUIxNR6cja8jQguVe4K?=
+ =?us-ascii?Q?xSkJ3oBziAHSkmA80d2cO850gFxddfJqijFaTxS?=
+ =?us-ascii?Q?8MibiO3MOdHuaTkNz9Cncb7xZy8vvFkpqGb5whR?=
+ =?us-ascii?Q?-CiIDDE928h85afRhUMVJi0whB0YReaafeY0tA6?=
+ =?us-ascii?Q?MRvCUhp0NHC5UDnuhPGidNJGfwezOdbhrs54DjN?=
+ =?us-ascii?Q?bAt2fS6iH67nDCiYGtQ-zOcgJLGUkAhUjOj5d28?=
+ =?us-ascii?Q?mZxugiVlG3nSZHIrsNabsBHP-ulfhCdyI254wxy?=
+ =?us-ascii?Q?xCBqj=5FG3ZkEnH3qrasGJM0prXmPOBOoqJQ6iit3?=
+ =?us-ascii?Q?7SJkYn6NiDG7Jn16jhOkF3hUhZtkZoWx9e=5FZkGX?=
+ =?us-ascii?Q?wuNS1G6nwZ7KLrwvMdlsam4TXHNhwh-pQDh=5F6HK?=
+ =?us-ascii?Q?VtF7e7uXNDUe1mW3a64W2yd1QpJOyRzgzXe2b2P?=
+ =?us-ascii?Q?Kge6e3eVJyM24Af4GVwU3n2Fg43rn7c5hgZj5Ei?=
+ =?us-ascii?Q?gbFm1VOS-lpUiPWkXG=5Fc4P34mg2NToLA3Ix=5Fnx4?=
+ =?us-ascii?Q?aQwOPzpCqwp3PQH=5F2YXkWuVm1SSkalLyQfu46-e?=
+ =?us-ascii?Q?n1mIQ7RRYfjo2cdCP=5F-ZxhKiGZVxlmk=5FRMHnxVk?=
+ =?us-ascii?Q?aqNS3wIvUOhC9iSksls=5FzylEefCumBRdvBvHlX6?=
+ =?us-ascii?Q?Yp0dkObniszJ=5FpufUPKYruuqpzeiAsRNIxhg9M0?=
+ =?us-ascii?Q?2-O=5FTAxudpTEkfk4MW988B-OOxHQTTMGmszhPtE?=
+ =?us-ascii?Q?h0CSLdD5zLMv6lC-8CL5iMAwBWsQfD80iuWFpGx?=
+ =?us-ascii?Q?4aEFsiKNaJVNCJZ420lSDLSUqfREPCjGPH2oQLO?=
+ =?us-ascii?Q?qxA58bksN07sVW-PAPDHIB0RcVvobo3nrjvJEr1?=
+ =?us-ascii?Q?6TsKoH5jVeGXoFAZBCjB0r-LoZsTts3Rcq-I3xU?=
+ =?us-ascii?Q?G5Nm9xztmDc09Ysk7NJEXh390XEO8CMmoYSQ-SJ?=
+ =?us-ascii?Q?FperBofBGMvGf5on9ioNBVVszTeIDAJCo6LjsCK?=
+ =?us-ascii?Q?aSnvuK19hRVapdDn=5FLRDzgYDGUPNhg70mSlGB0O?=
+ =?us-ascii?Q?TKFatt2iTYOuR8-qTfQYvMZ=3E?=
+
+--ba965a3a14cc888f8b082a8c7f8b8348aba6c8810c71a1b057d6a41adb64
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=us-ascii
+Mime-Version: 1.0
+
+MEASLES - MALAYSIA (01): (SABAH) LOW VACCINATION COVERAGE
+*********************************************************
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+Date: Fri 19 Jan 2024
+Source: The Star [edited]
+<https://www.thestar.com.my/news/nation/2024/01/19/sabah-authorities-tackle=
+-measles-outbreak-in-penampang>
+
+
+Sabah health authorities are actively conducting efforts to contain a
+measles outbreak in Penampang district near here.
+
+State Health director Dr Asits Sanna said they were conducting
+detailed checks, including epidemiology and laboratory investigations,
+as well as checking the surroundings at affected areas.
+
+This was after 45 cases were reported last month [December 2023], with
+7 more this year [2024] up to the 2nd epidemiological week, putting
+total cases at 52.
+
+Dr Asits said 65% of the cases involved foreigners, with children aged
+between 7 and 17 accounting for the highest number, or 46%, while 23%
+comprised children aged 2 to 6.
+
+"Most of the cases, or 87%, have never received immunisation for
+measles," he said in a statement on Friday (19 Jan 2024).
+
+Dr Asits said Kampung Limbanak recorded an outbreak with 37 cases
+reported overall, adding that these cases had epidemiological links
+with cases reported in other affected localities.
+
+He said, however, most of the patients had recovered, with only one
+case admitted to hospital for further treatment.
+
+"But the patient has also recovered and been discharged," he added.
+
+The state Health Department and Penampang Health office were now
+providing targeted immunisation to children at the localities
+concerned.
+
+"This is among the main efforts being made to contain the spread of
+the disease," Dr Asits said.
+
+Besides that, he added, health awareness activities were also being
+actively conducted to highlight the importance of immunisation and
+preventive efforts.
+
+He explained that measles was preventable through vaccination.
+
+"The disease is highly contagious through water droplets in the air
+from people talking, coughing, or sneezing.
+
+"Measles infection in the community can be prevented by ensuring the
+immunisation coverage is over 95% at all times.
+
+"High immunisation coverage can give protection through herd
+immunity," Dr Asits added, advising parents to ensure their children
+obtained full inoculation according to schedule.
+
+In Sabah, he said, measles immunisation is provided to children at the
+ages of 6 months, 9 months, and one year.
+
+These services can be obtained at government and private health
+facilities, he added.
+
+"We advise individuals with symptoms to practise courtesy by closing
+their mouths when coughing or sneezing as well as washing their hands
+thereafter," he said, adding they should also seek treatment
+immediately.
+
+[Byline: Durie Rainer Fong]
+
+--
+Communicated by:
+ProMED
+
+[With 87% of the affected patients having never been vaccinated and
+many of those individuals from other nations, it demonstrates that not
+only are infectious diseases transmissible across international
+boundaries, but so are decisions to not vaccinate at-risk children for
+vaccine-preventable diseases. In this case it leads to unnecessary
+taxing of local healthcare infrastructure. - Mod.JH
+
+ProMED map:
+Sabah, Malaysia:
+<https://promedmail.org/promed-post?place=3D8714352,3969>]
+
+[See Also:
+2023
+----
+Measles update (16): Australia, USA (UT), Malaysia, Africa (Libya)
+http://promedmail.org/post/20230330.8709238
+Measles update (15): South Africa, Philippines, Sudan (West Darfur)
+RFI http://promedmail.org/post/20230324.8709124
+Measles update (14): India (MP, JH) Armenia, WHO
+http://promedmail.org/post/20230316.8708981
+Measles update (13): Indonesia (CP) Samoa, Mauritania (NT)
+http://promedmail.org/post/20230312.8708895
+Measles update (11): Ghana, South Africa, India, USA
+http://promedmail.org/post/20230227.8708629
+Measles update (05): Indonesia, India, South Africa, research
+http://promedmail.org/post/20230130.8708055
+Measles update (04): India, Afghanistan, USA
+http://promedmail.org/post/20230123.8707937
+Measles update (03): Afghanistan, Serbia, India, DRC
+http://promedmail.org/post/20230117.8707833
+Measles update (02): India (UP), South Africa (GT)
+http://promedmail.org/post/20230109.8707703
+Measles update (01): Russia (SA), India (MH), USA (OH)
+http://promedmail.org/post/20230101.8707573]
+.................................................jh/tw/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3DDCujDc0NLMwWTU2xi7bwd1bGb76TaS2mN_jKhPnCuR1oMDAwdTAwMMR7eyK=
+c_7nJMKxHS8EOeQZmoUiS0t037bmfn6QkyfRKWcef0sHDYEAyUtRIPoXsqMFxvdUpWRpwIbEiqU=
+qR68axypbC_rMk0abX0U41RMsDUFFKL24q9X2ScUBIEGj_1Bh2Mugq-eKR-jDRjqwkV4ISnS7ti=
+guFJi2lFEQjj3yHiiWGHrDCXtv3lUZqUeMcJKLJnouJafIbJc0YKyGwA0ZO1pdV2IVlUMp4vNQE=
+prwgD0AxXMCDhcWSwujmkTW0zR10BztUq4d1nunjEMI8im-MYxu6jZW6cMt4ZXiIE1JzoQ_gTaf=
+m9Tc9ua1H0FA0rNrPu8oArmcX5iuffe08RefL8Sq3oGgLn9uVtxCA8pEJR8E02heEFRC6YAwpMq=
+n-ALMNFsJamK-vStH-VtKT4ZXMlAQt37aZZj7os4KqkJQUeiVLUYW3o9dGTnHnldWm-1hWk-bPc=
+FngRTQ_khWI_vFQ8F18XRyNnafVAGOcZ_fuQEYnGNVBkHEAnkjCZKEt838no63mL_lMCKM4ewq_=
+Aw5WFe1UZUi8I9CLe1ZUUMQ6c9o0z43UXKUjSFnzLlyFvyt7F6sgyv8YnPhV-9NcwqRqXxkLSUX=
+XOSFRp6bvZ2PkgtmzX_dz2NnSdzdjqVFuWzFADtKBXW5Ya7ryQnkkG-9NHcm4XHNYT7VFEcblht=
+HtfrCBNuJBE79LBvl19WGqhsbB3H_y9UaKZ_rhG7rZ1Ii2kyIb9MDXdctB5OEZYxYZIYghTHUvm=
+LIjvYJjuN7HHgo2S7lQexn8JGdcAi14dNkhg0-P-36WzXOvYyr68WEKyUlOAwHEdFULuKSNAOY4=
+-QbTsePLy55HnAdtX13P6FIiwViywCS5ciQPNUHECO3NzRO--sT_4iDQczrV2N--9pZ4dVrEMzo=
+_ZIzuWoXgBoWhRzCkKnwsxDaUnhwUBsTa96ENEOerYJHVOlhSTJSZ6ZxdXB1X82a9kIn2hRzAdB=
+MVRmFRvC_Ht0iv5LAoGl8jSdwG6-wdotdWXg4TxUuQpCMYvOuG08ucTjl0UYk0qB4Ha192C7DPd=
+5z4HL1AwfBKQpzqD9o5ZPpf8wRWtdxw9W50Sw85ql5_bPWyAzoDHHrqHb0yDtdQ0MUq0S1hk8o4=
+mSkIZD6uroTfD4S5kJiDCkCLYdI58pbQOX9r7zjBi0k=3D )
+############################################################
+############################################################
+
+--ba965a3a14cc888f8b082a8c7f8b8348aba6c8810c71a1b057d6a41adb64
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>MEASLES - MALAYSIA (01): (SABAH) LOW VACCINATION COVERAGE<br>********=
+*************************************************<br>A ProMED-mail post<br>=
+<a href=3D"https://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisIijp=
+efK5PNjW-mL-YZGnfgDOxU1G3gjwnPSi2Tfv3HA/435/Q5CXEFXLRYitWbkqQ8mMSQ/h0/sS9TQ=
+XYWH-OnnuzRtCp9gdBYzkUGzXqqBURHsYeLJzo">http://www.promedmail.org</a><br>Pr=
+oMED-mail is a program of the<br>International Society for Infectious Disea=
+ses<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48=
+tisCT5tpD4Upm3qyMCbcYSQvc/435/Q5CXEFXLRYitWbkqQ8mMSQ/h1/jhpe6tNlM0opW8WRev1=
+tsWtObStuX5nSVmFjcyltG7M">http://www.isid.org</a><br><br>Date: Fri 19 Jan 2=
+024=0D<br>Source: The Star [edited]=0D<br><a href=3D"https://u19268662.ct.s=
+endgrid.net/ss/c/TLh_csrC34X_iXpbYoMamylQ7RdkoqzSIAaO95eI6Bo1gv_OhGJcjimlnC=
+pI5FEymDqb2ANEBTXBt7JONw31i_iJ-WzZXlKn7tHhIeWZuDyMjFIh3XO1EzNImHZLWLb4941rS=
+wk_xTmCZpLl84nD4A/435/Q5CXEFXLRYitWbkqQ8mMSQ/h2/fIvIFhNMbkCW-Lag-nYSnjZ_DmM=
+KDwyhrmS6Nlc3wwI">https://www.thestar.com.my/news/nation/2024/01/19/sabah-a=
+uthorities-tackle-measles-outbreak-in-penampang</a>=0D<br>=0D<br>=0D<br>Sab=
+ah health authorities are actively conducting efforts to contain a<br>measl=
+es outbreak in Penampang district near here.=0D<br>=0D<br>State Health dire=
+ctor Dr Asits Sanna said they were conducting<br>detailed checks, including=
+ epidemiology and laboratory investigations,<br>as well as checking the sur=
+roundings at affected areas.=0D<br>=0D<br>This was after 45 cases were repo=
+rted last month [December 2023], with<br>7 more this year [2024] up to the =
+2nd epidemiological week, putting<br>total cases at 52.=0D<br>=0D<br>Dr Asi=
+ts said 65% of the cases involved foreigners, with children aged<br>between=
+ 7 and 17 accounting for the highest number, or 46%, while 23%<br>comprised=
+ children aged 2 to 6.=0D<br>=0D<br>"Most of the cases, or 87%, have never =
+received immunisation for<br>measles," he said in a statement on Friday (19=
+ Jan 2024).=0D<br>=0D<br>Dr Asits said Kampung Limbanak recorded an outbrea=
+k with 37 cases<br>reported overall, adding that these cases had epidemiolo=
+gical links<br>with cases reported in other affected localities.=0D<br>=0D<=
+br>He said, however, most of the patients had recovered, with only one<br>c=
+ase admitted to hospital for further treatment.=0D<br>=0D<br>"But the patie=
+nt has also recovered and been discharged," he added.=0D<br>=0D<br>The stat=
+e Health Department and Penampang Health office were now<br>providing targe=
+ted immunisation to children at the localities<br>concerned.=0D<br>=0D<br>"=
+This is among the main efforts being made to contain the spread of<br>the d=
+isease," Dr Asits said.=0D<br>=0D<br>Besides that, he added, health awarene=
+ss activities were also being<br>actively conducted to highlight the import=
+ance of immunisation and<br>preventive efforts.=0D<br>=0D<br>He explained t=
+hat measles was preventable through vaccination.=0D<br>=0D<br>"The disease =
+is highly contagious through water droplets in the air<br>from people talki=
+ng, coughing, or sneezing.=0D<br>=0D<br>"Measles infection in the community=
+ can be prevented by ensuring the<br>immunisation coverage is over 95% at a=
+ll times.=0D<br>=0D<br>"High immunisation coverage can give protection thro=
+ugh herd<br>immunity," Dr Asits added, advising parents to ensure their chi=
+ldren<br>obtained full inoculation according to schedule.=0D<br>=0D<br>In S=
+abah, he said, measles immunisation is provided to children at the<br>ages =
+of 6 months, 9 months, and one year.=0D<br>=0D<br>These services can be obt=
+ained at government and private health<br>facilities, he added.=0D<br>=0D<b=
+r>"We advise individuals with symptoms to practise courtesy by closing<br>t=
+heir mouths when coughing or sneezing as well as washing their hands<br>the=
+reafter," he said, adding they should also seek treatment<br>immediately.=0D=
+<br>=0D<br>[Byline: Durie Rainer Fong]=0D<br>=0D<br>--=0D<br>Communicated b=
+y:=0D<br>ProMED<br><br>[With 87% of the affected patients having never been=
+ vaccinated and<br>many of those individuals from other nations, it demonst=
+rates that not<br>only are infectious diseases transmissible across interna=
+tional<br>boundaries, but so are decisions to not vaccinate at-risk childre=
+n for<br>vaccine-preventable diseases. In this case it leads to unnecessary=
+<br>taxing of local healthcare infrastructure. - Mod.JH<br><br>ProMED map:<=
+br>Sabah, Malaysia:<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/sS=
+nCkKCWBvais3EuVAOvgy2WOIX7pp1nXnn4AbwuQ3Z6WbkfhqXYXU-aTMPJ8yThrboLUnjrL2thF=
+lBLmgXZKw/435/Q5CXEFXLRYitWbkqQ8mMSQ/h3/N5PN8gRtuZdo8Wwpe0vyqbkyupT29iP-ddy=
+bWv8ISEM">https://promedmail.org/promed-post?place=3D8714352,3969</a>]<br><=
+br>[See Also:<br>2023=0D<br>----=0D<br>Measles update (16): Australia, USA =
+(UT), Malaysia, Africa (Libya)<br>http://promedmail.org/post/20230330.87092=
+38=0D<br>Measles update (15): South Africa, Philippines, Sudan (West Darfur=
+)<br>RFI http://promedmail.org/post/20230324.8709124=0D<br>Measles update (=
+14): India (MP, JH) Armenia, WHO<br>http://promedmail.org/post/20230316.870=
+8981=0D<br>Measles update (13): Indonesia (CP) Samoa, Mauritania (NT)<br>ht=
+tp://promedmail.org/post/20230312.8708895=0D<br>Measles update (11): Ghana,=
+ South Africa, India, USA<br>http://promedmail.org/post/20230227.8708629=0D=
+<br>Measles update (05): Indonesia, India, South Africa, research<br>http:/=
+/promedmail.org/post/20230130.8708055=0D<br>Measles update (04): India, Afg=
+hanistan, USA<br>http://promedmail.org/post/20230123.8707937=0D<br>Measles =
+update (03): Afghanistan, Serbia, India, DRC<br>http://promedmail.org/post/=
+20230117.8707833=0D<br>Measles update (02): India (UP), South Africa (GT)<b=
+r>http://promedmail.org/post/20230109.8707703=0D<br>Measles update (01): Ru=
+ssia (SA), India (MH), USA (OH)<br>http://promedmail.org/post/20230101.8707=
+573]<br>.................................................jh/tw/jh<br></body=
+>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3DDCujDc0NLMwWTU2xi7bwd1bGb76TaS2mN_jKhPnCuR1oMDAwdT=
+AwMMR7eyKc_7nJMKxHS8EOeQZmoUiS0t037bmfn6QkyfRKWcef0sHDYEAyUtRIPoXsqMFxvdUpW=
+RpwIbEiqUqR68axypbC_rMk0abX0U41RMsDUFFKL24q9X2ScUBIEGj_1Bh2Mugq-eKR-jDRjqwk=
+V4ISnS7tiguFJi2lFEQjj3yHiiWGHrDCXtv3lUZqUeMcJKLJnouJafIbJc0YKyGwA0ZO1pdV2IV=
+lUMp4vNQEprwgD0AxXMCDhcWSwujmkTW0zR10BztUq4d1nunjEMI8im-MYxu6jZW6cMt4ZXiIE1=
+JzoQ_gTafm9Tc9ua1H0FA0rNrPu8oArmcX5iuffe08RefL8Sq3oGgLn9uVtxCA8pEJR8E02heEF=
+RC6YAwpMqn-ALMNFsJamK-vStH-VtKT4ZXMlAQt37aZZj7os4KqkJQUeiVLUYW3o9dGTnHnldWm=
+-1hWk-bPcFngRTQ_khWI_vFQ8F18XRyNnafVAGOcZ_fuQEYnGNVBkHEAnkjCZKEt838no63mL_l=
+MCKM4ewq_Aw5WFe1UZUi8I9CLe1ZUUMQ6c9o0z43UXKUjSFnzLlyFvyt7F6sgyv8YnPhV-9Ncwq=
+RqXxkLSUXXOSFRp6bvZ2PkgtmzX_dz2NnSdzdjqVFuWzFADtKBXW5Ya7ryQnkkG-9NHcm4XHNYT=
+7VFEcblhtHtfrCBNuJBE79LBvl19WGqhsbB3H_y9UaKZ_rhG7rZ1Ii2kyIb9MDXdctB5OEZYxYZ=
+IYghTHUvmLIjvYJjuN7HHgo2S7lQexn8JGdcAi14dNkhg0-P-36WzXOvYyr68WEKyUlOAwHEdFU=
+LuKSNAOY4-QbTsePLy55HnAdtX13P6FIiwViywCS5ciQPNUHECO3NzRO--sT_4iDQczrV2N--9p=
+Z4dVrEMzo_ZIzuWoXgBoWhRzCkKnwsxDaUnhwUBsTa96ENEOerYJHVOlhSTJSZ6ZxdXB1X82a9k=
+In2hRzAdBMVRmFRvC_Ht0iv5LAoGl8jSdwG6-wdotdWXg4TxUuQpCMYvOuG08ucTjl0UYk0qB4H=
+a192C7DPd5z4HL1AwfBKQpzqD9o5ZPpf8wRWtdxw9W50Sw85ql5_bPWyAzoDHHrqHb0yDtdQ0MU=
+q0S1hk8o4mSkIZD6uroTfD4S5kJiDCkCLYdI58pbQOX9r7zjBi0k=3D" target=3D"_blank" =
+class=3D"Unsubscribe--unsubscribePreferences" style=3D"font-family:sans-ser=
+if;text-decoration:none;">Unsubscribe Preferences</a></div><br>############=
+################################################<br>#######################=
+#####################################<br><br><img src=3D"https://u19268662.=
+ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/435/Q5CXEFXLRYitWbkqQ8mMSQ/ho.g=
+if" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"height:1px !imp=
+ortant;width:1px !important;border-width:0 !important;margin-top:0 !importa=
+nt;margin-bottom:0 !important;margin-right:0 !important;margin-left:0 !impo=
+rtant;padding-top:0 !important;padding-bottom:0 !important;padding-right:0 =
+!important;padding-left:0 !important;"/></body>
+</html>
+--ba965a3a14cc888f8b082a8c7f8b8348aba6c8810c71a1b057d6a41adb64--

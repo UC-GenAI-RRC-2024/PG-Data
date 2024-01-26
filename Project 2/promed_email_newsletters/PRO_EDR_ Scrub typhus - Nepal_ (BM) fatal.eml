@@ -1,0 +1,553 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a98:c004:0:b0:1eb:e128:bbe3 with SMTP id l4csp3965923eic;
+        Mon, 15 Jan 2024 14:40:15 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IFfZ1phW3uZu/G5OWXk5e1KXdWadZv4gvz1Nze4hJUfu4iN72S7S9G7Yv4DPy6F3vTiQZwU
+X-Received: by 2002:a9d:798b:0:b0:6dc:6f58:f02e with SMTP id h11-20020a9d798b000000b006dc6f58f02emr8114298otm.74.1705358415487;
+        Mon, 15 Jan 2024 14:40:15 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1705358415; cv=none;
+        d=google.com; s=arc-20160816;
+        b=etSrj2KRGzWn/T5I/TUNWS+OJ5l85wfTDRCA94vSpt3v+HxUstUhZi2GvX3ig8Dqtl
+         UI7MHRjzQK0nNe6bN1W1sa54DR9n9odhEfyGWynrgOzl5JUVDtSNFGsrA4YhYidiwNr4
+         nNOAYhp8Yxwt/jusFgKO4PDCP2vHF1+lnzKb9/h/fFi+MV58gVay9rzPYEOa1TuL3DzM
+         6cDy8g6WkJB4Rsh+Hxvtu+85meaFdyqWBypZjbyeIywZKPAUK/JfmlVnmboEnSDxIRpf
+         SmcMvsL0VVljTbx5H07oj//vVO18JUuTmNjC19LihEsebjZLuMsSeLEUQxNwvGaIvqiK
+         ofjg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=yZ7aZXgHhfdH9gMtQ612jBhxSovnaoknW9utsuvhT7E=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=IrOSBKknUK9JXOagxZp8idqC8xpaBZrRO8piymfaf58Rb4/tXrZOijQfTj4Tq1Pwc9
+         BLAoH+lMqwFnmlFE15kdxNzx3YZWCqvIE0izldqU26dnoQA7pjRiau7de56yJoaLTeWP
+         o3N5OdUpgvKTzkXMS/98MVorh88eukW6vK6FtDOwcORZPmHVRq7vjz6o+oXNVhxVAcdY
+         3VUozT80oCnejOkihSI+oSpm5V95s9a8lHPgm983U36EbH56fuyb6NSG33urY9W2f/c1
+         RhvNjWNa7rq74/SEz4vk22+nsKVqXoawnjZ/fGHhZ8E5tWQ5TMnHtxREBwnYmA45IzAr
+         rrDg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=n6ZOPbuO;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=uO8GZntB;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id c32-20020a631c20000000b0059779ae58a0si10070163pgc.465.2024.01.15.14.40.14
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 15 Jan 2024 14:40:15 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=n6ZOPbuO;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=uO8GZntB;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=yZ7aZXgHhfdH9gMtQ612jBhxSovnaoknW9utsuvhT7E=;
+	b=n6ZOPbuOFbg+FCQzlfOXdQrk6qx+7pqQ/SHGJyeeJX7N+7iv3GFik4MC1SdQK4UherwY
+	tAmOilGIhGYvEVzisyKRI5Y32wqnJR3ffudonsPOjT2pXQBoFQBike3gpF9ZHPPvHa+WSi
+	4sorq9yLE/MWmprRkUM91kBvgayeMzEmVEoVd7fqHwQ8DLKnpryUD2JibZ0xix531oH4bH
+	yH7le5zA0eLSYJg/Chxvp1bKZaeGYqgoi7PYg87jnKml0eYwtPSxkqJ26FmXYRGnypST7X
+	0CEwVFq6KVoUsyEqt/QHm6qqpf8mk+yrr42XVGbf2vOTobi7NJLkBwokHUNBeSIA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=yZ7aZXgHhfdH9gMtQ612jBhxSovnaoknW9utsuvhT7E=;
+	b=uO8GZntBWakxvpMBKktKj6V8yplgisT+NQXAQa1ee7/X8g8MRLozMRjdybwfo1JlZ/Cl
+	DqMIEN/wDMRgds/f1B5LX8W1NpQJ91DIBy5OG7S91FChjgJUdLqn21OhuwFMdoiINEWfdY
+	pqJYTMexSld/swcNSjLAw4X+zSMmU+ejw=
+Received: by filterdrecv-7b675b45dd-rbxrm with SMTP id filterdrecv-7b675b45dd-rbxrm-1-65A5B44A-1A
+        2024-01-15 22:40:10.502407211 +0000 UTC m=+7790334.721488991
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-30 (SG) with HTTP
+	id XrbVXuwCTTinJTGJ72Tzzw
+	Mon, 15 Jan 2024 22:40:10.369 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=8834174483c9b191137cd6e0bab76fbcde9963228710aab632cb8aebbd66
+Date: Mon, 15 Jan 2024 22:40:13 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <XrbVXuwCTTinJTGJ72Tzzw@geopod-ismtpd-30>
+Subject: PRO/EDR> Scrub typhus - Nepal: (BM) fatal
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iBn7Up7NZIN6jpJjWKpGy+AWpJAEW=2FvyRugj7hi?=
+ =?us-ascii?Q?5+NwgMlw3+lobXmOKI+l7zcZX28c+=2FJlv6ZrMT4?=
+ =?us-ascii?Q?hHk6AVT8HWP2K60Wa1h69dNh5GIVPMfc1blrNVD?=
+ =?us-ascii?Q?UOOFBFvRxmZxXwCsFKgBXcRhbCokTGTk4dM0wn0?=
+ =?us-ascii?Q?0m5yz6Vz+VT5imZzHq710gU+ctwH84sMPBOfhr?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUhc93xcG=2F095a5S4+mt=2FG?=
+ =?us-ascii?Q?uYUpctI=2FOGD2dwyi+uvm2j4FCdvuw0l9zcHM8iA?=
+ =?us-ascii?Q?mojOvTXq7jOpDFFNtfsYkHQYACEW8pq1BXXqYmH?=
+ =?us-ascii?Q?oGTsnt6QpE2ZV5WVqnpwfXWoLXx7+4YCcv7T06W?=
+ =?us-ascii?Q?T2P=2FRk8ppUh88b3D7SDYPMQiHBV5QPeJb2m2roi?=
+ =?us-ascii?Q?=2FWq41gIBYY0OBAthmeL8dX3RnQPyPnfwxMd+7l2?=
+ =?us-ascii?Q?ZiZX0FqXoNK8LBPIJXOgrczs7vvpQLwevUtKtWH?=
+ =?us-ascii?Q?Do1nb4OMTKuG4OjlK1H=2F=2Fem8l3k0QUY5T9NFqt1?=
+ =?us-ascii?Q?vtN9ZYHD5aszDqK2Alt+73rqnioYIY66p=2FRhJYi?=
+ =?us-ascii?Q?gMjRDpfrL48V8up0tfqkJFoS6SYQ4wWN+8uJJ7f?=
+ =?us-ascii?Q?kVpgd3RjqYN412njnS7UQmpSuokVXAl2SfXGyxj?=
+ =?us-ascii?Q?XtIfnROt3xd83WQMAXr=2FKfNHH02M9XFQWA97hck?=
+ =?us-ascii?Q?hREVGKAC63LJTJ=2Fw1=2FKeVubx4OZJbbdcr0DJcrr?=
+ =?us-ascii?Q?Y1Not8Z=2FKQwyq3aEVUUNCFW3s5Is5qpLP5d4KBT?=
+ =?us-ascii?Q?LNCXfdFzvkltPeXaH2SUm6n9exzpg2J59QMijzp?=
+ =?us-ascii?Q?3WD1ODR0CfnL76wJ+OxKlkncjlwocbp+XT6qD2G?=
+ =?us-ascii?Q?Zuay9Awd2ZmVb4gb6=2F6TpecpBWFn4Yv4hiVpRX6?=
+ =?us-ascii?Q?bWvrY8qmNW58gSStHdeWXYaexxpM4emyP=2Fe21M6?=
+ =?us-ascii?Q?qhP8C9nESNu2cij9VNF0tCinfF=2FV2MD3SwkBIqt?=
+ =?us-ascii?Q?h+3J=2F=2Fz0xtMj7wVNMXEQfCAxKA=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2E7zD3ItVtw?=
+ =?us-ascii?Q?y3saryECSjthPnW-H-2OVppZQWv9UZhlDFoMDAw?=
+ =?us-ascii?Q?dTAwMFx-gU5gKrm6b124Tet8WM1GErahArj0vjU?=
+ =?us-ascii?Q?Oi-SGhCXaaJoYnPoDWRpY0caXxNB2=5F1ihhhZLLD?=
+ =?us-ascii?Q?f4VvOD-vAoAeAlmXhBL=5Fu4-zk2s0iI9nV0DQADQ?=
+ =?us-ascii?Q?Zj5Qb14FrbYV1U=5Fog=3D=3D=2EWWeYImn3AdH3PpiFvTJ?=
+ =?us-ascii?Q?rDfuUgBDsA2vOHqCdHkxljmdoMDAwdTAwMLAzOF?=
+ =?us-ascii?Q?nJeDaR6EQcFJTptyhmHkEr8zR7VcSuhdQfSBfDI?=
+ =?us-ascii?Q?bPO8FfMnzCyDcJAudjpChtqvjx5qMXeQ5ThiLck?=
+ =?us-ascii?Q?klBvs7zvDUK3GrZx6Uw-l1RqSF6mlAv9OZ9q=5FuT?=
+ =?us-ascii?Q?kA1ahgrPpHX9cblGHDZxOrYqCwJP0Cfl5hK8Jpc?=
+ =?us-ascii?Q?t0PGcAR=5FPt7eVZ1S4EloD0z63e2LcLcI9zxZR4r?=
+ =?us-ascii?Q?Z5ha=5Fe9542Kv0=5F56JPf1anIGc16W23jqh-EEYcr?=
+ =?us-ascii?Q?iMZu3CCxhTyRqERI157R3L0sGs0t=5FmLChnRcavQ?=
+ =?us-ascii?Q?iuqXyBSfYfQy9=5FtoS0=5FU3HaIvUc8KqPwdvqxzVw?=
+ =?us-ascii?Q?3SCAW5feh=5FrJCjastTWjxvToKYvX5kXW=5FgDx4J=5F?=
+ =?us-ascii?Q?i70HKzIGkW5ZULuuhJVtDIIW076ZOvTpHsfUHhi?=
+ =?us-ascii?Q?NQw8HTfZJjBd-VnRe9=5FmsFYnG1Mqe=5F5v5dMNXD3?=
+ =?us-ascii?Q?J4skowXZrRnLTGHgdv6M966oHv7BPsl3K5kPlhE?=
+ =?us-ascii?Q?10iWWIGTM0AaoHaKGhZe7lHvQuTkXIAoz0ua0tX?=
+ =?us-ascii?Q?Xom=5FpRMychZ1qI6=5FRoGDXe1GpnweZ384wwygtLv?=
+ =?us-ascii?Q?3VmfoaLDBTf4U=5FVlXaD8jfM8sJm8hm00EJ6uItu?=
+ =?us-ascii?Q?0OSkQKjhcazj3lOKPowoLbyvHN8lO1BgISITHBv?=
+ =?us-ascii?Q?iJYlNd6U3LsBhLWnz-WjCBBtriEBvnzcQVt8gwy?=
+ =?us-ascii?Q?al2BvHbxCJ3zDzi-mrgOL0syPQH7wOQ8mAwfn4g?=
+ =?us-ascii?Q?RMMQva5PdRhTYi7FWcMemijp7I34VCOrq8BzTFw?=
+ =?us-ascii?Q?mzq1k9cLmwdmBUMjkNo9be9wm6P71dAC0NDarPd?=
+ =?us-ascii?Q?FJeMGT5pwIiN05hvr6E9TF7gclXBnAMGWNq77Xj?=
+ =?us-ascii?Q?fUUZ0T2WdqUCHipj-8E41pZ0ei-Nf6yQyD6hyiF?=
+ =?us-ascii?Q?hQhU=5Ffak42WRS9jeQ96gvEpoxgYOSMG4m2xLIqh?=
+ =?us-ascii?Q?2EilCsnyvH8oJ028erdQQFXh4hzEQGPk6DJKe3J?=
+ =?us-ascii?Q?3MWngpGbB5Ofx15yKXeh-4Me0aGZX3y2N=5FVdwGZ?=
+ =?us-ascii?Q?wyaHn-GQp2Tz19HLfw39wsp=3E?=
+
+--8834174483c9b191137cd6e0bab76fbcde9963228710aab632cb8aebbd66
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=us-ascii
+Mime-Version: 1.0
+
+SCRUB TYPHUS - NEPAL: (BAGMATI) FATAL
+*************************************
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+Date: Sun 14 Jan 2024
+Source: My Republica [edited]
+<https://myrepublica.nagariknetwork.com/news/chitwan-reports-four-scrub-typ=
+hus-deaths-with-163-infections-in-current-fy/>
+
+
+Chitwan has reported 4 deaths from scrub typhus in the current fiscal
+year, and of them, one was from within the district and the remaining
+3 from outside the district, according to the Health Office, Chitwan.
+As said by the Health Office's Vector Control Inspector Ram KC, so far
+in the current fiscal year there are 163 confirmed cases of scrub
+typhus out of 3254 tests, and among the infected, 4 succumbed to the
+disease that is caused by bacterium called _Orientia tsutsugamushi_.
+Among the infected, 88 are from Chitwan and the remaining from other
+districts.
+
+Last fiscal year, 519 scrub typhus infected were identified through
+tests conducted on 3485 people who visited the district-based
+hospitals for treatment. All the infected recovered following
+treatment.
+
+Scrub typhus bacteria do not directly transmit to humans, but infected
+mites, found in vegetation, primarily transmit to other animals and
+humans. Severe fever, reddish eyes, coughing, vomiting, stomach pain,
+loose bowels, breathing difficulties, joint and muscle pain, skin
+rashes, and sometimes the appearance of a black spot at the site of
+the bite are among the symptoms of scrub typhus.
+
+--
+Communicated by:
+ProMED
+
+[The diagnosis of scrub typhus in Nepal has increased since the 2015
+earthquake, with 101 cases of scrub typhus in 2015, 831 cases in 2016,
+and 1435 cases in 2017-2018. This had been attributed to people living
+in temporary shelters where they might have been exposed to infected
+chiggers (larval mites), but some of this increase may be due to
+enhanced surveillance for this disease. Rodents may serve as
+reservoirs, although transovarial transmission in mites is the
+dominant mechanism for maintenance of _O. tsutsugamushi_ in nature.
+
+Scrub typhus presents clinically with chills, fever, headache, muscle
+pain, and sometimes with a macular or maculopapular rash and a
+necrotic skin lesion at the site of mite inoculation (the eschar).
+Other than the eschar, scrub typhus has no distinctive clinical
+features to make an accurate clinical diagnosis, and the presence of
+an eschar in patients has been reported to vary widely. Confirmation
+of the diagnosis requires laboratory testing, usually by indirect
+immunofluorescent antibody (IFA) assay, but this will require a 4-fold
+rise in antibody titer between acute and convalescent specimens.
+Results from a single acute serum sample are unreliable, as it takes
+7-10 days for IgG antibody to be detectable, and antibody will be
+present in a high percentage of healthy people in an endemic region
+such as Nepal.
+
+Doxycycline is the drug of choice, and it is preferred over other
+tetracyclines for treatment of scrub typhus; it is rarely associated
+with staining of teeth in children younger than 8 years
+(<https://doi.org/10.1002/14651858.cd002150.pub2>). Macrolides, such
+as azithromycin, are also reported to be efficacious, and
+fluoroquinolones, such as ciprofloxacin and ofloxacin, have been
+reported to be clinically effective in the treatment of scrub typhus
+in a few patients. However, some clinical studies suggest that
+fluoroquinolones are not as effective in patients with scrub typhus as
+other antimicrobials.
+
+Interestingly, a recent publication in Emerging Infectious Diseases
+found _Orientia_ species in North Carolina (references in original
+URL):
+
+Chen K, Travanty NV, Garshong R, et al. Detection of _Orientia_ spp.
+bacteria in field-collected, free-living _Eutrombicula_ chigger mites,
+United States. Emerg Infect Dis. 2023; 29(8): 1676-1679;
+<https://doi.org/10.3201/eid2908.230528>.
+---------------------------------------------------------------------------=
+---------------------------------------
+"Rickettsioses are distributed worldwide, caused by bacteria in the
+family Rickettsiaceae, genera _Orientia_ and _Rickettsia_ (1). The
+pathogens are transmitted by host-feeding arthropods, including ticks,
+mites, fleas, and lice (2). Among those arthropods are trombiculid
+mites, which have a widespread global distribution and high species
+diversity. Among the different stages of the lifecycle of trombiculid
+mites, only the larvae are ectoparasites, commonly known as chiggers
+(3). Some species are vectors of intracellular bacterial pathogens in
+the genus _Orientia_ that causes a potentially lethal human febrile
+disease, scrub typhus (4,5). Scrub typhus results in considerable
+illness and death; it causes >1 million cases of illness each year
+(5). A recent review (6) concluded that trombiculid mites might be
+widespread vectors of other zoonotic agents not yet recognized.
+Spotted fever group rickettsiosis diseases, including Rocky Mountain
+spotted fever, have many of the same symptoms as scrub typhus. A
+recent review of the literature from 1997-2017 estimated >60% of the
+rickettsial diseases outside the United States were misdiagnosed (7).
+
+Until recently, scrub typhus was exclusively reported from the
+so-called tsutsugamushi triangle, stretching from Pakistan in the west
+to far-eastern Russia in the east to northern Australia in the south.
+However, scrub typhus was reported recently in the Middle East,
+southern Chile, and Africa (5,8). The occurrence of scrub typhus
+pathogens in chiggers in the United States was not investigated. We
+report the identification of _Orientia_ species in free-living
+chiggers collected at recreational parks in North Carolina, USA."
+
+- Mod.LL
+
+ProMED map:
+Bagmati Province, Nepal:
+<https://promedmail.org/promed-post?place=3D8714246,68802>]
+
+[See Also:
+2023
+----
+Scrub typhus - Nepal (02): increasing year over year incidence
+http://promedmail.org/post/20231017.8712673
+Scrub typhus - Nepal: (SP)
+http://promedmail.org/post/20230819.8711754
+2022
+----
+Scrub typhus - Nepal (02): (BM)
+http://promedmail.org/post/20221018.8706215
+Scrub typhus - Nepal: (Kathmandu)
+http://promedmail.org/post/20220607.8703720
+2021
+----
+Scrub typhus - Nepal (02): (BU)
+http://promedmail.org/post/20210918.8679902
+Scrub typhus - Nepal: (BT)
+http://promedmail.org/post/20210829.8630550
+2020
+----
+Scrub typhus - Nepal (04): (CH)
+http://promedmail.org/post/20200928.7819279
+Scrub typhus - Nepal (03): (DR)
+http://promedmail.org/post/20200831.7732119
+Scrub typhus - Nepal (02): (BT)
+http://promedmail.org/post/20200813.7675023
+Scrub typhus - Nepal: (GA)
+http://promedmail.org/post/20200423.7260493
+2018
+----
+Scrub typhus - Nepal: more cases since earthquake, homelessness,
+2015-2018 http://promedmail.org/post/20181105.6125988
+2017
+----
+Scrub typhus - Nepal (11): (CT) more cases
+http://promedmail.org/post/20171020.5394166
+Scrub typhus - Nepal (10): (CT, SY)
+http://promedmail.org/post/20170904.5294698
+Scrub typhus - Nepal (09): (KT) urban cases
+http://promedmail.org/post/20170830.5283279
+Scrub typhus - Nepal (08): (KT) more cases
+http://promedmail.org/post/20170818.5259778
+Scrub typhus - Nepal (07): (NA, DK) fatal
+http://promedmail.org/post/20170810.5239887
+Scrub typhus - Nepal (06): (GU, NU)
+http://promedmail.org/post/20170709.5161628
+Scrub typhus - Nepal (05): (CT, NP)
+http://promedmail.org/post/20170627.5135389
+Scrub typhus - Nepal (04): (MO, SS)
+http://promedmail.org/post/20170613.5102100
+Scrub typhus - Nepal (03): (BA)
+http://promedmail.org/post/20170608.5093274
+Scrub typhus - Nepal (02): (RO)
+http://promedmail.org/post/20170217.4846555
+Scrub typhus - Nepal: winter season
+http://promedmail.org/post/20170111.4757908]
+.................................................ll/sb/tw/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3D-5EbQMp7UEbcCuG_uTIiRplJHaAkdlIIWhsy0_XusDZoMDAwdTAwMPiWyWp=
+aTTyDCbjxjEtnZyAJqKq6EWYL1BcRLGbhfE6IHyixiDHwpsrbfQZJFY48fqG8ps-93ceNv5VgAF=
+3XCZVP2p7hTrBIx9hahpkFqcyPuwoXZEge8wWBuCZE4E6FcwZaA7JJtW1WPCZFz_uyUNZZ3vFZh=
+960DVpGwI7S23EJawRngf7R1SP0tDawhBD41sWVKuS92CEIBl5MEemvi_q3UQvfFLh4QDQznfEz=
+KFynkjrLzBq5U1cEko1-3Mw9gk886afr5IRqSyuk_lNa4IZXwBbeICsSnfxpWTkG9dmggW2Yor0=
+isTm0BybYgnLCWzp0c_7kWM7MGN3bEWaDq6kwZzLcu6SD4x_zueZHiubSjhV6-PyvQ1MboQ6OWG=
+u0br7zl28vZUbUNwZiQ_4lMs0k5_98yHOO1aiO3MeWmmsyX7z2axbqIOrW41nEaHfwbvUeQK5ZV=
+Cs4X_zntvENZ_f6vFhKswQ3e2BzLJ3aLDNpAN699VCrZn579BGojQj92cb6yCR-co77PsrBFTma=
+ZSBtxKp-2W_SkIt55KZc_YD1QoKwndJDlaPGPwPeXuch_5Y9bHE1f-QpWyDPHpxg4xB2SL25Fcn=
+BqJVQd3lx9lYIsiV5OhF_7hwMxag5qXsViIU8eYhpHRl4yhRovo5LGaGGsn46_rtGUeyV3El3w6=
+SXYdxtODHBTZJWcWzHpOg7Yky_QoyECOqpqF4I2Fo1oisDacoJV0YS-LfAjPbSNVBbA7cPxm3-B=
+XZR2iCQo0J7G4IJFAKs2kDEwBYqxSvynSZ6EAXfc3GPkWPpOiiFAxmQPl-O60O7OqcRxQjTqHV_=
+-X6SebaTOupiV3NSvQq-Hz_1_UwoZ5RtOIHJR8WjXiJDGtQrj-mIir2kmX3pV-PYHdYbex7o8F-=
+mFCy1kFqjAhw7IuCN6oPg5CI3cWzDEsSmG9LN1od5ejfT-mBD8du5mm607JQATX3n8Yiji7STV_=
+Ag3LB4EBpT9L9YlE8AAMSBEDfyU6bNOr34cuEi_2eFNKENO10rDGfL40cgNOdZWW_aFatbdaahG=
+ONs9fBP2-59QyzhK_GduI668qRtOyrp_z7L733dteeHmwOiEzsksvGomszjtpivHXvAdV5OqKWR=
+c9vfSxJ2a1F6Al0WKiW0RhfX0y2VQTs7h2lxtguOZWY=3D )
+############################################################
+############################################################
+
+--8834174483c9b191137cd6e0bab76fbcde9963228710aab632cb8aebbd66
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>SCRUB TYPHUS - NEPAL: (BAGMATI) FATAL<br>****************************=
+*********<br>A ProMED-mail post<br><a href=3D"https://u19268662.ct.sendgrid=
+.net/ss/c/wscE2ng5fl6JrPIt48tisIijpefK5PNjW-mL-YZGnfgDOxU1G3gjwnPSi2Tfv3HA/=
+430/rvIOJ83KQnCT8P1z9OQFkg/h0/Zp8BfosuSl88gnSZ1o6T-UYCX6cHEu8XG7Lpd3v4HzQ">=
+http://www.promedmail.org</a><br>ProMED-mail is a program of the<br>Interna=
+tional Society for Infectious Diseases<br><a href=3D"https://u19268662.ct.s=
+endgrid.net/ss/c/wscE2ng5fl6JrPIt48tisCT5tpD4Upm3qyMCbcYSQvc/430/rvIOJ83KQn=
+CT8P1z9OQFkg/h1/PB2Jn3oVOiuY9aXi0xVIZkN_c4o5aaGDxq-Wl_8pOLk">http://www.isi=
+d.org</a><br><br>Date: Sun 14 Jan 2024=0D<br>Source: My Republica [edited]=0D=
+<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/P7ifjHQ-88vLP93KziIlk=
+SkpOHqJcA1h-K7VANx2QHU1eCtwATGkKYFsBNmm8FIzk4N9wsgtJjohOyOgEvM1IgEZfVyv_lXV=
+HrpdvkBWI_ywFTsbnxx9pgrBpsjDr_kxwireHH7D2VKpOEWiyCYIJ6QaFmSCDKV8sIWj7MhITJw=
+/430/rvIOJ83KQnCT8P1z9OQFkg/h2/j7vpPS_HG4BCiHRUtTThFLhLQJ1CJjwLXtiVPWNdcyI"=
+>https://myrepublica.nagariknetwork.com/news/chitwan-reports-four-scrub-typ=
+hus-deaths-with-163-infections-in-current-fy/</a>=0D<br>=0D<br>=0D<br>Chitw=
+an has reported 4 deaths from scrub typhus in the current fiscal<br>year, a=
+nd of them, one was from within the district and the remaining<br>3 from ou=
+tside the district, according to the Health Office, Chitwan.<br>As said by =
+the Health Office's Vector Control Inspector Ram KC, so far<br>in the curre=
+nt fiscal year there are 163 confirmed cases of scrub<br>typhus out of 3254=
+ tests, and among the infected, 4 succumbed to the<br>disease that is cause=
+d by bacterium called _Orientia tsutsugamushi_.<br>Among the infected, 88 a=
+re from Chitwan and the remaining from other<br>districts.=0D<br>=0D<br>Las=
+t fiscal year, 519 scrub typhus infected were identified through<br>tests c=
+onducted on 3485 people who visited the district-based<br>hospitals for tre=
+atment. All the infected recovered following<br>treatment.=0D<br>=0D<br>Scr=
+ub typhus bacteria do not directly transmit to humans, but infected<br>mite=
+s, found in vegetation, primarily transmit to other animals and<br>humans. =
+Severe fever, reddish eyes, coughing, vomiting, stomach pain,<br>loose bowe=
+ls, breathing difficulties, joint and muscle pain, skin<br>rashes, and some=
+times the appearance of a black spot at the site of<br>the bite are among t=
+he symptoms of scrub typhus.=0D<br>=0D<br>--=0D<br>Communicated by:=0D<br>P=
+roMED<br><br>[The diagnosis of scrub typhus in Nepal has increased since th=
+e 2015<br>earthquake, with 101 cases of scrub typhus in 2015, 831 cases in =
+2016,<br>and 1435 cases in 2017-2018. This had been attributed to people li=
+ving<br>in temporary shelters where they might have been exposed to infecte=
+d<br>chiggers (larval mites), but some of this increase may be due to<br>en=
+hanced surveillance for this disease. Rodents may serve as<br>reservoirs, a=
+lthough transovarial transmission in mites is the<br>dominant mechanism for=
+ maintenance of _O. tsutsugamushi_ in nature.=0D<br>=0D<br>Scrub typhus pre=
+sents clinically with chills, fever, headache, muscle<br>pain, and sometime=
+s with a macular or maculopapular rash and a<br>necrotic skin lesion at the=
+ site of mite inoculation (the eschar).<br>Other than the eschar, scrub typ=
+hus has no distinctive clinical<br>features to make an accurate clinical di=
+agnosis, and the presence of<br>an eschar in patients has been reported to =
+vary widely. Confirmation<br>of the diagnosis requires laboratory testing, =
+usually by indirect<br>immunofluorescent antibody (IFA) assay, but this wil=
+l require a 4-fold<br>rise in antibody titer between acute and convalescent=
+ specimens.<br>Results from a single acute serum sample are unreliable, as =
+it takes<br>7-10 days for IgG antibody to be detectable, and antibody will =
+be<br>present in a high percentage of healthy people in an endemic region<b=
+r>such as Nepal.=0D<br>=0D<br>Doxycycline is the drug of choice, and it is =
+preferred over other<br>tetracyclines for treatment of scrub typhus; it is =
+rarely associated<br>with staining of teeth in children younger than 8 year=
+s<br>(<a href=3D"https://u19268662.ct.sendgrid.net/ss/c/TUIVIg4PCmni5tP3Q8l=
+zBUsVGZNjM-rp2FYL93ClI_c2UZBNRjcsN64_PD_IzmxPChjM89-lGMckZgytLFg6hA/430/rvI=
+OJ83KQnCT8P1z9OQFkg/h3/tGRsqmbzSpJtjsJALYaR8sUXKXvGuCieunVi2F-sLZ0">https:/=
+/doi.org/10.1002/14651858.cd002150.pub2</a>). Macrolides, such<br>as azithr=
+omycin, are also reported to be efficacious, and<br>fluoroquinolones, such =
+as ciprofloxacin and ofloxacin, have been<br>reported to be clinically effe=
+ctive in the treatment of scrub typhus<br>in a few patients. However, some =
+clinical studies suggest that<br>fluoroquinolones are not as effective in p=
+atients with scrub typhus as<br>other antimicrobials.=0D<br>=0D<br>Interest=
+ingly, a recent publication in Emerging Infectious Diseases<br>found _Orien=
+tia_ species in North Carolina (references in original<br>URL):=0D<br>=0D<b=
+r>Chen K, Travanty NV, Garshong R, et al. Detection of _Orientia_ spp.<br>b=
+acteria in field-collected, free-living _Eutrombicula_ chigger mites,<br>Un=
+ited States. Emerg Infect Dis. 2023; 29(8): 1676-1679;<br><a href=3D"https:=
+//u19268662.ct.sendgrid.net/ss/c/TUIVIg4PCmni5tP3Q8lzBRDKvT8Dz646t79_YopI3Q=
+17vHsM1-a9yRok078BD0w1/430/rvIOJ83KQnCT8P1z9OQFkg/h4/ufQIqgPUlWLCc9VzDlu7PE=
+VcqFwIcIENhzVhy9rg6Y4">https://doi.org/10.3201/eid2908.230528</a>.=0D<br>--=
+---------------------------------------------------------------------------=
+-------------------------------------=0D<br>"Rickettsioses are distributed =
+worldwide, caused by bacteria in the<br>family Rickettsiaceae, genera _Orie=
+ntia_ and _Rickettsia_ (1). The<br>pathogens are transmitted by host-feedin=
+g arthropods, including ticks,<br>mites, fleas, and lice (2). Among those a=
+rthropods are trombiculid<br>mites, which have a widespread global distribu=
+tion and high species<br>diversity. Among the different stages of the lifec=
+ycle of trombiculid<br>mites, only the larvae are ectoparasites, commonly k=
+nown as chiggers<br>(3). Some species are vectors of intracellular bacteria=
+l pathogens in<br>the genus _Orientia_ that causes a potentially lethal hum=
+an febrile<br>disease, scrub typhus (4,5). Scrub typhus results in consider=
+able<br>illness and death; it causes >1 million cases of illness each year<=
+br>(5). A recent review (6) concluded that trombiculid mites might be<br>wi=
+despread vectors of other zoonotic agents not yet recognized.<br>Spotted fe=
+ver group rickettsiosis diseases, including Rocky Mountain<br>spotted fever=
+, have many of the same symptoms as scrub typhus. A<br>recent review of the=
+ literature from 1997-2017 estimated >60% of the<br>rickettsial diseases ou=
+tside the United States were misdiagnosed (7).=0D<br>=0D<br>Until recently,=
+ scrub typhus was exclusively reported from the<br>so-called tsutsugamushi =
+triangle, stretching from Pakistan in the west<br>to far-eastern Russia in =
+the east to northern Australia in the south.<br>However, scrub typhus was r=
+eported recently in the Middle East,<br>southern Chile, and Africa (5,8). T=
+he occurrence of scrub typhus<br>pathogens in chiggers in the United States=
+ was not investigated. We<br>report the identification of _Orientia_ specie=
+s in free-living<br>chiggers collected at recreational parks in North Carol=
+ina, USA."=0D<br>=0D<br>- Mod.LL<br><br>ProMED map:<br>Bagmati Province, Ne=
+pal:<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/sSnCkKCWBvais3EuV=
+AOvgy2WOIX7pp1nXnn4AbwuQ3Z6WbkfhqXYXU-aTMPJ8yThlojJ6avP8A6KMYT3ZWOX4g/430/r=
+vIOJ83KQnCT8P1z9OQFkg/h5/LILOGw0Jl8F1THzkz7lt8z000OSOhb1ENN00Xyrs_OA">https=
+://promedmail.org/promed-post?place=3D8714246,68802</a>]<br><br>[See Also:<=
+br>2023=0D<br>----=0D<br>Scrub typhus - Nepal (02): increasing year over ye=
+ar incidence<br>http://promedmail.org/post/20231017.8712673=0D<br>Scrub typ=
+hus - Nepal: (SP)<br>http://promedmail.org/post/20230819.8711754=0D<br>2022=0D=
+<br>----=0D<br>Scrub typhus - Nepal (02): (BM)<br>http://promedmail.org/pos=
+t/20221018.8706215=0D<br>Scrub typhus - Nepal: (Kathmandu)<br>http://promed=
+mail.org/post/20220607.8703720=0D<br>2021=0D<br>----=0D<br>Scrub typhus - N=
+epal (02): (BU)<br>http://promedmail.org/post/20210918.8679902=0D<br>Scrub =
+typhus - Nepal: (BT)<br>http://promedmail.org/post/20210829.8630550=0D<br>2=
+020=0D<br>----=0D<br>Scrub typhus - Nepal (04): (CH)<br>http://promedmail.o=
+rg/post/20200928.7819279=0D<br>Scrub typhus - Nepal (03): (DR)<br>http://pr=
+omedmail.org/post/20200831.7732119=0D<br>Scrub typhus - Nepal (02): (BT)<br=
+>http://promedmail.org/post/20200813.7675023=0D<br>Scrub typhus - Nepal: (G=
+A)<br>http://promedmail.org/post/20200423.7260493=0D<br>2018=0D<br>----=0D<=
+br>Scrub typhus - Nepal: more cases since earthquake, homelessness,<br>2015=
+-2018 http://promedmail.org/post/20181105.6125988=0D<br>2017=0D<br>----=0D<=
+br>Scrub typhus - Nepal (11): (CT) more cases<br>http://promedmail.org/post=
+/20171020.5394166=0D<br>Scrub typhus - Nepal (10): (CT, SY)<br>http://prome=
+dmail.org/post/20170904.5294698=0D<br>Scrub typhus - Nepal (09): (KT) urban=
+ cases<br>http://promedmail.org/post/20170830.5283279=0D<br>Scrub typhus - =
+Nepal (08): (KT) more cases<br>http://promedmail.org/post/20170818.5259778=0D=
+<br>Scrub typhus - Nepal (07): (NA, DK) fatal<br>http://promedmail.org/post=
+/20170810.5239887=0D<br>Scrub typhus - Nepal (06): (GU, NU)<br>http://prome=
+dmail.org/post/20170709.5161628=0D<br>Scrub typhus - Nepal (05): (CT, NP)<b=
+r>http://promedmail.org/post/20170627.5135389=0D<br>Scrub typhus - Nepal (0=
+4): (MO, SS)<br>http://promedmail.org/post/20170613.5102100=0D<br>Scrub typ=
+hus - Nepal (03): (BA)<br>http://promedmail.org/post/20170608.5093274=0D<br=
+>Scrub typhus - Nepal (02): (RO)<br>http://promedmail.org/post/20170217.484=
+6555=0D<br>Scrub typhus - Nepal: winter season<br>http://promedmail.org/pos=
+t/20170111.4757908]<br>.................................................ll/=
+sb/tw/jh<br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3D-5EbQMp7UEbcCuG_uTIiRplJHaAkdlIIWhsy0_XusDZoMDAwdT=
+AwMPiWyWpaTTyDCbjxjEtnZyAJqKq6EWYL1BcRLGbhfE6IHyixiDHwpsrbfQZJFY48fqG8ps-93=
+ceNv5VgAF3XCZVP2p7hTrBIx9hahpkFqcyPuwoXZEge8wWBuCZE4E6FcwZaA7JJtW1WPCZFz_uy=
+UNZZ3vFZh960DVpGwI7S23EJawRngf7R1SP0tDawhBD41sWVKuS92CEIBl5MEemvi_q3UQvfFLh=
+4QDQznfEzKFynkjrLzBq5U1cEko1-3Mw9gk886afr5IRqSyuk_lNa4IZXwBbeICsSnfxpWTkG9d=
+mggW2Yor0isTm0BybYgnLCWzp0c_7kWM7MGN3bEWaDq6kwZzLcu6SD4x_zueZHiubSjhV6-PyvQ=
+1MboQ6OWGu0br7zl28vZUbUNwZiQ_4lMs0k5_98yHOO1aiO3MeWmmsyX7z2axbqIOrW41nEaHfw=
+bvUeQK5ZVCs4X_zntvENZ_f6vFhKswQ3e2BzLJ3aLDNpAN699VCrZn579BGojQj92cb6yCR-co7=
+7PsrBFTmaZSBtxKp-2W_SkIt55KZc_YD1QoKwndJDlaPGPwPeXuch_5Y9bHE1f-QpWyDPHpxg4x=
+B2SL25FcnBqJVQd3lx9lYIsiV5OhF_7hwMxag5qXsViIU8eYhpHRl4yhRovo5LGaGGsn46_rtGU=
+eyV3El3w6SXYdxtODHBTZJWcWzHpOg7Yky_QoyECOqpqF4I2Fo1oisDacoJV0YS-LfAjPbSNVBb=
+A7cPxm3-BXZR2iCQo0J7G4IJFAKs2kDEwBYqxSvynSZ6EAXfc3GPkWPpOiiFAxmQPl-O60O7Oqc=
+RxQjTqHV_-X6SebaTOupiV3NSvQq-Hz_1_UwoZ5RtOIHJR8WjXiJDGtQrj-mIir2kmX3pV-PYHd=
+Ybex7o8F-mFCy1kFqjAhw7IuCN6oPg5CI3cWzDEsSmG9LN1od5ejfT-mBD8du5mm607JQATX3n8=
+Yiji7STV_Ag3LB4EBpT9L9YlE8AAMSBEDfyU6bNOr34cuEi_2eFNKENO10rDGfL40cgNOdZWW_a=
+FatbdaahGONs9fBP2-59QyzhK_GduI668qRtOyrp_z7L733dteeHmwOiEzsksvGomszjtpivHXv=
+AdV5OqKWRc9vfSxJ2a1F6Al0WKiW0RhfX0y2VQTs7h2lxtguOZWY=3D" target=3D"_blank" =
+class=3D"Unsubscribe--unsubscribePreferences" style=3D"font-family:sans-ser=
+if;text-decoration:none;">Unsubscribe Preferences</a></div><br>############=
+################################################<br>#######################=
+#####################################<br><br><img src=3D"https://u19268662.=
+ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/430/rvIOJ83KQnCT8P1z9OQFkg/ho.g=
+if" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"height:1px !imp=
+ortant;width:1px !important;border-width:0 !important;margin-top:0 !importa=
+nt;margin-bottom:0 !important;margin-right:0 !important;margin-left:0 !impo=
+rtant;padding-top:0 !important;padding-bottom:0 !important;padding-right:0 =
+!important;padding-left:0 !important;"/></body>
+</html>
+--8834174483c9b191137cd6e0bab76fbcde9963228710aab632cb8aebbd66--

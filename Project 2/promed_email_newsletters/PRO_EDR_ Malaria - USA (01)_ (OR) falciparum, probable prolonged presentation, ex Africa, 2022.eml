@@ -1,0 +1,760 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a98:c004:0:b0:1eb:e128:bbe3 with SMTP id l4csp2546093eic;
+        Fri, 12 Jan 2024 17:19:15 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IGfbi6Em7EVKCIofyNw86LjzNTCAriL+QrTehoR8IjGJ2sKzzb8FUwi3Tare80nTvFYhPCN
+X-Received: by 2002:a05:620a:8204:b0:783:36ac:3b4b with SMTP id ow4-20020a05620a820400b0078336ac3b4bmr1970414qkn.157.1705108754779;
+        Fri, 12 Jan 2024 17:19:14 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1705108754; cv=none;
+        d=google.com; s=arc-20160816;
+        b=SK7dKJqzBET0UASbfNM2sRUJL5g9/7npmScMQ8RXZn+pJa409yg28g9A2wArZqpZZ+
+         9C3sC4TIE/y0Zwop8wgNIcTksW4TM2ZM9XTQ+LNnsY0fGbGWasfckf8QCZf1u6j81IS7
+         UdFNo+B6LljNoeeWB441pL7IMi0vpCRJ0gVvqps1w//nW3i8t47usdOTPHrFcSt8NsSC
+         pF3ZSwLjjgO46h1t68NU28tfQqT17dRIMdDlg4i2JGI0z6PpIsEQZcpK91lLrcG9fAbV
+         jtXtzHUy/7V5s6QJv3hl4RmbLunOCfj6rWSm93oBzSyS/FFTh1CO3ub8J1xS3epbX6r2
+         ceJw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=Srm5tQTvpnNwJyo4bAVdw3Q9UhyADr2iTiDPwGNfm/w=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=xJUJJUGMddaj+oDue+SvMruUqCgOpDKLBEdAs45OqUbziLCV7pQeShdDR7WhnsIpAv
+         ovnMke8hGTFbO625TQjQjXbDQxRtdDSBpSPpjf/1kIU1bWt+yJvnXz08FfMbBdhbuVgp
+         FL77p2AxWGaYkVZRkN1lwCiz3zb8e3bFDEgEJq8z4uu7Qkinn5rpLPHQ6K0VxNu9znEX
+         9z+tgtL0kQcXByJuxib47YW9JbpgZdUn/XkkqDqasL3TX4GVZccHBcbUjCCdf5AoK/dP
+         8bdGW4w6a5Yzz3I/Vi2XJ+bhke078vSmVdyIFx+QH22bH7YMbrqL+Xx9FBX6WiJWdxn8
+         Dm6A==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b="cr/xht/7";
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=qbSEmM8J;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id cz7-20020a05620a36c700b0078335f7a17esi3852924qkb.581.2024.01.12.17.19.14
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 12 Jan 2024 17:19:14 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b="cr/xht/7";
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=qbSEmM8J;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=Srm5tQTvpnNwJyo4bAVdw3Q9UhyADr2iTiDPwGNfm/w=;
+	b=cr/xht/7DtJjlxyjV96XI5kw+xUKAzVzIOxYhhR3ip9wD8RJCP5gy1ZuCA3X7l7U85q6
+	ryj4BcbfHJJeSQIJ476dhI3pMdGrkxFkufsPzKo1KwiGy7MoElvaelh0F0x6m5PLoDKr9O
+	7NIcJzWVCHELmHO8c4wqqxEaqpb+1wFIQyRzKDsWlcGfb1dPqXvLjH2ax7EN1pZIMd33v0
+	E64dx9kBQspjGHED6oizxmdO4baLII8+S+4yoRHq0yvteaqe3Rj88l/X3/qCL5pPuO/XgF
+	ko1hrCAMcPnnQNoqr9vHvptR8oX/sGG1Og57CSaWkxzZymp30niMxTl78cBTDzbw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=Srm5tQTvpnNwJyo4bAVdw3Q9UhyADr2iTiDPwGNfm/w=;
+	b=qbSEmM8JVBXuEThR1WLBeBsHrQPk1hbsH4g0Xc5vErqH/6lxV4yxTe7Vkqw5lbs8camu
+	RN40Erekr9KzA18dO4boCzjqZ97LsysRvR/mk6hXVfPnPju+O4qxYvfUdCW9HwpmZnq8Nc
+	l10bq9kC6gNBPz1IuBPkHbBeBsDbjIbjA=
+Received: by filterdrecv-d6576cdfc-9ltz8 with SMTP id filterdrecv-d6576cdfc-9ltz8-1-65A1E510-E
+        2024-01-13 01:19:12.098489009 +0000 UTC m=+7540640.587410551
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-8 (SG) with HTTP
+	id tqOIwj7NTIO7VVE0mUlNzQ
+	Sat, 13 Jan 2024 01:19:12.057 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=d0b0ea669245c784f4779ab888b4e814fada2d89f33e5ff2bda48f61a55c
+Date: Sat, 13 Jan 2024 01:19:14 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <tqOIwj7NTIO7VVE0mUlNzQ@geopod-ismtpd-8>
+Subject: PRO/EDR> Malaria - USA (01): (OR) falciparum, probable prolonged
+ presentation, ex Africa, 2022
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iBuKdDm5nbv22tDngmszzu93Ibtn7CwA+JYi5Bt?=
+ =?us-ascii?Q?yzqKpnbopDRkVDOC6qtk94CKK=2Ff2thrvYAwy2iP?=
+ =?us-ascii?Q?5DDCWJEwjYVc3Nn2qSrdpg9NH2rapD4NQzTmvvr?=
+ =?us-ascii?Q?8PvmM3cNGgchIk14S2XqqMPSB7A0fhtu3Hhy=2FX1?=
+ =?us-ascii?Q?9K4f37tThEpy5RShGCXCRAfM3UjfQuiSf3I2QE?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUhc93xcG=2F095a5S4+mt=2FG?=
+ =?us-ascii?Q?uYUpctI=2FOGD2dwyi+uvm2j4FCdvuw0l9zcHM8iA?=
+ =?us-ascii?Q?mojOvTXq7jOpDFFNtfsYkHQYACEW8pq1BXXqYmH?=
+ =?us-ascii?Q?oGTsnt6QpE2ZV5WVqnpwfXWoLXx7+4ZM=2FaYN+qt?=
+ =?us-ascii?Q?GNZkSP63GZwz4VLKO7PHLEYLALYK0ajfSCqIdLr?=
+ =?us-ascii?Q?u7+z90GYPhyOKnnIJpKTxso9Vfz6kJjGiiVv+eG?=
+ =?us-ascii?Q?C2GD7E1j3=2FqGvlLPf3Hfajqllx4O8Q3atcmvChI?=
+ =?us-ascii?Q?Z9fJ0j+SxatRwlJospB4KQvw8o=2Fn4r97QuRc9gh?=
+ =?us-ascii?Q?tI5yOuhFttgkPklptgO+wfLSu=2FhXToi5Icc6HEq?=
+ =?us-ascii?Q?Mg56cJ6ThO=2FKzS4yMGQyjvvlujvd8JMA4SVIsdi?=
+ =?us-ascii?Q?wQeudSvK9h4KRBjvei5f33uqJDJwUCXrBVNuhuO?=
+ =?us-ascii?Q?g5F2dSTC11byIFaL3WURCPCYaYJtl9GVgTLGWZo?=
+ =?us-ascii?Q?WL86hGbST=2F81Idl9J+xxiMuhK9Du03OnYYcyvvu?=
+ =?us-ascii?Q?olA8XBP=2FIe6Ap4qS3G2eKCSNwcUCeznPHxiRPRL?=
+ =?us-ascii?Q?kRJFaUnMJyCzZkSAiSNTWlcpKUnpyRoGWCw4t3W?=
+ =?us-ascii?Q?RdxURtSe2NhLBtKds3M4H8+qQYWyhatwHz9bPEy?=
+ =?us-ascii?Q?WUgZxZbb4fcpPMpniFb6gk+jIZcrDilvZ=2FudjcM?=
+ =?us-ascii?Q?OCIlRaPyabyxe0sQfupFZK928CfD84=2F01xlqLi7?=
+ =?us-ascii?Q?EKnsk5qCEH0+G92N0Wcx2U+JUkiO9hUpVH3nOxd?=
+ =?us-ascii?Q?zQoRk1JC0P9cHy6=2FoYn9KPp1dQ=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2EQxMYmzfG3?=
+ =?us-ascii?Q?MCR3A4peDef5ODyonQIoL6XW9JyPBl1lQNoMDAw?=
+ =?us-ascii?Q?dTAwMIVyHhK=5FyS=5FGgnPr=5FbT86ATWVY2plPmf4Ba?=
+ =?us-ascii?Q?E=5FhRPisOC3-XEb8R3tATeBamNKb01DR2Z15rvBG?=
+ =?us-ascii?Q?-iJvzDznlllb2hzE2zrxlbkyAFCtenWBLPTuW9L?=
+ =?us-ascii?Q?20B7NIC0SHR2LZxcw=3D=3D=2EAAmrIhLgmnXmfmefSaj?=
+ =?us-ascii?Q?7f30nV2ergm8VMKjpzcUS4L1oMDAwdTAwMEA=5FvY?=
+ =?us-ascii?Q?HKuAW-og=5FfwrOi6cboD96fPo64tSdCoY1kblKZe?=
+ =?us-ascii?Q?9CumYRwLXneSxYy7fIeFZED-GSAD-w-0Il7d-KZ?=
+ =?us-ascii?Q?VPs27eHnczOIUlMfpR1TzQO70OhIfoe03rda0g4?=
+ =?us-ascii?Q?lticmgxvDjQ=5Fyg3EMiWnwbe7Gy4oE=5Ff7mWssFOJ?=
+ =?us-ascii?Q?8g0sM-HEjM4mWEUfCjkGqa24A=5FiJmnUGSRr0drb?=
+ =?us-ascii?Q?wM79VkbLl=5FxPN0EroYHeX3zaJgLmbVC06zlb805?=
+ =?us-ascii?Q?o8c7ln6tnDHQIBlH1n0=5FaylveNakoXOPLzyDHWp?=
+ =?us-ascii?Q?1Z2UKxCHRXexzJnz8lEUKcd1sMnTht3mdoRm03h?=
+ =?us-ascii?Q?R-oqtPCO=5FWH9a9Lz9KwqXeaU2zaO1YPzP0pFR3k?=
+ =?us-ascii?Q?bWxJHHUIH9voSUcJcOW=5FCK6z1znJWKGsgRi2PnF?=
+ =?us-ascii?Q?pGmd=5F=5FOnUOuhaFNd8mLkjAqRzV=5FIRUl8Y4fxEIQ?=
+ =?us-ascii?Q?io4CM0y9AbdQD70uvjnI3noaFREPRMykRqbr26R?=
+ =?us-ascii?Q?yiEjhOc7fTmTM1x1chCY1qWeQ3HihXG2zIdNdaE?=
+ =?us-ascii?Q?EgcdOfliaRPqhUm=5FYLqfnfx342xCvatmIN9OnDq?=
+ =?us-ascii?Q?cZ7=5Fr5oxvnkOrs3juPVl0CX38JbqWcg-7NS0R6q?=
+ =?us-ascii?Q?DkVU6zz12SIpzblWHg7HPdLgOCfGRysS2aLtepJ?=
+ =?us-ascii?Q?6zHBbUf-ucls0-Yu5C8QbOt24T59IB17w1ThkbE?=
+ =?us-ascii?Q?qPSDHbEBHAM4lXMqVVzOVaw8Pc1S0wYRlxl5o5A?=
+ =?us-ascii?Q?PVl3IS75NmmGQEIOb0tRYue9Td20MoTWvJBQGen?=
+ =?us-ascii?Q?7lBXD30IhhPD=5F-VgbsVJkG9vl-TxCnXNhAmucwn?=
+ =?us-ascii?Q?EAu2L3CU3qVLLZnKzqeoYgWHaHi6ZVuyS0J8toJ?=
+ =?us-ascii?Q?aS0uNuO2MYTLSV4EdOiapnJWJHEEBsSUIMRysZZ?=
+ =?us-ascii?Q?xbrPCrzuYFp4-VcDiFVgfayQI2qV1YwLqWiR7qQ?=
+ =?us-ascii?Q?X5kzSQVWAYViXaxSj0kkECrkTfkiRGkLa6qMViB?=
+ =?us-ascii?Q?SsteSPm-yHcpAHathW=5FaccnkbVmauRPNoQzwxOB?=
+ =?us-ascii?Q?ZEVvATaBAWU-6q=5FrJuCKp-Y=3E?=
+
+--d0b0ea669245c784f4779ab888b4e814fada2d89f33e5ff2bda48f61a55c
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=us-ascii
+Mime-Version: 1.0
+
+MALARIA - USA (01): (OREGON) FALCIPARUM, PROBABLE PROLONGED
+PRESENTATION, ex AFRICA, 2022
+***************************************************************************=
+**************
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+Date: Sat 16 Dec 2023
+Source: Emerging Infectious Diseases [edited]
+<https://wwwnc.cdc.gov/eid/article/30/1/23-1231_article>
+
+
+Citation: Drummond W, Rees K, Ladd-Wilson S, Mace KE, Blackall D,
+Sutton M: Delayed _Plasmodium falciparum_ Malaria in Pregnant Patient
+with Sickle Cell Trait 11 Years after Exposure, Oregon, USA. Emerg
+Infect Dis. 2024;30:151-154.
+---------------------------------------------------------------------------=
+-----
+_Plasmodium falciparum_ malaria is a major cause of illness and death
+worldwide (1). In disease-hyperendemic areas, most of the population
+are parasitemic (2). Chronic exposure results in partial immunity, and
+sickle cell trait reduces the severity of infection (3,4). Delayed _P.
+falciparum_ malaria after immigration to nonendemic countries has been
+reported in the literature, and pregnancy is the most common risk
+factor for this unusual presentation (5).
+
+Former residents of disease-endemic areas who have _P. falciparum_
+malaria without recent travel risk present a public health challenge
+because locally acquired mosquito-borne transmission of the parasite
+must be ruled out, given the widespread distribution of _Anopheles_
+spp. mosquito vectors in the United States (6-8). We report the
+clinical and public health investigation of a case of delayed _P.
+falciparum_ malaria in a pregnant woman 11 years after immigration to
+the USA from sub-Saharan Africa.
+
+The Study
+---------
+The patient was a 20-30-year-old multiparous pregnant woman from
+sub-Saharan Africa who came to an emergency department at Providence
+Portland Medical Center, Portland, Oregon, USA, during her 3rd
+trimester; she had inadequate prenatal care and a 2-week history of
+loose stools and abdominal pain before defecation. She reported chills
+and night sweats without fevers. She denied nausea, vomiting,
+epigastric pain, runny nose, cough, sore throat, lymphadenopathy,
+dysuria, or vaginal discharge. The patient was tachycardic; fetal
+heart rate (FHR) tracing showed a normal FHR, moderate variability,
+accelerations, and late and variable decelerations. Initial laboratory
+evaluation on the woman showed microcytic anemia, leukocytopenia,
+thrombocytopenia, and an increased level of bilirubin (Table [for
+Table and Figures, see original URL - Mod.LL]).
+
+Testing results were negative for HIV, SARS-CoV-2, influenza,
+hepatitis B, hepatitis C, rubella, and syphilis. The result of a rapid
+point-of-care BinaxNOW malaria test (Abbott Laboratories,
+<https://www.globalpointofcare.abbott>) was positive for _P.
+falciparum_. Thick and thin malaria blood smears showed _P.
+falciparum_ (Figure 1). Initial parasitemia was 0.2%. We submitted
+blood smears to the Division of Parasitic Diseases and Malaria
+diagnostic laboratory, Center for Global Health, Centers for Disease
+Control and Prevention, and _P. falciparum_ morphologic identification
+was confirmed. A pretreatment blood sample was not available for
+molecular speciation or whole-genome sequencing.
+
+We initiated a 3-day course of artemether/lumefantrine, and percentage
+parasitemia decreased to 0.1% within 24 hours. No parasites were
+observed by day 3 of therapy. The patient received intravenous fluids
+and 1 unit of packed red blood cells. Maternal tachycardia resolved,
+and FHR tracing displayed normal FHR with moderate variability,
+accelerations, and resolution of decelerations. The patient's anemia
+and thrombocytopenia improved, and her leukocyte count normalized. The
+patient gave birth to a healthy post-term infant without evidence of
+placental insufficiency. Placental pathologic analysis showed sickled
+maternal erythrocytes, pigment in perivillous fibrin, and mild
+lymphocytic deciduitis without immunohistochemical evidence of
+parasites.
+
+The patient immigrated to the USA with her family 11 years before she
+sought care. She had lived in a metropolitan area of Oregon during the
+5 years before she sought care and denied any history of foreign or
+domestic travel. The patient reported a history of malaria during
+childhood 19 years earlier, for which treatment was received while
+living in sub-Saharan Africa. She denied any history of blood
+transfusions or recent insect bites. The most recent visit to the
+patient's home by a person from sub-Saharan Africa occurred 2 years
+before her illness. She had a history of anemia during previous
+pregnancies, and her 1st pregnancy was complicated by thrombocytopenia
+and preeclampsia. She had a history of sickle cell trait diagnosed by
+hemoglobin fractionation.
+
+We explored the plausibility of local malaria transmission by
+evaluating current mosquito surveillance data and conducting case
+finding with temporospatial proximity to the case. The investigation
+was anchored to month of symptom onset (September 2022). We used
+mapping to visualize spatial associations between mosquito
+surveillance, malaria case reports, syndromic surveillance, and death
+surveillance (Figure 2).
+
+_Anopheles freeborni_ and _An. punctipennis_ mosquitoes were
+identified during Washington County Public Health's 2022 Mosquito
+Control trapping season, May-September 2022. However, during the
+period of our investigation, temperatures had decreased, and
+_Anopheles_ mosquitos were not active in the area. _P. falciparum_
+case finding within the statewide reportable disease database showed 1
+travel-associated malaria case with an onset 2 months before this
+patient and about 4 miles [6.4 km] away. There was no epidemiologic
+link between the cases; whole blood was not available to identify
+microsatellite parasite signatures. A search of Oregon's Electronic
+Surveillance System for the Early Notification of Community-Based
+Epidemics for emergency department encounters with a discharge
+diagnosis of fever of unknown origin (FUO) showed greater than
+expected activity in the week of the patient's onset of symptoms (9).
+However, the trend was not isolated to the proximity of the
+case-patient, and many encounters noted manifestations consistent with
+viral infections.
+
+An Early Notification of Community-Based Epidemics query for mosquito
+bites and arboviral diseases did not show greater than expected
+activity. A vital records query for deaths with an associated
+diagnosis of FUO showed 1 death temporospatially related to the case.
+Medical record review by the Malaria Branch, Center for Global Health,
+Division of Parasitic Diseases and Malaria, Centers for Disease
+Control and Prevention, ruled out the death as related to malaria due
+to clinical and laboratory incompatibility. Thus, there was no
+evidence to support local mosquito-borne transmission.
+
+Conclusions
+-----------
+We report a case of _P. falciparum_ malaria in a pregnant woman 11
+years after immigration from sub-Saharan Africa to the USA. To assess
+for local mosquito-borne transmission, a joint state and local public
+health investigation examined mosquito surveillance data, performed
+case finding for additional malaria cases, and reviewed syndromic
+surveillance and death surveillance for FUO diagnoses with
+temporospatial proximity to the case. This comprehensive assessment
+enabled the public health departments to effectively evaluate local
+mosquito-borne transmission and emerging local risk.
+
+Although delayed _P. falciparum_ illness has been documented, it
+remains rare, and the patient's latency period was unusually long at
+11 years. In 1 case series and literature review, pregnancy was the
+most prevalent risk factor associated with delayed presentation and
+reports of delayed presentation in pregnant women ranged from 3 months
+to 4 years (5). Delayed _P. falciparum_ in persons from
+disease-endemic regions is believed to arise from persistent low-level
+parasitemia and decaying _P. falciparum_-specific immunity (5). In
+pregnant women, pregnancy-related immunosuppression, sequestration of
+_P. falciparum_ parasites in the placenta, and, possibly, placental
+antigen expression might increase the risk for delayed _P. falciparum_
+presentation (10-12). The patient's sickle cell trait might have also
+contributed to the latency of her delayed presentation. Sickle cell
+trait protects against severe disease from _P. falciparum_ infection
+and is associated with lower parasite densities and delayed malaria
+(13,14).
+
+Most malaria cases in the United States are related to travel to a
+disease-endemic region. However, malaria can rarely be acquired
+locally through mosquito bite, transfusion, or other parenteral route,
+transplantation, or during pregnancy or childbirth (15). Our
+case-patient had no known history of transfusion or transplantation,
+and her infant did not show development of malaria. Although the
+patient denied traveling to a disease-endemic area, she was not
+available for follow-up, and we were unable to verify travel history
+through a passport review. Therefore, undisclosed travel to a
+malaria-endemic country remains an unlikely possibility.
+
+Malaria should be considered in all patients from disease-endemic
+regions who have compatible symptoms regardless of time since
+exposure. Clinical suspicion should be heightened in persons who have
+underlying risk factors for delayed manifestation, including
+pregnancy, immunosuppression, and sickle cell trait. To rule out the
+possibility that a patient without recent travel risk acquired malaria
+locally, rigorous public health investigation is required. Components
+of an investigation might include medical and travel record review,
+environmental surveillance, case finding, and syndromic and death
+surveillance with consideration of temporospatial proximity to the
+case.
+
+References
+----------
+1. Hay SI, Guerra CA, Tatem AJ, Noor AM, Snow RW: The global
+distribution and population at risk of malaria: past, present, and
+future. Lancet Infect Dis. 2004;4:327-336
+2. Smith DL, Guerra CA, Snow RW, Hay SI: Standardizing estimates of
+the _Plasmodium falciparum_ parasite rate. Malar J. 2007;6:131.
+3. Doolan DL, Dobano C, Baird JK: Acquired immunity to malaria. Clin
+Microbiol Rev. 2009;22:13-36.
+4. Williams TN, Mwangi TW, Roberts DJ, et al. An immune basis for
+malaria protection by the sickle cell trait. PLoS Med. 2005;2:e128.=20
+5. Dauby N, Figueiredo Ferreira M, Konopnicki D, et al. Case report:
+delayed or recurrent _Plasmodium falciparum_ malaria in migrants: a
+report of 3 cases with a literature review. Am J Trop Med Hyg.
+2018;98:1102-1106.=20
+6. Isaacson M: Airport malaria: a review. Bull World Health Organ.
+1989;67:737-743.
+7. Sinka ME, Bangs MJ, Manguin S, et al. The dominant _Anopheles_
+vectors of human malaria in Africa, Europe and the Middle East:
+occurrence data, distribution maps and bionomic precis. Parasit
+Vectors. 2010;3:117.=20
+8. Dye-Braumuller KC, Kanyangarara M: Malaria in the USA: how
+vulnerable are we to future outbreaks? Curr Trop Med Rep.
+2021;8:43-51.=20
+9. Burkom H, Loschen W, Wojcik R, et al. Electronic surveillance
+system for the early notification of community-based epidemics
+(ESSENCE): overview, components, and public health applications. JMIR
+Public Health Surveill. 2021;7:e26303.
+10. Kattenberg JH, Ochodo EA, Boer KR, Schallig HD, Mens PF, Leeflang
+MM: Systematic review and meta-analysis: rapid diagnostic tests versus
+placental histology, microscopy and PCR for malaria in pregnant women.
+Malar J. 2011;10:321.
+11. Mayor A, Moro L, Aguilar R, et al. How hidden can malaria be in
+pregnant women? Diagnosis by microscopy, placental histology,
+polymerase chain reaction and detection of histidine-rich protein 2 in
+plasma. Clin Infect Dis. 2012;54:1561-1568.
+12. Hviid L, Staalsoe T: Late recrudescence of _Plasmodium falciparum_
+malaria in pregnancy. Int J Infect Dis. 2006;10:412.=20
+13. Aidoo M, Terlouw DJ, Kolczak MS, et al. Protective effects of the
+sickle cell gene against malaria morbidity and mortality. Lancet.
+2002;359:1311-1312.=20
+14. Crompton PD, Traore B, Kayentao K, et al. Sickle cell trait is
+associated with a delayed onset of malaria: implications for
+time-to-event analysis in clinical studies of malaria. J Infect Dis.
+2008;198:1265-1275.
+15. Mace KE, Lucchi NW, Tan KR. Malaria Surveillance - United States,
+2018. MMWR Surveill Summ. 2022;71:1-35.
+
+--
+Communicated by:
+ProMED
+
+[I would guess that the clinicians were surprised that falciparum
+malaria was found here and some of the relapsing species were more
+likely considered. While _Anopheles_ mosquitoes do exist in much of
+the USA, their density is less than in malaria-endemic areas and more
+seasonal. It is indeed possible that the pregnancy and sickle cell
+trait were involved here as speculated. Clinicians should take note of
+such cases as if this occurred in the southern USA, during warmer
+months, secondary autochthonous cases may have occurred. Most of the
+deaths from malaria are related to falciparum, so-called malignant
+tertian malaria. - Mod.LL
+
+ProMED map:
+Oregon, United States:
+<https://promedmail.org/promed-post?place=3D8714202,239>]
+
+[See Also:
+2023
+----
+Malaria - Americas (16): USA (MD) autochthonous, falciparum, CDC
+http://promedmail.org/post/20231012.8712600
+Malaria - Americas (15): (Canada) ex Philippines, Plasmodium knowlesi
+http://promedmail.org/post/20231007.8712508
+Malaria - Americas (14): USA (AR) autochthonous
+http://promedmail.org/post/20231005.8712469
+Malaria - Americas (13): Costa Rica (PU)
+http://promedmail.org/post/20230929.8712370
+Malaria - Americas (12): USA (FL, TX) CDC
+http://promedmail.org/post/20230908.8712013
+Malaria - Americas (11): USA (MD) 1st report in 40 years
+http://promedmail.org/post/20230819.8711760
+Malaria - Americas (11): Colombia, increase in incidence
+http://promedmail.org/post/20230723.8711323
+Malaria - Americas (10): USA (FL) autochthonous
+http://promedmail.org/post/20230718.8711230
+Malaria - Americas (09): USA (FL, TX) autochthonous, update
+http://promedmail.org/post/20230709.8711042
+Malaria - Americas (08): USA (FL, TX) autochthonous, CDC, alert
+http://promedmail.org/post/20230629.8710856
+Malaria - Americas (07): USA (TX) autochthonous
+http://promedmail.org/post/20230625.8710761
+Malaria - Americas (06): USA (FL) autochthonous, RFI
+http://promedmail.org/post/20230623.8710719
+Malaria - Americas (05): Colombia, Venezuela
+http://promedmail.org/post/20230501.8709785
+Malaria - Americas (04): USA, imported, ex Liberia, fatal
+http://promedmail.org/post/20230427.8709737
+Malaria - Americas (03): (Costa Rica, Panama)
+http://promedmail.org/post/20230424.8709665
+Malaria - Americas (02): Costa Rica (LI)
+http://promedmail.org/post/20230409.8709416
+Malaria - Americas: Panama, increase
+http://promedmail.org/post/20230315.8708952]
+.................................................ll/may/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3Dd_uWFMhtd4xk-U0R7G5MzvWhcAH9-GcIwnGggA1Fd55oMDAwdTAwMONdKy4=
+552qcNoeR-J5J2dFFkJQwyKOVOksuTSuoo5FmJMwleQFiN_jzgQxsJBOiscZeJsGPDGGvHK5rhW=
+lTzRrEFG2bgiFsXiyHx9PHEG4xSon_kf2aUoPAQuZaML5ihH-fwTiQ4ffE7zkWcEkcXutwTOC5v=
+ggFxfQ_8KR5iu4zWyoYraZjJd6b0f15ljss8Gym8SjhJBZRLp932Tdi7J4-YFP_aeZBPywsX7iW=
+XCid6yyEMj367b_UDhLXnYDZtR6YpH9G3LhR5Plg-vD42zWj1ry1HcPAaTeMC6qXVucYljC0nFp=
+aZHFZxUKKPwG9Vz-hDn8-mA-EqPqiBY0uiT5ZXeLe-uz64ioY_POJl8EWIwRPPO3ZtkZeRPevZC=
+FglWRc_IVTv78VweD1jSgm8HXPto7UjvBItMQg0iUrxFlaogN2cwtUjqMAq5DKuWq43gLKRcYND=
+l20Ijwa_aUc4bjprs0IIWUaqU2gznrVGaATXokckauD_dwVaTG3UuwTSdVbD3pS7gu0mCb8jDYM=
+rvWtob_eCwphjUS1JFNxO-NOFYgFWJVpmo3eKgzfWY3YrTvg-bykn9mtTbtH6ieo0tcufOy8StH=
+dl_yuDcRgIVPcbaYYFPUlBz-OJHBzx8SZjCdkBHPNCUEwyTx2J9VBdKMUmNBtq-vZd0L5pHP1xd=
+Z68KkEIZoBphLSFo6MNLL2cLYsDOqJEnK0tIQEnhlf46zMFsxxQ69fwwQz__eLFkJsTYUvp3Xcm=
+9jH-Wn1DUdC3L-VUqUUhxDfVoM0U5i1GatKV0vri-IFKB7jS6Al0YbzK9oIJeEc5ehM5YCpZMyj=
+FmszWm8mu-yxS3f_Hbu4Mn-NMmUDhR49RiAnZOXquvETBwajMsltRcrVd9IQk7ezqvimZ58xs6r=
+roKaRnIscJspg9kyHsO7eE3EkkA0qHwgU66TDXoNfr8J2XD1ptndz2DxT-ILqDVu4isCnxGkECr=
+ZQcD0wH0iPtD2IFhhW0JimvSuu8KNNJviVX2DLqhhLl0YN2SzqxpDmkmUZ6RCDm21qno5B7Nr7F=
+6TrSeDgLpXBSZh5rnzA6I2g1Tg2HdxCv6nZ_FEWSNbwL2wU-IMep8PGhiTPawtXpjQs4082p1d0=
+b0j7yOr3wBajQAgN87sb3XOmfxnE8OiPNaZnpNSSsKc=3D )
+############################################################
+############################################################
+
+--d0b0ea669245c784f4779ab888b4e814fada2d89f33e5ff2bda48f61a55c
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>MALARIA - USA (01): (OREGON) FALCIPARUM, PROBABLE PROLONGED<br>PRESEN=
+TATION, ex AFRICA, 2022<br>************************************************=
+*****************************************<br>A ProMED-mail post<br><a href=
+=3D"https://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisIijpefK5PNj=
+W-mL-YZGnfgDOxU1G3gjwnPSi2Tfv3HA/42y/CVCZF_kyTxizedkCkILMqQ/h0/FXCkHTMZ9F2q=
+dSFnw2q9EhpeDCTN5dixw2IA0FfuJeE">http://www.promedmail.org</a><br>ProMED-ma=
+il is a program of the<br>International Society for Infectious Diseases<br>=
+<a href=3D"https://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisCT5t=
+pD4Upm3qyMCbcYSQvc/42y/CVCZF_kyTxizedkCkILMqQ/h1/cbrWtdDwwqfKYIPVlDejj9uf1x=
+ZAfgFEndWvwGwttys">http://www.isid.org</a><br><br>Date: Sat 16 Dec 2023=0D<=
+br>Source: Emerging Infectious Diseases [edited]=0D<br><a href=3D"https://u=
+19268662.ct.sendgrid.net/ss/c/TLh_csrC34X_iXpbYoMam_OJx_qp6nDkdVjqCfg9UFkqM=
+8A_1R2EjeAkk2CTC04QTqDgNzn4DIHN_mQ3PavTSw/42y/CVCZF_kyTxizedkCkILMqQ/h2/BnN=
+-f5fj7hWE8s_-33UxFXPKtqViov6fVS4mX5Fbg_c">https://wwwnc.cdc.gov/eid/article=
+/30/1/23-1231_article</a>=0D<br>=0D<br>=0D<br>Citation: Drummond W, Rees K,=
+ Ladd-Wilson S, Mace KE, Blackall D,<br>Sutton M: Delayed _Plasmodium falci=
+parum_ Malaria in Pregnant Patient<br>with Sickle Cell Trait 11 Years after=
+ Exposure, Oregon, USA. Emerg<br>Infect Dis. 2024;30:151-154.=0D<br>-------=
+-------------------------------------------------------------------------=0D=
+<br>_Plasmodium falciparum_ malaria is a major cause of illness and death<b=
+r>worldwide (1). In disease-hyperendemic areas, most of the population<br>a=
+re parasitemic (2). Chronic exposure results in partial immunity, and<br>si=
+ckle cell trait reduces the severity of infection (3,4). Delayed _P.<br>fal=
+ciparum_ malaria after immigration to nonendemic countries has been<br>repo=
+rted in the literature, and pregnancy is the most common risk<br>factor for=
+ this unusual presentation (5).=0D<br>=0D<br>Former residents of disease-en=
+demic areas who have _P. falciparum_<br>malaria without recent travel risk =
+present a public health challenge<br>because locally acquired mosquito-born=
+e transmission of the parasite<br>must be ruled out, given the widespread d=
+istribution of _Anopheles_<br>spp. mosquito vectors in the United States (6=
+-8). We report the<br>clinical and public health investigation of a case of=
+ delayed _P.<br>falciparum_ malaria in a pregnant woman 11 years after immi=
+gration to<br>the USA from sub-Saharan Africa.=0D<br>=0D<br>The Study=0D<br=
+>---------=0D<br>The patient was a 20-30-year-old multiparous pregnant woma=
+n from<br>sub-Saharan Africa who came to an emergency department at Provide=
+nce<br>Portland Medical Center, Portland, Oregon, USA, during her 3rd<br>tr=
+imester; she had inadequate prenatal care and a 2-week history of<br>loose =
+stools and abdominal pain before defecation. She reported chills<br>and nig=
+ht sweats without fevers. She denied nausea, vomiting,<br>epigastric pain, =
+runny nose, cough, sore throat, lymphadenopathy,<br>dysuria, or vaginal dis=
+charge. The patient was tachycardic; fetal<br>heart rate (FHR) tracing show=
+ed a normal FHR, moderate variability,<br>accelerations, and late and varia=
+ble decelerations. Initial laboratory<br>evaluation on the woman showed mic=
+rocytic anemia, leukocytopenia,<br>thrombocytopenia, and an increased level=
+ of bilirubin (Table [for<br>Table and Figures, see original URL - Mod.LL])=
+.=0D<br>=0D<br>Testing results were negative for HIV, SARS-CoV-2, influenza=
+,<br>hepatitis B, hepatitis C, rubella, and syphilis. The result of a rapid=
+<br>point-of-care BinaxNOW malaria test (Abbott Laboratories,<br><a href=3D=
+"https://u19268662.ct.sendgrid.net/ss/c/TLh_csrC34X_iXpbYoMam00lCk7WKceNrue=
+QJT7RGIfOMxFg0NXim5TkLF5JOkvx/42y/CVCZF_kyTxizedkCkILMqQ/h3/a2XLTJ6V4tDgpTV=
+NEf0tPNr_q8OwCEuQcQBX2bkHqtM">https://www.globalpointofcare.abbott</a>) was=
+ positive for _P.<br>falciparum_. Thick and thin malaria blood smears showe=
+d _P.<br>falciparum_ (Figure 1). Initial parasitemia was 0.2%. We submitted=
+<br>blood smears to the Division of Parasitic Diseases and Malaria<br>diagn=
+ostic laboratory, Center for Global Health, Centers for Disease<br>Control =
+and Prevention, and _P. falciparum_ morphologic identification<br>was confi=
+rmed. A pretreatment blood sample was not available for<br>molecular specia=
+tion or whole-genome sequencing.=0D<br>=0D<br>We initiated a 3-day course o=
+f artemether/lumefantrine, and percentage<br>parasitemia decreased to 0.1% =
+within 24 hours. No parasites were<br>observed by day 3 of therapy. The pat=
+ient received intravenous fluids<br>and 1 unit of packed red blood cells. M=
+aternal tachycardia resolved,<br>and FHR tracing displayed normal FHR with =
+moderate variability,<br>accelerations, and resolution of decelerations. Th=
+e patient's anemia<br>and thrombocytopenia improved, and her leukocyte coun=
+t normalized. The<br>patient gave birth to a healthy post-term infant witho=
+ut evidence of<br>placental insufficiency. Placental pathologic analysis sh=
+owed sickled<br>maternal erythrocytes, pigment in perivillous fibrin, and m=
+ild<br>lymphocytic deciduitis without immunohistochemical evidence of<br>pa=
+rasites.=0D<br>=0D<br>The patient immigrated to the USA with her family 11 =
+years before she<br>sought care. She had lived in a metropolitan area of Or=
+egon during the<br>5 years before she sought care and denied any history of=
+ foreign or<br>domestic travel. The patient reported a history of malaria d=
+uring<br>childhood 19 years earlier, for which treatment was received while=
+<br>living in sub-Saharan Africa. She denied any history of blood<br>transf=
+usions or recent insect bites. The most recent visit to the<br>patient's ho=
+me by a person from sub-Saharan Africa occurred 2 years<br>before her illne=
+ss. She had a history of anemia during previous<br>pregnancies, and her 1st=
+ pregnancy was complicated by thrombocytopenia<br>and preeclampsia. She had=
+ a history of sickle cell trait diagnosed by<br>hemoglobin fractionation.=0D=
+<br>=0D<br>We explored the plausibility of local malaria transmission by<br=
+>evaluating current mosquito surveillance data and conducting case<br>findi=
+ng with temporospatial proximity to the case. The investigation<br>was anch=
+ored to month of symptom onset (September 2022). We used<br>mapping to visu=
+alize spatial associations between mosquito<br>surveillance, malaria case r=
+eports, syndromic surveillance, and death<br>surveillance (Figure 2).=0D<br=
+>=0D<br>_Anopheles freeborni_ and _An. punctipennis_ mosquitoes were<br>ide=
+ntified during Washington County Public Health's 2022 Mosquito<br>Control t=
+rapping season, May-September 2022. However, during the<br>period of our in=
+vestigation, temperatures had decreased, and<br>_Anopheles_ mosquitos were =
+not active in the area. _P. falciparum_<br>case finding within the statewid=
+e reportable disease database showed 1<br>travel-associated malaria case wi=
+th an onset 2 months before this<br>patient and about 4 miles [6.4 km] away=
+. There was no epidemiologic<br>link between the cases; whole blood was not=
+ available to identify<br>microsatellite parasite signatures. A search of O=
+regon's Electronic<br>Surveillance System for the Early Notification of Com=
+munity-Based<br>Epidemics for emergency department encounters with a discha=
+rge<br>diagnosis of fever of unknown origin (FUO) showed greater than<br>ex=
+pected activity in the week of the patient's onset of symptoms (9).<br>Howe=
+ver, the trend was not isolated to the proximity of the<br>case-patient, an=
+d many encounters noted manifestations consistent with<br>viral infections.=0D=
+<br>=0D<br>An Early Notification of Community-Based Epidemics query for mos=
+quito<br>bites and arboviral diseases did not show greater than expected<br=
+>activity. A vital records query for deaths with an associated<br>diagnosis=
+ of FUO showed 1 death temporospatially related to the case.<br>Medical rec=
+ord review by the Malaria Branch, Center for Global Health,<br>Division of =
+Parasitic Diseases and Malaria, Centers for Disease<br>Control and Preventi=
+on, ruled out the death as related to malaria due<br>to clinical and labora=
+tory incompatibility. Thus, there was no<br>evidence to support local mosqu=
+ito-borne transmission.=0D<br>=0D<br>Conclusions=0D<br>-----------=0D<br>We=
+ report a case of _P. falciparum_ malaria in a pregnant woman 11<br>years a=
+fter immigration from sub-Saharan Africa to the USA. To assess<br>for local=
+ mosquito-borne transmission, a joint state and local public<br>health inve=
+stigation examined mosquito surveillance data, performed<br>case finding fo=
+r additional malaria cases, and reviewed syndromic<br>surveillance and deat=
+h surveillance for FUO diagnoses with<br>temporospatial proximity to the ca=
+se. This comprehensive assessment<br>enabled the public health departments =
+to effectively evaluate local<br>mosquito-borne transmission and emerging l=
+ocal risk.=0D<br>=0D<br>Although delayed _P. falciparum_ illness has been d=
+ocumented, it<br>remains rare, and the patient's latency period was unusual=
+ly long at<br>11 years. In 1 case series and literature review, pregnancy w=
+as the<br>most prevalent risk factor associated with delayed presentation a=
+nd<br>reports of delayed presentation in pregnant women ranged from 3 month=
+s<br>to 4 years (5). Delayed _P. falciparum_ in persons from<br>disease-end=
+emic regions is believed to arise from persistent low-level<br>parasitemia =
+and decaying _P. falciparum_-specific immunity (5). In<br>pregnant women, p=
+regnancy-related immunosuppression, sequestration of<br>_P. falciparum_ par=
+asites in the placenta, and, possibly, placental<br>antigen expression migh=
+t increase the risk for delayed _P. falciparum_<br>presentation (10-12). Th=
+e patient's sickle cell trait might have also<br>contributed to the latency=
+ of her delayed presentation. Sickle cell<br>trait protects against severe =
+disease from _P. falciparum_ infection<br>and is associated with lower para=
+site densities and delayed malaria<br>(13,14).=0D<br>=0D<br>Most malaria ca=
+ses in the United States are related to travel to a<br>disease-endemic regi=
+on. However, malaria can rarely be acquired<br>locally through mosquito bit=
+e, transfusion, or other parenteral route,<br>transplantation, or during pr=
+egnancy or childbirth (15). Our<br>case-patient had no known history of tra=
+nsfusion or transplantation,<br>and her infant did not show development of =
+malaria. Although the<br>patient denied traveling to a disease-endemic area=
+, she was not<br>available for follow-up, and we were unable to verify trav=
+el history<br>through a passport review. Therefore, undisclosed travel to a=
+<br>malaria-endemic country remains an unlikely possibility.=0D<br>=0D<br>M=
+alaria should be considered in all patients from disease-endemic<br>regions=
+ who have compatible symptoms regardless of time since<br>exposure. Clinica=
+l suspicion should be heightened in persons who have<br>underlying risk fac=
+tors for delayed manifestation, including<br>pregnancy, immunosuppression, =
+and sickle cell trait. To rule out the<br>possibility that a patient withou=
+t recent travel risk acquired malaria<br>locally, rigorous public health in=
+vestigation is required. Components<br>of an investigation might include me=
+dical and travel record review,<br>environmental surveillance, case finding=
+, and syndromic and death<br>surveillance with consideration of temporospat=
+ial proximity to the<br>case.=0D<br>=0D<br>References=0D<br>----------=0D<b=
+r>1. Hay SI, Guerra CA, Tatem AJ, Noor AM, Snow RW: The global<br>distribut=
+ion and population at risk of malaria: past, present, and<br>future. Lancet=
+ Infect Dis. 2004;4:327-336=0D<br>2. Smith DL, Guerra CA, Snow RW, Hay SI: =
+Standardizing estimates of<br>the _Plasmodium falciparum_ parasite rate. Ma=
+lar J. 2007;6:131.=0D<br>3. Doolan DL, Dobano C, Baird JK: Acquired immunit=
+y to malaria. Clin<br>Microbiol Rev. 2009;22:13-36.=0D<br>4. Williams TN, M=
+wangi TW, Roberts DJ, et al. An immune basis for<br>malaria protection by t=
+he sickle cell trait. PLoS Med. 2005;2:e128.=20=0D<br>5. Dauby N, Figueired=
+o Ferreira M, Konopnicki D, et al. Case report:<br>delayed or recurrent _Pl=
+asmodium falciparum_ malaria in migrants: a<br>report of 3 cases with a lit=
+erature review. Am J Trop Med Hyg.<br>2018;98:1102-1106.=20=0D<br>6. Isaacs=
+on M: Airport malaria: a review. Bull World Health Organ.<br>1989;67:737-74=
+3.=0D<br>7. Sinka ME, Bangs MJ, Manguin S, et al. The dominant _Anopheles_<=
+br>vectors of human malaria in Africa, Europe and the Middle East:<br>occur=
+rence data, distribution maps and bionomic precis. Parasit<br>Vectors. 2010=
+;3:117.=20=0D<br>8. Dye-Braumuller KC, Kanyangarara M: Malaria in the USA: =
+how<br>vulnerable are we to future outbreaks? Curr Trop Med Rep.<br>2021;8:=
+43-51.=20=0D<br>9. Burkom H, Loschen W, Wojcik R, et al. Electronic surveil=
+lance<br>system for the early notification of community-based epidemics<br>=
+(ESSENCE): overview, components, and public health applications. JMIR<br>Pu=
+blic Health Surveill. 2021;7:e26303.=0D<br>10. Kattenberg JH, Ochodo EA, Bo=
+er KR, Schallig HD, Mens PF, Leeflang<br>MM: Systematic review and meta-ana=
+lysis: rapid diagnostic tests versus<br>placental histology, microscopy and=
+ PCR for malaria in pregnant women.<br>Malar J. 2011;10:321.=0D<br>11. Mayo=
+r A, Moro L, Aguilar R, et al. How hidden can malaria be in<br>pregnant wom=
+en? Diagnosis by microscopy, placental histology,<br>polymerase chain react=
+ion and detection of histidine-rich protein 2 in<br>plasma. Clin Infect Dis=
+. 2012;54:1561-1568.=0D<br>12. Hviid L, Staalsoe T: Late recrudescence of _=
+Plasmodium falciparum_<br>malaria in pregnancy. Int J Infect Dis. 2006;10:4=
+12.=20=0D<br>13. Aidoo M, Terlouw DJ, Kolczak MS, et al. Protective effects=
+ of the<br>sickle cell gene against malaria morbidity and mortality. Lancet=
+.<br>2002;359:1311-1312.=20=0D<br>14. Crompton PD, Traore B, Kayentao K, et=
+ al. Sickle cell trait is<br>associated with a delayed onset of malaria: im=
+plications for<br>time-to-event analysis in clinical studies of malaria. J =
+Infect Dis.<br>2008;198:1265-1275.=0D<br>15. Mace KE, Lucchi NW, Tan KR. Ma=
+laria Surveillance - United States,<br>2018. MMWR Surveill Summ. 2022;71:1-=
+35.=0D<br>=0D<br>--=0D<br>Communicated by:=0D<br>ProMED<br><br>[I would gue=
+ss that the clinicians were surprised that falciparum<br>malaria was found =
+here and some of the relapsing species were more<br>likely considered. Whil=
+e _Anopheles_ mosquitoes do exist in much of<br>the USA, their density is l=
+ess than in malaria-endemic areas and more<br>seasonal. It is indeed possib=
+le that the pregnancy and sickle cell<br>trait were involved here as specul=
+ated. Clinicians should take note of<br>such cases as if this occurred in t=
+he southern USA, during warmer<br>months, secondary autochthonous cases may=
+ have occurred. Most of the<br>deaths from malaria are related to falciparu=
+m, so-called malignant<br>tertian malaria. - Mod.LL<br><br>ProMED map:<br>O=
+regon, United States:<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/=
+sSnCkKCWBvais3EuVAOvgy2WOIX7pp1nXnn4AbwuQ3Z6WbkfhqXYXU-aTMPJ8yThPc4qzcjaC9L=
+Bugv1uDs7uA/42y/CVCZF_kyTxizedkCkILMqQ/h4/hFmLtdTPfh4XHMEZVst6pNlYku3oVu16r=
+cqO3p-SOeo">https://promedmail.org/promed-post?place=3D8714202,239</a>]<br>=
+<br>[See Also:<br>2023=0D<br>----=0D<br>Malaria - Americas (16): USA (MD) a=
+utochthonous, falciparum, CDC<br>http://promedmail.org/post/20231012.871260=
+0=0D<br>Malaria - Americas (15): (Canada) ex Philippines, Plasmodium knowle=
+si<br>http://promedmail.org/post/20231007.8712508=0D<br>Malaria - Americas =
+(14): USA (AR) autochthonous<br>http://promedmail.org/post/20231005.8712469=0D=
+<br>Malaria - Americas (13): Costa Rica (PU)<br>http://promedmail.org/post/=
+20230929.8712370=0D<br>Malaria - Americas (12): USA (FL, TX) CDC<br>http://=
+promedmail.org/post/20230908.8712013=0D<br>Malaria - Americas (11): USA (MD=
+) 1st report in 40 years<br>http://promedmail.org/post/20230819.8711760=0D<=
+br>Malaria - Americas (11): Colombia, increase in incidence<br>http://prome=
+dmail.org/post/20230723.8711323=0D<br>Malaria - Americas (10): USA (FL) aut=
+ochthonous<br>http://promedmail.org/post/20230718.8711230=0D<br>Malaria - A=
+mericas (09): USA (FL, TX) autochthonous, update<br>http://promedmail.org/p=
+ost/20230709.8711042=0D<br>Malaria - Americas (08): USA (FL, TX) autochthon=
+ous, CDC, alert<br>http://promedmail.org/post/20230629.8710856=0D<br>Malari=
+a - Americas (07): USA (TX) autochthonous<br>http://promedmail.org/post/202=
+30625.8710761=0D<br>Malaria - Americas (06): USA (FL) autochthonous, RFI<br=
+>http://promedmail.org/post/20230623.8710719=0D<br>Malaria - Americas (05):=
+ Colombia, Venezuela<br>http://promedmail.org/post/20230501.8709785=0D<br>M=
+alaria - Americas (04): USA, imported, ex Liberia, fatal<br>http://promedma=
+il.org/post/20230427.8709737=0D<br>Malaria - Americas (03): (Costa Rica, Pa=
+nama)<br>http://promedmail.org/post/20230424.8709665=0D<br>Malaria - Americ=
+as (02): Costa Rica (LI)<br>http://promedmail.org/post/20230409.8709416=0D<=
+br>Malaria - Americas: Panama, increase<br>http://promedmail.org/post/20230=
+315.8708952]<br>.................................................ll/may/jh<=
+br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3Dd_uWFMhtd4xk-U0R7G5MzvWhcAH9-GcIwnGggA1Fd55oMDAwdT=
+AwMONdKy4552qcNoeR-J5J2dFFkJQwyKOVOksuTSuoo5FmJMwleQFiN_jzgQxsJBOiscZeJsGPD=
+GGvHK5rhWlTzRrEFG2bgiFsXiyHx9PHEG4xSon_kf2aUoPAQuZaML5ihH-fwTiQ4ffE7zkWcEkc=
+XutwTOC5vggFxfQ_8KR5iu4zWyoYraZjJd6b0f15ljss8Gym8SjhJBZRLp932Tdi7J4-YFP_aeZ=
+BPywsX7iWXCid6yyEMj367b_UDhLXnYDZtR6YpH9G3LhR5Plg-vD42zWj1ry1HcPAaTeMC6qXVu=
+cYljC0nFpaZHFZxUKKPwG9Vz-hDn8-mA-EqPqiBY0uiT5ZXeLe-uz64ioY_POJl8EWIwRPPO3Zt=
+kZeRPevZCFglWRc_IVTv78VweD1jSgm8HXPto7UjvBItMQg0iUrxFlaogN2cwtUjqMAq5DKuWq4=
+3gLKRcYNDl20Ijwa_aUc4bjprs0IIWUaqU2gznrVGaATXokckauD_dwVaTG3UuwTSdVbD3pS7gu=
+0mCb8jDYMrvWtob_eCwphjUS1JFNxO-NOFYgFWJVpmo3eKgzfWY3YrTvg-bykn9mtTbtH6ieo0t=
+cufOy8StHdl_yuDcRgIVPcbaYYFPUlBz-OJHBzx8SZjCdkBHPNCUEwyTx2J9VBdKMUmNBtq-vZd=
+0L5pHP1xdZ68KkEIZoBphLSFo6MNLL2cLYsDOqJEnK0tIQEnhlf46zMFsxxQ69fwwQz__eLFkJs=
+TYUvp3Xcm9jH-Wn1DUdC3L-VUqUUhxDfVoM0U5i1GatKV0vri-IFKB7jS6Al0YbzK9oIJeEc5eh=
+M5YCpZMyjFmszWm8mu-yxS3f_Hbu4Mn-NMmUDhR49RiAnZOXquvETBwajMsltRcrVd9IQk7ezqv=
+imZ58xs6rroKaRnIscJspg9kyHsO7eE3EkkA0qHwgU66TDXoNfr8J2XD1ptndz2DxT-ILqDVu4i=
+sCnxGkECrZQcD0wH0iPtD2IFhhW0JimvSuu8KNNJviVX2DLqhhLl0YN2SzqxpDmkmUZ6RCDm21q=
+no5B7Nr7F6TrSeDgLpXBSZh5rnzA6I2g1Tg2HdxCv6nZ_FEWSNbwL2wU-IMep8PGhiTPawtXpjQ=
+s4082p1d0b0j7yOr3wBajQAgN87sb3XOmfxnE8OiPNaZnpNSSsKc=3D" target=3D"_blank" =
+class=3D"Unsubscribe--unsubscribePreferences" style=3D"font-family:sans-ser=
+if;text-decoration:none;">Unsubscribe Preferences</a></div><br>############=
+################################################<br>#######################=
+#####################################<br><br><img src=3D"https://u19268662.=
+ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/42y/CVCZF_kyTxizedkCkILMqQ/ho.g=
+if" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"height:1px !imp=
+ortant;width:1px !important;border-width:0 !important;margin-top:0 !importa=
+nt;margin-bottom:0 !important;margin-right:0 !important;margin-left:0 !impo=
+rtant;padding-top:0 !important;padding-bottom:0 !important;padding-right:0 =
+!important;padding-left:0 !important;"/></body>
+</html>
+--d0b0ea669245c784f4779ab888b4e814fada2d89f33e5ff2bda48f61a55c--

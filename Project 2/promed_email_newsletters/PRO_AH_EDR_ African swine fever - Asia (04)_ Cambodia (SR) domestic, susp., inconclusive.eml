@@ -1,0 +1,540 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a98:d84b:0:b0:1eb:e128:bbe3 with SMTP id b11csp668183eil;
+        Thu, 18 Jan 2024 18:32:14 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IEtNbNegOqUSvPPFSC0YGIXG7cTp30AdlFwKnCOu3zZ8hLORkMW9Kfof6jSbGcqlJd0r0XI
+X-Received: by 2002:ad4:5be1:0:b0:681:1308:258e with SMTP id k1-20020ad45be1000000b006811308258emr1743739qvc.8.1705631534122;
+        Thu, 18 Jan 2024 18:32:14 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1705631534; cv=none;
+        d=google.com; s=arc-20160816;
+        b=VuoFyq8Lgtfsr9N8NQPe0oTw5W7mL2dWRqaoe27V1aONYPTQiJmdGz/j99OwvYDXsW
+         vtdHtxqoJAWFDapG+YMsu3C9ug6LQOzUhqXTi0k3hTNUNMup6wFbQ3KUPLz1GJSR4rNO
+         zdjo9P18jfVdvM9ymyoUfLQVDIVFWTbB9ae/bF0DcQvBJ6jtG1+gHv3GmBY9ItJ0ksNh
+         hF47nClBNA7pvlC1JC73BzXcr/BTz0LAPgV2nKdNf5DFO8scoCWtTyFpoRADjBDEBRG7
+         JTmmXRaLvof2L66LFDqXJz0jvvIH1Lfr49IEuuQXASzSkHzQAYJVfzoiM4LyQC/4lmnH
+         ibjQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=NSed+QMv03SqI2zs8x751YrKdYBmgZ7SZ/N6H4Jo0wE=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=jyliqYFkVu7GVdxc+zhA1k49x/WfKRLpyKnw+ReH8TfmMnKXg4v0CsuP2F6qTb4sBH
+         vJpshbjvyVPht/8RrroQCVW7eCWAV2LEFHm+YmOuh82yJPSgLB7QtB218O0O0u2L8V8f
+         NKAlBc9zs92/GecvwPtRbAdM6hNU5j5BuSkMs/ywmAVsOBhxf3cXjF3vg0WxB8UFzBTA
+         cN64zR5d2sA6LUOWAxCn2zxOT3wLZeafIKVglnAzAVQuda7WuAPbUa2g66Oox+r2MzHM
+         YJeU6UFIWj6wsk2QEVQQadYsr6wnpYLenM5e3ULDwkOrgXlPdwTbtMH8mE0BnG7HBtzf
+         OLTg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=E1KyJzXy;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=hDNBfzzO;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id n6-20020a0c9d46000000b0067f8e28347asi7922972qvf.492.2024.01.18.18.32.13
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 18 Jan 2024 18:32:14 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=E1KyJzXy;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=hDNBfzzO;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=NSed+QMv03SqI2zs8x751YrKdYBmgZ7SZ/N6H4Jo0wE=;
+	b=E1KyJzXym+kqP3paDvrlEdnnuJ7fCgQX6A8BD2lFA61vD8ObrqdYBVepFLe9x5zgOimO
+	v0Qpy7JtesJhANlezSd6EM8q/WNykTrb7bGRKXegUh+VV7gbPXpATIuxC/TGEPsZcgTg7C
+	UIUjYCr/0yHB+U8XzCx+GykEpNjRr67e6n7gElsyay4Q3Q6+5LE6IeC8P20xU+QyLK7pK2
+	yglbZX/myVqNMvPW/tQDtQ+2Gx69GACoRdS7pgQs7jjIATdmmdOdJkA1gmuocrN6HlTmYw
+	Y70QCygLNAvvf6zbr6VFvTJEXwmLH0xTScD5OGy2TyBSFNmxRBV87pIYo1vqpxvw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=NSed+QMv03SqI2zs8x751YrKdYBmgZ7SZ/N6H4Jo0wE=;
+	b=hDNBfzzO2s1UpS8maS7paE5MgSDC9dx+zLS+3LQQHWPg39DARg1I4WMa/LuV8X8FAzcI
+	2uWbcDxMTzWxR/BKFw2COwXSV5vS0LIY6CgbmQhPYH4YdU7NOdb6pi7eE3d7cDPskZpmpN
+	uBrVf7a2Ut0MVlmEMzzCnduTwm6/6PdZ4=
+Received: by filterdrecv-bcd576c5f-xqk6p with SMTP id filterdrecv-bcd576c5f-xqk6p-1-65A9DF2C-2B
+        2024-01-19 02:32:12.437920003 +0000 UTC m=+8063432.297070288
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-34 (SG) with HTTP
+	id mKy_EvotSPyBxisvFv7tmA
+	Fri, 19 Jan 2024 02:32:12.414 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=3c4f48d3275f61343c344579778c0d91c827460446ac23112c79c47c564e
+Date: Fri, 19 Jan 2024 02:32:13 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <mKy_EvotSPyBxisvFv7tmA@geopod-ismtpd-34>
+Subject: PRO/AH/EDR> African swine fever - Asia (04): Cambodia (SR) domestic,
+ susp., inconclusive
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iBD7xASshBwN2XP7FvVegab0dUsPFpKyArOvpih?=
+ =?us-ascii?Q?9ihcZlwv6Wqxas=2FWafaTFpkg0ow79EtXsdTXVRg?=
+ =?us-ascii?Q?ERN0sSFeayow7aJwm0bqO+n8O7oIulD6HDfF7YP?=
+ =?us-ascii?Q?sEl2=2FdwUeSOLzhd4lU0JyFGsR6+LlfsfBxyxjs6?=
+ =?us-ascii?Q?oI4elNee2pdk8ySeeL4lp4+yV0C1oQI3xSwJi4?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUiShGf=2FO8XJWpH34Od4Nd?=
+ =?us-ascii?Q?fxXa6jil96uRcJkF+N+LeVnO1tx80ddOyoyOo=2Fc?=
+ =?us-ascii?Q?Brxcl3ERAm0cOY743=2FFH59DWiSf5OzXORh1DLKt?=
+ =?us-ascii?Q?hb1NMKty3PsA5ju0ZzxCrq1WQuZSEQf=2FJlWtgqv?=
+ =?us-ascii?Q?cZmsyCHlNUZsDDb7uA54Qa2Q5d8G9kxDXGScrg=2F?=
+ =?us-ascii?Q?jQPsE1LdMtm8KlJ1nxu6XE8PVcW9fOMpQvzIo=2FI?=
+ =?us-ascii?Q?3L4mRq7TqwS7sofu0a8xJLh8O9bUrj4haFN34Ei?=
+ =?us-ascii?Q?mPyiquFMFAkC2uj8Fe29yAOxbPOLcSqFDx3FLCr?=
+ =?us-ascii?Q?L72Bxe1ehQjY0BTb+K35pKEXELd5211UekJSvTx?=
+ =?us-ascii?Q?LhNma9vCLfGNfXEOBYMAtpgjcToh5M3SHp6xHYq?=
+ =?us-ascii?Q?gCwE3Z7YCNMcdpqrbow5ENsWkJ26MJ7jKOSlyIv?=
+ =?us-ascii?Q?hjANje1lryo1Y+XHqvMIVqbcB52hZOod7MfCHEZ?=
+ =?us-ascii?Q?GnuHbdTFER5SM4UAnu+qoVZc151k0p5=2FbAvaMOR?=
+ =?us-ascii?Q?Em8YGtBd9HHbO0ocLtIixjOs8WPcVTtjr9Rw2hj?=
+ =?us-ascii?Q?DNFHiz8kZF+wXFTYFBMu2NzZQPm66vWV1fK+vuZ?=
+ =?us-ascii?Q?eFJleon0y2yPqC4cXVoareFZQ=2FV1l4Z+mTQ0YKl?=
+ =?us-ascii?Q?0Ui63Bn7dJ2ma9SDpo7JCpm7iyJZ5rCeMKF4uhs?=
+ =?us-ascii?Q?mx0noeXDHt0BssrIJncK5I0i8Ud3Qeh8s=2FqaaKi?=
+ =?us-ascii?Q?GaJnGHGzoMn48ABpKjGIfCA3BdLgDdLlpkAIgh9?=
+ =?us-ascii?Q?EDEqQiqZw8T6SzmGDtMTDJ4=2FZg=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2EGTYUXKgX7?=
+ =?us-ascii?Q?WfAFpXQ1LLOFudlypHRCOd3q14-VE9ADtFoMDAw?=
+ =?us-ascii?Q?dTAwMBCfBS1p-6zN2XtiN3=5FCB2gXJy6DbQUl0ct?=
+ =?us-ascii?Q?NBuh9YBnD70KepLN0MAcPjjA-Utxs7B5dqWsNV7?=
+ =?us-ascii?Q?tseO9IuIyEXzi1Sm9nWwIqi2GIOAwSuvepxnFMJ?=
+ =?us-ascii?Q?VymzbafgbLOxs-Lsw=3D=3D=2Edx8hRBJLuABDDho3Aq0?=
+ =?us-ascii?Q?SW3bV=5FndaBRG5jSL-tilzazxoMDAwdTAwMJNxf2?=
+ =?us-ascii?Q?HqpHb7WzZkHzUqg84qcgnn5dlViXs00M5Ka8r=5F3?=
+ =?us-ascii?Q?QcoeBtGF9mcsgZ1q=5Fw7O8b4W33uBHDy31MGagBp?=
+ =?us-ascii?Q?pU0gXybkI3QiRGTdPqK92grxyZPGqzMD5-fBj04?=
+ =?us-ascii?Q?pkpUbdXaSwFq5bx4F7OSC-G=5FJ7MV2OujXksv2M3?=
+ =?us-ascii?Q?Nx2Fe37dkPN=5FLCI17BHKDpSbVsDvuWXmv0mJj9Q?=
+ =?us-ascii?Q?qxhA-WBNzyc=5Fkips4etMAFfb02xz5JTAXm6hBvB?=
+ =?us-ascii?Q?sHXeNnMMF90NNqpffYty-fwew4dhVSsIQ9WHakA?=
+ =?us-ascii?Q?NZdDqxEGkL2X1KpbXlhCMl=5FNE4MgvTgrV26dFYW?=
+ =?us-ascii?Q?tatqayjk7v428X3VzyanZt1j=5Fuk1wHXFnWTgZJ4?=
+ =?us-ascii?Q?mxDkWbY7vZ0vEzhplMH24IfSzLwHd1o7wcJyH1m?=
+ =?us-ascii?Q?jhuYCFZKuA2vSAYQUW3CgbkMtc9BRFkN3PefO0w?=
+ =?us-ascii?Q?MkrW3B9HvrhiP2RVCYTZQzX6Ua7rAmBoheFiFUm?=
+ =?us-ascii?Q?RVFP43Lpz4PwKPVZrS3tC=5FazHcYD8fGSo6La2oJ?=
+ =?us-ascii?Q?xiKOq6WCh5AwWQgGgigT4qwk2WcYstZlAYgcufj?=
+ =?us-ascii?Q?iSx2xWZAtNAvyr7SFL9qyZAVB8wYRormGKFQWGD?=
+ =?us-ascii?Q?a0ye90d2lbjQMpOzDv4ot0lvhWjsYV1zgH5lcK5?=
+ =?us-ascii?Q?B9JFWgWg9xUQAJMCYgh66u8pY-RyjPW-f0chwye?=
+ =?us-ascii?Q?5sOs=5Fq4hcw=5FmCdQ5cZlyCUgyC6x=5FNHuGkXhfMlm?=
+ =?us-ascii?Q?EbVJisrNnuDTmF9dy4lwIs-9je9jzrpRAjAt68U?=
+ =?us-ascii?Q?WU=5FAWZR-c6lMvyayg2Gp7joO2-tC3KH-r-SvZWd?=
+ =?us-ascii?Q?CyrIhTOg0fC2UqFvmSTj7WdXl0jFNC3TILYKTTN?=
+ =?us-ascii?Q?COOy9y02DYxYjEztT2kZwe3pf20mdduMV6Az-HO?=
+ =?us-ascii?Q?gAbDMWX0NMwRW6Usmap5Om=5Fm1f=5FyC4KBUbWGyOy?=
+ =?us-ascii?Q?TS7imPkVF8l4ohldbtfwq2K8T4MIY=5F5996NxmOS?=
+ =?us-ascii?Q?XuAD1AnhCGhyowcIQBnKYFiBkiTCrOsoJt2Ziqj?=
+ =?us-ascii?Q?x4t9NueodlDseYYCGQP-9B=5FpGCnLnWCTs9ItLh5?=
+ =?us-ascii?Q?2ZrReA=3D=3D=3E?=
+
+--3c4f48d3275f61343c344579778c0d91c827460446ac23112c79c47c564e
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=us-ascii
+Mime-Version: 1.0
+
+AFRICAN SWINE FEVER - ASIA (04): CAMBODIA (SVAY RIENG) DOMESTIC,
+SUSPECTED CASES HAVE PROVEN INCONCLUSIVE
+***************************************************************************=
+******************************
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+Date: Wed 17 Jan 2024 20:50 ICT
+Source: The Phnom Penh Post [abridged, edited]
+<https://www.phnompenhpost.com/national/pig-outbreak-ends-precise-cause-rem=
+ains-uncertain>
+
+
+The Ministry of Agriculture, Forestry and Fisheries announced that
+tests for suspected cases of African swine flu (ASF) have proven
+inconclusive. Ministry spokeswoman Im Rachna said on 16 Jan 2024 that
+the 13 Jan 2024 samples, taken from pigs that died in Svay Rieng
+province's Kampong Ro district, were too old to be accurate.
+
+"We took the samples from dead animals which had been ill for a long
+time. Because any virus the pigs may have had likely mutated on
+several occasions, it was very difficult to produce accurate results,"
+she explained.
+
+She added that through the testing, officials were attempting to
+identify 3 types of disease: swine fever, African swine fever, and
+blue ear disease. The symptoms of all 3 are similar: before the pigs
+died, they had a high fever and their skin turned purple.
+
+Rachna assured the public that the situation is now under control, as
+specialists from the ministry have conducted extensive education and
+disinfection campaigns in the location where the animals fell ill and
+died. The deceased animals were burned.
+
+She added that officials from the General Directorate of Animal Health
+and Production are continuing to monitor the remaining pigs in Kampong
+Ro, as well as the surrounding districts. On behalf of the ministry,
+she called on all pig farmers to notify the authorities immediately if
+they suspected an illness among their animals. She assured farmers
+that the authorities would respond immediately to any cases to ensure
+that potential outbreaks were halted as early as possible.
+
+Specialists went to the scene on 15 Jan 2024 and identified illness in
+7 locations. A total of 47 pigs had died.
+
+[Byline: Kim Yutharo]
+
+--
+Communicated by:
+ProMED
+via
+ProMED-MBDS
+
+["Laboratory tests are essential for the diagnosis of African swine
+fever (ASF) and are key to the success of ASF surveillance activities.
+Chapter 3.9.1.
+(<https://www.woah.org/fileadmin/Home/eng/Health_standards/tahm/3.09.01_ASF=
+.pdf>)
+of the OIE Manual of Diagnostic Tests and Vaccines for Terrestrial
+Animals (Terrestrial Manual)
+(<https://www.woah.org/en/what-we-do/standards/codes-and-manuals/terrestria=
+l-manual-online-access/>)
+describes the recognized international standards for ASF diagnosis.
+However, in certain circumstances, the timely submission, processing,
+and testing of samples using the diagnostic tests described in the
+Terrestrial Manual are not feasible. The ability to test for ASF at
+the point of disease allows for rapid response to outbreaks and
+control of the spread of disease in endemic situations.
+
+"Despite not being included in the Register of Diagnostic Kits
+certified by the OIE as validated as fit for purpose, there are
+several diagnostic platforms, also known as penside or
+point-of-need/point-of-care testing (PoC tests), that are available
+commercially for field testing. These include basic rapid test kits
+for detecting antigens or antibodies using lateral flow devices that
+are simple to use, require minimal training, and can provide a result
+within approximately 20 minutes."
+(<https://reliefweb.int/report/world/oie-asf-reference-laboratory-networks-=
+overview-african-swine-fever-diagnostic-tests-field-application>)
+
+The OIE (WOAH) ASF Reference Laboratory Network's overview of African
+swine fever diagnostic tests for field application (February 2022) is
+available at
+<https://www.woah.org/app/uploads/2022/03/en-oie-asf-poc-tests-guide-final.=
+pdf>.
+
+The newswire above provides no detailed information on the clinical
+signs of pigs in the outbreak area. The ASF virus is currently still
+circulating in some Asia and Southeast Asian countries. It is crucial
+to take critical measures to prevent further spread of the disease
+within these regions. - Mod.TTM]
+
+[See Also:
+African swine fever - Asia (03): Cambodia (SR) domestic alert
+http://promedmail.org/post/20240117.8714277
+African swine fever - Asia (01): Viet Nam, domestic, spread
+http://promedmail.org/post/20240103.8714051
+2023
+----
+African swine fever - Asia (30): Viet Nam (HT) domestic, spread
+http://promedmail.org/post/20231205.8713531
+African swine fever - Asia (26): Viet Nam, domestic, spread
+http://promedmail.org/post/20231123.8713282
+African swine fever - Asia (18): Viet Nam (NA) domestic, spread
+http://promedmail.org/post/20231022.8712768
+2022
+----
+African swine fever - Asia (17): Viet Nam, spread, vaccination trials,
+RFI http://promedmail.org/post/20221016.8706177
+African swine fever - Asia (15): Viet Nam, vaccination trials
+suspended, RFI http://promedmail.org/post/20220827.8705272
+2020
+----
+African swine fever - Asia (22): Viet Nam, spread
+http://promedmail.org/post/20200630.7526692
+2019
+----
+African swine fever - Asia (100): China, S. Korea, Viet Nam,
+Indonesia, FAO http://promedmail.org/post/20191228.6860405
+African swine fever - Asia (99): Taiwan ex Viet Nam, contaminated food
+http://promedmail.org/post/20191226.6858823
+African swine fever - Asia (67): China, Viet Nam, Laos, Cambodia,
+Myanmar, FAO http://promedmail.org/post/20190907.6661044
+African swine fever - Asia (50): Laos (SL) 1st rep, Viet Nam control,
+FAO, OIE http://promedmail.org/post/20190620.6530291
+African swine fever - global control initiative, OIE, FAO
+http://promedmail.org/post/20190528.6491414
+African swine fever - Asia (47): Viet Nam, China, domestic, spread,
+control http://promedmail.org/post/20190527.6489229
+African swine fever - Asia (44): China, Viet Nam, domestic, spread
+http://promedmail.org/post/20190518.6475201
+African swine fever - Asia (38): China, Viet Nam, Cambodia, spread,
+FAO http://promedmail.org/post/20190426.6443298
+African swine fever - Asia (37): Viet Nam (HN) domestic, spread
+http://promedmail.org/post/20190424.6438426
+African swine fever - Asia (32): China, Viet Nam, Cambodia, domestic,
+spread, FAO http://promedmail.org/post/20190413.6420591
+African swine fever - Asia (30): China, Viet Nam, Cambodia, domestic,
+spread, FAO http://promedmail.org/post/20190406.6407781
+African swine fever - Asia (26): China, Viet Nam, domestic, spread,
+control, FAO http://promedmail.org/post/20190331.6395893
+African swine fever - Asia (24): China, Viet Nam, domestic, spread,
+control, FAO http://promedmail.org/post/20190322.6381354
+African swine fever - Asia (23): China, Viet Nam, domestic, Cambodia,
+alert http://promedmail.org/post/20190320.6377843
+African swine fever - Asia (22): China, Mongolia, Viet Nam, domestic,
+FAO http://promedmail.org/post/20190317.6371700
+African swine fever - Asia (21): Viet Nam (HD), China (GX), domestic,
+spread http://promedmail.org/post/20190307.6354194
+African swine fever - Asia (18): Viet Nam (HP) domestic, spread
+http://promedmail.org/post/20190226.6337525
+African swine fever - Asia (14): China, Mongolia, Viet Nam, domestic,
+FAO http://promedmail.org/post/20190222.6331318
+African swine fever - Asia (11): Viet Nam (HY, TB) domestic, 1st rep.
+http://promedmail.org/post/20190219.6324979]
+.................................................st/ttm/tw/st/may/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3DePoDkRpCJYDm9yU2_0MljNtSLv2eWAyxGx-zHR831qxoMDAwdTAwMIdhacD=
+uA4iNid1UsTzHLjMfW6-kb9Di_8WxbOFY8BA6GYis7xX3rJoi0lnZizg-fEaveG7PBCCr3qKK_o=
+v7aT6tc0nAtos6aptzc2145_0dB2Z73cHcsJEsl-x0ccUA7vfYPD4VsAmjd-xjoHN78hWe_gRqj=
+uSEuvItpnh6gfNezVotBwmQC9j7ntroX-CSmpwP9UuCuJNJpA99loPcdYrFk2xrBZZFmSLzhhs-=
+DCwe5TtKhmI363sN3EFT0IthZbq-1i7xFmuwlO0YVW8P3v2tXWMlUtRV_lYdT2cEYLw0bbgcmzN=
+t7wjqbu6s6BVM8UA5KsLNUqjRRO9MN-4_2atLt2zfritd5mKCU84EEDEXaWtg5x1Ggz6LoCWsmr=
+1jo1yvcPAoD6fP5B_NMt0KbHynGvxoKUmepa1S5DVJyJOtVxHd7TMppKTjNXtJU98L12fkO0ws_=
+Tj5T-1IjOY8EJv3sp1aKGJiGfQ7IZm3PfuE2Rz10f3woi30z8ERVY3UWTZp7jslUtQ3sanRzvnL=
+Q14GlJbNQVFvf1u-ytfH99keadu9wnTzn3kQQWedK9CP3vySq1SpQzmB1WZfzyDpMyejZ9WqKAe=
+7ahIw8rVdfiGPFBXtx0J-y5vkSTRxBIlf-FTkyYpQ8eD4Q73NzPhblsylNxZFDLSIg29LfW53nx=
+gF-RrFNCtr_4pgSeqG8l3fdkkcdManhYD4jCHM_NCzgR_jh6PURPE4T1-kIMfiXSlymEARkR-71=
+XA5z2ZhVt9d_E5jc1AcHWS5pGBWdtxDTRdh7d5bs-8CYefV6QuWZTfwP1CvqTcC78bcMJF32sej=
+pK0zGi0X1lZZW2I_QZ36OmGURRfMSE00pp3VjuSoBAKxEaRWE3aYZUmf7pbTWgDoaP0Mma1eSe8=
+GQrhqzbdaAoF_m6AJPqwANWTkLr3UtC9es4yH3JRUGlsSQ8pNrc-n_e0NvuGuTvIVQVGgBk0XMM=
+5omdpdeAFOOJewF8IL6EPWbX3VBhVjXJxcgIdRgJiZt1_jhZY8g_vpBTa7r0eBFbU_cDDxiFYiy=
+fr2t5v5bOxUw4ush3nhuF4ZpgmeoC5abRv8gI5V-3uvE5YTeSJR4nCQ17k18z2ZEgdEhZu4Ak0C=
+Fs1T5WKJ6EmF9PQdQPFPbkWNPhvy_y3vDj1wBHkwqbl8TQafZkFxVF71tyDU6lIk )
+############################################################
+############################################################
+
+--3c4f48d3275f61343c344579778c0d91c827460446ac23112c79c47c564e
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>AFRICAN SWINE FEVER - ASIA (04): CAMBODIA (SVAY RIENG) DOMESTIC,<br>S=
+USPECTED CASES HAVE PROVEN INCONCLUSIVE<br>********************************=
+*************************************************************************<b=
+r>A ProMED-mail post<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/w=
+scE2ng5fl6JrPIt48tisIijpefK5PNjW-mL-YZGnfgDOxU1G3gjwnPSi2Tfv3HA/434/3leBESj=
+tRwaPU-Cmad3gtA/h0/9zM3jlNFeqGkP0KsxQWWCJFa6wkCBaFT-3UpOzhJ9nc">http://www.=
+promedmail.org</a><br>ProMED-mail is a program of the<br>International Soci=
+ety for Infectious Diseases<br><a href=3D"https://u19268662.ct.sendgrid.net=
+/ss/c/wscE2ng5fl6JrPIt48tisCT5tpD4Upm3qyMCbcYSQvc/434/3leBESjtRwaPU-Cmad3gt=
+A/h1/ECjtueDQRwQADF4l42j7GHcsRfIP74h80EjFXj-rbZM">http://www.isid.org</a><b=
+r><br>Date: Wed 17 Jan 2024 20:50 ICT=0D<br>Source: The Phnom Penh Post [ab=
+ridged, edited]=0D<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/TLh=
+_csrC34X_iXpbYoMam-hSZR63Mzf8Y8mZArQjsLnt-hwt_xkqAR7KwKmiRKdo_AKOnE73fTl6SD=
+51QoDCRZD1GQ88uzm3_JZ0KHeDVUYAJDHXbiSJ5uvIiy4a6e5M/434/3leBESjtRwaPU-Cmad3g=
+tA/h2/LHW29B6zV0WCjL__Da0m5Zu5W6vrb_N2WbFC4txsy34">https://www.phnompenhpos=
+t.com/national/pig-outbreak-ends-precise-cause-remains-uncertain</a>=0D<br>=0D=
+<br>=0D<br>The Ministry of Agriculture, Forestry and Fisheries announced th=
+at<br>tests for suspected cases of African swine flu (ASF) have proven<br>i=
+nconclusive. Ministry spokeswoman Im Rachna said on 16 Jan 2024 that<br>the=
+ 13 Jan 2024 samples, taken from pigs that died in Svay Rieng<br>province's=
+ Kampong Ro district, were too old to be accurate.=0D<br>=0D<br>"We took th=
+e samples from dead animals which had been ill for a long<br>time. Because =
+any virus the pigs may have had likely mutated on<br>several occasions, it =
+was very difficult to produce accurate results,"<br>she explained.=0D<br>=0D=
+<br>She added that through the testing, officials were attempting to<br>ide=
+ntify 3 types of disease: swine fever, African swine fever, and<br>blue ear=
+ disease. The symptoms of all 3 are similar: before the pigs<br>died, they =
+had a high fever and their skin turned purple.=0D<br>=0D<br>Rachna assured =
+the public that the situation is now under control, as<br>specialists from =
+the ministry have conducted extensive education and<br>disinfection campaig=
+ns in the location where the animals fell ill and<br>died. The deceased ani=
+mals were burned.=0D<br>=0D<br>She added that officials from the General Di=
+rectorate of Animal Health<br>and Production are continuing to monitor the =
+remaining pigs in Kampong<br>Ro, as well as the surrounding districts. On b=
+ehalf of the ministry,<br>she called on all pig farmers to notify the autho=
+rities immediately if<br>they suspected an illness among their animals. She=
+ assured farmers<br>that the authorities would respond immediately to any c=
+ases to ensure<br>that potential outbreaks were halted as early as possible=
+.=0D<br>=0D<br>Specialists went to the scene on 15 Jan 2024 and identified =
+illness in<br>7 locations. A total of 47 pigs had died.=0D<br>=0D<br>[Bylin=
+e: Kim Yutharo]=0D<br>=0D<br>--=0D<br>Communicated by:=0D<br>ProMED=0D<br>v=
+ia=0D<br>ProMED-MBDS<br><br>["Laboratory tests are essential for the diagno=
+sis of African swine<br>fever (ASF) and are key to the success of ASF surve=
+illance activities.<br>Chapter 3.9.1.<br>(<a href=3D"https://u19268662.ct.s=
+endgrid.net/ss/c/TLh_csrC34X_iXpbYoMam83vqpKCenTNFPOKUyZ5J40wn3Vf2wbsI7IdXA=
+9X6BAh7xBZ2gm0T8zgm4maDdKZ4a28CgKcHGcWX-ru-Ba7kSYtny6ceYdpH2zNaVcGd9Qs/434/=
+3leBESjtRwaPU-Cmad3gtA/h3/CDyUL6eKsnYuytQwEHgKoqvukdghwl5S48FrkAgrDvQ">http=
+s://www.woah.org/fileadmin/Home/eng/Health_standards/tahm/3.09.01_ASF.pdf</=
+a>)<br>of the OIE Manual of Diagnostic Tests and Vaccines for Terrestrial<b=
+r>Animals (Terrestrial Manual)<br>(<a href=3D"https://u19268662.ct.sendgrid=
+.net/ss/c/TLh_csrC34X_iXpbYoMam31zg6lR2E5XH5yFT4-o6P0v-BKmY_SvLFYX25EzE51Sv=
+FYnDvWLjAefPqTcP8vE61P9mHDim5KmjvXFwj6zPjLQvRD2vH562pnrUYXIrjhQzXixzm0VOXz_=
+_Nbhm3jzQA/434/3leBESjtRwaPU-Cmad3gtA/h4/xL6C-hgAfv7tlXblW_PCzgwrGEuXaHV1hB=
+ScavTar94">https://www.woah.org/en/what-we-do/standards/codes-and-manuals/t=
+errestrial-manual-online-access/</a>)<br>describes the recognized internati=
+onal standards for ASF diagnosis.<br>However, in certain circumstances, the=
+ timely submission, processing,<br>and testing of samples using the diagnos=
+tic tests described in the<br>Terrestrial Manual are not feasible. The abil=
+ity to test for ASF at<br>the point of disease allows for rapid response to=
+ outbreaks and<br>control of the spread of disease in endemic situations.=0D=
+<br>=0D<br>"Despite not being included in the Register of Diagnostic Kits<b=
+r>certified by the OIE as validated as fit for purpose, there are<br>severa=
+l diagnostic platforms, also known as penside or<br>point-of-need/point-of-=
+care testing (PoC tests), that are available<br>commercially for field test=
+ing. These include basic rapid test kits<br>for detecting antigens or antib=
+odies using lateral flow devices that<br>are simple to use, require minimal=
+ training, and can provide a result<br>within approximately 20 minutes."=0D=
+<br>(<a href=3D"https://u19268662.ct.sendgrid.net/ss/c/suRyKAAhd_WyEaNz14Vl=
+-qVBgHNzQ_3sSOh4iwJY84188SQGxT-gbcNiuGi2nhSvjNRFDkQ8CF_DdS6tVWKa0Kfb4VUcK5X=
+2KBBcIyqSq_bwJzpzXaQqitYi9vJC2RYD5fk6csvaOnVnAckeYkxv1be6g2QS0E-G976wRYO8E4=
+P0WpEUGsDhghE4n7auVWT7/434/3leBESjtRwaPU-Cmad3gtA/h5/mwX9KjiIeKGTUoxjjz1ji-=
+jUiSejdyN1jdqX0bX8OkI">https://reliefweb.int/report/world/oie-asf-reference=
+-laboratory-networks-overview-african-swine-fever-diagnostic-tests-field-ap=
+plication</a>)=0D<br>=0D<br>The OIE (WOAH) ASF Reference Laboratory Network=
+'s overview of African<br>swine fever diagnostic tests for field applicatio=
+n (February 2022) is<br>available at<br><a href=3D"https://u19268662.ct.sen=
+dgrid.net/ss/c/TLh_csrC34X_iXpbYoMam2-XMHAsN0ziT4YP8Fci9YuYdazXhqhi3oHfh19B=
+HXlFRw3hg5ic6P4419-35HIfAdyW5pWKbi7ydskdgJviXEcLKZVeiWrr2YV2WM2abIC2/434/3l=
+eBESjtRwaPU-Cmad3gtA/h6/PV7dNWYk0Qr46IWyTufaQmm_5s3KLFYxqr_d0FFRCCc">https:=
+//www.woah.org/app/uploads/2022/03/en-oie-asf-poc-tests-guide-final.pdf</a>=
+.=0D<br>=0D<br>The newswire above provides no detailed information on the c=
+linical<br>signs of pigs in the outbreak area. The ASF virus is currently s=
+till<br>circulating in some Asia and Southeast Asian countries. It is cruci=
+al<br>to take critical measures to prevent further spread of the disease<br=
+>within these regions. - Mod.TTM]<br><br>[See Also:<br>African swine fever =
+- Asia (03): Cambodia (SR) domestic alert<br>http://promedmail.org/post/202=
+40117.8714277=0D<br>African swine fever - Asia (01): Viet Nam, domestic, sp=
+read<br>http://promedmail.org/post/20240103.8714051=0D<br>2023=0D<br>----=0D=
+<br>African swine fever - Asia (30): Viet Nam (HT) domestic, spread<br>http=
+://promedmail.org/post/20231205.8713531=0D<br>African swine fever - Asia (2=
+6): Viet Nam, domestic, spread<br>http://promedmail.org/post/20231123.87132=
+82=0D<br>African swine fever - Asia (18): Viet Nam (NA) domestic, spread<br=
+>http://promedmail.org/post/20231022.8712768=0D<br>2022=0D<br>----=0D<br>Af=
+rican swine fever - Asia (17): Viet Nam, spread, vaccination trials,<br>RFI=
+ http://promedmail.org/post/20221016.8706177=0D<br>African swine fever - As=
+ia (15): Viet Nam, vaccination trials<br>suspended, RFI http://promedmail.o=
+rg/post/20220827.8705272=0D<br>2020=0D<br>----=0D<br>African swine fever - =
+Asia (22): Viet Nam, spread<br>http://promedmail.org/post/20200630.7526692=0D=
+<br>2019=0D<br>----=0D<br>African swine fever - Asia (100): China, S. Korea=
+, Viet Nam,<br>Indonesia, FAO http://promedmail.org/post/20191228.6860405=0D=
+<br>African swine fever - Asia (99): Taiwan ex Viet Nam, contaminated food<=
+br>http://promedmail.org/post/20191226.6858823=0D<br>African swine fever - =
+Asia (67): China, Viet Nam, Laos, Cambodia,<br>Myanmar, FAO http://promedma=
+il.org/post/20190907.6661044=0D<br>African swine fever - Asia (50): Laos (S=
+L) 1st rep, Viet Nam control,<br>FAO, OIE http://promedmail.org/post/201906=
+20.6530291=0D<br>African swine fever - global control initiative, OIE, FAO<=
+br>http://promedmail.org/post/20190528.6491414=0D<br>African swine fever - =
+Asia (47): Viet Nam, China, domestic, spread,<br>control http://promedmail.=
+org/post/20190527.6489229=0D<br>African swine fever - Asia (44): China, Vie=
+t Nam, domestic, spread<br>http://promedmail.org/post/20190518.6475201=0D<b=
+r>African swine fever - Asia (38): China, Viet Nam, Cambodia, spread,<br>FA=
+O http://promedmail.org/post/20190426.6443298=0D<br>African swine fever - A=
+sia (37): Viet Nam (HN) domestic, spread<br>http://promedmail.org/post/2019=
+0424.6438426=0D<br>African swine fever - Asia (32): China, Viet Nam, Cambod=
+ia, domestic,<br>spread, FAO http://promedmail.org/post/20190413.6420591=0D=
+<br>African swine fever - Asia (30): China, Viet Nam, Cambodia, domestic,<b=
+r>spread, FAO http://promedmail.org/post/20190406.6407781=0D<br>African swi=
+ne fever - Asia (26): China, Viet Nam, domestic, spread,<br>control, FAO ht=
+tp://promedmail.org/post/20190331.6395893=0D<br>African swine fever - Asia =
+(24): China, Viet Nam, domestic, spread,<br>control, FAO http://promedmail.=
+org/post/20190322.6381354=0D<br>African swine fever - Asia (23): China, Vie=
+t Nam, domestic, Cambodia,<br>alert http://promedmail.org/post/20190320.637=
+7843=0D<br>African swine fever - Asia (22): China, Mongolia, Viet Nam, dome=
+stic,<br>FAO http://promedmail.org/post/20190317.6371700=0D<br>African swin=
+e fever - Asia (21): Viet Nam (HD), China (GX), domestic,<br>spread http://=
+promedmail.org/post/20190307.6354194=0D<br>African swine fever - Asia (18):=
+ Viet Nam (HP) domestic, spread<br>http://promedmail.org/post/20190226.6337=
+525=0D<br>African swine fever - Asia (14): China, Mongolia, Viet Nam, domes=
+tic,<br>FAO http://promedmail.org/post/20190222.6331318=0D<br>African swine=
+ fever - Asia (11): Viet Nam (HY, TB) domestic, 1st rep.<br>http://promedma=
+il.org/post/20190219.6324979]<br>..........................................=
+.......st/ttm/tw/st/may/jh<br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3DePoDkRpCJYDm9yU2_0MljNtSLv2eWAyxGx-zHR831qxoMDAwdT=
+AwMIdhacDuA4iNid1UsTzHLjMfW6-kb9Di_8WxbOFY8BA6GYis7xX3rJoi0lnZizg-fEaveG7PB=
+CCr3qKK_ov7aT6tc0nAtos6aptzc2145_0dB2Z73cHcsJEsl-x0ccUA7vfYPD4VsAmjd-xjoHN7=
+8hWe_gRqjuSEuvItpnh6gfNezVotBwmQC9j7ntroX-CSmpwP9UuCuJNJpA99loPcdYrFk2xrBZZ=
+FmSLzhhs-DCwe5TtKhmI363sN3EFT0IthZbq-1i7xFmuwlO0YVW8P3v2tXWMlUtRV_lYdT2cEYL=
+w0bbgcmzNt7wjqbu6s6BVM8UA5KsLNUqjRRO9MN-4_2atLt2zfritd5mKCU84EEDEXaWtg5x1Gg=
+z6LoCWsmr1jo1yvcPAoD6fP5B_NMt0KbHynGvxoKUmepa1S5DVJyJOtVxHd7TMppKTjNXtJU98L=
+12fkO0ws_Tj5T-1IjOY8EJv3sp1aKGJiGfQ7IZm3PfuE2Rz10f3woi30z8ERVY3UWTZp7jslUtQ=
+3sanRzvnLQ14GlJbNQVFvf1u-ytfH99keadu9wnTzn3kQQWedK9CP3vySq1SpQzmB1WZfzyDpMy=
+ejZ9WqKAe7ahIw8rVdfiGPFBXtx0J-y5vkSTRxBIlf-FTkyYpQ8eD4Q73NzPhblsylNxZFDLSIg=
+29LfW53nxgF-RrFNCtr_4pgSeqG8l3fdkkcdManhYD4jCHM_NCzgR_jh6PURPE4T1-kIMfiXSly=
+mEARkR-71XA5z2ZhVt9d_E5jc1AcHWS5pGBWdtxDTRdh7d5bs-8CYefV6QuWZTfwP1CvqTcC78b=
+cMJF32sejpK0zGi0X1lZZW2I_QZ36OmGURRfMSE00pp3VjuSoBAKxEaRWE3aYZUmf7pbTWgDoaP=
+0Mma1eSe8GQrhqzbdaAoF_m6AJPqwANWTkLr3UtC9es4yH3JRUGlsSQ8pNrc-n_e0NvuGuTvIVQ=
+VGgBk0XMM5omdpdeAFOOJewF8IL6EPWbX3VBhVjXJxcgIdRgJiZt1_jhZY8g_vpBTa7r0eBFbU_=
+cDDxiFYiyfr2t5v5bOxUw4ush3nhuF4ZpgmeoC5abRv8gI5V-3uvE5YTeSJR4nCQ17k18z2ZEgd=
+EhZu4Ak0CFs1T5WKJ6EmF9PQdQPFPbkWNPhvy_y3vDj1wBHkwqbl8TQafZkFxVF71tyDU6lIk" =
+target=3D"_blank" class=3D"Unsubscribe--unsubscribePreferences" style=3D"fo=
+nt-family:sans-serif;text-decoration:none;">Unsubscribe Preferences</a></di=
+v><br>############################################################<br>#####=
+#######################################################<br><br><img src=3D"=
+https://u19268662.ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/434/3leBESjtR=
+waPU-Cmad3gtA/ho.gif" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=
+=3D"height:1px !important;width:1px !important;border-width:0 !important;ma=
+rgin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;=
+margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !importa=
+nt;padding-right:0 !important;padding-left:0 !important;"/></body>
+</html>
+--3c4f48d3275f61343c344579778c0d91c827460446ac23112c79c47c564e--

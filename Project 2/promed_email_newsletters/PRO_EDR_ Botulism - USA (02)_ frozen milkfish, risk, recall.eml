@@ -1,0 +1,457 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a98:c004:0:b0:1eb:e128:bbe3 with SMTP id l4csp583056eic;
+        Tue, 9 Jan 2024 15:05:20 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IE/FoJnTAioqQss+i8i1w0/2i6RCnSgtwjm+f9oW0SgUqs2i3lpKbrPKW4y7n27fJwBrmo+
+X-Received: by 2002:a17:90b:1d0d:b0:28b:f53d:d317 with SMTP id on13-20020a17090b1d0d00b0028bf53dd317mr32203pjb.41.1704841519954;
+        Tue, 09 Jan 2024 15:05:19 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1704841519; cv=none;
+        d=google.com; s=arc-20160816;
+        b=kV1j5UxNJZqGhYxAMCwqpPSgLnZu+w3dtJM4j3jQrv/0euukXtCqEWG/YgXfilNxkL
+         rFN8t9NQljYeTEWfInBT6gfSKAqm7WAz9oOqR+/S4Sui0PWEcAFsPx2GcbjDyXSS4XMU
+         ysyBGzKrafiLQXW3SDBcOLys5qBx4m+iXwG5wII///i9kcC8ZoaIbMrtKbjlW+KiiESj
+         P0z1CXjj8rycM/OwVxLEr8Jk1YsFCUgWKtd6ml6AoP2BdQA7fbIpWdZfllWSfia0ku7u
+         MdFdlL3uDM4578yfNLvx3Evvk58mXLtt86CNy8DVWiQPHa86YS39Y5U+HItMS6aO8HxC
+         pObA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=3h00x2Ka8JjTFOlwWAv5oLIus4CTgPZ2jTddbATrYmg=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=m3yu+iBVlRgL0+lGZjeCAW07YF04WnNYF/EjpTFXWXr2ddDuRBIccwSlYpLrZDWEJB
+         CVNZMzWJ+89FOzcLTkBVCpr5QKGs0dG+9YwNCNK2hrqmmFRTqoDk38/T6P2I+C+z0HuQ
+         J2qzLsevqto1T7vEXxyP+QIefK4kr+36DRea1BY/inWN6+49LhpInyhnLWSIBOgkn1gD
+         MHQXXLqxcv3PewPPCvcOk8l/E7TECFedCn/XGdTUiOzdfXwN/yOp3jKprEu+KOpgcweJ
+         FxKYqhCAfE5IarVcUqfvwTpMfuJgR+iaZVqNZgh1SYIZ1LUHBUmfd6KDzY/NEdD9QdTu
+         rlRQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b="pXq/pkMq";
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=oQE+5K1o;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id gg19-20020a17090b0a1300b0028beb2f8f61si46572pjb.43.2024.01.09.15.05.19
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 09 Jan 2024 15:05:19 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b="pXq/pkMq";
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=oQE+5K1o;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=3h00x2Ka8JjTFOlwWAv5oLIus4CTgPZ2jTddbATrYmg=;
+	b=pXq/pkMqzmn9tiB3ae8F4H0ynUCPwD1OV0xRoIe4pQWBExH6e6F8ogWfCc+fSyxYFB1f
+	tyUuXNXqMN+iEey/zN+bxPk1HFIsvs0JyDp5fwqJVQXE4Mz48ec86H04F8U8RRfrKg2Srz
+	2lDMk1V3mungn4cO7giibQumON9Zyv3t3sH4Rb87QnoMvnCWZDSwOxPb/alLhv4vOPyK5z
+	Xe32CMSi85EQ441fWQ7oe1Qvi/Z2l+40hnN3oLfMNULCeOiM4KqdQTYPxYM5oi/pp44wsS
+	liiN0kthvwnuNJQxUTmnSsnCLiB4GpDXBHevEJO/+hB6eWBJ9iKdVk291SGx/18A==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=3h00x2Ka8JjTFOlwWAv5oLIus4CTgPZ2jTddbATrYmg=;
+	b=oQE+5K1ovjRT4YljNOHztIOHGP4HPXBeWClbl870xl4GhQjI2/iJ84D0XV1gI9fqfdZB
+	6kCPfvg3sLGYVdb0mDXzqqwKNzrmTJW6Iq1dZQ8QkGwpNafOtXdXPqJ3zEr8OvVvzVOdVO
+	ismqQXii9v4JJY4LWBMUbFTnoBu1AuodA=
+Received: by filterdrecv-786cd9884d-gx6tz with SMTP id filterdrecv-786cd9884d-gx6tz-1-659DD12B-C
+        2024-01-09 23:05:15.169550121 +0000 UTC m=+6493757.084646522
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-37 (SG) with HTTP
+	id vjpcJhnUQbO-TVleLbNpiA
+	Tue, 09 Jan 2024 23:05:15.001 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=4c870cd2ec5a7eb228c1d2c8f316ab13dd769eaa075943fe9399ed07b3ee
+Date: Tue, 09 Jan 2024 23:05:18 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <vjpcJhnUQbO-TVleLbNpiA@geopod-ismtpd-37>
+Subject: PRO/EDR> Botulism - USA (02): frozen milkfish, risk, recall
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iB1e+hgcFp0jUFXNPCopcFQ9ut95Gg3J4d7Ta=2Fg?=
+ =?us-ascii?Q?2aI5Jiin6VCkXz+HoGusxRaE0meaZ0AY0jP+28R?=
+ =?us-ascii?Q?xSHWAOSFq5er=2FomfHO+OIz1nKCw9lbdP8tVoX=2FB?=
+ =?us-ascii?Q?WGy3yh+blBzk2oMXQFxs9UoD3ixWuxKlaq5CRqe?=
+ =?us-ascii?Q?v6PJkEfZHVGIZ8n+p8xx8lcHe7F2aQbWM0o+yD?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUhc93xcG=2F095a5S4+mt=2FG?=
+ =?us-ascii?Q?uYUpctI=2FOGD2dwyi+uvm2j4FCdvuw0l9zcHM8iA?=
+ =?us-ascii?Q?mojOvTXq7jOpDFFNtfsYkHQYACEW8pq1BXXqYmH?=
+ =?us-ascii?Q?oGTsnt6QpE2ZV5WVqnpwfXWoLXx7+4alIX1shUs?=
+ =?us-ascii?Q?uH1l6JjegydGGRAA7V=2FbceEMmUIybhLcDL8VstE?=
+ =?us-ascii?Q?mWX=2F1i4+n5tmOGU5FoWc1cy2NllcxC2CN8C0Izn?=
+ =?us-ascii?Q?ZMPtaAaiAo6w0Xg5SoUoqyCGKtxHvR10ZSWBwCe?=
+ =?us-ascii?Q?Dy0tPpSueRhFgArLom1aZ9g2A9M9uVpoowo=2Fa1R?=
+ =?us-ascii?Q?wz8DTbf+98zb2gh2nZ4o=2FdVNlLursbnk33m55Zo?=
+ =?us-ascii?Q?rq4VYeJDEu8jcYaccFQ=2FbEiyhe38TjaPm1S2C1s?=
+ =?us-ascii?Q?Y4vGuKP5j+ubLUyJBE=2FLAaqp4+qG8t4k7UnmyEN?=
+ =?us-ascii?Q?F53VbjHbIL6Of1RCaVwIzIuK8b8XDqCF=2FnOwFjX?=
+ =?us-ascii?Q?yPajkz=2Fty7T=2Fcnh9valJYqmR25N4kMaLmZgoL2+?=
+ =?us-ascii?Q?0P4urt6F5g92aYeUH+97v0klzwOYwI3e+mDWJcN?=
+ =?us-ascii?Q?Y5ulS5sgo5AlXVpq1mluNx0YoHei5cb8fDCqnbQ?=
+ =?us-ascii?Q?Tw8Now5V4apQOIkNO3CiBpTcTxPvbsRo1a878zR?=
+ =?us-ascii?Q?Lwl2dr5GG=2FDtg7V0aE19bF8u81bEFX=2Fj4Kfrm0u?=
+ =?us-ascii?Q?EiSUh8KIH=2Fiipuas+l5L7vylVrsRx9M38CxhHm=2F?=
+ =?us-ascii?Q?LAUvhukIhWJaq1RzuHg0N4eysMrTabde2=2FupO3o?=
+ =?us-ascii?Q?Uc1XFH0QIPV9K8KUCIaHZpB0Zw=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2EX8WvXs=5FOI?=
+ =?us-ascii?Q?fBfUwE-m-QncYKw4shBezka5C0MxV645ABoMDAw?=
+ =?us-ascii?Q?dTAwMCNnrNbxU3UdeT4t-4jDaeDaaMqcxgv2Oq1?=
+ =?us-ascii?Q?r3U2DFWmKBb=5FbWOwB0oIo6yhgpoO1TcDUeuv0RO?=
+ =?us-ascii?Q?Cpcz3iwcis6k7lni7CEc6T51D5msjPkgdX0Fob3?=
+ =?us-ascii?Q?WhkskDvbCT1KlcyQg=3D=3D=2E-fANbY-5uFZHKv=5FQpdD?=
+ =?us-ascii?Q?P60zWIJWNnfq6aOiK4no6buhoMDAwdTAwMCkXKh?=
+ =?us-ascii?Q?N6ewj9jO3tW8s5MGVOP56kXWLWPkPLluOxKmvjQ?=
+ =?us-ascii?Q?YfDtOEzcIsy2jhGWCm9aG1aEuzC-W=5FcgvuekxR9?=
+ =?us-ascii?Q?gmLYVKZE--jroae3mZYaDj4S3Cw5vcGXBUcqSBV?=
+ =?us-ascii?Q?ozVa7=5FSKzwRfKtUUSRHC0fEdTDiSEE8VMDiHlqL?=
+ =?us-ascii?Q?Z1bSxRZh2MOnSpU-VOsIW8Ns3M91hYVobxcj0M5?=
+ =?us-ascii?Q?fJiDSna93hOu9Y4vSex0hJ9sNJI=5FG58pA0NfKXU?=
+ =?us-ascii?Q?pjv7LnPXQD2KGjn7ss5htz7CKVcTZsRjJls3aYu?=
+ =?us-ascii?Q?IwllNPMYDvUR8Vokn4tuGHsSzK3-RQlVX37Abuu?=
+ =?us-ascii?Q?5-6JSwuG4PfgLXhwyPeUTCSXwW6cvud1J-WSk0M?=
+ =?us-ascii?Q?syngstLv=5FLGnIK82iUpNLimp6mjgA-a2dFoNJVw?=
+ =?us-ascii?Q?2hnrGPM3lYnX11CiwqGuctH22jQicFKtwz18R1A?=
+ =?us-ascii?Q?tpH5=5FUx6X=5FSiJH03MqLMQ4wVy=5F-ydfwp-Ghchh0?=
+ =?us-ascii?Q?mXWArAzrakwowfdKGgbBAQRcct0ndZ0YPVWdL2B?=
+ =?us-ascii?Q?s6v94gJSF4yZ5wbRz8b2vGLjv47Oq1lvQYbApm-?=
+ =?us-ascii?Q?JK6HiAp8z9MIwcuHjJV6COUnBTU9fjI09BGYpDr?=
+ =?us-ascii?Q?NiRKlt=5FhDilhyfMGtG24-klg5IzV3d-mbfLshGi?=
+ =?us-ascii?Q?1TMi8TCYNl6HOo6I4BBheF5o8Qf5F=5FrsnKCzJ=5Fq?=
+ =?us-ascii?Q?A54knvohb67dlFnD5D1ubkzdmwMznFrRzFfjEFb?=
+ =?us-ascii?Q?u4GEt6kJ5ZXo5WlLOMON-irc7faQR4Bgcjhjwk6?=
+ =?us-ascii?Q?7Vc0g0m7=5FmhcjJF18xANeUR96v-v62WlwR5unVd?=
+ =?us-ascii?Q?6vHzjVuw2-cLauJPfWJIAzCqgwVLDxSZ-I79xOk?=
+ =?us-ascii?Q?H-ImP66ipGD0jYTLdUmWhZ2aPaRD1kDqj10ciXY?=
+ =?us-ascii?Q?vpjCsNmsHrWemVsbAKaw0=5FDb0Vx8IUWKjrTbwVG?=
+ =?us-ascii?Q?lcmIfMsNY4o2Oqo8L-Sj34xnDHScCGkXDkQXbFk?=
+ =?us-ascii?Q?5M9pE5Y=5FC6w-u9bSqoKDlq66UfPuDZ2w3khETWX?=
+ =?us-ascii?Q?pT6UReVjM37kgQ6tl4y55hn=3E?=
+
+--4c870cd2ec5a7eb228c1d2c8f316ab13dd769eaa075943fe9399ed07b3ee
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=utf-8
+Mime-Version: 1.0
+
+BOTULISM - USA (02): FROZEN MILKFISH, RISK, RECALL
+**************************************************
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+Date: Mon 8 Jan 2023
+Source: Food Safety News [abridged, edited]
+<https://www.foodsafetynews.com/2024/01/milkfish-recalled-over-botulism-con=
+cerns/>
+
+
+Foremost Foods International, Inc. of Pomona, CA is recalling Pamana
+Premium Marinated Bangus, Pamana Premium Marinated Baby Bangus and
+Pamana Premium Bangus Belly because of potential _Clostridium
+botulinum_ growth and toxin formation.
+
+The frozen bangus (milkfish) in reduced oxygen packaging does not
+contain instructions to keep frozen and instructions for proper
+thawing (e.g., "Important, keep frozen until used, thaw under
+refrigeration immediately before use").
+
+According to the details posted online by the Food and Drug
+Administration, the recall was initiated on 1 Dec 2023 and is ongoing.
+The recalled products were distributed in the United States to
+supermarkets in California, Hawaii, Washington, Illinois, Nevada and
+Texas.
+
+Recall products:
+- Pamana Premium Marinated Bangus (deboned marinated milkfish), net
+weight to be weight at time of sale, product quantity: 407 boxes
+- Pamana Premium Marinated Baby Bangus (deboned marinated baby
+milkfish), net weight to be weight at time of sale, product quantity:
+432 boxes
+- Pamana Premium Bangus Belly (cut deboned milkfish belly), 340 g ([12
+oz]), product quantity: 448 boxes
+
+Recalled products should be thrown out or returned to their place of
+purchase.
+
+--
+Communicated by:
+ProMED
+
+[Because of the potential severity of botulism, ProMED posts such
+recalls even if, as in this case, there are no human cases associated
+(yet) with the food products. Most food recalls are related to
+defective preparation procedures that could, but do not necessarily,
+result in the germination of viable spores of _Clostridium
+botulinum_.
+
+"Milkfish (_Chanos chanos_) is the sole living species in the family
+Chanidae. However, there are at least 5 extinct genera from the
+Cretaceous. The repeating scientific name (tautonym) is from Greek
+khanos (=CF=87=CE=AC=CE=BD=CE=BF=CF=82 'mouth'). The species has many commo=
+n names. The
+Hawaiian name for the fish is awa, and in Tahitian it is ava. It is
+called bang=C3=BAs (Tagalog) in the Philippines, where it is popularly
+known as the national fish"
+(<https://en.wikipedia.org/wiki/Milkfish>). - Mod.LL
+
+ProMED map:
+United States: <https://promedmail.org/promed-post?place=3D8714150,106>]
+
+[See Also:
+Botulism - USA: (CA) jarred mulberry products, risk
+http://promedmail.org/post/20240106.8714092
+2023
+----
+Botulism - USA (02): canned shrimp, risk, expanded recall
+http://promedmail.org/post/20230424.8709672
+Botulism - USA: canned shrimp, risk, recall
+http://promedmail.org/post/20230301.8708651
+2022
+----
+Botulism - USA (07): (WY) canned food, fatal
+http://promedmail.org/post/20221211.8707203
+Botulism - USA (06): (MI) seaweed products, risk, recall
+http://promedmail.org/post/20221019.8706225
+Botulism - USA (05): (CA) http://promedmail.org/post/20220720.8704547
+Botulism - USA (04): (TX) wound, injection drug related, 2020-21
+http://promedmail.org/post/20220527.8703504
+Botulism - USA (03): (WA) probable case, home-canned food, fatal
+http://promedmail.org/post/20220428.8702905
+Botulism - USA (02): jarred sweet peppers, risk, recall
+http://promedmail.org/post/20220421.8702754
+2021
+----
+Botulism - USA (08): (CA) wound, injection drug related
+http://promedmail.org/post/20210925.8698698
+Botulism - USA (07): poppy seed dressing, risk, recall
+http://promedmail.org/post/20210918.8683918
+Botulism - USA (06): (NM) wound, injection drug related
+http://promedmail.org/post/20210610.8438722
+Botulism - USA (05): canned beans, risk, recall
+http://promedmail.org/post/20210522.8375891
+Botulism - USA (04): canned beans, risk, recall
+http://promedmail.org/post/20210425.8326118
+Botulism - USA (03): (CO) sporadic foodborne cases
+http://promedmail.org/post/20210317.8249405
+Botulism - USA (02): (CA) wound, injection drug related
+http://promedmail.org/post/20210311.8242098
+Botulism - USA: (NM) wound, injection drug related
+http://promedmail.org/post/20210114.8102850
+2020
+----
+Botulism - USA (08): (CO) http://promedmail.org/post/20201203.7990724
+Botulism - USA (07): (CA) wound, injection drug-related
+http://promedmail.org/post/20201110.7932451
+Botulism - USA (06): (RI) sea moss products, risk, recall
+http://promedmail.org/post/20201004.7835366
+Botulism - USA (05): (NJ) wound, injection drug related
+http://promedmail.org/post/20201001.7829272
+Botulism - USA (04): (NM) wound, injection drug related
+http://promedmail.org/post/20200818.7689221
+Botulism - USA (03): pet food recall
+http://promedmail.org/post/20200326.7142954
+Botulism - USA (02): (AK) home canned salmon
+http://promedmail.org/post/20200106.6874215]
+.................................................ll/rd/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3Dh2KJEUyQ56sqrpkHxuFK3QOfIYkXmwLVIAKcvPNacgRoMDAwdTAwMEuP2Dv=
+IJjvfPgkrMAExPu_2gOVZzniV-puELwCNZKy5jKf4UddK31Fn0Hn76RBC4HL11vHV2xuyfRxRUY=
+wzUtMJ4YUK1PmVlrzyh4UpVVvO0T0KmGbZb3tRAcW-Pw8xxDOg-uve6v4TODnsr1Nh_Gcy1uXwe=
+FpMYycDL8z79gNxf58av8enFUMVA0s-tkE-TBblcyP4jZpfMhqkHwoXnO3A-9W2N0udyH7GP7EY=
+ejFpNh2iaV56k-GFm7a3hyn_V433vwwwithJ3rrx6m0UxK6n6qOdfwzFyM5zXdJNUeaw-LGEOOF=
+pPFw51iytuXrSwDDpB2n3tc3r0OalYeschlA7CZoaoBiLw1NhsM-W1PdHzPy3p4EYjRmSqh9ENa=
+ddxKI3ZlmYZ0tq9kzJNByOs6IoXNbtumI4RbmDOZVp7CFpURr8Ki4sInacUfWenhzRG_y9djjsb=
+wYC3GF4IGLK8tZhSvDLBLo89tQuLmdjaQ-Gw-GqdokxS_O2HOv4CjIRYZ111yQ7KjqCJk0rX_fe=
+bAlL2McBMfEjqyGGlIyDpk-b3UEW4V_k7CdBA7JM3fPAySFdT4246v8PGaoOA7cN_RFspIMQshV=
+IDPdDY5-DqGFLEjZr5ZFMAYCnei2Zz_ca98UJJWMYjR3FCGRiSEHsncGr3m0FO_2YJBGLkxAmWR=
+_c9VySGNCywxrkAbKJDJSet5zx2d4HXBIkZdKZtQDbhG1jZGaO_lhuI_RsetLU8yvDjytUGFuOb=
+BmKepWtfnV8KR0olp5EeF80Ea9WUNapsrwBOaGomxNatwuRzJ4CoP09AjDntNcfTLxc275sIy-Y=
+mZ4zkC8XqSURqoSmHp63UVy5Ty-7JvPRdrv4uaQqhZJO0OIZkxeth0cuh_G1L45yUOwgrFCut86=
+g5wx7_NBkIT7uaWiShQPgQz2BlyckaBhGM9ACE3r9BhR5DS7-4bpxCg7vafu5GWz2jO_4IJhQnF=
+ahEZtP39pwQW71oziUd_zSljQpnDhO6WRN-vQUsUpV1Z3qtInAdIoFVeBYAhUYFlxoSo-Y38xQQ=
+SChJQRuRnYxar4Zah-9ELxsg94JB2WHesMKzXHbGOD9DwFqCf5nadhsaD0hPv8Ysldd2cWYJvAa=
+HnQqvZcwBVjKvnnIGJva7Len89TwIsD4jW9bjcLiPhA=3D )
+############################################################
+############################################################
+
+--4c870cd2ec5a7eb228c1d2c8f316ab13dd769eaa075943fe9399ed07b3ee
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>BOTULISM - USA (02): FROZEN MILKFISH, RISK, RECALL<br>***************=
+***********************************<br>A ProMED-mail post<br><a href=3D"htt=
+ps://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisIijpefK5PNjW-mL-YZ=
+GnfgDOxU1G3gjwnPSi2Tfv3HA/42u/hpUgRPtSRz-nAhocqQbJ7g/h0/08VwRULPysSQc9UAmfS=
+pQWinXCZhsyFSO4qm74QGn4U">http://www.promedmail.org</a><br>ProMED-mail is a=
+ program of the<br>International Society for Infectious Diseases<br><a href=
+=3D"https://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisCT5tpD4Upm3=
+qyMCbcYSQvc/42u/hpUgRPtSRz-nAhocqQbJ7g/h1/ftccXoFvAoKYiaQFVw3Zjw7pU_iK1md4g=
+6PhCub5sWE">http://www.isid.org</a><br><br>Date: Mon 8 Jan 2023=0D<br>Sourc=
+e: Food Safety News [abridged, edited]=0D<br><a href=3D"https://u19268662.c=
+t.sendgrid.net/ss/c/TLh_csrC34X_iXpbYoMam7_KE_k7g5yUf5I4VNdPS-RZIusV4PlJARx=
+gOOB8T7wUOybwgXPevpGBy4gAMEBQq_Di8KNj6ME4iYPsuCWzVIvmH2SBuJi5czW3_3hctF7z/4=
+2u/hpUgRPtSRz-nAhocqQbJ7g/h2/DRyKuYMoTKThOxAqf2dg--jL6wnWPJPb3GipYdFE31s">h=
+ttps://www.foodsafetynews.com/2024/01/milkfish-recalled-over-botulism-conce=
+rns/</a>=0D<br>=0D<br>=0D<br>Foremost Foods International, Inc. of Pomona, =
+CA is recalling Pamana<br>Premium Marinated Bangus, Pamana Premium Marinate=
+d Baby Bangus and<br>Pamana Premium Bangus Belly because of potential _Clos=
+tridium<br>botulinum_ growth and toxin formation.=0D<br>=0D<br>The frozen b=
+angus (milkfish) in reduced oxygen packaging does not<br>contain instructio=
+ns to keep frozen and instructions for proper<br>thawing (e.g., "Important,=
+ keep frozen until used, thaw under<br>refrigeration immediately before use=
+").=0D<br>=0D<br>According to the details posted online by the Food and Dru=
+g<br>Administration, the recall was initiated on 1 Dec 2023 and is ongoing.=
+<br>The recalled products were distributed in the United States to<br>super=
+markets in California, Hawaii, Washington, Illinois, Nevada and<br>Texas.=0D=
+<br>=0D<br>Recall products:=0D<br>- Pamana Premium Marinated Bangus (debone=
+d marinated milkfish), net<br>weight to be weight at time of sale, product =
+quantity: 407 boxes=0D<br>- Pamana Premium Marinated Baby Bangus (deboned m=
+arinated baby<br>milkfish), net weight to be weight at time of sale, produc=
+t quantity:<br>432 boxes=0D<br>- Pamana Premium Bangus Belly (cut deboned m=
+ilkfish belly), 340 g ([12<br>oz]), product quantity: 448 boxes=0D<br>=0D<b=
+r>Recalled products should be thrown out or returned to their place of<br>p=
+urchase.=0D<br>=0D<br>--=0D<br>Communicated by:=0D<br>ProMED<br><br>[Becaus=
+e of the potential severity of botulism, ProMED posts such<br>recalls even =
+if, as in this case, there are no human cases associated<br>(yet) with the =
+food products. Most food recalls are related to<br>defective preparation pr=
+ocedures that could, but do not necessarily,<br>result in the germination o=
+f viable spores of _Clostridium<br>botulinum_.=0D<br>=0D<br>"Milkfish (_Cha=
+nos chanos_) is the sole living species in the family<br>Chanidae. However,=
+ there are at least 5 extinct genera from the<br>Cretaceous. The repeating =
+scientific name (tautonym) is from Greek<br>khanos (=CF=87=CE=AC=CE=BD=CE=
+=BF=CF=82 'mouth'). The species has many common names. The<br>Hawaiian name=
+ for the fish is awa, and in Tahitian it is ava. It is<br>called bang=C3=BA=
+s (Tagalog) in the Philippines, where it is popularly<br>known as the natio=
+nal fish"<br>(<a href=3D"https://u19268662.ct.sendgrid.net/ss/c/u6Jy221DtLT=
+d6phwYNECndCVDGULFcCLoA-Mb23Mb1W9F4cBmz96AxUW2tI0a_0W/42u/hpUgRPtSRz-nAhocq=
+QbJ7g/h3/1T51Re13mUSyIcK0KmAWGckEv_DxUZ3rQfkIpljjdZE">https://en.wikipedia.=
+org/wiki/Milkfish</a>). - Mod.LL<br><br>ProMED map:<br>United States: <a hr=
+ef=3D"https://u19268662.ct.sendgrid.net/ss/c/sSnCkKCWBvais3EuVAOvgy2WOIX7pp=
+1nXnn4AbwuQ3Z6WbkfhqXYXU-aTMPJ8yThiiTdN0wfOWIS9M0xgzJ8Yg/42u/hpUgRPtSRz-nAh=
+ocqQbJ7g/h4/1nzRjWhdbgqk84UazVzZXVNHQSd7GYWHzU0-daS-ZKc">https://promedmail=
+.org/promed-post?place=3D8714150,106</a>]<br><br>[See Also:<br>Botulism - U=
+SA: (CA) jarred mulberry products, risk<br>http://promedmail.org/post/20240=
+106.8714092=0D<br>2023=0D<br>----=0D<br>Botulism - USA (02): canned shrimp,=
+ risk, expanded recall<br>http://promedmail.org/post/20230424.8709672=0D<br=
+>Botulism - USA: canned shrimp, risk, recall<br>http://promedmail.org/post/=
+20230301.8708651=0D<br>2022=0D<br>----=0D<br>Botulism - USA (07): (WY) cann=
+ed food, fatal<br>http://promedmail.org/post/20221211.8707203=0D<br>Botulis=
+m - USA (06): (MI) seaweed products, risk, recall<br>http://promedmail.org/=
+post/20221019.8706225=0D<br>Botulism - USA (05): (CA) http://promedmail.org=
+/post/20220720.8704547=0D<br>Botulism - USA (04): (TX) wound, injection dru=
+g related, 2020-21<br>http://promedmail.org/post/20220527.8703504=0D<br>Bot=
+ulism - USA (03): (WA) probable case, home-canned food, fatal<br>http://pro=
+medmail.org/post/20220428.8702905=0D<br>Botulism - USA (02): jarred sweet p=
+eppers, risk, recall<br>http://promedmail.org/post/20220421.8702754=0D<br>2=
+021=0D<br>----=0D<br>Botulism - USA (08): (CA) wound, injection drug relate=
+d<br>http://promedmail.org/post/20210925.8698698=0D<br>Botulism - USA (07):=
+ poppy seed dressing, risk, recall<br>http://promedmail.org/post/20210918.8=
+683918=0D<br>Botulism - USA (06): (NM) wound, injection drug related<br>htt=
+p://promedmail.org/post/20210610.8438722=0D<br>Botulism - USA (05): canned =
+beans, risk, recall<br>http://promedmail.org/post/20210522.8375891=0D<br>Bo=
+tulism - USA (04): canned beans, risk, recall<br>http://promedmail.org/post=
+/20210425.8326118=0D<br>Botulism - USA (03): (CO) sporadic foodborne cases<=
+br>http://promedmail.org/post/20210317.8249405=0D<br>Botulism - USA (02): (=
+CA) wound, injection drug related<br>http://promedmail.org/post/20210311.82=
+42098=0D<br>Botulism - USA: (NM) wound, injection drug related<br>http://pr=
+omedmail.org/post/20210114.8102850=0D<br>2020=0D<br>----=0D<br>Botulism - U=
+SA (08): (CO) http://promedmail.org/post/20201203.7990724=0D<br>Botulism - =
+USA (07): (CA) wound, injection drug-related<br>http://promedmail.org/post/=
+20201110.7932451=0D<br>Botulism - USA (06): (RI) sea moss products, risk, r=
+ecall<br>http://promedmail.org/post/20201004.7835366=0D<br>Botulism - USA (=
+05): (NJ) wound, injection drug related<br>http://promedmail.org/post/20201=
+001.7829272=0D<br>Botulism - USA (04): (NM) wound, injection drug related<b=
+r>http://promedmail.org/post/20200818.7689221=0D<br>Botulism - USA (03): pe=
+t food recall<br>http://promedmail.org/post/20200326.7142954=0D<br>Botulism=
+ - USA (02): (AK) home canned salmon<br>http://promedmail.org/post/20200106=
+.6874215]<br>.................................................ll/rd/jh<br><=
+/body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3Dh2KJEUyQ56sqrpkHxuFK3QOfIYkXmwLVIAKcvPNacgRoMDAwdT=
+AwMEuP2DvIJjvfPgkrMAExPu_2gOVZzniV-puELwCNZKy5jKf4UddK31Fn0Hn76RBC4HL11vHV2=
+xuyfRxRUYwzUtMJ4YUK1PmVlrzyh4UpVVvO0T0KmGbZb3tRAcW-Pw8xxDOg-uve6v4TODnsr1Nh=
+_Gcy1uXweFpMYycDL8z79gNxf58av8enFUMVA0s-tkE-TBblcyP4jZpfMhqkHwoXnO3A-9W2N0u=
+dyH7GP7EYejFpNh2iaV56k-GFm7a3hyn_V433vwwwithJ3rrx6m0UxK6n6qOdfwzFyM5zXdJNUe=
+aw-LGEOOFpPFw51iytuXrSwDDpB2n3tc3r0OalYeschlA7CZoaoBiLw1NhsM-W1PdHzPy3p4EYj=
+RmSqh9ENaddxKI3ZlmYZ0tq9kzJNByOs6IoXNbtumI4RbmDOZVp7CFpURr8Ki4sInacUfWenhzR=
+G_y9djjsbwYC3GF4IGLK8tZhSvDLBLo89tQuLmdjaQ-Gw-GqdokxS_O2HOv4CjIRYZ111yQ7Kjq=
+CJk0rX_febAlL2McBMfEjqyGGlIyDpk-b3UEW4V_k7CdBA7JM3fPAySFdT4246v8PGaoOA7cN_R=
+FspIMQshVIDPdDY5-DqGFLEjZr5ZFMAYCnei2Zz_ca98UJJWMYjR3FCGRiSEHsncGr3m0FO_2YJ=
+BGLkxAmWR_c9VySGNCywxrkAbKJDJSet5zx2d4HXBIkZdKZtQDbhG1jZGaO_lhuI_RsetLU8yvD=
+jytUGFuObBmKepWtfnV8KR0olp5EeF80Ea9WUNapsrwBOaGomxNatwuRzJ4CoP09AjDntNcfTLx=
+c275sIy-YmZ4zkC8XqSURqoSmHp63UVy5Ty-7JvPRdrv4uaQqhZJO0OIZkxeth0cuh_G1L45yUO=
+wgrFCut86g5wx7_NBkIT7uaWiShQPgQz2BlyckaBhGM9ACE3r9BhR5DS7-4bpxCg7vafu5GWz2j=
+O_4IJhQnFahEZtP39pwQW71oziUd_zSljQpnDhO6WRN-vQUsUpV1Z3qtInAdIoFVeBYAhUYFlxo=
+So-Y38xQQSChJQRuRnYxar4Zah-9ELxsg94JB2WHesMKzXHbGOD9DwFqCf5nadhsaD0hPv8Ysld=
+d2cWYJvAaHnQqvZcwBVjKvnnIGJva7Len89TwIsD4jW9bjcLiPhA=3D" target=3D"_blank" =
+class=3D"Unsubscribe--unsubscribePreferences" style=3D"font-family:sans-ser=
+if;text-decoration:none;">Unsubscribe Preferences</a></div><br>############=
+################################################<br>#######################=
+#####################################<br><br><img src=3D"https://u19268662.=
+ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/42u/hpUgRPtSRz-nAhocqQbJ7g/ho.g=
+if" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"height:1px !imp=
+ortant;width:1px !important;border-width:0 !important;margin-top:0 !importa=
+nt;margin-bottom:0 !important;margin-right:0 !important;margin-left:0 !impo=
+rtant;padding-top:0 !important;padding-bottom:0 !important;padding-right:0 =
+!important;padding-left:0 !important;"/></body>
+</html>
+--4c870cd2ec5a7eb228c1d2c8f316ab13dd769eaa075943fe9399ed07b3ee--

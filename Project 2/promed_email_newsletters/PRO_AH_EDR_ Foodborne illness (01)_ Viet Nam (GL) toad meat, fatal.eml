@@ -1,0 +1,653 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a98:c004:0:b0:1eb:e128:bbe3 with SMTP id l4csp3022509eic;
+        Sat, 13 Jan 2024 18:00:23 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IEKCFcV1/7MzCZSe6u4tz73q6A9bGUGc3las4NEjfCFuGGsArW3PwkPnDymfWCavYFpSWGd
+X-Received: by 2002:ac8:5f84:0:b0:429:ceaa:bc66 with SMTP id j4-20020ac85f84000000b00429ceaabc66mr3122976qta.86.1705197623223;
+        Sat, 13 Jan 2024 18:00:23 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1705197623; cv=none;
+        d=google.com; s=arc-20160816;
+        b=o/KWLoG+0uphDOA+muXmafiFNHh+fo/5Zp6jfEpTgaeNepioGR/cPWn8/nXrKdSS+0
+         S/X4fhzAK0RGHTMZCLdZkmU+DzBsw3v5URkjyHvPOSoGGCC6roiY7RMQIbvUjq3PrzJu
+         ePFymRdNdgl5ASnTh8HqGrAvWpujdyLbJIQMYIvGls30bHUQB/aMoiNxZ1V7DxXHm3qv
+         bKwoWce9rwWl2BSUocyoqep95GvYmXNR6WdpoNE8Yi79L+6zcUKH9cvakuae4991L/dN
+         wBWps8fTTFugGek//5AVIzduUtqPb2OeCz6BNTI5dWNBnNnJCh0vllaxissEAP14Dlpe
+         WISA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=OPeum65HIDTWD9mekgCVF9CzvedUiUw0CvDFIU614eg=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=XfrQPCCHcnGeGvRohVGg3bRQtZF+xaYZcoTKvVI7QY7U/e3Dw1317ZCj7cQS5tCogi
+         RvUWRvGUztYAiVY3BoeyBXFy2ZSN6ZaLJdzfpGS+owp5ub10+7mb17tCrT7ooyU5SXI+
+         Pyz1hbB0dJxyGhkKrHw4O0QK6kUu6glx3celUXaB6MTel7wYK9pCIT123sCIxXuxN5IU
+         j+0tzB/TEhi64U2DNbbztptwSVmEr3BQhp1WsW3TE0f8KeEoO3UOHKp3b81woR4DMi2i
+         krtHKn4jZ7uMMP0njuyIt5toAe1Z/9pPmEMa9ttMF7IJAKnHgIPcfS8cHO2QK6Js5JMq
+         wLgg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=q2kw1tNi;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=lZZ5SFPC;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id o13-20020a0ce40d000000b00680611cf9bdsi5643273qvl.175.2024.01.13.18.00.22
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sat, 13 Jan 2024 18:00:23 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=q2kw1tNi;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=lZZ5SFPC;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=OPeum65HIDTWD9mekgCVF9CzvedUiUw0CvDFIU614eg=;
+	b=q2kw1tNiFIerwR/lYBa3mwu1MHAAi+asHKEX6M/qT91mLdJofveyszIUNIBVMJcxol+d
+	npmOHWyJWu5g7EIsJiqo0tge69UtCmYqxRh1gkdzEJE5b/i0n6dXCDFuwl5GACIL/u5Ouu
+	3qCD8NvuWD/Zu/+FstUoWr7JOwhHKQlNtxt2FjAvKqdoS74c97L3f6Rk1C8qDXhKbeKeXM
+	EeAJbitiSSeoMeZ6TJRAxTztJl+DRi2ZgVI9B+FmLX1JKaFN/DZzYWXiRUQBEBXC+iUe6t
+	kg7d614JPmlZhc9CqhWO1tZjlugZbBUOWNCqtUN8E2y4ydQgkNDBWa8GLFdV2WhQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=OPeum65HIDTWD9mekgCVF9CzvedUiUw0CvDFIU614eg=;
+	b=lZZ5SFPC2VlkymF/tTUjGampA2i2UoXcJBduZWw6G+6atdO3t2oLMrR36mFZf1VGCQcg
+	hnlcNkaz2KafWYdKc10OtmozwHW22+9MQfTirUPl/OKHn8E1Wx+WV3Yrlrw3vscrMgvtkG
+	FAFepaSsHFt8XfSIeBiA0B7sdYixbJID8=
+Received: by filterdrecv-54fb999b49-9n527 with SMTP id filterdrecv-54fb999b49-9n527-1-65A34034-E0
+        2024-01-14 02:00:20.501712383 +0000 UTC m=+7629499.166586801
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-canary-0 (SG)
+	with HTTP
+	id iVcE83UXQmGEGQ6V0O-Brg
+	Sun, 14 Jan 2024 02:00:20.479 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=c4b8d385f428871073766afdf7b6ea42e1bd26f5cd61c62a625f4c29d675
+Date: Sun, 14 Jan 2024 02:00:22 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <iVcE83UXQmGEGQ6V0O-Brg@geopod-ismtpd-canary-0>
+Subject: PRO/AH/EDR> Foodborne illness (01): Viet Nam (GL) toad meat, fatal
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iBChRtRU3a5bes8gLvK2o5zUZEW3mD7IMyffI9g?=
+ =?us-ascii?Q?hqYo1EqR46s3GAAstsr9eR6pyy1oU+UHFrhkB6z?=
+ =?us-ascii?Q?fUrUTKC+E4Fa2sSZeo85h9YyeAYioTZWZqEFtvX?=
+ =?us-ascii?Q?+1aKhDreNI=2FtmCodOk3MW5QubWRSHNqSlQEWMWO?=
+ =?us-ascii?Q?h3cFJFq8BDH45C8DwucUPLN7B9BZuDqfKL+Ok3?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUiShGf=2FO8XJWpH34Od4Nd?=
+ =?us-ascii?Q?fxXa6jil96uRcJkF+N+LeVnO1tx80ddOyoyOo=2Fc?=
+ =?us-ascii?Q?Brxcl3ERAm0cOY743=2FFH59DWiSf5OzXORh1DLKt?=
+ =?us-ascii?Q?hb1NMKty3PsA5ju0ZzxCrq1WQuZSEQf=2FJlWtgqv?=
+ =?us-ascii?Q?cZmsyCHlNUZsDN=2FtcqAoECcCW4KKqJRAgv+tpqZ?=
+ =?us-ascii?Q?DpfTl02B+LME03Mn42Xvwn0kHUozpD+1C9ft8Ld?=
+ =?us-ascii?Q?JQ29yo+g5zajHbL=2FsCLCuLPNTpM4LMHldo9kkku?=
+ =?us-ascii?Q?cWPxUwSDeAJfAoTQjYjWNhs3vUKlQZoPCtZqxqX?=
+ =?us-ascii?Q?kRh82FoW3k8f53Vhbb9kEuMaAntDJlrq34adQi+?=
+ =?us-ascii?Q?GcnTxMurYfzVC08T1mYziuieT6F6LVcu0a4tGPD?=
+ =?us-ascii?Q?UgbSVDWMGa9SpzKytbunr9jJMpJib+bYcvAVGK7?=
+ =?us-ascii?Q?nkHGUEhw0WyLEvyNf9ptmUL7nWChtfAwCoFsEYu?=
+ =?us-ascii?Q?NCM+bpGVGQ25Fc2F8e+5Vm0FhBmBO9f1JYsHKKv?=
+ =?us-ascii?Q?TbHNVAc92N9EwxYt+VJ2rqAxtcJSNGE9ogiDQqE?=
+ =?us-ascii?Q?w=2F6wJcsYiam5A8=2FucT1akcp1YC+W1UtjR+NCafb?=
+ =?us-ascii?Q?IEbVUmrPui4A=2FMxcvjEduC9TvH=2FJtXodkg+S=2Fbv?=
+ =?us-ascii?Q?oz3DLy6uktABpXpCjNnQbFeTwrd4ck8A1CVgSSL?=
+ =?us-ascii?Q?7vmKx9AHmj16rb2GFl5ahf9WepkYJyrYytinM1I?=
+ =?us-ascii?Q?ptpRfuGTMyW9dMbFPkk87RWa8N7nYFbfO1wlugc?=
+ =?us-ascii?Q?fOSw5cTIypL48U15iBP0AeGWQA=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2EHhHZlItpN?=
+ =?us-ascii?Q?bUXF4ouivxsSJkFzdnQkmVcNnOXW3qfXZJoMDAw?=
+ =?us-ascii?Q?dTAwMK2JHgvZVqkxZrZakTcTE6RAk6D98HAWaeR?=
+ =?us-ascii?Q?sF05veNfyKiw6Kd0ZPQC4VD2FfXcuT99l719Ds6?=
+ =?us-ascii?Q?cTF8dyWkhn8dnrHIwylJcWnsx=5FIniM35dRBahof?=
+ =?us-ascii?Q?4X686e6Qv7OOPZBaA=3D=3D=2EwO109mXhjp3WwnhcD2v?=
+ =?us-ascii?Q?=5F6ZYsuq=5FGH54prw8s0kYT6dVoMDAwdTAwMFsk3Z?=
+ =?us-ascii?Q?kimMrHe1JTe47Hnfym8EK5vmMErWxO2x4P13pPq?=
+ =?us-ascii?Q?hw-jR6yopc-V7NrwIaZS0Ys-NIcj3pFV9Z4gCvG?=
+ =?us-ascii?Q?vwkA-Wwvm43lW9Ul1t4S8NQe=5FyHRZJACr4KGmpx?=
+ =?us-ascii?Q?Yn1BUbYKXjJ-v1obemoHoBzlLaLjMybQWHKUs-6?=
+ =?us-ascii?Q?Jm1RwrppXAJkcHCeUmsLOaNTKzJgbbRaXWWqnYv?=
+ =?us-ascii?Q?iQHxAA3Nf=5FzgU0voxlCwwLqYinR57lddtJlx--V?=
+ =?us-ascii?Q?jeJZtE4lkYKV5iU9bH2bb7gmBbpwYlpMSBCg7Xp?=
+ =?us-ascii?Q?g33LOR1cfJzAT6tdGlOzq6JufGDc1rzRYeren8=5F?=
+ =?us-ascii?Q?7QzV4nEsyUBTKPnO0uyXAIu5P1O3K9KKwgcF=5F7d?=
+ =?us-ascii?Q?KnX8SjmH1Y109we8YVDbB9bSbdDn2SZjtYcrKDk?=
+ =?us-ascii?Q?zC9uLxxJxNSBmp9n2HaN0RACjkxtU=5Fbiq3ffzZO?=
+ =?us-ascii?Q?ljOfDrI5DZdbtsTHWH7fjspH-oEU562HKqoqf8y?=
+ =?us-ascii?Q?d2QDbFlMa5d8TcAFMUKeCxiFM3DQXrvwGjR9dIy?=
+ =?us-ascii?Q?twcg9eyijlVhieoZyObqLY0RI9LFbenz8GBafHk?=
+ =?us-ascii?Q?c0jib62Ym7l4RRMIvauSUPaT0syQVS1UbfY=5FFJR?=
+ =?us-ascii?Q?t8fyxj0Iu33mVo2n12lEGPGodp3md3kAVzWHDlI?=
+ =?us-ascii?Q?LWxKNJxuE7=5FEqBANNYaCrhNdeUqPsnfkewF9LLZ?=
+ =?us-ascii?Q?ePFbMpDAsjdsvleYpubgszwaqNmf=5FVAPUf-TI9t?=
+ =?us-ascii?Q?Zg8bHUKoI5gqq62lTbDayy=5FbVEMwQoXQu4tJKdt?=
+ =?us-ascii?Q?hNWtPC=5FyTuY6PW3gXOAvLi5ziwBKwXPQOO31=5F62?=
+ =?us-ascii?Q?l338enav7z1gKU8Xa5J61FUIyWuob5dGxbliCG2?=
+ =?us-ascii?Q?7ezdLyIxNj1YF7MM6zati4TGY5owYt8ArQaBQlv?=
+ =?us-ascii?Q?h6kekNSZNEaOJFPN6xlDGl2lnIk7DFgJpTzgYpL?=
+ =?us-ascii?Q?6baMhAdO70Wcsht-Hgb9N0Jlxil9EkqZNNnMFtg?=
+ =?us-ascii?Q?tmVu8tiYv1gnNX3tK7rNqA-5eM6hxMc6F1Ror1F?=
+ =?us-ascii?Q?avJlznk1QIJlNLUhZm9lAyXLzqKJyVHpqPLhVc7?=
+ =?us-ascii?Q?HNkNqg=3D=3D=3E?=
+
+--c4b8d385f428871073766afdf7b6ea42e1bd26f5cd61c62a625f4c29d675
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=us-ascii
+Mime-Version: 1.0
+
+FOODBORNE ILLNESS (01): VIET NAM (GIA LAI) TOAD MEAT, FATAL
+***********************************************************
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+Date: Fri 12 Jan 2024
+Source: 24H [in Vietnamese, machine trans., edited]
+<https://us.24h.com.vn/suc-khoe-doi-song/3-tre-thuong-vong-do-an-mon-ma-kho=
+ng-it-phu-huynh-lam-de-tam-bo-cho-con-c62a1534980.html>
+
+
+According to Chu Se District Medical Center (Gia Lai province), a toad
+meat poisoning case recently occurred in the locality, causing 1 child
+to die and 2 children to be hospitalized for emergency treatment.
+
+At around 10:00 a.m. on 11 Jan 2024, the children: [SN] (11 years
+old), [SH] (4 years old) and [ST] (5 years old) residing in Tao Roong
+village (Ia Pal commune, Chu Se district, Gia Lai province) invited
+each other to make toad meat to eat.
+
+At about 11:30 a.m., family members discovered the children lying
+motionless on the floor, incontinent of urine, so they took them to
+Chu Se District Medical Center for emergency treatment.
+
+At the medical facility, doctors determined [SN] had stopped
+circulation and breathing, her pupils were maximally dilated, her
+pulse could not be detected, and her blood pressure could not be
+measured. After 30 minutes of intensive resuscitation, [SN] could not
+survive.
+
+[SH] and [ST] were hospitalized in a state of drowsiness and vomiting,
+and were diagnosed by doctors with toad meat poisoning. After being
+actively treated by doctors, both children were transferred to Gia Lai
+Provincial Children's Hospital for further treatment.
+
+After the incident, Chu Se Medical Center also sent people to monitor,
+investigate, verify, grasp the situation and inform the villagers
+about the poisoning incident.
+
+Why does eating toad meat cause poisoning?
+------------------------------------------
+According to the Department of Food Safety (Ministry of Health), for a
+long time, people have considered toad meat as a nutritious food for
+the elderly, supporting the treatment of children who are lazy to eat
+and slow to grow in the form of shrimp paste, powder or fresh meat
+used for cooking, cook porridge, and make toad rolls.
+
+However, science has proven the subcutaneous glands, glands behind the
+ears, glands above the eyes, eggs and liver of toads contain toxins
+such as Bufotalin, Bufotenin, and Bufotonin [All of these are
+classified as Bufadienolides]. Therefore, if during processing, these
+substances remain on toad meat, they will cause poisoning, which is
+very dangerous.
+
+In Dan Tri newspaper, Dr. Ha Thi Bich Van (Head of Emergency
+Department, Phu Tho Provincial General Hospital) warned: "The liver,
+eggs, skin, pus, eyes and nerve ganglia of toads contain a lot of
+substances. toxic, especially bufotoxin. This is an extremely toxic,
+heat-stable substance which can cause cardiac arrhythmia and death in
+a very short time.
+
+"The toxins in toads are absorbed through the digestive tract.
+Therefore, about 1-2 hours after eating, the patient will have the 1st
+symptoms such as bloating, abdominal pain above the navel accompanied
+by severe vomiting, possibly diarrhea.
+
+"After that, the victim has additional symptoms such as dizziness,
+hallucinations, cold sweat, increased salivation, may have difficulty
+breathing, apnea, cardiac arrest and other symptoms.
+
+"Although the meat and fat of the toad are not poisonous, if you are
+not careful while processing it, toxins from other parts can still
+stick to it. The prognosis of meat and toad egg poisoning is very
+severe, the risk of death is very high," said Dr. Ha Thi Bich Van.
+
+Dr. Nguyen Trung Nguyen (Director of the Poison Control Center)
+commented that during the process of processing toads, it is very easy
+to cause the toad's venom glands to rupture. This because the toad's
+poison contained in the toad's sap (a milky white secretion) is
+"crowded" in the subcutaneous and parotid glands.=20
+
+It is the reason many cases of toad meat poisoning occur even though
+all skin, internal organs, and toad eggs have been removed. There are
+components in toad venom which are very toxic to the nervous system
+and especially the heart. The mortality rate of this type of poisoning
+is very high, with some patients dying right at home or on the way to
+the hospital.
+
+"Toxins can easily stick to the meat area, and when eaten, poisoning
+still occurs as usual," Dr. Nguyen said. Three children died due
+eating food which many parents made to nourish their children.
+
+Eating toad meat is very dangerous.
+
+Symptoms of toad meat poisoning
+-------------------------------
+The toad's secreted mucus can cause burning and swelling in sensitive
+areas such as the eyes, mouth, etc.
+
+This toxin is absorbed very quickly through the digestive tract,
+poisoning symptoms usually occur about 1 hour after eating, or 15-30
+minutes earlier.
+
+Initially, the victim will feel dizzy and have stinging pain in the
+fingertips and toes. Next is prolonged severe vomiting, diarrhea,
+abdominal pain, and decreased blood pressure.
+
+Then symptoms similar to heart failure such as arrhythmia appear and
+become more severe, then death within a few hours.
+
+How to treat toad meat poisoning
+--------------------------------
+People who are poisoned when eating toad meat have a very high death
+rate because of the toxins in the toad. Therefore, it is necessary to
+detect early and implement timely first aid and emergency measures at
+medical centers.
+
+In case the patient shows early signs of poisoning and is still
+conscious: Actively induce vomiting and immediately take the patient
+to emergency facilities.
+
+How to eat toad meat to avoid poisoning?
+----------------------------------------
+According to medical experts, to avoid food poisoning from eating toad
+meat, people should only use processed toad meat products in the form
+of food and medicine having allowed for circulation by the
+authorities.
+
+Do not use purple toads (toads with red eyes) for eating. Only use
+meat and bones to process into food and prepare toad meat according to
+the correct process (cut off the lower end of the two parotid glands,
+cut off 4 feet, peel the skin in a water basin, cut out the anus,
+remove all intestines, eggs, liver, bile, rinse several times under
+clean water).
+
+--
+Communicated by:
+ProMED
+
+[Toxic principles in many toads are the bufadienolides, a chemical
+compound with steroid structure. Its derivatives are collectively
+known as bufadienolides, including many in the form of bufadienolide
+glycosides. These are a type of cardiac glycoside, the other being the
+cardenolide glycosides. They can be deadly, as was the case for these
+children.=20
+
+This is a tragic story, and a huge warning regarding toad meat. This
+toad is not just located in Viet Nam, but throughout the world.=20
+
+While this a tragic story, it provides a warning to travelers, hikers,
+explorers, and other groups of outdoor enthusiasts to be aware of
+potential harm when consuming certain things on the trail.
+
+The toxic substances found in toads can be divided by chemical
+structure into 2 groups:
+1. bufadienolides, which are cardiac glycosides (e.g., bufotalin,
+bufogenin) (affecting the heart); and
+2. tryptamine-related substances (e.g., bufotenin)
+
+Toads known to secrete bufotoxin include
+- _Bufo alvarius_
+- _Bufo americanus_
+- _Bufo arenarum_
+- _Bufo asper_
+- _Bufo blombergi_
+- _Bufo boreas_
+- _Bufo bufo_
+- _Bufo bufo gargarizans_
+- _Bufo gutturalis_
+- _Bufo formosus_
+- _Bufo fowleri_
+- _Rhinella marina (formerly _Bufo marinus_) (This change in naming
+may not be accepted universally, as other sources disagree with the
+name change. - Mod.TG)
+- _Bufo melanostictus_
+- _Bufo peltocephalus_
+- _Bufo quercicus_
+- _Bufo regularis_
+- _Bufo valliceps_
+- _Bufo viridis_
+- _Bufo vulgaris_
+(Source: <https://en.wikipedia.org/wiki/Bufotoxin>)
+
+In dogs, the clinical signs of toad toxicity usually begin with
+brick-red mucous membranes, increased salivation, pawing at the mouth,
+and vocalizing. This is usually followed by disorientation, circling,
+stumbling and falling, and seizures. Some dogs demonstrate an increase
+in breathing rate, anxiety, and vomiting and/or diarrhea.
+
+These signs occur within minutes after exposure. Physical examination
+may include any of the above clinical signs, as well as an increased
+or decreased heart rate and increased body temperature.
+
+As time progresses, the clinical signs can become more severe, leading
+to seizures, collapse, and severely irregular heart rhythms, and
+eventually death. The time may be quite short, as this article
+suggests. Factors affecting the timing may be the size and health of
+the victim encountering the toad. Smaller and/or older animals, or
+those with other health problems, such as heart conditions, may
+succumb to the toxin much quicker.
+
+Toad toxicity is primarily diagnosed by history of contact with a toad
+and physical examination. There are no tests available to confirm
+absorption of toad toxins; however, general blood work, radiographs
+(X-rays), and electrocardiograms are helpful in determining the
+required supportive therapies.
+
+The most effective treatment for acute toad toxicity is a complete
+flushing of the mouth with running water. Owners should do this
+immediately and prior to seeking veterinary care. It is important to
+point the dog's head down so the water is not swallowed. If the dog is
+having seizures, the mouth should be flushed so the water flows away
+from the throat to prevent drowning. Quick action is crucial for a
+good outcome.
+
+Once at the clinic, treatment will depend on the clinical signs which
+may have developed. Seizures will need to be controlled with
+medications. Abnormal heart rates and rhythms must be corrected. Blood
+glucose, body temperature, blood pressure, and hydration will be
+monitored and controlled. There is no specific antidote for toad
+toxins. Once the clinical signs resolve, no further care is necessary,
+and your dog can return to normal activities
+(<https://vcahospitals.com/know-your-pet/toad-poisoning-in-dogs>). -
+Mod.TG
+
+ProMED map:
+Vietnam: <https://promedmail.org/promed-post?place=3D8714220,152>]
+
+[See Also:
+Bufo toad toxicity - USA: (FL) dog death
+http://promedmail.org/post/20190406.6408267]
+.................................................mo/tg/may/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3DNiZUxCfwyTcdY_7yuqFRgewHUgxztZ_OpnkFswo7t1poMDAwdTAwMDOy1lv=
+rYJdPQDshnXq1a80wL_nkI2LgAxZpwTjCadjNV8Y61HQc4fVUETRPDaBcILDYgHDoksphyt949v=
+eDQ4yixNVG-wCvTHxjxjvg65vox4RCSszdtdQaI4hjjyP2dbc2UAR_cRqWmEdziF7TZh5lOIcaW=
+2dpZCMir0-8x3C7ZTpVNz_rJS3rA3gJg7NpIcKKuiXVw5eiJ-sMPoKk2_-ymxugtw-69xDDar_j=
+hwwAYsJHGzR7ZCHDcORIWBhzhWd4lFcacK3FcT9gbhWszJIkcuhogjywlV0BLRfZC7j_AM1h3q8=
+wG_Er4gZMVmTG2LlwvbBNZ-CMaaGE7ey8pmfqmCbDDY5DFx8mfl-62u7fsJ679ID63n34lN2QMN=
+ahsszPD5vlefw6tM8m9w7xsopj9HT7ssyhPZI3QPcUQ35M53LSoyCVgJO53zazy9_8VWxMW4q2-=
+c6BsnZHumuSa5o-BOXqJhSBUmouRjPmKT7IrTQ7Ql_TLoMUV8ziO5EHTZ_UoyXz_85NA2pbG97M=
+GuSX59omz_3SQxqNaaubsrffQf_e3Re-0thXNE_mO8hrB3WX9zJNgRh1_Zx9H6xs_N_E2Ej7Nw6=
+uu45_VPCNoP6NO-8N8ELbzhIakHNp6GAiFKcLqOy_hmQ7hdLrFuwIF0DKxqBy_xracVvTEpbCrJ=
+tR8hRbN9friIWT81SulhMgbEfMe1d91RwFDuMvWr2BWpf3yt6gA8BJ0RIYprem8ZHha1ZCLRm5v=
+xu0Toq4sXybY8TqVkn4anL-Pe1wWGL5CJq0gn9EQdZHp0_6bnbQgTqq7kP7WynBY1kCDJOaEhpb=
+1ithj2P8DVAicWLMuVFPKlXNO8w2_dtNJUmh7fN4dgTXLC1UxV_caFNc79mfW2HSy7J9r8uC14r=
+4hLu7Gg2xW4ybLePWgUcEBo-loc_k3znuTaqjNd9JJMB-Z1N1e641y9XVo0Oe3zxjIMAygqeRPh=
+r-9TTL1ZR6HlN3ZFQEINo1UouzbUtSmCARCEvRgkSyVs3aLu_ibZdi-DhZ8Ej4VD78AwsqCHq5K=
+Dp-Y01pXYpY18sTDm9v_8YkWb1KTtW3H-H4JsONKVk_8_pwXSH0KmKREcIdiUvBP7M-wG4M11Sw=
+WPNnwyiYEIYfBFFV1lB9EfdYc2kNK8LyHhnWQnDGTv6rOC9_FqeLNaLkuO7r2srA )
+############################################################
+############################################################
+
+--c4b8d385f428871073766afdf7b6ea42e1bd26f5cd61c62a625f4c29d675
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>FOODBORNE ILLNESS (01): VIET NAM (GIA LAI) TOAD MEAT, FATAL<br>******=
+*****************************************************<br>A ProMED-mail post=
+<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tis=
+IijpefK5PNjW-mL-YZGnfgDOxU1G3gjwnPSi2Tfv3HA/42z/0lqQnZTFTGezePZja8e4nw/h0/T=
+UBi9e_rizburU2S-mzrC3ic81wKG54fZ2AkulwNyEQ">http://www.promedmail.org</a><b=
+r>ProMED-mail is a program of the<br>International Society for Infectious D=
+iseases<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrP=
+It48tisCT5tpD4Upm3qyMCbcYSQvc/42z/0lqQnZTFTGezePZja8e4nw/h1/g1ipDLfadg6jwrd=
+fSKa0ua4ZoDHRduN8wPm0RU5h_OA">http://www.isid.org</a><br><br>Date: Fri 12 J=
+an 2024=0D<br>Source: 24H [in Vietnamese, machine trans., edited]=0D<br><a =
+href=3D"https://u19268662.ct.sendgrid.net/ss/c/v9hCcUhrHITjwc50PgoeKZyVz9i5=
+w6qYCDzl9zKTSRvBlTr2Ol9qr1Cse_bytwmix-EznBXCRVqLoFCUjnbWp_YO-2Ol4kXLKLKeoqV=
+-ngIFrj0-xPe-50qMozw7TDCF1mX0CwkTxmBM-h3wN2q2hz5FGqt-01E_luQ8esGOlJAxvqHpOb=
+mjpYx1wBJjBHnK/42z/0lqQnZTFTGezePZja8e4nw/h2/rWhku97s_aKVUCVNspgeEtyyWjH6_O=
+oex9C5JrGXL3A">https://us.24h.com.vn/suc-khoe-doi-song/3-tre-thuong-vong-do=
+-an-mon-ma-khong-it-phu-huynh-lam-de-tam-bo-cho-con-c62a1534980.html</a>=0D=
+<br>=0D<br>=0D<br>According to Chu Se District Medical Center (Gia Lai prov=
+ince), a toad<br>meat poisoning case recently occurred in the locality, cau=
+sing 1 child<br>to die and 2 children to be hospitalized for emergency trea=
+tment.=0D<br>=0D<br>At around 10:00 a.m. on 11 Jan 2024, the children: [SN]=
+ (11 years<br>old), [SH] (4 years old) and [ST] (5 years old) residing in T=
+ao Roong<br>village (Ia Pal commune, Chu Se district, Gia Lai province) inv=
+ited<br>each other to make toad meat to eat.=0D<br>=0D<br>At about 11:30 a.=
+m., family members discovered the children lying<br>motionless on the floor=
+, incontinent of urine, so they took them to<br>Chu Se District Medical Cen=
+ter for emergency treatment.=0D<br>=0D<br>At the medical facility, doctors =
+determined [SN] had stopped<br>circulation and breathing, her pupils were m=
+aximally dilated, her<br>pulse could not be detected, and her blood pressur=
+e could not be<br>measured. After 30 minutes of intensive resuscitation, [S=
+N] could not<br>survive.=0D<br>=0D<br>[SH] and [ST] were hospitalized in a =
+state of drowsiness and vomiting,<br>and were diagnosed by doctors with toa=
+d meat poisoning. After being<br>actively treated by doctors, both children=
+ were transferred to Gia Lai<br>Provincial Children's Hospital for further =
+treatment.=0D<br>=0D<br>After the incident, Chu Se Medical Center also sent=
+ people to monitor,<br>investigate, verify, grasp the situation and inform =
+the villagers<br>about the poisoning incident.=0D<br>=0D<br>Why does eating=
+ toad meat cause poisoning?=0D<br>-----------------------------------------=
+-=0D<br>According to the Department of Food Safety (Ministry of Health), fo=
+r a<br>long time, people have considered toad meat as a nutritious food for=
+<br>the elderly, supporting the treatment of children who are lazy to eat<b=
+r>and slow to grow in the form of shrimp paste, powder or fresh meat<br>use=
+d for cooking, cook porridge, and make toad rolls.=0D<br>=0D<br>However, sc=
+ience has proven the subcutaneous glands, glands behind the<br>ears, glands=
+ above the eyes, eggs and liver of toads contain toxins<br>such as Bufotali=
+n, Bufotenin, and Bufotonin [All of these are<br>classified as Bufadienolid=
+es]. Therefore, if during processing, these<br>substances remain on toad me=
+at, they will cause poisoning, which is<br>very dangerous.=0D<br>=0D<br>In =
+Dan Tri newspaper, Dr. Ha Thi Bich Van (Head of Emergency<br>Department, Ph=
+u Tho Provincial General Hospital) warned: "The liver,<br>eggs, skin, pus, =
+eyes and nerve ganglia of toads contain a lot of<br>substances. toxic, espe=
+cially bufotoxin. This is an extremely toxic,<br>heat-stable substance whic=
+h can cause cardiac arrhythmia and death in<br>a very short time.=0D<br>=0D=
+<br>"The toxins in toads are absorbed through the digestive tract.<br>There=
+fore, about 1-2 hours after eating, the patient will have the 1st<br>sympto=
+ms such as bloating, abdominal pain above the navel accompanied<br>by sever=
+e vomiting, possibly diarrhea.=0D<br>=0D<br>"After that, the victim has add=
+itional symptoms such as dizziness,<br>hallucinations, cold sweat, increase=
+d salivation, may have difficulty<br>breathing, apnea, cardiac arrest and o=
+ther symptoms.=0D<br>=0D<br>"Although the meat and fat of the toad are not =
+poisonous, if you are<br>not careful while processing it, toxins from other=
+ parts can still<br>stick to it. The prognosis of meat and toad egg poisoni=
+ng is very<br>severe, the risk of death is very high," said Dr. Ha Thi Bich=
+ Van.=0D<br>=0D<br>Dr. Nguyen Trung Nguyen (Director of the Poison Control =
+Center)<br>commented that during the process of processing toads, it is ver=
+y easy<br>to cause the toad's venom glands to rupture. This because the toa=
+d's<br>poison contained in the toad's sap (a milky white secretion) is<br>"=
+crowded" in the subcutaneous and parotid glands.=20=0D<br>=0D<br>It is the =
+reason many cases of toad meat poisoning occur even though<br>all skin, int=
+ernal organs, and toad eggs have been removed. There are<br>components in t=
+oad venom which are very toxic to the nervous system<br>and especially the =
+heart. The mortality rate of this type of poisoning<br>is very high, with s=
+ome patients dying right at home or on the way to<br>the hospital.=0D<br>=0D=
+<br>"Toxins can easily stick to the meat area, and when eaten, poisoning<br=
+>still occurs as usual," Dr. Nguyen said. Three children died due<br>eating=
+ food which many parents made to nourish their children.=0D<br>=0D<br>Eatin=
+g toad meat is very dangerous.=0D<br>=0D<br>Symptoms of toad meat poisoning=0D=
+<br>-------------------------------=0D<br>The toad's secreted mucus can cau=
+se burning and swelling in sensitive<br>areas such as the eyes, mouth, etc.=0D=
+<br>=0D<br>This toxin is absorbed very quickly through the digestive tract,=
+<br>poisoning symptoms usually occur about 1 hour after eating, or 15-30<br=
+>minutes earlier.=0D<br>=0D<br>Initially, the victim will feel dizzy and ha=
+ve stinging pain in the<br>fingertips and toes. Next is prolonged severe vo=
+miting, diarrhea,<br>abdominal pain, and decreased blood pressure.=0D<br>=0D=
+<br>Then symptoms similar to heart failure such as arrhythmia appear and<br=
+>become more severe, then death within a few hours.=0D<br>=0D<br>How to tre=
+at toad meat poisoning=0D<br>--------------------------------=0D<br>People =
+who are poisoned when eating toad meat have a very high death<br>rate becau=
+se of the toxins in the toad. Therefore, it is necessary to<br>detect early=
+ and implement timely first aid and emergency measures at<br>medical center=
+s.=0D<br>=0D<br>In case the patient shows early signs of poisoning and is s=
+till<br>conscious: Actively induce vomiting and immediately take the patien=
+t<br>to emergency facilities.=0D<br>=0D<br>How to eat toad meat to avoid po=
+isoning?=0D<br>----------------------------------------=0D<br>According to =
+medical experts, to avoid food poisoning from eating toad<br>meat, people s=
+hould only use processed toad meat products in the form<br>of food and medi=
+cine having allowed for circulation by the<br>authorities.=0D<br>=0D<br>Do =
+not use purple toads (toads with red eyes) for eating. Only use<br>meat and=
+ bones to process into food and prepare toad meat according to<br>the corre=
+ct process (cut off the lower end of the two parotid glands,<br>cut off 4 f=
+eet, peel the skin in a water basin, cut out the anus,<br>remove all intest=
+ines, eggs, liver, bile, rinse several times under<br>clean water).=0D<br>=0D=
+<br>--=0D<br>Communicated by:=0D<br>ProMED<br><br>[Toxic principles in many=
+ toads are the bufadienolides, a chemical<br>compound with steroid structur=
+e. Its derivatives are collectively<br>known as bufadienolides, including m=
+any in the form of bufadienolide<br>glycosides. These are a type of cardiac=
+ glycoside, the other being the<br>cardenolide glycosides. They can be dead=
+ly, as was the case for these<br>children.=20=0D<br>=0D<br>This is a tragic=
+ story, and a huge warning regarding toad meat. This<br>toad is not just lo=
+cated in Viet Nam, but throughout the world.=20=0D<br>=0D<br>While this a t=
+ragic story, it provides a warning to travelers, hikers,<br>explorers, and =
+other groups of outdoor enthusiasts to be aware of<br>potential harm when c=
+onsuming certain things on the trail.=0D<br>=0D<br>The toxic substances fou=
+nd in toads can be divided by chemical<br>structure into 2 groups:=0D<br>1.=
+ bufadienolides, which are cardiac glycosides (e.g., bufotalin,<br>bufogeni=
+n) (affecting the heart); and=0D<br>2. tryptamine-related substances (e.g.,=
+ bufotenin)=0D<br>=0D<br>Toads known to secrete bufotoxin include=0D<br>- _=
+Bufo alvarius_=0D<br>- _Bufo americanus_=0D<br>- _Bufo arenarum_=0D<br>- _B=
+ufo asper_=0D<br>- _Bufo blombergi_=0D<br>- _Bufo boreas_=0D<br>- _Bufo buf=
+o_=0D<br>- _Bufo bufo gargarizans_=0D<br>- _Bufo gutturalis_=0D<br>- _Bufo =
+formosus_=0D<br>- _Bufo fowleri_=0D<br>- _Rhinella marina (formerly _Bufo m=
+arinus_) (This change in naming<br>may not be accepted universally, as othe=
+r sources disagree with the<br>name change. - Mod.TG)=0D<br>- _Bufo melanos=
+tictus_=0D<br>- _Bufo peltocephalus_=0D<br>- _Bufo quercicus_=0D<br>- _Bufo=
+ regularis_=0D<br>- _Bufo valliceps_=0D<br>- _Bufo viridis_=0D<br>- _Bufo v=
+ulgaris_=0D<br>(Source: <a href=3D"https://u19268662.ct.sendgrid.net/ss/c/u=
+6Jy221DtLTd6phwYNECndCVDGULFcCLoA-Mb23Mb1VX_PKQ5jaiXE4v5mOf0SpO/42z/0lqQnZT=
+FTGezePZja8e4nw/h3/S4alZD8FU0matTIH_L-7tcwuJhn4wc0lOMkfbOZl69g">https://en.=
+wikipedia.org/wiki/Bufotoxin</a>)=0D<br>=0D<br>In dogs, the clinical signs =
+of toad toxicity usually begin with<br>brick-red mucous membranes, increase=
+d salivation, pawing at the mouth,<br>and vocalizing. This is usually follo=
+wed by disorientation, circling,<br>stumbling and falling, and seizures. So=
+me dogs demonstrate an increase<br>in breathing rate, anxiety, and vomiting=
+ and/or diarrhea.=0D<br>=0D<br>These signs occur within minutes after expos=
+ure. Physical examination<br>may include any of the above clinical signs, a=
+s well as an increased<br>or decreased heart rate and increased body temper=
+ature.=0D<br>=0D<br>As time progresses, the clinical signs can become more =
+severe, leading<br>to seizures, collapse, and severely irregular heart rhyt=
+hms, and<br>eventually death. The time may be quite short, as this article<=
+br>suggests. Factors affecting the timing may be the size and health of<br>=
+the victim encountering the toad. Smaller and/or older animals, or<br>those=
+ with other health problems, such as heart conditions, may<br>succumb to th=
+e toxin much quicker.=0D<br>=0D<br>Toad toxicity is primarily diagnosed by =
+history of contact with a toad<br>and physical examination. There are no te=
+sts available to confirm<br>absorption of toad toxins; however, general blo=
+od work, radiographs<br>(X-rays), and electrocardiograms are helpful in det=
+ermining the<br>required supportive therapies.=0D<br>=0D<br>The most effect=
+ive treatment for acute toad toxicity is a complete<br>flushing of the mout=
+h with running water. Owners should do this<br>immediately and prior to see=
+king veterinary care. It is important to<br>point the dog's head down so th=
+e water is not swallowed. If the dog is<br>having seizures, the mouth shoul=
+d be flushed so the water flows away<br>from the throat to prevent drowning=
+. Quick action is crucial for a<br>good outcome.=0D<br>=0D<br>Once at the c=
+linic, treatment will depend on the clinical signs which<br>may have develo=
+ped. Seizures will need to be controlled with<br>medications. Abnormal hear=
+t rates and rhythms must be corrected. Blood<br>glucose, body temperature, =
+blood pressure, and hydration will be<br>monitored and controlled. There is=
+ no specific antidote for toad<br>toxins. Once the clinical signs resolve, =
+no further care is necessary,<br>and your dog can return to normal activiti=
+es<br>(<a href=3D"https://u19268662.ct.sendgrid.net/ss/c/g_tgoIiV6tyw50ye2m=
+n6FCHK2UxMm8AtTChYWjo8akhNkEoHB2B5ofVJlVd33RjRx-mGjkaDLM6TsdWLkX8725Nuuu32z=
+BwCm4kCtWpyQ1E/42z/0lqQnZTFTGezePZja8e4nw/h4/QooYHzAC2CIhAKF1F93mh5QmUZzmeL=
+DNq1OggGTqh4U">https://vcahospitals.com/know-your-pet/toad-poisoning-in-dog=
+s</a>). -<br>Mod.TG<br><br>ProMED map:<br>Vietnam: <a href=3D"https://u1926=
+8662.ct.sendgrid.net/ss/c/sSnCkKCWBvais3EuVAOvgy2WOIX7pp1nXnn4AbwuQ3Z6Wbkfh=
+qXYXU-aTMPJ8yThaUIzsxLgauLZfwzLiEDbtw/42z/0lqQnZTFTGezePZja8e4nw/h5/Ugcylm_=
+frAN1zOXIdeJC3owVY1dFjVRMDymz3Bso7gU">https://promedmail.org/promed-post?pl=
+ace=3D8714220,152</a>]<br><br>[See Also:<br>Bufo toad toxicity - USA: (FL) =
+dog death<br>http://promedmail.org/post/20190406.6408267]<br>..............=
+...................................mo/tg/may/jh<br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3DNiZUxCfwyTcdY_7yuqFRgewHUgxztZ_OpnkFswo7t1poMDAwdT=
+AwMDOy1lvrYJdPQDshnXq1a80wL_nkI2LgAxZpwTjCadjNV8Y61HQc4fVUETRPDaBcILDYgHDok=
+sphyt949veDQ4yixNVG-wCvTHxjxjvg65vox4RCSszdtdQaI4hjjyP2dbc2UAR_cRqWmEdziF7T=
+Zh5lOIcaW2dpZCMir0-8x3C7ZTpVNz_rJS3rA3gJg7NpIcKKuiXVw5eiJ-sMPoKk2_-ymxugtw-=
+69xDDar_jhwwAYsJHGzR7ZCHDcORIWBhzhWd4lFcacK3FcT9gbhWszJIkcuhogjywlV0BLRfZC7=
+j_AM1h3q8wG_Er4gZMVmTG2LlwvbBNZ-CMaaGE7ey8pmfqmCbDDY5DFx8mfl-62u7fsJ679ID63=
+n34lN2QMNahsszPD5vlefw6tM8m9w7xsopj9HT7ssyhPZI3QPcUQ35M53LSoyCVgJO53zazy9_8=
+VWxMW4q2-c6BsnZHumuSa5o-BOXqJhSBUmouRjPmKT7IrTQ7Ql_TLoMUV8ziO5EHTZ_UoyXz_85=
+NA2pbG97MGuSX59omz_3SQxqNaaubsrffQf_e3Re-0thXNE_mO8hrB3WX9zJNgRh1_Zx9H6xs_N=
+_E2Ej7Nw6uu45_VPCNoP6NO-8N8ELbzhIakHNp6GAiFKcLqOy_hmQ7hdLrFuwIF0DKxqBy_xrac=
+VvTEpbCrJtR8hRbN9friIWT81SulhMgbEfMe1d91RwFDuMvWr2BWpf3yt6gA8BJ0RIYprem8ZHh=
+a1ZCLRm5vxu0Toq4sXybY8TqVkn4anL-Pe1wWGL5CJq0gn9EQdZHp0_6bnbQgTqq7kP7WynBY1k=
+CDJOaEhpb1ithj2P8DVAicWLMuVFPKlXNO8w2_dtNJUmh7fN4dgTXLC1UxV_caFNc79mfW2HSy7=
+J9r8uC14r4hLu7Gg2xW4ybLePWgUcEBo-loc_k3znuTaqjNd9JJMB-Z1N1e641y9XVo0Oe3zxjI=
+MAygqeRPhr-9TTL1ZR6HlN3ZFQEINo1UouzbUtSmCARCEvRgkSyVs3aLu_ibZdi-DhZ8Ej4VD78=
+AwsqCHq5KDp-Y01pXYpY18sTDm9v_8YkWb1KTtW3H-H4JsONKVk_8_pwXSH0KmKREcIdiUvBP7M=
+-wG4M11SwWPNnwyiYEIYfBFFV1lB9EfdYc2kNK8LyHhnWQnDGTv6rOC9_FqeLNaLkuO7r2srA" =
+target=3D"_blank" class=3D"Unsubscribe--unsubscribePreferences" style=3D"fo=
+nt-family:sans-serif;text-decoration:none;">Unsubscribe Preferences</a></di=
+v><br>############################################################<br>#####=
+#######################################################<br><br><img src=3D"=
+https://u19268662.ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/42z/0lqQnZTFT=
+GezePZja8e4nw/ho.gif" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=
+=3D"height:1px !important;width:1px !important;border-width:0 !important;ma=
+rgin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;=
+margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !importa=
+nt;padding-right:0 !important;padding-left:0 !important;"/></body>
+</html>
+--c4b8d385f428871073766afdf7b6ea42e1bd26f5cd61c62a625f4c29d675--

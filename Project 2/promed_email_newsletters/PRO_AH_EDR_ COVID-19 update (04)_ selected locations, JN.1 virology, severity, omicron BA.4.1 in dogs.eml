@@ -1,0 +1,1327 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a98:c004:0:b0:1eb:e128:bbe3 with SMTP id l4csp1271626eic;
+        Wed, 10 Jan 2024 17:40:18 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IGpq8yr7tAEfah89iIfOT3OCrvFRPgYi4iZOnJ0d40pdyXtOb6Ft6cQzVnZZtTI7UK6qL1s
+X-Received: by 2002:a17:902:db10:b0:1d4:c9ec:f8c3 with SMTP id m16-20020a170902db1000b001d4c9ecf8c3mr498598plx.33.1704937218177;
+        Wed, 10 Jan 2024 17:40:18 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1704937218; cv=none;
+        d=google.com; s=arc-20160816;
+        b=F6xXnDJ/2RCz6h5A+6dSBSN2WJl6waYaag+JnasfpVfqJB81DzHGKTKBsaQhxre/xd
+         z/afVsuRqwsowp5luemjo7B+vtEuIhc2KgX92je7DbKQihiDGc81PyFGh2qGzahTtiJ4
+         7atiVNJ/1K9LafZxqGchOZMIsDiLapdaNNsBvW1ef1gTkjwYc/EAZJ7II4YWuw7hf002
+         fA1O/+/SbNYgizZZbxJOQRl4Ym/PtK7/2rh0LfTdQmCYK18U3jsnWQdfXQWaObww38Xe
+         v/Vxg75oQPm7GmdfHo1K6mEk58qcXr0RPkNLZz79o1rE+pCswQdp/LcRFv4hMPRC90Zb
+         8cGg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=yyapsTA+rM6KZ3s9Jx6BvdnLa1OTK9t+EwIxsUT6/Cs=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=oiIyou2vjTGil4tl8UPOgbCa7zN8y67L+HDhfAUpyUK4/5Lx+yUAFp84hLFoFjqyD7
+         iPj7In9+k18k9hz/UHH7AkqoHXXA3/caSZS9JdT5fvKOIXmkCnbjxc+NgFQJLtGxUG1O
+         pYBmpippX8S8RabM/VYrL/zjouVZOp7ktWRhuOvyxE9E3qd4lXHjAGjvE8hY2bislgki
+         He5kXjNe0p11FQ63W8p9WTX7llUAAE6MtcGxjjF5/5kI3rQqaPuo+9d+dfHOMNZvyPvg
+         CPtZZ5fBZtZei0lf6CoSNgJk7Hn4bfthzWFXcYrbnqVf2fsBUvgvsl/cIaBe01bbivwG
+         kQ8A==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=HndYic0J;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=fJ4QhEFP;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id s12-20020a170902ea0c00b001d54e766761si5404917plg.379.2024.01.10.17.40.17
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 10 Jan 2024 17:40:18 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=HndYic0J;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=fJ4QhEFP;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=yyapsTA+rM6KZ3s9Jx6BvdnLa1OTK9t+EwIxsUT6/Cs=;
+	b=HndYic0JLh/wbMRvaInJn2djMc+d04uXgfm7TqQcRMNpw4CvTxlTuVA93+q/U3fISSGq
+	CK+cTWgEFZq/DCVHT42KXrQmlR01Ieh2Fzyqac/nd4MTh8GSFj/n2B6tmZrlQo18XRGQhd
+	6HaVv09hCLxMPrLKqPO88UMWrdVxkZrDa8KDA1XWobXv0eLgIQXEjOtvLvJrSCNhRb7kFq
+	jBUiRTjmnnVKIyZ5UthswtL4Zh3aYkYzDMG4N3V1ukEA8ecMlQKLDtPgIEdsH0QSWV32C2
+	NyCBpjk3OghT1AyuX87ev5tTHGPwu5gyyuFEMHuYaCsxmzpndS3KUCy+8yJOrfPg==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=yyapsTA+rM6KZ3s9Jx6BvdnLa1OTK9t+EwIxsUT6/Cs=;
+	b=fJ4QhEFP3zMQQgsNbkNM4IQTc1+8To3QJpR3rDDDBwVdG3R28vTfbqQGHZKkQlkcSeQG
+	axdUegAUbx2K2C+61M9AQxuS1oKZ3OeFsxPdhOfLF5DztbOh8OwJzbW5+yfxF0cr/BgFKS
+	b77/sntDa3kkkwaZFacRqlPVZcKMGXFv4=
+Received: by filterdrecv-5bccb9764b-59b2p with SMTP id filterdrecv-5bccb9764b-59b2p-1-659F46FE-4E
+        2024-01-11 01:40:14.692538639 +0000 UTC m=+7369115.442855461
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-15 (SG) with HTTP
+	id HyrAWtB7RYGbUCVnje3RhA
+	Thu, 11 Jan 2024 01:40:14.549 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=ff610dbbcf682a3ef8f33773f8fb2cc8066f7694a837262b16b7c9c14eb5
+Date: Thu, 11 Jan 2024 01:40:16 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <HyrAWtB7RYGbUCVnje3RhA@geopod-ismtpd-15>
+Subject: PRO/AH/EDR> COVID-19 update (04): selected locations, JN.1 virology,
+ severity, omicron BA.4.1 in dogs
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iB6wuHIGuoaAy5riUp969AJBYRp=2FZfRfFkVu42o?=
+ =?us-ascii?Q?QWWnuZepsroJj3=2FvFHd5hRVskR4eI+n0cjesXH0?=
+ =?us-ascii?Q?SM5rMMD2PzF3bjSd1+QFCDoyEj+YWH8xpNz30rU?=
+ =?us-ascii?Q?A9iMLCT55dEDvP=2FA578W=2FdO5MGVxNYoaUFyuZ4r?=
+ =?us-ascii?Q?dQzRYq62sSbAC73=2F8Vji22xogPl=2FkBnJm6DaKN?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUiShGf=2FO8XJWpH34Od4Nd?=
+ =?us-ascii?Q?fxXa6jil96uRcJkF+N+LeVnO1tx80ddOyoyOo=2Fc?=
+ =?us-ascii?Q?Brxcl3ERAm0cOY743=2FFH59DWiSf5OzXORh1DLKt?=
+ =?us-ascii?Q?hb1NMKty3PsA5ju0ZzxCrq1WQuZSEQf=2FJlWtgqv?=
+ =?us-ascii?Q?cZmsyCHlNUZsDPJsBl3S+aM+FbDysGtRdi5SpGC?=
+ =?us-ascii?Q?abweEC6w4qHYO41Go4vGBsLOjomJcLBWOGyrbwX?=
+ =?us-ascii?Q?d56zLrNQDxNuC3sBq60KcHuCW2MAAWenDApTEVG?=
+ =?us-ascii?Q?fcXtEv1hKh5LLivaLR8FhOVNy+C2lgTRCm4dG9P?=
+ =?us-ascii?Q?ALjWR917ySi3a4bUjoYXXqCgk=2FDQJTSj5grJ4=2Fn?=
+ =?us-ascii?Q?xQ1KDxqyhbc56gS9g07slvDHMkuYfMG4ao+Whi+?=
+ =?us-ascii?Q?c5H7YDyrB=2FAIh4=2F1wfd+rNdOoYnQN+lgq6s+mRF?=
+ =?us-ascii?Q?ozQjQ1tyBKvNvv=2FHWs3neiJPCFLvk5k2zHuFm=2Fh?=
+ =?us-ascii?Q?=2FUK95xcem2HsqKxRn4VB=2FXxttqspBA6RQ77N9e7?=
+ =?us-ascii?Q?N162dDULMiOtaAU11meSPmWCrIYwWBApPdtXqMV?=
+ =?us-ascii?Q?3sOTg4QIlvGdVrhdBJWVfBHMySWDhB4CydHxkpr?=
+ =?us-ascii?Q?=2F=2F8agzsSM2QkEgHlNWfTKucHSz9xztEwM8kBqbP?=
+ =?us-ascii?Q?8NXrsT2dJYkU8io00DVGsCmA8g3hkJo529T5bJw?=
+ =?us-ascii?Q?SlaGjzdjd0amJbbeq5990X6w8pbsQ3040=2F35atd?=
+ =?us-ascii?Q?zxzDMgE=2F5tcZ64vye70HMFPda5hlsR1VV2hyjzt?=
+ =?us-ascii?Q?H4lowmGQZVL3oAxb+pEiU2gjRA=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2E8ABmkyex2?=
+ =?us-ascii?Q?PDzeVpwJO=5FYBvxJ74u4VDGXKYrrA8SxnmZoMDAw?=
+ =?us-ascii?Q?dTAwMLlIKIHIy4hsZPTApZ2G6s9ABKIsZ3Okg-m?=
+ =?us-ascii?Q?RNAhjyu7cq-mc7xO3BGwF1cOtKj9UpWV7BumWXI?=
+ =?us-ascii?Q?bA73Q-bclS2g-Uu-SSz2=5Fc17RbLsbNkxBus5YrW?=
+ =?us-ascii?Q?A0ksMQJJyjiRFMHmw=3D=3D=2E0dlk9k2E-Pb0TQMxyHf?=
+ =?us-ascii?Q?VAwzm36l441uWmC1B=5FfJMmdVoMDAwdTAwMG4INe?=
+ =?us-ascii?Q?NxWfmm9LV1Q2OZaCbkZEpgOoJa4rknXnLgq93sX?=
+ =?us-ascii?Q?mBquLxmffCMV8y6Vdk=5FmJ2cwtgf2rMylZqs3xVu?=
+ =?us-ascii?Q?O56=5FlMiXLWTKrFO9hyNm-wQpKQAleoRviQulDpv?=
+ =?us-ascii?Q?rfc2MNDO9Scd1EmGiAMTqq6afuvxvX3kU6hVVZG?=
+ =?us-ascii?Q?iVh0E9kuUpsWQqWiGFtZsNQ5rLK3-mKdoRHIigS?=
+ =?us-ascii?Q?YcYfSbcHB1rTi86UawmDjBh3TLiI1Gp-0fdJHSs?=
+ =?us-ascii?Q?0E6JU=5FQx=5FyywSS2jqwZh91fDdK8UFFRuwFv33cC?=
+ =?us-ascii?Q?7IcaBLCs7RkjSOyPgur73NuLIi08jced-pIkkkz?=
+ =?us-ascii?Q?=5FFPWP5VrsDxiNJzDE-MRF55HLSYMwYjczoY22Tn?=
+ =?us-ascii?Q?=5FXE=5FB0qnvycu6qgL1jdNKunBHxwW9gJQkKm6NqU?=
+ =?us-ascii?Q?52dZZH7PSayFvcArTeax5Q=5FWrXChqK37JHgyAzo?=
+ =?us-ascii?Q?IYMjD5eGc6Otz8JSZfRK7i3snk6RoHmXADCqCiW?=
+ =?us-ascii?Q?8-PUz83lS4JKoVYKc7bOhLDlIMw4eh=5FNsqni80i?=
+ =?us-ascii?Q?ZMjY6xmhhzn9hZejbydTEqPQY3aymC5oV1YLUjI?=
+ =?us-ascii?Q?bQmJjAtBSmO-hFnG9bgaS8WN7fWZ2HbCADRA=5Ff=5F?=
+ =?us-ascii?Q?jsCXHYVkWfeLTnYN563mjk5u5c3mN9VEB93KzEA?=
+ =?us-ascii?Q?IZpTVcZTiKrg0tC08ZG9q6lfb1xRw-RwufZBeTd?=
+ =?us-ascii?Q?TbHPj8bQdxE7saeggruHLO7egwtkg3g-nhwghjH?=
+ =?us-ascii?Q?q7Io61A3MpCQGRjEOXj-8=5FeYY3-gUfGfVf8viUq?=
+ =?us-ascii?Q?GbzwxG4L3NuKrw3E2hQRL0IZn3WfqaTQMIAIrOX?=
+ =?us-ascii?Q?Hn4Pghsgnh9DZkCWBbGuaJDdtks0WOh7GhhtRNp?=
+ =?us-ascii?Q?lrCiiqCFXWqVb5p9jHh=5FoBjmqrnheFffe0nUNBO?=
+ =?us-ascii?Q?MeXm=5FzCJjOxK-Xi7aOTspBKNGvquRaQ0aE22lzI?=
+ =?us-ascii?Q?Wvr9QjbANZnyJsF9o3Icr1LPlR-C4SeBEaWcZCL?=
+ =?us-ascii?Q?rEAwtgVervHdEsFeY02H-7U397QIVFr0fZ8BylW?=
+ =?us-ascii?Q?opr9y6rczN04dHXsdAc9XdM7gmOzSVtDGLOsPAi?=
+ =?us-ascii?Q?I0syBg=3D=3D=3E?=
+
+--ff610dbbcf682a3ef8f33773f8fb2cc8066f7694a837262b16b7c9c14eb5
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=iso-8859-1
+Mime-Version: 1.0
+
+CORONAVIRUS DISEASE 2019 UPDATE (04): SELECTED COUNTRIES/REGIONS, JN.1
+VIROLOGICAL CHARACTERISTICS, SEVERITY, OMICRON BA.4.1 DETECTED IN DOGS
+***************************************************************************=
+******************************************************************
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+In this update:
+[1] Selected countries/regions
+[A] India: Mumbai records 1st COVID-19 death this year
+[B] Hong Kong: Double warning over COVID, flu
+[C] Spain: Spanish holiday regions reintroduce COVID-mask rules after
+seeing surge in cases
+[2] Virological characteristics of the SARS-CoV-2 JN.1 variant
+[3] New, highly mutated COVID variants 'pirola' BA.2.86 and JN.1 may
+cause more severe disease, new studies suggest
+[4] Chile: 1st detection of omicron variant BA.4.1 lineage in dogs
+
+******
+[1] Selected countries/regions
+[A] India: Mumbai records 1st COVID-19 death this year
+Date: Mon 8 Jan 2024
+Source: The Indian Express [edited]
+<https://indianexpress.com/article/cities/mumbai/first-covid-death-in-mumba=
+i-this-year-9098316/>
+
+
+Mumbai reported its 1st COVID-19 fatality of the year [2024] with a
+52-year-old man, who had tested positive for the virus, succumbing on
+5 Jan 2024. The previous COVID-19 death was recorded on 9 Aug 2023.
+
+The deceased, a resident of M West ward, was admitted to a government
+hospital on 4 Jan 2024, with symptoms such as fever, cough and
+breathlessness for 5 days. The patient had tested positive for COVID
+and, within 24 hours of admission, passed away, with the cause of
+death attributed to respiratory tract infection (LRTI) with sepsis and
+septic shock, according to an official from the civic health
+department.
+
+Meanwhile, the state reported 154 new COVID cases, with 21 cases in
+Mumbai, in the last 24 hours. Another COVID death was recorded in
+Nagpur.
+
+The state recorded a recovery rate of 98.17%, a positivity rate of
+1.11% and a case fatality rate of 1.81%. Maharashtra has 139 patients
+infected with the JN.1 variant.
+
+On the JN.1 variant, Dr Rajesh Karyakarte, head of the BJ Medical
+College Microbiology Department and a member of the state COVID-19
+task force, said, "While cases are increasing, hospitalisations and
+deaths remain low. However, the variant is highly transmissible, and
+the recent New Year celebrations without adhering to COVID-appropriate
+behaviour have contributed to increased transmission and cases," he
+said.
+
+[Byline: Rupsa Chakraborty]
+
+--
+Communicated by:
+ProMED
+
+[Although rare, severe complications arising from SARS-CoV-2
+infections can still arise. As time passes between individual exposure
+to SARS-CoV-2 antigens through infection or vaccination, individual
+immunity against SARS-CoV-2 can wane and newer variants may also gain
+mutations that may increase their transmissibility, pathogenicity, and
+ability to escape individual and population immunity (see item 3 in
+this update). It is therefore important for individuals to be aware of
+public health risks from respiratory viruses such as SARS-CoV-2 in
+surrounding locations and take necessary precautions to reduce risk of
+getting infected and passing on infections to others, where possible.
+- Mod.LWW]
+
+---
+[B] Hong Kong: Double warning over COVID, flu
+Date: Fri 5 Jan 2024=20
+Source: The Standard [edited]
+<https://www.thestandard.com.hk/section-news/section/11/259288/Double-warni=
+ng-over-Covid-flu>
+
+
+Hong Kong is expected to enter the flu peak season next week even as
+COVID spreads through a new subvariant -- JN.1 -- which is forecast to
+become the dominant strain.
+
+Chuang Shuk-kwan, head of the Centre for Health Protection's
+Communicable Disease Branch, said the flu rate had reached a high of
+8.49% lately.
+
+But it is difficult to predict how long the peak will last as the
+lifting of the mask mandate and Hongkongers' frequent overseas travel
+may affect the duration and severity of the season.
+
+"The usual duration of the season in the past was 8 weeks to 12
+weeks," she said.
+
+"So it's difficult to predict the exact duration of the season and the
+severity."
+
+She urged people to get vaccinated against the flu as soon as possible
+and to wear masks in crowded places and on public transport.
+
+"Those who are not feeling well or those who have contacts with sick
+people or have respiratory diseases should wear masks," Chuang
+stressed.
+
+"People should also wear masks when visiting high-risk places,
+including elderly homes and hospitals, as well as crowded indoor
+places with poor ventilation."
+
+She said Hong Kong is seeing an active spread of COVID, as viral loads
+collected in sewage samples and the number of COVID patients have been
+on the rise.
+
+Around 60% of COVID patients in Hong Kong have contracted the JN.1
+omicron variant, which has been spreading quickly around the world.
+
+And as the proportion of Hong Kong patients carrying the JN.1 strain
+is increasing Chuang expects it will replace XBB to become the new
+dominant strain in Hong Kong.
+
+"The proportion of cases with the JN.1 strain around the world has
+increased from 3% in early November [2023] to 27% now, and more
+patients are contracting the subvariant," she said.
+
+"Fortunately, there is no evidence suggesting the JN.1 strain can lead
+to more serious illness compared to other variants, and it is unlikely
+to cause a serious public health crisis. The existing vaccine
+targeting the XBB variant is also effective against the JN.1 strain."
+
+The head of the CHP's Emergency Response and Program Management
+Branch, Albert Au Ka-wing, said the administration has procured 200
+000 doses of vaccine targeting the XBB variant and administered around
+20 000 jabs for people aged 65 and above and care home residents as of
+Wednesday [3 Jan 2024].
+
+He said authorities are planning to expand the vaccination program,
+and for people aged 50 to 64, patients with chronic diseases or
+impaired immunity, pregnant women and medics to receive the new
+vaccine.
+
+Au said most Hongkongers have been fully vaccinated by getting 3 jabs.
+But only 30% of children aged 6 months to 3 years old are fully
+vaccinated and one-fourth of the elderly aged 80 or above have
+received 4 jabs. So he urged them to get booster shots as soon as
+possible.
+
+The number of serious illnesses and deaths following COVID infections
+remains stable, but Hong Kong has seen 2 children in serious condition
+after they contracted the coronavirus.
+
+Hospital Authority senior executive Larry Lee Lap-yip said one case
+involved a 4-year-old boy going to Australia during the incubation
+period then testing positive for COVID after returning on New Year's
+Day.
+
+The boy had a fever and difficulties breathing before being diagnosed
+with pneumonia at Tuen Mun Hospital. He had been in serious condition
+but became stable after treatment.
+
+A 20-month-old boy with no travel history started developing a fever
+last Friday [29 Dec 2023] and tested COVID positive. He was sent to
+Prince of Wales Hospital and was found to suffer from croup -- a type
+of respiratory infection that commonly occurs in children aged 6
+months to 5 years. He is in stable condition.
+
+Lee said the emergency rooms at public hospitals have been receiving
+increasing numbers of patients since late last month [December 2023],
+with occupancy rates of medical wards surpassing 115%.
+
+The authority has increased manpower and hospital beds and deployed
+geriatric doctors to take care of senior patients in emergency rooms,
+he said.
+
+[Byline: Wallis Wang]
+
+--
+Communicated by:
+ProMED
+
+---
+[C] Spain: Spanish holiday regions reintroduce COVID-mask rules after
+seeing surge in cases
+Date: Fri 5 Jan 2024
+Source: The Daily Mail (Online) [edited]
+<https://www.dailymail.co.uk/news/article-12929711/Spanish-holiday-region-r=
+eintroduces-Covid-mask-rules-seeing-surge-cases.html>
+
+
+The COVID and flu epidemic in Spain is becoming so bad that a number
+of holiday regions are reintroducing the obligatory mask-wearing rule
+in certain cases.
+
+Health authorities across the country are reporting saturated
+hospitals and health centres, with patients once again lying in
+corridors or waiting hours for treatment.
+
+Family doctors are also calling for the mandatory use of masks in
+health centres and hospitals across the whole of Spain, saying the
+winter surge of COVID and flu is getting out of control.
+
+The Spanish government hasn't made any announcement about the return
+of obligatory mask wearing but regions such as Valencia -- where
+tourist hotspots Benidorm and Alicante are located -- are already
+imposing their own rules again.
+
+Valencia's health department has today [5 Jan 2024] implemented the
+mandatory use of masks in health centres due to the rise in
+respiratory infections.
+
+This preventive measure is considered relevant given the incidence in
+the Valencian community, with a rate of 1501 cases per 100 000
+inhabitants.
+
+The objective is to stop infections and protect vulnerable people.
+
+The department is also relaying the message that health centres will
+vaccinate against flu and COVID-19 starting next Monday [8 Jan 2024]
+without the need for an appointment.
+
+From today [5 Jan 2024], it will be mandatory to wear a mask when
+entering health centres and hospitals throughout the Valencian
+community.
+
+The Ministry of Health established the mask protocol due to the spike
+in flu cases and respiratory infections in recent weeks.
+
+The last weekly report for influenza, COVID-19 and other respiratory
+viruses in 2023 marked a global rate of acute respiratory infection in
+primary care of 908.6 cases per 100 000 inhabitants, when the previous
+week the figure was 806; and in general at all levels of care of 1501
+cases per 100 000 inhabitants
+
+The Department of Health has sent the health departments of 3
+provinces an instruction from the General Directorate of Public Health
+that establishes the mandatory use of masks in health and social
+health centres as a preventive measure in the face of the resurgence
+of respiratory virus infection.
+
+Valencia says its health services are at the point of collapse due to
+the surge in COVID and flu cases after Christmas and is having to send
+patients to provide hospitals in order to cope.
+
+The wave is expected to peak in the 3rd week of January [2024].
+
+There are hospitals in the Valencia province at 96% occupancy and
+family doctors are seeing 15 off-schedule patients a day due to these
+infections, with influenza A in 7 out of 10 cases.
+
+The Spanish Society for Family Doctors is calling for obligatory mask
+wearing in hospitals and medical centres across Spain to stop the
+spread of flu and COVID.
+
+[Byline: Rita Sobot]
+
+--
+Communicated by:
+ProMED
+
+******
+[2] Virological characteristics of the SARS-CoV-2 JN.1 variant
+Date: Wed 3 Jan 2024
+Source: The Lancet Infectious Diseases [edited]
+<https://www.thelancet.com/journals/laninf/article/PIIS1473-3099(23)00813-7=
+/fulltext>
+
+
+Citation: Kaku Y, Okumura K, Padilla-Blanco M, Kosugi Y, Uriu K, Hinay
+AA Jr, Chen L, Plianchaisuk A, Kobiyama K, Ishii KJ; Genotype to
+Phenotype Japan (G2P-Japan) Consortium; Zahradnik J, Ito J, Sato K.
+Virological characteristics of the SARS-CoV-2 JN.1 variant. Lancet
+Infectious Diseases. 2024 Jan 3:S1473-3099(23)00813-7.
+---------------------------------------------------------------------------=
+-----
+The SARS-CoV-2 BA.2.86 lineage, 1st identified in August 2023, is
+phylogenetically distinct from the current circulating SARS-CoV-2
+omicron XBB lineages, including EG.5.1 and HK.3. Compared with XBB and
+BA.2, BA.2.86 carries more than 30 mutations in the spike protein,
+indicating a high potential for immune evasion. BA.2.86 has evolved
+and its descendant, JN.1 (BA.2.86.1.1), emerged in late 2023. JN.1
+harbours Leu455Ser and 3 mutations in non-spike proteins. Spike
+protein mutation Leu455Ser is a hallmark mutation of JN.1: we have
+recently shown that HK.3 and other flip variants carry Leu455Phe,
+which contributes to increased transmissibility and immune escape
+ability compared with the parental EG.5.1 variant. Here, we
+investigated the virological properties of JN.1. We estimated the
+relative effective reproductive number of JN.1 using genomic
+surveillance data from France, the UK, and Spain, where more than 25
+sequences of JN.1 have been reported, using a Bayesian multinomial
+logistic model. The reproductive number of JN.1 in these 3 countries
+was higher than that of BA.2.86.1 and HK.3, one of the XBB lineages
+with the highest growth advantage at the end of November 2023. These
+results suggest that JN.1 might soon become the dominant lineage
+worldwide. Indeed, by the end of November 2023, JN.1 had already
+overtaken HK.3 in France and Spain.
+
+The in vitro ACE2 binding assay showed that the dissociation constant
+value of the JN.1 receptor-binding domain (RBD) was significantly
+higher than that of the BA.2.86 RBD, suggesting that Leu455Ser
+decreases binding affinity to the human ACE2 receptor. In contrast,
+the pseudovirus assay showed that the infectivity of JN.1 was
+significantly higher than that of BA.2.86. This discrepancy could be
+due to the difference between monomeric RBD and trimerised whole spike
+protein. We then performed a neutralisation assay using rodent sera
+infected with BA.2.86 or immunised with BA.2.86 spike protein. In both
+cases, the 50% neutralisation titre (NT50) against JN.1 was similar to
+that against BA.2.86, suggesting that Leu455Ser does not affect the
+antigenicity of BA.2.86. On the other hand, the NT50 of breakthrough
+infection sera with XBB.1.5 and EG.5.1 against JN.1 was significantly
+lower than that of HK.3 (2=B76-fold to 3=B71-fold) and BA.2.86
+(3=B78-fold). Furthermore, JN.1 shows robust resistance to monovalent
+XBB.1.5 vaccine sera compared with BA.2.86. Taken together, these
+results suggest that JN.1 is one of the most immune-evading variants
+to date. Our results suggest that Leu455Ser contributes to increased
+immune evasion, which partly explains the increased reproductive
+number of JN.1.
+
+--
+Communicated by:
+ProMED
+
+[References and links to supplementary information were removed from
+the text above to improve legibility. Readers interested in details
+should refer to the full text at
+<https://www.thelancet.com/journals/laninf/article/PIIS1473-3099(23)00813-7=
+/fulltext>
+- Mod.LWW]
+
+******
+[3] New, highly mutated COVID variants 'pirola' BA.2.86 and JN.1 may
+cause more severe disease, new studies suggest
+Date: Tue 9 Jan 2024
+Source: Fortune Well [edited]
+<https://fortune.com/well/2024/01/08/covid-omicron-variants-pirola-ba286-jn=
+1-more-severe-disease-lung-gi-tract-symptoms/>
+
+
+Highly mutated COVID variant BA.2.86 -- close ancestor of globally
+dominant "pirola" JN.1 -- may lead to more severe disease than other
+omicron variants, according to 2 new studies published Monday in the
+journal Cell.
+
+In one study, researchers from Ohio State University performed a
+variety of experiments using a BA.2.86 pseudovirus -- a lab-created
+version that isn't infectious. They found that BA.2.86 can fuse to
+human cells more efficiently and infect cells that line the lower
+lung--traits that may make it more similar to initial, pre-omicron
+strains that were more deadly. [See full article here:
+<https://www.cell.com/action/showPdf?pii=3DS0092-8674%2823%2901400-9> -
+Mod.LWW]
+
+In the other study, researchers in Germany and France came to the same
+conclusion. "BA.2.86 has regained a trait characteristic of early
+SARS-CoV-2 lineages: robust lung cell entry," the authors wrote. The
+variant "might constitute an elevated health threat as compared to
+previous omicron sublineages," they added. [See full article here:
+<https://www.cell.com/action/showPdf?pii=3DS0092-8674%2823%2901399-5> -
+Mod.LWW]
+
+While illness caused by the initial omicron strain was typically
+considered milder than that caused by earlier variants, it's
+impossible to say definitively, experts say. That's because those
+sickened by omicron had generally already been infected with an
+earlier version of the virus, likely softening the blow. Additionally,
+many had been vaccinated, to the same effect.
+
+Still, omicron had a penchant for infecting the upper airway versus
+the lower airway, where prior versions of the virus tended to
+accumulate, causing more severe disease. The new studies offer proof
+that this trend may very well be reversing, the authors contend. If
+true, it's bad news for those who hoped the virus was slowly
+attenuating to the equivalent of a common cold.
+
+"We cannot ignore the evidence" that omicron may be evolving into a
+more severe form of itself, Dr. Shan-Lu Liu--professor and co-director
+of the Viruses and Emerging Pathogens Program at Ohio State
+University, and lead author on the 1st study -- told Fortune.
+
+Increasing COVID hospitalizations in the U.S. and around the globe
+potentially bolster the argument, he added.
+
+It's tough to tell if disease caused by COVID is again becoming more
+severe because waning immunity muddles matters, experts say. Antibody
+immunity to COVID from vaccination or prior infection -- which can
+reduce the severity of the disease or prevent infection altogether --
+declines after 3 to 6 months. Globally, uptake of the latest COVID
+booster, released this past fall [2023], leaves much to be desired. In
+the U.S., it sits under 20%, according to the Centers for Disease
+Control and Prevention. In theory, the longer it's been since someone
+was infected with COVID or received a booster, the greater their risk
+for severe outcomes like hospitalization and death.
+
+As for what the studies might mean regarding the severity of JN.1
+infection, the jury is still out. But the new findings -- combined
+with expert speculation that JN.1 may be showing a preference for
+infecting the GI tract -- warrant more study into the evolving nature
+of the virus, according to Liu.
+
+Another concern of his: the possibility of COVID recombining with
+another coronavirus in animals, then transitioning back over to humans
+-- throwing another viral plot twist into the pandemic's narrative.
+
+Some experts contend that omicron -- highly mutated compared to
+previous strains -- originated in animals, then spilled back over into
+humans (as opposed to developing in a human with a long-term
+infection, as others contend). Regardless, animals serve as an
+underappreciated wild card, Liu contends. Case in point: Many of
+Ohio's white-tailed deer have tested positive for COVID, affording the
+virus an additional population in which to mutate.
+
+Another, perhaps larger concern of Liu: the possibility that COVID
+recombines with another, more deadly coronavirus like SARS or MERS,
+which had case fatality rates around 10% and 34%, respectively. In
+contrast, COVID's case fatality rate, among unvaccinated Americans,
+sat around 1% prior to omicron, and around 0.11% after.
+
+"Anything can happen," Liu said. "It's really hard to predict what's
+going to come next, but nature can do amazing things."
+
+The bottom line when it comes to the power of animals to further
+evolve the virus and send another curveball flying humanity's way:
+"Humans, watch out."
+
+[Byline: Erin Prater]
+
+--
+Communicated by:
+ProMED
+
+******
+[4] Chile: First detection of omicron variant BA.4.1 lineage in dogs
+Date: Thu 4 Jan 2024
+Source: The Veterinary Quarterly [edited]
+<https://pubmed.ncbi.nlm.nih.gov/38174799/>
+
+
+Citation: Ag=FCero B, Berrios F, Pardo-Roa C, Ariyama N, Bennett B,
+Medina RA, Neira V. First detection of omicron variant BA.4.1 lineage
+in dogs, Chile. The Veterinary Quarterly. 2024 Dec;44(1):1-10.=20
+---------------------------------------------------------------------------=
+-----
+Abstract
+--------
+SARS-CoV-2's rapid global spread caused the declaration of COVID-19 as
+a pandemic in March 2020. Alongside humans, domestic dogs and cats are
+also susceptible to infection. However, limited reports on pet
+infections in Chile prompted a comprehensive study to address this
+knowledge gap. Between March 2021 and March 2023, the study assessed
+65 pets (26 dogs and 39 cats) from 33 COVID-19+ households alongside
+700 nasal swabs from animals in households with unknown COVID-19
+status. RT-PCR, nasal, fecal, and environmental samples were analyzed
+for the virus. In COVID-19+ households, 6.06% tested positive for
+SARS-CoV-2, belonging to 3 dogs, indicating human-to-pet transmission.
+Pets from households with unknown COVID-19 status tested negative for
+the virus. We obtained 2 SARS-CoV-2 genomes from animals, that
+belonged to omicron BA.4.1 variant, marking the 1st report of pets
+infected with this lineage globally. Phylogenetic analysis showed
+these sequences clustered with human sequences collected in Chile
+during the same period when the BA.4.1 variant was prevalent in the
+country. The prevalence of SARS-CoV-2 in Chilean pets was relatively
+low, likely due to the country's high human vaccination rate. Our
+study highlights the importance of upholding and strengthening human
+vaccination strategies to mitigate the risk of interspecies
+transmission. It underscores the critical role of the One Health
+approach in addressing emerging zoonotic diseases, calling for further
+research on infection dynamics and risk factors for a comprehensive
+understanding.
+
+--
+Communicated by:
+ProMED
+
+[ProMED map:
+Worldwide: <https://promedmail.org/promed-post?place=3D8714155,8854>]
+
+[See Also:
+COVID-19 update (03): Israel, JN.1, new variant
+http://promedmail.org/post/20240104.8714055
+COVID-19 update (02): India
+http://promedmail.org/post/20240103.8714052
+COVID-19 update (01): India
+http://promedmail.org/post/20240103.8714031
+2023
+----
+COVID-19 update (40): India, increased cases
+http://promedmail.org/post/20231228.8713947
+COVID-19 update (39): Saudi Arabia, JN.1 variant, MOH
+http://promedmail.org/post/20231222.8713858
+COVID-19 update (38): WHO classifies JN.1 coronavirus strain as
+'variant of interest' http://promedmail.org/post/20231220.8713808
+COVID-19 update (37): vaccine comp., selected regions, circ. variants,
+research http://promedmail.org/post/20231219.8713789
+COVID-19 update (36): selected countries/regions, vaccines
+http://promedmail.org/post/20231212.8713666
+COVID-19 update (35): Singapore, increase
+http://promedmail.org/post/20231209.8713618
+COVID-19 update (34): selected country/region updates, variants, WHO
+http://promedmail.org/post/20231130.8713398
+COVID-19 update (33): country updates, vaccines, vaccine refusal, WHO
+update http://promedmail.org/post/20231105.8713000
+COVID-19 update (32): updates, variants, vaccines, antivirals,
+scientific literature http://promedmail.org/post/20231026.8712809
+COVID-19 update (31): BA.2.86 & EG.5, selected regions, vaccines, WHO,
+global http://promedmail.org/post/20231009.8712522
+COVID-19 update (30): omicron EG.5.1, updates, WHO, global
+http://promedmail.org/post/20230815.8711701
+COVID-19 update (29): updates, wastewater surveillance, transmission,
+WHO, global http://promedmail.org/post/20230802.8711526
+COVID-19 update (28): superspread, masks, vaccination, WHO, global
+http://promedmail.org/post/20230724.8711339
+COVID-19 update (27): vaccination, test kit distribution, sequelae,
+WHO, global http://promedmail.org/post/20230717.8711208
+COVID-19 update (26): animal, North America, wild deer as reservoirs
+http://promedmail.org/post/20230713.8711124
+COVID-19 update (25): vaccines, liver disease, sequelae, WHO, global
+http://promedmail.org/post/20230713.8711095
+COVID-19 update (24): long-term effects, EU.1.1, wild bat, WHO, global
+http://promedmail.org/post/20230704.8710946
+COVID-19 update (23): EU transition plan, viral emission, vacc
+hesitancy, GBS, WHO http://promedmail.org/post/20230619.8710662
+COVID-19 update (22): trends, immunity, children, metformin, WHO
+http://promedmail.org/post/20230612.8710546
+COVID-19 update (21): countries, life expectancy, long COVID,
+research, WHO, global http://promedmail.org/post/20230605.8710423
+COVID-19 update (20): countries, Paxlovid, vaccine, WHO
+http://promedmail.org/post/20230530.8710317
+COVID-19 update (19): countries, vaccine composition, XBB1.16, WHO,
+global http://promedmail.org/post/20230522.8710178
+COVID-19 update (18): country/regional, vaccine policies, vaccination,
+WHO, global http://promedmail.org/post/20230516.8710088
+COVID-19 update (17): WHO, USA, India, China, XBB.1.16, research,
+global http://promedmail.org/post/20230508.8709926
+COVID-19 update (16): XBB.1.16, reinfections, microglia, sequelae,
+WHO, global http://promedmail.org/post/20230502.8709789
+COVID-19 update (15): India, XBB.1.16, fetal brain damage, HCW, global
+http://promedmail.org/post/20230417.8709526
+COVID-19 update (14): countries, vaccines, XBB.1.16, long COVID, WHO
+http://promedmail.org/post/20230407.8709377
+COVID-19 update (13): India, surveillance, HCW, rats, infant
+hospitalizations, WHO, global
+http://promedmail.org/post/20230329.8709196
+COVID-19 update (12): countries, variants, susceptibility, vaccines,
+WHO, global http://promedmail.org/post/20230321.8709066
+COVID-19 update (11): country responses, complications, treatment,
+WHO, global http://promedmail.org/post/20230312.8708900
+COVID-19 update (10): Hong Kong, XBB.1.5, Iran, UAE, bivalent vacc
+http://promedmail.org/post/20230308.8708776
+COVID-19 update (09): XBB.1.5, vaccine, WHO
+http://promedmail.org/post/20230228.8708641
+COVID-19 update (08): countries, immunity, vaccines, treatment, masks,
+WHO, global http://promedmail.org/post/20230219.8708482
+COVID-19 update (07): countries, molnupiravir, vaccines, PACS,
+cockroach, WHO http://promedmail.org/post/20230212.8708331
+COVID-19 update (06): China, demographics, symptoms, PACS, WHO
+http://promedmail.org/post/20230204.8708165
+COVID-19 update (05): PHEIC continues, WHO
+http://promedmail.org/post/20230130.8708059
+COVID-19 update (04): PHEIC, China, susp outbreaks, responses,
+vaccines, global http://promedmail.org/post/20230130.8708043
+COVID-19 update (03): China, guidelines, vacc, immunity, sequelae, WHO
+http://promedmail.org/post/20230122.8707910
+COVID-19 update (02): China, XBB.1.5, Hong Kong, mAb, pathogenesis,
+WHO, global http://promedmail.org/post/20230115.8707786
+COVID-19 update (01): China, Hong Kong, XBB.1.5, PAHO, treatment,
+testing, WHO http://promedmail.org/post/20230107.8707667
+2022
+----
+COVID-19 update (193): surge, travel restrictions, screening,
+treatment, WHO http://promedmail.org/post/20221230.8707528
+COVID-19 update (191): omicron BF.7, bivalent vaccines, China, WHO,
+global http://promedmail.org/post/20221224.8707437
+COVID-19 update (190): China, Australia, vaccines, sequelae, WHO,
+global http://promedmail.org/post/20221219.8707306
+COVID-19 update (189): mortality, mAb, intranasal vacc, NPIs,
+sequelae, WHO, global http://promedmail.org/post/20221209.8707146
+COVID-19 update (188): China, omicron BA.2.76, outdoor transmission
+http://promedmail.org/post/20221130.8706983
+COVID-19 update (187): boosters, omicron BQ.1.1, Asia, Australia, WHO,
+global http://promedmail.org/post/20221129.8706920
+COVID-19 update (185): chr. COVID, bladder, recovery, renal, deaths,
+WHO, global http://promedmail.org/post/20221111.8706665
+COVID-19 update (184): vaccination response, disparity, WHO, global
+http://promedmail.org/post/20221104.8706549
+COVID-19 update (183): cardiac events, exercise, US deaths, boosters,
+WHO, global http://promedmail.org/post/20221028.8706414
+COVID-19 update (182): frontline workers, life expectancy,
+subvariants, WHO, global http://promedmail.org/post/20221021.8706286
+COVID-19 update (181): Africa vacc hesitancy, pre-eclampsia, boosters,
+nasal vacc, WHO, global http://promedmail.org/post/20221014.8706143
+COVID-19 update (180): long COVID, neuropsy. illness, Paxlovid,
+subvariants, WHO http://promedmail.org/post/20221007.8706007
+COVID-19 update (170): case severity, boosters, physical activity,
+WHO, global http://promedmail.org/post/20220825.8705236
+COVID-19 update (160): vaccine rollout disparities, smell & taste,
+WHO, global http://promedmail.org/post/20220731.8704776
+COVID-19 update (150): France, omicron 2nd gen variant, paxlovid, WHO,
+global http://promedmail.org/post/20220705.8704255
+COVID-19 update (140): Thailand, human to cat to human transmission
+http://promedmail.org/post/20220612.8703819
+COVID-19 update (130): surveill., cardiac eff., long COVID subtypes,
+WHO, global http://promedmail.org/post/20220601.8703606
+COVID-19 update (120): N Korea, pandemic exit, youth vaccine, US
+deaths, WHO http://promedmail.org/post/20220518.8703327
+COVID-19 update (110): mutations, mental health, China, S Africa,
+Paxlovid, WHO http://promedmail.org/post/20220505.8703018
+COVID-19 update (100): vacc. intervals, deaths, long COVID,
+subvariants, global http://promedmail.org/post/20220420.8702717
+COVID-19 update (90): strategy, 2nd booster, WHO
+http://promedmail.org/post/20220407.8702454
+COVID-19 update (80): animal, USA, deer, transmission
+http://promedmail.org/post/20220325.8702212
+COVID-19 update (70): case count, UK, BA.2, USA, WHO, global
+http://promedmail.org/post/20220312.8701940]
+.................................................sb/lww/may/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3DizXIOLy6Kih5czDJkz7QnjbawtHRHkItZiGxJNuOyU1oMDAwdTAwMJ41chG=
+Xg0L6lKsHAOAoWgxt6RS5Glp63JXE1iXcKMyVrv-Sr3-gZH4Oz8fYACIrY47Q3yIzjaEV15Ltl0=
+izfip8q0log4xAq6PTePDRhRaxWBg9WOOQPBLqc9mADtbwEztWifPcx5UnXPaBouef_-H8Q8ame=
+bwoIfcaFkbtxDsSkbIfbF5Jp_XScOEO8Ji1cmw_ImBWvPTSQnyvonLGl8P4tyXR0D0fmAPtEJVQ=
+MGZ81Ii5M5qaQnqNgpC_tSlQNWk5Xp5DSRbVMAyG_ZXpoubmW8Vdhzd76nLgiH7wsa5LxJGEY59=
+priDo16IvJlAo_BAQqZVkNqDLv0uy1Kh0s62gznWXsB75iqtnidQrCbVSEiRwDwXG8cc4px5Xe2=
+4Kde-w0PTfQOpNZPWNQ2CrTRMZoAFHANRviD5UWKyMb30nzaRuqjKAZhh8sXCepErW1Iov5Jwpv=
+c_ifr0kNnR6X_KAe38LnKFAaawH5tAguCoWskUbX0WjrvxpavewjOIHBQ0vf3XBaKRxOSleDvHY=
+s3O3qOPC0e5QvAksQxZQN1R9Whwm68FemJbQOE-LDN3LD8EwUYQxPCPGoGbpOjacTRbSM5NzUNO=
+p-BQFDPG5IG3qF-eryDre_KI2v5Sbf6lCDnt-MjfOHU_tUVf12WATDhFEdozEbnkJD9F1YBU0fz=
+8hfrMED_2q2L1UzwXjRpt0x4X8lDT37PoyNdf0mm3rf-s-25BcQgxFICe3TvhhVuD02m7LOt65R=
+LvVhpT_otg2K7L-vM5n-DJdoZPRMfw4tc6jhTX51PQoDw-OVmShHEtVTMO9myAw6wgIRXbqu1Xq=
+DWzervAEBOj6e0xnlbi3H7NsCz1O9SUvgjZMX8hKomto-JeXu319fuakFA7ghxosoz5vax4X7KF=
+h2-pb3VuVW8MLTS8xYLTpDR9qc5QBJlLeJQFz3IrfRFkRwBjN5WO8r5Wt7-YsLbdoSYSNXNsG5c=
+3mPgkM9BfauiVjDwkOIreB7D4ZcTpzulzfBfhtbJJvBo6vnTo3sr1USna1ugwJB5eIi8NMUtJ2V=
+xbW0dZmH7FJpsUIHgQocTyuSC7Jr2qb65Fa5S7-kNDvRLyUiolJ7skYmcuVPgdfxL6QIRwxxQy_=
+a7cfnu7vfUrk9CdmEA9E-AZCDR1VyUF0Zt4p_2uCsifU6tKbtBlDb0R5juHgbC5C )
+############################################################
+############################################################
+
+--ff610dbbcf682a3ef8f33773f8fb2cc8066f7694a837262b16b7c9c14eb5
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=iso-8859-1
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>CORONAVIRUS DISEASE 2019 UPDATE (04): SELECTED COUNTRIES/REGIONS, JN.=
+1<br>VIROLOGICAL CHARACTERISTICS, SEVERITY, OMICRON BA.4.1 DETECTED IN DOGS=
+<br>***********************************************************************=
+**********************************************************************<br>A=
+ ProMED-mail post<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/wscE=
+2ng5fl6JrPIt48tisIijpefK5PNjW-mL-YZGnfgDOxU1G3gjwnPSi2Tfv3HA/42w/dHM_Cgf0Rt=
+yE9dWREIBGuQ/h0/Ds28SUN0X7t1XG1aRq13R9tuDXMwd8jkQ4-VppLqfd8">http://www.pro=
+medmail.org</a><br>ProMED-mail is a program of the<br>International Society=
+ for Infectious Diseases<br><a href=3D"https://u19268662.ct.sendgrid.net/ss=
+/c/wscE2ng5fl6JrPIt48tisCT5tpD4Upm3qyMCbcYSQvc/42w/dHM_Cgf0RtyE9dWREIBGuQ/h=
+1/RzXRRCry2FSLrg44zpPHohOgqTR2cpG7hs_WqA8p1a0">http://www.isid.org</a><br><=
+br>In this update:=0D<br>[1] Selected countries/regions=0D<br>[A] India: Mu=
+mbai records 1st COVID-19 death this year=0D<br>[B] Hong Kong: Double warni=
+ng over COVID, flu=0D<br>[C] Spain: Spanish holiday regions reintroduce COV=
+ID-mask rules after<br>seeing surge in cases=0D<br>[2] Virological characte=
+ristics of the SARS-CoV-2 JN.1 variant=0D<br>[3] New, highly mutated COVID =
+variants 'pirola' BA.2.86 and JN.1 may<br>cause more severe disease, new st=
+udies suggest=0D<br>[4] Chile: 1st detection of omicron variant BA.4.1 line=
+age in dogs=0D<br>=0D<br>******=0D<br>[1] Selected countries/regions=0D<br>=
+[A] India: Mumbai records 1st COVID-19 death this year=0D<br>Date: Mon 8 Ja=
+n 2024=0D<br>Source: The Indian Express [edited]=0D<br><a href=3D"https://u=
+19268662.ct.sendgrid.net/ss/c/G6bs_HUSl8zPcwlV7WCHDgcI_mno7sQkNmVjS81yLOxpc=
+Bzz8RMMy_4sbVksZYZw_1uoiMjKT__aaLt0k25sbQV5he_VZu0t6l1ZvJBqzlvsPtNgEeV6xVUC=
+5FOJxxSe2sA6dxyXxUN1E1XFXqKgIQ/42w/dHM_Cgf0RtyE9dWREIBGuQ/h2/D512DV1j5Nvxf4=
+odUoXqyeyMvb1dhvxzx02lzO1jc3A">https://indianexpress.com/article/cities/mum=
+bai/first-covid-death-in-mumbai-this-year-9098316/</a>=0D<br>=0D<br>=0D<br>=
+Mumbai reported its 1st COVID-19 fatality of the year [2024] with a<br>52-y=
+ear-old man, who had tested positive for the virus, succumbing on<br>5 Jan =
+2024. The previous COVID-19 death was recorded on 9 Aug 2023.=0D<br>=0D<br>=
+The deceased, a resident of M West ward, was admitted to a government<br>ho=
+spital on 4 Jan 2024, with symptoms such as fever, cough and<br>breathlessn=
+ess for 5 days. The patient had tested positive for COVID<br>and, within 24=
+ hours of admission, passed away, with the cause of<br>death attributed to =
+respiratory tract infection (LRTI) with sepsis and<br>septic shock, accordi=
+ng to an official from the civic health<br>department.=0D<br>=0D<br>Meanwhi=
+le, the state reported 154 new COVID cases, with 21 cases in<br>Mumbai, in =
+the last 24 hours. Another COVID death was recorded in<br>Nagpur.=0D<br>=0D=
+<br>The state recorded a recovery rate of 98.17%, a positivity rate of<br>1=
+.11% and a case fatality rate of 1.81%. Maharashtra has 139 patients<br>inf=
+ected with the JN.1 variant.=0D<br>=0D<br>On the JN.1 variant, Dr Rajesh Ka=
+ryakarte, head of the BJ Medical<br>College Microbiology Department and a m=
+ember of the state COVID-19<br>task force, said, "While cases are increasin=
+g, hospitalisations and<br>deaths remain low. However, the variant is highl=
+y transmissible, and<br>the recent New Year celebrations without adhering t=
+o COVID-appropriate<br>behaviour have contributed to increased transmission=
+ and cases," he<br>said.=0D<br>=0D<br>[Byline: Rupsa Chakraborty]=0D<br>=0D=
+<br>--=0D<br>Communicated by:=0D<br>ProMED=0D<br>=0D<br>[Although rare, sev=
+ere complications arising from SARS-CoV-2<br>infections can still arise. As=
+ time passes between individual exposure<br>to SARS-CoV-2 antigens through =
+infection or vaccination, individual<br>immunity against SARS-CoV-2 can wan=
+e and newer variants may also gain<br>mutations that may increase their tra=
+nsmissibility, pathogenicity, and<br>ability to escape individual and popul=
+ation immunity (see item 3 in<br>this update). It is therefore important fo=
+r individuals to be aware of<br>public health risks from respiratory viruse=
+s such as SARS-CoV-2 in<br>surrounding locations and take necessary precaut=
+ions to reduce risk of<br>getting infected and passing on infections to oth=
+ers, where possible.<br>- Mod.LWW]=0D<br>=0D<br>---=0D<br>[B] Hong Kong: Do=
+uble warning over COVID, flu=0D<br>Date: Fri 5 Jan 2024=20=0D<br>Source: Th=
+e Standard [edited]=0D<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c=
+/TLh_csrC34X_iXpbYoMamy3lLa0tL5YxYNQ2h0ZHVnbpKdtNCxZCiD6JPL_6my0k3JqnaJFoZO=
+h-pckF3ycJYMkbIKA6BHW5tacg25S07uONkoa-ckUMqjdfjVsYrKycoTO6YTsZD11hkIHNkhYeX=
+A/42w/dHM_Cgf0RtyE9dWREIBGuQ/h3/sZa4PCux10zCZWeOV6wAxVKXzENQRjUUplAp5bmtDuQ=
+">https://www.thestandard.com.hk/section-news/section/11/259288/Double-warn=
+ing-over-Covid-flu</a>=0D<br>=0D<br>=0D<br>Hong Kong is expected to enter t=
+he flu peak season next week even as<br>COVID spreads through a new subvari=
+ant -- JN.1 -- which is forecast to<br>become the dominant strain.=0D<br>=0D=
+<br>Chuang Shuk-kwan, head of the Centre for Health Protection's<br>Communi=
+cable Disease Branch, said the flu rate had reached a high of<br>8.49% late=
+ly.=0D<br>=0D<br>But it is difficult to predict how long the peak will last=
+ as the<br>lifting of the mask mandate and Hongkongers' frequent overseas t=
+ravel<br>may affect the duration and severity of the season.=0D<br>=0D<br>"=
+The usual duration of the season in the past was 8 weeks to 12<br>weeks," s=
+he said.=0D<br>=0D<br>"So it's difficult to predict the exact duration of t=
+he season and the<br>severity."=0D<br>=0D<br>She urged people to get vaccin=
+ated against the flu as soon as possible<br>and to wear masks in crowded pl=
+aces and on public transport.=0D<br>=0D<br>"Those who are not feeling well =
+or those who have contacts with sick<br>people or have respiratory diseases=
+ should wear masks," Chuang<br>stressed.=0D<br>=0D<br>"People should also w=
+ear masks when visiting high-risk places,<br>including elderly homes and ho=
+spitals, as well as crowded indoor<br>places with poor ventilation."=0D<br>=0D=
+<br>She said Hong Kong is seeing an active spread of COVID, as viral loads<=
+br>collected in sewage samples and the number of COVID patients have been<b=
+r>on the rise.=0D<br>=0D<br>Around 60% of COVID patients in Hong Kong have =
+contracted the JN.1<br>omicron variant, which has been spreading quickly ar=
+ound the world.=0D<br>=0D<br>And as the proportion of Hong Kong patients ca=
+rrying the JN.1 strain<br>is increasing Chuang expects it will replace XBB =
+to become the new<br>dominant strain in Hong Kong.=0D<br>=0D<br>"The propor=
+tion of cases with the JN.1 strain around the world has<br>increased from 3=
+% in early November [2023] to 27% now, and more<br>patients are contracting=
+ the subvariant," she said.=0D<br>=0D<br>"Fortunately, there is no evidence=
+ suggesting the JN.1 strain can lead<br>to more serious illness compared to=
+ other variants, and it is unlikely<br>to cause a serious public health cri=
+sis. The existing vaccine<br>targeting the XBB variant is also effective ag=
+ainst the JN.1 strain."=0D<br>=0D<br>The head of the CHP's Emergency Respon=
+se and Program Management<br>Branch, Albert Au Ka-wing, said the administra=
+tion has procured 200<br>000 doses of vaccine targeting the XBB variant and=
+ administered around<br>20 000 jabs for people aged 65 and above and care h=
+ome residents as of<br>Wednesday [3 Jan 2024].=0D<br>=0D<br>He said authori=
+ties are planning to expand the vaccination program,<br>and for people aged=
+ 50 to 64, patients with chronic diseases or<br>impaired immunity, pregnant=
+ women and medics to receive the new<br>vaccine.=0D<br>=0D<br>Au said most =
+Hongkongers have been fully vaccinated by getting 3 jabs.<br>But only 30% o=
+f children aged 6 months to 3 years old are fully<br>vaccinated and one-fou=
+rth of the elderly aged 80 or above have<br>received 4 jabs. So he urged th=
+em to get booster shots as soon as<br>possible.=0D<br>=0D<br>The number of =
+serious illnesses and deaths following COVID infections<br>remains stable, =
+but Hong Kong has seen 2 children in serious condition<br>after they contra=
+cted the coronavirus.=0D<br>=0D<br>Hospital Authority senior executive Larr=
+y Lee Lap-yip said one case<br>involved a 4-year-old boy going to Australia=
+ during the incubation<br>period then testing positive for COVID after retu=
+rning on New Year's<br>Day.=0D<br>=0D<br>The boy had a fever and difficulti=
+es breathing before being diagnosed<br>with pneumonia at Tuen Mun Hospital.=
+ He had been in serious condition<br>but became stable after treatment.=0D<=
+br>=0D<br>A 20-month-old boy with no travel history started developing a fe=
+ver<br>last Friday [29 Dec 2023] and tested COVID positive. He was sent to<=
+br>Prince of Wales Hospital and was found to suffer from croup -- a type<br=
+>of respiratory infection that commonly occurs in children aged 6<br>months=
+ to 5 years. He is in stable condition.=0D<br>=0D<br>Lee said the emergency=
+ rooms at public hospitals have been receiving<br>increasing numbers of pat=
+ients since late last month [December 2023],<br>with occupancy rates of med=
+ical wards surpassing 115%.=0D<br>=0D<br>The authority has increased manpow=
+er and hospital beds and deployed<br>geriatric doctors to take care of seni=
+or patients in emergency rooms,<br>he said.=0D<br>=0D<br>[Byline: Wallis Wa=
+ng]=0D<br>=0D<br>--=0D<br>Communicated by:=0D<br>ProMED=0D<br>=0D<br>---=0D=
+<br>[C] Spain: Spanish holiday regions reintroduce COVID-mask rules after<b=
+r>seeing surge in cases=0D<br>Date: Fri 5 Jan 2024=0D<br>Source: The Daily =
+Mail (Online) [edited]=0D<br><a href=3D"https://u19268662.ct.sendgrid.net/s=
+s/c/TLh_csrC34X_iXpbYoMam2GhJ436w0GjUrJ9vdvu_uzor-hz2k1jr-FIvPfbKx7fCU_sIpI=
+ze7ubs99tBP--FCyMUVwmkiNLx3OSKg6BmEDnohdGIPneb597y6Jf-9jmk2iEUExxpEdTtbgxtJ=
+p1LzRAU_IspGwYNHh-4V4_zzTvSPXa4oSl1coA01QY0qZj/42w/dHM_Cgf0RtyE9dWREIBGuQ/h=
+4/OW7swYWhLT1HMUrynS5ogiKc3OZOE0nN7ibsLAskQPU">https://www.dailymail.co.uk/=
+news/article-12929711/Spanish-holiday-region-reintroduces-Covid-mask-rules-=
+seeing-surge-cases.html</a>=0D<br>=0D<br>=0D<br>The COVID and flu epidemic =
+in Spain is becoming so bad that a number<br>of holiday regions are reintro=
+ducing the obligatory mask-wearing rule<br>in certain cases.=0D<br>=0D<br>H=
+ealth authorities across the country are reporting saturated<br>hospitals a=
+nd health centres, with patients once again lying in<br>corridors or waitin=
+g hours for treatment.=0D<br>=0D<br>Family doctors are also calling for the=
+ mandatory use of masks in<br>health centres and hospitals across the whole=
+ of Spain, saying the<br>winter surge of COVID and flu is getting out of co=
+ntrol.=0D<br>=0D<br>The Spanish government hasn't made any announcement abo=
+ut the return<br>of obligatory mask wearing but regions such as Valencia --=
+ where<br>tourist hotspots Benidorm and Alicante are located -- are already=
+<br>imposing their own rules again.=0D<br>=0D<br>Valencia's health departme=
+nt has today [5 Jan 2024] implemented the<br>mandatory use of masks in heal=
+th centres due to the rise in<br>respiratory infections.=0D<br>=0D<br>This =
+preventive measure is considered relevant given the incidence in<br>the Val=
+encian community, with a rate of 1501 cases per 100 000<br>inhabitants.=0D<=
+br>=0D<br>The objective is to stop infections and protect vulnerable people=
+.=0D<br>=0D<br>The department is also relaying the message that health cent=
+res will<br>vaccinate against flu and COVID-19 starting next Monday [8 Jan =
+2024]<br>without the need for an appointment.=0D<br>=0D<br>From today [5 Ja=
+n 2024], it will be mandatory to wear a mask when<br>entering health centre=
+s and hospitals throughout the Valencian<br>community.=0D<br>=0D<br>The Min=
+istry of Health established the mask protocol due to the spike<br>in flu ca=
+ses and respiratory infections in recent weeks.=0D<br>=0D<br>The last weekl=
+y report for influenza, COVID-19 and other respiratory<br>viruses in 2023 m=
+arked a global rate of acute respiratory infection in<br>primary care of 90=
+8.6 cases per 100 000 inhabitants, when the previous<br>week the figure was=
+ 806; and in general at all levels of care of 1501<br>cases per 100 000 inh=
+abitants=0D<br>=0D<br>The Department of Health has sent the health departme=
+nts of 3<br>provinces an instruction from the General Directorate of Public=
+ Health<br>that establishes the mandatory use of masks in health and social=
+<br>health centres as a preventive measure in the face of the resurgence<br=
+>of respiratory virus infection.=0D<br>=0D<br>Valencia says its health serv=
+ices are at the point of collapse due to<br>the surge in COVID and flu case=
+s after Christmas and is having to send<br>patients to provide hospitals in=
+ order to cope.=0D<br>=0D<br>The wave is expected to peak in the 3rd week o=
+f January [2024].=0D<br>=0D<br>There are hospitals in the Valencia province=
+ at 96% occupancy and<br>family doctors are seeing 15 off-schedule patients=
+ a day due to these<br>infections, with influenza A in 7 out of 10 cases.=0D=
+<br>=0D<br>The Spanish Society for Family Doctors is calling for obligatory=
+ mask<br>wearing in hospitals and medical centres across Spain to stop the<=
+br>spread of flu and COVID.=0D<br>=0D<br>[Byline: Rita Sobot]=0D<br>=0D<br>=
+--=0D<br>Communicated by:=0D<br>ProMED=0D<br>=0D<br>******=0D<br>[2] Virolo=
+gical characteristics of the SARS-CoV-2 JN.1 variant=0D<br>Date: Wed 3 Jan =
+2024=0D<br>Source: The Lancet Infectious Diseases [edited]=0D<br><a href=3D=
+"https://u19268662.ct.sendgrid.net/ss/c/TLh_csrC34X_iXpbYoMamwk5lP8e0Bt0uwj=
+GAO2ljZkaXd5CRCbnL1epewOtEN0tlNgXTBbyFcwlveB_bauB9F7jkt7yOWeMb343r_KgWMIOab=
+PNaEh3MmOnjiKXyFQO/42w/dHM_Cgf0RtyE9dWREIBGuQ/h5/qdHR4LZszD8I6mY6g7uPvp47Zi=
+i1g5VYUFdKk3G6KNw">https://www.thelancet.com/journals/laninf/article/PIIS14=
+73-3099(23)00813-7/fulltext</a>=0D<br>=0D<br>=0D<br>Citation: Kaku Y, Okumu=
+ra K, Padilla-Blanco M, Kosugi Y, Uriu K, Hinay<br>AA Jr, Chen L, Plianchai=
+suk A, Kobiyama K, Ishii KJ; Genotype to<br>Phenotype Japan (G2P-Japan) Con=
+sortium; Zahradnik J, Ito J, Sato K.<br>Virological characteristics of the =
+SARS-CoV-2 JN.1 variant. Lancet<br>Infectious Diseases. 2024 Jan 3:S1473-30=
+99(23)00813-7.=0D<br>------------------------------------------------------=
+--------------------------=0D<br>The SARS-CoV-2 BA.2.86 lineage, 1st identi=
+fied in August 2023, is<br>phylogenetically distinct from the current circu=
+lating SARS-CoV-2<br>omicron XBB lineages, including EG.5.1 and HK.3. Compa=
+red with XBB and<br>BA.2, BA.2.86 carries more than 30 mutations in the spi=
+ke protein,<br>indicating a high potential for immune evasion. BA.2.86 has =
+evolved<br>and its descendant, JN.1 (BA.2.86.1.1), emerged in late 2023. JN=
+.1<br>harbours Leu455Ser and 3 mutations in non-spike proteins. Spike<br>pr=
+otein mutation Leu455Ser is a hallmark mutation of JN.1: we have<br>recentl=
+y shown that HK.3 and other flip variants carry Leu455Phe,<br>which contrib=
+utes to increased transmissibility and immune escape<br>ability compared wi=
+th the parental EG.5.1 variant. Here, we<br>investigated the virological pr=
+operties of JN.1. We estimated the<br>relative effective reproductive numbe=
+r of JN.1 using genomic<br>surveillance data from France, the UK, and Spain=
+, where more than 25<br>sequences of JN.1 have been reported, using a Bayes=
+ian multinomial<br>logistic model. The reproductive number of JN.1 in these=
+ 3 countries<br>was higher than that of BA.2.86.1 and HK.3, one of the XBB =
+lineages<br>with the highest growth advantage at the end of November 2023. =
+These<br>results suggest that JN.1 might soon become the dominant lineage<b=
+r>worldwide. Indeed, by the end of November 2023, JN.1 had already<br>overt=
+aken HK.3 in France and Spain.=0D<br>=0D<br>The in vitro ACE2 binding assay=
+ showed that the dissociation constant<br>value of the JN.1 receptor-bindin=
+g domain (RBD) was significantly<br>higher than that of the BA.2.86 RBD, su=
+ggesting that Leu455Ser<br>decreases binding affinity to the human ACE2 rec=
+eptor. In contrast,<br>the pseudovirus assay showed that the infectivity of=
+ JN.1 was<br>significantly higher than that of BA.2.86. This discrepancy co=
+uld be<br>due to the difference between monomeric RBD and trimerised whole =
+spike<br>protein. We then performed a neutralisation assay using rodent ser=
+a<br>infected with BA.2.86 or immunised with BA.2.86 spike protein. In both=
+<br>cases, the 50% neutralisation titre (NT50) against JN.1 was similar to<=
+br>that against BA.2.86, suggesting that Leu455Ser does not affect the<br>a=
+ntigenicity of BA.2.86. On the other hand, the NT50 of breakthrough<br>infe=
+ction sera with XBB.1.5 and EG.5.1 against JN.1 was significantly<br>lower =
+than that of HK.3 (2=B76-fold to 3=B71-fold) and BA.2.86<br>(3=B78-fold). F=
+urthermore, JN.1 shows robust resistance to monovalent<br>XBB.1.5 vaccine s=
+era compared with BA.2.86. Taken together, these<br>results suggest that JN=
+.1 is one of the most immune-evading variants<br>to date. Our results sugge=
+st that Leu455Ser contributes to increased<br>immune evasion, which partly =
+explains the increased reproductive<br>number of JN.1.=0D<br>=0D<br>--=0D<b=
+r>Communicated by:=0D<br>ProMED=0D<br>=0D<br>[References and links to suppl=
+ementary information were removed from<br>the text above to improve legibil=
+ity. Readers interested in details<br>should refer to the full text at<br><=
+a href=3D"https://u19268662.ct.sendgrid.net/ss/c/TLh_csrC34X_iXpbYoMamwk5lP=
+8e0Bt0uwjGAO2ljZkaXd5CRCbnL1epewOtEN0tlNgXTBbyFcwlveB_bauB9F7jkt7yOWeMb343r=
+_KgWMIOabPNaEh3MmOnjiKXyFQO/42w/dHM_Cgf0RtyE9dWREIBGuQ/h6/8ExPZ7KuRnc9Nq4uE=
+Wh_pKFBAZH_5hJED-rxGmb3Gsw">https://www.thelancet.com/journals/laninf/artic=
+le/PIIS1473-3099(23)00813-7/fulltext</a><br>- Mod.LWW]=0D<br>=0D<br>******=0D=
+<br>[3] New, highly mutated COVID variants 'pirola' BA.2.86 and JN.1 may<br=
+>cause more severe disease, new studies suggest=0D<br>Date: Tue 9 Jan 2024=0D=
+<br>Source: Fortune Well [edited]=0D<br><a href=3D"https://u19268662.ct.sen=
+dgrid.net/ss/c/1SBR61Kp8oRewHa1jScxqWBp3kGzD853Kppgaw1QhllR9-t3rw-Lg-huvdsn=
+b77gUepNO8uke7CxYWKg7uNSsGSXE3x_AK8kP2vzanMO2zG0RTDORJ8s7WG_kRoADrF6w0_hNQ0=
+1EG-YeubRKbqha9FdYzTZ0DMER-4jcZlUgAM/42w/dHM_Cgf0RtyE9dWREIBGuQ/h7/gsA3Nysp=
+--hXkM0KXTQPIntrV4igOokmRqPMfqO0O3I">https://fortune.com/well/2024/01/08/co=
+vid-omicron-variants-pirola-ba286-jn1-more-severe-disease-lung-gi-tract-sym=
+ptoms/</a>=0D<br>=0D<br>=0D<br>Highly mutated COVID variant BA.2.86 -- clos=
+e ancestor of globally<br>dominant "pirola" JN.1 -- may lead to more severe=
+ disease than other<br>omicron variants, according to 2 new studies publish=
+ed Monday in the<br>journal Cell.=0D<br>=0D<br>In one study, researchers fr=
+om Ohio State University performed a<br>variety of experiments using a BA.2=
+.86 pseudovirus -- a lab-created<br>version that isn't infectious. They fou=
+nd that BA.2.86 can fuse to<br>human cells more efficiently and infect cell=
+s that line the lower<br>lung--traits that may make it more similar to init=
+ial, pre-omicron<br>strains that were more deadly. [See full article here:<=
+br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/TLh_csrC34X_iXpbYoMam8=
+08a002M4WyWIBbRQzRBe2bYGvqIG4SmIzGpnq7jymh9NYv0m0ahwaNAvOXQEx2T5SlNOOdZxfxg=
+O0YwswTrd0/42w/dHM_Cgf0RtyE9dWREIBGuQ/h8/hLOGfzvMdW03DBWLof1LDWl0RSeqvuh3Cu=
+dd0AgIeX8">https://www.cell.com/action/showPdf?pii=3DS0092-8674%2823%290140=
+0-9</a> -<br>Mod.LWW]=0D<br>=0D<br>In the other study, researchers in Germa=
+ny and France came to the same<br>conclusion. "BA.2.86 has regained a trait=
+ characteristic of early<br>SARS-CoV-2 lineages: robust lung cell entry," t=
+he authors wrote. The<br>variant "might constitute an elevated health threa=
+t as compared to<br>previous omicron sublineages," they added. [See full ar=
+ticle here:<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/TLh_csrC34=
+X_iXpbYoMam808a002M4WyWIBbRQzRBe2bYGvqIG4SmIzGpnq7jymh9NYv0m0ahwaNAvOXQEx2T=
+0e8P-NZDTxP3yo-ny4EKcI/42w/dHM_Cgf0RtyE9dWREIBGuQ/h9/ZVuREiPC-Dk1SczfDUrQHW=
+70hbGtPoIO54yKBGWvDsM">https://www.cell.com/action/showPdf?pii=3DS0092-8674=
+%2823%2901399-5</a> -<br>Mod.LWW]=0D<br>=0D<br>While illness caused by the =
+initial omicron strain was typically<br>considered milder than that caused =
+by earlier variants, it's<br>impossible to say definitively, experts say. T=
+hat's because those<br>sickened by omicron had generally already been infec=
+ted with an<br>earlier version of the virus, likely softening the blow. Add=
+itionally,<br>many had been vaccinated, to the same effect.=0D<br>=0D<br>St=
+ill, omicron had a penchant for infecting the upper airway versus<br>the lo=
+wer airway, where prior versions of the virus tended to<br>accumulate, caus=
+ing more severe disease. The new studies offer proof<br>that this trend may=
+ very well be reversing, the authors contend. If<br>true, it's bad news for=
+ those who hoped the virus was slowly<br>attenuating to the equivalent of a=
+ common cold.=0D<br>=0D<br>"We cannot ignore the evidence" that omicron may=
+ be evolving into a<br>more severe form of itself, Dr. Shan-Lu Liu--profess=
+or and co-director<br>of the Viruses and Emerging Pathogens Program at Ohio=
+ State<br>University, and lead author on the 1st study -- told Fortune.=0D<=
+br>=0D<br>Increasing COVID hospitalizations in the U.S. and around the glob=
+e<br>potentially bolster the argument, he added.=0D<br>=0D<br>It's tough to=
+ tell if disease caused by COVID is again becoming more<br>severe because w=
+aning immunity muddles matters, experts say. Antibody<br>immunity to COVID =
+from vaccination or prior infection -- which can<br>reduce the severity of =
+the disease or prevent infection altogether --<br>declines after 3 to 6 mon=
+ths. Globally, uptake of the latest COVID<br>booster, released this past fa=
+ll [2023], leaves much to be desired. In<br>the U.S., it sits under 20%, ac=
+cording to the Centers for Disease<br>Control and Prevention. In theory, th=
+e longer it's been since someone<br>was infected with COVID or received a b=
+ooster, the greater their risk<br>for severe outcomes like hospitalization =
+and death.=0D<br>=0D<br>As for what the studies might mean regarding the se=
+verity of JN.1<br>infection, the jury is still out. But the new findings --=
+ combined<br>with expert speculation that JN.1 may be showing a preference =
+for<br>infecting the GI tract -- warrant more study into the evolving natur=
+e<br>of the virus, according to Liu.=0D<br>=0D<br>Another concern of his: t=
+he possibility of COVID recombining with<br>another coronavirus in animals,=
+ then transitioning back over to humans<br>-- throwing another viral plot t=
+wist into the pandemic's narrative.=0D<br>=0D<br>Some experts contend that =
+omicron -- highly mutated compared to<br>previous strains -- originated in =
+animals, then spilled back over into<br>humans (as opposed to developing in=
+ a human with a long-term<br>infection, as others contend). Regardless, ani=
+mals serve as an<br>underappreciated wild card, Liu contends. Case in point=
+: Many of<br>Ohio's white-tailed deer have tested positive for COVID, affor=
+ding the<br>virus an additional population in which to mutate.=0D<br>=0D<br=
+>Another, perhaps larger concern of Liu: the possibility that COVID<br>reco=
+mbines with another, more deadly coronavirus like SARS or MERS,<br>which ha=
+d case fatality rates around 10% and 34%, respectively. In<br>contrast, COV=
+ID's case fatality rate, among unvaccinated Americans,<br>sat around 1% pri=
+or to omicron, and around 0.11% after.=0D<br>=0D<br>"Anything can happen," =
+Liu said. "It's really hard to predict what's<br>going to come next, but na=
+ture can do amazing things."=0D<br>=0D<br>The bottom line when it comes to =
+the power of animals to further<br>evolve the virus and send another curveb=
+all flying humanity's way:<br>"Humans, watch out."=0D<br>=0D<br>[Byline: Er=
+in Prater]=0D<br>=0D<br>--=0D<br>Communicated by:=0D<br>ProMED=0D<br>=0D<br=
+>******=0D<br>[4] Chile: First detection of omicron variant BA.4.1 lineage =
+in dogs=0D<br>Date: Thu 4 Jan 2024=0D<br>Source: The Veterinary Quarterly [=
+edited]=0D<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/0oc7vsq5mmL=
+jPwOs4PjMh3uPKFO3RpoM8Ok2goq-HWwDaTH3qLVVU0A7B7jTqpWZ0otpEqhYrMOdaQUldgKRGg=
+/42w/dHM_Cgf0RtyE9dWREIBGuQ/h10/z6qhzzc-uPetZMwDUyL28auD_JwHS4MmxU89OkJ9F-g=
+">https://pubmed.ncbi.nlm.nih.gov/38174799/</a>=0D<br>=0D<br>=0D<br>Citatio=
+n: Ag=FCero B, Berrios F, Pardo-Roa C, Ariyama N, Bennett B,<br>Medina RA, =
+Neira V. First detection of omicron variant BA.4.1 lineage<br>in dogs, Chil=
+e. The Veterinary Quarterly. 2024 Dec;44(1):1-10.=20=0D<br>----------------=
+----------------------------------------------------------------=0D<br>Abst=
+ract=0D<br>--------=0D<br>SARS-CoV-2's rapid global spread caused the decla=
+ration of COVID-19 as<br>a pandemic in March 2020. Alongside humans, domest=
+ic dogs and cats are<br>also susceptible to infection. However, limited rep=
+orts on pet<br>infections in Chile prompted a comprehensive study to addres=
+s this<br>knowledge gap. Between March 2021 and March 2023, the study asses=
+sed<br>65 pets (26 dogs and 39 cats) from 33 COVID-19+ households alongside=
+<br>700 nasal swabs from animals in households with unknown COVID-19<br>sta=
+tus. RT-PCR, nasal, fecal, and environmental samples were analyzed<br>for t=
+he virus. In COVID-19+ households, 6.06% tested positive for<br>SARS-CoV-2,=
+ belonging to 3 dogs, indicating human-to-pet transmission.<br>Pets from ho=
+useholds with unknown COVID-19 status tested negative for<br>the virus. We =
+obtained 2 SARS-CoV-2 genomes from animals, that<br>belonged to omicron BA.=
+4.1 variant, marking the 1st report of pets<br>infected with this lineage g=
+lobally. Phylogenetic analysis showed<br>these sequences clustered with hum=
+an sequences collected in Chile<br>during the same period when the BA.4.1 v=
+ariant was prevalent in the<br>country. The prevalence of SARS-CoV-2 in Chi=
+lean pets was relatively<br>low, likely due to the country's high human vac=
+cination rate. Our<br>study highlights the importance of upholding and stre=
+ngthening human<br>vaccination strategies to mitigate the risk of interspec=
+ies<br>transmission. It underscores the critical role of the One Health<br>=
+approach in addressing emerging zoonotic diseases, calling for further<br>r=
+esearch on infection dynamics and risk factors for a comprehensive<br>under=
+standing.=0D<br>=0D<br>--=0D<br>Communicated by:=0D<br>ProMED<br><br>[ProME=
+D map:=0D<br>Worldwide: <a href=3D"https://u19268662.ct.sendgrid.net/ss/c/s=
+SnCkKCWBvais3EuVAOvgy2WOIX7pp1nXnn4AbwuQ3Z6WbkfhqXYXU-aTMPJ8yThqW6ilupa_yxX=
+yYghg1AqyA/42w/dHM_Cgf0RtyE9dWREIBGuQ/h11/G0q-uu_Rwnh9UoC5hix08HaQjiH-O1Bn2=
+sxznFfFeN4">https://promedmail.org/promed-post?place=3D8714155,8854</a>]<br=
+><br>[See Also:<br>COVID-19 update (03): Israel, JN.1, new variant<br>http:=
+//promedmail.org/post/20240104.8714055=0D<br>COVID-19 update (02): India<br=
+>http://promedmail.org/post/20240103.8714052=0D<br>COVID-19 update (01): In=
+dia<br>http://promedmail.org/post/20240103.8714031=0D<br>2023=0D<br>----=0D=
+<br>COVID-19 update (40): India, increased cases<br>http://promedmail.org/p=
+ost/20231228.8713947=0D<br>COVID-19 update (39): Saudi Arabia, JN.1 variant=
+, MOH<br>http://promedmail.org/post/20231222.8713858=0D<br>COVID-19 update =
+(38): WHO classifies JN.1 coronavirus strain as<br>'variant of interest' ht=
+tp://promedmail.org/post/20231220.8713808=0D<br>COVID-19 update (37): vacci=
+ne comp., selected regions, circ. variants,<br>research http://promedmail.o=
+rg/post/20231219.8713789=0D<br>COVID-19 update (36): selected countries/reg=
+ions, vaccines<br>http://promedmail.org/post/20231212.8713666=0D<br>COVID-1=
+9 update (35): Singapore, increase<br>http://promedmail.org/post/20231209.8=
+713618=0D<br>COVID-19 update (34): selected country/region updates, variant=
+s, WHO<br>http://promedmail.org/post/20231130.8713398=0D<br>COVID-19 update=
+ (33): country updates, vaccines, vaccine refusal, WHO<br>update http://pro=
+medmail.org/post/20231105.8713000=0D<br>COVID-19 update (32): updates, vari=
+ants, vaccines, antivirals,<br>scientific literature http://promedmail.org/=
+post/20231026.8712809=0D<br>COVID-19 update (31): BA.2.86 & EG.5, selected =
+regions, vaccines, WHO,<br>global http://promedmail.org/post/20231009.87125=
+22=0D<br>COVID-19 update (30): omicron EG.5.1, updates, WHO, global<br>http=
+://promedmail.org/post/20230815.8711701=0D<br>COVID-19 update (29): updates=
+, wastewater surveillance, transmission,<br>WHO, global http://promedmail.o=
+rg/post/20230802.8711526=0D<br>COVID-19 update (28): superspread, masks, va=
+ccination, WHO, global<br>http://promedmail.org/post/20230724.8711339=0D<br=
+>COVID-19 update (27): vaccination, test kit distribution, sequelae,<br>WHO=
+, global http://promedmail.org/post/20230717.8711208=0D<br>COVID-19 update =
+(26): animal, North America, wild deer as reservoirs<br>http://promedmail.o=
+rg/post/20230713.8711124=0D<br>COVID-19 update (25): vaccines, liver diseas=
+e, sequelae, WHO, global<br>http://promedmail.org/post/20230713.8711095=0D<=
+br>COVID-19 update (24): long-term effects, EU.1.1, wild bat, WHO, global<b=
+r>http://promedmail.org/post/20230704.8710946=0D<br>COVID-19 update (23): E=
+U transition plan, viral emission, vacc<br>hesitancy, GBS, WHO http://prome=
+dmail.org/post/20230619.8710662=0D<br>COVID-19 update (22): trends, immunit=
+y, children, metformin, WHO<br>http://promedmail.org/post/20230612.8710546=0D=
+<br>COVID-19 update (21): countries, life expectancy, long COVID,<br>resear=
+ch, WHO, global http://promedmail.org/post/20230605.8710423=0D<br>COVID-19 =
+update (20): countries, Paxlovid, vaccine, WHO<br>http://promedmail.org/pos=
+t/20230530.8710317=0D<br>COVID-19 update (19): countries, vaccine compositi=
+on, XBB1.16, WHO,<br>global http://promedmail.org/post/20230522.8710178=0D<=
+br>COVID-19 update (18): country/regional, vaccine policies, vaccination,<b=
+r>WHO, global http://promedmail.org/post/20230516.8710088=0D<br>COVID-19 up=
+date (17): WHO, USA, India, China, XBB.1.16, research,<br>global http://pro=
+medmail.org/post/20230508.8709926=0D<br>COVID-19 update (16): XBB.1.16, rei=
+nfections, microglia, sequelae,<br>WHO, global http://promedmail.org/post/2=
+0230502.8709789=0D<br>COVID-19 update (15): India, XBB.1.16, fetal brain da=
+mage, HCW, global<br>http://promedmail.org/post/20230417.8709526=0D<br>COVI=
+D-19 update (14): countries, vaccines, XBB.1.16, long COVID, WHO<br>http://=
+promedmail.org/post/20230407.8709377=0D<br>COVID-19 update (13): India, sur=
+veillance, HCW, rats, infant<br>hospitalizations, WHO, global<br>http://pro=
+medmail.org/post/20230329.8709196=0D<br>COVID-19 update (12): countries, va=
+riants, susceptibility, vaccines,<br>WHO, global http://promedmail.org/post=
+/20230321.8709066=0D<br>COVID-19 update (11): country responses, complicati=
+ons, treatment,<br>WHO, global http://promedmail.org/post/20230312.8708900=0D=
+<br>COVID-19 update (10): Hong Kong, XBB.1.5, Iran, UAE, bivalent vacc<br>h=
+ttp://promedmail.org/post/20230308.8708776=0D<br>COVID-19 update (09): XBB.=
+1.5, vaccine, WHO<br>http://promedmail.org/post/20230228.8708641=0D<br>COVI=
+D-19 update (08): countries, immunity, vaccines, treatment, masks,<br>WHO, =
+global http://promedmail.org/post/20230219.8708482=0D<br>COVID-19 update (0=
+7): countries, molnupiravir, vaccines, PACS,<br>cockroach, WHO http://prome=
+dmail.org/post/20230212.8708331=0D<br>COVID-19 update (06): China, demograp=
+hics, symptoms, PACS, WHO<br>http://promedmail.org/post/20230204.8708165=0D=
+<br>COVID-19 update (05): PHEIC continues, WHO<br>http://promedmail.org/pos=
+t/20230130.8708059=0D<br>COVID-19 update (04): PHEIC, China, susp outbreaks=
+, responses,<br>vaccines, global http://promedmail.org/post/20230130.870804=
+3=0D<br>COVID-19 update (03): China, guidelines, vacc, immunity, sequelae, =
+WHO<br>http://promedmail.org/post/20230122.8707910=0D<br>COVID-19 update (0=
+2): China, XBB.1.5, Hong Kong, mAb, pathogenesis,<br>WHO, global http://pro=
+medmail.org/post/20230115.8707786=0D<br>COVID-19 update (01): China, Hong K=
+ong, XBB.1.5, PAHO, treatment,<br>testing, WHO http://promedmail.org/post/2=
+0230107.8707667=0D<br>2022=0D<br>----=0D<br>COVID-19 update (193): surge, t=
+ravel restrictions, screening,<br>treatment, WHO http://promedmail.org/post=
+/20221230.8707528=0D<br>COVID-19 update (191): omicron BF.7, bivalent vacci=
+nes, China, WHO,<br>global http://promedmail.org/post/20221224.8707437=0D<b=
+r>COVID-19 update (190): China, Australia, vaccines, sequelae, WHO,<br>glob=
+al http://promedmail.org/post/20221219.8707306=0D<br>COVID-19 update (189):=
+ mortality, mAb, intranasal vacc, NPIs,<br>sequelae, WHO, global http://pro=
+medmail.org/post/20221209.8707146=0D<br>COVID-19 update (188): China, omicr=
+on BA.2.76, outdoor transmission<br>http://promedmail.org/post/20221130.870=
+6983=0D<br>COVID-19 update (187): boosters, omicron BQ.1.1, Asia, Australia=
+, WHO,<br>global http://promedmail.org/post/20221129.8706920=0D<br>COVID-19=
+ update (185): chr. COVID, bladder, recovery, renal, deaths,<br>WHO, global=
+ http://promedmail.org/post/20221111.8706665=0D<br>COVID-19 update (184): v=
+accination response, disparity, WHO, global<br>http://promedmail.org/post/2=
+0221104.8706549=0D<br>COVID-19 update (183): cardiac events, exercise, US d=
+eaths, boosters,<br>WHO, global http://promedmail.org/post/20221028.8706414=0D=
+<br>COVID-19 update (182): frontline workers, life expectancy,<br>subvarian=
+ts, WHO, global http://promedmail.org/post/20221021.8706286=0D<br>COVID-19 =
+update (181): Africa vacc hesitancy, pre-eclampsia, boosters,<br>nasal vacc=
+, WHO, global http://promedmail.org/post/20221014.8706143=0D<br>COVID-19 up=
+date (180): long COVID, neuropsy. illness, Paxlovid,<br>subvariants, WHO ht=
+tp://promedmail.org/post/20221007.8706007=0D<br>COVID-19 update (170): case=
+ severity, boosters, physical activity,<br>WHO, global http://promedmail.or=
+g/post/20220825.8705236=0D<br>COVID-19 update (160): vaccine rollout dispar=
+ities, smell & taste,<br>WHO, global http://promedmail.org/post/20220731.87=
+04776=0D<br>COVID-19 update (150): France, omicron 2nd gen variant, paxlovi=
+d, WHO,<br>global http://promedmail.org/post/20220705.8704255=0D<br>COVID-1=
+9 update (140): Thailand, human to cat to human transmission<br>http://prom=
+edmail.org/post/20220612.8703819=0D<br>COVID-19 update (130): surveill., ca=
+rdiac eff., long COVID subtypes,<br>WHO, global http://promedmail.org/post/=
+20220601.8703606=0D<br>COVID-19 update (120): N Korea, pandemic exit, youth=
+ vaccine, US<br>deaths, WHO http://promedmail.org/post/20220518.8703327=0D<=
+br>COVID-19 update (110): mutations, mental health, China, S Africa,<br>Pax=
+lovid, WHO http://promedmail.org/post/20220505.8703018=0D<br>COVID-19 updat=
+e (100): vacc. intervals, deaths, long COVID,<br>subvariants, global http:/=
+/promedmail.org/post/20220420.8702717=0D<br>COVID-19 update (90): strategy,=
+ 2nd booster, WHO<br>http://promedmail.org/post/20220407.8702454=0D<br>COVI=
+D-19 update (80): animal, USA, deer, transmission<br>http://promedmail.org/=
+post/20220325.8702212=0D<br>COVID-19 update (70): case count, UK, BA.2, USA=
+, WHO, global<br>http://promedmail.org/post/20220312.8701940]<br>..........=
+.......................................sb/lww/may/jh<br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3DizXIOLy6Kih5czDJkz7QnjbawtHRHkItZiGxJNuOyU1oMDAwdT=
+AwMJ41chGXg0L6lKsHAOAoWgxt6RS5Glp63JXE1iXcKMyVrv-Sr3-gZH4Oz8fYACIrY47Q3yIzj=
+aEV15Ltl0izfip8q0log4xAq6PTePDRhRaxWBg9WOOQPBLqc9mADtbwEztWifPcx5UnXPaBouef=
+_-H8Q8amebwoIfcaFkbtxDsSkbIfbF5Jp_XScOEO8Ji1cmw_ImBWvPTSQnyvonLGl8P4tyXR0D0=
+fmAPtEJVQMGZ81Ii5M5qaQnqNgpC_tSlQNWk5Xp5DSRbVMAyG_ZXpoubmW8Vdhzd76nLgiH7wsa=
+5LxJGEY59priDo16IvJlAo_BAQqZVkNqDLv0uy1Kh0s62gznWXsB75iqtnidQrCbVSEiRwDwXG8=
+cc4px5Xe24Kde-w0PTfQOpNZPWNQ2CrTRMZoAFHANRviD5UWKyMb30nzaRuqjKAZhh8sXCepErW=
+1Iov5Jwpvc_ifr0kNnR6X_KAe38LnKFAaawH5tAguCoWskUbX0WjrvxpavewjOIHBQ0vf3XBaKR=
+xOSleDvHYs3O3qOPC0e5QvAksQxZQN1R9Whwm68FemJbQOE-LDN3LD8EwUYQxPCPGoGbpOjacTR=
+bSM5NzUNOp-BQFDPG5IG3qF-eryDre_KI2v5Sbf6lCDnt-MjfOHU_tUVf12WATDhFEdozEbnkJD=
+9F1YBU0fz8hfrMED_2q2L1UzwXjRpt0x4X8lDT37PoyNdf0mm3rf-s-25BcQgxFICe3TvhhVuD0=
+2m7LOt65RLvVhpT_otg2K7L-vM5n-DJdoZPRMfw4tc6jhTX51PQoDw-OVmShHEtVTMO9myAw6wg=
+IRXbqu1XqDWzervAEBOj6e0xnlbi3H7NsCz1O9SUvgjZMX8hKomto-JeXu319fuakFA7ghxosoz=
+5vax4X7KFh2-pb3VuVW8MLTS8xYLTpDR9qc5QBJlLeJQFz3IrfRFkRwBjN5WO8r5Wt7-YsLbdoS=
+YSNXNsG5c3mPgkM9BfauiVjDwkOIreB7D4ZcTpzulzfBfhtbJJvBo6vnTo3sr1USna1ugwJB5eI=
+i8NMUtJ2VxbW0dZmH7FJpsUIHgQocTyuSC7Jr2qb65Fa5S7-kNDvRLyUiolJ7skYmcuVPgdfxL6=
+QIRwxxQy_a7cfnu7vfUrk9CdmEA9E-AZCDR1VyUF0Zt4p_2uCsifU6tKbtBlDb0R5juHgbC5C" =
+target=3D"_blank" class=3D"Unsubscribe--unsubscribePreferences" style=3D"fo=
+nt-family:sans-serif;text-decoration:none;">Unsubscribe Preferences</a></di=
+v><br>############################################################<br>#####=
+#######################################################<br><br><img src=3D"=
+https://u19268662.ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/42w/dHM_Cgf0R=
+tyE9dWREIBGuQ/ho.gif" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=
+=3D"height:1px !important;width:1px !important;border-width:0 !important;ma=
+rgin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;=
+margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !importa=
+nt;padding-right:0 !important;padding-left:0 !important;"/></body>
+</html>
+--ff610dbbcf682a3ef8f33773f8fb2cc8066f7694a837262b16b7c9c14eb5--

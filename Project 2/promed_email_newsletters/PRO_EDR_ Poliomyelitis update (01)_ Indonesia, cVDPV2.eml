@@ -1,0 +1,773 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a98:c004:0:b0:1eb:e128:bbe3 with SMTP id l4csp3468422eic;
+        Sun, 14 Jan 2024 18:44:16 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IGjh6R2vAETevyA3O2rpt1XHjPba+6e02vjgB42crE5bamSnGuvddeg02SpbZ3tAaUKPURD
+X-Received: by 2002:a05:622a:1a9a:b0:429:d87c:f5d0 with SMTP id s26-20020a05622a1a9a00b00429d87cf5d0mr5116527qtc.11.1705286656579;
+        Sun, 14 Jan 2024 18:44:16 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1705286656; cv=none;
+        d=google.com; s=arc-20160816;
+        b=znCdKxuABr+OUg03OKBxuf4lrwNRYeIpvBCb+wn6PTymicnuHMbS8CCr/1cE2GbHSK
+         KHDeT/ciloPORKWzCWrygH4ckYuGgTdsndfmir+WHTLoDMEh1mBrWvnKC4B6CoR8J2dc
+         M3fYiahthty2eiP5hqlf5T8X9GL1IrJHDPC6P/UuVMelyQ9z6fYXnZ4WDXeGd8aK3gzX
+         VsA0E1oFlF+IIyB+uSnNfG8P4L33PBlt0egm8DRrM0jP6/OSz/0rwvav2I+IKGZAGPow
+         w/exutU+ccjtbZYfdLltQYR8x24VHzvvZDv54fkSZs/MsinMha7mgHGv/f2vNaWV2Npk
+         fAjw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=L55tqz2Y6rrIO1aLbJG93lh6NSJPVeTgJjnoVhHCCnk=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=B+ue7pkelRaWMHzo4pqABOTKqkdP1en7ZnjZwWoLzz4KQqn79NiNmPNSI0fJ4NDZqJ
+         qCs7LWvBw6bcbWk3cmC37FMYsWXDgPNOnmWWRSKgKRdUO1zoMOhLHafu/vwLzbPXRUoC
+         FU26iIq3GQUszAjtZF0zCXslKp3b9SkOYxwZZhzdxGv3Oz2jHAMqInviM4LcF16fwbWt
+         nnB27kYtAAzlco8Muy0iDgP06P9yeAkYHFeq9pNMwkXRDJNXklX5Mj+zgp4DBYCOI+md
+         rpAiJxC3B9Wz5IxNuU+uqVm108+oDZE3giuP6ozl0u2uUvKjttHnn4jPly5zp/eIr0BO
+         1Nfg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=CDaF2mPA;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=rrYAFngW;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id h10-20020ac87d4a000000b00429d5b3db07si4342882qtb.507.2024.01.14.18.44.16
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sun, 14 Jan 2024 18:44:16 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=CDaF2mPA;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=rrYAFngW;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=L55tqz2Y6rrIO1aLbJG93lh6NSJPVeTgJjnoVhHCCnk=;
+	b=CDaF2mPAWcROxCaAjHma8D8BF8LBxbviu+eyW4bG+FdYmlPUU6FkqIxEPK9XiulphMcJ
+	ExteqXDVN9vS3DfkxM9Z4KAqWTaVATI2RiCEbtFRmDjkaeQSxkjmUvHKYATDizTxhW50KM
+	OB7MPbV6BmhWYVTVwf1D363QAWkiHJ42fJJhdYwIQXFdCswFMIGSHaYgQptzTwAiTZbXq9
+	C+HXhT9P8Cgm48PiVj1SFPTl+lb5szJ08fK+/CPfZuLfTdUwEYCZKDcCpIa5xLR5x3aXCx
+	eMfcyyt5Y7i1Pq1sx3CM2uHCGtqTvk6wBO7kz90gwti4cMJ4vh+JV50/OXPKNdcg==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=L55tqz2Y6rrIO1aLbJG93lh6NSJPVeTgJjnoVhHCCnk=;
+	b=rrYAFngW95gUV04Vt/EjJtpghH4Ueil66b3tLH6QZ0r1yI4+jzlmwXKDpRrNvMmLSezW
+	iHgGgb7hMv8iZLjOviFpfmrKB3es1itTTw/no8KdInJuyPFzSWoPGzngf1STgrTJMXpWZH
+	VUzP5wX+Cf72CVilkk8aoj67RY/DumSBg=
+Received: by filterdrecv-776574fcdb-ts5d2 with SMTP id filterdrecv-776574fcdb-ts5d2-1-65A49BFC-2F
+        2024-01-15 02:44:12.387396751 +0000 UTC m=+7718552.915197499
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-19 (SG) with HTTP
+	id LyTzBmW1TUWiwGtHvlh2gw
+	Mon, 15 Jan 2024 02:44:12.366 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=d2158366cbaedbb68e23c276c250a630374bbc9876fec343b37c8787761f
+Date: Mon, 15 Jan 2024 02:44:15 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <LyTzBmW1TUWiwGtHvlh2gw@geopod-ismtpd-19>
+Subject: PRO/EDR> Poliomyelitis update (01): Indonesia, cVDPV2
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iBwkNh2rR9KRnT0jSKBvcohQ9uzUQcEJk4H+dSR?=
+ =?us-ascii?Q?thJHOVAv9sqN0tB4F6DOiK6xOUamBPMxFFIYbQK?=
+ =?us-ascii?Q?5Bwgjq8v8PGm9SSQiOeyw0TX6oZ+C01G0sgOGwd?=
+ =?us-ascii?Q?P6L605bHbZHTUnK24rpfFoo=2FwHqONYcg6OZQw9G?=
+ =?us-ascii?Q?J3eyTCfaPLuq2dek1twBrBfe+Dhhm+oLNVUkBI?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUhc93xcG=2F095a5S4+mt=2FG?=
+ =?us-ascii?Q?uYUpctI=2FOGD2dwyi+uvm2j4FCdvuw0l9zcHM8iA?=
+ =?us-ascii?Q?mojOvTXq7jOpDFFNtfsYkHQYACEW8pq1BXXqYmH?=
+ =?us-ascii?Q?oGTsnt6QpE2ZV5WVqnpwfXWoLXx7+4YjaaUrEBi?=
+ =?us-ascii?Q?DYqJ7bwx879uvi5Xta4vJ=2FSdUmUwaqErEc8nkHO?=
+ =?us-ascii?Q?yNxhKCN3uWxQ46B9pvKbN1xu2ospPJePPhbVH7O?=
+ =?us-ascii?Q?7Q3vPn=2FN35erWm7WzOcyE4v38+MjFF9v27wyNCp?=
+ =?us-ascii?Q?xVuhjf+H3SL3RsULXtjnpm26nQPJa34PsE3LdcW?=
+ =?us-ascii?Q?jsnd570wPukq5J3F=2FkF6wxcOGQfHMgjhLJq0cfi?=
+ =?us-ascii?Q?dwvqAluyxQJdhPKbb5pyzHrYa0MXtWiQuJ9OFDd?=
+ =?us-ascii?Q?BKvw3Q+J=2FNYy7tUv8M6PiBPQawNZ+niCJ7Lx24j?=
+ =?us-ascii?Q?Pttf0GsGRJgaHo6=2FPy=2FmlK4ItGW9MG0OIIi=2FzUT?=
+ =?us-ascii?Q?Sq0sARgC3AYjJ7sKpZIrWCpXf27EMxjiwWciVIJ?=
+ =?us-ascii?Q?2Q=2FWQo2jI9fOFWUGzF59wRxbA4R8RkXGMIW5OdY?=
+ =?us-ascii?Q?Ui0R7ltAGUq=2FFrsgW4LYLg0TBJj6iI=2Fstkm3dkJ?=
+ =?us-ascii?Q?XNYTzmVGsCNcNQYXQeJUo54J6+WG2mg60Kw6RpX?=
+ =?us-ascii?Q?aQAvVqZU+3t0GuBnA+uO3OacYpqy7qS334jfYg+?=
+ =?us-ascii?Q?OZcH8reZA=2FqBvhvTdj30zNxSEoXMD2rifiD4z8S?=
+ =?us-ascii?Q?JywehfQNeidVrTiaHKc+ksIdRrjZ4deAdx8iazA?=
+ =?us-ascii?Q?wW2fZBQxTFAKOK7b70=2FmjcWQbA=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2E26zhBWx0q?=
+ =?us-ascii?Q?bp8REitjFB-vLrfNoZVrOdTF5CNcIAgjf5oMDAw?=
+ =?us-ascii?Q?dTAwMBzm5cWR=5FN6aeIhkxD0gGDQxUoYM7FJWyRI?=
+ =?us-ascii?Q?=5FOn1bmseus59-gxoAYG2IjNCDxG9DdFbvd0t30J?=
+ =?us-ascii?Q?RY5PKKeMFbC0Vyp5UMkl2Vla7SVQ6JzyPJ2q1XR?=
+ =?us-ascii?Q?PK=5FLpMVnCPe6vqfFw=3D=3D=2Er8x2G5zBSCHMdh1FCax?=
+ =?us-ascii?Q?nHBP7jFo5n3G1rrotlfd7XptoMDAwdTAwMBTZ7Q?=
+ =?us-ascii?Q?F80wpITHTjsuIkEFn3u=5FnR7ZU4iLpCnm1hthAPC?=
+ =?us-ascii?Q?eJQSQb0H4nN1g9O6JY7v4Hd3Npuu6g04hZbXM-j?=
+ =?us-ascii?Q?6Q18bfgmVX32KJe8Jhi81YlI8RtWdVHj=5Faj0P0v?=
+ =?us-ascii?Q?-=5FKP3YSyBtHtTdttCrCcYiO7KkjRp-ebhCXBx3F?=
+ =?us-ascii?Q?ALHgQWEjamk0ZHIGntRu9U=5FcGeEAKXzW13WAa26?=
+ =?us-ascii?Q?FvGy-fyp-WZJwIVT87=5FWzez8NhlTEFQf7zGaMkX?=
+ =?us-ascii?Q?1G3qpXCNBbBC4ANYojuD2QxSY8BkPz75NQCxcQX?=
+ =?us-ascii?Q?mwwvqJjQp0vqTpvDgpG5LQP0dLQ7p3kPxVZB=5FFL?=
+ =?us-ascii?Q?moGm=5FBI2mSIBeNI2fRYeKos5QwZtJsGl6wTXhE9?=
+ =?us-ascii?Q?CeW2nzxoUh7BDZFb33=5FHipIe95mY-Su9NhZ34Nt?=
+ =?us-ascii?Q?IsqjuLVL182Y6RrCezg34nTbpWqyG=5FtZG6Uv0Mb?=
+ =?us-ascii?Q?unIIL0jPhFvMZwNV6QO8h5ZHdWJdO8jO9-HiKp3?=
+ =?us-ascii?Q?Y2Ludixlm6MarrBWOuuhDBWJGs8bW4rRYtR9rNd?=
+ =?us-ascii?Q?=5F7ZsrvWEMEUDwdy9-qdG=5FilCaRnZ8tH5uR5aeF4?=
+ =?us-ascii?Q?=5F1vyjFs0JGkfmmhJoAYBA-EV8wZmBoKRmHRe2OR?=
+ =?us-ascii?Q?XgqD3ev2xYhc2tYY2P72RPRxi1LF5QjUfOb6ghC?=
+ =?us-ascii?Q?XG2sUxLY=5FvWKylwhHiCOlTXoLHAN4kiFtfrP88z?=
+ =?us-ascii?Q?pBQ7fsfWylrTRxXkc8397hiIFLHJh8vK=5Fx-qWvA?=
+ =?us-ascii?Q?fV2fU5NxJo96H3Buyfzi4s5Mqp0xIrSkBNnfv2Y?=
+ =?us-ascii?Q?538PY=5FOWBcp5Q6Lk4KxSiThrKl0gQig6E5jSoN0?=
+ =?us-ascii?Q?YRt4svUAG7IclHnvGPekLjosvA6BD3HDOjb8dQP?=
+ =?us-ascii?Q?uj1kyir3DzFZep-c46UT=5FYtRVnNh9MjkFTrW6Dw?=
+ =?us-ascii?Q?rrHQKplWGBbjU5-0j=5FamXD4sguOCA=5Fi7OAiiSnb?=
+ =?us-ascii?Q?NkyS-fOZDODnVxmGar8Cto1NIJfwDVtF0MJ2xxN?=
+ =?us-ascii?Q?AjpetVTql8N7b6GW2gtK-dkS7IzjFzC4ytGcjpM?=
+ =?us-ascii?Q?ANaX1dPrMkIb5Mine-nUuAF=3E?=
+
+--d2158366cbaedbb68e23c276c250a630374bbc9876fec343b37c8787761f
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=us-ascii
+Mime-Version: 1.0
+
+POLIOMYELITIS UPDATE (01): INDONESIA, CIRCULATING VACCINE-DERIVED
+POLIOVIRUS TYPE 2
+***************************************************************************=
+********
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+Date: Thu 11 Jan 2024
+Source: World Health Organization Disease Outbreak News [abridged,
+edited]
+<https://www.who.int/emergencies/disease-outbreak-news/item/2024-DON500>
+
+
+Situation at a glance
+---------------------
+Indonesia reported 4 cases of circulating vaccine-derived poliovirus
+type 2 (cVDPV2) from October 2022 to February 2023, with 3 cases
+occurring in Aceh province and 1 case in West Java province. On 20 and
+27 Dec 2023, the Indonesian Ministry of Health notified WHO of 2 new
+confirmed cases of cVDPV2. One case, from Klaten District, Central
+Java Province, is a 6-year-old female, with a history of recent travel
+to Madura Island (Sampang district, East Java Province). The second
+case, a 1-year-old male, is from the neighbouring district of
+Pamekasan on Madura Island, East Java. Sub-optimal vaccination
+coverage increases the risk of further transmission and impact on
+human health. In Klaten district, where the current case is reported,
+the coverage for 4 doses of bivalent oral polio vaccine (bOPV) and
+inactivated polio vaccine 1 (IPV1) was at 89.8% and 88.6% respectively
+in 2022. In the Pamekasan District, where the second case was
+reported, the coverages for bOPV and IPV1were 88.1% and 74.1%,
+respectively in 2022. In response to the new cVDPV2 cases detected in
+Indonesia, several public health responses are underway. As per
+protocol, detailed case investigation and risk assessment have been
+conducted. Coordination across country and regional levels with the
+global polio eradication initiative is ongoing. The overall risk is
+assessed as high at the national level. At the regional level the
+overall risk is assessed to be moderate.
+
+Description of the situation
+----------------------------
+On 20 and 27 Dec 2023, the Indonesian Ministry of Health notified WHO
+of 2 confirmed cases of circulating VDPV2. One case, from Klaten
+district, Central Java province, is a 6-year-old female, with a
+history of recent travel to Sampang district, East Java province. She
+developed acute flaccid paralysis (AFP) on 21 Nov 2023 and had
+previously received 2 doses of bivalent oral polio vaccine (bOPV)
+through routine immunization. The case had not received any dose of
+inactivated polio vaccine (IPV).
+
+The genetic sequencing of isolates at the BioFarma National Polio
+Laboratory indicates cVDPV2 with 36 nucleotide changes, genetically
+linked to a case in West Java province, that was reported to WHO in
+March 2023.
+
+The second case is reported from Pamekasan district in East Java
+province. The case is a 1-year-old male with an onset of paralysis on
+22 Nov 2023 with a history of bOPV vaccination (4 doses) and one dose
+of IPV. The sequence result indicates 43 nucleotide changes with the
+Sabin 2 references.
+
+Two environmental samples taken in Bangkalan district, East Java
+province, on 7 Dec 2023, also tested positive for cVDPV2. Sequence
+results showed 36 and 37 nucleotide changes.
+
+Prior to these 2 cases of cVDPV2, in Central Java (1) and East Java
+(1), 4 cases of cVDPV2 infection had been reported previously from
+Indonesia. These 4 cases were reported, since 2022, in the following
+locations:
+- Pidie, Aceh Province in October 2022
+- Aceh Utara, Aceh Province in January 2023
+- Bireuen, Aceh Province in January 2023
+- Purwarkarta, West Java Province in February 2023
+
+In Central Java, the 2022 data indicate over 95% coverage for bOPV4
+and IPV1 at the provincial level, in Klaten district, Central Java
+province, the coverage for the 4 doses of bOPV and IPV1 was at 89.8%
+and 88.6% respectively in 2022. The Pamekasan district reported
+coverages of 88.1% for bOPV and 74.1% for IPV1, while the Bangkalan
+district reported 69.9% for bOPV and 53.7% for IPV1.
+
+There are no hard-to-reach areas in the region. However, sociocultural
+barriers in East Java's Madura community pose challenges to
+vaccination from vaccine hesitancy due to several reasons including
+fear of adverse effects, multiple injections and sometimes due to
+religious reasons.
+
+Epidemiology
+------------
+Polio is a highly infectious disease that largely affects children
+under 5 years of age, causing permanent paralysis (approximately 1 in
+200 infections) or death (2-10% of those paralyzed).
+
+The virus is transmitted from person-to-person, mainly through the
+fecal-oral route or, less frequently, by contaminated water or food.
+The virus multiplies in the intestine, from where it can invade the
+nervous system and cause paralysis. The incubation period is usually
+7-10 days but can range from 4-35 days. Up to 90% of those infected
+are either asymptomatic or experience mild symptoms and the disease
+usually goes unrecognized.
+
+Vaccine-derived poliovirus is a well-documented strain of poliovirus
+mutated from the strain originally contained in OPV. OPV contains a
+live, weakened form of poliovirus that replicates in the intestine for
+a limited period, thereby developing immunity by building up
+antibodies. On rare occasions, when replicating in the
+gastrointestinal tract, OPV strains can genetically change and may
+spread in communities that are not fully vaccinated against polio,
+especially in areas where there is poor hygiene, poor sanitation, or
+overcrowding. The lower the population's immunity, the longer
+vaccine-derived poliovirus survives and the more genetic changes it
+undergoes.
+
+In very rare instances, the vaccine-derived virus can genetically
+change into a form that can cause paralysis as does the wild
+poliovirus -- this is what is known as a vaccine-derived poliovirus
+(VDPV). The detection of VDPV in at least 2 different sources and at
+least 2 months apart, that are genetically linked, showing evidence of
+transmission in the community, is classified as "circulating"
+vaccine-derived poliovirus (cVDPV). Similar to wild poliovirus, cVDPVs
+can be of 3 types (1, 2, or 3); the current outbreak in Indonesia is
+due to cVDPV type 2 (cVDPV2).
+
+Public health response
+----------------------
+In response to this cVDPV2 outbreak in Indonesia, several public
+health responses are underway.
+
+As per protocol, detailed case investigation and risk assessment have
+been undertaken. Active case finding is being conducted in at least
+200 households in both the community of the 2 current cases and
+neighboring areas. Furthermore, hospital record reviews have been
+performed and the identification of additional Environmental
+Surveillance (ES) sites is in process.
+
+Coordination across country and regional levels with the global polio
+eradication initiative is ongoing. Efforts are ongoing to enhance and
+catch up on routine immunizations, focusing especially on 2 doses of
+IPV. In response to the outbreak, the government had requested the
+WHO-Director General's approval for the release of novel oral polio
+vaccine type 2 (nOPV2). The DG has approved the release of more than
+20 million doses of nOPV2 to conduct 2 rounds of supplementary
+immunization activities (SIAs) scheduled on 15 Jan 2024 and 19 Feb
+2024.
+
+Regular situation reports are being published on the WHO website and
+shared with neighboring countries.
+
+WHO risk assessment
+-------------------
+The overall risk is assessed as high at the national level. The
+country has strong capacity to respond which was demonstrated during
+the Papua cVDPV1 and Aceh and West Java cVDPV2 outbreaks. However, the
+population is susceptible to type 2 polioviruses following both the
+switch from trivalent OPV (tOPV) to bivalent OPV (bOPV), and the
+sub-optimal IPV vaccination coverage in Central Java, East Java,
+neighbouring Yogyakarta and several other provinces of Indonesia.
+Vaccine hesitancy among some populations complicates vaccination
+activities. There is regular population movement from Central Java,
+East Java and the neighbouring populous region of Yogyakarta to other
+provinces within the country and vice versa. Central Java and East
+Java have moderate to strong capacity within existing resources for
+implementing response measures.
+
+At the regional level the overall risk is assessed to be moderate.
+Though there is no land border from Central Java and East Java and
+limited cross-border population movement from the affected area, the
+virological analysis indicates that the virus may have been possibly
+circulating for some time and whole genome sequencing is still
+pending. This risk will be continuously assessed and will be reviewed
+according to the evolution of the situation.
+
+WHO advice
+----------
+It is important that all countries, in particular those with frequent
+travel connections with polio-affected countries and areas, strengthen
+surveillance for AFP cases in order to rapidly detect any new virus
+importation and to facilitate a rapid response. Countries, territories
+and areas should also maintain uniformly high routine immunization
+coverage at the district level to minimize the consequences of any new
+virus introduction.
+
+WHO's International Travel and Health advice recommends that all
+travellers to polio-affected areas be fully vaccinated against polio.
+
+As per the advice of the Emergency Committee convened under the
+International Health Regulations (2005), efforts to limit the
+international spread of poliovirus, countries affected by poliovirus
+transmission are subject to Temporary Recommendations. To comply with
+the Temporary Recommendations issued under the PHEIC, any country that
+have had an importation of cVDPV2 with local transmission should (i)
+declare the outbreak as a national public health emergency, (ii)
+encourage residents and long-term visitors to receive a dose of IPV 4
+weeks to 12 months prior to international travel, (iii) ensure that
+travellers who receive such vaccination have access to an appropriate
+document to record their polio vaccination status, (iv) further
+intensify efforts to increase IPV immunization coverage, including
+sharing coverage data, and (v) intensify regional cooperation and
+cross-border coordination to enhance surveillance for prompt detection
+of poliovirus, and vaccinate refugees, travellers and cross-border
+populations, according to the advice of the Advisory Group.
+
+The latest epidemiological information on WPVs and cVDPVs is updated
+on the website of the Global Polio Eradication Initiative a weekly
+basis.
+
+WHO advises against implementing any travel or trade restrictions
+based on the current information available on this event.
+
+--
+Communicated by:
+ProMED
+
+[ProMED map:
+Indonesia: <https://promedmail.org/promed-post?place=3D8714234,184>]
+
+[See Also:
+2023
+----
+Poliomyelitis update (37): Africa, cVDPV2 Nigeria, cVDPV1 and cVDPV2
+Congo DR http://promedmail.org/post/20231214.8713703
+Poliomyelitis update (36): Pakistan (KP) 6th case, sewage (WPV1)
+http://promedmail.org/post/20231204.8713492
+Poliomyelitis update (35): Pakistan (SD) 4th case, sewage (WPV1)
+http://promedmail.org/post/20231023.8712773
+Poliomyelitis update (34): Pakistan (KP) new case
+http://promedmail.org/post/20231006.8712482
+Poliomyelitis update (33): Afghanistan (NG) new case
+http://promedmail.org/post/20230930.8712388
+Poliomyelitis update (32): cVDPV1, cVDPV2, Congo DR, Pakistan, Africa
+CDC http://promedmail.org/post/20230824.8711822
+Poliomyelitis update (31): cVDPV1, cVDPV2, Congo DR
+http://promedmail.org/post/20230810.8711632
+Poliomyelitis update (30): cVDPV, Nigeria (ZA)
+http://promedmail.org/post/20230810.8711629
+Poliomyelitis update (29): WPV1 AFP, Pakistan, violence
+http://promedmail.org/post/20230802.8711538
+Poliomyelitis update (28): cVDPV2 Kenya, Tanzania, global, Pakistan,
+WHO, RFI http://promedmail.org/post/20230731.8711483
+Poliomyelitis update (27): AFP Malawi, AFP cVDPV2 Kenya, global, RFI
+http://promedmail.org/post/20230720.8711261
+Poliomyelitis update (26): WPV1 AFP Afghanistan, cVDPV1 AFP/ES, cVDPV2
+AFP; vacc. http://promedmail.org/post/20230622.8710705
+Poliomyelitis update (25): WPV1 AFP, cVDPV2 AFP, ES, eradication,
+chronic inf http://promedmail.org/post/20230610.8710505
+Poliomyelitis update (24): WPV1 AFP (Afghanistan) violence (Pakistan)
+comment http://promedmail.org/post/20230604.8710402
+Poliomyelitis update (23): WPV1 AFP (Afghanistan), cVDPV2 AFP (Central
+African Republic), violence
+http://promedmail.org/post/20230602.8710355
+Poliomyelitis update (22): WPV1 AFP, WPV1 ES, cVDPV1 AFP, ES, cVDPV2
+AFP, ES, RFI http://promedmail.org/post/20230526.8710248
+Poliomyelitis update (21): WPV1 AFP; WPV1 ES, cVDPV1 AFP, ES; cVDPV2
+AFP, ES http://promedmail.org/post/20230525.8710235
+Poliomyelitis update (20): WPV1 ES, cVDPV1 AFP, cVDPV2 ES, Indonesia,
+Burundi, Congo DR http://promedmail.org/post/20230422.8709635
+Poliomyelitis update (19): cVDPV1 AFP; cVDPV2 AFP, ES, WPV1 SE Africa,
+violence http://promedmail.org/post/20230417.8709548
+Poliomyelitis update (18): Peru, add'l AFP case, cVDPV1 susp, regional
+update, RFI http://promedmail.org/post/20230410.8709422
+Poliomyelitis update (17): WPV1, cVDPV1&2, VDPV outbreaks 2021-2022
+http://promedmail.org/post/20230407.8709373
+Poliomyelitis update (16): WPV1, cVDPV1, cVDPV2, nOPV2, DRC, USA (NY)
+http://promedmail.org/post/20230402.8709288
+Poliomyelitis update (15): Peru, AFP cVDPV1, regional update, RFI
+http://promedmail.org/post/20230325.8709148
+Poliomyelitis update (14): WPV1 AFP, ES, cVDPV1 AFP, ES, cVDPV2 AFP,
+ES, Indonesia, UK RFI http://promedmail.org/post/20230324.8709123
+Poliomyelitis update (13): WPV1 AFP Pakistan, efficacy of bOPV booster
+post IPV http://promedmail.org/post/20230319.8709028
+Poliomyelitis update (12): nOPV2-assoc cVDPV2 (Burundi,DRC), WPV1 ES,
+cVDPV2 AFP http://promedmail.org/post/20230317.8708985
+Poliomyelitis update (11): cVDPV1 AFP, cVDPV2 AFP, Pakistan truck art,
+USA alert http://promedmail.org/post/20230311.8708880
+Poliomyelitis update (10): Israel, RFI, Pakistan, cVDPV1 & 2 AFP & ES
+http://promedmail.org/post/20230305.8708745
+Poliomyelitis update (09): Israel AFP, RFI, WPV1 ES, cVDPV1 & 2 AFP &
+ES http://promedmail.org/post/20230228.8708638
+Poliomyelitis update (08): WPV1 ES, cVDPV2 AFP & ES, Pakistan vacc.,
+Nigeria cVDPV http://promedmail.org/post/20230209.8708270
+Poliomyelitis update (07): WPV1 ES, cVDPV2 AFP & ES, lab accident,
+PHEIC http://promedmail.org/post/20230206.8708199
+Poliomyelitis update (06): WPV1 ES, cVDPV1 AFP, cVDPV2 ES
+http://promedmail.org/post/20230128.8708021
+Poliomyelitis update (05): WPV1 ES, cVDPV1 AFP, cVDPV2 AFP & ES,
+Pakistan http://promedmail.org/post/20230121.8707867
+Poliomyelitis update (04): cVDPV1 (Congo DR), cVDPV2 AFP (Congo DR),
+ES (USA) http://promedmail.org/post/20230114.8707785
+Poliomyelitis update (03): USA, wastewater cVDPV2, comment
+http://promedmail.org/post/20230107.8707675
+Poliomyelitis update (02): WPV1 ES, cVDPV1 AFP & ES, cVDPV2 AFP & ES,
+violence http://promedmail.org/post/20230106.8707649
+Poliomyelitis update (01): (Canada) VDPV2, wastewater, RFI
+http://promedmail.org/post/20230102.8707576]
+.................................................sb/jh/rd/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3DLXvVLDWaFqks7F84kVhbZv1RbgC8a-M4Gw_AZmp73XRoMDAwdTAwMG8RGa6=
+HifCjMFmBa5gS5T-vQVAOto4iMtefdjS45lpmq0A7TNP3W8hF1zo--lBkaokq7sqyX7l6eoF8M4=
+saL8Eia_zdvCxLKOfeespfxmWY4h9ggCdBNW8cSFRGBWlLA90K8RR4j9SKQ3h0-QHpGnNGBhw3Z=
+f44By9G3xTQBGuZ_AJwBntxCPVB1bbDY-ICfpZwEmXrAMETN0cXJ-uTqybfsMDz4CWOQbLT69Fw=
+CdaQB5DH6qdO2SaKiX_ohworry9VxK1qB76wYBGkTLFEa0vjZmX5vaZoyfI3B364bqAp2wSBUlO=
+EXclCcxJz9cOzAkSiARe5kjurjszMUIMZ_f_gax36G6Kcy4K7WF_bLxdzISqwg0u3mPCES4Fbun=
+dtHt2iwdlZlARY4zWk8xAYrvuwhyjCBo25VTHFTJzSseFo3x3WG8P59w9YVH0AYv2BxhEOhfOyC=
+A-BYJIciMtiJ-cGzLMI4mpk6y1fpAdF6yh8DS_jqw0pLBD-A6RwCb_U42sRmBEEfY1Xp-mEE6dK=
+oQlYZq2vclOCHaaglB_1cQACsnMHv86NpnifATf2KFNol7XMG1OVT5DBhA50GKq2HQSCFdCnsjC=
+MjWbrScxkMKsIUroCbn-2w8tmWAsw7bcph26LpdkTy14bq0ZlaIRjE9wuR_Nx3Tupvdn-X9zAYz=
+4oK8ItCUpnagP8dEHb3RlNiZhngdGd84Pbm8avYmd7HRTdxJTgOlQGkXjHhnt-zeY-bQl6erlj7=
+ukKWTtxIz_M6iZn_KJ2dsW0Pll7-HnHscTF5Uk8C0AGxGtc7Fa8LfV8EN1-PpGZPcrG_qB3lEeP=
+zU26KQoOq3CRao0r2cnOZTXkYJ1TwLEJD5y3ChDHMHPb9FQpiEtuM5rsOQnObPUlb7Qx7zlBZP_=
+5ToRr-ydp6CrnF1yK6qaBF2ccwYnzA7gOe7zu9Ldpy5ZvIp65G5LPvA7vIfK5bqsColFx0kgLhE=
+949xtwM_wGnIVk9aAe72Z3aCMvRAzZ_A19jMsbzfePk853P3RRxnJuAhx4iq_3zQpDugfxcGnw5=
+lX4tA6ESRHAFweu-irQxgtpjetvEFi4NS3RuNtIQIeu8VCrE7LNCCzpBLJ9pqPtCex1QYIPjZFK=
+bZZ4JahhE7drS9iEYRyv--1CUzhUePzpNko3yHkMqas=3D )
+############################################################
+############################################################
+
+--d2158366cbaedbb68e23c276c250a630374bbc9876fec343b37c8787761f
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>POLIOMYELITIS UPDATE (01): INDONESIA, CIRCULATING VACCINE-DERIVED<br>=
+POLIOVIRUS TYPE 2<br>******************************************************=
+*****************************<br>A ProMED-mail post<br><a href=3D"https://u=
+19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisIijpefK5PNjW-mL-YZGnfgDO=
+xU1G3gjwnPSi2Tfv3HA/430/hjaIV4s9SICUbHTyxfVmcA/h0/D1MbgxHZ2MTl2zV3eZ5E-G1Fu=
+w6i-tQiNKWZSh056tI">http://www.promedmail.org</a><br>ProMED-mail is a progr=
+am of the<br>International Society for Infectious Diseases<br><a href=3D"ht=
+tps://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisCT5tpD4Upm3qyMCbc=
+YSQvc/430/hjaIV4s9SICUbHTyxfVmcA/h1/nqpD1KOELd0Yf6-Ccfv0yd9ecuBF2pR0-bzsvfb=
+XV-w">http://www.isid.org</a><br><br>Date: Thu 11 Jan 2024=0D<br>Source: Wo=
+rld Health Organization Disease Outbreak News [abridged,<br>edited]=0D<br><=
+a href=3D"https://u19268662.ct.sendgrid.net/ss/c/TLh_csrC34X_iXpbYoMam14TJR=
+WQAgAfOkkchsoIDvlYOX0xNTnc2w45aV0fpRAkjzxfIfz3NksblXkNYUuxIa5t0GX89XcTES77b=
+1HjvSw/430/hjaIV4s9SICUbHTyxfVmcA/h2/VjyZ9NoNESZEqMOt31lfvmYHwiAOrpQjrZUlVt=
+9y0RE">https://www.who.int/emergencies/disease-outbreak-news/item/2024-DON5=
+00</a>=0D<br>=0D<br>=0D<br>Situation at a glance=0D<br>--------------------=
+-=0D<br>Indonesia reported 4 cases of circulating vaccine-derived polioviru=
+s<br>type 2 (cVDPV2) from October 2022 to February 2023, with 3 cases<br>oc=
+curring in Aceh province and 1 case in West Java province. On 20 and<br>27 =
+Dec 2023, the Indonesian Ministry of Health notified WHO of 2 new<br>confir=
+med cases of cVDPV2. One case, from Klaten District, Central<br>Java Provin=
+ce, is a 6-year-old female, with a history of recent travel<br>to Madura Is=
+land (Sampang district, East Java Province). The second<br>case, a 1-year-o=
+ld male, is from the neighbouring district of<br>Pamekasan on Madura Island=
+, East Java. Sub-optimal vaccination<br>coverage increases the risk of furt=
+her transmission and impact on<br>human health. In Klaten district, where t=
+he current case is reported,<br>the coverage for 4 doses of bivalent oral p=
+olio vaccine (bOPV) and<br>inactivated polio vaccine 1 (IPV1) was at 89.8% =
+and 88.6% respectively<br>in 2022. In the Pamekasan District, where the sec=
+ond case was<br>reported, the coverages for bOPV and IPV1were 88.1% and 74.=
+1%,<br>respectively in 2022. In response to the new cVDPV2 cases detected i=
+n<br>Indonesia, several public health responses are underway. As per<br>pro=
+tocol, detailed case investigation and risk assessment have been<br>conduct=
+ed. Coordination across country and regional levels with the<br>global poli=
+o eradication initiative is ongoing. The overall risk is<br>assessed as hig=
+h at the national level. At the regional level the<br>overall risk is asses=
+sed to be moderate.=0D<br>=0D<br>Description of the situation=0D<br>-------=
+---------------------=0D<br>On 20 and 27 Dec 2023, the Indonesian Ministry =
+of Health notified WHO<br>of 2 confirmed cases of circulating VDPV2. One ca=
+se, from Klaten<br>district, Central Java province, is a 6-year-old female,=
+ with a<br>history of recent travel to Sampang district, East Java province=
+. She<br>developed acute flaccid paralysis (AFP) on 21 Nov 2023 and had<br>=
+previously received 2 doses of bivalent oral polio vaccine (bOPV)<br>throug=
+h routine immunization. The case had not received any dose of<br>inactivate=
+d polio vaccine (IPV).=0D<br>=0D<br>The genetic sequencing of isolates at t=
+he BioFarma National Polio<br>Laboratory indicates cVDPV2 with 36 nucleotid=
+e changes, genetically<br>linked to a case in West Java province, that was =
+reported to WHO in<br>March 2023.=0D<br>=0D<br>The second case is reported =
+from Pamekasan district in East Java<br>province. The case is a 1-year-old =
+male with an onset of paralysis on<br>22 Nov 2023 with a history of bOPV va=
+ccination (4 doses) and one dose<br>of IPV. The sequence result indicates 4=
+3 nucleotide changes with the<br>Sabin 2 references.=0D<br>=0D<br>Two envir=
+onmental samples taken in Bangkalan district, East Java<br>province, on 7 D=
+ec 2023, also tested positive for cVDPV2. Sequence<br>results showed 36 and=
+ 37 nucleotide changes.=0D<br>=0D<br>Prior to these 2 cases of cVDPV2, in C=
+entral Java (1) and East Java<br>(1), 4 cases of cVDPV2 infection had been =
+reported previously from<br>Indonesia. These 4 cases were reported, since 2=
+022, in the following<br>locations:=0D<br>- Pidie, Aceh Province in October=
+ 2022=0D<br>- Aceh Utara, Aceh Province in January 2023=0D<br>- Bireuen, Ac=
+eh Province in January 2023=0D<br>- Purwarkarta, West Java Province in Febr=
+uary 2023=0D<br>=0D<br>In Central Java, the 2022 data indicate over 95% cov=
+erage for bOPV4<br>and IPV1 at the provincial level, in Klaten district, Ce=
+ntral Java<br>province, the coverage for the 4 doses of bOPV and IPV1 was a=
+t 89.8%<br>and 88.6% respectively in 2022. The Pamekasan district reported<=
+br>coverages of 88.1% for bOPV and 74.1% for IPV1, while the Bangkalan<br>d=
+istrict reported 69.9% for bOPV and 53.7% for IPV1.=0D<br>=0D<br>There are =
+no hard-to-reach areas in the region. However, sociocultural<br>barriers in=
+ East Java's Madura community pose challenges to<br>vaccination from vaccin=
+e hesitancy due to several reasons including<br>fear of adverse effects, mu=
+ltiple injections and sometimes due to<br>religious reasons.=0D<br>=0D<br>E=
+pidemiology=0D<br>------------=0D<br>Polio is a highly infectious disease t=
+hat largely affects children<br>under 5 years of age, causing permanent par=
+alysis (approximately 1 in<br>200 infections) or death (2-10% of those para=
+lyzed).=0D<br>=0D<br>The virus is transmitted from person-to-person, mainly=
+ through the<br>fecal-oral route or, less frequently, by contaminated water=
+ or food.<br>The virus multiplies in the intestine, from where it can invad=
+e the<br>nervous system and cause paralysis. The incubation period is usual=
+ly<br>7-10 days but can range from 4-35 days. Up to 90% of those infected<b=
+r>are either asymptomatic or experience mild symptoms and the disease<br>us=
+ually goes unrecognized.=0D<br>=0D<br>Vaccine-derived poliovirus is a well-=
+documented strain of poliovirus<br>mutated from the strain originally conta=
+ined in OPV. OPV contains a<br>live, weakened form of poliovirus that repli=
+cates in the intestine for<br>a limited period, thereby developing immunity=
+ by building up<br>antibodies. On rare occasions, when replicating in the<b=
+r>gastrointestinal tract, OPV strains can genetically change and may<br>spr=
+ead in communities that are not fully vaccinated against polio,<br>especial=
+ly in areas where there is poor hygiene, poor sanitation, or<br>overcrowdin=
+g. The lower the population's immunity, the longer<br>vaccine-derived polio=
+virus survives and the more genetic changes it<br>undergoes.=0D<br>=0D<br>I=
+n very rare instances, the vaccine-derived virus can genetically<br>change =
+into a form that can cause paralysis as does the wild<br>poliovirus -- this=
+ is what is known as a vaccine-derived poliovirus<br>(VDPV). The detection =
+of VDPV in at least 2 different sources and at<br>least 2 months apart, tha=
+t are genetically linked, showing evidence of<br>transmission in the commun=
+ity, is classified as "circulating"<br>vaccine-derived poliovirus (cVDPV). =
+Similar to wild poliovirus, cVDPVs<br>can be of 3 types (1, 2, or 3); the c=
+urrent outbreak in Indonesia is<br>due to cVDPV type 2 (cVDPV2).=0D<br>=0D<=
+br>Public health response=0D<br>----------------------=0D<br>In response to=
+ this cVDPV2 outbreak in Indonesia, several public<br>health responses are =
+underway.=0D<br>=0D<br>As per protocol, detailed case investigation and ris=
+k assessment have<br>been undertaken. Active case finding is being conducte=
+d in at least<br>200 households in both the community of the 2 current case=
+s and<br>neighboring areas. Furthermore, hospital record reviews have been<=
+br>performed and the identification of additional Environmental<br>Surveill=
+ance (ES) sites is in process.=0D<br>=0D<br>Coordination across country and=
+ regional levels with the global polio<br>eradication initiative is ongoing=
+. Efforts are ongoing to enhance and<br>catch up on routine immunizations, =
+focusing especially on 2 doses of<br>IPV. In response to the outbreak, the =
+government had requested the<br>WHO-Director General's approval for the rel=
+ease of novel oral polio<br>vaccine type 2 (nOPV2). The DG has approved the=
+ release of more than<br>20 million doses of nOPV2 to conduct 2 rounds of s=
+upplementary<br>immunization activities (SIAs) scheduled on 15 Jan 2024 and=
+ 19 Feb<br>2024.=0D<br>=0D<br>Regular situation reports are being published=
+ on the WHO website and<br>shared with neighboring countries.=0D<br>=0D<br>=
+WHO risk assessment=0D<br>-------------------=0D<br>The overall risk is ass=
+essed as high at the national level. The<br>country has strong capacity to =
+respond which was demonstrated during<br>the Papua cVDPV1 and Aceh and West=
+ Java cVDPV2 outbreaks. However, the<br>population is susceptible to type 2=
+ polioviruses following both the<br>switch from trivalent OPV (tOPV) to biv=
+alent OPV (bOPV), and the<br>sub-optimal IPV vaccination coverage in Centra=
+l Java, East Java,<br>neighbouring Yogyakarta and several other provinces o=
+f Indonesia.<br>Vaccine hesitancy among some populations complicates vaccin=
+ation<br>activities. There is regular population movement from Central Java=
+,<br>East Java and the neighbouring populous region of Yogyakarta to other<=
+br>provinces within the country and vice versa. Central Java and East<br>Ja=
+va have moderate to strong capacity within existing resources for<br>implem=
+enting response measures.=0D<br>=0D<br>At the regional level the overall ri=
+sk is assessed to be moderate.<br>Though there is no land border from Centr=
+al Java and East Java and<br>limited cross-border population movement from =
+the affected area, the<br>virological analysis indicates that the virus may=
+ have been possibly<br>circulating for some time and whole genome sequencin=
+g is still<br>pending. This risk will be continuously assessed and will be =
+reviewed<br>according to the evolution of the situation.=0D<br>=0D<br>WHO a=
+dvice=0D<br>----------=0D<br>It is important that all countries, in particu=
+lar those with frequent<br>travel connections with polio-affected countries=
+ and areas, strengthen<br>surveillance for AFP cases in order to rapidly de=
+tect any new virus<br>importation and to facilitate a rapid response. Count=
+ries, territories<br>and areas should also maintain uniformly high routine =
+immunization<br>coverage at the district level to minimize the consequences=
+ of any new<br>virus introduction.=0D<br>=0D<br>WHO's International Travel =
+and Health advice recommends that all<br>travellers to polio-affected areas=
+ be fully vaccinated against polio.=0D<br>=0D<br>As per the advice of the E=
+mergency Committee convened under the<br>International Health Regulations (=
+2005), efforts to limit the<br>international spread of poliovirus, countrie=
+s affected by poliovirus<br>transmission are subject to Temporary Recommend=
+ations. To comply with<br>the Temporary Recommendations issued under the PH=
+EIC, any country that<br>have had an importation of cVDPV2 with local trans=
+mission should (i)<br>declare the outbreak as a national public health emer=
+gency, (ii)<br>encourage residents and long-term visitors to receive a dose=
+ of IPV 4<br>weeks to 12 months prior to international travel, (iii) ensure=
+ that<br>travellers who receive such vaccination have access to an appropri=
+ate<br>document to record their polio vaccination status, (iv) further<br>i=
+ntensify efforts to increase IPV immunization coverage, including<br>sharin=
+g coverage data, and (v) intensify regional cooperation and<br>cross-border=
+ coordination to enhance surveillance for prompt detection<br>of poliovirus=
+, and vaccinate refugees, travellers and cross-border<br>populations, accor=
+ding to the advice of the Advisory Group.=0D<br>=0D<br>The latest epidemiol=
+ogical information on WPVs and cVDPVs is updated<br>on the website of the G=
+lobal Polio Eradication Initiative a weekly<br>basis.=0D<br>=0D<br>WHO advi=
+ses against implementing any travel or trade restrictions<br>based on the c=
+urrent information available on this event.=0D<br>=0D<br>--=0D<br>Communica=
+ted by:=0D<br>ProMED<br><br>[ProMED map:=0D<br>Indonesia: <a href=3D"https:=
+//u19268662.ct.sendgrid.net/ss/c/sSnCkKCWBvais3EuVAOvgy2WOIX7pp1nXnn4AbwuQ3=
+Z6WbkfhqXYXU-aTMPJ8yThpUZYF5yA8vF4J9D-gqP0og/430/hjaIV4s9SICUbHTyxfVmcA/h3/=
+K0317KFiW-oL_TfoSEHPGj3UCphYUQGm16TBRR1s53Q">https://promedmail.org/promed-=
+post?place=3D8714234,184</a>]<br><br>[See Also:<br>2023=0D<br>----=0D<br>Po=
+liomyelitis update (37): Africa, cVDPV2 Nigeria, cVDPV1 and cVDPV2<br>Congo=
+ DR http://promedmail.org/post/20231214.8713703=0D<br>Poliomyelitis update =
+(36): Pakistan (KP) 6th case, sewage (WPV1)<br>http://promedmail.org/post/2=
+0231204.8713492=0D<br>Poliomyelitis update (35): Pakistan (SD) 4th case, se=
+wage (WPV1)<br>http://promedmail.org/post/20231023.8712773=0D<br>Poliomyeli=
+tis update (34): Pakistan (KP) new case<br>http://promedmail.org/post/20231=
+006.8712482=0D<br>Poliomyelitis update (33): Afghanistan (NG) new case<br>h=
+ttp://promedmail.org/post/20230930.8712388=0D<br>Poliomyelitis update (32):=
+ cVDPV1, cVDPV2, Congo DR, Pakistan, Africa<br>CDC http://promedmail.org/po=
+st/20230824.8711822=0D<br>Poliomyelitis update (31): cVDPV1, cVDPV2, Congo =
+DR<br>http://promedmail.org/post/20230810.8711632=0D<br>Poliomyelitis updat=
+e (30): cVDPV, Nigeria (ZA)<br>http://promedmail.org/post/20230810.8711629=0D=
+<br>Poliomyelitis update (29): WPV1 AFP, Pakistan, violence<br>http://prome=
+dmail.org/post/20230802.8711538=0D<br>Poliomyelitis update (28): cVDPV2 Ken=
+ya, Tanzania, global, Pakistan,<br>WHO, RFI http://promedmail.org/post/2023=
+0731.8711483=0D<br>Poliomyelitis update (27): AFP Malawi, AFP cVDPV2 Kenya,=
+ global, RFI<br>http://promedmail.org/post/20230720.8711261=0D<br>Poliomyel=
+itis update (26): WPV1 AFP Afghanistan, cVDPV1 AFP/ES, cVDPV2<br>AFP; vacc.=
+ http://promedmail.org/post/20230622.8710705=0D<br>Poliomyelitis update (25=
+): WPV1 AFP, cVDPV2 AFP, ES, eradication,<br>chronic inf http://promedmail.=
+org/post/20230610.8710505=0D<br>Poliomyelitis update (24): WPV1 AFP (Afghan=
+istan) violence (Pakistan)<br>comment http://promedmail.org/post/20230604.8=
+710402=0D<br>Poliomyelitis update (23): WPV1 AFP (Afghanistan), cVDPV2 AFP =
+(Central<br>African Republic), violence<br>http://promedmail.org/post/20230=
+602.8710355=0D<br>Poliomyelitis update (22): WPV1 AFP, WPV1 ES, cVDPV1 AFP,=
+ ES, cVDPV2<br>AFP, ES, RFI http://promedmail.org/post/20230526.8710248=0D<=
+br>Poliomyelitis update (21): WPV1 AFP; WPV1 ES, cVDPV1 AFP, ES; cVDPV2<br>=
+AFP, ES http://promedmail.org/post/20230525.8710235=0D<br>Poliomyelitis upd=
+ate (20): WPV1 ES, cVDPV1 AFP, cVDPV2 ES, Indonesia,<br>Burundi, Congo DR h=
+ttp://promedmail.org/post/20230422.8709635=0D<br>Poliomyelitis update (19):=
+ cVDPV1 AFP; cVDPV2 AFP, ES, WPV1 SE Africa,<br>violence http://promedmail.=
+org/post/20230417.8709548=0D<br>Poliomyelitis update (18): Peru, add'l AFP =
+case, cVDPV1 susp, regional<br>update, RFI http://promedmail.org/post/20230=
+410.8709422=0D<br>Poliomyelitis update (17): WPV1, cVDPV1&2, VDPV outbreaks=
+ 2021-2022<br>http://promedmail.org/post/20230407.8709373=0D<br>Poliomyelit=
+is update (16): WPV1, cVDPV1, cVDPV2, nOPV2, DRC, USA (NY)<br>http://promed=
+mail.org/post/20230402.8709288=0D<br>Poliomyelitis update (15): Peru, AFP c=
+VDPV1, regional update, RFI<br>http://promedmail.org/post/20230325.8709148=0D=
+<br>Poliomyelitis update (14): WPV1 AFP, ES, cVDPV1 AFP, ES, cVDPV2 AFP,<br=
+>ES, Indonesia, UK RFI http://promedmail.org/post/20230324.8709123=0D<br>Po=
+liomyelitis update (13): WPV1 AFP Pakistan, efficacy of bOPV booster<br>pos=
+t IPV http://promedmail.org/post/20230319.8709028=0D<br>Poliomyelitis updat=
+e (12): nOPV2-assoc cVDPV2 (Burundi,DRC), WPV1 ES,<br>cVDPV2 AFP http://pro=
+medmail.org/post/20230317.8708985=0D<br>Poliomyelitis update (11): cVDPV1 A=
+FP, cVDPV2 AFP, Pakistan truck art,<br>USA alert http://promedmail.org/post=
+/20230311.8708880=0D<br>Poliomyelitis update (10): Israel, RFI, Pakistan, c=
+VDPV1 & 2 AFP & ES<br>http://promedmail.org/post/20230305.8708745=0D<br>Pol=
+iomyelitis update (09): Israel AFP, RFI, WPV1 ES, cVDPV1 & 2 AFP &<br>ES ht=
+tp://promedmail.org/post/20230228.8708638=0D<br>Poliomyelitis update (08): =
+WPV1 ES, cVDPV2 AFP & ES, Pakistan vacc.,<br>Nigeria cVDPV http://promedmai=
+l.org/post/20230209.8708270=0D<br>Poliomyelitis update (07): WPV1 ES, cVDPV=
+2 AFP & ES, lab accident,<br>PHEIC http://promedmail.org/post/20230206.8708=
+199=0D<br>Poliomyelitis update (06): WPV1 ES, cVDPV1 AFP, cVDPV2 ES<br>http=
+://promedmail.org/post/20230128.8708021=0D<br>Poliomyelitis update (05): WP=
+V1 ES, cVDPV1 AFP, cVDPV2 AFP & ES,<br>Pakistan http://promedmail.org/post/=
+20230121.8707867=0D<br>Poliomyelitis update (04): cVDPV1 (Congo DR), cVDPV2=
+ AFP (Congo DR),<br>ES (USA) http://promedmail.org/post/20230114.8707785=0D=
+<br>Poliomyelitis update (03): USA, wastewater cVDPV2, comment<br>http://pr=
+omedmail.org/post/20230107.8707675=0D<br>Poliomyelitis update (02): WPV1 ES=
+, cVDPV1 AFP & ES, cVDPV2 AFP & ES,<br>violence http://promedmail.org/post/=
+20230106.8707649=0D<br>Poliomyelitis update (01): (Canada) VDPV2, wastewate=
+r, RFI<br>http://promedmail.org/post/20230102.8707576]<br>.................=
+................................sb/jh/rd/jh<br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3DLXvVLDWaFqks7F84kVhbZv1RbgC8a-M4Gw_AZmp73XRoMDAwdT=
+AwMG8RGa6HifCjMFmBa5gS5T-vQVAOto4iMtefdjS45lpmq0A7TNP3W8hF1zo--lBkaokq7sqyX=
+7l6eoF8M4saL8Eia_zdvCxLKOfeespfxmWY4h9ggCdBNW8cSFRGBWlLA90K8RR4j9SKQ3h0-QHp=
+GnNGBhw3Zf44By9G3xTQBGuZ_AJwBntxCPVB1bbDY-ICfpZwEmXrAMETN0cXJ-uTqybfsMDz4CW=
+OQbLT69FwCdaQB5DH6qdO2SaKiX_ohworry9VxK1qB76wYBGkTLFEa0vjZmX5vaZoyfI3B364bq=
+Ap2wSBUlOEXclCcxJz9cOzAkSiARe5kjurjszMUIMZ_f_gax36G6Kcy4K7WF_bLxdzISqwg0u3m=
+PCES4FbundtHt2iwdlZlARY4zWk8xAYrvuwhyjCBo25VTHFTJzSseFo3x3WG8P59w9YVH0AYv2B=
+xhEOhfOyCA-BYJIciMtiJ-cGzLMI4mpk6y1fpAdF6yh8DS_jqw0pLBD-A6RwCb_U42sRmBEEfY1=
+Xp-mEE6dKoQlYZq2vclOCHaaglB_1cQACsnMHv86NpnifATf2KFNol7XMG1OVT5DBhA50GKq2HQ=
+SCFdCnsjCMjWbrScxkMKsIUroCbn-2w8tmWAsw7bcph26LpdkTy14bq0ZlaIRjE9wuR_Nx3Tupv=
+dn-X9zAYz4oK8ItCUpnagP8dEHb3RlNiZhngdGd84Pbm8avYmd7HRTdxJTgOlQGkXjHhnt-zeY-=
+bQl6erlj7ukKWTtxIz_M6iZn_KJ2dsW0Pll7-HnHscTF5Uk8C0AGxGtc7Fa8LfV8EN1-PpGZPcr=
+G_qB3lEePzU26KQoOq3CRao0r2cnOZTXkYJ1TwLEJD5y3ChDHMHPb9FQpiEtuM5rsOQnObPUlb7=
+Qx7zlBZP_5ToRr-ydp6CrnF1yK6qaBF2ccwYnzA7gOe7zu9Ldpy5ZvIp65G5LPvA7vIfK5bqsCo=
+lFx0kgLhE949xtwM_wGnIVk9aAe72Z3aCMvRAzZ_A19jMsbzfePk853P3RRxnJuAhx4iq_3zQpD=
+ugfxcGnw5lX4tA6ESRHAFweu-irQxgtpjetvEFi4NS3RuNtIQIeu8VCrE7LNCCzpBLJ9pqPtCex=
+1QYIPjZFKbZZ4JahhE7drS9iEYRyv--1CUzhUePzpNko3yHkMqas=3D" target=3D"_blank" =
+class=3D"Unsubscribe--unsubscribePreferences" style=3D"font-family:sans-ser=
+if;text-decoration:none;">Unsubscribe Preferences</a></div><br>############=
+################################################<br>#######################=
+#####################################<br><br><img src=3D"https://u19268662.=
+ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/430/hjaIV4s9SICUbHTyxfVmcA/ho.g=
+if" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"height:1px !imp=
+ortant;width:1px !important;border-width:0 !important;margin-top:0 !importa=
+nt;margin-bottom:0 !important;margin-right:0 !important;margin-left:0 !impo=
+rtant;padding-top:0 !important;padding-bottom:0 !important;padding-right:0 =
+!important;padding-left:0 !important;"/></body>
+</html>
+--d2158366cbaedbb68e23c276c250a630374bbc9876fec343b37c8787761f--

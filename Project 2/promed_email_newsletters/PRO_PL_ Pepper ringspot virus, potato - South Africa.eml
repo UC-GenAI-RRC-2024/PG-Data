@@ -1,0 +1,530 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a98:c004:0:b0:1eb:e128:bbe3 with SMTP id l4csp633044eic;
+        Tue, 9 Jan 2024 17:12:19 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IHb5vDVE7XOJn4ZDwdKqiBe22L0xMkBPSvmaM0qiNW251hmxianvEQ23V1jCf1rqXX8Utac
+X-Received: by 2002:ac8:5f96:0:b0:429:99d0:c96e with SMTP id j22-20020ac85f96000000b0042999d0c96emr371707qta.4.1704849139144;
+        Tue, 09 Jan 2024 17:12:19 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1704849139; cv=none;
+        d=google.com; s=arc-20160816;
+        b=PxMQNx/WLkSWxzC30AVh4ywCZFrGnkmcEq18PdbiE1819JCW/iQtVm8UlGYDal+LxD
+         XKDbpNEWZF+oL8TzKRZtxIODvve7DkzMj0EMK1CDryMFqDRdzsVeAOQw5YqsFUSJgQrz
+         hEr9ZNUHmL+jx6lmm6uDtfQyn25UkHL70kxGQCDA0hFV78ft/PcWUg8mARjZcvu62C1V
+         CjrS8ltaCB6M/mH+E/+j9KYLXKZ7DMkQCnY09LxwcRZQxPKkwSpmSqP1QOmLp4Js2Y3F
+         JgB/EBUTftEvdgpDSnxoUCnosdF9iZX8Hx/QnQkbnqt3MXcvRNWXSAiiTZN5TA5BLJtO
+         AALQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=+7tieqC2Bux8WA6BaW7L7JttBozf7cWkd6vinLYvFuQ=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=dDQRbY4HTL6cY87VmgJUuH3DwVekRezFheEFdQLix7k8QsAdztMekT9jC2DibB8RLc
+         r9G7JOGPa7TDvjw0VX0gj6npnXo639WWCUIjJJsofV7N9pZT4Szo8PInjSNXadEIGjp4
+         YB3pzDspapCbnWbpwiKq5IV8537Z9daZgAUQ1i/9XPSO2IqFrdHiYEnGE0B052Kkyqnt
+         FnNOYpCgNvhet00pofkSJ2lHDxzv69DJk2gRfgKWzqfMPcj5ayUW9q+JeOWG84ZOYC9t
+         u95cc90D/2mKrFHyhYxWmo9pUMBHWNI1I1yYXazQioBTSmz4MXI6jm4W2yA71EYGm3Ap
+         0HQw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=DirfU7jt;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=w3LjKeP0;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id g6-20020ac87f46000000b00429b0add358si885794qtk.143.2024.01.09.17.12.18
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 09 Jan 2024 17:12:19 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=DirfU7jt;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=w3LjKeP0;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=+7tieqC2Bux8WA6BaW7L7JttBozf7cWkd6vinLYvFuQ=;
+	b=DirfU7jtf8kQKR1ddALbGfJ8dWULos+cTmGTsx0j8ZiwSibPANVp/75TMR2/QpDLcFAf
+	1XP0c0ZVChuTyU78wgabHnpX4F1J+L4l1QcDETA8hmRxUqakm0a6D/jeP1s83zALDIQJ8y
+	OSIdpA5qQbNhIrR/88bVNdC7HNTWwsnpYP3ETmvoW0DpD+u8UuurZx6Fh0ga8xpn+dXoOf
+	WhbNoKqrjOTlKAGk6gQhsk+0Gk58ORD9bUyyCUL4y3T5t0f1E+SlkqvFMHdmC/BlvGz7M5
+	P24CimJv6K4gZTm1sVIezfQ3ew6FIIJarZZoCy1jV5hL/wC+5tKkM33tlCtCrenw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=+7tieqC2Bux8WA6BaW7L7JttBozf7cWkd6vinLYvFuQ=;
+	b=w3LjKeP03DHHZGDYSB1eZg8B6qJBTUlKfm4ahBFdDkmSsUIjK3CXZMky5nGKVVsXjZ5I
+	OMbBomvN1fUlZshWP2QlguAzDK4oy871I5wTun97HVQha+KigK9flEGe7GxXJLb0NUwFiR
+	SG1paaQOLZcQg+lfYFvDWe/R1zxlO9B2A=
+Received: by filterdrecv-6fc855847c-jblhl with SMTP id filterdrecv-6fc855847c-jblhl-1-659DEEF0-8
+        2024-01-10 01:12:16.156217062 +0000 UTC m=+7281035.315383558
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-12 (SG) with HTTP
+	id QChOWkiaSKmY-Y4I-zNiEQ
+	Wed, 10 Jan 2024 01:12:15.970 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=83e7cc88e4d46322ad7193afc4e0acdec29497c0df0da022756b96228b36
+Date: Wed, 10 Jan 2024 01:12:17 +0000 (UTC)
+From: ProMED Plant <promed-plant@isid.org>
+Mime-Version: 1.0
+Message-ID: <QChOWkiaSKmY-Y4I-zNiEQ@geopod-ismtpd-12>
+Subject: PRO/PL> Pepper ringspot virus, potato - South Africa
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbKvCl8ppyUAMiP5RVsxU4e1GHJWpgR0=2FEyVHH+VxGv?=
+ =?us-ascii?Q?sYgTuP1ZM9GsQENQXhPK7j+t216v1le6IgZJMJJ?=
+ =?us-ascii?Q?d02wIaBvi9Tv6lx=2FUrEur7TwiWHv3qf41G2w6aD?=
+ =?us-ascii?Q?GQDWgHD55ElkNi9HB6MFduKnRLh8Vio=2FAb7SJvW?=
+ =?us-ascii?Q?5ewxkWJjU88bs0duQoHHCTu31asSWGbZMCS9b3X?=
+ =?us-ascii?Q?9L=2Fq8urWn55fkxI+q4ESHl9GJ1V+NAqlC8a=2F6O?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUiOnpMxoBKbd1xQrqZppL?=
+ =?us-ascii?Q?dKiuYt7wnmzIsT0HuW86cBZJ0aCLoLnEX62pE0d?=
+ =?us-ascii?Q?F=2F3Qa=2FG9FrkbZhqmpJRh97pV8pWANoV6x=2FZeDPu?=
+ =?us-ascii?Q?TqQjVkI6r1YE9bNjiy6tAbX2MIJ8MJtYT6aj8a7?=
+ =?us-ascii?Q?mqNjkLUTIbNBa9=2F6Ptf30qGisaEIT3W++v09Wqx?=
+ =?us-ascii?Q?451cN4Tlh=2FLa0b9D4pQk8wxJBXWaQ5kUY9h=2Fm89?=
+ =?us-ascii?Q?jHtb1=2FpQXA49uXpbeYkILxEpUeue7AJNoHJtPV6?=
+ =?us-ascii?Q?36CIvykhZVPYi0O+iY8X4c1njOUEfk1Fgujn8TD?=
+ =?us-ascii?Q?IcjmPGE7HgkP=2FxADCrPlZI9APWkzRKoO4MwOfxv?=
+ =?us-ascii?Q?dbyyFEJ9vrFJOhlqJemlxSs9bYJNoPbn4FutNGk?=
+ =?us-ascii?Q?MM4eFrmUWxnUlevmI++TiQt=2FGCMwP15BX35RfRl?=
+ =?us-ascii?Q?kvUDN=2FDYKjDGBc=2FN92YLt=2Fru78Yvxn5eHG5GQ9z?=
+ =?us-ascii?Q?r4X5UtecAGgkCKw5GfuhxGfYxkSkDiPdGFxofSx?=
+ =?us-ascii?Q?LBf37UK+ZwTq2KbRlJfbOFx0BU3LJRp905f7Zb9?=
+ =?us-ascii?Q?nuf1MvKhUggE7G=2F6kpNT4YboRp8xWeLQnMqtmj6?=
+ =?us-ascii?Q?f2knXM02vvest7sd03pdrZeuLNqhbkjvFb2JxTy?=
+ =?us-ascii?Q?SzEhtl1u1Z7rYmRmRm0re+XQBJXRYQe7KY5mDgI?=
+ =?us-ascii?Q?uO776LEUuwPUxIKhdqLH1ZZUYFRWj6DnO5+Jfx5?=
+ =?us-ascii?Q?kwb59dPLbI99OYLWpiZz1RyoZvLpJguMDt2uGwN?=
+ =?us-ascii?Q?dfoNiCrMWmJG84Z0uu15mJjHcQ=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2E9b9n38aI5?=
+ =?us-ascii?Q?g845YfWOPFp7rWgKJgq0KZqTQd728hu6DJoMDAw?=
+ =?us-ascii?Q?dTAwMNOA=5FllQ6iJF8Y3f6ibfuWvRCOLdKZSqc5q?=
+ =?us-ascii?Q?=5Fm2ErqzpeFUxy8s3uSMFX1Ic5lxNqKFR1Xfc7-d?=
+ =?us-ascii?Q?ccnZxQsVRqzXnrKL1nGTzUDLZu4PKz3H9ToQP2q?=
+ =?us-ascii?Q?kLsl6F7ZkSSwMMgRw=3D=3D=2E3DxFlrbrn35VJXXvFhS?=
+ =?us-ascii?Q?iJ4K24O=5FVNBlyTbV6wNYOO55oMDAwdTAwMB1-qd?=
+ =?us-ascii?Q?9MSsh8hmb-=5FrR6aSSLKGm5vulrlri2sV3nasjqs?=
+ =?us-ascii?Q?hU5vUHMLhXBvXlp2Qx5jeYC9WW=5FJMsedp3mADnv?=
+ =?us-ascii?Q?G51B4oiRv9j8HCY58bq3YoJMTY4spXiSoovgFku?=
+ =?us-ascii?Q?2LGGnnXDjcHLQR8-xIQ0akNkfW7wZb9-OTW0P63?=
+ =?us-ascii?Q?dCgQrerCfi6RCxodsQZ6wRrdRG2d9E8PGEsQx-g?=
+ =?us-ascii?Q?6g2-OHy6PyUHjCmJHSNK7VWAt6HswW35xWFhL4R?=
+ =?us-ascii?Q?uizUpdrZmfISFYIvwz182xVxtBQepf=5FYXQCfeP1?=
+ =?us-ascii?Q?ir3emJv9k6NQ55hVYr2V=5FM0TkbAhYoKo8jQJiF5?=
+ =?us-ascii?Q?drI1Mho2lQG6PSrQ0xdEyDn22BLyHcYAVssuGgi?=
+ =?us-ascii?Q?u4nGv-TE=5F17imQQHJm4IMMOooGXArzeVAGPzdVu?=
+ =?us-ascii?Q?pY=5FBHQUYjJ2Nwh9qBwvlhAWrPiiUYeIu2MMvzj3?=
+ =?us-ascii?Q?XnJwIFT-66xswgN3E2eh3Y0GiyhxXxI98vn3Mb=5F?=
+ =?us-ascii?Q?ofbe6s-D0fMNkC6oa=5FVXr9PVqmMvHzGQ2YyaoEH?=
+ =?us-ascii?Q?EldxCsPpYm04H4s48uljOYm3kwC=5FZssNJo2mUJm?=
+ =?us-ascii?Q?Vdsp=5FUCQROzPuIgG8dyfZQm2jedCQqZ2JYRqoah?=
+ =?us-ascii?Q?-ZQ3hNdZPsq4Z4Oqz=5Fn2fMhZRpYDUXk8AU3P5WL?=
+ =?us-ascii?Q?mU4LPOrVeSnc2cFsrltO43GFc9cGX8ShNe3Y74Y?=
+ =?us-ascii?Q?sKddfvPQd6Q2uWtFL7CDeepN8r4a6aZtu1ms1Zz?=
+ =?us-ascii?Q?w0pUGJGl3Cl3rkHryPZ0Xz0k0FlTFCVpzOlXxVG?=
+ =?us-ascii?Q?Y9J39wazgAUMy8d1p-8x4ZNevqpmfgaEpxPLP9R?=
+ =?us-ascii?Q?DlxgASms600GMhkDYtTuejzZoGophNaIwxBaFnj?=
+ =?us-ascii?Q?NTZbJSydO-3AJWRyWpKt4Cq8ymyJTqR-Hr71Yew?=
+ =?us-ascii?Q?AP-dtnPcmGvr93TqpIZyRIXIPE2pFgRgPQMERNQ?=
+ =?us-ascii?Q?XTIG-=5FC=5FXipPHPDPigTgRs2oQUd63=5FqFYxpEo2w?=
+ =?us-ascii?Q?e0-hhhjGbwzdn=5FEAiEKF9KEHH=5FAuwwil5T9wUYY?=
+ =?us-ascii?Q?=5F6de40O=5F2=5F1Z14WvIJzbUoZ=3E?=
+
+--83e7cc88e4d46322ad7193afc4e0acdec29497c0df0da022756b96228b36
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=us-ascii
+Mime-Version: 1.0
+
+PEPPER RINGSPOT VIRUS, POTATO - SOUTH AFRICA
+********************************************
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+Date: Thu 21 Dec 2023
+Source: International Plant Protection Convention (IPPC) [summ.
+Mod.DHA, edited]
+<https://www.ippc.int/en/countries/south-africa/pestreports/2023/12/notific=
+ation-of-the-detection-of-pepper-ringspot-virus-peprsv-in-the-republic-of-s=
+outh-africa/>
+
+
+Pepper ringspot virus (PepRSV) was detected in the Republic of South
+Africa in October 2022 in a commercial potato planting. Since then, it
+was detected in potato cultivars (seed and commercial plantings) in
+various provinces of the country. Official samples were collected
+after random symptom observations in the reported areas.
+Identification of the pathogen was conducted by plant virologists,
+using RT-PCR methodology.=20
+
+Potential spread or establishment of PepRSV may negatively affect
+domestic and international trade and export potential of relevant host
+commodities. The Department of Agriculture, Land Reform and Rural
+Development (DALRRD) is continuing with delimiting surveys in
+production areas to determine the extent of spread, as well as pest
+status in South Africa. Phytosanitary measures are implemented to
+restrict the movement of host material from infected to non-infected
+areas. PepRSV is now considered present in the country, except in
+specified virus free areas.
+
+--
+Communicated by:
+ProMED
+
+[_Pepper ringspot virus_ (PepRSV, genus _Tobravirus_) is considered to
+be a counterpart of South American origin of _Tobacco rattle virus_
+(TRV; type member of the genus, family Virgaviridae). In potato, both
+viruses can cause spraing disease of potato in different areas.
+Symptoms may include brown lines, rings and flecks in tubers which
+normally remain internal but occasionally may extend to the surface;
+some infected tubers may not show any symptoms. Spraing increases in
+cool temperatures and with storage. Leaf and stem symptoms generally
+only appear if infected tubers are planted. Tuber yield may or may not
+be reduced, but economic losses are due to quality being severely
+affected.=20
+
+PepRSV has a wide host range amongst solanaceous species, including
+crops and weeds; it was also shown to be transmitted via true seed in
+tomato. Tobraviruses are spread by nematodes in the soil that feed on
+developing tubers and roots which makes disease management difficult.
+For potatoes, seed tuber certification and quarantine indexing are
+vital for all virus diseases.=20
+
+Spraing symptoms can also be caused by _Potato mop top virus_ (PMTV;
+_Pomovirus_, Virgaviridae) transmitted by the powdery scab fungus
+_Spongospora subterranea_ (see previous ProMED posts in the
+archives).
+
+Pictures
+Spraing on potato tubers:
+<https://portal.mtt.fi/images/tuhoojat/maltokaariviroosi4.jpg>,
+<https://live.staticflickr.com/65535/49450432886_0eced2708b.jpg>,
+<https://i.pinimg.com/originals/07/ae/dc/07aedcd04dd33accc127cdc84931ab75.j=
+pg>,
+<https://l450v.alamy.com/450v/x7jnht/tobacco-rattle-virus-spraing-symptoms-=
+inside-a-sectioned-potato-tuber-x7jnht.jpg>,
+<https://projectbluearchive.blob.core.windows.net/media/Default/Potatoes/Di=
+sease%20and%20defects/PVY%20resized.jpg>
+and
+<https://projectbluearchive.blob.core.windows.net/media/Default/Potatoes/Di=
+sease%20and%20defects/Spraing%20severe%20Maris%20Piper%20200809%20resized.j=
+pg>
+Potato virus symptoms via:
+<http://www.ipmimages.org/browse/AreaSubs.cfm?area=3D116#?area=3D116&desc=
+=3D29&div=3D2>
+
+Links
+Additional news story:
+<https://www.chronicle.co.zw/govt-restricts-imports-of-potatoes-from-sa/>
+Information on PepRSV:
+<https://dpvweb.net/dpv/showdpv/?dpvno=3D347>,
+<https://doi.org/10.1099/0022-1317-4-2-177> and
+<https://gd.eppo.int/taxon/PEPRSV>
+Information on tobraviruses:
+<https://doi.org/10.1111/j.1364-3703.2010.00617.x>
+<https://gd.eppo.int/taxon/1TOBRG> and via
+<https://doi.org/10.1099/jgv.0.000884>
+Spraing and associated viruses:
+<https://doi.org/10.1111/ppa.12141>,
+<https://doi.org/10.1079/pwkb.species.54208> (with pictures),
+<https://www.hutton.ac.uk/research/groups/cell-and-molecular-sciences/virus=
+-research/host-pathogen-interactions/spraing-trv>,
+<https://www.thedailygarden.us/garden-word-of-the-day/spraing>,
+<https://www.hortweek.com/fera-plant-disease-factsheet-spraing-disease-pota=
+to/fresh-produce/article/983824>
+(subscr.) and via
+<https://potatoes.ahdb.org.uk/knowledge-library/potato-disease-identificati=
+on>
+Virus taxonomy via:
+<https://ictv.global/taxonomy>
+- Mod.DHA
+
+ProMED map:
+South Africa: <https://promedmail.org/promed-post?place=3D8714153,179>]
+
+[See Also:
+2019
+----
+Potato mop-top virus - New Zealand
+http://promedmail.org/post/20190820.6630725
+2018
+----
+Potato mop-top virus - New Zealand: 1st rep (CA)
+http://promedmail.org/post/20180925.6049697
+2014
+----
+Potato viruses - Greenland: 1st reports
+http://promedmail.org/post/20141126.2992687
+2007
+----
+Zebra chip disease, potato - USA: research=20
+http://promedmail.org/post/20070530.1751]
+.................................................mo/dha/may/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3DwMcKYB6MHcrGAsokMchRUGde7zjGVC7t7l5V6zBIllloMDAwdTAwMGy-4JP=
+Vytpg79oP9QnOaPHhhHXdeTZB_2AYWrTjX0rpf7q6B6ejT02l4j3z4gKtyugnNYV5wn03kvyT49=
+GliqLgOoPY0193dC2UknYC_243Oe2MGkQf9H8vyRQvE7J-foUlWdOKwx6RVXrkuIiyQDCV9BqhV=
+kx9bmpkaP-eTmy5s2lL9WH1xNz7MqEhyKqi8UNRX-qN8rggFr1SN5HXuBDXk0M0NKoXOd-hX5W4=
+CGE61vgp6wEgOpq7UostLxlG2-IQAMzlfZ0BfafsPONxpRmTHqQXh5kwzYhMnMYtLIM-wKUyTI2=
+br1DKNlTb7sh3_JdgwjdJBhlS7fSemvqN4R_ydpL_2qjvt5tc6i3j0SKvW87u_D_vWi14a37yTg=
+dMsjLBOe7LFBJQXJKEBtJgzYL8jsOh4lAgVF1XrER0AFy85NGYGcN07-hhDYCDcuufzeKbV_7vD=
+yKxoCVc1QFE3Fvp4zUv-gujj75L6xapv0ZqOHbqAbrT9tOwIDax9EdjtNi0Ocw64Kbi1TJNgKmr=
+-9bLIS-qhuV5X_uw3mvmRFD6j57OLY9c19H14ok-J78FzvYsJcfZ1uOkb_Q-g1khQyX31F4PGgC=
+pBW9E6y5_ysEEHM0CvXXpgcjfqZBVRPG79mgfxpB6DmlfdK4kgU4pns7nbtb6AqbDAwy2YNjmYW=
+sAZvie8LGY_PlEZ0nXwKOtbeiYYgPlu44XIRxT60jjuwwPKZZYGG8AsneTb6amF_Yvh1CAqDhoX=
+ojZZ5AUO_4oYJ3M2wodfm2rrEB8hmAxLxIUjdN4nOoHpzMx-71sbUu_AhH-456StkgnoQugAr1Y=
+Yl1xZ8s2R62s_sSLjlrGWaAc25_PDlsXaiAxs04L_OWBFfDvzfUygmT-ipLIZzkaKTK0XQ08bur=
+_4Oth_Ueo6MhxzCFyEtGwG1pg9EPiFNedKF9SYTw9Y_T7KepewNIeCE4Vp5ND0VNiAUyR0OtCZr=
+ld4b2U4Ep3xDBha5tRZeT8HTgn9SYz5Lr6KoGEgCVFrAZ4VzysT8PhPKyvPFYcJKPQRYsR_2OAQ=
+XqIuo7Cg9Ng0K1J3_TeGRq2jKE5grF9tZl-EFA6vf_-5kDPEOKxyarfXn4x7cf-q3ONwsRbaZWN=
+bU9pp8wR8NrCqXkQdhaedAURswUeKk-9ej-BnRfSXps=3D )
+############################################################
+############################################################
+
+--83e7cc88e4d46322ad7193afc4e0acdec29497c0df0da022756b96228b36
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>PEPPER RINGSPOT VIRUS, POTATO - SOUTH AFRICA<br>*********************=
+***********************<br>A ProMED-mail post<br><a href=3D"https://u192686=
+62.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisIijpefK5PNjW-mL-YZGnfgDOxU1G3g=
+jwnPSi2Tfv3HA/42v/QoGMmXzZTV6fkrIrA8rNoQ/h0/CEfd7UdNdqpRR2KDQpXwJT_2Gh70xqA=
+JXDOo7C1EZho">http://www.promedmail.org</a><br>ProMED-mail is a program of =
+the<br>International Society for Infectious Diseases<br><a href=3D"https://=
+u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisCT5tpD4Upm3qyMCbcYSQvc/=
+42v/QoGMmXzZTV6fkrIrA8rNoQ/h1/dJyG7FemI9rov034Uzedbg2yZoPTGAHBzy2hPKQAjOE">=
+http://www.isid.org</a><br><br>Date: Thu 21 Dec 2023=0D<br>Source: Internat=
+ional Plant Protection Convention (IPPC) [summ.<br>Mod.DHA, edited]=0D<br><=
+a href=3D"https://u19268662.ct.sendgrid.net/ss/c/TLh_csrC34X_iXpbYoMam4APji=
+tv3fa8wG_hJH_T5fzTL3Al0liqtWE9P5cgiYp211neDw8SSps6fEAo40v66cUxO2k4xzBPBtGDB=
+PF8phR2nNIWsU0kMg-wPLXs2zcbYyoJg0XtvD-2oBm9PoISuU4cS7Bvh0k0qnae_g-uNZmJ950R=
+MJ97mKAN8RArZjvZHSiBC9u3DqSYygfuAdeC6f0x0B5yzNL_9V9Y42NePaU/42v/QoGMmXzZTV6=
+fkrIrA8rNoQ/h2/t1z5ya-fHCULQfuaU1y-TxtvPmzFBbHw632pA9g8XEc">https://www.ipp=
+c.int/en/countries/south-africa/pestreports/2023/12/notification-of-the-det=
+ection-of-pepper-ringspot-virus-peprsv-in-the-republic-of-south-africa/</a>=0D=
+<br>=0D<br>=0D<br>Pepper ringspot virus (PepRSV) was detected in the Republ=
+ic of South<br>Africa in October 2022 in a commercial potato planting. Sinc=
+e then, it<br>was detected in potato cultivars (seed and commercial plantin=
+gs) in<br>various provinces of the country. Official samples were collected=
+<br>after random symptom observations in the reported areas.<br>Identificat=
+ion of the pathogen was conducted by plant virologists,<br>using RT-PCR met=
+hodology.=20=0D<br>=0D<br>Potential spread or establishment of PepRSV may n=
+egatively affect<br>domestic and international trade and export potential o=
+f relevant host<br>commodities. The Department of Agriculture, Land Reform =
+and Rural<br>Development (DALRRD) is continuing with delimiting surveys in<=
+br>production areas to determine the extent of spread, as well as pest<br>s=
+tatus in South Africa. Phytosanitary measures are implemented to<br>restric=
+t the movement of host material from infected to non-infected<br>areas. Pep=
+RSV is now considered present in the country, except in<br>specified virus =
+free areas.=0D<br>=0D<br>--=0D<br>Communicated by:=0D<br>ProMED<br><br>[_Pe=
+pper ringspot virus_ (PepRSV, genus _Tobravirus_) is considered to<br>be a =
+counterpart of South American origin of _Tobacco rattle virus_<br>(TRV; typ=
+e member of the genus, family Virgaviridae). In potato, both<br>viruses can=
+ cause spraing disease of potato in different areas.<br>Symptoms may includ=
+e brown lines, rings and flecks in tubers which<br>normally remain internal=
+ but occasionally may extend to the surface;<br>some infected tubers may no=
+t show any symptoms. Spraing increases in<br>cool temperatures and with sto=
+rage. Leaf and stem symptoms generally<br>only appear if infected tubers ar=
+e planted. Tuber yield may or may not<br>be reduced, but economic losses ar=
+e due to quality being severely<br>affected.=20=0D<br>=0D<br>PepRSV has a w=
+ide host range amongst solanaceous species, including<br>crops and weeds; i=
+t was also shown to be transmitted via true seed in<br>tomato. Tobraviruses=
+ are spread by nematodes in the soil that feed on<br>developing tubers and =
+roots which makes disease management difficult.<br>For potatoes, seed tuber=
+ certification and quarantine indexing are<br>vital for all virus diseases.=
+=20=0D<br>=0D<br>Spraing symptoms can also be caused by _Potato mop top vir=
+us_ (PMTV;<br>_Pomovirus_, Virgaviridae) transmitted by the powdery scab fu=
+ngus<br>_Spongospora subterranea_ (see previous ProMED posts in the<br>arch=
+ives).=0D<br>=0D<br>Pictures=0D<br>Spraing on potato tubers:=0D<br><a href=
+=3D"https://u19268662.ct.sendgrid.net/ss/c/0oc7vsq5mmLjPwOs4PjMh88fgARuezNt=
+dEv2wwzc9umn6dXisv3vrOtHDvaEY5OKD2vSnyuduq0RlJaiszOtHdmk3Enr7RNiXv8Bs6Ngh9w=
+/42v/QoGMmXzZTV6fkrIrA8rNoQ/h3/fjlNna1VR-gzonLCDlPdU-X7LTKX4dfZNaRPP_SpO4M"=
+>https://portal.mtt.fi/images/tuhoojat/maltokaariviroosi4.jpg</a>,=0D<br><a=
+ href=3D"https://u19268662.ct.sendgrid.net/ss/c/kpB05XP4S3C5he0czVXZ-yUyDUA=
+_y1svTFbxxb5XapjpnrrveClptgbYqe_zSh9P4SakPFWFotD1RoIe3ZzfakT0zPq9WtX5ND1uW_=
+pqULQ/42v/QoGMmXzZTV6fkrIrA8rNoQ/h4/-kL8peyiHoLxju7ptF9nPowhL6WG2nFRDm3ZEzz=
+Ig5c">https://live.staticflickr.com/65535/49450432886_0eced2708b.jpg</a>,=0D=
+<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/G6bs_HUSl8zPcwlV7WCHD=
+gs0oJz7_K2MvWr9co1_d7FzA2613gOPRjniw5Kz92hFimmAztWcUiIhjg-zoM0R_boJ7V3flzSC=
+BJNs0OdDMkm9BCQx69Cul4YUO2FUobXU/42v/QoGMmXzZTV6fkrIrA8rNoQ/h5/nVJyQj3QqTUd=
+e4QVZZdJ6IkLcgo7KygJB70T_zOwvaw">https://i.pinimg.com/originals/07/ae/dc/07=
+aedcd04dd33accc127cdc84931ab75.jpg</a>,=0D<br><a href=3D"https://u19268662.=
+ct.sendgrid.net/ss/c/kpB05XP4S3C5he0czVXZ-_X3n08spsyo6Ukyc_U0BrhzfLkSHKBmTi=
+-QVLMUbGYn77aN0_j7tRIgFBprtxsueelHayckwet7bemUPzgXs09jJSSauubch_RXvO0TfM8IW=
+cK4t4VcZbCnk3181rswN2MGx2e3I2vERGZyk02KGxc/42v/QoGMmXzZTV6fkrIrA8rNoQ/h6/vs=
+deSaH1o24frEPpaOesctuhYJo0fFkS_imx8Qgz9RA">https://l450v.alamy.com/450v/x7j=
+nht/tobacco-rattle-virus-spraing-symptoms-inside-a-sectioned-potato-tuber-x=
+7jnht.jpg</a>,=0D<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/0oc7=
+vsq5mmLjPwOs4PjMh_yfuxt8MXxmKjsMAXwYJ2soNAXlqbCdFjYHjsvpJeSvy-W4UCifQtiULxV=
+6BHWZ-KIH5w2ib2ZTtzTCdk2Tx1zgVLnmM5rZZrl8CAp_2aR1TQEyRxbBCOnDycX0pd_HUzhSy8=
+BdHZpQwV9NU0eDxDQ/42v/QoGMmXzZTV6fkrIrA8rNoQ/h7/aX9OFI1MtWVIoxnBy4UVr1vRGkw=
+t1zPksaCFHP6Zspk">https://projectbluearchive.blob.core.windows.net/media/De=
+fault/Potatoes/Disease%20and%20defects/PVY%20resized.jpg</a><br>and=0D<br><=
+a href=3D"https://u19268662.ct.sendgrid.net/ss/c/0oc7vsq5mmLjPwOs4PjMh_yfux=
+t8MXxmKjsMAXwYJ2soNAXlqbCdFjYHjsvpJeSvy-W4UCifQtiULxV6BHWZ-KIH5w2ib2ZTtzTCd=
+k2Tx1zgVLnmM5rZZrl8CAp_2aR1Y5q8eaZyoN0rropGwhcoHhC-pCHw0U5IZ84R4BRn6M6-PWOY=
+Kp1XEk05gZQrub2b53VhKwK6uS8fUlwpjyAs5A/42v/QoGMmXzZTV6fkrIrA8rNoQ/h8/Ja5YQb=
+uzu1MBaRiVYpIdESnApbu-qiqOrfilNT822wU">https://projectbluearchive.blob.core=
+.windows.net/media/Default/Potatoes/Disease%20and%20defects/Spraing%20sever=
+e%20Maris%20Piper%20200809%20resized.jpg</a>=0D<br>Potato virus symptoms vi=
+a:=0D<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt=
+48tisHzfXfgorykGaPxM7S4htJomSEg1xI7VUTUv5kDKBth0W6gUJFJMAn3VaLbnJyxHOKVknlp=
+c2euQbMBs4H0BwB88BXOI8GifD7wnZwPRybpq/42v/QoGMmXzZTV6fkrIrA8rNoQ/h9/rOonyZF=
+n22TTtX7xH69AtN3ysxrhlz-7YXjIbQUU2Js">http://www.ipmimages.org/browse/AreaS=
+ubs.cfm?area=3D116#?area=3D116&desc=3D29&div=3D2</a>=0D<br>=0D<br>Links=0D<=
+br>Additional news story:=0D<br><a href=3D"https://u19268662.ct.sendgrid.ne=
+t/ss/c/TLh_csrC34X_iXpbYoMamwnXZwrnmOYuCUUDX1y4flMtKgz8XjGv6XXqkQYRk9OnjapO=
+DNASmqHileyUJ848QC6TWbB88Zm5gdUw7HcylXM/42v/QoGMmXzZTV6fkrIrA8rNoQ/h10/Yz8z=
+cpAYm0gP12YAX5HHVhhh1mrZ30zdstWqnl9knQg">https://www.chronicle.co.zw/govt-r=
+estricts-imports-of-potatoes-from-sa/</a>=0D<br>Information on PepRSV:=0D<b=
+r><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/TUIVIg4PCmni5tP3Q8lzBXL=
+4WBj9aSc7KhSOZqu0p2mjarNIHlfEUEI0XYXH-YGZfsPNQdO8GzQ-GILdZY6hwA/42v/QoGMmXz=
+ZTV6fkrIrA8rNoQ/h11/yn6nZcNQh7XDZUPBU3t97EXoe6QiXH1Qg45bJgQKl_I">https://dp=
+vweb.net/dpv/showdpv/?dpvno=3D347</a>,=0D<br><a href=3D"https://u19268662.c=
+t.sendgrid.net/ss/c/TUIVIg4PCmni5tP3Q8lzBX2ruEVVagFmhcSTD0b-bfkcrgCpo1UFAei=
+0P__OuEP8OhiqwSpdZkuS0G9-w1U32w/42v/QoGMmXzZTV6fkrIrA8rNoQ/h12/3g4WYimAHKkh=
+FRZfsqUFtO0vicKmD4wy79rk-N912OU">https://doi.org/10.1099/0022-1317-4-2-177<=
+/a> and=0D<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/YVsoJKI_vQI=
+meTus12HuSrVIwaaEefRn0HSI9sf6-IrdrPPS850G9UL-mrFYb39w/42v/QoGMmXzZTV6fkrIrA=
+8rNoQ/h13/byMghZSniNtKUsLk1DjQUc7y3WqTWQSefHnMZJrbS7U">https://gd.eppo.int/=
+taxon/PEPRSV</a>=0D<br>Information on tobraviruses:=0D<br><a href=3D"https:=
+//u19268662.ct.sendgrid.net/ss/c/TUIVIg4PCmni5tP3Q8lzBQ4blEQaxmSH2Nza7u394J=
+X4KyzqHxscrJj2W8rdph8l2dSI6jF4obAqQypTHAO2zA/42v/QoGMmXzZTV6fkrIrA8rNoQ/h14=
+/lxBTgyazJ7iALf5U-XMpVnuTG7KsAoGYAY-rtRx7gRA">https://doi.org/10.1111/j.136=
+4-3703.2010.00617.x</a>=0D<br><a href=3D"https://u19268662.ct.sendgrid.net/=
+ss/c/YVsoJKI_vQImeTus12HuSrVIwaaEefRn0HSI9sf6-Ipcd09epE2gVWj9fdeeALi5/42v/Q=
+oGMmXzZTV6fkrIrA8rNoQ/h15/HEaqf_l2C0Hj0gHV5XS7_6xKqHYnhjAuT9y8012nt5I">http=
+s://gd.eppo.int/taxon/1TOBRG</a> and via=0D<br><a href=3D"https://u19268662=
+.ct.sendgrid.net/ss/c/TUIVIg4PCmni5tP3Q8lzBUIQ2-_3rvKBn8M1dPRNneLqv3FuxQlU5=
+sLFPhcj2tIP/42v/QoGMmXzZTV6fkrIrA8rNoQ/h16/QCP-z3QAUHZSbX87WOGO5ZJllOAfkk03=
+MhTUfF7g5b0">https://doi.org/10.1099/jgv.0.000884</a>=0D<br>Spraing and ass=
+ociated viruses:=0D<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/TU=
+IVIg4PCmni5tP3Q8lzBQq1LG6jnz-CGfim__QcTR97gdirCbpemaWpJjluGMHw/42v/QoGMmXzZ=
+TV6fkrIrA8rNoQ/h17/zh70Pi_XHxTcCE4ERFXRl2AuzYvYEM6E5ElYaYivbNw">https://doi=
+.org/10.1111/ppa.12141</a>,=0D<br><a href=3D"https://u19268662.ct.sendgrid.=
+net/ss/c/TUIVIg4PCmni5tP3Q8lzBbdauzjav5K-ZXfYx23IzEhwCGd5inKL_keBlWZcEX9wHQ=
+DoYMqO6-SJ6CuuRIEaeQ/42v/QoGMmXzZTV6fkrIrA8rNoQ/h18/21i3oQ8-Au0T0UkMRW9CCqH=
+bSC-E6g9KM0h83vFVER0">https://doi.org/10.1079/pwkb.species.54208</a> (with =
+pictures),=0D<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/TLh_csrC=
+34X_iXpbYoMam8RH6GZkjgfDX21RbyNmY5-37L33WOwYmNVaUdQfSii4TfTVT2ruSjx1LBIxaTW=
+rtUMMLahkSuxIa1E_AB5aRF77mwCxGmsc1O4GI-dcEgUnYTr7RJQlEZD0G2rRa8Q34olrxGIKN4=
+jmICPdOHXeGjM1FXSLgvtNFrF9muCcLqFJ/42v/QoGMmXzZTV6fkrIrA8rNoQ/h19/NJ2wpgLIo=
+HNzCXSv0D4dJc-s893HKCNdBBhSxBL9QXU">https://www.hutton.ac.uk/research/group=
+s/cell-and-molecular-sciences/virus-research/host-pathogen-interactions/spr=
+aing-trv</a>,=0D<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/TLh_c=
+srC34X_iXpbYoMam7sHn9m2NnVTs_MRymuz4EQzsjNQJhaoi7vBjJbo2s4H2OLWP_wo5Vvhu6x0=
+cI8yDoe0d_Q7bTT1AtC-LxyiPtQ/42v/QoGMmXzZTV6fkrIrA8rNoQ/h20/qAGPC77-qEkeq16y=
+SR8Oo16q50KDZljPamS8s-oAdc8">https://www.thedailygarden.us/garden-word-of-t=
+he-day/spraing</a>,=0D<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c=
+/TLh_csrC34X_iXpbYoMam0LJT5pZh48pwIKik6CbGuiy0imy6yHqlItrqF4jyeKyjS7hUOZDrv=
+w0Zycylvf-NfFa5HLFgIpqE8Sr9-rMcBhOAHXSKY14D4kLRswLrBM4YlVpev8yd9RqYXTpI30Sz=
+li5OTbTY4_SkH8_QQAEgyM/42v/QoGMmXzZTV6fkrIrA8rNoQ/h21/3fVbZuEqnLx-j1Hd4LRHt=
+U3Ms1UYqKF7NR8EYfDoTko">https://www.hortweek.com/fera-plant-disease-factshe=
+et-spraing-disease-potato/fresh-produce/article/983824</a><br>(subscr.) and=
+ via=0D<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/0oc7vsq5mmLjPw=
+Os4PjMh-oJ_LTpX7agOVV5wjS2gTjzt6H13PMNjJwcr73N3ov0QVoO9kYN3z7reVDk9eJIGOUnb=
+tB8PR3S75lDDiE1baZZkhJvM7ud-iJZV_p1_isX/42v/QoGMmXzZTV6fkrIrA8rNoQ/h22/oSsN=
+i-n2OXEpz_HO2H2ktfudlSqulhUAbhde7HUjpwA">https://potatoes.ahdb.org.uk/knowl=
+edge-library/potato-disease-identification</a>=0D<br>Virus taxonomy via:=0D=
+<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/G6bs_HUSl8zPcwlV7WCHD=
+jPCMd7jabiDodTNfmL7uqJTMCwHAEfDzPwDASr54AdS/42v/QoGMmXzZTV6fkrIrA8rNoQ/h23/=
+OAW0x4uk48j37hcuI42vU9YG7XjGqbVRHBo7xZdTrpk">https://ictv.global/taxonomy</=
+a>=0D<br>- Mod.DHA<br><br>ProMED map:<br>South Africa: <a href=3D"https://u=
+19268662.ct.sendgrid.net/ss/c/sSnCkKCWBvais3EuVAOvgy2WOIX7pp1nXnn4AbwuQ3Z6W=
+bkfhqXYXU-aTMPJ8yTheaTnMAEw8DuYF-Ybyp0U_A/42v/QoGMmXzZTV6fkrIrA8rNoQ/h24/U9=
+DlniUj3ijO2q64YW-rEYSOujl3owMlKlyYEt641-k">https://promedmail.org/promed-po=
+st?place=3D8714153,179</a>]<br><br>[See Also:<br>2019=0D<br>----=0D<br>Pota=
+to mop-top virus - New Zealand<br>http://promedmail.org/post/20190820.66307=
+25=0D<br>2018=0D<br>----=0D<br>Potato mop-top virus - New Zealand: 1st rep =
+(CA)<br>http://promedmail.org/post/20180925.6049697=0D<br>2014=0D<br>----=0D=
+<br>Potato viruses - Greenland: 1st reports<br>http://promedmail.org/post/2=
+0141126.2992687=0D<br>2007=0D<br>----=0D<br>Zebra chip disease, potato - US=
+A: research <br>http://promedmail.org/post/20070530.1751]<br>..............=
+...................................mo/dha/may/jh<br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3DwMcKYB6MHcrGAsokMchRUGde7zjGVC7t7l5V6zBIllloMDAwdT=
+AwMGy-4JPVytpg79oP9QnOaPHhhHXdeTZB_2AYWrTjX0rpf7q6B6ejT02l4j3z4gKtyugnNYV5w=
+n03kvyT49GliqLgOoPY0193dC2UknYC_243Oe2MGkQf9H8vyRQvE7J-foUlWdOKwx6RVXrkuIiy=
+QDCV9BqhVkx9bmpkaP-eTmy5s2lL9WH1xNz7MqEhyKqi8UNRX-qN8rggFr1SN5HXuBDXk0M0NKo=
+XOd-hX5W4CGE61vgp6wEgOpq7UostLxlG2-IQAMzlfZ0BfafsPONxpRmTHqQXh5kwzYhMnMYtLI=
+M-wKUyTI2br1DKNlTb7sh3_JdgwjdJBhlS7fSemvqN4R_ydpL_2qjvt5tc6i3j0SKvW87u_D_vW=
+i14a37yTgdMsjLBOe7LFBJQXJKEBtJgzYL8jsOh4lAgVF1XrER0AFy85NGYGcN07-hhDYCDcuuf=
+zeKbV_7vDyKxoCVc1QFE3Fvp4zUv-gujj75L6xapv0ZqOHbqAbrT9tOwIDax9EdjtNi0Ocw64Kb=
+i1TJNgKmr-9bLIS-qhuV5X_uw3mvmRFD6j57OLY9c19H14ok-J78FzvYsJcfZ1uOkb_Q-g1khQy=
+X31F4PGgCpBW9E6y5_ysEEHM0CvXXpgcjfqZBVRPG79mgfxpB6DmlfdK4kgU4pns7nbtb6AqbDA=
+wy2YNjmYWsAZvie8LGY_PlEZ0nXwKOtbeiYYgPlu44XIRxT60jjuwwPKZZYGG8AsneTb6amF_Yv=
+h1CAqDhoXojZZ5AUO_4oYJ3M2wodfm2rrEB8hmAxLxIUjdN4nOoHpzMx-71sbUu_AhH-456Stkg=
+noQugAr1YYl1xZ8s2R62s_sSLjlrGWaAc25_PDlsXaiAxs04L_OWBFfDvzfUygmT-ipLIZzkaKT=
+K0XQ08bur_4Oth_Ueo6MhxzCFyEtGwG1pg9EPiFNedKF9SYTw9Y_T7KepewNIeCE4Vp5ND0VNiA=
+UyR0OtCZrld4b2U4Ep3xDBha5tRZeT8HTgn9SYz5Lr6KoGEgCVFrAZ4VzysT8PhPKyvPFYcJKPQ=
+RYsR_2OAQXqIuo7Cg9Ng0K1J3_TeGRq2jKE5grF9tZl-EFA6vf_-5kDPEOKxyarfXn4x7cf-q3O=
+NwsRbaZWNbU9pp8wR8NrCqXkQdhaedAURswUeKk-9ej-BnRfSXps=3D" target=3D"_blank" =
+class=3D"Unsubscribe--unsubscribePreferences" style=3D"font-family:sans-ser=
+if;text-decoration:none;">Unsubscribe Preferences</a></div><br>############=
+################################################<br>#######################=
+#####################################<br><br><img src=3D"https://u19268662.=
+ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/42v/QoGMmXzZTV6fkrIrA8rNoQ/ho.g=
+if" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"height:1px !imp=
+ortant;width:1px !important;border-width:0 !important;margin-top:0 !importa=
+nt;margin-bottom:0 !important;margin-right:0 !important;margin-left:0 !impo=
+rtant;padding-top:0 !important;padding-bottom:0 !important;padding-right:0 =
+!important;padding-left:0 !important;"/></body>
+</html>
+--83e7cc88e4d46322ad7193afc4e0acdec29497c0df0da022756b96228b36--

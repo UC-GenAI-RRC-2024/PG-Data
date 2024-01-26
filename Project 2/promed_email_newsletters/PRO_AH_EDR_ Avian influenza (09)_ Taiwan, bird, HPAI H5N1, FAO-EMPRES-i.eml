@@ -1,0 +1,486 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a05:640c:2d08:b0:1ee:5ffb:29ea with SMTP id p8csp811278eiu;
+        Tue, 23 Jan 2024 14:32:20 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IE/Pp1JEF5uVD4LEQnHMjG2IDY8MjmTZw+FyDAqIdGf3NNUcJnNaZxXooIWHXxOtl/rRF3B
+X-Received: by 2002:a37:ac0d:0:b0:783:4a3a:e6bb with SMTP id e13-20020a37ac0d000000b007834a3ae6bbmr6952141qkm.60.1706049139767;
+        Tue, 23 Jan 2024 14:32:19 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1706049139; cv=none;
+        d=google.com; s=arc-20160816;
+        b=hMMpN5fEH8eUgMAWH01uMUUjeHNKN9vlbEwbLGH0EUEtL1S+8izSv2LuSV+mXC7iMr
+         U8d0kR1L3np7Ip0kI8etorwFoO0HUdgEhXSa5VebW23U9v29c+ABuQXAg19KQKfTldCw
+         5BSChcdvCClfP7f3vyur0bJ5SIvokBxncQjByoge92+7YDSk12UJzbGnOuGGrvmS2C8D
+         eYoacJCbpEnk7yjVvwmQ+VleF8FgYIvA0rOKUljECmGOEXqpJFuuyTelUZ1Jl1aXvSAl
+         1rAcRli1hkqMlRGE/iadd8JIrek7BEP1ArxtLQyXTvp0fSBYINFGntBSClAIlJCpw5yZ
+         zupw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=CrBYEPUGZnlU3G0ly9H0ei6WYh7yxlitx+el+4SSO/M=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=IS22l5pqIzEWnUOqOvMjypWCNmqYuQwGyF4EzdQDGx10Q6Y1hIGkca8IfkSpmxJ3s+
+         aUF+oZ2/mPa3koToGTgPxPtxvhSfC75XNm/ATxe6PJ6KP4VSnUm9yZL2iroRsi6Re1hl
+         n3TWKuUQ0GGIsTCTe43Tr8M8oZUQPJDw3LLyuaqA6P9KTSUVH7PuF/3yZUSEOMWhdeqy
+         2W3MKSgKRbX7T4W3Q8v/JPDq86H3KUBXvueoBBN/hNvehE3F//FLQ+rRN7BlvoLYxAFR
+         MFr9UC1ondHk+t4XtFO2iEXIjL5XzBL23yK8WiKM90Z4Iq6tdpIbRCzfLJfqJlTbXKxB
+         NhGw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b="DXn5T/vg";
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=xo5nLpng;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id c21-20020a05620a201500b007831c2a0176si8229029qka.477.2024.01.23.14.32.19
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 23 Jan 2024 14:32:19 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b="DXn5T/vg";
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=xo5nLpng;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=CrBYEPUGZnlU3G0ly9H0ei6WYh7yxlitx+el+4SSO/M=;
+	b=DXn5T/vgwupWCgyMxfAEXUYJcpB/9ZpwQd4AEMhEfWsxu2Oc362VT7Y7L2FU2ooxpZhg
+	B8yAjoZlN1OwaKV9sfOG3scb2Pz8CSEp1fPYDXJ/ZCJWnLMqaeEBeBd6eGwNmlkIJ4PX73
+	Wv9rhdphoHStd20TIaq3wSJRNatNy0EJMmbLeHfr9Soevs6KBHSb4iZ8aPjK4fsiZEGYRo
+	PA/D8u3SaG0KAQ4B1x274fmfEF+gjstDdOFCWwY+d18qWpaLOYaHQbBzHWgOFAbXUzGEQP
+	MFtK0r637nLgT+sN7bL5J/eieMD9qFW4bgaJSZ3rimleztIwdCqfZYezDYsinC7g==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=CrBYEPUGZnlU3G0ly9H0ei6WYh7yxlitx+el+4SSO/M=;
+	b=xo5nLpngssYdsk5UyY0Agfxs0i8c2/djQ0vVfK049Atde+ZWpxfSb5jmQCYbUc8PFxtG
+	4gDpq1GJ+ROdZkof3+aQrNBkn0vb3d5aBMV0JtLKJD3dMbPrcRAvgNyf9Sz12CdAnmfH3P
+	XpFHjyAnkQhkpKQsyWyBbKPukbz+w25nk=
+Received: by filterdrecv-987c56d66-cznqm with SMTP id filterdrecv-987c56d66-cznqm-1-65B03E70-41
+        2024-01-23 22:32:16.752482817 +0000 UTC m=+8481047.709065654
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-23 (SG) with HTTP
+	id T8ynDp7kQTCLGxvl4nxBPA
+	Tue, 23 Jan 2024 22:32:16.556 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=022f4463105fbd97beae7ba4818a68f9d64c3a293b913821a333540c532a
+Date: Tue, 23 Jan 2024 22:32:18 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <T8ynDp7kQTCLGxvl4nxBPA@geopod-ismtpd-23>
+Subject: PRO/AH/EDR> Avian influenza (09): Taiwan, bird, HPAI H5N1,
+ FAO-EMPRES-i
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iBYySrBNswmDPcQPHn+Rifszne0nfX7w88oZFa1?=
+ =?us-ascii?Q?XiPHzdCXSA5SPPG4NfpORh=2FdOr=2F69Wt0HAvvrEE?=
+ =?us-ascii?Q?KbPsmcq1qkdSVBJODzk8=2FSrAHBP17jxLhx0Ogot?=
+ =?us-ascii?Q?EW3ygsNkm75eG9jXbr76DWQ8df21e4VTuhcSA1Q?=
+ =?us-ascii?Q?obdUthGLsi0d+=2FA=2FXLWraXdPxubqzHMbcjOHoK?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUiShGf=2FO8XJWpH34Od4Nd?=
+ =?us-ascii?Q?fxXa6jil96uRcJkF+N+LeVnO1tx80ddOyoyOo=2Fc?=
+ =?us-ascii?Q?Brxcl3ERAm0cOY743=2FFH59DWiSf5OzXORh1DLKt?=
+ =?us-ascii?Q?hb1NMKty3PsA5ju0ZzxCrq1WQuZSEQf=2FJlWtgqv?=
+ =?us-ascii?Q?cZmsyCHlNUZsDWJZgdgrMG=2FffZC16WnAUlwWL02?=
+ =?us-ascii?Q?1ICMYgX8BAD8Toaj0YyRK2d3v3ix9h50RMadQko?=
+ =?us-ascii?Q?zECSjaCMRE7=2F4hKlH0ZrXp8KAtU1PH3zgD=2FWfJV?=
+ =?us-ascii?Q?veS6dyF+ylmp8ovg2SDjWR1Lro41fWPE7o0in66?=
+ =?us-ascii?Q?8KOfZm9Bb2K6eq7SHvMYB82X=2FskcOIcFKsIVNrG?=
+ =?us-ascii?Q?Ht93qKHSoHkiWDwBtiy6e4gCTbe+u9YHN7Y+nbX?=
+ =?us-ascii?Q?zDEdnaKDGM8P3R=2Fh5HdgEzxZNPAKKBaYflBAQY=2F?=
+ =?us-ascii?Q?dpIw6TJBpY2O8lJq+7+aCvHJ3AVNVfh4c21dBRK?=
+ =?us-ascii?Q?f8WRuB+2bAfBaxuCkoIFkkBJEzrDqqFHgIYM+YW?=
+ =?us-ascii?Q?gX9rg=2FnknM+q+cBZ3LfEJRsLN16w5AZdBUY1W6X?=
+ =?us-ascii?Q?Umk3w7tqN3CSt5psz=2F+6nlxZAS5RsQa1Z+LlNtD?=
+ =?us-ascii?Q?7VlDNs0qBzIAYiyBn53x1rcRSrX+wWlw9gIoGAM?=
+ =?us-ascii?Q?7dxAM2PSWSqOxOopgGH=2FkTlHRTTmMmoazs5U8KD?=
+ =?us-ascii?Q?xAJmcw5m1sT5Ia+2F9z8+fmwGC7x1Oth+Oeotzo?=
+ =?us-ascii?Q?oJenR+DfNr1LK0utfMwbKGmVmv4Qfh4B4akMSC6?=
+ =?us-ascii?Q?R=2FWKWhQT3mKpMJccfWBGv=2FiZPQ=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2EfbANSjtHb?=
+ =?us-ascii?Q?4Opdul2Nd3KR=5F9fW1OKJvrULF=5FHsbT-IERoMDAw?=
+ =?us-ascii?Q?dTAwMBFv1TWYXmpM6J8Ed9RlYPJdDNk0NnAsKgK?=
+ =?us-ascii?Q?8hkhiEg-ukIxb8=5FvbUe5MqtF5GQU0kRSIaBnorE?=
+ =?us-ascii?Q?TnMVeQ7-J0MQWbsjY2wnue2mra4F2x6cxS3ry-5?=
+ =?us-ascii?Q?CwcRbREzlMQSI4tqA=3D=3D=2EtzDYAx=5FUS7VHmbP0xaN?=
+ =?us-ascii?Q?JJZ8gBTfQTJ4EN3H8GQjsypBoMDAwdTAwMC-p--?=
+ =?us-ascii?Q?Mxb3XRLpJpZkmlpcFEqZAsfZiMfXZAmqUkJEW2S?=
+ =?us-ascii?Q?9f7QOvfSTxeW1RjhN0E4wVfOmSM=5FNt5UI974N7T?=
+ =?us-ascii?Q?EprawIr-3e9jpyIA6=5Ff=5FbD9kqOkZfttniBn3vti?=
+ =?us-ascii?Q?V-l1=5FnJh2X=5FjSrmwxQey4VKcwqg5-pJj4GNwENe?=
+ =?us-ascii?Q?NFsjexh2OAtGAGUzJXqcE86rkoIKK4teT75U-W8?=
+ =?us-ascii?Q?7d-fTR4LdsU625R6lhv9U0lgHq7adAFl4bFRz0G?=
+ =?us-ascii?Q?sZw4A0LBh=5FICc-Z1QGvzYXFZ93cPENYkFD37U3N?=
+ =?us-ascii?Q?I19UwCLZLq3zX3xU59e2J6AinJwREz=5FU071LCjw?=
+ =?us-ascii?Q?1Lacm-zVO84z1HDfblPsZcRUIh=5FJFtsBW4pI3n4?=
+ =?us-ascii?Q?ld2F159QBtcoF45kwW-5dSkS=5FK=5FoXD4cy5UYEAM?=
+ =?us-ascii?Q?HldamLB8X6GhVNI2wGRo2E3dt7EA1jI7zl-5A0u?=
+ =?us-ascii?Q?rlHOpWHU3ljpbUs5DrXb9F8w5MlRySlVG0dXslT?=
+ =?us-ascii?Q?p4FLw-0scN2vqqvwGHaSPdN4zjx0CCu0DmBU=5F-k?=
+ =?us-ascii?Q?UxaF=5F7VPRrV2a1TJ-NHcbk1e6VMEPCXY8P768DW?=
+ =?us-ascii?Q?sNG07z6hEaQ1DIOEkXWwA=5FwXINo1vqVVcauxH6X?=
+ =?us-ascii?Q?r9axFqDBrG2zEj6EWjEejw=5FO0Dtb-t7Udpv=5FwDL?=
+ =?us-ascii?Q?k2i2AxJTpwP1IoJnnnjzvKzOzldUiX6wgj009-d?=
+ =?us-ascii?Q?E14jb--uRZMsBZPsPGwkcuBILa3Iy4948H3rc8f?=
+ =?us-ascii?Q?EnVBXAJ4jmEV=5Fjvug6d4365S4iPINequ1JF5hjE?=
+ =?us-ascii?Q?Z1RvOdPfDwws4ZZlD3UFbb2HJ5HUHY0QhYq3auZ?=
+ =?us-ascii?Q?nCV=5Fq9U3cA0ElIdS2gHH761RtFs8kTskXC4lhy0?=
+ =?us-ascii?Q?3yvtYLZy149gogteLDT53Wo5DB2KV13S7zpyzCL?=
+ =?us-ascii?Q?VqtfOBlJbsjP3VW8FHUDvcGd3OCiD3xNW3pi-hW?=
+ =?us-ascii?Q?i3SxOpYlagu6VYk89iyaMkg20E2utT-fvf0=5Fjmw?=
+ =?us-ascii?Q?i5aYkUpMrvACux73dVmcba1GbfOcMrHsKhGPRgd?=
+ =?us-ascii?Q?gkWTt1b33wNycutyCEVmZYJ0KZGA78e0WtveqKD?=
+ =?us-ascii?Q?ukXVkA=3D=3D=3E?=
+
+--022f4463105fbd97beae7ba4818a68f9d64c3a293b913821a333540c532a
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=us-ascii
+Mime-Version: 1.0
+
+AVIAN INFLUENZA (09): TAIWAN, BIRD, HPAI H5N1, FAO-EMPRES-I
+***********************************************************
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+[1]
+Date: Fri 19 Jan 2024
+Source: UN Food & Agriculture Organization (FAO)/EMPRES-i (FAO
+Emergency Prevention System, Global Animal Disease Information System)
+[edited]
+<https://empres-i.apps.fao.org/event-report/371350>
+
+
+General information
+-------------------
+Reported: 19 Jan 2024
+Observed: 15 Dec 2023
+Disease: Influenza - Avian
+Serotypes: H5N1 HPAI
+Status: Confirmed
+Source: -
+Outbreak locations: Taiwan (Province of China), Taiwan Sheng
+[The location and details of the outbreak can be seen via the source
+URL above.]
+
+Affected animals
+Animal Type / Animal Class / Species / At Risk / Cases / Deaths /
+Destroyed / Slaughtered
+Domestic / Birds / Goose / 9770 / 3132 / 3132 / 6638 / -
+
+--
+Communicated by:
+ProMED
+via
+ProMED-MBDS
+
+******
+[2]
+Date: Fri 19 Jan 2024
+Source: UN Food & Agriculture Organization (FAO)/EMPRES-i (FAO
+Emergency Prevention System, Global Animal Disease Information System)
+[edited]
+<https://empres-i.apps.fao.org/event-report/371351>
+
+
+General information
+-------------------
+Reported: 19 Jan 2024
+Observed: 4 Dec 2023
+Disease: Influenza - Avian
+Serotypes: H5N1 HPAI
+Status: Confirmed
+Source: -
+Outbreak locations: Taiwan (Province of China), Taiwan Sheng
+[The location and details of the outbreak can be seen via the source
+URL above.]
+
+Affected animals
+Animal Type / Animal Class / Species / At Risk / Cases / Deaths /
+Destroyed / Slaughtered
+Domestic / Birds / Goose / 2700 / 296 / 296 / 2404 / -
+
+--
+Communicated by:
+ProMED
+via
+ProMED-MBDS
+
+******
+[3]
+Date: Fri 19 Jan 2024
+Source: UN Food & Agriculture Organization (FAO)/EMPRES-i (FAO
+Emergency Prevention System, Global Animal Disease Information System)
+[edited]
+<https://empres-i.apps.fao.org/event-report/371349>
+
+
+General information
+-------------------
+Reported: 19 Jan 2024
+Observed: 26 Dec 2023
+Disease: Influenza - Avian
+Serotypes: H5N1 HPAI
+Status: Confirmed
+Source: -
+Outbreak locations: Taiwan (Province of China), Taiwan Sheng
+[The location and details of the outbreak can be seen via the source
+URL above.]
+
+Affected animals
+Animal Type / Animal Class / Species / At Risk / Cases / Deaths /
+Destroyed / Slaughtered
+Domestic / Birds / Chicken / 12 649 / 1200 / 1200 / 11 449 / -
+
+--
+Communicated by:
+ProMED
+via
+ProMED-MBDS
+
+[As mentioned in Focus Taiwan News (dated 18 Jan 2024), "a goose farm
+in Yunlin was confirmed Thursday (18 Jan 2024) to have been infected
+with the highly pathogenic H5N1 avian influenza virus, leading to the
+culling of 1477 geese, according to the county's Animal Disease
+Control Center."
+
+"Inspections were carried out after the farm in Dongshih Township
+reported to authorities on 14 Jan 2024 that its geese had died in an
+abnormal manner, the center said. The culling began immediately after
+results of sample testing confirmed on Thursday (18 Jan 2024) that the
+farm's geese had been infected with the H5N1 virus, according to the
+center. It was the 2nd case of avian flu reported in Dongshih since
+January this year (2024), with the other being a chicken farm, where
+19 100 birds were recently culled"
+(<https://focustaiwan.tw/society/202401180025>). - Mod.TTM
+
+ProMED map:
+Taiwan: <https://promedmail.org/promed-post?place=3D8714413,193>]
+
+[See Also:
+Avian influenza (08): South Korea (KG, KB) birds, HPAI H5N1, H5N6,
+FAO-EMPRES-i http://promedmail.org/post/20240116.8714276
+Avian influenza (06): Asia (China, South Korea, Japan) HPAI H5N1,
+bird, FAO-EMPRES-i http://promedmail.org/post/20240111.8714170
+Avian influenza (03): Japan (GF) poultry, HPAI, South Korea (CN) HPAI
+H5N1, duck http://promedmail.org/post/20240107.8714113
+2023
+----
+Avian influenza (201): Taiwan (TP) bird, HPAI H5N1, WOAH
+http://promedmail.org/post/20231228.8713961
+Avian influenza (195): Taiwan (YL) HPAI H5N1, poultry, FAO-EMPRES-i
+http://promedmail.org/post/20231215.8713738
+Avian influenza (35): Asia (Taiwan, Nepal) backyard, wild, HPAI H5N1,
+WOAH http://promedmail.org/post/20230303.8708711
+2022
+----
+Avian influenza (234): Asia (Taiwan) poultry, HPAI H5N1, WOAH
+http://promedmail.org/post/20221213.8707231
+2021
+----
+Avian influenza (186): Taiwan, poultry, wild bird, HPAI H5N2, H5N1,
+OIE http://promedmail.org/post/20211228.8700533
+and other items in the archives]
+.................................................ttm/may/st/rd/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3D5_WCeOnqmoPGA-msPqSNLvNfUqNQqxM8-_hxz5yP0hloMDAwdTAwMAUsFsb=
+MGC0knbL7lm-wB67h3MNEl78RDLcFfOsIWKZEuYV2KNYEB5nJz6vOGKH4Pb_QT4Fd2vM6Q_-2gb=
+TvP4lCwQyaucTqNt-YpHSRVHfJH6Ovt4-Sv5uGO3kaHeqULdHfPivdg9mN0uBT7A51NwfS0Xre2=
+JStw9QwEebn3jnmUBqOqWRPC7cKCZ7QySS-3p7taGQg8BjYogSsLYWsGv9iiEnQ-6Q2NmnqmJHs=
+DkX0wZ3qeGf33MH02IbF14wcl3b5ylULMOVApK4IAhlxTXtMikuy9izcoafPo3RWDQ3-WVyTpw4=
+nrPvWZQaepV7ysNiuAYAqCViaGyhpFNC_ZvQOhADeqLhr04EQk7E_zvdMS2POhIW7gDXRNW7Wnx=
+nZctCKlD6_sqvwly6cFg-wN2HAUXWbOjmrPZtf586LNunD10Ajh-bviAaYBr703F3C__sxH2PPm=
+iyCqXKuTQcHUfcl1UDbG8GJByIhTxFTh4aDHM3rqeP-OAAXToNx3E26JJ6Z3i35ej_hwGywkNLx=
+vy3db9rQVbHfWgFg0atueuj_a5k0TZLlTSe9Ckhi5j6x_X0I8Bc3z0A1SdWHM0IphJwVB_ii6nM=
+PpJmdDwHCcYsaUYpBl_QRp770Vf4NYlKXq2Wg34rifmwBjBi1NC61aZ6uKmckQIa5hM5V7INJML=
+jJLvbE3fNjs77rflY-uedpkqYrD_ZfGQUDBuOwDd-GrAelGaLp0PtqOekIJGfYdF1h-YbpB2vEX=
+VLq8qRVwq85UWjB6WhBlD_RdElhUr0xol_aonyB3LmLI6dY316b-1opzAMh0HwNAmlzONRZcR1G=
+RIordXVkL7aESOAJpPiWTUVxbgiHqS3bIaKiPSzFJku3HlQZK9RBhVWDuAZ9nPbZG2xFWXwbS5e=
+tgF9Li1zOm8I2Qt09dJ6D7myum_OBaWYHsUXCFoxM-drbaUbJPlEw_KPEDZ9_LfDvXwiTYI-bzK=
+NrHi30b4nDMihf1bicPcWWSFgTFW2A99vE0TiIslma7hW8VaoeOh9WF9qV1SsiG854QMRSqKKOT=
+b7aJ9Lz9tydq13kBUNXAlSgab0xMuaCltL-il2amye8c26vemlhLtAJ2x2g0wpHw2nKN4f-wsyP=
+lyuNHREOzW2fL0kJf-rbPj5DK9AAPBPiQ_1alRQssjml83G6OlKHsiKWTZmncdsZ )
+############################################################
+############################################################
+
+--022f4463105fbd97beae7ba4818a68f9d64c3a293b913821a333540c532a
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>AVIAN INFLUENZA (09): TAIWAN, BIRD, HPAI H5N1, FAO-EMPRES-I<br>******=
+*****************************************************<br>A ProMED-mail post=
+<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tis=
+IijpefK5PNjW-mL-YZGnfgDOxU1G3gjwnPSi2Tfv3HA/438/lsvxWuVjR9uDah0z_DrE_g/h0/b=
+BBzEwwCcID7edMUxxuvfY9AndG6GS1rDYT17VDbLuc">http://www.promedmail.org</a><b=
+r>ProMED-mail is a program of the<br>International Society for Infectious D=
+iseases<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrP=
+It48tisCT5tpD4Upm3qyMCbcYSQvc/438/lsvxWuVjR9uDah0z_DrE_g/h1/3pq8_9L7SXlf7JC=
+UhERc0ZF2Zsv7iwdlTtRImnAG-0g">http://www.isid.org</a><br><br>[1]=0D<br>Date=
+: Fri 19 Jan 2024=0D<br>Source: UN Food & Agriculture Organization (FAO)/EM=
+PRES-i (FAO<br>Emergency Prevention System, Global Animal Disease Informati=
+on System)<br>[edited]=0D<br><a href=3D"https://u19268662.ct.sendgrid.net/s=
+s/c/u6Jy221DtLTd6phwYNECnW0YA46JLkhEyaOXFIXO6C3rgikrSAiSv8L48xwhly3wgSNx4cL=
+Yb1jAs2C9eKKFbA/438/lsvxWuVjR9uDah0z_DrE_g/h2/r1z9oR2SuR26jm1EToMkXaeHzySRO=
+z7r1dMNxdIRLoM">https://empres-i.apps.fao.org/event-report/371350</a>=0D<br=
+>=0D<br>=0D<br>General information=0D<br>-------------------=0D<br>Reported=
+: 19 Jan 2024=0D<br>Observed: 15 Dec 2023=0D<br>Disease: Influenza - Avian=0D=
+<br>Serotypes: H5N1 HPAI=0D<br>Status: Confirmed=0D<br>Source: -=0D<br>Outb=
+reak locations: Taiwan (Province of China), Taiwan Sheng=0D<br>[The locatio=
+n and details of the outbreak can be seen via the source<br>URL above.]=0D<=
+br>=0D<br>Affected animals=0D<br>Animal Type / Animal Class / Species / At =
+Risk / Cases / Deaths /<br>Destroyed / Slaughtered=0D<br>Domestic / Birds /=
+ Goose / 9770 / 3132 / 3132 / 6638 / -=0D<br>=0D<br>--=0D<br>Communicated b=
+y:=0D<br>ProMED=0D<br>via=0D<br>ProMED-MBDS=0D<br>=0D<br>******=0D<br>[2]=0D=
+<br>Date: Fri 19 Jan 2024=0D<br>Source: UN Food & Agriculture Organization =
+(FAO)/EMPRES-i (FAO<br>Emergency Prevention System, Global Animal Disease I=
+nformation System)<br>[edited]=0D<br><a href=3D"https://u19268662.ct.sendgr=
+id.net/ss/c/u6Jy221DtLTd6phwYNECnW0YA46JLkhEyaOXFIXO6C3rgikrSAiSv8L48xwhly3=
+wUb-2BheH-bSaUM_W_nt0Xg/438/lsvxWuVjR9uDah0z_DrE_g/h3/tnzBupUHUHHJovisxJNG_=
+z-oUkvAs0aubkh6jA_3nZo">https://empres-i.apps.fao.org/event-report/371351</=
+a>=0D<br>=0D<br>=0D<br>General information=0D<br>-------------------=0D<br>=
+Reported: 19 Jan 2024=0D<br>Observed: 4 Dec 2023=0D<br>Disease: Influenza -=
+ Avian=0D<br>Serotypes: H5N1 HPAI=0D<br>Status: Confirmed=0D<br>Source: -=0D=
+<br>Outbreak locations: Taiwan (Province of China), Taiwan Sheng=0D<br>[The=
+ location and details of the outbreak can be seen via the source<br>URL abo=
+ve.]=0D<br>=0D<br>Affected animals=0D<br>Animal Type / Animal Class / Speci=
+es / At Risk / Cases / Deaths /<br>Destroyed / Slaughtered=0D<br>Domestic /=
+ Birds / Goose / 2700 / 296 / 296 / 2404 / -=0D<br>=0D<br>--=0D<br>Communic=
+ated by:=0D<br>ProMED=0D<br>via=0D<br>ProMED-MBDS=0D<br>=0D<br>******=0D<br=
+>[3]=0D<br>Date: Fri 19 Jan 2024=0D<br>Source: UN Food & Agriculture Organi=
+zation (FAO)/EMPRES-i (FAO<br>Emergency Prevention System, Global Animal Di=
+sease Information System)<br>[edited]=0D<br><a href=3D"https://u19268662.ct=
+.sendgrid.net/ss/c/u6Jy221DtLTd6phwYNECnW0YA46JLkhEyaOXFIXO6C3rgikrSAiSv8L4=
+8xwhly3wzKPmG1Z0wMGAIO5DVpUj1A/438/lsvxWuVjR9uDah0z_DrE_g/h4/7AxrTGZWlCbIw6=
+A7pFY3tiLW4cgHAyjlcePtxVP6VTE">https://empres-i.apps.fao.org/event-report/3=
+71349</a>=0D<br>=0D<br>=0D<br>General information=0D<br>-------------------=0D=
+<br>Reported: 19 Jan 2024=0D<br>Observed: 26 Dec 2023=0D<br>Disease: Influe=
+nza - Avian=0D<br>Serotypes: H5N1 HPAI=0D<br>Status: Confirmed=0D<br>Source=
+: -=0D<br>Outbreak locations: Taiwan (Province of China), Taiwan Sheng=0D<b=
+r>[The location and details of the outbreak can be seen via the source<br>U=
+RL above.]=0D<br>=0D<br>Affected animals=0D<br>Animal Type / Animal Class /=
+ Species / At Risk / Cases / Deaths /<br>Destroyed / Slaughtered=0D<br>Dome=
+stic / Birds / Chicken / 12 649 / 1200 / 1200 / 11 449 / -=0D<br>=0D<br>--=0D=
+<br>Communicated by:=0D<br>ProMED=0D<br>via=0D<br>ProMED-MBDS<br><br>[As me=
+ntioned in Focus Taiwan News (dated 18 Jan 2024), "a goose farm<br>in Yunli=
+n was confirmed Thursday (18 Jan 2024) to have been infected<br>with the hi=
+ghly pathogenic H5N1 avian influenza virus, leading to the<br>culling of 14=
+77 geese, according to the county's Animal Disease<br>Control Center."=0D<b=
+r>=0D<br>"Inspections were carried out after the farm in Dongshih Township<=
+br>reported to authorities on 14 Jan 2024 that its geese had died in an<br>=
+abnormal manner, the center said. The culling began immediately after<br>re=
+sults of sample testing confirmed on Thursday (18 Jan 2024) that the<br>far=
+m's geese had been infected with the H5N1 virus, according to the<br>center=
+. It was the 2nd case of avian flu reported in Dongshih since<br>January th=
+is year (2024), with the other being a chicken farm, where<br>19 100 birds =
+were recently culled"<br>(<a href=3D"https://u19268662.ct.sendgrid.net/ss/c=
+/1SBR61Kp8oRewHa1jScxqTeBAIOp1NaxkNOe_Z1EGlHAcsC0J5ZtAZLrc_7Yb5WzCRCWm-XfxD=
+cGvvj23ZKD6g/438/lsvxWuVjR9uDah0z_DrE_g/h5/wP85eLnjBo-vLl2rDclItJr9Va7rl-0A=
+K4sk-1_7P4w">https://focustaiwan.tw/society/202401180025</a>). - Mod.TTM<br=
+><br>ProMED map:<br>Taiwan: <a href=3D"https://u19268662.ct.sendgrid.net/ss=
+/c/sSnCkKCWBvais3EuVAOvgy2WOIX7pp1nXnn4AbwuQ3Z6WbkfhqXYXU-aTMPJ8yThC1gZoRj8=
+kks3Qn6yKrdd2Q/438/lsvxWuVjR9uDah0z_DrE_g/h6/s1S21o7EKxjf7e-GWG-04l5p0rDlBH=
+RZ88rEdXJSagk">https://promedmail.org/promed-post?place=3D8714413,193</a>]<=
+br><br>[See Also:<br>Avian influenza (08): South Korea (KG, KB) birds, HPAI=
+ H5N1, H5N6,<br>FAO-EMPRES-i http://promedmail.org/post/20240116.8714276=0D=
+<br>Avian influenza (06): Asia (China, South Korea, Japan) HPAI H5N1,<br>bi=
+rd, FAO-EMPRES-i http://promedmail.org/post/20240111.8714170=0D<br>Avian in=
+fluenza (03): Japan (GF) poultry, HPAI, South Korea (CN) HPAI<br>H5N1, duck=
+ http://promedmail.org/post/20240107.8714113=0D<br>2023=0D<br>----=0D<br>Av=
+ian influenza (201): Taiwan (TP) bird, HPAI H5N1, WOAH<br>http://promedmail=
+.org/post/20231228.8713961=0D<br>Avian influenza (195): Taiwan (YL) HPAI H5=
+N1, poultry, FAO-EMPRES-i<br>http://promedmail.org/post/20231215.8713738=0D=
+<br>Avian influenza (35): Asia (Taiwan, Nepal) backyard, wild, HPAI H5N1,<b=
+r>WOAH http://promedmail.org/post/20230303.8708711=0D<br>2022=0D<br>----=0D=
+<br>Avian influenza (234): Asia (Taiwan) poultry, HPAI H5N1, WOAH<br>http:/=
+/promedmail.org/post/20221213.8707231=0D<br>2021=0D<br>----=0D<br>Avian inf=
+luenza (186): Taiwan, poultry, wild bird, HPAI H5N2, H5N1,<br>OIE http://pr=
+omedmail.org/post/20211228.8700533=0D<br>and other items in the archives]<b=
+r>.................................................ttm/may/st/rd/jh<br></bo=
+dy>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3D5_WCeOnqmoPGA-msPqSNLvNfUqNQqxM8-_hxz5yP0hloMDAwdT=
+AwMAUsFsbMGC0knbL7lm-wB67h3MNEl78RDLcFfOsIWKZEuYV2KNYEB5nJz6vOGKH4Pb_QT4Fd2=
+vM6Q_-2gbTvP4lCwQyaucTqNt-YpHSRVHfJH6Ovt4-Sv5uGO3kaHeqULdHfPivdg9mN0uBT7A51=
+NwfS0Xre2JStw9QwEebn3jnmUBqOqWRPC7cKCZ7QySS-3p7taGQg8BjYogSsLYWsGv9iiEnQ-6Q=
+2NmnqmJHsDkX0wZ3qeGf33MH02IbF14wcl3b5ylULMOVApK4IAhlxTXtMikuy9izcoafPo3RWDQ=
+3-WVyTpw4nrPvWZQaepV7ysNiuAYAqCViaGyhpFNC_ZvQOhADeqLhr04EQk7E_zvdMS2POhIW7g=
+DXRNW7WnxnZctCKlD6_sqvwly6cFg-wN2HAUXWbOjmrPZtf586LNunD10Ajh-bviAaYBr703F3C=
+__sxH2PPmiyCqXKuTQcHUfcl1UDbG8GJByIhTxFTh4aDHM3rqeP-OAAXToNx3E26JJ6Z3i35ej_=
+hwGywkNLxvy3db9rQVbHfWgFg0atueuj_a5k0TZLlTSe9Ckhi5j6x_X0I8Bc3z0A1SdWHM0IphJ=
+wVB_ii6nMPpJmdDwHCcYsaUYpBl_QRp770Vf4NYlKXq2Wg34rifmwBjBi1NC61aZ6uKmckQIa5h=
+M5V7INJMLjJLvbE3fNjs77rflY-uedpkqYrD_ZfGQUDBuOwDd-GrAelGaLp0PtqOekIJGfYdF1h=
+-YbpB2vEXVLq8qRVwq85UWjB6WhBlD_RdElhUr0xol_aonyB3LmLI6dY316b-1opzAMh0HwNAml=
+zONRZcR1GRIordXVkL7aESOAJpPiWTUVxbgiHqS3bIaKiPSzFJku3HlQZK9RBhVWDuAZ9nPbZG2=
+xFWXwbS5etgF9Li1zOm8I2Qt09dJ6D7myum_OBaWYHsUXCFoxM-drbaUbJPlEw_KPEDZ9_LfDvX=
+wiTYI-bzKNrHi30b4nDMihf1bicPcWWSFgTFW2A99vE0TiIslma7hW8VaoeOh9WF9qV1SsiG854=
+QMRSqKKOTb7aJ9Lz9tydq13kBUNXAlSgab0xMuaCltL-il2amye8c26vemlhLtAJ2x2g0wpHw2n=
+KN4f-wsyPlyuNHREOzW2fL0kJf-rbPj5DK9AAPBPiQ_1alRQssjml83G6OlKHsiKWTZmncdsZ" =
+target=3D"_blank" class=3D"Unsubscribe--unsubscribePreferences" style=3D"fo=
+nt-family:sans-serif;text-decoration:none;">Unsubscribe Preferences</a></di=
+v><br>############################################################<br>#####=
+#######################################################<br><br><img src=3D"=
+https://u19268662.ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/438/lsvxWuVjR=
+9uDah0z_DrE_g/ho.gif" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=
+=3D"height:1px !important;width:1px !important;border-width:0 !important;ma=
+rgin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;=
+margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !importa=
+nt;padding-right:0 !important;padding-left:0 !important;"/></body>
+</html>
+--022f4463105fbd97beae7ba4818a68f9d64c3a293b913821a333540c532a--

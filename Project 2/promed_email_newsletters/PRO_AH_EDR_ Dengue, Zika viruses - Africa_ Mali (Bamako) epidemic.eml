@@ -1,0 +1,434 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a98:c004:0:b0:1eb:e128:bbe3 with SMTP id l4csp1210965eic;
+        Wed, 10 Jan 2024 15:01:16 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IGZyDEMbUzqvW6RovGbtcFCw7GE7796KEZix5sp3/qIgJPBVog7rCR7DU+/AYhodqZcdpqf
+X-Received: by 2002:a05:6102:1005:b0:467:da2b:4f19 with SMTP id q5-20020a056102100500b00467da2b4f19mr234927vsp.25.1704927675612;
+        Wed, 10 Jan 2024 15:01:15 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1704927675; cv=none;
+        d=google.com; s=arc-20160816;
+        b=vd+B8WPDCOdrYP936b3Ufe8GCbBl7+qVs3GvMgntcBY5E34RBVlNACN8Ju5nbiIfu1
+         zzqlyqRmSalwp9eHzB2/fzVlvm16H64UK+S+mz1lI/cxHrWGj+KMV47AehdIrL093jcV
+         iI1//NcgioX0vfIyHZC4cvOAE6IBsqIkbs5PBTRsNx4PXmuTzI7PdEH5YUJmqauMplJb
+         DlK28NPte+hU/+TO161zQcpaJVFVaqBuoZR2lr7H3hBZEB0c1g+iL28+izF54wkl/BzL
+         GuPynOzE/LurMvrUNfKgrvOT9JS/l0xIDikxPcnYSeUYX3y3axoMZh91xPbaXS+jIkLZ
+         MeUg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=MaX6380t8nX3m1jr8k0kpdDMPhQ9b6u/qDv1qKs++Cw=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=GA1LwxoEG6WtUZUD5Nd7KJdu7k7FARou5JHV9HtC3T742WHSFgkR4dLQZn7mw8ramG
+         +C0HvONtiNAhqh2NG6GcINFnqVmcaAwPdGTeSivwpNc0e0ER3ZRhxhU3jF066bUXBbjb
+         i6+403CnxkninvAmiIEii69i5+766JTSmjVsNIHgs5uiruulFumf5BxhaYG7u+V/Iypa
+         TDZ8v/sW+h0MJOmhNy1B8L79NnGly+iflTqoMV1Q1EyAbes/uGc7lLtV6qcl3dqikibn
+         uRYkMDQblmfj8lWJFUrrcNG4F9WR0COnv0vwgl1tpOIcHlepr7txTA77RT8Inn52AIeh
+         ZKHQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=vJ6wYuY5;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=iigIBz6u;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id jl20-20020a056102195400b004670c4ba899si794372vsb.82.2024.01.10.15.01.15
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 10 Jan 2024 15:01:15 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=vJ6wYuY5;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=iigIBz6u;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=MaX6380t8nX3m1jr8k0kpdDMPhQ9b6u/qDv1qKs++Cw=;
+	b=vJ6wYuY54thPLShgJ9pQij5sSZa/PbNaoJnDUnUKFjY0wsWOdDv3yNcde94X5UdriwCR
+	g0QLLlzdkOumLv6P9FYtWpbQzKPaFRlyE9jlVSAJIHgfB8uyyDLXNLOiw4zHC1MzTQjubF
+	rwmbXiF9VXyOZ3egpKFfGhvrVlxbaOnSUoNJEJeMEYpJhZOX0Nk6eiWjOiqwij2b6ZJq+P
+	KBoIrr2twjIit22ApktVXcKO6Djr4C7UuKuynFn3YWJ+DJv3YE4Pk5hZGcY1RCFcWn2DtB
+	ba+k7zeNhgnyzB//2tx7KGzFrQEGp0yN2CiPMkbbMbZs2g+vyPlWvqBpfoM8GRlA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=MaX6380t8nX3m1jr8k0kpdDMPhQ9b6u/qDv1qKs++Cw=;
+	b=iigIBz6uSGQLPUJslrpfUsL4zDJF3vX33uZt+/P9+a49n6q1DG4VO0+OHBqDdlIL5jw2
+	2Vtw6byvOPAaubwRPGqzK3HZsOtz3CjhV6g1MTJ1G28UbxLLzgrE8PrQqF4GX1GFu5VVnb
+	ojUr/jYs1qjnV3lcDLE+p6ct7xMqEWrQk=
+Received: by filterdrecv-647c69fd5c-qsw58 with SMTP id filterdrecv-647c69fd5c-qsw58-1-659F21B9-83
+        2024-01-10 23:01:13.334145369 +0000 UTC m=+7359553.942287620
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-8 (SG) with HTTP
+	id E6uRxaAzQ5iG1pNHdfwb6w
+	Wed, 10 Jan 2024 23:01:13.307 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=32ce363b163a752f70f88b0f43f15dae9df2f1af11ccf55d09517aec65f9
+Date: Wed, 10 Jan 2024 23:01:15 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <E6uRxaAzQ5iG1pNHdfwb6w@geopod-ismtpd-8>
+Subject: PRO/AH/EDR> Dengue, Zika viruses - Africa: Mali (Bamako) epidemic
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iB3g9I3cC4KVa5FtDeqem7iogGCwm8vhwUX5cE+?=
+ =?us-ascii?Q?l4XgO06=2FycgGd54yk9rgimfGMQG8ZkfttLr+zFy?=
+ =?us-ascii?Q?ybntXAFpHUxr+hLYGNw7GNzcVanRSbtwutxq7PX?=
+ =?us-ascii?Q?kNKYe0T19h+XZcKQl=2FVAAdAgvRteSv6zOqnwLss?=
+ =?us-ascii?Q?UtZ4cSqmfHwMV7lMXl9YCLcCyc5sIXLSmdIz8Y?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUiShGf=2FO8XJWpH34Od4Nd?=
+ =?us-ascii?Q?fxXa6jil96uRcJkF+N+LeVnO1tx80ddOyoyOo=2Fc?=
+ =?us-ascii?Q?Brxcl3ERAm0cOY743=2FFH59DWiSf5OzXORh1DLKt?=
+ =?us-ascii?Q?hb1NMKty3PsA5ju0ZzxCrq1WQuZSEQf=2FJlWtgqv?=
+ =?us-ascii?Q?cZmsyCHlNUZsDWZKl3vjI79v1QJ9awHprZyt2br?=
+ =?us-ascii?Q?iDEkHQrbNUQRKj32jR6tjmRpZlzI4z+HkgkM4FN?=
+ =?us-ascii?Q?4njpc6R9WdUrIVrgZ6YAHkeRQqM2iiM5qyX0kKq?=
+ =?us-ascii?Q?FbmigppVSiDht66BeRgfEjOqEtSWqNHwxR1IGQl?=
+ =?us-ascii?Q?kqHvj6e6Q0ezzHSgXkenPKlLiHgmRFeDetmBVoJ?=
+ =?us-ascii?Q?JGAz457iGmrreuMbaHtqARfmCmWwTqGzZYB7C4V?=
+ =?us-ascii?Q?5Iq9n5XmiJYHglYBMV=2Fgp7w6uC0wAD8Yo10XUwH?=
+ =?us-ascii?Q?kijCfzytsnCejmgsB12j1seWail3A73AvmftItY?=
+ =?us-ascii?Q?Km3jI94bI=2FoJqWEaKMuCb0S+CX8D8lpHVI0ud94?=
+ =?us-ascii?Q?TsoD8+ZMCHQQGRy0yDjLLKK1cXE+iG1jf45ohPA?=
+ =?us-ascii?Q?chvGRU6ScpRv1pDNq8D4mXBYCFq1G3bRuOvH1Y9?=
+ =?us-ascii?Q?anqao1z7uUHB=2FX+G7K7kIRvQkJFtfqEsVDTfl0i?=
+ =?us-ascii?Q?zNCt4iow=2FuKsUMpM6Mmm=2FMxWDeRKlC8Iz2iUEAQ?=
+ =?us-ascii?Q?szz0IK8ZrKqmRFEx2KeaNSC6zaawUlHWxbhJ6RE?=
+ =?us-ascii?Q?bowdxD34Lp8g2Vs4tJA6qvgfv0SIzMdN1nWMmn2?=
+ =?us-ascii?Q?meoYUIZZnH7gKLSwhvTevzWKaw=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2E3495hUJR5?=
+ =?us-ascii?Q?qJ99XP3VSWR0kDUbpv2Rs=5FrBs2w-y1wd9doMDAw?=
+ =?us-ascii?Q?dTAwMHubTfctqrWVfk05S9PbYZAZtLdHlE7Dumk?=
+ =?us-ascii?Q?k0GJAXkVbfFJDBWQ7OqpZD0pS1iutHVQTG01fDA?=
+ =?us-ascii?Q?90kNC-6J9kkxKkaAg9xmI3qpRv=5FUGopQbSMJTRi?=
+ =?us-ascii?Q?ipvtrJC56AM4EPDWg=3D=3D=2EOjVyli1BrNc2k-TsKvq?=
+ =?us-ascii?Q?8JIo24M7KO0LIHMQz5NU2bAVoMDAwdTAwMIRQ56?=
+ =?us-ascii?Q?wirQtnqZvKsyIe7i0R7p3j7KweOeVYBbGnLLM1R?=
+ =?us-ascii?Q?mX5bSjDMgbZsnoXx1chpETpF1xj6ecfNLEGNjbY?=
+ =?us-ascii?Q?LD0PvepR672Eya80JbfOXs2QYUk2RRWIeEaCK18?=
+ =?us-ascii?Q?uIYxNqcO9KiwPlnWfTEukiwIpsjpDf0VKAzlHR3?=
+ =?us-ascii?Q?FtlWGxYKIo28KA-yp6Gpn3Oi7we=5FUg9XeUoahD9?=
+ =?us-ascii?Q?5iwtDZRaLpEAxMFoYIIEz-Rl8z8HmWK-oMdZJpj?=
+ =?us-ascii?Q?dazf5Sx7c3QHveNg5pz0syjcZEb4YnQCPoC6oD1?=
+ =?us-ascii?Q?JHw29=5Fyog4jceDGTAE1bQIJBr9p1blgN=5FOIxb-6?=
+ =?us-ascii?Q?qHTOMbAlGZNuomvLQOjhn5ZW9BLR1GMvX15YHYQ?=
+ =?us-ascii?Q?QOds5HjAyJ7bppqekDvKArmxm1BROD7jqOm3jHc?=
+ =?us-ascii?Q?lj8Cj-WvQ7yQ2Wv4RPdry6hjQ-UbCy=5FtcbOSch6?=
+ =?us-ascii?Q?C43urfPOsCNmnKvabFlGZEYk96gvnMBImpKWPBH?=
+ =?us-ascii?Q?MyCQrlO2Alp2zICOBHRKLfxXuqpZfIp=5FuHgizmF?=
+ =?us-ascii?Q?mSrePW8eScKEHqaJJOjpOPPUug3wbMLQeDDjW3n?=
+ =?us-ascii?Q?dZD3ID-nwfQ0C5aZ2VwAq15BMB=5FQw68Fe3VU71W?=
+ =?us-ascii?Q?i56XOCZYg3Wo6UOg8GGnBcE5rqCraOFR1mImFt6?=
+ =?us-ascii?Q?ues6KkXDd6uW9mNPtle1t-V0aexBbMNEdb=5F9RmC?=
+ =?us-ascii?Q?JbPAd=5F7mvkmSux6aRdZu4DO3R-VsQhDhHEhKDLZ?=
+ =?us-ascii?Q?Q9LnXuy5pRhoAhYknnduktG3NAFMrWmKc2=5FxUZB?=
+ =?us-ascii?Q?lXyxKYrrVSAWVyLXiHgh1OvQKhTOMXWXiVblKa=5F?=
+ =?us-ascii?Q?WVWb9rhc1bccmLIg8vvilz8TUG0kCgCltdkiD-Z?=
+ =?us-ascii?Q?DhOnmS7u9A2Xwee6QloeNSB0FNe1MZ2-AFoXZcK?=
+ =?us-ascii?Q?Zsmq8yP3=5FrTz6Rs88bae4zY9T3fBa23mmP9sNhZ?=
+ =?us-ascii?Q?WhwS3BTyKOh=5FpSRlUB77kFnhQ8049XXShuKbaT0?=
+ =?us-ascii?Q?TFemjtgYsK7ckvpByfzJ8LWhWACSatNW-Ub766A?=
+ =?us-ascii?Q?2TijD4kqeCfOECmAJrGbeXFDQF96wx3qfLIe1Pw?=
+ =?us-ascii?Q?Mg6TbA=3D=3D=3E?=
+
+--32ce363b163a752f70f88b0f43f15dae9df2f1af11ccf55d09517aec65f9
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=iso-8859-1
+Mime-Version: 1.0
+
+DENGUE, ZIKA VIRUSES - AFRICA: MALI (BAMAKO) EPIDEMIC
+*****************************************************
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+Date: Sat 6 Jan 2024
+Source: Mali Web [in French, trans., edited]
+<https://www.maliweb.net/sante/dengue-et-fievre-zika-les-moustiques-en-caus=
+e-3048809.html>
+
+
+We are in the midst of an epidemic of dengue and Zika fever in Mali.
+The Ministry of Health and Social Development has activated the
+Department of Public Health Emergency Operations (DSP), which, through
+the Risk Communication and Community Engagement Unit (Crec), has
+launched a community awareness campaign in the 6 municipalities of
+Bamako.
+
+For several days, the officials of the Information, Sensitization, and
+Communication Unit (Crec) traversed the 6 municipalities of Bamako to
+inform and raise awareness about dengue and Zika fever. This took
+place during the last week of the year 2023 in Bamako. Overall, the
+message emphasized the need to conquer mosquitoes to overcome dengue
+and Zika fever.
+
+In Commune I, at the headquarters of the Social Development Services
+Directorate, Mrs. Coulibaly Mah Di=E9faga and a strong delegation faced
+community leaders for a series of information and sensitization
+sessions on dengue and Zika fever. She announced that since last
+September [2023], Mali has recorded cases of dengue, and the number of
+cases continues to rise. Today, we are in an epidemic period, and a
+behavioral change is necessary, she pointed out.
+
+Dengue and Zika fever are both transmitted by the mosquito _Aedes
+aegypti_, commonly known as "R=E9al sossoni" or "Mourountini" in this
+context.
+
+"These mosquitoes are present in the environment and bite people even
+during the day. It is essential to clean the environment," advised the
+delegation leader. Stagnant water, sewage, and dirty water that remain
+in our surroundings are breeding grounds for mosquitoes. Cleaning is
+crucial, and this requires awareness and change.
+
+In the coming days, in addition to Bamako, other regions will be
+targeted. Currently, all regions are affected except for the northern
+regions. Mrs. Coulibaly strongly advocated for sanitation.
+
+"Let's clean our yards and surroundings. Let's stop certain practices
+to defeat dengue and Zika fever," she insisted.
+
+Both diseases share the same transmission vector -- mosquitoes -- and
+can lead to complications. Zika fever can cause congenital
+malformations in the child if the pregnant mother is infected, and
+severe forms of dengue can be fatal, according to health officials.
+
+[Byline: Koureichy Ciss=E9]
+
+--
+Communicated by:
+ProMED
+via=20
+ProMED-EAFR
+
+[In the last quarter of 2023, several outbreaks of dengue have been
+recorded in Mali with at least 2 deaths. In December 2023, cases of
+Zika virus infection have been confirmed in Bamako. The ongoing of
+these 2 epidemics in Mali confirmed that the mosquito vector, _Aedes
+aegypti_, is competent in transmitting both viruses in the country,
+and even in West Africa. There is a need to reinforce the health
+surveillance system in this sub-region of the continent to prevent the
+spread to these viruses. - Mod.RBY
+
+ProMED map of Bamako, Bamako, Mali:
+<https://promedmail.org/promed-post?place=3D8714130,9888>]
+
+[See Also:
+Dengue/DHF update (01): Africa (Ethiopia) fatal, tally of cases, WHO,
+2023 http://promedmail.org/post/20240104.8714058
+2023
+----
+Zika virus (13): Africa (Senegal, Mali) conf
+http://promedmail.org/post/20231228.8713954
+Dengue/DHF update (42): Africa (Burkina Faso)
+http://promedmail.org/post/20231221.8713833
+Dengue/DHF update (40): Africa (Nigeria)
+http://promedmail.org/post/20231218.8713779
+Dengue/DHF update (36): Africa, epidemic update
+http://promedmail.org/post/20231210.8713627
+Dengue/DHF update (33): Africa, ECOWAS, update
+http://promedmail.org/post/20231201.8713449
+Dengue/DHF update (32): Africa (Cape Verde, Togo) new cases
+http://promedmail.org/post/20231130.8713417
+Dengue/DHF update (26): Africa (Burkina Faso) epidemic update
+http://promedmail.org/post/20231120.8713239
+2021
+----
+Zika virus (03): Americas, Africa, research, observations
+http://promedmail.org/post/20210524.8379378
+Zika virus (02): Americas, Africa, research, observations
+http://promedmail.org/post/20210420.8317043
+2019
+----
+Zika virus (05): Americas, Africa, Middle East research, observations
+http://promedmail.org/post/20190710.6560062]
+.................................................rby/tw/ya/tw/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3Drsd0WrwwWj1VBAxeppuX_z8S_m-goZL8GjHuBfujJwhoMDAwdTAwMFJonmH=
+iJQrVGb3xOFh2nQdH2Ya2g4X_cZWPzg0Qrpjlof9MmOIj7zkrYxRbjokGXDLJY4_vJ_pISWl_vQ=
+XkeauFs-XFIgc6wqob2MYaNbAPVL-XTS8Nf0zNWQRyVv_8nnk0tbwAppThKdKt1Qadbrt3KDOfT=
+of-TIscbuDZm291qH0xGEDHNdRZNtRnCNwOSi7IU8-yqM2J1sry5IS1SXRVzlRkcvhkts_nD3E2=
+RXjw6DkONoBIx0dfnxmwEyvu4fjA7wTf260eON_aHExzy8W8WIq5bRcKBDRSh1EYCWJon93iWCA=
+V9-oc-qrckaKDAgPW2B-IdFVLqeWSEsSW-wAw6X3ei-J2wvubrbXEkZkU1XlB6ZuHu1ZK27x1pp=
+igxpYoMrEQO5oDf3lj-Tul_SDhpnzMmjpcG_MOfILuVar3ZsI_g0B3xiH6xVLm1eKPS-4IoaPDe=
+mg4Xfe3czIKGtdwdlFYclqEcsv0kUa7sH_gs0WOqD1DCM0RxODRB6NLrmWbv5FCBrnT8gF-sRf1=
+zSNwdlppz5TfsTQJbvzMAMOg6VG3UDGhMXwp9BPJYOcNFccy8X3fmP9AVx0JG3fgOB8s2Vm0Odn=
+3h9ipiDWh3dtEJJOaGFyRuEezIcW8QSDguaJDAwPwCNZb6r9G8nBs4wp0kbwVHH3Jng_m2vgvqB=
+cj3hJVuKMW0mPX_S2iw5WEpXuy37yZ15TeZSVF4ypGyfZcF10cTYn1-Wh8TT2giyw-PfWch7sPc=
+UqKI6_nH6q4dWoWY6-JvYIgt5a9bMnRRSuvsQiKc9ing3iTmbDVStitORfvxoh3HNg9VM0vrDoB=
+zD2_keL6PSK6tsP6G9JPusTYKrgRX3qpSgHKiRyUEDVxlEx2sAhPjrliild7Vw_ikhTK9yX9Qw9=
+gfnD3CxyQPfYpKMYShmPoXz4KRd4q1Tqg18aNZvceXJSovmTwB-uiZGSRa1v6i1nlZcPAuDl6nV=
+EDO9DsIO3i0BjDacK2RyENA1pV-XGNuIzq8Oqd9wmhH01XZCi6nlnkzDDuD7Q1D8WqGgCDzGsPc=
+-5Z3YXu_uF1L6VGpLZ-tWB21muwFwyR0DHBSXeUW-BfOw9181LwqW7qdPVwFQIkmrvPNKpgqF_i=
+SWEaB3hM1naROd2LPMkhtF-YrfM1BpyI9ScLhH8qjlKvVGS5v5YcbPA-hUd7u04M )
+############################################################
+############################################################
+
+--32ce363b163a752f70f88b0f43f15dae9df2f1af11ccf55d09517aec65f9
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=iso-8859-1
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>DENGUE, ZIKA VIRUSES - AFRICA: MALI (BAMAKO) EPIDEMIC<br>************=
+*****************************************<br>A ProMED-mail post<br><a href=
+=3D"https://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisIijpefK5PNj=
+W-mL-YZGnfgDOxU1G3gjwnPSi2Tfv3HA/42v/spd0loI0R9eceBlLASJBlw/h0/lKtPdNGjHyNz=
+pL1WT3dKOZmzITl2zPNCC1Glum3xQOI">http://www.promedmail.org</a><br>ProMED-ma=
+il is a program of the<br>International Society for Infectious Diseases<br>=
+<a href=3D"https://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisCT5t=
+pD4Upm3qyMCbcYSQvc/42v/spd0loI0R9eceBlLASJBlw/h1/7wJXPpbn7yeKQIDYtoxGXHKnez=
+soKbYy367rGIsKHW8">http://www.isid.org</a><br><br>Date: Sat 6 Jan 2024=0D<b=
+r>Source: Mali Web [in French, trans., edited]=0D<br><a href=3D"https://u19=
+268662.ct.sendgrid.net/ss/c/TLh_csrC34X_iXpbYoMam6hx2Wq4oiPXjOX7yCKRPCKIaV3=
+Rzef2qMnRwqixucZXLE7UPvZmq1KJ0v-c8FOBMZnSd0tl2ReopH6ACR9UPVN0x4_9f-0DUqJqyI=
+M2VpjG/42v/spd0loI0R9eceBlLASJBlw/h2/e4jwsKt8YDgPca37FNNpkfjUkPkQhIP_JlkCnW=
+YfY-8">https://www.maliweb.net/sante/dengue-et-fievre-zika-les-moustiques-e=
+n-cause-3048809.html</a>=0D<br>=0D<br>=0D<br>We are in the midst of an epid=
+emic of dengue and Zika fever in Mali.<br>The Ministry of Health and Social=
+ Development has activated the<br>Department of Public Health Emergency Ope=
+rations (DSP), which, through<br>the Risk Communication and Community Engag=
+ement Unit (Crec), has<br>launched a community awareness campaign in the 6 =
+municipalities of<br>Bamako.=0D<br>=0D<br>For several days, the officials o=
+f the Information, Sensitization, and<br>Communication Unit (Crec) traverse=
+d the 6 municipalities of Bamako to<br>inform and raise awareness about den=
+gue and Zika fever. This took<br>place during the last week of the year 202=
+3 in Bamako. Overall, the<br>message emphasized the need to conquer mosquit=
+oes to overcome dengue<br>and Zika fever.=0D<br>=0D<br>In Commune I, at the=
+ headquarters of the Social Development Services<br>Directorate, Mrs. Couli=
+baly Mah Di=E9faga and a strong delegation faced<br>community leaders for a=
+ series of information and sensitization<br>sessions on dengue and Zika fev=
+er. She announced that since last<br>September [2023], Mali has recorded ca=
+ses of dengue, and the number of<br>cases continues to rise. Today, we are =
+in an epidemic period, and a<br>behavioral change is necessary, she pointed=
+ out.=0D<br>=0D<br>Dengue and Zika fever are both transmitted by the mosqui=
+to _Aedes<br>aegypti_, commonly known as "R=E9al sossoni" or "Mourountini" =
+in this<br>context.=0D<br>=0D<br>"These mosquitoes are present in the envir=
+onment and bite people even<br>during the day. It is essential to clean the=
+ environment," advised the<br>delegation leader. Stagnant water, sewage, an=
+d dirty water that remain<br>in our surroundings are breeding grounds for m=
+osquitoes. Cleaning is<br>crucial, and this requires awareness and change.=0D=
+<br>=0D<br>In the coming days, in addition to Bamako, other regions will be=
+<br>targeted. Currently, all regions are affected except for the northern<b=
+r>regions. Mrs. Coulibaly strongly advocated for sanitation.=0D<br>=0D<br>"=
+Let's clean our yards and surroundings. Let's stop certain practices<br>to =
+defeat dengue and Zika fever," she insisted.=0D<br>=0D<br>Both diseases sha=
+re the same transmission vector -- mosquitoes -- and<br>can lead to complic=
+ations. Zika fever can cause congenital<br>malformations in the child if th=
+e pregnant mother is infected, and<br>severe forms of dengue can be fatal, =
+according to health officials.=0D<br>=0D<br>[Byline: Koureichy Ciss=E9]=0D<=
+br>=0D<br>--=0D<br>Communicated by:=0D<br>ProMED=0D<br>via=20=0D<br>ProMED-=
+EAFR<br><br>[In the last quarter of 2023, several outbreaks of dengue have =
+been<br>recorded in Mali with at least 2 deaths. In December 2023, cases of=
+<br>Zika virus infection have been confirmed in Bamako. The ongoing of<br>t=
+hese 2 epidemics in Mali confirmed that the mosquito vector, _Aedes<br>aegy=
+pti_, is competent in transmitting both viruses in the country,<br>and even=
+ in West Africa. There is a need to reinforce the health<br>surveillance sy=
+stem in this sub-region of the continent to prevent the<br>spread to these =
+viruses. - Mod.RBY=0D<br>=0D<br>ProMED map of Bamako, Bamako, Mali:<br><a h=
+ref=3D"https://u19268662.ct.sendgrid.net/ss/c/sSnCkKCWBvais3EuVAOvgy2WOIX7p=
+p1nXnn4AbwuQ3Z6WbkfhqXYXU-aTMPJ8yThyYtWIHrs9_a-YrBAgghJDg/42v/spd0loI0R9ece=
+BlLASJBlw/h3/SDPROTaZ_k6ETWI8N9-it30bxVYCr4Cy__Yy3YNFhdE">https://promedmai=
+l.org/promed-post?place=3D8714130,9888</a>]<br><br>[See Also:<br>Dengue/DHF=
+ update (01): Africa (Ethiopia) fatal, tally of cases, WHO,<br>2023 http://=
+promedmail.org/post/20240104.8714058=0D<br>2023=0D<br>----=0D<br>Zika virus=
+ (13): Africa (Senegal, Mali) conf<br>http://promedmail.org/post/20231228.8=
+713954=0D<br>Dengue/DHF update (42): Africa (Burkina Faso)<br>http://promed=
+mail.org/post/20231221.8713833=0D<br>Dengue/DHF update (40): Africa (Nigeri=
+a)<br>http://promedmail.org/post/20231218.8713779=0D<br>Dengue/DHF update (=
+36): Africa, epidemic update<br>http://promedmail.org/post/20231210.8713627=0D=
+<br>Dengue/DHF update (33): Africa, ECOWAS, update<br>http://promedmail.org=
+/post/20231201.8713449=0D<br>Dengue/DHF update (32): Africa (Cape Verde, To=
+go) new cases<br>http://promedmail.org/post/20231130.8713417=0D<br>Dengue/D=
+HF update (26): Africa (Burkina Faso) epidemic update<br>http://promedmail.=
+org/post/20231120.8713239=0D<br>2021=0D<br>----=0D<br>Zika virus (03): Amer=
+icas, Africa, research, observations<br>http://promedmail.org/post/20210524=
+.8379378=0D<br>Zika virus (02): Americas, Africa, research, observations<br=
+>http://promedmail.org/post/20210420.8317043=0D<br>2019=0D<br>----=0D<br>Zi=
+ka virus (05): Americas, Africa, Middle East research, observations<br>http=
+://promedmail.org/post/20190710.6560062]<br>...............................=
+..................rby/tw/ya/tw/jh<br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3Drsd0WrwwWj1VBAxeppuX_z8S_m-goZL8GjHuBfujJwhoMDAwdT=
+AwMFJonmHiJQrVGb3xOFh2nQdH2Ya2g4X_cZWPzg0Qrpjlof9MmOIj7zkrYxRbjokGXDLJY4_vJ=
+_pISWl_vQXkeauFs-XFIgc6wqob2MYaNbAPVL-XTS8Nf0zNWQRyVv_8nnk0tbwAppThKdKt1Qad=
+brt3KDOfTof-TIscbuDZm291qH0xGEDHNdRZNtRnCNwOSi7IU8-yqM2J1sry5IS1SXRVzlRkcvh=
+kts_nD3E2RXjw6DkONoBIx0dfnxmwEyvu4fjA7wTf260eON_aHExzy8W8WIq5bRcKBDRSh1EYCW=
+Jon93iWCAV9-oc-qrckaKDAgPW2B-IdFVLqeWSEsSW-wAw6X3ei-J2wvubrbXEkZkU1XlB6ZuHu=
+1ZK27x1ppigxpYoMrEQO5oDf3lj-Tul_SDhpnzMmjpcG_MOfILuVar3ZsI_g0B3xiH6xVLm1eKP=
+S-4IoaPDemg4Xfe3czIKGtdwdlFYclqEcsv0kUa7sH_gs0WOqD1DCM0RxODRB6NLrmWbv5FCBrn=
+T8gF-sRf1zSNwdlppz5TfsTQJbvzMAMOg6VG3UDGhMXwp9BPJYOcNFccy8X3fmP9AVx0JG3fgOB=
+8s2Vm0Odn3h9ipiDWh3dtEJJOaGFyRuEezIcW8QSDguaJDAwPwCNZb6r9G8nBs4wp0kbwVHH3Jn=
+g_m2vgvqBcj3hJVuKMW0mPX_S2iw5WEpXuy37yZ15TeZSVF4ypGyfZcF10cTYn1-Wh8TT2giyw-=
+PfWch7sPcUqKI6_nH6q4dWoWY6-JvYIgt5a9bMnRRSuvsQiKc9ing3iTmbDVStitORfvxoh3HNg=
+9VM0vrDoBzD2_keL6PSK6tsP6G9JPusTYKrgRX3qpSgHKiRyUEDVxlEx2sAhPjrliild7Vw_ikh=
+TK9yX9Qw9gfnD3CxyQPfYpKMYShmPoXz4KRd4q1Tqg18aNZvceXJSovmTwB-uiZGSRa1v6i1nlZ=
+cPAuDl6nVEDO9DsIO3i0BjDacK2RyENA1pV-XGNuIzq8Oqd9wmhH01XZCi6nlnkzDDuD7Q1D8Wq=
+GgCDzGsPc-5Z3YXu_uF1L6VGpLZ-tWB21muwFwyR0DHBSXeUW-BfOw9181LwqW7qdPVwFQIkmrv=
+PNKpgqF_iSWEaB3hM1naROd2LPMkhtF-YrfM1BpyI9ScLhH8qjlKvVGS5v5YcbPA-hUd7u04M" =
+target=3D"_blank" class=3D"Unsubscribe--unsubscribePreferences" style=3D"fo=
+nt-family:sans-serif;text-decoration:none;">Unsubscribe Preferences</a></di=
+v><br>############################################################<br>#####=
+#######################################################<br><br><img src=3D"=
+https://u19268662.ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/42v/spd0loI0R=
+9eceBlLASJBlw/ho.gif" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=
+=3D"height:1px !important;width:1px !important;border-width:0 !important;ma=
+rgin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;=
+margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !importa=
+nt;padding-right:0 !important;padding-left:0 !important;"/></body>
+</html>
+--32ce363b163a752f70f88b0f43f15dae9df2f1af11ccf55d09517aec65f9--

@@ -1,0 +1,415 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a98:c004:0:b0:1eb:e128:bbe3 with SMTP id l4csp2989654eic;
+        Sat, 13 Jan 2024 15:56:16 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IFw/NxtdYV6sntS12gcMhZIJUb4c8PXhlDbQZ9wZFlGzhFEW0ThYLhQg25olrV3hjOKv/jd
+X-Received: by 2002:a05:622a:107:b0:429:c715:1b2 with SMTP id u7-20020a05622a010700b00429c71501b2mr3874246qtw.135.1705190175988;
+        Sat, 13 Jan 2024 15:56:15 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1705190175; cv=none;
+        d=google.com; s=arc-20160816;
+        b=t5YwEo3dSc/Zz/ohloMvlGzhuMTpdE1mkp7utkIc59lue8sHGfSw5Q8Lota+t9tuvn
+         GiR3ZqWWCHfP+060FlhJXZykrjYa7CFVQXDRkkOc08PUQnqLpvyvoK1TnN+MuLbExozN
+         DSFHP/kpbFQBvJXpE0LlVPX48muh8zF7ANGSCf1h7/+iZYfixPMY4Xr70TwahrQGkbcO
+         Wbrq3tfdAy46MigixxAGw2Oij0HaFOveO939zX3wEt5RTvjHc9rfo3DbJC9PpTGFbQIV
+         VhaY6lMxhGPK7TqZZ/Y/nBn44F938B+zTwKlwo4wGFF66UtyA3vLEz8c0R9t1vlrOOOk
+         vq9Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=FuUmXkJJUCBw8tTvFoPY09J2g9BJkNLZ41DdZDhNsII=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=F/JanQPoRxRBV3tKWlRdwDh2pSRu9DuEsopyGd5vfxvbHspcMDI+VzYL/hgfC9QkZn
+         4SCkxwybNhRuaBjP9TuNpA++bS02K+zlkcEzHlx2kRcIQEX53jJ2eqjCiLpWbUV5mGKS
+         kq/QZlT81xTfpwWYpBkG6pDu4qpU/Kk6PxuNgPxAWwsRqAzLdsXi9XTwbOG9PsOVaIvN
+         O9j9+OysrWJ3wloBIcaBHWMXP2G1ZevJFfQZeOkTEzhGgUdv3fc6KmFtxr4YtQp5iRjO
+         T6MgCScPaZ+owIstnVBARB2npqUgcyZVmeBhUJujbyWAmxKppKCqfRfohRMzHIo0FrH8
+         L2qw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b="yZNGoO4/";
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=N+bcmV5e;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id c13-20020ac87dcd000000b00429d58393acsi2610276qte.404.2024.01.13.15.56.15
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sat, 13 Jan 2024 15:56:15 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b="yZNGoO4/";
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=N+bcmV5e;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=FuUmXkJJUCBw8tTvFoPY09J2g9BJkNLZ41DdZDhNsII=;
+	b=yZNGoO4/D+Ow2onLvajaWcOO358d0RWY7MqTkIk0hVo0cG65+/jtO/4Rwlt6/xQRlfMV
+	9Da9Bp9Q/m4daf24RJ9RbFBl7nm/Lh3ue6mdgFPRrF5XPyyNPNmvM/9GxURvOMWGC8gJF2
+	0s2r7UYzKtBXbtTUbpPYoLASiKxGfFJerPoB5i8f5PZ9KkPxNX+2qPavhdI5Vdj/GvT2jP
+	GMEM+Kow6SkM+Knj+6l1UGToCatNC1oLcufLlh6WygWUHtw2hvYsbt8NpmMwEBJ7GlyGK/
+	rUPOHmC7f7diS2aAC1KAxpxVSCxFnHoKah8gAAIEgfRvRZpw6pl7t0CuMhuM90kg==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=FuUmXkJJUCBw8tTvFoPY09J2g9BJkNLZ41DdZDhNsII=;
+	b=N+bcmV5eNjFutKQ3O65eWFta0zPqz/pzrDEzULPxNdFTR9JOjQ78vQ91gYCGiSYQmt6C
+	B2T3zDgNrz6qC0laDBhP8ITln4Suva7V8q8RN+6Kf1OOc9Vq3Ft4AoI/J+MJB7BmFNFgOZ
+	JdWh2BxqXL9bRZyl4szCzTV4yzm3UB3n0=
+Received: by filterdrecv-canary-8494898689-mtmgw with SMTP id filterdrecv-canary-8494898689-mtmgw-1-65A3231E-20
+        2024-01-13 23:56:14.644460488 +0000 UTC m=+7622115.184593631
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-17 (SG) with HTTP
+	id M2wlZ4c2TaaUlrI4spXDfQ
+	Sat, 13 Jan 2024 23:56:14.467 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=1ad4fd14739de34d3cef0ba0f1aeaebf67d94dbdc9e6c3c493a752bf17f3
+Date: Sat, 13 Jan 2024 23:56:14 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <M2wlZ4c2TaaUlrI4spXDfQ@geopod-ismtpd-17>
+Subject: PRO/AH/EDR> Trichophyton indotineae - South Africa: (NL) resistance,
+ 1st rep
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iB2gK2X=2F5iYSgw92Q5nRRY9nzi4pUCMNWJrUjI6?=
+ =?us-ascii?Q?Ix4Ri2=2FIOuqIcjzmq+msUfh5gG=2Fuv2Fsr4oZorx?=
+ =?us-ascii?Q?DmwrPbaVRhAinZiDXcJ7bBj7ScPlm+CQsyxTCp+?=
+ =?us-ascii?Q?qUANLjz2GcDzu5nnf90g7kAh0Kz3ZbBEdLvlt6Y?=
+ =?us-ascii?Q?WUqoh+4sbabXBQnrHsUjiNs4pb6FhK4Bsb5apd?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUiShGf=2FO8XJWpH34Od4Nd?=
+ =?us-ascii?Q?fxXa6jil96uRcJkF+N+LeVnO1tx80ddOyoyOo=2Fc?=
+ =?us-ascii?Q?Brxcl3ERAm0cOY743=2FFH59DWiSf5OzXORh1DLKt?=
+ =?us-ascii?Q?hb1NMKty3PsA5ju0ZzxCrq1WQuZSEQf=2FJlWtgqv?=
+ =?us-ascii?Q?cZmsyCHlNUZsDTzEazP+XQhtBA=2F4lTi+oA0rT+9?=
+ =?us-ascii?Q?q3iVxIvW0ncXQuyGB4=2F8vjesX2cuD5U5oO3KXAo?=
+ =?us-ascii?Q?gYpySvlZIv6gq8qgG6T9NXsu=2Fhj8NgAEugUrON=2F?=
+ =?us-ascii?Q?zP4wL2PEKhPg8uJkHrCnZRSTwdmHejkfrXV26Dy?=
+ =?us-ascii?Q?U=2F3r265JDnHrpx20eEi13NiG=2FhomN9qyoohwZaV?=
+ =?us-ascii?Q?sPtzoNS1wUtW+UfOEwRXcV6T5mQEtBdRo5OGaMu?=
+ =?us-ascii?Q?6FvPiHtRGeeVCpBbJP3CdEOVb0ZXFTZRfZorb2D?=
+ =?us-ascii?Q?SDAE5wRxikqvZjkzCel1un2N8GfFVdGBAPLAzt3?=
+ =?us-ascii?Q?IyJGhWuQWMseDoytleoSvwx4e99y4DUVlej1Q4E?=
+ =?us-ascii?Q?0KaGMWSoo2qvJ=2F9CWQxbrVUnL3vMgQYBRznHAht?=
+ =?us-ascii?Q?ZPLOoCMUefyIgy5bqnvt54HaGJtAG5oEwFIvhig?=
+ =?us-ascii?Q?jQFKqmgURXrb+l9R1XTy6n5WKvP9p8=2FP7WJoq0B?=
+ =?us-ascii?Q?LU0QUch9BDQvNxPMZyVe9WHw0ENFunj4h8aIft7?=
+ =?us-ascii?Q?Ny8ovaRertY3kEVueY=2FUU2iTSW9VJ4IcxIu0fst?=
+ =?us-ascii?Q?nFp=2Fb3OKIV=2Fr907wC36QQCjLzdt+ie8LceQCeEp?=
+ =?us-ascii?Q?qApwX6UR0qr9tCmdoAgAhaq0rQ=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2E3C0v7McI4?=
+ =?us-ascii?Q?pZkOp9fiblW3q9iAxAf5OCYmK5SjcEdRxxoMDAw?=
+ =?us-ascii?Q?dTAwMKIJpnY9MxpHw6-kd2ZyBjZprXUZdEixinw?=
+ =?us-ascii?Q?9hys5nAPNzmh-jarXwLSJrQe-iFAxVji-KGxUqN?=
+ =?us-ascii?Q?sMKCAf6jnofvD00jxtbryF3L1AApeQkZR8UIs56?=
+ =?us-ascii?Q?2Qpq2qbx4nv6s=5F4Uw=3D=3D=2EfoLHL-UxBRHPdHiYiTJ?=
+ =?us-ascii?Q?u=5FUk9o3Xsma1=5FkG1DpZNapftoMDAwdTAwMLFcPj?=
+ =?us-ascii?Q?GadiNHZ=5FjocHwCCdGT8lhNf8HiJmfYS27NjVBSh?=
+ =?us-ascii?Q?=5Ffb=5F1MjhfCUdfB1TgbhILBWj59aoco9cZ-bj0Id?=
+ =?us-ascii?Q?n0=5FD0v2OXWzFK56DE994rARItL6dyptInMR3=5FKj?=
+ =?us-ascii?Q?0w21oItUURncLv3HKUXzi2HiNAcOOoykiX-=5FByb?=
+ =?us-ascii?Q?IjVx0hsbsPOywTqN7rbixnKnJnCgnqaU9xsWV=5Fk?=
+ =?us-ascii?Q?TD1PkACXno5S0DGoCcTttnrSw2O8qUA7lwuT2xG?=
+ =?us-ascii?Q?KswjdTnoCwug9nwDs-DPiOrBxvFoWihmbJ4uYoL?=
+ =?us-ascii?Q?1LNxbNx=5FJvE1ePI2Pfe3avg2PP7TexMqdL-6e=5F9?=
+ =?us-ascii?Q?zSeGbJzTuD2wUo=5FoJ86lAWdYuNfXI2YTp93Ddpc?=
+ =?us-ascii?Q?XYHOxHop822=5FSVkfDwL2CGx0jjqDPzwvl2Y0L4I?=
+ =?us-ascii?Q?9MQNkNS6zRoxRrm-ocsLeS2RX64sTIO08zYNUhD?=
+ =?us-ascii?Q?uF27sTtItI-EVx6bJoJDEw3DSNpQQjw=5FrEKrM93?=
+ =?us-ascii?Q?Jg6oPzDiK-JxSPE2rQAPg-hNLdCwXZm-ePIrknt?=
+ =?us-ascii?Q?KhzppcRZs6CZOq7WBi-a9bnN0GffdIaxPB8QyHW?=
+ =?us-ascii?Q?5OStIZVeG0cywvnK1ikC=5FLvBiWtrDoxXgQtqECl?=
+ =?us-ascii?Q?=5F2G2PS6oTWD-lFIwJLMGtLkzSZEOEWpEbgARbsL?=
+ =?us-ascii?Q?K9Pj82Jc-ik9bfBvoFMK68Zx-ETC0E3vrazfyfn?=
+ =?us-ascii?Q?V1aswJoIxHOYoyZZtHfEsxPER7TK9ZxR9ucH1fs?=
+ =?us-ascii?Q?CKkjEb0pbI4qiO1Txnfj9DVre8CfdHVONNbSgQU?=
+ =?us-ascii?Q?8rIsWad7RfIKxN3005CBE0k780hk=5FG=5Fsq-0RgqU?=
+ =?us-ascii?Q?eMbKFDj8SAqOspjUipJ3K5h5ADyiipOdywP75tX?=
+ =?us-ascii?Q?vTnCl8Hp8FHNXeLPpRMyaZq9ahAcvggp3FPUvOw?=
+ =?us-ascii?Q?7zuNAGQ6pSsSCtDyDiGoKGhmWQ83tGG-2kDT=5Fcz?=
+ =?us-ascii?Q?b90UAOvCYoIha1f752W9pex92DlSeRKe=5FI5zBXt?=
+ =?us-ascii?Q?yota8ypaXoYw9Zuj2wd1J21TT-CQneXvq0qAy=5Fu?=
+ =?us-ascii?Q?NK2ep5O35P9ZHxQCl2mEWUSuVfl9llpPPc=5FLwxx?=
+ =?us-ascii?Q?1cO6XiFKgb2sa5H5aINpubmoQRk=3D=3E?=
+
+--1ad4fd14739de34d3cef0ba0f1aeaebf67d94dbdc9e6c3c493a752bf17f3
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=us-ascii
+Mime-Version: 1.0
+
+TRICHOPHYTON INDOTINEAE - SOUTH AFRICA: (KWAZULU-NATAL) RESISTANCE,
+FIRST REPORT
+***************************************************************************=
+*****
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+Date: Wed 10 Jan 2024
+Source: Medical Brief [edited]
+<https://www.medicalbrief.co.za/first-in-africa-antifungal-resistant-ringwo=
+rm-detected-in-kzn/>
+
+
+A first confirmed case of antifungal-resistant ringworm has been
+recorded in KwaZulu-Natal, the National Institute for Communicable
+Diseases (NICD) confirmed, saying 2 people were being treated for the
+condition.
+
+_Trichophyton indotineae_ is the first infection of its kind in
+Africa, reports News24, with the NICD confirming the positive
+diagnosis a week before Christmas [2023], reporting it in the Public
+Health Surveillance Bulletin. Also known as _Trichophyton
+mentagrophytes_ type VIII, it is described as an antifungal-resistant
+fungus resulting in extensive disfiguring and difficult-to-treat
+ringworm infections.
+
+The head of the Centre for Healthcare-Associated Infections,
+Antimicrobial Resistance and Mycoses, Professor Nalesh Govender, said
+the true number of antifungal-resistant ringworm cases was difficult
+to estimate, "because testing to determine whether antifungal
+medicines can effectively treat a ringworm is not widely available."
+He added that this was first confirmed case of the _Trichophyton
+indotineae_ ringworm infection on the continent, and reasons for the
+condition could include:
+- Overuse of over-the-counter topical antifungal creams;
+- Inappropriate use of potent topical steroid creams by people with
+rashes;
+- Inappropriate prescription of antifungal medicines;
+- Global travel and migration from regions where the
+antifungal-resistant infections are more common.
+
+The KwaZulu-Natal Department of Health said it was unaware of the
+antifungal-resistant infection.
+
+--
+Communicated by:
+ProMED
+via
+ProMED-EAFR
+
+[The confirmation of the first case of antifungal-resistant ringworm
+caused by _Trichophyton indotineae_ in KwaZulu-Natal raises
+significant concerns about the potential spread and impact of this
+resistant fungus in Africa. The disfiguring nature and difficulty in
+treating these ringworm infections underscore the urgent need for
+proactive measures.
+
+The identified factors contributing to this condition, such as overuse
+of over-the-counter antifungal creams, inappropriate application of
+potent topical steroids, and global travel, emphasize the importance
+of education and awareness campaigns to guide proper medication usage.
+Moreover, it is crucial to enhance diagnostic capabilities to
+accurately identify and differentiate antifungal-resistant ringworm
+cases.
+
+The KwaZulu-Natal Department of Health should collaborate with
+healthcare professionals to establish protocols for testing and
+reporting such cases promptly. Strengthening surveillance systems and
+sharing information across healthcare networks can aid in
+understanding the true prevalence of _Trichophyton indotineae_
+infections.
+
+Given the challenging nature of these infections, medical
+practitioners must be vigilant in identifying symptoms. Symptoms of
+_Trichophyton indotineae_ ringworm may include persistent and
+worsening skin rashes; patients typically present with large or
+widespread annular, scaly, erythematous pruritic plaques.
+
+Public health initiatives should focus on promoting responsible use of
+antifungal medications, discouraging self-diagnosis, and encouraging
+individuals with persistent skin issues to seek professional medical
+advice. - Mod.TU
+
+ProMED map:
+KwaZulu-Natal, South Africa:
+<https://promedmail.org/promed-post?place=3D8714216,67881>]
+
+[See Also:
+2023
+----
+Trichophyton indotineae - USA: (NYC) drug-resistant, 1st rep
+http://promedmail.org/post/20230512.8709998]
+.................................................tu/rd/ya/rd/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3D_Gn-pwZHESOMEGyuslEVbI-d0ocH4IwLiqKY5JOVEhloMDAwdTAwMDXdJJT=
+xAIbI4R-vayurVbwqMCEwBJdGIzKhW2GGrlC1XqHcarlk5JQ6IKtwaFlp327tdwnsjsuFkiTzIQ=
+1L6FRFNVC1z98og2lx0gKZnLM3xgDx8_JxAFm4Zsz_LyXrVhwkXFerTvv1-nmvIyUT21_MBn18S=
+lld2BtmTn51ugUgwevTOPA6W4kEIIk9iSqmAodJvVM2ZeEox1IefcvDKecdYGTNWDI_h8MMABe8=
+hP84RtsmuHqixf3Y0IlV3onB2ArimI_lAOrgoamDxuioZWrf4_yYMXlPesopF5iQMqjwrscH_AZ=
+6RJM7OztP4gAWsYqnCvxe56BS0XcKH9Zm6QlIX9q9Vvz-pNZcWFtpryOoibW4Qs8w48AlvYdGsT=
+QRPKBTHkuGo6uqoaFXqkng6tbEVQt8LRk6WKuC_YI94Hlxc-KQMW3Bm8NzdUMg5j1Pl_gEKMFMA=
+GNYaGHrdD3otJLOooIpSCXI1qamZfY3ilIuUwdkiHpwF2cXKdzwgNY-omdDQM3HDy_iVeO2Al6r=
+GLCxejJcm72V3z8pJ-FA2X9R9kOfM-FDCdNirIPmK9w4y03qsL8VsybUZWl-g5Lh5xnZj77Vgca=
+4f8c4JKQpPRKm9g9OJXN6M-gzS5V-KGQstZGCDyk6ut4m2hK8d77oUEPTFoZhll6w_j9Y6g0peD=
+g6e6RtlcrWxIzPR-6uJ-8K7Y3c3TSJM7oqfhfaPEH2YhCpzS0p05SfE9qxNSj8PpEr5b6IQrQJP=
+MrqXON5K1ZJilY1FcksnGELEFjqeKK1_xh7I3Z9xKsjQBQW12MNpYQ2XC3Hl7GWIHy7xEhemLf2=
+3fZ5x63S0GELIA34YahZezo-bd6qDi7A68eu7I1yqRoYbWhJSTbobWb6W-OmM6Beze5u8nymUrr=
+0Kl-4nFvxdXSM0MFF_a_DEX2wZgNDnYClvUHfmPk2WsFpu5sBpyrHBVDX79OPC7ZBpCZuf4ZBs4=
+3W2ko9sRq5LazbMIiKTSZLyZnHdgnl-GXBRsdbFYqi63wfp4ax_DPO__sgrco4u1EjoTEcyQ7UR=
+to1G65HC-tazjoORRB8g_H9l5NCTHEQFJnGqZcZE9b_hlXDa3wBKep_AzQtTumZtogUDfmeU6MD=
+bGSkKFd7LvF2K70g9SkJiI1ydpYmLSXbL1Hxz21sls3FM-q3L6Fpp6qJwrQF7Qee )
+############################################################
+############################################################
+
+--1ad4fd14739de34d3cef0ba0f1aeaebf67d94dbdc9e6c3c493a752bf17f3
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>TRICHOPHYTON INDOTINEAE - SOUTH AFRICA: (KWAZULU-NATAL) RESISTANCE,<b=
+r>FIRST REPORT<br>*********************************************************=
+***********************<br>A ProMED-mail post<br><a href=3D"https://u192686=
+62.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisIijpefK5PNjW-mL-YZGnfgDOxU1G3g=
+jwnPSi2Tfv3HA/42y/nKCMvZhtTzCh12oYB-L6QA/h0/CHGC1hlK3xhl5Y6E8Q7Nx7aYzeeozHN=
+E3cPVRFTrP8c">http://www.promedmail.org</a><br>ProMED-mail is a program of =
+the<br>International Society for Infectious Diseases<br><a href=3D"https://=
+u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisCT5tpD4Upm3qyMCbcYSQvc/=
+42y/nKCMvZhtTzCh12oYB-L6QA/h1/nmZX3iBeDDv--WTvOK3XqyM5YpPcsfPvKC4LUHe01Jg">=
+http://www.isid.org</a><br><br>Date: Wed 10 Jan 2024=0D<br>Source: Medical =
+Brief [edited]=0D<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/TLh_=
+csrC34X_iXpbYoMam-AdbplO2c-RuvAEfcVDhP7ocFx88Tfbt5rRqPrl2FIPlhe65HbYONUJJRX=
+-F0Aay92UM-dUcSFpCEjHd4JTJKotirVLhuUhIN09UH1hm7SRVNm1wpAidNSvXc0XmWua2A/42y=
+/nKCMvZhtTzCh12oYB-L6QA/h2/RtSRHaKkpX3wlguQo1C6_Q6MQvVMg7BZpC8OiRnGWPg">htt=
+ps://www.medicalbrief.co.za/first-in-africa-antifungal-resistant-ringworm-d=
+etected-in-kzn/</a>=0D<br>=0D<br>=0D<br>A first confirmed case of antifunga=
+l-resistant ringworm has been<br>recorded in KwaZulu-Natal, the National In=
+stitute for Communicable<br>Diseases (NICD) confirmed, saying 2 people were=
+ being treated for the<br>condition.=0D<br>=0D<br>_Trichophyton indotineae_=
+ is the first infection of its kind in<br>Africa, reports News24, with the =
+NICD confirming the positive<br>diagnosis a week before Christmas [2023], r=
+eporting it in the Public<br>Health Surveillance Bulletin. Also known as _T=
+richophyton<br>mentagrophytes_ type VIII, it is described as an antifungal-=
+resistant<br>fungus resulting in extensive disfiguring and difficult-to-tre=
+at<br>ringworm infections.=0D<br>=0D<br>The head of the Centre for Healthca=
+re-Associated Infections,<br>Antimicrobial Resistance and Mycoses, Professo=
+r Nalesh Govender, said<br>the true number of antifungal-resistant ringworm=
+ cases was difficult<br>to estimate, "because testing to determine whether =
+antifungal<br>medicines can effectively treat a ringworm is not widely avai=
+lable."<br>He added that this was first confirmed case of the _Trichophyton=
+<br>indotineae_ ringworm infection on the continent, and reasons for the<br=
+>condition could include:=0D<br>- Overuse of over-the-counter topical antif=
+ungal creams;=0D<br>- Inappropriate use of potent topical steroid creams by=
+ people with<br>rashes;=0D<br>- Inappropriate prescription of antifungal me=
+dicines;=0D<br>- Global travel and migration from regions where the<br>anti=
+fungal-resistant infections are more common.=0D<br>=0D<br>The KwaZulu-Natal=
+ Department of Health said it was unaware of the<br>antifungal-resistant in=
+fection.=0D<br>=0D<br>--=0D<br>Communicated by:=0D<br>ProMED=0D<br>via=0D<b=
+r>ProMED-EAFR<br><br>[The confirmation of the first case of antifungal-resi=
+stant ringworm<br>caused by _Trichophyton indotineae_ in KwaZulu-Natal rais=
+es<br>significant concerns about the potential spread and impact of this<br=
+>resistant fungus in Africa. The disfiguring nature and difficulty in<br>tr=
+eating these ringworm infections underscore the urgent need for<br>proactiv=
+e measures.=0D<br>=0D<br>The identified factors contributing to this condit=
+ion, such as overuse<br>of over-the-counter antifungal creams, inappropriat=
+e application of<br>potent topical steroids, and global travel, emphasize t=
+he importance<br>of education and awareness campaigns to guide proper medic=
+ation usage.<br>Moreover, it is crucial to enhance diagnostic capabilities =
+to<br>accurately identify and differentiate antifungal-resistant ringworm<b=
+r>cases.=0D<br>=0D<br>The KwaZulu-Natal Department of Health should collabo=
+rate with<br>healthcare professionals to establish protocols for testing an=
+d<br>reporting such cases promptly. Strengthening surveillance systems and<=
+br>sharing information across healthcare networks can aid in<br>understandi=
+ng the true prevalence of _Trichophyton indotineae_<br>infections.=0D<br>=0D=
+<br>Given the challenging nature of these infections, medical<br>practition=
+ers must be vigilant in identifying symptoms. Symptoms of<br>_Trichophyton =
+indotineae_ ringworm may include persistent and<br>worsening skin rashes; p=
+atients typically present with large or<br>widespread annular, scaly, eryth=
+ematous pruritic plaques.=0D<br>=0D<br>Public health initiatives should foc=
+us on promoting responsible use of<br>antifungal medications, discouraging =
+self-diagnosis, and encouraging<br>individuals with persistent skin issues =
+to seek professional medical<br>advice. - Mod.TU<br><br>ProMED map:<br>KwaZ=
+ulu-Natal, South Africa:<br><a href=3D"https://u19268662.ct.sendgrid.net/ss=
+/c/sSnCkKCWBvais3EuVAOvgy2WOIX7pp1nXnn4AbwuQ3Z6WbkfhqXYXU-aTMPJ8yThPhUh-f5K=
+7qLYERVqdzEBcA/42y/nKCMvZhtTzCh12oYB-L6QA/h3/GTVBrQBBmzvBldydDf7-cJL-yp9L8y=
+l41EZ1H5A8dss">https://promedmail.org/promed-post?place=3D8714216,67881</a>=
+]<br><br>[See Also:<br>2023=0D<br>----=0D<br>Trichophyton indotineae - USA:=
+ (NYC) drug-resistant, 1st rep<br>http://promedmail.org/post/20230512.87099=
+98]<br>.................................................tu/rd/ya/rd/jh<br><=
+/body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3D_Gn-pwZHESOMEGyuslEVbI-d0ocH4IwLiqKY5JOVEhloMDAwdT=
+AwMDXdJJTxAIbI4R-vayurVbwqMCEwBJdGIzKhW2GGrlC1XqHcarlk5JQ6IKtwaFlp327tdwnsj=
+suFkiTzIQ1L6FRFNVC1z98og2lx0gKZnLM3xgDx8_JxAFm4Zsz_LyXrVhwkXFerTvv1-nmvIyUT=
+21_MBn18Slld2BtmTn51ugUgwevTOPA6W4kEIIk9iSqmAodJvVM2ZeEox1IefcvDKecdYGTNWDI=
+_h8MMABe8hP84RtsmuHqixf3Y0IlV3onB2ArimI_lAOrgoamDxuioZWrf4_yYMXlPesopF5iQMq=
+jwrscH_AZ6RJM7OztP4gAWsYqnCvxe56BS0XcKH9Zm6QlIX9q9Vvz-pNZcWFtpryOoibW4Qs8w4=
+8AlvYdGsTQRPKBTHkuGo6uqoaFXqkng6tbEVQt8LRk6WKuC_YI94Hlxc-KQMW3Bm8NzdUMg5j1P=
+l_gEKMFMAGNYaGHrdD3otJLOooIpSCXI1qamZfY3ilIuUwdkiHpwF2cXKdzwgNY-omdDQM3HDy_=
+iVeO2Al6rGLCxejJcm72V3z8pJ-FA2X9R9kOfM-FDCdNirIPmK9w4y03qsL8VsybUZWl-g5Lh5x=
+nZj77Vgca4f8c4JKQpPRKm9g9OJXN6M-gzS5V-KGQstZGCDyk6ut4m2hK8d77oUEPTFoZhll6w_=
+j9Y6g0peDg6e6RtlcrWxIzPR-6uJ-8K7Y3c3TSJM7oqfhfaPEH2YhCpzS0p05SfE9qxNSj8PpEr=
+5b6IQrQJPMrqXON5K1ZJilY1FcksnGELEFjqeKK1_xh7I3Z9xKsjQBQW12MNpYQ2XC3Hl7GWIHy=
+7xEhemLf23fZ5x63S0GELIA34YahZezo-bd6qDi7A68eu7I1yqRoYbWhJSTbobWb6W-OmM6Beze=
+5u8nymUrr0Kl-4nFvxdXSM0MFF_a_DEX2wZgNDnYClvUHfmPk2WsFpu5sBpyrHBVDX79OPC7ZBp=
+CZuf4ZBs43W2ko9sRq5LazbMIiKTSZLyZnHdgnl-GXBRsdbFYqi63wfp4ax_DPO__sgrco4u1Ej=
+oTEcyQ7URto1G65HC-tazjoORRB8g_H9l5NCTHEQFJnGqZcZE9b_hlXDa3wBKep_AzQtTumZtog=
+UDfmeU6MDbGSkKFd7LvF2K70g9SkJiI1ydpYmLSXbL1Hxz21sls3FM-q3L6Fpp6qJwrQF7Qee" =
+target=3D"_blank" class=3D"Unsubscribe--unsubscribePreferences" style=3D"fo=
+nt-family:sans-serif;text-decoration:none;">Unsubscribe Preferences</a></di=
+v><br>############################################################<br>#####=
+#######################################################<br><br><img src=3D"=
+https://u19268662.ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/42y/nKCMvZhtT=
+zCh12oYB-L6QA/ho.gif" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=
+=3D"height:1px !important;width:1px !important;border-width:0 !important;ma=
+rgin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;=
+margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !importa=
+nt;padding-right:0 !important;padding-left:0 !important;"/></body>
+</html>
+--1ad4fd14739de34d3cef0ba0f1aeaebf67d94dbdc9e6c3c493a752bf17f3--

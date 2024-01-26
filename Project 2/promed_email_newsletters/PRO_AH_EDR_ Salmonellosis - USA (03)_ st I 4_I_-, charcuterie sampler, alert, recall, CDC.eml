@@ -1,0 +1,678 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a98:d84b:0:b0:1eb:e128:bbe3 with SMTP id b11csp1268832eil;
+        Fri, 19 Jan 2024 16:59:19 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IHwGE8boWDjVTrDJQ9abvYNkWL/pbkllkoZ3p6mwkAfSQuoF2PBRgEBAWkUoYM8iEo0osHB
+X-Received: by 2002:a05:6214:202c:b0:685:3e97:295b with SMTP id 12-20020a056214202c00b006853e97295bmr437633qvf.99.1705712358898;
+        Fri, 19 Jan 2024 16:59:18 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1705712358; cv=none;
+        d=google.com; s=arc-20160816;
+        b=zNdFWtV85ts0Fgv/UCKnL+Ad57Na2bMvRLbaLOKFjhQmUD/2GbxyEIsYAPT9WLN8lp
+         R1V9BooZheSfM+CeNyTBDyy9rWv4vas6piuPE3aFvGxEnO4ncSXCQ5wAbsDgaBMJkbez
+         UtfX2kj8eu6aPto+SJ11F6W3w41tk/eG+uHcydwB6LJI9SCeOWySBMjI0b6Wy4jXOlLi
+         TVCejOeHKYDgQaU4ejS3hzYgNkyP5750pUpL1+nozJdi6q5AutXNhq5W8sAm8mDk+CJg
+         wYv6mLY8UF3G/ZXgNK5Dmj62J+aM9ddTh4GrpQ76DDLM4DRV39x1u5Edu2nQzEL6cW4e
+         I6Hw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=zuXaig65kRsT0wSV1/sgXboDNBvnhHcQeIu+Kc3TSIk=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=FLG2/fR50d7lSSnWw95A10Zpz1qGeyvLQUpImXZcCa+amE1g1U87pBBMSF07uNTPQt
+         QgVw0XkFjmVyz7kEuvQcWYtlCQZrlctoy3BTSRgbUt+CR4RaAiggTkJg6PMCdv2M6WFP
+         Wf7CP35AzXptEw67FdMd9h/34g6nEZ84f8rc2IOFljRCjU6XwPnffjDDazwTx4WDVOVe
+         hU+IabcW4FLeiCeoLonvdripa4VG/O6GPw4xsXQr7tZ1CfOq3NRTYtLUzQt5eQAAqW6I
+         Jn0yoD7Jz+psVuAwmnldpwY9H9ngxFAG2/Q3qWV7p7mEtKUQJi7v4PzpRTBRDRaXlpXg
+         dV+Q==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=VhfblNZ8;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=jyTB36Ht;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id m7-20020a0cdb87000000b006817a2e1df1si508780qvk.214.2024.01.19.16.59.18
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 19 Jan 2024 16:59:18 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=VhfblNZ8;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=jyTB36Ht;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=zuXaig65kRsT0wSV1/sgXboDNBvnhHcQeIu+Kc3TSIk=;
+	b=VhfblNZ8wYI0s+IGSGB3LM4aBqCew/EoxxEWKr+vhfpRmAFs5ltnkVJYRj6OShdlS1p+
+	y8IE6/8kjOHA0V3N9Tysh0i/jFDCNGn+Qy1sAluJcpfffdqmXpG5jVGrUnKLKp52/FbCD3
+	rVTjgQ+Krzp+gKr37pAY8fmG3c2KwLC6s/lhXhEgfulJ/RxUTr6cbFhdia/It6+mrN0Dh5
+	yopRWUQFgfQhZPnJse7+YkMNUU+jEtyEle21wRdbxgX7+5tMB8Jq9XhgNDY6OC8KN8iTIz
+	HHt3KMNLAFILulbogQYb/xHTTU1UDraaWAJhGYW5SYdIJWNZJcW93sDz1ycqtO3A==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=zuXaig65kRsT0wSV1/sgXboDNBvnhHcQeIu+Kc3TSIk=;
+	b=jyTB36Ht4PGgbOYPXKbIP2Xod7JYzXyjA+jSfjgAFJzYWZEAu+lHLni5TxE27EXpPAzU
+	NJX4fbLZlTdiPAB9KH7tcCzC9N9jViD2nydb29EdHPfL0O1rOXifHTAJNhFoFq+VavxU48
+	aGAZsNl0bM2b8b64X+MQVn6MuT7QPxMtA=
+Received: by filterdrecv-cb6564d98-k529k with SMTP id filterdrecv-cb6564d98-k529k-1-65AB1AE3-9
+        2024-01-20 00:59:15.10296224 +0000 UTC m=+8144258.337106004
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-20 (SG) with HTTP
+	id vNGpDXGfS1aF4ZhTJE_wbw
+	Sat, 20 Jan 2024 00:59:15.059 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=5611d206c1b2d87675e7701ad326cfee614535412ed4cf36190041ff22f5
+Date: Sat, 20 Jan 2024 00:59:18 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <vNGpDXGfS1aF4ZhTJE_wbw@geopod-ismtpd-20>
+Subject: PRO/AH/EDR> Salmonellosis - USA (03): st I 4:I:-, charcuterie
+ sampler, alert, recall, CDC
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iBb=2FJhbBsSBYdmZS+4upoaC1XzhzS8=2FbUTgw=2FoN?=
+ =?us-ascii?Q?3vCwhTrHXwtVxPEes3nF372pxqQjkYnz3bifXEQ?=
+ =?us-ascii?Q?EOMymrxNGd3btmprZ9z9fRpoHrw+vpSnff3MHc0?=
+ =?us-ascii?Q?QMok=2FxSYioG947hR89ObSn1dT=2FUAJEWiuiNtePC?=
+ =?us-ascii?Q?n5H=2FzQyKBj0LPYmDjGJRz7kh9qRtd4rbNObg7V?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUiShGf=2FO8XJWpH34Od4Nd?=
+ =?us-ascii?Q?fxXa6jil96uRcJkF+N+LeVnO1tx80ddOyoyOo=2Fc?=
+ =?us-ascii?Q?Brxcl3ERAm0cOY743=2FFH59DWiSf5OzXORh1DLKt?=
+ =?us-ascii?Q?hb1NMKty3PsA5ju0ZzxCrq1WQuZSEQf=2FJlWtgqv?=
+ =?us-ascii?Q?cZmsyCHlNUZsDJuZMCui85dDYbHA00M0XItxN43?=
+ =?us-ascii?Q?SZKv7BpPjcLQpS+pRqT1xvUmeOfm+c1z=2F97oUwQ?=
+ =?us-ascii?Q?mn8uQKvva+evD+tsiDsBQ7p9R2uCYo1cmCMo1io?=
+ =?us-ascii?Q?lPCkL65Bno6vK8kqGBhOCfrpp4qA=2FWYbzvV2aAX?=
+ =?us-ascii?Q?TGZlhTwHNuuaMcKa5cxxs2Cf6bBOyQafCLzCMbr?=
+ =?us-ascii?Q?fe0acIkSSQe+3cbEdRgnGfj0Sjx+2lbLf0Mkh3J?=
+ =?us-ascii?Q?PQiFY7nyNwi8zN1Lzoszy0hf3yOJKrAtqxWoOlF?=
+ =?us-ascii?Q?k5Vaf=2F40Vskf7qEDzncVUORXLEmYcpj8TQXvdcR?=
+ =?us-ascii?Q?YK=2Fekq1bHiG4UpynhH8nglyGwQocHLOmlRSYKcj?=
+ =?us-ascii?Q?hD3uaH1I52OQlJihZkr6+Az3cx1TPXSx9ND=2FaXD?=
+ =?us-ascii?Q?XsW2zxbdFp=2FHKCxPzbHRB7UdJBXt1cCYdoT7I9A?=
+ =?us-ascii?Q?5uNhQDjqIxkRYEXCeAoT59BS0jT5C5adtqg2yfP?=
+ =?us-ascii?Q?whKRojh+q5cH+nsBsNhKCZpR7WG3OGdrV+525ml?=
+ =?us-ascii?Q?SiKmxBAvzxHr0nDsBMPRohC0lrCr2eTZhWwaOsV?=
+ =?us-ascii?Q?YvaNiT0pfbtxiBfsKLnyDfEZG6dzc2hQfXmjEoQ?=
+ =?us-ascii?Q?erRPlZDvnD7Qm7x3C0seHaytUg=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2EIeFQXzT8b?=
+ =?us-ascii?Q?yWYCAb0H3aoH6pkWLtwukcBxugGexiz2pxoMDAw?=
+ =?us-ascii?Q?dTAwMHBg6j9yAI-Uh8O-qaO3kcl1uKLkRFylH3t?=
+ =?us-ascii?Q?QKI7tYBOm=5FXgsyC8n6DTgAl6An3gXLWB6PA=5FaYH?=
+ =?us-ascii?Q?5B3fk3mbddp1Qe7S1myO6=5FuZHuNL07Daql3FS2l?=
+ =?us-ascii?Q?-OjVPEmz4vgpCU1kw=3D=3D=2EdELsEPmjxNSOJKGy79=5F?=
+ =?us-ascii?Q?jooADZ7kXAME32jarqLMjh8JoMDAwdTAwMMCSfd?=
+ =?us-ascii?Q?oKI2PS9=5FTnwnHgI-7yDbgN1hGfV59y3voeUlrz0?=
+ =?us-ascii?Q?O2UdE7MmA32q0I1i1hhuqXk1=5FDLQnYpZnvhVlfx?=
+ =?us-ascii?Q?vkLijavGF9xeyAHoSIF8TP005BjX79GjtxqwXpb?=
+ =?us-ascii?Q?FDL=5FVZai5dGV46x6J7Wus3qKq3lDFqvq-Zo0hoX?=
+ =?us-ascii?Q?LyQFnEKm03y37o1RSYzhlhpiMRGXQMRrrN9GDZI?=
+ =?us-ascii?Q?YcSQuTRdSxppzcYW4u4ur9CcpVMem3OZOF2Gvkl?=
+ =?us-ascii?Q?tMTHLJaBRvKWsNr33It2uG1fZnQ=5F9FmQV0Lcp4r?=
+ =?us-ascii?Q?Aach62A8OlmBo0Ye6nxEe7tbQ61ERwbg4eyyhbo?=
+ =?us-ascii?Q?L-o7FVhphk-nqHLLISzvFfkgVYN5ZU7u4C0c2Wc?=
+ =?us-ascii?Q?EibRnKxVvAZ9T0sv9F=5F5aS=5FvUYjFC=5FO5M0fNNDQ?=
+ =?us-ascii?Q?exs7Mrr6mq6NMA5mNSVhZpVdXM5tlvBFfI-2QUk?=
+ =?us-ascii?Q?d9ax1oKfps-aHXFQlRoYDEarRSqu8HGWBPNFrkr?=
+ =?us-ascii?Q?ZI3uLS5OGJG08ARNKM4VyqtJo5H0K1bDcf0cyz1?=
+ =?us-ascii?Q?tNDpU7TEXiKjMkML75YQ1T81pTIFa8FSOlmzYsq?=
+ =?us-ascii?Q?p773aoJjS=5FVhb7=5FPl1HTuCVZJdGU3=5FlGre5vzJd?=
+ =?us-ascii?Q?G=5FrzvIK26PPxgP15Lrp9Op6ZbAgL=5FZRf=5FSB4biG?=
+ =?us-ascii?Q?A-eGs4lpw8tpx-r=5FxcaiRH8O1sa82cytI8SIkq3?=
+ =?us-ascii?Q?ZaOQ9dFzc6mQM7jD1bRYpOmw6qF-tAD0Zc6UI4N?=
+ =?us-ascii?Q?BqAguf34S2RXBlqV9HHTBmQg3S06a4K=5Fu4otKo3?=
+ =?us-ascii?Q?TZPhRCXgmmsTgvGfOP42mk4fqpJXZTACWV=5FGnbK?=
+ =?us-ascii?Q?wcrNOiCOIXHZvwB3Sx8tR9F744ebKZfDyWRLQNk?=
+ =?us-ascii?Q?-sAJVyXDqjNK-wKEj1r0I-mk0j=5FLm3QGHiinAOA?=
+ =?us-ascii?Q?d0W90AGb45Dt9ak-ugs-1dUuWNEyOFFN6RhO6eL?=
+ =?us-ascii?Q?51XEo2LRyjMcFOUyXPOKmVk26ewynFv5Gr3H-Yh?=
+ =?us-ascii?Q?MIXoZRcnNNBcGevjycFTRjU-7aAd7Vzvr4wsVaE?=
+ =?us-ascii?Q?PEXOIv2SBzcAStRNldAaY3nCsjRlDBjY1HhVUV7?=
+ =?us-ascii?Q?KSYV6g=3D=3D=3E?=
+
+--5611d206c1b2d87675e7701ad326cfee614535412ed4cf36190041ff22f5
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=us-ascii
+Mime-Version: 1.0
+
+SALMONELLOSIS - USA (03): SEROTYPE I 4:I:-, CHARCUTERIE SAMPLER,
+ALERT, RECALL, CDC
+***************************************************************************=
+********
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+Date: Thu 18 Jan 2024
+Source: Centers for Disease Control and Prevention (CDC) [abridged,
+edited]
+<https://www.cdc.gov/salmonella/charcuterie-meats-01-24/index.html>
+
+
+_Salmonella_ Outbreak Linked to Charcuterie Meats
+-------------------------------------------------
+
+Fast Facts
+----------
+Illnesses: 47 (23 new)
+Hospitalizations: 10 (5 new)
+Deaths: 0 (0 new)
+States: 22 (8 new)
+Recall: Yes
+Investigation status: Active (first posted on 5 Jan 2024)
+
+Epidemiologic and laboratory data show that Busseto brand Charcuterie
+Sampler and Fratelli Beretta brand Antipasto Gran Beretta may be
+making people in this outbreak sick. Investigators are working to
+determine if any additional products may be contaminated.
+
+Epidemiologic Data
+------------------
+Since the last update, 23 more illnesses have been reported. As of 17
+Jan 2024, a total of 47 people infected with the outbreak strain of
+_Salmonella_ have been reported from 22 states (see map at
+<https://www.cdc.gov/salmonella/charcuterie-meats-01-24/map.html>).
+Illnesses started on dates ranging from 20 Nov 2023 to 1 Jan 2024 (see
+timeline at
+<https://www.cdc.gov/salmonella/charcuterie-meats-01-24/epi.html>). Of
+38 people with information available, 10 have been hospitalized. No
+deaths have been reported.
+
+State of Residence / No. of Cases
+---------------------------------
+Arizona / 2
+Colorado / 1
+Connecticut / 1
+Idaho / 1
+Illinois / 1
+Kentucky / 1
+Maryland / 1
+Michigan / 1
+Minnesota / 1
+Missouri / 1
+Nebraska / 3
+New Jersey / 1
+New York / 4
+Ohio / 11
+Oregon / 1
+Pennsylvania / 3
+Texas / 3
+Utah / 1
+Vermont / 1
+Virginia / 1
+Washington / 5
+Wisconsin / 2
+
+The true number of sick people in this outbreak is likely much higher
+than the number reported, and the outbreak may not be limited to the
+states with known illnesses. This is because many people recover
+without medical care and are not tested for _Salmonella_. In addition,
+recent illnesses may not yet be reported as it usually takes 3 to 4
+weeks to determine if a sick person is part of an outbreak.
+
+Public health officials collect many different types of information
+from sick people, including their age, race, ethnicity, other
+demographics, and the foods they ate in the week before they got sick.
+This information provides clues to help investigators identify the
+source of the outbreak.
+
+Demographics / Information
+--------------------------
+Age (n =3D 47) / Range from 1 to 91 years, median age of 45 years
+Sex (n =3D 46) / 59% male, 41% female
+Race (n =3D 33) / 97% White, 3% Asian
+Ethnicity (n =3D 32) / 94% non-Hispanic, 6% Hispanic
+
+State and local public health officials are interviewing people about
+the foods they ate in the week before they got sick. Of the 26 people
+interviewed, 19 (73%) reported eating a variety of charcuterie meats.
+Ten people provided specific information or shopper card records:
+
+- 4 people bought the Fratelli Beretta brand Antipasto Gran Beretta
+from Costco.
+- 1 person bought another Fratelli Beretta brand charcuterie product.
+- 3 people bought the Busseto brand Charcuterie Sampler from Sam's
+Club.
+- 2 people bought charcuterie meats from Sam's Club, but did not
+remember the brand name.
+
+Laboratory Data
+---------------
+Minnesota Department of Agriculture collected one unopened package of
+the twin-pack of Busseto brand charcuterie sampler from a sick
+person's home. Whole genome sequencing (WGS) showed that the
+_Salmonella_ in the charcuterie sampler is closely related to bacteria
+from sick people. This suggests that people got sick from eating the
+charcuterie sampler.
+
+WGS analysis of bacteria from 46 people's samples and 1 food sample
+predicted resistance to ampicillin, kanamycin, streptomycin, and
+sulfisoxazole. More information is available at the National
+Antimicrobial Resistance Monitoring System (NARMS) site. Most people
+with _Salmonella_ illness recover without antimicrobials. However, if
+antibiotics are needed, some illnesses in this outbreak may be
+difficult to treat with some commonly recommended antibacterials and
+may require a different therapeutic choice.
+
+Public Health Actions
+---------------------
+Fratelli Barretta recalled a single lot of the Busseto brand
+Charcuterie Sampler because of testing by Minnesota that identified
+_Salmonella_ in the product.
+
+While the outbreak is ongoing, CDC is advising not to eat, serve, or
+sell any lot of Busseto brand Charcuterie Sampler from Sam's Club or
+Fratelli Beretta brand Antipasto Gran Beretta from Costco.
+
+Sam's Club and Costco have removed these products from their stores.
+
+--
+Communicated by:
+ProMED
+
+[As expected, the number of affected individuals and number of states
+involved in this ongoing outbreak has increased. The isolate from the
+product is the same serotype, but whole genome sequencing is required
+to confirm a "smoking gun" or, in this case, a smoking charcuterie.
+
+As a review, _Salmonella_ as a genus has 2 species, _enterica_ and
+_bongori_. _S. enterica_ is divided into 6 subspecies: _enterica_,
+_salamae_, _arizonae_, _diarizonae_, _houtenae_, and _indica_. _S.
+enterica_ subspecies _enterica_ (or subspecies I) strains are the ones
+usually isolated from humans or warm-blooded animals and represent a
+majority of the salmonellas that are clinically important.
+
+The designation _Salmonella_ I 4:I:- (as reported in the CDC post)
+means:
+- the "I" reflects subspecies _enterica_;
+- the "4," is the O (or somatic) antigen associated with the organism.
+An O antigen underscored or placed in [ ] can refer to whether the
+antigen is related to phage conversion;
+- the nomenclature after the colon, in this case I:-, reflects the
+flagellar or H antigens.
+
+Charcuterie "is cured meat, derived from the French chair, 'flesh,'
+and cuit, 'cooked,' and was coined in 15th century France. The owners
+of shops specializing in charcuterie (charcutiers) became popular for
+their detailed preparation of cured meats and helped establish
+stylized arrangements of food as part of French culinary culture.
+However, according to food historian Sarah Wassberg Johnson,
+charcuterie also has its roots in the simple meals that had been eaten
+by laborers of the working class throughout Europe since the medieval
+period, often consisting of meats, cheeses, bread, local produce, and
+wine or beer. Moreover, these meals evolved and found their way to
+higher society with the cheese course of formal dinners in 18th and
+19th century France, Great Britain, and colonial America. The cheese
+course remained common at these formal dinners before they were
+rapidly replaced by the dessert course by the end of the 19th century"
+(<https://en.wikipedia.org/wiki/Charcuterie_board>). - Mod.LL
+
+ProMED map:
+United States: <https://promedmail.org/promed-post?place=3D8714341,106>]
+
+[See Also:
+Salmonellosis - USA (02): st I 4:I:-, charcuterie sampler, alert,
+recall http://promedmail.org/post/20240109.8714123
+Salmonellosis - USA (01): (MN) charcuterie sampler, alert, recall
+http://promedmail.org/post/20240105.8714073
+2023
+----
+Salmonellosis, st Soahanina (Sundsvall) - USA, Canada (02):
+cantaloupe, fatal http://promedmail.org/post/20231216.8713761
+Salmonellosis, st Soahanina (Sundsvall) - Canada (02): cantaloupe,
+fatal http://promedmail.org/post/20231211.8713644
+Salmonellosis, st Soahanina (Sundsvall) - USA: cantaloupe, alert,
+recall http://promedmail.org/post/20231125.8713325
+Salmonellosis, st Soahanina - USA, Canada: cantaloupe, alert, recall
+http://promedmail.org/post/20231119.8713220
+Salmonellosis, st Soahanina - Canada: (BC) cantaloupe, alert, recall
+http://promedmail.org/post/20231117.8713193
+Salmonellosis, st. I 4,[5,12:i:- - Canada: XDR, linked to raw pet
+food, cattle exposure, alert
+http://promedmail.org/post/20231114.8713143
+Salmonellosis, st Newport - USA: multidrug resistant, epidemiology,
+alert http://promedmail.org/post/20231110.8713089
+Salmonellosis, st Kiambu - USA: human, dry dog food, alert, recall,
+CDC http://promedmail.org/post/20231110.8713076
+Salmonellosis, st Thompson - USA (03): diced onions, alert, recall,
+FDA http://promedmail.org/post/20231025.8712807
+Salmonellosis - USA (14): (CA) unpasteurized milk, alert
+http://promedmail.org/post/20231023.8712780
+Salmonellosis, st Typhimurium - USA (02): human, wild songbird,
+2020-21 http://promedmail.org/post/20231019.8712717
+Salmonellosis, st Thompson - USA (02): unknown source, FDA
+http://promedmail.org/post/20231007.8712507
+Salmonellosis - USA (13): pet turtles, multiple serotypes
+http://promedmail.org/post/20231003.8712443
+Salmonellosis - USA (12): (KY) unidentified source
+http://promedmail.org/post/20230924.8712296
+Salmonellosis - USA (11): (NE) wedding reception
+http://promedmail.org/post/20230922.8712276
+Salmonellosis - USA (10): (IL) Chicago restaurant
+http://promedmail.org/post/20230917.8712160
+Salmonellosis - USA (09): pet turtle, 11 states
+http://promedmail.org/post/20230818.8711753
+Salmonellosis - USA (08): (WA) long-term care facility, RFI
+http://promedmail.org/post/20230805.8711575
+Salmonellosis, st Typhimurium - USA: (MN) unpasteurized milk
+http://promedmail.org/post/20230728.8711438
+Salmonellosis - USA (07): (CA) jail inmates, RFI
+http://promedmail.org/post/20230628.8710834
+Salmonellosis - USA (06): live poultry, multiple serotypes
+http://promedmail.org/post/20230625.8710746
+Salmonellosis - USA (05): (IL) ground beef, alert
+http://promedmail.org/post/20230608.8710479
+Salmonellosis - USA (04): cashew brie, multiple serotypes, CDC, 2021
+http://promedmail.org/post/20230527.8710268
+Salmonellosis, st Enteritidis - USA: raw cookie dough, CDC
+http://promedmail.org/post/20230524.8710227
+Salmonellosis, st Thompson - USA: CDC, seafood processing plant, 2021
+http://promedmail.org/post/20230512.8709999
+Salmonellosis - USA (02): CDC, not ready-to-eat chicken products,
+1998-2022 http://promedmail.org/post/20230508.8709920
+Salmonellosis, st Infantis - USA (02): flour, recall
+http://promedmail.org/post/20230502.8709794
+Salmonellosis - Canada: human, snake, feeder rodent
+http://promedmail.org/post/20230414.8709496
+Salmonellosis, st Infantis - USA: flour
+http://promedmail.org/post/20230331.8709269
+Salmonellosis, st Hartford - USA: unknown source, RFI
+http://promedmail.org/post/20230316.8708968
+Salmonellosis - USA: oyster, ex Florida, alert, recall
+http://promedmail.org/post/20230303.8708715
+Salmonellosis, st Vitkin & IIIb 61:z52:z53 - USA: bearded dragon
+http://promedmail.org/post/20230122.8707906]
+.................................................ll/rd/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3D3KNw14mGcIkOw5l9S1eC_Pem5JynRkylPRYUX_eC5AhoMDAwdTAwMK2A7f0=
+oYeCRaBvO1o7DUHvvqr93MhCVCwv72oo_rrDPa2Xq31cdc8FEWtLSHNvZX3UhqBcmyFzGbe5zsd=
+0SXPD25Oz8ou_SoSpPDjBUtyeWfDpmnI9f3fGF73vZbj4BptF3KHsst_mn1On6k0BLRgKwXo6W0=
+cgmrVOn-QTLMfBCzEtlMBjG41Zo17KHanWFe3KB-RMPBuElPmsbd1pn2nzJKsWZEOMy7Gxx3YaA=
+Tr2emT4xIoyVR1s6brabm9Y0BVIzs0SYQiMAhXwWGD19YVQTqMiD0IZCrJNqXpc1MaBC5ct2JCR=
+I7E7RH3rFsuNmxDyhkrzJlp9JsscADMRA6J-zEUjmUVpzW4J-iBYfgq4wcRu6kWRHxBovOtwyFi=
+IKsfV_RpQeJ_U3Kpw-una2UZR0ZJ6T8UV_m5Tk4NcbCZRkM3nTbMEY28S-I1j49RuU7lB73iop4=
+FZTdItVGdXGDqcOWPNGH3JrP5du29P_4CRxwG610Dkt-fswo2sK0ydEkoyuHFsifMxwRv5kOKuS=
+L-xcPr57QXI0gkmurKFQ1822wscPm2C8a2J958AEFGt1PyxGk6Nm5sW2A3YOHUTtm5wvgxJ_TIZ=
+GdfOMC8wpKgfa4Dpn8wZuEwbSW07_2h0qfNMmGBagk7lRQ-GrXJ_Tb6rNyTrCTdqma8g7LPPtSw=
+c-hqzIgftfwl6cgSmH6CRwWIRGTVvjAibRu767zk5i8Q4jsSq1x60MvAQa3DLFsC9xMiUwGVIJ1=
+A7ehgRtKwmf1TEso0QMmv-uJNjQDaJh-CXqgWC-CXTqrQTkKdx7BnYqAsqYP-EN4mqG6fZV8Au9=
+5iBRBRcEXdKlG1ukdhHKEaeQ3vZxgjrnp9bQANZl3VZQEnW7cSxog002qRccflTd61SPWlaypuI=
+uLlFuNnsjJqAWNhDXjXe4ttU3qUUl22Lvl672ciWh8tqToBvUiAoitSe8a7GIqDkbQtHkQCeY3B=
+15L0G8Cq6tBU-wT2fR3npEs-AjTE2s45enQFbpa4LjEKFOc4FgJRVc2kxtFeWmOH4BMlKjgw3DO=
+CFuFGBwNe1n2k2LnQzJWTwV7lWu4OCWIHvHbUpfoiO8LqqJaqhWdxAHufq_9XrTRptplbnVpRNU=
+v3_UNJMVqa54vw5kPWVTlzlt0zT3KyS6PtbeUqfL6JKXmSTv0cadjQvNth1eFVvB )
+############################################################
+############################################################
+
+--5611d206c1b2d87675e7701ad326cfee614535412ed4cf36190041ff22f5
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>SALMONELLOSIS - USA (03): SEROTYPE I 4:I:-, CHARCUTERIE SAMPLER,<br>A=
+LERT, RECALL, CDC<br>******************************************************=
+*****************************<br>A ProMED-mail post<br><a href=3D"https://u=
+19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisIijpefK5PNjW-mL-YZGnfgDO=
+xU1G3gjwnPSi2Tfv3HA/435/8MBMXpE3Snu30F3I4fVZRw/h0/8n-jSB6Y91OIJl7e7sip37dMB=
+OZFysrTcRP1Z-reK2s">http://www.promedmail.org</a><br>ProMED-mail is a progr=
+am of the<br>International Society for Infectious Diseases<br><a href=3D"ht=
+tps://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisCT5tpD4Upm3qyMCbc=
+YSQvc/435/8MBMXpE3Snu30F3I4fVZRw/h1/xbvJocIKi5aZVem1q6ACjotgj0tmwhTnnLzFJGX=
+DJYs">http://www.isid.org</a><br><br>Date: Thu 18 Jan 2024=0D<br>Source: Ce=
+nters for Disease Control and Prevention (CDC) [abridged,<br>edited]=0D<br>=
+<a href=3D"https://u19268662.ct.sendgrid.net/ss/c/TLh_csrC34X_iXpbYoMam3hUB=
+9IE2dXZdf9ub3KDiU2U5pcKYTP7nTEx92SwuqSsuy2lBB7whhSxcytmZ3cytUFL69RRs6I5688f=
+0oFbvKQ/435/8MBMXpE3Snu30F3I4fVZRw/h2/Crl18eb-mtXAnTTeTMRYVxVAQB-WuCTwMzIUj=
+JfP4Js">https://www.cdc.gov/salmonella/charcuterie-meats-01-24/index.html</=
+a>=0D<br>=0D<br>=0D<br>_Salmonella_ Outbreak Linked to Charcuterie Meats=0D=
+<br>-------------------------------------------------=0D<br>=0D<br>Fast Fac=
+ts=0D<br>----------=0D<br>Illnesses: 47 (23 new)=0D<br>Hospitalizations: 10=
+ (5 new)=0D<br>Deaths: 0 (0 new)=0D<br>States: 22 (8 new)=0D<br>Recall: Yes=0D=
+<br>Investigation status: Active (first posted on 5 Jan 2024)=0D<br>=0D<br>=
+Epidemiologic and laboratory data show that Busseto brand Charcuterie<br>Sa=
+mpler and Fratelli Beretta brand Antipasto Gran Beretta may be<br>making pe=
+ople in this outbreak sick. Investigators are working to<br>determine if an=
+y additional products may be contaminated.=0D<br>=0D<br>Epidemiologic Data=0D=
+<br>------------------=0D<br>Since the last update, 23 more illnesses have =
+been reported. As of 17<br>Jan 2024, a total of 47 people infected with the=
+ outbreak strain of<br>_Salmonella_ have been reported from 22 states (see =
+map at<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/TLh_csrC34X_iXp=
+bYoMam3hUB9IE2dXZdf9ub3KDiU2U5pcKYTP7nTEx92SwuqSsQQMsZT0lkHBvcMiJYjZOhlviiv=
+rt8BI8ePqGbbPaJeo/435/8MBMXpE3Snu30F3I4fVZRw/h3/gd5rBhCrZ3rUja4T2exZpJZBvl-=
+n1RiE0jCqNvUFJ1E">https://www.cdc.gov/salmonella/charcuterie-meats-01-24/ma=
+p.html</a>).<br>Illnesses started on dates ranging from 20 Nov 2023 to 1 Ja=
+n 2024 (see<br>timeline at<br><a href=3D"https://u19268662.ct.sendgrid.net/=
+ss/c/TLh_csrC34X_iXpbYoMam3hUB9IE2dXZdf9ub3KDiU2U5pcKYTP7nTEx92SwuqSsqN5Qu5=
+QFyupv-S00dsBl4kh6heCFMBZ-E9Gw1UBprs4/435/8MBMXpE3Snu30F3I4fVZRw/h4/THM2clg=
+TclRva3kxTzEmsOil3NC-MS_MpHjzg1yVl_o">https://www.cdc.gov/salmonella/charcu=
+terie-meats-01-24/epi.html</a>). Of<br>38 people with information available=
+, 10 have been hospitalized. No<br>deaths have been reported.=0D<br>=0D<br>=
+State of Residence / No. of Cases=0D<br>---------------------------------=0D=
+<br>Arizona / 2=0D<br>Colorado / 1=0D<br>Connecticut / 1=0D<br>Idaho / 1=0D=
+<br>Illinois / 1=0D<br>Kentucky / 1=0D<br>Maryland / 1=0D<br>Michigan / 1=0D=
+<br>Minnesota / 1=0D<br>Missouri / 1=0D<br>Nebraska / 3=0D<br>New Jersey / =
+1=0D<br>New York / 4=0D<br>Ohio / 11=0D<br>Oregon / 1=0D<br>Pennsylvania / =
+3=0D<br>Texas / 3=0D<br>Utah / 1=0D<br>Vermont / 1=0D<br>Virginia / 1=0D<br=
+>Washington / 5=0D<br>Wisconsin / 2=0D<br>=0D<br>The true number of sick pe=
+ople in this outbreak is likely much higher<br>than the number reported, an=
+d the outbreak may not be limited to the<br>states with known illnesses. Th=
+is is because many people recover<br>without medical care and are not teste=
+d for _Salmonella_. In addition,<br>recent illnesses may not yet be reporte=
+d as it usually takes 3 to 4<br>weeks to determine if a sick person is part=
+ of an outbreak.=0D<br>=0D<br>Public health officials collect many differen=
+t types of information<br>from sick people, including their age, race, ethn=
+icity, other<br>demographics, and the foods they ate in the week before the=
+y got sick.<br>This information provides clues to help investigators identi=
+fy the<br>source of the outbreak.=0D<br>=0D<br>Demographics / Information=0D=
+<br>--------------------------=0D<br>Age (n =3D 47) / Range from 1 to 91 ye=
+ars, median age of 45 years=0D<br>Sex (n =3D 46) / 59% male, 41% female=0D<=
+br>Race (n =3D 33) / 97% White, 3% Asian=0D<br>Ethnicity (n =3D 32) / 94% n=
+on-Hispanic, 6% Hispanic=0D<br>=0D<br>State and local public health officia=
+ls are interviewing people about<br>the foods they ate in the week before t=
+hey got sick. Of the 26 people<br>interviewed, 19 (73%) reported eating a v=
+ariety of charcuterie meats.<br>Ten people provided specific information or=
+ shopper card records:=0D<br>=0D<br>- 4 people bought the Fratelli Beretta =
+brand Antipasto Gran Beretta<br>from Costco.=0D<br>- 1 person bought anothe=
+r Fratelli Beretta brand charcuterie product.=0D<br>- 3 people bought the B=
+usseto brand Charcuterie Sampler from Sam's<br>Club.=0D<br>- 2 people bough=
+t charcuterie meats from Sam's Club, but did not<br>remember the brand name=
+.=0D<br>=0D<br>Laboratory Data=0D<br>---------------=0D<br>Minnesota Depart=
+ment of Agriculture collected one unopened package of<br>the twin-pack of B=
+usseto brand charcuterie sampler from a sick<br>person's home. Whole genome=
+ sequencing (WGS) showed that the<br>_Salmonella_ in the charcuterie sample=
+r is closely related to bacteria<br>from sick people. This suggests that pe=
+ople got sick from eating the<br>charcuterie sampler.=0D<br>=0D<br>WGS anal=
+ysis of bacteria from 46 people's samples and 1 food sample<br>predicted re=
+sistance to ampicillin, kanamycin, streptomycin, and<br>sulfisoxazole. More=
+ information is available at the National<br>Antimicrobial Resistance Monit=
+oring System (NARMS) site. Most people<br>with _Salmonella_ illness recover=
+ without antimicrobials. However, if<br>antibiotics are needed, some illnes=
+ses in this outbreak may be<br>difficult to treat with some commonly recomm=
+ended antibacterials and<br>may require a different therapeutic choice.=0D<=
+br>=0D<br>Public Health Actions=0D<br>---------------------=0D<br>Fratelli =
+Barretta recalled a single lot of the Busseto brand<br>Charcuterie Sampler =
+because of testing by Minnesota that identified<br>_Salmonella_ in the prod=
+uct.=0D<br>=0D<br>While the outbreak is ongoing, CDC is advising not to eat=
+, serve, or<br>sell any lot of Busseto brand Charcuterie Sampler from Sam's=
+ Club or<br>Fratelli Beretta brand Antipasto Gran Beretta from Costco.=0D<b=
+r>=0D<br>Sam's Club and Costco have removed these products from their store=
+s.=0D<br>=0D<br>--=0D<br>Communicated by:=0D<br>ProMED<br><br>[As expected,=
+ the number of affected individuals and number of states<br>involved in thi=
+s ongoing outbreak has increased. The isolate from the<br>product is the sa=
+me serotype, but whole genome sequencing is required<br>to confirm a "smoki=
+ng gun" or, in this case, a smoking charcuterie.=0D<br>=0D<br>As a review, =
+_Salmonella_ as a genus has 2 species, _enterica_ and<br>_bongori_. _S. ent=
+erica_ is divided into 6 subspecies: _enterica_,<br>_salamae_, _arizonae_, =
+_diarizonae_, _houtenae_, and _indica_. _S.<br>enterica_ subspecies _enteri=
+ca_ (or subspecies I) strains are the ones<br>usually isolated from humans =
+or warm-blooded animals and represent a<br>majority of the salmonellas that=
+ are clinically important.=0D<br>=0D<br>The designation _Salmonella_ I 4:I:=
+- (as reported in the CDC post)<br>means:=0D<br>- the "I" reflects subspeci=
+es _enterica_;=0D<br>- the "4," is the O (or somatic) antigen associated wi=
+th the organism.<br>An O antigen underscored or placed in [ ] can refer to =
+whether the<br>antigen is related to phage conversion;=0D<br>- the nomencla=
+ture after the colon, in this case I:-, reflects the<br>flagellar or H anti=
+gens.=0D<br>=0D<br>Charcuterie "is cured meat, derived from the French chai=
+r, 'flesh,'<br>and cuit, 'cooked,' and was coined in 15th century France. T=
+he owners<br>of shops specializing in charcuterie (charcutiers) became popu=
+lar for<br>their detailed preparation of cured meats and helped establish<b=
+r>stylized arrangements of food as part of French culinary culture.<br>Howe=
+ver, according to food historian Sarah Wassberg Johnson,<br>charcuterie als=
+o has its roots in the simple meals that had been eaten<br>by laborers of t=
+he working class throughout Europe since the medieval<br>period, often cons=
+isting of meats, cheeses, bread, local produce, and<br>wine or beer. Moreov=
+er, these meals evolved and found their way to<br>higher society with the c=
+heese course of formal dinners in 18th and<br>19th century France, Great Br=
+itain, and colonial America. The cheese<br>course remained common at these =
+formal dinners before they were<br>rapidly replaced by the dessert course b=
+y the end of the 19th century"<br>(<a href=3D"https://u19268662.ct.sendgrid=
+.net/ss/c/u6Jy221DtLTd6phwYNECndCVDGULFcCLoA-Mb23Mb1XYx5fGN9PdExFBEIK3N5-K1=
+73OEzs-OA6sphzz9nytvQ/435/8MBMXpE3Snu30F3I4fVZRw/h5/TQ_9Q-5hx6Tfy044T2lL0DI=
+DSbM-q1iKcD92BTXJHW0">https://en.wikipedia.org/wiki/Charcuterie_board</a>).=
+ - Mod.LL<br><br>ProMED map:<br>United States: <a href=3D"https://u19268662=
+.ct.sendgrid.net/ss/c/sSnCkKCWBvais3EuVAOvgy2WOIX7pp1nXnn4AbwuQ3Z6WbkfhqXYX=
+U-aTMPJ8yThwbuNgzckIEfSUGDGkNepSQ/435/8MBMXpE3Snu30F3I4fVZRw/h6/CJH9Ocbntxs=
+P1PltICZKhosOuAxG8lD15D8RuKNWjKU">https://promedmail.org/promed-post?place=
+=3D8714341,106</a>]<br><br>[See Also:<br>Salmonellosis - USA (02): st I 4:I=
+:-, charcuterie sampler, alert,<br>recall http://promedmail.org/post/202401=
+09.8714123=0D<br>Salmonellosis - USA (01): (MN) charcuterie sampler, alert,=
+ recall<br>http://promedmail.org/post/20240105.8714073=0D<br>2023=0D<br>---=
+-=0D<br>Salmonellosis, st Soahanina (Sundsvall) - USA, Canada (02):<br>cant=
+aloupe, fatal http://promedmail.org/post/20231216.8713761=0D<br>Salmonellos=
+is, st Soahanina (Sundsvall) - Canada (02): cantaloupe,<br>fatal http://pro=
+medmail.org/post/20231211.8713644=0D<br>Salmonellosis, st Soahanina (Sundsv=
+all) - USA: cantaloupe, alert,<br>recall http://promedmail.org/post/2023112=
+5.8713325=0D<br>Salmonellosis, st Soahanina - USA, Canada: cantaloupe, aler=
+t, recall<br>http://promedmail.org/post/20231119.8713220=0D<br>Salmonellosi=
+s, st Soahanina - Canada: (BC) cantaloupe, alert, recall<br>http://promedma=
+il.org/post/20231117.8713193=0D<br>Salmonellosis, st. I 4,[5,12:i:- - Canad=
+a: XDR, linked to raw pet<br>food, cattle exposure, alert<br>http://promedm=
+ail.org/post/20231114.8713143=0D<br>Salmonellosis, st Newport - USA: multid=
+rug resistant, epidemiology,<br>alert http://promedmail.org/post/20231110.8=
+713089=0D<br>Salmonellosis, st Kiambu - USA: human, dry dog food, alert, re=
+call,<br>CDC http://promedmail.org/post/20231110.8713076=0D<br>Salmonellosi=
+s, st Thompson - USA (03): diced onions, alert, recall,<br>FDA http://prome=
+dmail.org/post/20231025.8712807=0D<br>Salmonellosis - USA (14): (CA) unpast=
+eurized milk, alert<br>http://promedmail.org/post/20231023.8712780=0D<br>Sa=
+lmonellosis, st Typhimurium - USA (02): human, wild songbird,<br>2020-21 ht=
+tp://promedmail.org/post/20231019.8712717=0D<br>Salmonellosis, st Thompson =
+- USA (02): unknown source, FDA<br>http://promedmail.org/post/20231007.8712=
+507=0D<br>Salmonellosis - USA (13): pet turtles, multiple serotypes<br>http=
+://promedmail.org/post/20231003.8712443=0D<br>Salmonellosis - USA (12): (KY=
+) unidentified source<br>http://promedmail.org/post/20230924.8712296=0D<br>=
+Salmonellosis - USA (11): (NE) wedding reception<br>http://promedmail.org/p=
+ost/20230922.8712276=0D<br>Salmonellosis - USA (10): (IL) Chicago restauran=
+t<br>http://promedmail.org/post/20230917.8712160=0D<br>Salmonellosis - USA =
+(09): pet turtle, 11 states<br>http://promedmail.org/post/20230818.8711753=0D=
+<br>Salmonellosis - USA (08): (WA) long-term care facility, RFI<br>http://p=
+romedmail.org/post/20230805.8711575=0D<br>Salmonellosis, st Typhimurium - U=
+SA: (MN) unpasteurized milk<br>http://promedmail.org/post/20230728.8711438=0D=
+<br>Salmonellosis - USA (07): (CA) jail inmates, RFI<br>http://promedmail.o=
+rg/post/20230628.8710834=0D<br>Salmonellosis - USA (06): live poultry, mult=
+iple serotypes<br>http://promedmail.org/post/20230625.8710746=0D<br>Salmone=
+llosis - USA (05): (IL) ground beef, alert<br>http://promedmail.org/post/20=
+230608.8710479=0D<br>Salmonellosis - USA (04): cashew brie, multiple seroty=
+pes, CDC, 2021<br>http://promedmail.org/post/20230527.8710268=0D<br>Salmone=
+llosis, st Enteritidis - USA: raw cookie dough, CDC<br>http://promedmail.or=
+g/post/20230524.8710227=0D<br>Salmonellosis, st Thompson - USA: CDC, seafoo=
+d processing plant, 2021<br>http://promedmail.org/post/20230512.8709999=0D<=
+br>Salmonellosis - USA (02): CDC, not ready-to-eat chicken products,<br>199=
+8-2022 http://promedmail.org/post/20230508.8709920=0D<br>Salmonellosis, st =
+Infantis - USA (02): flour, recall<br>http://promedmail.org/post/20230502.8=
+709794=0D<br>Salmonellosis - Canada: human, snake, feeder rodent<br>http://=
+promedmail.org/post/20230414.8709496=0D<br>Salmonellosis, st Infantis - USA=
+: flour<br>http://promedmail.org/post/20230331.8709269=0D<br>Salmonellosis,=
+ st Hartford - USA: unknown source, RFI<br>http://promedmail.org/post/20230=
+316.8708968=0D<br>Salmonellosis - USA: oyster, ex Florida, alert, recall<br=
+>http://promedmail.org/post/20230303.8708715=0D<br>Salmonellosis, st Vitkin=
+ & IIIb 61:z52:z53 - USA: bearded dragon<br>http://promedmail.org/post/2023=
+0122.8707906]<br>.................................................ll/rd/jh<=
+br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3D3KNw14mGcIkOw5l9S1eC_Pem5JynRkylPRYUX_eC5AhoMDAwdT=
+AwMK2A7f0oYeCRaBvO1o7DUHvvqr93MhCVCwv72oo_rrDPa2Xq31cdc8FEWtLSHNvZX3UhqBcmy=
+FzGbe5zsd0SXPD25Oz8ou_SoSpPDjBUtyeWfDpmnI9f3fGF73vZbj4BptF3KHsst_mn1On6k0BL=
+RgKwXo6W0cgmrVOn-QTLMfBCzEtlMBjG41Zo17KHanWFe3KB-RMPBuElPmsbd1pn2nzJKsWZEOM=
+y7Gxx3YaATr2emT4xIoyVR1s6brabm9Y0BVIzs0SYQiMAhXwWGD19YVQTqMiD0IZCrJNqXpc1Ma=
+BC5ct2JCRI7E7RH3rFsuNmxDyhkrzJlp9JsscADMRA6J-zEUjmUVpzW4J-iBYfgq4wcRu6kWRHx=
+BovOtwyFiIKsfV_RpQeJ_U3Kpw-una2UZR0ZJ6T8UV_m5Tk4NcbCZRkM3nTbMEY28S-I1j49RuU=
+7lB73iop4FZTdItVGdXGDqcOWPNGH3JrP5du29P_4CRxwG610Dkt-fswo2sK0ydEkoyuHFsifMx=
+wRv5kOKuSL-xcPr57QXI0gkmurKFQ1822wscPm2C8a2J958AEFGt1PyxGk6Nm5sW2A3YOHUTtm5=
+wvgxJ_TIZGdfOMC8wpKgfa4Dpn8wZuEwbSW07_2h0qfNMmGBagk7lRQ-GrXJ_Tb6rNyTrCTdqma=
+8g7LPPtSwc-hqzIgftfwl6cgSmH6CRwWIRGTVvjAibRu767zk5i8Q4jsSq1x60MvAQa3DLFsC9x=
+MiUwGVIJ1A7ehgRtKwmf1TEso0QMmv-uJNjQDaJh-CXqgWC-CXTqrQTkKdx7BnYqAsqYP-EN4mq=
+G6fZV8Au95iBRBRcEXdKlG1ukdhHKEaeQ3vZxgjrnp9bQANZl3VZQEnW7cSxog002qRccflTd61=
+SPWlaypuIuLlFuNnsjJqAWNhDXjXe4ttU3qUUl22Lvl672ciWh8tqToBvUiAoitSe8a7GIqDkbQ=
+tHkQCeY3B15L0G8Cq6tBU-wT2fR3npEs-AjTE2s45enQFbpa4LjEKFOc4FgJRVc2kxtFeWmOH4B=
+MlKjgw3DOCFuFGBwNe1n2k2LnQzJWTwV7lWu4OCWIHvHbUpfoiO8LqqJaqhWdxAHufq_9XrTRpt=
+plbnVpRNUv3_UNJMVqa54vw5kPWVTlzlt0zT3KyS6PtbeUqfL6JKXmSTv0cadjQvNth1eFVvB" =
+target=3D"_blank" class=3D"Unsubscribe--unsubscribePreferences" style=3D"fo=
+nt-family:sans-serif;text-decoration:none;">Unsubscribe Preferences</a></di=
+v><br>############################################################<br>#####=
+#######################################################<br><br><img src=3D"=
+https://u19268662.ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/435/8MBMXpE3S=
+nu30F3I4fVZRw/ho.gif" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=
+=3D"height:1px !important;width:1px !important;border-width:0 !important;ma=
+rgin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;=
+margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !importa=
+nt;padding-right:0 !important;padding-left:0 !important;"/></body>
+</html>
+--5611d206c1b2d87675e7701ad326cfee614535412ed4cf36190041ff22f5--

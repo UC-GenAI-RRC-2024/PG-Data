@@ -1,0 +1,937 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a05:640c:3013:b0:1ee:4bd3:5fc9 with SMTP id z19csp727757eiw;
+        Sun, 21 Jan 2024 13:34:20 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IHd0WL3FSkqeWy9HwyppUGVfM3FDxQAqxWCpsmLIZh32TBL+MgqbKo9jHTM7dD4XscJKWh3
+X-Received: by 2002:a05:622a:348:b0:42a:3ff4:6d9a with SMTP id r8-20020a05622a034800b0042a3ff46d9amr1098569qtw.6.1705872860074;
+        Sun, 21 Jan 2024 13:34:20 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1705872860; cv=none;
+        d=google.com; s=arc-20160816;
+        b=ZEIL0lptHq5wsZFE16tmmbpLHlrKsAk6T4PRjt9jTkfe/HWobzn8DvhcXMhJ1wE5Ox
+         FxrDdu01L88ch9QOW1faZhqYnMIxo2FZkrCriGktNTVS+ZsGx9oN1axQ1bAnZ94A/L9M
+         YEnHG6Cp90kjOtXeXpdchLMPXgwjNmBM+QI7MGCAD2YksSiPHfVteA7IxcOFi/F/ZV7u
+         aKFCmSN1lFVeiJp0pu7+3EqvSmzcM5QxMc0rujtNntYVj5pLygJkQtD7zDaLK8hADcqb
+         J8jxYdZX1ykIwcSAvC502htDXsL78ZWULISOxIic6DFmdozQQADE1coPe9D0Y7jXN3GC
+         Cjug==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=xY/2O7qOf9sJcnmdFLXQF/42dKjDulg3u5VdJ+jLDXc=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=aQ7EwnS3SRq+yrxdSJNisZr3HIxtInY4YJMkW4wg8nepaHfA1i/sOmWxumyv5TDJuD
+         DjHMBxNnZ9+71nkZ8igQHU26y9bI+tFXF9yy3fPLHxbWGYKmfatr3fPhlxWxIsYfye+e
+         eWjJ5Jk5+IvDKT5IhHCskQVwq2mp1CbcLGRiVV8tNIbBxtvCJ1U/gscqEyNZELLeB3iD
+         u+VYLijf5iQ/Xa7u4xpRSGCzTDRrt4ljo9UfT/lFMeTcWE0jufNmmNYVLoLxRsy7t8z3
+         SOrKkNdtn/K8/lwcjF6Knrmy26saOiJsyCnWxgwa7qWjN+eY2yxTS9IbhgV3pblw9dC2
+         BtkQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=hkOb90bw;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=YR+f2PX2;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id k12-20020a05622a03cc00b0042a04d87df3si4249517qtx.42.2024.01.21.13.34.19
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sun, 21 Jan 2024 13:34:20 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=hkOb90bw;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=YR+f2PX2;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=xY/2O7qOf9sJcnmdFLXQF/42dKjDulg3u5VdJ+jLDXc=;
+	b=hkOb90bwT2JDkrV+FjBabo3tVlTx9oSRc2/yG8pSz8raO86Phu15PwRbkthe++L+jS2n
+	GjZx4ruiGdR5PZ4XDxiZdzm95g4ijNoc//2gPMBzsD9/mKwWON4d3oXNj7EZIMDh+RnpDw
+	cJP91nza6F2bWK79SpVdi87fqffm7V61bF/RiAsSK1npqjFm05qmyiq2A8Ha/B+2/rVguL
+	10Muxt6NE9q8HSXH3UNHZlbkeRc+DHfKRuXdz81uL2w+3tG+jQlCbvknpqBoLsHWkZwNeM
+	SpFIblLmzb7cuQjTdmiFhoMgah6g2vgMNjrp6+ZS1VNa3kth8cQ1LdCRxtzfZqEg==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=xY/2O7qOf9sJcnmdFLXQF/42dKjDulg3u5VdJ+jLDXc=;
+	b=YR+f2PX2hHJvvaeEvnkkjgb1wd4yP2YahY3d9vyUkG0r931ETPUCYQYI847ERRoYA/yC
+	mzqVJ6dUOWva05pskAqOtl1np1wWgtGSjwqXW4YZSgaeQEPcUqmuHSvfZCoL7orq9s7vfc
+	2/YgDnXdoawr6gIz0B9ZvVepDwt9Xo4dk=
+Received: by filterdrecv-6fc855847c-6hl2f with SMTP id filterdrecv-6fc855847c-6hl2f-1-65AD8DDA-12
+        2024-01-21 21:34:18.544634639 +0000 UTC m=+8304745.371391840
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-13 (SG) with HTTP
+	id e991UGmwQnCNa9bBSs7esA
+	Sun, 21 Jan 2024 21:34:18.368 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=2bd263e9e5b7d43541ca9731e7c0b86c3ccd5a415bd1241747c88d7fefc5
+Date: Sun, 21 Jan 2024 21:34:18 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <e991UGmwQnCNa9bBSs7esA@geopod-ismtpd-13>
+Subject: PRO/AH/EDR> COVID-19 update (08): Mongolia (UB) beaver, research,
+ 2021
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iBrMOi8tiQm8zRQFvowYVRDxrlo18+J6xeryam3?=
+ =?us-ascii?Q?q4dLzYyk3wApAkVlUZ84fVS3JiXK9P7RzKlTKCm?=
+ =?us-ascii?Q?+B78mGN+Jom+s9v1k2Y7H=2FaFPMv5QNaXwejE0Q7?=
+ =?us-ascii?Q?7aE41LMwhyiJq=2FCbeRu9E+FjxOJ1wckO2ZGRcHz?=
+ =?us-ascii?Q?uLCBs7XDIEw198G8MzXRmxpFBDM5bk5zkyjjeG?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUiShGf=2FO8XJWpH34Od4Nd?=
+ =?us-ascii?Q?fxXa6jil96uRcJkF+N+LeVnO1tx80ddOyoyOo=2Fc?=
+ =?us-ascii?Q?Brxcl3ERAm0cOY743=2FFH59DWiSf5OzXORh1DLKt?=
+ =?us-ascii?Q?hb1NMKty3PsA5ju0ZzxCrq1WQuZSEQf=2FJlWtgqv?=
+ =?us-ascii?Q?cZmsyCHlNUZsDVbdq=2FFXPIYFMGhzZjXqaoHUiTI?=
+ =?us-ascii?Q?2uaE+lLbhfsODFeK6=2FdYPGfz=2Fayg0MEULEwgNIx?=
+ =?us-ascii?Q?PSg73gVrkg80SjGt80bZMAEOrsBvoFt82Gmk1xF?=
+ =?us-ascii?Q?pNv1VCYaKWGZMk7PazEu7d60Iu3GzdpGQnknzhj?=
+ =?us-ascii?Q?eW07nZZU53Bgy5XrtBWVSAiic1ihulsXgkWxEgx?=
+ =?us-ascii?Q?7rTsIyWXTWG+OdAjnngD9n5fpKs31hsORinAOf4?=
+ =?us-ascii?Q?ttk72xdfHItuarNBLb0XC34LFWwJw9DAIiD9gRT?=
+ =?us-ascii?Q?A5k6+UBXPfB5D4cy+SpZVwviIubVMMe+GWfaujZ?=
+ =?us-ascii?Q?K6jzYwRCRYvaN1yFNPCWuz+JI=2FfNMSicbXw90OO?=
+ =?us-ascii?Q?zScKZrAlZkomxUFsf=2FRn33Bx=2FjGQkGgIFKGV9xc?=
+ =?us-ascii?Q?AamPttcjKbHGMr8Ixd67m5FDDt4o8BQbD5MYY=2FF?=
+ =?us-ascii?Q?1gg3kJ6fVG2aV+MJsPc9qJWi7AYjYTaqhxnH2UQ?=
+ =?us-ascii?Q?bLZadCYJtpvcyHw8XLn8nyyjmuqdVGWFil53m0C?=
+ =?us-ascii?Q?rLpg7H2LgiCTShLHu7wIlTBeCKHYA04ZEp5ymha?=
+ =?us-ascii?Q?pC5wUv=2FGlRqSnGceBs6qLGwpM3IRW=2FiqkI0fCIo?=
+ =?us-ascii?Q?koayM5MaGw8UGEQ1aal02l1G7w=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2EjGEQIHRLA?=
+ =?us-ascii?Q?8xcvyIGELklotG5yqcDAul3-NRBJVP9L=5FtoMDAw?=
+ =?us-ascii?Q?dTAwMPoeE0spIzDiJ7ns38nQJEUaPc20IXLf9Od?=
+ =?us-ascii?Q?hos72VZwuS2LeVjyRAVQlz5o9Fc0oYC7gufd=5Fdo?=
+ =?us-ascii?Q?Gb8rQCPOt5-7Aa6bKE1aoZUE7P8SYG24a1YnRyY?=
+ =?us-ascii?Q?zWZIRwXQAyTJwzfYg=3D=3D=2Eu0Wl-SHm-TsGCCcQnQp?=
+ =?us-ascii?Q?cHAzKKYGDOR6=5FDJ9Abacbsn5oMDAwdTAwMJ-iNP?=
+ =?us-ascii?Q?OAt05LvNWmU0L2ulcGeC6lTiyjzUmE-aS5qHN3L?=
+ =?us-ascii?Q?K-nRjIAwvKWMMH0Yo33FH67UP2BdhGYd21xrSwF?=
+ =?us-ascii?Q?WmLtTBezb9kL8ZRg=5Fh5WWdB9AoMWoi2k2MTFdkR?=
+ =?us-ascii?Q?cYfYC5w1xRccfOq2rtaXgqu3hP6f0MH1KHNXsGc?=
+ =?us-ascii?Q?gX4JwLD0jildZDIb8PohhKJTx37qD7tGSUn1CVW?=
+ =?us-ascii?Q?3fiPERUz58=5FXblgCumQHrchaDtW=5FrcSPFrtrQom?=
+ =?us-ascii?Q?53BKwEn2qWhBZAVyABDcK3VnaWUZLitnwzMuk5Q?=
+ =?us-ascii?Q?joGcregdADFmK6UDN2-mnN4In3d0K6zyHCVyQFs?=
+ =?us-ascii?Q?BGB6EXGWCZ8PP-UDHcNBWtZm8-Cbxgu2glOQ9LG?=
+ =?us-ascii?Q?4-Wp6VQfInfRp=5Fr0sT1K72YR9L6htw5uBAlWbIx?=
+ =?us-ascii?Q?P1Ji8gCS4FNy2EF3HtttYEUWsyxw9CrKjF2gPFm?=
+ =?us-ascii?Q?k0skdqjxnz5B5S4F=5FeM-9Pk6RzLY4HBk1oJ6jJs?=
+ =?us-ascii?Q?9=5FD7m7CIQZ8DMiMNZP8wG2QMyrxkTe9NN9b6LwQ?=
+ =?us-ascii?Q?vYTEV7G8Gl536g8QInZ8=5FiGVMffXhu0NWn591gk?=
+ =?us-ascii?Q?hhVDHra4UnsMbLBHm0exybIb2TlkbTBQg1onqHw?=
+ =?us-ascii?Q?f4rZC=5FpfqPQjQS=5FHzrynK1o4iIl208kbuRRCI7P?=
+ =?us-ascii?Q?go3xxsf2d7TPTIazeTmml57N8uvWeAl3tRdKt2B?=
+ =?us-ascii?Q?g03fRw2AmnurcxnPSgv3YwrBJxyGNhare466Dor?=
+ =?us-ascii?Q?3eejV0NUoebduyql3Yo6yon-0Vw=5FfsQsUsvXF0k?=
+ =?us-ascii?Q?uc716Sq0Z5Hz2cwNlT6d9RhdSKtZI2xIQ8e0kBH?=
+ =?us-ascii?Q?gDpbFbr18UYiGS3-2wl9V4DJwQZFOzDO4UGW9q3?=
+ =?us-ascii?Q?O--fHRo9lWpjES94cgl1QtDqV2Y3ZN0zL7qPKzF?=
+ =?us-ascii?Q?4bbPsx48CpzqYslp3OwP4Bmgqa1F7ANRN9YluZm?=
+ =?us-ascii?Q?IMYAxKaMrBWqbWSVyapjlLcOtx4-ZfRwHib42ce?=
+ =?us-ascii?Q?rsldTasi3ztLhfg2Luw1f=5F8y5w39191wPGZxGSC?=
+ =?us-ascii?Q?gfshiI=5FyHgikCXQTEnb-pJGbP4NVC72F4kcMY4V?=
+ =?us-ascii?Q?gUNA-w=3D=3D=3E?=
+
+--2bd263e9e5b7d43541ca9731e7c0b86c3ccd5a415bd1241747c88d7fefc5
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=iso-8859-1
+Mime-Version: 1.0
+
+CORONAVIRUS DISEASE 2019 UPDATE (08): MONGOLIA (ULAANBAATAR) BEAVER,
+RESEARCH, 2021
+***************************************************************************=
+********
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+Date: Sat 20 Jan 2024
+Source: CIDRAP (Center for Infectious Disease Research & Policy)
+[edited]
+<https://www.cidrap.umn.edu/covid-19/researchers-outline-covid-19-outbreak-=
+mongolian-beaver-farm>
+
+
+Yesterday [19 Jan 2024] in Emerging Infectious Diseases
+[<https://wwwnc.cdc.gov/eid/article/30/2/23-1318_article>], scientists
+describe a 2021 COVID-19 outbreak at a beaver farm in Mongolia.
+
+Located in the Bayanzurkh district in Ulaanbaatar, the farm raised 32
+adult beavers and 16 kits in 2021 for conservation purposes. The
+animals lived in a large indoor area separated by waist-high walls.
+
+On 6 Aug 2021, one of the 7 farm employees tested positive for
+COVID-19 after experiencing flu-like symptoms. Three days later, the
+farm reported the death of 2 beavers aged 6 months and 2 years after
+they exhibited cough, nasal discharge, rasping sounds in the lungs and
+chest, sluggishness, and food aversion.
+
+On 13 Aug 2021, investigators collected nasal swabs, saliva, and
+tissue from the 2 dead beavers and obtained nasal samples, saliva, and
+blood from 7 other beavers exhibiting cough and nasal discharge with
+pus. Later that week and on 12 Sep 2021, the researchers collected
+more samples from the same animals and from 2 healthy beavers.
+
+Four unique mutations spark concern
+-----------------------------------
+Nearly all (46 of 48) specimens from 9 beavers with clinical signs,
+including the 2 dead animals, tested positive for COVID-19 on
+polymerase chain reaction (PCR) testing. Serologic testing of 23
+samples revealed the presence of SARS-CoV-2 antibodies in 15. One
+beaver that didn't show signs of infection also had antibodies.
+
+An alarming aspect of SARS-CoV-2 infection in animals is that host
+animals can maintain the virus and contribute to the emergence in
+humans of new variants that have accumulated multiple mutations.
+
+Five random SARS-CoV-2-positive samples were shipped to Austria for
+whole-genome sequencing, which identified the delta variant. The delta
+and alpha variants were circulating among people in Mongolia at the
+time, and the closest related sequences in the beaver samples were
+from human SARS-CoV-2 in Mongolia, although they contained 4 novel
+mutations not found in any public databases as of November 2023.
+
+"An alarming aspect of SARS-CoV-2 infection in animals is that host
+animals can maintain the virus and contribute to the emergence in
+humans of new variants that have accumulated multiple mutations," the
+study authors wrote. "Because the emergence of viruses with mutations
+not targeted by current SARS-CoV-2 vaccines is a credible possibility,
+more active surveillance of SARS-CoV-2 infection in animals should be
+encouraged to identify the appearance of mutated viruses."
+
+[Byline: Mary Van Beusekom]
+
+--
+Communicated by:
+ProMED
+via
+ProMED-MBDS
+
+[The citation, abstract and full text of the article referenced above
+follow:
+
+Takemura T, Ankhanbaatar U, K Settypalli TB, et al. SARS-CoV-2
+infection in beaver farm, Mongolia, 2021. Emerg Infect Dis. 2024.
+<https://doi.org/10.3201/eid3002.231318>
+---------------------------------------------------------------------------=
+-----
+Abstract
+--------
+"We report an outbreak of COVID-19 in a beaver farm in Mongolia in
+2021. Genomic characterization revealed a unique combination of
+mutations in the SARS-CoV-2 of the infected beavers. Based on these
+findings, increased surveillance of farmed beavers should be
+encouraged." [References, tables, figures, gray boxes and appendices
+can be seen at the source URL above]
+
+"The COVID-19 pandemic that began in 2019 remains uncontained, and
+fatalities and multiple waves of infection continue to occur worldwide
+(1). The causative agent, SARS-CoV-2, has been detected in humans and
+several animal species, including domestic, wild, and laboratory
+animals (2,3). Because SARS-CoV-2 can be transmitted from humans to
+animals and back to humans, understanding the dynamics of infection in
+animals can contribute to the creation of more comprehensive response
+strategies."
+
+"We identified SARS-CoV-2 infection in beavers (_Castor fiber_) farmed
+for conservation reasons in Mongolia and report on serologic and whole
+genome sequence data from this outbreak. The beaver farm, located in
+the Bayanzurkh district in Ulaanbaatar, Mongolia, reared 32 adults and
+16 kits in 2021. They were housed indoors in a large area separated by
+waist-high walls, with space for multiple animals. One of the 7
+employees of the farm had influenza-like symptoms for several days and
+was diagnosed with COVID-19 on 6 Aug 2021. On 9 Aug 2021, the beaver
+farm reported the death of 2 beavers (one 6 months of age and one 2
+years of age) after signs of coughing, nasal discharge, rasping on
+auscultation of the lungs and chest cavity, sluggish movement, and
+aversion to food. On 13 Aug 2021 research investigators collected
+nasal swabs, saliva, and 7 tissue samples (lung, kidney, liver, heart,
+spleen, larynx, and tongue from the 2 dead animals. Researchers also
+collected nasal swab specimens, saliva, and blood from 7 other beavers
+with notable clinical signs of coughing and purulent nasal discharge.
+Follow-up investigation on 18 or 19 Aug 2021 and on 12 Sep 2021
+included collection of additional nasal swab specimens, saliva, and
+blood samples from the same animals as well as from 2 healthy animals
+(12 Sep 2021 only)."
+
+"All samples were transported to a Biosafety Level 3 facility in
+Ulaanbaatar and were screened by quantitative reverse transcription
+PCR according to the Peiris protocol (4). The results showed that 46
+of 48 specimens from 9 animals with clinical signs, including the 2
+dead animals, tested positive for SARS-CoV-2 RNA. Serum was separated
+from the blood samples by centrifugation (2000 x g for 10 min) and
+stored at -20=B0C until required. The serum samples were then subjected
+to antibody screening by using a commercial ELISA kit (ID Screen
+SARS-CoV-2 Double Antigen Multi-species ELISA; Innovative Diagnostics,
+<https://www.innovative-diagnostics.comExternal Link>). Fifteen of 23
+samples tested positive and one was intermediate, indicating that all
+animals became antibody positive within one month of confirmation of
+SARS-CoV-2 RNA positivity. One clinically unremarkable beaver tested
+positive for SARS-CoV-2 antibodies, indicating a possible subclinical
+infection (Table)."
+
+"Phylogenetic tree of SARS-CoV-2 identified from beavers and humans in
+Mongolia (gray boxes) and reference sequences. The circle size
+indicates the bootstrap values at the node. The vertical bar shows the
+genetic distance. SARS-CoV-2 lineages are identified at right. GenBank
+accession numbers and date identified are shown for reference
+sequences; the newly obtained sequence data were deposited in GenBank
+(accession nos. OR389473-7)."
+
+"We shipped 5 randomly selected quantitative reverse transcription
+PCR-confirmed SARS-CoV-2-positive RNA samples to the Animal Production
+and Health Laboratory (Seibersdorf, Austria), a joint program of the
+International Atomic Energy Agency and the Food and Agriculture
+Organization of the United Nations and subjected them to whole-genome
+sequencing (Appendix 1; Appendix 2). Based on genotype analysis, all 5
+genome sequences were assigned to the B.1.617.2 lineage, commonly
+referred to as the delta variant. At the time of sampling, alpha and
+delta variants of SARS-CoV-2 were being identified in humans in
+Mongolia. The closest related sequences to those we identified in the
+beavers studied were from human SARS-CoV-2 in Mongolia (GenBank
+accession nos. ON008302, OM190617, and OM961234) identified during
+April-September 2021 (Figure). In addition to 4 mutations in the spike
+region, the sequences shared 7 amino acid substitutions in open
+reading frame [ORF] 1a, 4 amino acid substitutions in ORF1b, and one
+amino acid substitution in nucleocapsid genes. In the beaver
+sequences, 4 amino acid substitutions identified were not in the human
+isolates from Mongolia: S2500F, A3657V in ORF1a and H604Y, T1404M in
+ORF1b. Although those substitutions have been identified individually
+in SARS-CoV-2 sequences in GenBank and the GISAID database
+(<https://www.gisaid.orgExternal Link>), there are no records of
+sequences with all 4 mutations."
+
+"Several cases of SARS-CoV-2 transmission between humans and animals
+have already been reported (5-8). An alarming aspect of SARS-CoV-2
+infection in animals is that host animals can maintain the virus and
+contribute to the emergence in humans of new variants that have
+accumulated multiple mutations (7-10). Indeed, the specific
+combination of mutations observed in the beavers we studied has not
+been found in other SARS-CoV-2 sequences in public databases (as of
+November 2023). This finding suggests that the mutations might have
+occurred or accumulated after the introduction of the virus into the
+beaver population. Because the emergence of viruses with mutations not
+targeted by current SARS-CoV-2 vaccines is a credible possibility,
+more active surveillance of SARS-CoV-2 infection in animals should be
+encouraged to identify the appearance of mutated viruses. In
+intensively farmed animals, species-species and species-humans contact
+is more frequent than in animals dwelling in other environments, which
+might increase the risk for zoonotic pathogen transmission (2). Thus,
+implementing more active surveillance and infection control strategies
+is critical to disease prevention and containment."
+
+An image of beaver can be seen at
+<https://www.cidrap.umn.edu/sites/default/files/Beaver.jpg>
+
+The FAO's "SARS-CoV-2 in animals situation update (5 Dec 2023)" is
+available at
+<https://www.fao.org/animal-health/situation-updates/sars-cov-2-in-animals>=
+.
+=20
+"As the COVID-19 pandemic continues, the number of mammal species that
+are susceptible to infection with SARS-CoV-2 increases. We are at the
+beginning of a macrocycle that may become the 1st documented case of a
+viral infection with exceptional characteristics in terms of
+host-range susceptibility. Coronavirus infections in humans find their
+origins in viruses circulating in wildlife -- in particular, bats --
+through cross-species transmission that often includes intermediate
+hosts, such as alpacas, palm civets, rodents, cattle, and dromedary
+camels. Overall, the transmission of pathogens is not unidirectional;
+ecosystem disruptions and alterations to the human-wildlife interface
+also create opportunities for circulating infectious agents to undergo
+reverse zoonotic transmission, or spillback, into domestic and wild
+animal species."
+(<https://academic.oup.com/bioscience/article/73/11/814/7478069>) -
+Mod.TTM
+
+ProMED map:
+Mongolia: <https://promedmail.org/promed-post?place=3D8714374,1>]
+
+[See Also:
+COVID-19 update (07): Bangladesh, JN.1, variant of interest
+http://promedmail.org/post/20240120.8714357
+COVID-19 update (06): India, decrease in cases
+http://promedmail.org/post/20240117.8714284
+COVID-19 update (05): Pakistan, JN.1, variant of interest
+http://promedmail.org/post/20240111.8714166
+COVID-19 update (04): selected locations, JN.1 virology, severity,
+omicron BA.4.1 in dogs http://promedmail.org/post/20240111.8714155
+COVID-19 update (03): Israel, JN.1, new variant
+http://promedmail.org/post/20240104.8714055
+COVID-19 update (02): India
+http://promedmail.org/post/20240103.8714052
+COVID-19 update (01): Cambodia, new JN.1 variant detection
+http://promedmail.org/post/20240101.8714020
+2023
+----
+COVID-19 update (39): Saudi Arabia, JN.1 variant, MOH
+http://promedmail.org/post/20231222.8713858
+COVID-19 update (38): WHO classifies JN.1 coronavirus strain as
+'variant of interest' http://promedmail.org/post/20231220.8713808
+COVID-19 update (37): vaccine comp., selected regions, circ. variants,
+research http://promedmail.org/post/20231219.8713789
+COVID-19 update (36): selected countries/regions, vaccines
+http://promedmail.org/post/20231212.8713666
+COVID-19 update (35): Singapore, increase
+http://promedmail.org/post/20231209.8713618
+COVID-19 update (34): selected country/region updates, variants, WHO
+http://promedmail.org/post/20231130.8713398
+COVID-19 update (33): country updates, vaccines, vaccine refusal, WHO
+update http://promedmail.org/post/20231105.8713000
+COVID-19 update (32): updates, variants, vaccines, antivirals,
+scientific literature http://promedmail.org/post/20231026.8712809
+COVID-19 update (31): BA.2.86 & EG.5, selected regions, vaccines, WHO,
+global http://promedmail.org/post/20231009.8712522
+COVID-19 update (30): omicron EG.5.1, updates, WHO, global
+http://promedmail.org/post/20230815.8711701
+COVID-19 update (29): updates, wastewater surveillance, transmission,
+WHO, global http://promedmail.org/post/20230802.8711526
+COVID-19 update (28): superspread, masks, vaccination, WHO, global
+http://promedmail.org/post/20230724.8711339
+COVID-19 update (27): vaccination, test kit distribution, sequelae,
+WHO, global http://promedmail.org/post/20230717.8711208
+COVID-19 update (26): animal, North America, wild deer as reservoirs
+http://promedmail.org/post/20230713.8711124
+COVID-19 update (25): vaccines, liver disease, sequelae, WHO, global
+http://promedmail.org/post/20230713.8711095
+COVID-19 update (24): long-term effects, EU.1.1, wild bat, WHO, global
+http://promedmail.org/post/20230704.8710946
+COVID-19 update (23): EU transition plan, viral emission, vacc
+hesitancy, GBS, WHO http://promedmail.org/post/20230619.8710662
+COVID-19 update (22): trends, immunity, children, metformin, WHO
+http://promedmail.org/post/20230612.8710546
+COVID-19 update (21): countries, life expectancy, long COVID,
+research, WHO, global http://promedmail.org/post/20230605.8710423
+COVID-19 update (20): countries, Paxlovid, vaccine, WHO
+http://promedmail.org/post/20230530.8710317
+COVID-19 update (19): countries, vaccine composition, XBB1.16, WHO,
+global http://promedmail.org/post/20230522.8710178
+COVID-19 update (18): country/regional, vaccine policies, vaccination,
+WHO, global http://promedmail.org/post/20230516.8710088
+COVID-19 update (17): WHO, USA, India, China, XBB.1.16, research,
+global http://promedmail.org/post/20230508.8709926
+COVID-19 update (16): XBB.1.16, reinfections, microglia, sequelae,
+WHO, global http://promedmail.org/post/20230502.8709789
+COVID-19 update (15): India, XBB.1.16, fetal brain damage, HCW, global
+http://promedmail.org/post/20230417.8709526
+COVID-19 update (14): countries, vaccines, XBB.1.16, long COVID, WHO
+http://promedmail.org/post/20230407.8709377
+COVID-19 update (13): India, surveillance, HCW, rats, infant
+hospitalizations, WHO, global
+http://promedmail.org/post/20230329.8709196
+COVID-19 update (12): countries, variants, susceptibility, vaccines,
+WHO, global http://promedmail.org/post/20230321.8709066
+COVID-19 update (11): country responses, complications, treatment,
+WHO, global http://promedmail.org/post/20230312.8708900
+COVID-19 update (10): Hong Kong, XBB.1.5, Iran, UAE, bivalent vacc
+http://promedmail.org/post/20230308.8708776
+COVID-19 update (09): XBB.1.5, vaccine, WHO
+http://promedmail.org/post/20230228.8708641
+COVID-19 update (08): countries, immunity, vaccines, treatment, masks,
+WHO, global http://promedmail.org/post/20230219.8708482
+COVID-19 update (07): countries, molnupiravir, vaccines, PACS,
+cockroach, WHO http://promedmail.org/post/20230212.8708331
+COVID-19 update (06): China, demographics, symptoms, PACS, WHO
+http://promedmail.org/post/20230204.8708165
+COVID-19 update (05): PHEIC continues, WHO
+http://promedmail.org/post/20230130.8708059
+COVID-19 update (04): PHEIC, China, susp outbreaks, responses,
+vaccines, global http://promedmail.org/post/20230130.8708043
+COVID-19 update (03): China, guidelines, vacc, immunity, sequelae, WHO
+http://promedmail.org/post/20230122.8707910
+COVID-19 update (02): China, XBB.1.5, Hong Kong, mAb, pathogenesis,
+WHO, global http://promedmail.org/post/20230115.8707786
+COVID-19 update (01): China, Hong Kong, XBB.1.5, PAHO, treatment,
+testing, WHO http://promedmail.org/post/20230107.8707667
+2022
+----
+COVID-19 update (193): surge, travel restrictions, screening,
+treatment, WHO http://promedmail.org/post/20221230.8707528
+COVID-19 update (191): omicron BF.7, bivalent vaccines, China, WHO,
+global http://promedmail.org/post/20221224.8707437
+COVID-19 update (190): China, Australia, vaccines, sequelae, WHO,
+global http://promedmail.org/post/20221219.8707306
+COVID-19 update (189): mortality, mAb, intranasal vacc, NPIs,
+sequelae, WHO, global http://promedmail.org/post/20221209.8707146
+COVID-19 update (188): China, omicron BA.2.76, outdoor transmission
+http://promedmail.org/post/20221130.8706983
+COVID-19 update (187): boosters, omicron BQ.1.1, Asia, Australia, WHO,
+global http://promedmail.org/post/20221129.8706920
+COVID-19 update (185): chr. COVID, bladder, recovery, renal, deaths,
+WHO, global http://promedmail.org/post/20221111.8706665
+COVID-19 update (184): vaccination response, disparity, WHO, global
+http://promedmail.org/post/20221104.8706549
+COVID-19 update (183): cardiac events, exercise, US deaths, boosters,
+WHO, global http://promedmail.org/post/20221028.8706414
+COVID-19 update (182): frontline workers, life expectancy,
+subvariants, WHO, global http://promedmail.org/post/20221021.8706286
+COVID-19 update (181): Africa vacc hesitancy, pre-eclampsia, boosters,
+nasal vacc, WHO, global http://promedmail.org/post/20221014.8706143
+COVID-19 update (180): long COVID, neuropsy. illness, Paxlovid,
+subvariants, WHO http://promedmail.org/post/20221007.8706007
+COVID-19 update (170): case severity, boosters, physical activity,
+WHO, global http://promedmail.org/post/20220825.8705236
+COVID-19 update (160): vaccine rollout disparities, smell & taste,
+WHO, global http://promedmail.org/post/20220731.8704776
+COVID-19 update (150): France, omicron 2nd gen variant, paxlovid, WHO,
+global http://promedmail.org/post/20220705.8704255
+COVID-19 update (140): Thailand, human to cat to human transmission
+http://promedmail.org/post/20220612.8703819
+COVID-19 update (130): surveill., cardiac eff., long COVID subtypes,
+WHO, global http://promedmail.org/post/20220601.8703606
+COVID-19 update (120): N Korea, pandemic exit, youth vaccine, US
+deaths, WHO http://promedmail.org/post/20220518.8703327
+COVID-19 update (110): mutations, mental health, China, S Africa,
+Paxlovid, WHO http://promedmail.org/post/20220505.8703018
+COVID-19 update (100): vacc. intervals, deaths, long COVID,
+subvariants, global http://promedmail.org/post/20220420.8702717
+COVID-19 update (90): strategy, 2nd booster, WHO
+http://promedmail.org/post/20220407.8702454
+COVID-19 update (80): animal, USA, deer, transmission
+http://promedmail.org/post/20220325.8702212
+COVID-19 update (70): case count, UK, BA.2, USA, WHO, global
+http://promedmail.org/post/20220312.8701940
+COVID-19 update (60): animal, China, origin, research
+http://promedmail.org/post/20220227.8701690
+COVID-19 update (50): Hong Kong, estrogen risk, maternal vaccine
+benefits, WHO http://promedmail.org/post/20220217.8701501
+COVID-19 update (40): Denmark, rosemary, pregnancy, stroke, WHO
+http://promedmail.org/post/20220205.8701276
+COVID-19 update (30): variants in immuno-comp., stability, endemic,
+WHO http://promedmail.org/post/20220126.8701074
+COVID-19 update (20): Africa vacc., Taiwan, waning immunity,
+persistence, global http://promedmail.org/post/20220117.8700915
+COVID-19 update (10): animal, omicron origin statement, OIE
+http://promedmail.org/post/20220110.8700763
+COVID-19 update (01): omicron severity & changes, Germany, T-cell
+reactivity http://promedmail.org/post/20220101.8700616]
+.................................................ttm/st/may/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3DLnf8WbiB-BSp1lEdedFtvk4_L4-E9azacMvmjLpo_DZoMDAwdTAwMKXB3AK=
+DS3wbrCkyM-oRVkxES3qkbK321OhJOQmG9dISsyzioppB_TvVXYSn-S9zBFYyw-ygonLgj7t02B=
+T-RCEw7eJsp0bQv71l-Sa3tWEr_yA3gHORZ0iNOZ0yXDxglx5U9UetLprx727kzfPvBCHNgdJR-=
+7jEGbHwD73th2dqWjxjo1I-C8al_i3O60HDbGYi594qPozBadFk9f-ql_CZ2r9uel3T4s8p_vL8=
+WCS63glBEZKAUssX8m1PtXA7Vd1cqC1GGUuNxXu8yG5sx9jN3v3DpPljRs1-ej1-UWHSQLuCT0j=
+Ru6jLOiuWs9XD7tSf7c5YflxYTAcqzeMiajaLVvmNiL_u0Fjvl55TBznBsCXcBXbj8WG5zUBAZm=
+mLih7NdiCUcjBjVz2DWiHP_FqvKVK3VYtOLRZWCVyvAP4ov3zpmNbCrX6-V-Yw83BK0PfdrxpDO=
+sYQx-LrpSiwS9vBd49L7tsJjvEJFsfggjNv4gIW6j1cxqZ73EkysrpC9ovJA57BwrF_UfF1p3P7=
+QgtSMP0GADKkt6stvIC5VMsqOoAIkVXMZ-OgBcC9_h_vgCVK6fON9uH2KLApTJjpn5hEUMKQGH-=
+RtEDqZjZdicIC_gj4ngBuTfw1a8jzltJj2FzvG5rggvwwiHvJzOlnXUonBuFfqWT5gJWL0D6H_N=
+n7EOzycSwzjnaVxTqmKSEiRdBaHiBpsdvXOmOZvTlboM4hUvXK39Tw1b1l3QUyJllGjHBW1iB1Z=
+fcEpnpwbb6hA4em8znf__0iJ0BYIpCVzYHa6IZxpOgTJSBUWoaBDUHNhq0PiM-66Sn2cad_9W-2=
+buRlwxbYWd9Dm7RvKvFYjv8dhqIxGJRlqoh_wfUYt3NxCVuhY9MoFz2FB0hurxfg6r7KO_AptPI=
+iLhv4E_oJBHw33AdiMQt2iX5C2Wb5kZ-mN3dg3SBjYJVHIaCbJ0ezIFvfSPLlKWvIGoqQayunDm=
+TOPl0UHnvycoVM5Su9rZ1RNXmnqQQHEzI3eoct173NFWVGD48VanQigPxMDLyxDlh0TQxwZYl49=
+ukpTPaSj5fo6TFex7gtuPjK_45D8v5GVkda-mqr1Qu3iui0gTB1G3CGMAY6JMw-05mauUCcBMIn=
+bVguoqJRGdLwfJOn9b1jtP7vnUHu17eLjoH01fRRwQirPcWtE0l7eRB6aKKq0HMw )
+############################################################
+############################################################
+
+--2bd263e9e5b7d43541ca9731e7c0b86c3ccd5a415bd1241747c88d7fefc5
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=iso-8859-1
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>CORONAVIRUS DISEASE 2019 UPDATE (08): MONGOLIA (ULAANBAATAR) BEAVER,<=
+br>RESEARCH, 2021<br>******************************************************=
+*****************************<br>A ProMED-mail post<br><a href=3D"https://u=
+19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisIijpefK5PNjW-mL-YZGnfgDO=
+xU1G3gjwnPSi2Tfv3HA/436/-SGSuWpJTMSKRGT56Xs_kg/h0/0UV_NFkmM4P8gDDQPOUjy00wL=
+zl7Kkk9rPmgr-AD3o4">http://www.promedmail.org</a><br>ProMED-mail is a progr=
+am of the<br>International Society for Infectious Diseases<br><a href=3D"ht=
+tps://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisCT5tpD4Upm3qyMCbc=
+YSQvc/436/-SGSuWpJTMSKRGT56Xs_kg/h1/mFsRGThDnRjys_bAyyqlx2pN2tIjVO05Bw-BYOL=
+EMhU">http://www.isid.org</a><br><br>Date: Sat 20 Jan 2024=0D<br>Source: CI=
+DRAP (Center for Infectious Disease Research & Policy)<br>[edited]=0D<br><a=
+ href=3D"https://u19268662.ct.sendgrid.net/ss/c/TLh_csrC34X_iXpbYoMam1B6JfP=
+Dl-dNY0xjb47_2RUMcUJK1Y-0t2SU01dHCfwk-_JybvuHbOwmVU4zrDQS9w-b-qfG_B30ucmoO7=
+TQBdNqrLSVix8lEtPj8_MgpObZkbzLSRezlEoxqKqG6x5G4w/436/-SGSuWpJTMSKRGT56Xs_kg=
+/h2/1kK82D1zCjVhrjch8uRzfiBAyt9f96SlZKfz5DRGlg4">https://www.cidrap.umn.edu=
+/covid-19/researchers-outline-covid-19-outbreak-mongolian-beaver-farm</a>=0D=
+<br>=0D<br>=0D<br>Yesterday [19 Jan 2024] in Emerging Infectious Diseases<b=
+r>[<a href=3D"https://u19268662.ct.sendgrid.net/ss/c/TLh_csrC34X_iXpbYoMam_=
+OJx_qp6nDkdVjqCfg9UFks5MUr-C1hnbEIXqA-lDniTH3k1JJPmDFA_cMFt4ngpg/436/-SGSuW=
+pJTMSKRGT56Xs_kg/h3/4Ky6EM-a8jEnU47QdM7vb6QY_TJDkg4QlHRpNgZ2u3E">https://ww=
+wnc.cdc.gov/eid/article/30/2/23-1318_article</a>], scientists<br>describe a=
+ 2021 COVID-19 outbreak at a beaver farm in Mongolia.=0D<br>=0D<br>Located =
+in the Bayanzurkh district in Ulaanbaatar, the farm raised 32<br>adult beav=
+ers and 16 kits in 2021 for conservation purposes. The<br>animals lived in =
+a large indoor area separated by waist-high walls.=0D<br>=0D<br>On 6 Aug 20=
+21, one of the 7 farm employees tested positive for<br>COVID-19 after exper=
+iencing flu-like symptoms. Three days later, the<br>farm reported the death=
+ of 2 beavers aged 6 months and 2 years after<br>they exhibited cough, nasa=
+l discharge, rasping sounds in the lungs and<br>chest, sluggishness, and fo=
+od aversion.=0D<br>=0D<br>On 13 Aug 2021, investigators collected nasal swa=
+bs, saliva, and<br>tissue from the 2 dead beavers and obtained nasal sample=
+s, saliva, and<br>blood from 7 other beavers exhibiting cough and nasal dis=
+charge with<br>pus. Later that week and on 12 Sep 2021, the researchers col=
+lected<br>more samples from the same animals and from 2 healthy beavers.=0D=
+<br>=0D<br>Four unique mutations spark concern=0D<br>----------------------=
+-------------=0D<br>Nearly all (46 of 48) specimens from 9 beavers with cli=
+nical signs,<br>including the 2 dead animals, tested positive for COVID-19 =
+on<br>polymerase chain reaction (PCR) testing. Serologic testing of 23<br>s=
+amples revealed the presence of SARS-CoV-2 antibodies in 15. One<br>beaver =
+that didn't show signs of infection also had antibodies.=0D<br>=0D<br>An al=
+arming aspect of SARS-CoV-2 infection in animals is that host<br>animals ca=
+n maintain the virus and contribute to the emergence in<br>humans of new va=
+riants that have accumulated multiple mutations.=0D<br>=0D<br>Five random S=
+ARS-CoV-2-positive samples were shipped to Austria for<br>whole-genome sequ=
+encing, which identified the delta variant. The delta<br>and alpha variants=
+ were circulating among people in Mongolia at the<br>time, and the closest =
+related sequences in the beaver samples were<br>from human SARS-CoV-2 in Mo=
+ngolia, although they contained 4 novel<br>mutations not found in any publi=
+c databases as of November 2023.=0D<br>=0D<br>"An alarming aspect of SARS-C=
+oV-2 infection in animals is that host<br>animals can maintain the virus an=
+d contribute to the emergence in<br>humans of new variants that have accumu=
+lated multiple mutations," the<br>study authors wrote. "Because the emergen=
+ce of viruses with mutations<br>not targeted by current SARS-CoV-2 vaccines=
+ is a credible possibility,<br>more active surveillance of SARS-CoV-2 infec=
+tion in animals should be<br>encouraged to identify the appearance of mutat=
+ed viruses."=0D<br>=0D<br>[Byline: Mary Van Beusekom]=0D<br>=0D<br>--=0D<br=
+>Communicated by:=0D<br>ProMED=0D<br>via=0D<br>ProMED-MBDS<br><br>[The cita=
+tion, abstract and full text of the article referenced above<br>follow:=0D<=
+br>=0D<br>Takemura T, Ankhanbaatar U, K Settypalli TB, et al. SARS-CoV-2<br=
+>infection in beaver farm, Mongolia, 2021. Emerg Infect Dis. 2024.<br><a hr=
+ef=3D"https://u19268662.ct.sendgrid.net/ss/c/TUIVIg4PCmni5tP3Q8lzBRDKvT8Dz6=
+46t79_YopI3Q068y4GfL3ZmEoOedutoR7n/436/-SGSuWpJTMSKRGT56Xs_kg/h4/0NOsxzfz__=
+N6kvEgBDlBvboTsJ5dyZCRZ0L4bw59KRE">https://doi.org/10.3201/eid3002.231318</=
+a>=0D<br>------------------------------------------------------------------=
+--------------=0D<br>Abstract=0D<br>--------=0D<br>"We report an outbreak o=
+f COVID-19 in a beaver farm in Mongolia in<br>2021. Genomic characterizatio=
+n revealed a unique combination of<br>mutations in the SARS-CoV-2 of the in=
+fected beavers. Based on these<br>findings, increased surveillance of farme=
+d beavers should be<br>encouraged." [References, tables, figures, gray boxe=
+s and appendices<br>can be seen at the source URL above]=0D<br>=0D<br>"The =
+COVID-19 pandemic that began in 2019 remains uncontained, and<br>fatalities=
+ and multiple waves of infection continue to occur worldwide<br>(1). The ca=
+usative agent, SARS-CoV-2, has been detected in humans and<br>several anima=
+l species, including domestic, wild, and laboratory<br>animals (2,3). Becau=
+se SARS-CoV-2 can be transmitted from humans to<br>animals and back to huma=
+ns, understanding the dynamics of infection in<br>animals can contribute to=
+ the creation of more comprehensive response<br>strategies."=0D<br>=0D<br>"=
+We identified SARS-CoV-2 infection in beavers (_Castor fiber_) farmed<br>fo=
+r conservation reasons in Mongolia and report on serologic and whole<br>gen=
+ome sequence data from this outbreak. The beaver farm, located in<br>the Ba=
+yanzurkh district in Ulaanbaatar, Mongolia, reared 32 adults and<br>16 kits=
+ in 2021. They were housed indoors in a large area separated by<br>waist-hi=
+gh walls, with space for multiple animals. One of the 7<br>employees of the=
+ farm had influenza-like symptoms for several days and<br>was diagnosed wit=
+h COVID-19 on 6 Aug 2021. On 9 Aug 2021, the beaver<br>farm reported the de=
+ath of 2 beavers (one 6 months of age and one 2<br>years of age) after sign=
+s of coughing, nasal discharge, rasping on<br>auscultation of the lungs and=
+ chest cavity, sluggish movement, and<br>aversion to food. On 13 Aug 2021 r=
+esearch investigators collected<br>nasal swabs, saliva, and 7 tissue sample=
+s (lung, kidney, liver, heart,<br>spleen, larynx, and tongue from the 2 dea=
+d animals. Researchers also<br>collected nasal swab specimens, saliva, and =
+blood from 7 other beavers<br>with notable clinical signs of coughing and p=
+urulent nasal discharge.<br>Follow-up investigation on 18 or 19 Aug 2021 an=
+d on 12 Sep 2021<br>included collection of additional nasal swab specimens,=
+ saliva, and<br>blood samples from the same animals as well as from 2 healt=
+hy animals<br>(12 Sep 2021 only)."=0D<br>=0D<br>"All samples were transport=
+ed to a Biosafety Level 3 facility in<br>Ulaanbaatar and were screened by q=
+uantitative reverse transcription<br>PCR according to the Peiris protocol (=
+4). The results showed that 46<br>of 48 specimens from 9 animals with clini=
+cal signs, including the 2<br>dead animals, tested positive for SARS-CoV-2 =
+RNA. Serum was separated<br>from the blood samples by centrifugation (2000 =
+x g for 10 min) and<br>stored at -20=B0C until required. The serum samples =
+were then subjected<br>to antibody screening by using a commercial ELISA ki=
+t (ID Screen<br>SARS-CoV-2 Double Antigen Multi-species ELISA; Innovative D=
+iagnostics,<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/TLh_csrC34=
+X_iXpbYoMam-u-oRULfH40G1dNSa3qBWjtxsM2g6prQp8dgCOHq67kx8YYe0eml-u6YYrSzAi5U=
+A/436/-SGSuWpJTMSKRGT56Xs_kg/h5/T4JlQgL5WVrOJXTp2F4WUmLj-4UD7qQYSCBI-kf3JSQ=
+">https://www.innovative-diagnostics.comExternal Link</a>). Fifteen of 23<b=
+r>samples tested positive and one was intermediate, indicating that all<br>=
+animals became antibody positive within one month of confirmation of<br>SAR=
+S-CoV-2 RNA positivity. One clinically unremarkable beaver tested<br>positi=
+ve for SARS-CoV-2 antibodies, indicating a possible subclinical<br>infectio=
+n (Table)."=0D<br>=0D<br>"Phylogenetic tree of SARS-CoV-2 identified from b=
+eavers and humans in<br>Mongolia (gray boxes) and reference sequences. The =
+circle size<br>indicates the bootstrap values at the node. The vertical bar=
+ shows the<br>genetic distance. SARS-CoV-2 lineages are identified at right=
+. GenBank<br>accession numbers and date identified are shown for reference<=
+br>sequences; the newly obtained sequence data were deposited in GenBank<br=
+>(accession nos. OR389473-7)."=0D<br>=0D<br>"We shipped 5 randomly selected=
+ quantitative reverse transcription<br>PCR-confirmed SARS-CoV-2-positive RN=
+A samples to the Animal Production<br>and Health Laboratory (Seibersdorf, A=
+ustria), a joint program of the<br>International Atomic Energy Agency and t=
+he Food and Agriculture<br>Organization of the United Nations and subjected=
+ them to whole-genome<br>sequencing (Appendix 1; Appendix 2). Based on geno=
+type analysis, all 5<br>genome sequences were assigned to the B.1.617.2 lin=
+eage, commonly<br>referred to as the delta variant. At the time of sampling=
+, alpha and<br>delta variants of SARS-CoV-2 were being identified in humans=
+ in<br>Mongolia. The closest related sequences to those we identified in th=
+e<br>beavers studied were from human SARS-CoV-2 in Mongolia (GenBank<br>acc=
+ession nos. ON008302, OM190617, and OM961234) identified during<br>April-Se=
+ptember 2021 (Figure). In addition to 4 mutations in the spike<br>region, t=
+he sequences shared 7 amino acid substitutions in open<br>reading frame [OR=
+F] 1a, 4 amino acid substitutions in ORF1b, and one<br>amino acid substitut=
+ion in nucleocapsid genes. In the beaver<br>sequences, 4 amino acid substit=
+utions identified were not in the human<br>isolates from Mongolia: S2500F, =
+A3657V in ORF1a and H604Y, T1404M in<br>ORF1b. Although those substitutions=
+ have been identified individually<br>in SARS-CoV-2 sequences in GenBank an=
+d the GISAID database<br>(<a href=3D"https://u19268662.ct.sendgrid.net/ss/c=
+/TLh_csrC34X_iXpbYoMam-VWKv0uxS_3JRJsCN4hWkQl7wG2k0somJhFulZ6qJsz/436/-SGSu=
+WpJTMSKRGT56Xs_kg/h6/_ztdGnIijaTMYbT_-T9CTymv7EcK5tAaMUqDOFwxAvk">https://w=
+ww.gisaid.orgExternal Link</a>), there are no records of<br>sequences with =
+all 4 mutations."=0D<br>=0D<br>"Several cases of SARS-CoV-2 transmission be=
+tween humans and animals<br>have already been reported (5-8). An alarming a=
+spect of SARS-CoV-2<br>infection in animals is that host animals can mainta=
+in the virus and<br>contribute to the emergence in humans of new variants t=
+hat have<br>accumulated multiple mutations (7-10). Indeed, the specific<br>=
+combination of mutations observed in the beavers we studied has not<br>been=
+ found in other SARS-CoV-2 sequences in public databases (as of<br>November=
+ 2023). This finding suggests that the mutations might have<br>occurred or =
+accumulated after the introduction of the virus into the<br>beaver populati=
+on. Because the emergence of viruses with mutations not<br>targeted by curr=
+ent SARS-CoV-2 vaccines is a credible possibility,<br>more active surveilla=
+nce of SARS-CoV-2 infection in animals should be<br>encouraged to identify =
+the appearance of mutated viruses. In<br>intensively farmed animals, specie=
+s-species and species-humans contact<br>is more frequent than in animals dw=
+elling in other environments, which<br>might increase the risk for zoonotic=
+ pathogen transmission (2). Thus,<br>implementing more active surveillance =
+and infection control strategies<br>is critical to disease prevention and c=
+ontainment."=0D<br>=0D<br>An image of beaver can be seen at<br><a href=3D"h=
+ttps://u19268662.ct.sendgrid.net/ss/c/TLh_csrC34X_iXpbYoMam1B6JfPDl-dNY0xjb=
+47_2RWTCNjJ-7M4Scz2OxpJAUjZdcZ3U1PtSvE2_URB0CqLrcfGYeCM-LwAqTXSCyV1x-8/436/=
+-SGSuWpJTMSKRGT56Xs_kg/h7/NeNgSnN-3f_S7v2y7692AeIhxMVrTtwuqiNebjDLN0E">http=
+s://www.cidrap.umn.edu/sites/default/files/Beaver.jpg</a>=0D<br>=0D<br>The =
+FAO's "SARS-CoV-2 in animals situation update (5 Dec 2023)" is<br>available=
+ at<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/TLh_csrC34X_iXpbYo=
+Mam1f3hHphMwE_gqG9QMefiOcmtemxmzk7MzMcwfnt-RpfJZ7H8UacZ3be25NbH1Ldv3rY_q6Rf=
+MDs3kW6LHyZNJF0Z6KJXz97K3-DeXpQ_KhZ/436/-SGSuWpJTMSKRGT56Xs_kg/h8/4cdIgLGhI=
+3itCzvEPhHs20l-RP3AtOCzI8h_6qDoIqM">https://www.fao.org/animal-health/situa=
+tion-updates/sars-cov-2-in-animals</a>.=0D<br>=20=0D<br>"As the COVID-19 pa=
+ndemic continues, the number of mammal species that<br>are susceptible to i=
+nfection with SARS-CoV-2 increases. We are at the<br>beginning of a macrocy=
+cle that may become the 1st documented case of a<br>viral infection with ex=
+ceptional characteristics in terms of<br>host-range susceptibility. Coronav=
+irus infections in humans find their<br>origins in viruses circulating in w=
+ildlife -- in particular, bats --<br>through cross-species transmission tha=
+t often includes intermediate<br>hosts, such as alpacas, palm civets, roden=
+ts, cattle, and dromedary<br>camels. Overall, the transmission of pathogens=
+ is not unidirectional;<br>ecosystem disruptions and alterations to the hum=
+an-wildlife interface<br>also create opportunities for circulating infectio=
+us agents to undergo<br>reverse zoonotic transmission, or spillback, into d=
+omestic and wild<br>animal species."<br>(<a href=3D"https://u19268662.ct.se=
+ndgrid.net/ss/c/irpYa2EQ3F36GLL_pppOEOvPh22EJ2PV8SoTjQ8bLZy9g2sX0oAVxPrkg1R=
+xZfbXg3-p5kn4peuzcDxATbriBCKVbhSofupuk9WHN-hH5lw/436/-SGSuWpJTMSKRGT56Xs_kg=
+/h9/I2S0sGH3rltCNuN08dMJJy_MA7gDq10mTeIUGOAuy4o">https://academic.oup.com/b=
+ioscience/article/73/11/814/7478069</a>) -<br>Mod.TTM<br><br>ProMED map:<br=
+>Mongolia: <a href=3D"https://u19268662.ct.sendgrid.net/ss/c/sSnCkKCWBvais3=
+EuVAOvgy2WOIX7pp1nXnn4AbwuQ3Z6WbkfhqXYXU-aTMPJ8yTh0uSyOewGlrSD58fmpxZxXQ/43=
+6/-SGSuWpJTMSKRGT56Xs_kg/h10/po9iy6y4hlrmaQdfY5mqBBfCbsqFcHHd_CxI9_Z1Ckw">h=
+ttps://promedmail.org/promed-post?place=3D8714374,1</a>]<br><br>[See Also:<=
+br>COVID-19 update (07): Bangladesh, JN.1, variant of interest<br>http://pr=
+omedmail.org/post/20240120.8714357=0D<br>COVID-19 update (06): India, decre=
+ase in cases<br>http://promedmail.org/post/20240117.8714284=0D<br>COVID-19 =
+update (05): Pakistan, JN.1, variant of interest<br>http://promedmail.org/p=
+ost/20240111.8714166=0D<br>COVID-19 update (04): selected locations, JN.1 v=
+irology, severity,<br>omicron BA.4.1 in dogs http://promedmail.org/post/202=
+40111.8714155=0D<br>COVID-19 update (03): Israel, JN.1, new variant<br>http=
+://promedmail.org/post/20240104.8714055=0D<br>COVID-19 update (02): India<b=
+r>http://promedmail.org/post/20240103.8714052=0D<br>COVID-19 update (01): C=
+ambodia, new JN.1 variant detection<br>http://promedmail.org/post/20240101.=
+8714020=0D<br>2023=0D<br>----=0D<br>COVID-19 update (39): Saudi Arabia, JN.=
+1 variant, MOH<br>http://promedmail.org/post/20231222.8713858=0D<br>COVID-1=
+9 update (38): WHO classifies JN.1 coronavirus strain as<br>'variant of int=
+erest' http://promedmail.org/post/20231220.8713808=0D<br>COVID-19 update (3=
+7): vaccine comp., selected regions, circ. variants,<br>research http://pro=
+medmail.org/post/20231219.8713789=0D<br>COVID-19 update (36): selected coun=
+tries/regions, vaccines<br>http://promedmail.org/post/20231212.8713666=0D<b=
+r>COVID-19 update (35): Singapore, increase<br>http://promedmail.org/post/2=
+0231209.8713618=0D<br>COVID-19 update (34): selected country/region updates=
+, variants, WHO<br>http://promedmail.org/post/20231130.8713398=0D<br>COVID-=
+19 update (33): country updates, vaccines, vaccine refusal, WHO<br>update h=
+ttp://promedmail.org/post/20231105.8713000=0D<br>COVID-19 update (32): upda=
+tes, variants, vaccines, antivirals,<br>scientific literature http://promed=
+mail.org/post/20231026.8712809=0D<br>COVID-19 update (31): BA.2.86 & EG.5, =
+selected regions, vaccines, WHO,<br>global http://promedmail.org/post/20231=
+009.8712522=0D<br>COVID-19 update (30): omicron EG.5.1, updates, WHO, globa=
+l<br>http://promedmail.org/post/20230815.8711701=0D<br>COVID-19 update (29)=
+: updates, wastewater surveillance, transmission,<br>WHO, global http://pro=
+medmail.org/post/20230802.8711526=0D<br>COVID-19 update (28): superspread, =
+masks, vaccination, WHO, global<br>http://promedmail.org/post/20230724.8711=
+339=0D<br>COVID-19 update (27): vaccination, test kit distribution, sequela=
+e,<br>WHO, global http://promedmail.org/post/20230717.8711208=0D<br>COVID-1=
+9 update (26): animal, North America, wild deer as reservoirs<br>http://pro=
+medmail.org/post/20230713.8711124=0D<br>COVID-19 update (25): vaccines, liv=
+er disease, sequelae, WHO, global<br>http://promedmail.org/post/20230713.87=
+11095=0D<br>COVID-19 update (24): long-term effects, EU.1.1, wild bat, WHO,=
+ global<br>http://promedmail.org/post/20230704.8710946=0D<br>COVID-19 updat=
+e (23): EU transition plan, viral emission, vacc<br>hesitancy, GBS, WHO htt=
+p://promedmail.org/post/20230619.8710662=0D<br>COVID-19 update (22): trends=
+, immunity, children, metformin, WHO<br>http://promedmail.org/post/20230612=
+.8710546=0D<br>COVID-19 update (21): countries, life expectancy, long COVID=
+,<br>research, WHO, global http://promedmail.org/post/20230605.8710423=0D<b=
+r>COVID-19 update (20): countries, Paxlovid, vaccine, WHO<br>http://promedm=
+ail.org/post/20230530.8710317=0D<br>COVID-19 update (19): countries, vaccin=
+e composition, XBB1.16, WHO,<br>global http://promedmail.org/post/20230522.=
+8710178=0D<br>COVID-19 update (18): country/regional, vaccine policies, vac=
+cination,<br>WHO, global http://promedmail.org/post/20230516.8710088=0D<br>=
+COVID-19 update (17): WHO, USA, India, China, XBB.1.16, research,<br>global=
+ http://promedmail.org/post/20230508.8709926=0D<br>COVID-19 update (16): XB=
+B.1.16, reinfections, microglia, sequelae,<br>WHO, global http://promedmail=
+.org/post/20230502.8709789=0D<br>COVID-19 update (15): India, XBB.1.16, fet=
+al brain damage, HCW, global<br>http://promedmail.org/post/20230417.8709526=0D=
+<br>COVID-19 update (14): countries, vaccines, XBB.1.16, long COVID, WHO<br=
+>http://promedmail.org/post/20230407.8709377=0D<br>COVID-19 update (13): In=
+dia, surveillance, HCW, rats, infant<br>hospitalizations, WHO, global<br>ht=
+tp://promedmail.org/post/20230329.8709196=0D<br>COVID-19 update (12): count=
+ries, variants, susceptibility, vaccines,<br>WHO, global http://promedmail.=
+org/post/20230321.8709066=0D<br>COVID-19 update (11): country responses, co=
+mplications, treatment,<br>WHO, global http://promedmail.org/post/20230312.=
+8708900=0D<br>COVID-19 update (10): Hong Kong, XBB.1.5, Iran, UAE, bivalent=
+ vacc<br>http://promedmail.org/post/20230308.8708776=0D<br>COVID-19 update =
+(09): XBB.1.5, vaccine, WHO<br>http://promedmail.org/post/20230228.8708641=0D=
+<br>COVID-19 update (08): countries, immunity, vaccines, treatment, masks,<=
+br>WHO, global http://promedmail.org/post/20230219.8708482=0D<br>COVID-19 u=
+pdate (07): countries, molnupiravir, vaccines, PACS,<br>cockroach, WHO http=
+://promedmail.org/post/20230212.8708331=0D<br>COVID-19 update (06): China, =
+demographics, symptoms, PACS, WHO<br>http://promedmail.org/post/20230204.87=
+08165=0D<br>COVID-19 update (05): PHEIC continues, WHO<br>http://promedmail=
+.org/post/20230130.8708059=0D<br>COVID-19 update (04): PHEIC, China, susp o=
+utbreaks, responses,<br>vaccines, global http://promedmail.org/post/2023013=
+0.8708043=0D<br>COVID-19 update (03): China, guidelines, vacc, immunity, se=
+quelae, WHO<br>http://promedmail.org/post/20230122.8707910=0D<br>COVID-19 u=
+pdate (02): China, XBB.1.5, Hong Kong, mAb, pathogenesis,<br>WHO, global ht=
+tp://promedmail.org/post/20230115.8707786=0D<br>COVID-19 update (01): China=
+, Hong Kong, XBB.1.5, PAHO, treatment,<br>testing, WHO http://promedmail.or=
+g/post/20230107.8707667=0D<br>2022=0D<br>----=0D<br>COVID-19 update (193): =
+surge, travel restrictions, screening,<br>treatment, WHO http://promedmail.=
+org/post/20221230.8707528=0D<br>COVID-19 update (191): omicron BF.7, bivale=
+nt vaccines, China, WHO,<br>global http://promedmail.org/post/20221224.8707=
+437=0D<br>COVID-19 update (190): China, Australia, vaccines, sequelae, WHO,=
+<br>global http://promedmail.org/post/20221219.8707306=0D<br>COVID-19 updat=
+e (189): mortality, mAb, intranasal vacc, NPIs,<br>sequelae, WHO, global ht=
+tp://promedmail.org/post/20221209.8707146=0D<br>COVID-19 update (188): Chin=
+a, omicron BA.2.76, outdoor transmission<br>http://promedmail.org/post/2022=
+1130.8706983=0D<br>COVID-19 update (187): boosters, omicron BQ.1.1, Asia, A=
+ustralia, WHO,<br>global http://promedmail.org/post/20221129.8706920=0D<br>=
+COVID-19 update (185): chr. COVID, bladder, recovery, renal, deaths,<br>WHO=
+, global http://promedmail.org/post/20221111.8706665=0D<br>COVID-19 update =
+(184): vaccination response, disparity, WHO, global<br>http://promedmail.or=
+g/post/20221104.8706549=0D<br>COVID-19 update (183): cardiac events, exerci=
+se, US deaths, boosters,<br>WHO, global http://promedmail.org/post/20221028=
+.8706414=0D<br>COVID-19 update (182): frontline workers, life expectancy,<b=
+r>subvariants, WHO, global http://promedmail.org/post/20221021.8706286=0D<b=
+r>COVID-19 update (181): Africa vacc hesitancy, pre-eclampsia, boosters,<br=
+>nasal vacc, WHO, global http://promedmail.org/post/20221014.8706143=0D<br>=
+COVID-19 update (180): long COVID, neuropsy. illness, Paxlovid,<br>subvaria=
+nts, WHO http://promedmail.org/post/20221007.8706007=0D<br>COVID-19 update =
+(170): case severity, boosters, physical activity,<br>WHO, global http://pr=
+omedmail.org/post/20220825.8705236=0D<br>COVID-19 update (160): vaccine rol=
+lout disparities, smell & taste,<br>WHO, global http://promedmail.org/post/=
+20220731.8704776=0D<br>COVID-19 update (150): France, omicron 2nd gen varia=
+nt, paxlovid, WHO,<br>global http://promedmail.org/post/20220705.8704255=0D=
+<br>COVID-19 update (140): Thailand, human to cat to human transmission<br>=
+http://promedmail.org/post/20220612.8703819=0D<br>COVID-19 update (130): su=
+rveill., cardiac eff., long COVID subtypes,<br>WHO, global http://promedmai=
+l.org/post/20220601.8703606=0D<br>COVID-19 update (120): N Korea, pandemic =
+exit, youth vaccine, US<br>deaths, WHO http://promedmail.org/post/20220518.=
+8703327=0D<br>COVID-19 update (110): mutations, mental health, China, S Afr=
+ica,<br>Paxlovid, WHO http://promedmail.org/post/20220505.8703018=0D<br>COV=
+ID-19 update (100): vacc. intervals, deaths, long COVID,<br>subvariants, gl=
+obal http://promedmail.org/post/20220420.8702717=0D<br>COVID-19 update (90)=
+: strategy, 2nd booster, WHO<br>http://promedmail.org/post/20220407.8702454=0D=
+<br>COVID-19 update (80): animal, USA, deer, transmission<br>http://promedm=
+ail.org/post/20220325.8702212=0D<br>COVID-19 update (70): case count, UK, B=
+A.2, USA, WHO, global<br>http://promedmail.org/post/20220312.8701940=0D<br>=
+COVID-19 update (60): animal, China, origin, research<br>http://promedmail.=
+org/post/20220227.8701690=0D<br>COVID-19 update (50): Hong Kong, estrogen r=
+isk, maternal vaccine<br>benefits, WHO http://promedmail.org/post/20220217.=
+8701501=0D<br>COVID-19 update (40): Denmark, rosemary, pregnancy, stroke, W=
+HO<br>http://promedmail.org/post/20220205.8701276=0D<br>COVID-19 update (30=
+): variants in immuno-comp., stability, endemic,<br>WHO http://promedmail.o=
+rg/post/20220126.8701074=0D<br>COVID-19 update (20): Africa vacc., Taiwan, =
+waning immunity,<br>persistence, global http://promedmail.org/post/20220117=
+.8700915=0D<br>COVID-19 update (10): animal, omicron origin statement, OIE<=
+br>http://promedmail.org/post/20220110.8700763=0D<br>COVID-19 update (01): =
+omicron severity & changes, Germany, T-cell<br>reactivity http://promedmail=
+.org/post/20220101.8700616]<br>............................................=
+.....ttm/st/may/jh<br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3DLnf8WbiB-BSp1lEdedFtvk4_L4-E9azacMvmjLpo_DZoMDAwdT=
+AwMKXB3AKDS3wbrCkyM-oRVkxES3qkbK321OhJOQmG9dISsyzioppB_TvVXYSn-S9zBFYyw-ygo=
+nLgj7t02BT-RCEw7eJsp0bQv71l-Sa3tWEr_yA3gHORZ0iNOZ0yXDxglx5U9UetLprx727kzfPv=
+BCHNgdJR-7jEGbHwD73th2dqWjxjo1I-C8al_i3O60HDbGYi594qPozBadFk9f-ql_CZ2r9uel3=
+T4s8p_vL8WCS63glBEZKAUssX8m1PtXA7Vd1cqC1GGUuNxXu8yG5sx9jN3v3DpPljRs1-ej1-UW=
+HSQLuCT0jRu6jLOiuWs9XD7tSf7c5YflxYTAcqzeMiajaLVvmNiL_u0Fjvl55TBznBsCXcBXbj8=
+WG5zUBAZmmLih7NdiCUcjBjVz2DWiHP_FqvKVK3VYtOLRZWCVyvAP4ov3zpmNbCrX6-V-Yw83BK=
+0PfdrxpDOsYQx-LrpSiwS9vBd49L7tsJjvEJFsfggjNv4gIW6j1cxqZ73EkysrpC9ovJA57BwrF=
+_UfF1p3P7QgtSMP0GADKkt6stvIC5VMsqOoAIkVXMZ-OgBcC9_h_vgCVK6fON9uH2KLApTJjpn5=
+hEUMKQGH-RtEDqZjZdicIC_gj4ngBuTfw1a8jzltJj2FzvG5rggvwwiHvJzOlnXUonBuFfqWT5g=
+JWL0D6H_Nn7EOzycSwzjnaVxTqmKSEiRdBaHiBpsdvXOmOZvTlboM4hUvXK39Tw1b1l3QUyJllG=
+jHBW1iB1ZfcEpnpwbb6hA4em8znf__0iJ0BYIpCVzYHa6IZxpOgTJSBUWoaBDUHNhq0PiM-66Sn=
+2cad_9W-2buRlwxbYWd9Dm7RvKvFYjv8dhqIxGJRlqoh_wfUYt3NxCVuhY9MoFz2FB0hurxfg6r=
+7KO_AptPIiLhv4E_oJBHw33AdiMQt2iX5C2Wb5kZ-mN3dg3SBjYJVHIaCbJ0ezIFvfSPLlKWvIG=
+oqQayunDmTOPl0UHnvycoVM5Su9rZ1RNXmnqQQHEzI3eoct173NFWVGD48VanQigPxMDLyxDlh0=
+TQxwZYl49ukpTPaSj5fo6TFex7gtuPjK_45D8v5GVkda-mqr1Qu3iui0gTB1G3CGMAY6JMw-05m=
+auUCcBMInbVguoqJRGdLwfJOn9b1jtP7vnUHu17eLjoH01fRRwQirPcWtE0l7eRB6aKKq0HMw" =
+target=3D"_blank" class=3D"Unsubscribe--unsubscribePreferences" style=3D"fo=
+nt-family:sans-serif;text-decoration:none;">Unsubscribe Preferences</a></di=
+v><br>############################################################<br>#####=
+#######################################################<br><br><img src=3D"=
+https://u19268662.ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/436/-SGSuWpJT=
+MSKRGT56Xs_kg/ho.gif" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=
+=3D"height:1px !important;width:1px !important;border-width:0 !important;ma=
+rgin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;=
+margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !importa=
+nt;padding-right:0 !important;padding-left:0 !important;"/></body>
+</html>
+--2bd263e9e5b7d43541ca9731e7c0b86c3ccd5a415bd1241747c88d7fefc5--

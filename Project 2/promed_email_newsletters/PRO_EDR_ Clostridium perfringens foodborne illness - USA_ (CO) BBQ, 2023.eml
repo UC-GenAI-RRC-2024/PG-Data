@@ -1,0 +1,600 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a98:d84b:0:b0:1eb:e128:bbe3 with SMTP id b11csp653749eil;
+        Thu, 18 Jan 2024 17:52:18 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IH+9px7ExR19Hp6yPLJg8wvMwDSbL92VEjKn7SU3LLxvkfai8xaCEUgfJvqxbc78PiYW0Xt
+X-Received: by 2002:a05:620a:1646:b0:783:1513:38b8 with SMTP id c6-20020a05620a164600b00783151338b8mr555914qko.52.1705629137734;
+        Thu, 18 Jan 2024 17:52:17 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1705629137; cv=none;
+        d=google.com; s=arc-20160816;
+        b=BG7m7Vq+6NhDtwHtlIss2sRbZ3NcmxClfo2zC6dfem1SdxFjzRf1eM7M8e21IdU05m
+         isymQFrwJXnC3Md06e+Zlg7nqlva4mjDwWicn1f4SkBVZanYEFWae+B4GROLaKN/tOZX
+         Huc3Sbj6Lbi59V/0r+CQOYIcbGg2kiIL1NYqjKInaymoSLoLVFg10BTcRnm1kTn2/4sk
+         ld1q+f8nA12/4f18WbyPu1iU32uUJeiMlhlAh4qWBzb1+U5eoYDr8YDL0qqlET8GK5up
+         p/U30SRJmjisBwOEBoP3nPuoH1QB589IWf3pqZNMBl7wP7xvb0l/d3/1AsxEJUegwatN
+         bqfA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=0h89WyXta7myV4ob/5pv4udztXB5cNkyeb/wlju+sNY=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=vVclEzBFQEadaN3YJFj4B8hm5Z1ki/oHiSTzLcAJOg7a5vXdkvia1xaU+9vT2oMrha
+         m2jXbE0ShUexsbKrIR/3k4WJVaXefngNxFwKeRbpXv9gFTx0NX/aEdwIqPowxrLGxZyN
+         SgafA8SO0Am6MXIpmUALavkkGJZ6OAdOVfClJlImNk3RfpylGBuAhw66pVeXk2/8RD01
+         VI0GZPT+CKeEbkcgzGfuGnoUyyxl6BvXGznnKP9ta7wD6czK7AKJLLfy8F6qKaOnDojM
+         3m+IA4BqC76Onrf2yEhOSIqatDUkp2IEtHVKV4sli/iLKHvVE63YdwI2p4eMh4MozXyo
+         2yig==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=GnfuYxcH;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=xKgqJrmi;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id x20-20020a05620a0ed400b007811615ef4asi14781909qkm.740.2024.01.18.17.52.17
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 18 Jan 2024 17:52:17 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=GnfuYxcH;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=xKgqJrmi;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=0h89WyXta7myV4ob/5pv4udztXB5cNkyeb/wlju+sNY=;
+	b=GnfuYxcH3N6uu8SjUMEMXdo/1M43xJ6lc4ZeD0zM1SofivujANTBqEQASFPSKSVRwp05
+	IGYl2xfJqBvcHgxC9lhvHA/5Mg3WxrOAJL1eLB/PqbEA3cR8w/gQQ/1Lerx1AgbPhgP51e
+	hSXDl0cPXK/BYqwmm+8Aus9METQUu/4WNBk4CL180PRgtCqr6jeX+FEqSEIr8yUSOm9Q9Z
+	7WdDFlkFwGgqhEz5je4AxOXciz7iEJ7g4wAmvzzGFhZz0LOC7bONSYwvwC5qHRvrU61weg
+	XODs77lUf/jseIJgMAVBzSvkaJe69PJDFxxGlN61fmYRAXQoM6RJoLjJlMbuDyuA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=0h89WyXta7myV4ob/5pv4udztXB5cNkyeb/wlju+sNY=;
+	b=xKgqJrmi3P8hgRMYEO1p4+qrejeKE1WWS6H2zirSrSwtyCXxDbCkJFiKF0o69B0mOJNP
+	aJ3s62rdN38iPP/EmKmRlvyhb8rnxOnyxwXLrTDtPOAtd56Wvdj1iiaPjkp+R4yRQDBzZU
+	Cj5eun0PH5e2Hf6k0nuoPp3ssf/axSap8=
+Received: by filterdrecv-59b97c8fcd-tx55r with SMTP id filterdrecv-59b97c8fcd-tx55r-1-65A9D5CE-11
+        2024-01-19 01:52:14.467134966 +0000 UTC m=+8061025.844257249
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-32 (SG) with HTTP
+	id eRUDKhUtTVGzzAfmS-Kp0A
+	Fri, 19 Jan 2024 01:52:14.430 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=c02576046e265fb49a5c9aa0bf42f1edf07aaae4d28350d5ede7ceeeb869
+Date: Fri, 19 Jan 2024 01:52:17 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <eRUDKhUtTVGzzAfmS-Kp0A@geopod-ismtpd-32>
+Subject: PRO/EDR> Clostridium perfringens foodborne illness - USA: (CO) BBQ,
+ 2023
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iBJuBLCWBIO0hCQJwl8+4uKswMLx=2F3ZBS9LqJRW?=
+ =?us-ascii?Q?oMp5KptWRbKWQ1v=2F9bMrEQMdl1mrZLoHWyaRWyG?=
+ =?us-ascii?Q?mrSUEGPZyrKNGG0JT9NktjwJVbZDiTC2iRkQJNQ?=
+ =?us-ascii?Q?2yItuwAhsA21NEcayFbZmP1uKQLr0cebyXPM1+4?=
+ =?us-ascii?Q?Z+0yoF3ss47TtDHI7X=2FMFjCL5MWUa61=2FXDQvYI?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUhc93xcG=2F095a5S4+mt=2FG?=
+ =?us-ascii?Q?uYUpctI=2FOGD2dwyi+uvm2j4FCdvuw0l9zcHM8iA?=
+ =?us-ascii?Q?mojOvTXq7jOpDFFNtfsYkHQYACEW8pq1BXXqYmH?=
+ =?us-ascii?Q?oGTsnt6QpE2ZV5WVqnpwfXWoLXx7+4YF=2FCim02u?=
+ =?us-ascii?Q?=2F=2FuiaNiBj4POSUiJ8MmEtO+hDj6=2Fc77sy6g=2Fbbj?=
+ =?us-ascii?Q?CunTGz1L2+VM+S5N7d+CpnuboG0Dx1M9PgTolUM?=
+ =?us-ascii?Q?=2FGrLGIvvcmfb166KxTlfQAi90rupXeRZ2g1Wzev?=
+ =?us-ascii?Q?kUnJZ+P6JR6Nlk=2FidlM0kkTdppSn10ilpR4IqrR?=
+ =?us-ascii?Q?EZEOsKeESTRsI5wb4HeVqDXWRMN4ereTebLzKjk?=
+ =?us-ascii?Q?LIsPGLbwhVN2pGdMAWmKXiYBPvCVBl8KOsoTWgS?=
+ =?us-ascii?Q?pQiIA0PEIJ04TsHLxzCRAD=2FoT=2FsexU6Y+MVyrUz?=
+ =?us-ascii?Q?+5603ml8mmGAdR4ycd7fyszzVuonpHS8vdZ2KjV?=
+ =?us-ascii?Q?lVCLG4kX8Gs=2Fmdff6DpDwTK4yqN0QuV=2FMzep+fP?=
+ =?us-ascii?Q?mT96A5AKPPhuoxOlgAJAImdaVL9=2F6Kvn8WZxr=2Fx?=
+ =?us-ascii?Q?gUPs+xGci7AVj8MQ0zosHPZmGL7+sSi2y3oBDNx?=
+ =?us-ascii?Q?EZYUtVoty3+hhTqw38SB2uKsnOf3L0oP7PlyoQI?=
+ =?us-ascii?Q?5Xlr=2FSXK4kaSibF6Xq2grxon5yb=2Fr4=2F+7W6PE0k?=
+ =?us-ascii?Q?NPDLxmBxAAyzx2iqbnelXpTlJWYek3gkz=2Fi+1NB?=
+ =?us-ascii?Q?rnWTpvAetBu3vhKmYTq3fj7NBDydPvQUrgpfzqR?=
+ =?us-ascii?Q?iKsZucf=2FvuWGStYpNIA7FZwxhA=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2Et29B9kpnr?=
+ =?us-ascii?Q?F4GiMFOzGyTLY3xrXIs6=5ForPfI643ghsFNoMDAw?=
+ =?us-ascii?Q?dTAwMA7vVg4qDhLxKEzWzYfPkqho6SWv9pEL7N2?=
+ =?us-ascii?Q?7kBIY1xgw7n6OMbbG0DOU2Ui=5FK2nnNaEXP0Cg-7?=
+ =?us-ascii?Q?n=5Fb=5FSMVvkpNJbWps6yeyd3lTRWtnjnSgp-2ANcS?=
+ =?us-ascii?Q?pEyEMGfzLiQrwGXXA=3D=3D=2EHwQOEe35mxWZg7P-iyl?=
+ =?us-ascii?Q?AG3oQlTVuI0bKVaCpLCo=5F8StoMDAwdTAwMDONUd?=
+ =?us-ascii?Q?nXt0wJFIE8NlFYilTnrRG=5FbIvPG9nOkEpn3xe0-?=
+ =?us-ascii?Q?oDbcAG8BJhPbAKL316e5MmhiuZGoue3JY7vBQK9?=
+ =?us-ascii?Q?u=5FtYKFUR8mwmhHqAcXQqIz2DxaRa2yCVnijhPfh?=
+ =?us-ascii?Q?UGoFAdMi311o-TS6nQK1YB-vYPwvHXfc9GCaTsa?=
+ =?us-ascii?Q?ty5pfRoB7cdE=5FSx14BjklWobhGVJ1ZlU7ipjwEU?=
+ =?us-ascii?Q?1ik3KqUlCGqpUOyAifyp5hv0aYdbXAFIQ9oWrJx?=
+ =?us-ascii?Q?kk8EgIx=5FbyCjXQ4ojjXdZn26mhkEG7Q8uLmdE4q?=
+ =?us-ascii?Q?g2FQpjVql=5FfsarGrsXJPJ7cmwY8dfDqUVLZbrZT?=
+ =?us-ascii?Q?lPHIM8Su3uyJ=5FlXir=5FMXZStw0VA-GCASZ=5FKEveM?=
+ =?us-ascii?Q?HYLxVJtUW6Mrl=5FqfyFGXUveFYfo-JwiNzdXQzO4?=
+ =?us-ascii?Q?EyPhwp5NTkxTbLSWtFZNRpufBOP-MqAeBDipIfa?=
+ =?us-ascii?Q?J6-IsqjfSWAUq2r5qSxVnr9LMw64b9HYxYrq6C9?=
+ =?us-ascii?Q?CNG92Q=5Fhm96gDTkS4SMD2Ne9YRZMHmVejm7Mjpa?=
+ =?us-ascii?Q?KLZYm6HMbcBf-R-xpS-bnK1u6eTz8WEMIKZX7ac?=
+ =?us-ascii?Q?8BU4quN-2o6wlVsmfrfMgYmUtdHOTR-7Jf32Igh?=
+ =?us-ascii?Q?IHOkXntRrvmncHgrrneh2TCgObalcxdb-kFbKF8?=
+ =?us-ascii?Q?Xhe7b3sRnEMgl6kz4nucDnzfl4d8aLzPz1BdZSj?=
+ =?us-ascii?Q?Md7U=5FQGETI7hVmwwBX00vUlJEw9gJxr2ul4lVLV?=
+ =?us-ascii?Q?KbosmRLRSw6xZ9aE4FNezGZKR84r13VgcglPXyO?=
+ =?us-ascii?Q?zS6ClpPAj1D0SqgneAJms2gyDQEd5sJEstcO-0W?=
+ =?us-ascii?Q?lSRKXZOE0F=5FyA0hXhB=5Fy4s87n7rcnGhNW6Bqp7c?=
+ =?us-ascii?Q?GcZs-5yi4GVYhCV=5F-6Oh9rbz=5F2joQMC7EeJ2SIj?=
+ =?us-ascii?Q?5CR-ORfWbTuFVyOxlP8w3AwQnuWaUiARd2WwIvk?=
+ =?us-ascii?Q?H3BLKfVO3lqW47aj=5F=5FpRY-dr=5FZZ8hvnZYPexTbS?=
+ =?us-ascii?Q?URBQEcv8riucLLyxKa2hVKhyAm73q1HgiGRb6e0?=
+ =?us-ascii?Q?7dVS61hCSUr83AU2y4KM87k=3E?=
+
+--c02576046e265fb49a5c9aa0bf42f1edf07aaae4d28350d5ede7ceeeb869
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=us-ascii
+Mime-Version: 1.0
+
+CLOSTRIDIUM PERFRINGENS FOODBORNE ILLNESS - USA: (COLORADO) BARBECUE,
+2023
+**************************************************************************
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+Date: Wed 17 Jan 2024
+Source: Marler Blog [edited]
+<https://www.marlerblog.com/case-news/clostridium-perfringens-linked-to-bbq=
+/>
+
+
+_Clostridium perfringens_ linked to BBQ
+---------------------------------------
+An outbreak of likely _Clostridium perfringens_ was investigated by
+the Colorado Department of Public Health and Environment and the
+Jefferson County Public Health starting on 23 Aug 2023. That day, a
+school nurse at Evergreen County Day School reported 40 or so
+illnesses following a school event on 21 Aug 2023. The outbreak was
+given the state ID "2023-30-129."
+
+A total of 122 primary cases were identified. Of these, for whom
+gender was known, 37 were male (30.3%) and 35 were female (28.7%).
+Cases were between 1 and 74 years of age, for whom the age was
+recorded (majority between 18 and 49 years). Illness onsets were
+recorded to have occurred between 21-23 Aug 2023. Illnesses consisted
+of mostly diarrhea and cramping, along with some nausea, fatigue,
+fever, and vomiting. Most cases fell ill within a day of exposure. No
+cases were hospitalized, and no cases died. One case had a stool
+specimen tested.=20
+
+A case-control study, conducted via a RedCap survey with all
+participants of the BBQ event, and a food preparation review were
+conducted in response to this outbreak. A mass communication was sent
+out to the school asking symptomatic individuals to submit stool
+samples and offer information on their symptoms. As of 23 Aug 2023,
+about 122 responses were received from families with symptoms. Three
+individuals agreed to submit stool samples, but only one sample was
+collected on 24 Aug 2023; unfortunately, this sample did not confirm a
+pathogen. However, given the reported symptoms and incubation period,
+it was determined with 99.24% probability that the pathogen was _C.
+perfringens_.
+
+Exposure was suspected to have occurred on 21 Aug 2023 in Jefferson
+County. The common exposure shared among all ill cases was a grade K-8
+back-to-school BBQ hosted by the school. Food for this event was
+prepared by a brick-and-mortar restaurant, Piggin' Out Smokehouse, and
+then transported by and served from a food truck at the school. Food
+was delivered to about 400 people. Menu items included
+macaroni-and-cheese, chicken, pork, sausage, beans, kale salad, and
+quinoa salad. Beverages were iced tea, lemonade, and water.=20
+
+An original outbreak inspection at the restaurant occurred on 22 Aug
+2023. It was found that the walk-in-cooler was not functioning
+properly. On 24 Aug 2023, a follow up inspection occurred at Piggin'
+Out Smokehouse. Based on epidemiological and environmental evidence,
+pork and chicken were the suspected sources of illness.
+
+--
+Communicated by:
+ProMED
+
+[Unlike staphylococcal foodborne illness, where the preformed toxin is
+ingested, in _C. perfringens_ disease the enterotoxin is formed in
+situ in the gastrointestinal tract. The following discussion is
+obtained from the FDA Bad Bug Book 1st Edition:
+
+"1. Name of the organism
+_Clostridium perfringens_ is an anaerobic, Gram-positive,
+spore-forming rod. It is widely distributed in the environment and
+frequently occurs in the intestines of humans and many domestic and
+feral animals. Spores of the organism persist in soil, sediments, and
+areas subject to human or animal fecal pollution.
+
+"2. Nature of acute disease
+Perfringens food poisoning is the term used to describe the common
+foodborne illness caused by _C. perfringens_. A more serious but rare
+illness is also caused by ingesting food contaminated with type C
+strains. The latter illness is known as enteritis necroticans, or
+pig-bel disease.
+
+"3. Nature of disease
+The common form of perfringens poisoning is characterized by intense
+abdominal cramps and diarrhea, which begin 8-22 hours after
+consumption of foods containing large numbers of those _C.
+perfringens_ bacteria capable of producing the food poisoning toxin.
+The illness is usually over within 24 hours, but less severe symptoms
+may persist in some individuals for 1-2 weeks. A few deaths have been
+reported as a result of dehydration and other complications.
+
+"Necrotic enteritis (pig-bel) caused by _C. perfringens_ is often
+fatal. This disease also begins as a result of ingesting large numbers
+of the causative bacteria in contaminated foods. Deaths from necrotic
+enteritis (pig-bel syndrome) are caused by infection and necrosis of
+the intestines and from resulting septicemia. This disease is very
+rare in the USA.
+
+"Infective dose: The symptoms are caused by ingestion of large numbers
+(greater than 100 million) vegetative cells. Toxin production in the
+digestive tract (or in test tubes) is associated with sporulation.
+This disease is a food infection; only one episode has ever implied
+the possibility of intoxication (that is, disease from preformed
+toxin).
+
+"4. Diagnosis of human illness
+Perfringens poisoning is diagnosed by its symptoms and the typical
+delayed onset of illness. Diagnosis is confirmed by detecting the
+toxin in the feces of patients. Bacteriological confirmation can also
+be done by finding exceptionally large numbers of the causative
+bacteria in implicated foods or in the feces of patients.
+
+"5. Associated foods
+In most instances, the actual cause of poisoning by _C. perfringens_
+is temperature abuse of prepared foods. Small numbers of the organisms
+are often present after cooking and multiply to food poisoning levels
+during cool down and storage of prepared foods. Meats, meat products,
+and gravy are the foods most frequently implicated.
+
+"6. Relative frequency of disease
+Perfringens poisoning is one of the most commonly reported foodborne
+illnesses in the USA. There were 1162 cases in 1981, in 28 separate
+outbreaks. At least 10-20 outbreaks have been reported annually in the
+USA for the past 2 decades. Typically, dozens or even hundreds of
+persons are affected. It is probable that many outbreaks go unreported
+because the implicated foods or patient feces are not tested routinely
+for _C. perfringens_ or its toxin. CDC estimates that about 10 000
+actual cases occur annually in the USA.
+
+"7. Course of disease and complications
+The disease generally lasts 24 hours. In the elderly or infirm,
+symptoms may last 1-2 weeks. Complications and/or death only very
+rarely occur.
+
+"8. Target populations
+Institutional feeding (such as school cafeterias, hospitals, nursing
+homes, prisons) where large quantities of food are prepared several
+hours before serving is the most common circumstance in which
+perfringens poisoning occurs. The young and elderly are the most
+frequent victims of perfringens poisoning. Except in the case of
+pig-bel syndrome, complications are few in persons under 30 years of
+age. Elderly persons are more likely to experience prolonged or severe
+symptoms.
+
+"9. Food analysis
+Standard bacteriological culturing procedures are used to detect the
+organism in implicated foods and in feces of patients. Serological
+assays are used for detecting enterotoxin in the feces of patients and
+for testing the ability of strains to produce toxin. The procedures
+take 1-3 days."
+(<https://wayback.archive-it.org/7993/20170406190157/https://www.fda.gov/Fo=
+od/FoodborneIllnessContaminants/CausesOfIllnessBadBugBook/ucm070483.htm>)
+- Mod.LL
+
+ProMED map:
+Colorado, United States:
+<https://promedmail.org/promed-post?place=3D8714314,209>]
+
+[See Also:
+2023
+----
+Clostridium perfringens foodborne illness - Japan (03): (KN) prison
+http://promedmail.org/post/20231226.8713921
+Clostridium perfringens foodborne illness - Japan (02): (Tokyo)
+http://promedmail.org/post/20230525.8710228
+Clostridium perfringens foodborne illness - Japan: (HG) nursing home
+http://promedmail.org/post/20230510.8709963
+2022
+----
+Clostridium perfringens foodborne illness - Japan: (YG) elderly care
+facilities http://promedmail.org/post/20221007.8706004
+2016
+----
+Clostridium perfringens foodborne illness - USA (02): (NM) health dept
+party http://promedmail.org/post/20161225.4722975
+Clostridium perfringens foodborne illness - USA: (NY) restaurant
+http://promedmail.org/post/20161225.4722929
+Clostridium perfringens foodborne illness - Nigeria (03): (FC) fatal,
+comment http://promedmail.org/post/20160303.4066785
+Clostridium perfringens foodborne illness - Nigeria (02): (FC) fatal,
+pigbel susp http://promedmail.org/post/20160302.4062477
+Clostridium perfringens foodborne illness - Nigeria: (AC) fatalities,
+RFI http://promedmail.org/post/20160229.4057668
+2015
+----
+Clostridium perfringens foodborne illness - USA: (IA) school
+http://promedmail.org/post/20151109.3778579
+2014
+----
+Clostridium perfringens foodborne illness - USA: (MI) restaurant
+http://promedmail.org/post/20140414.2402260
+2013
+----
+Foodborne illness - Norway: (ST) Clostridium perfringens, 2012
+http://promedmail.org/post/20130305.1567837
+2012
+----
+Foodborne illness - USA: (SD), Clostridium perfringens
+http://promedmail.org/post/20120207.1035743]
+.................................................ll/may/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3Ds1lUNDeDiHnYcXpkGC1SpWae6fQ3Kmzq8XTK67uTkMJoMDAwdTAwMIy0_Dh=
+vQETBlqH42M3UxTYE9uZiJz0P64Kcf_3uAGRATiJrYDdP2L5qihilv_eO2RTExBIDFjB6b0IsXh=
+dQblRAd8KfYIbH2rajHPXUpJoj4YVPTGKyrMW3zGH18JCYP9omr0XVwXie27c9_jdCqsa4uCyZl=
+EYCtNvBxgSsMN1VNvL0U5xqosGDs74XJMRGxV83k8mICp99jAlpl5KjcEue9EBY4D4a1ymp5adP=
+p7Naaszi2KzYTGP_IcSbr7JcTh8seRoI8ZYoA22t5rBNa7F3lnttw3TgP20uJBPq_HkPXNINTcU=
+LYG4BzIBnqb7J2kzydzdPg67QVB1V5f1gUKQgVcivX_Y7PtBntZ_54hYorADb81rz0dA75gEtM6=
+Sg4jbmiNHQMX_3FBiKTq29nzOf7buFQqupxvX5T2bX25f4wc2vXfmtCfTUpDP5wS6bMuyYXSPiC=
+_aQVRPjgzNwIg-J9T4za2ePlLkG17XcT1BCM0npng9SEStinK6Q2bIwXQLUtP6V7x_pVNFkFKPx=
+JupESNBujfFypOjMFCVfZfYaeqgxH9tkVIoM6D2P75Qtt23jDJnkgnT7Ypuc1rsL1PhtZypG60Z=
+qodiW10as1i0573X6zQGPDpUN_wttTAJ5IEdPp-1_-Ff8IWMDHLLsVRVPxDKp3abh5tVzD-fpyI=
+dPRVv1uELfM4W5pxDeVlrKkEP-sGvmtnkR0eY9ju_i1pNDsZ0JVU-dYkF5rIcSUOA8_IPfEj10T=
+Opz0Q-leli7fmAs85mw0J77G7-unSCVBYIibfzEWZATazUlpxdHkoJHXmgasG7gtMQPpMl1WdvT=
+h4X6rphybVZU-yimkZN0BTIDdisOQtgYY8wgJKUiID1Zg_TM0rqllqXc8s_7yziMClx9FyC-LCd=
+cWqdmg0MczngEttJzaNC1s81S0qZWtQgeyhtrnEC1q7hiATE9GNKPPJ6-qrRr5lJwwPa9H6243v=
+-sxkTu7MhUz9dR8_Ozh7B54FxBay_5yQquNK4JLCaI_nz83q21fVlJQw4CBOqYtX1tLfgjbylc3=
+H-s3ZWw-ApOGJyja6X3zv2a6WieOD6eCg4PGQmNjVibylRARIRwnp008yAf_qY7wsA_JQtHa4MG=
+lv25yku3REbu8NccF0nS7NbcP3dC0OOryRZaSTHfhn8=3D )
+############################################################
+############################################################
+
+--c02576046e265fb49a5c9aa0bf42f1edf07aaae4d28350d5ede7ceeeb869
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>CLOSTRIDIUM PERFRINGENS FOODBORNE ILLNESS - USA: (COLORADO) BARBECUE,=
+<br>2023<br>***************************************************************=
+***********<br>A ProMED-mail post<br><a href=3D"https://u19268662.ct.sendgr=
+id.net/ss/c/wscE2ng5fl6JrPIt48tisIijpefK5PNjW-mL-YZGnfgDOxU1G3gjwnPSi2Tfv3H=
+A/434/M1Ud6DGXRjOFs-xUo-f9kg/h0/kvlW_Xny9os09TFld11ATJ5kuUJlKxB_UYnzKxvQYvM=
+">http://www.promedmail.org</a><br>ProMED-mail is a program of the<br>Inter=
+national Society for Infectious Diseases<br><a href=3D"https://u19268662.ct=
+.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisCT5tpD4Upm3qyMCbcYSQvc/434/M1Ud6DGX=
+RjOFs-xUo-f9kg/h1/uDNcjTnquSr9UxM3EDHEZJjBU7QcsCeOnI2I2UTmFpc">http://www.i=
+sid.org</a><br><br>Date: Wed 17 Jan 2024=0D<br>Source: Marler Blog [edited]=0D=
+<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/TLh_csrC34X_iXpbYoMam=
+-7DQLEzDGNYj9X7hLFtZwpNFtu9QROL0TJqDmXamapxOUINP1aLPTQTndD6_doobkaCOCAHSB10=
+xbG5Qm_55JbgIHhEcjatPaerTLS2B91v/434/M1Ud6DGXRjOFs-xUo-f9kg/h2/VRTYJBMFVtti=
+LNYVtWQz2u0Tm6bzcVezq0ZBCkdRJiA">https://www.marlerblog.com/case-news/clost=
+ridium-perfringens-linked-to-bbq/</a>=0D<br>=0D<br>=0D<br>_Clostridium perf=
+ringens_ linked to BBQ=0D<br>---------------------------------------=0D<br>=
+An outbreak of likely _Clostridium perfringens_ was investigated by<br>the =
+Colorado Department of Public Health and Environment and the<br>Jefferson C=
+ounty Public Health starting on 23 Aug 2023. That day, a<br>school nurse at=
+ Evergreen County Day School reported 40 or so<br>illnesses following a sch=
+ool event on 21 Aug 2023. The outbreak was<br>given the state ID "2023-30-1=
+29."=0D<br>=0D<br>A total of 122 primary cases were identified. Of these, f=
+or whom<br>gender was known, 37 were male (30.3%) and 35 were female (28.7%=
+).<br>Cases were between 1 and 74 years of age, for whom the age was<br>rec=
+orded (majority between 18 and 49 years). Illness onsets were<br>recorded t=
+o have occurred between 21-23 Aug 2023. Illnesses consisted<br>of mostly di=
+arrhea and cramping, along with some nausea, fatigue,<br>fever, and vomitin=
+g. Most cases fell ill within a day of exposure. No<br>cases were hospitali=
+zed, and no cases died. One case had a stool<br>specimen tested.=20=0D<br>=0D=
+<br>A case-control study, conducted via a RedCap survey with all<br>partici=
+pants of the BBQ event, and a food preparation review were<br>conducted in =
+response to this outbreak. A mass communication was sent<br>out to the scho=
+ol asking symptomatic individuals to submit stool<br>samples and offer info=
+rmation on their symptoms. As of 23 Aug 2023,<br>about 122 responses were r=
+eceived from families with symptoms. Three<br>individuals agreed to submit =
+stool samples, but only one sample was<br>collected on 24 Aug 2023; unfortu=
+nately, this sample did not confirm a<br>pathogen. However, given the repor=
+ted symptoms and incubation period,<br>it was determined with 99.24% probab=
+ility that the pathogen was _C.<br>perfringens_.=0D<br>=0D<br>Exposure was =
+suspected to have occurred on 21 Aug 2023 in Jefferson<br>County. The commo=
+n exposure shared among all ill cases was a grade K-8<br>back-to-school BBQ=
+ hosted by the school. Food for this event was<br>prepared by a brick-and-m=
+ortar restaurant, Piggin' Out Smokehouse, and<br>then transported by and se=
+rved from a food truck at the school. Food<br>was delivered to about 400 pe=
+ople. Menu items included<br>macaroni-and-cheese, chicken, pork, sausage, b=
+eans, kale salad, and<br>quinoa salad. Beverages were iced tea, lemonade, a=
+nd water.=20=0D<br>=0D<br>An original outbreak inspection at the restaurant=
+ occurred on 22 Aug<br>2023. It was found that the walk-in-cooler was not f=
+unctioning<br>properly. On 24 Aug 2023, a follow up inspection occurred at =
+Piggin'<br>Out Smokehouse. Based on epidemiological and environmental evide=
+nce,<br>pork and chicken were the suspected sources of illness.=0D<br>=0D<b=
+r>--=0D<br>Communicated by:=0D<br>ProMED<br><br>[Unlike staphylococcal food=
+borne illness, where the preformed toxin is<br>ingested, in _C. perfringens=
+_ disease the enterotoxin is formed in<br>situ in the gastrointestinal trac=
+t. The following discussion is<br>obtained from the FDA Bad Bug Book 1st Ed=
+ition:=0D<br>=0D<br>"1. Name of the organism=0D<br>_Clostridium perfringens=
+_ is an anaerobic, Gram-positive,<br>spore-forming rod. It is widely distri=
+buted in the environment and<br>frequently occurs in the intestines of huma=
+ns and many domestic and<br>feral animals. Spores of the organism persist i=
+n soil, sediments, and<br>areas subject to human or animal fecal pollution.=0D=
+<br>=0D<br>"2. Nature of acute disease=0D<br>Perfringens food poisoning is =
+the term used to describe the common<br>foodborne illness caused by _C. per=
+fringens_. A more serious but rare<br>illness is also caused by ingesting f=
+ood contaminated with type C<br>strains. The latter illness is known as ent=
+eritis necroticans, or<br>pig-bel disease.=0D<br>=0D<br>"3. Nature of disea=
+se=0D<br>The common form of perfringens poisoning is characterized by inten=
+se<br>abdominal cramps and diarrhea, which begin 8-22 hours after<br>consum=
+ption of foods containing large numbers of those _C.<br>perfringens_ bacter=
+ia capable of producing the food poisoning toxin.<br>The illness is usually=
+ over within 24 hours, but less severe symptoms<br>may persist in some indi=
+viduals for 1-2 weeks. A few deaths have been<br>reported as a result of de=
+hydration and other complications.=0D<br>=0D<br>"Necrotic enteritis (pig-be=
+l) caused by _C. perfringens_ is often<br>fatal. This disease also begins a=
+s a result of ingesting large numbers<br>of the causative bacteria in conta=
+minated foods. Deaths from necrotic<br>enteritis (pig-bel syndrome) are cau=
+sed by infection and necrosis of<br>the intestines and from resulting septi=
+cemia. This disease is very<br>rare in the USA.=0D<br>=0D<br>"Infective dos=
+e: The symptoms are caused by ingestion of large numbers<br>(greater than 1=
+00 million) vegetative cells. Toxin production in the<br>digestive tract (o=
+r in test tubes) is associated with sporulation.<br>This disease is a food =
+infection; only one episode has ever implied<br>the possibility of intoxica=
+tion (that is, disease from preformed<br>toxin).=0D<br>=0D<br>"4. Diagnosis=
+ of human illness=0D<br>Perfringens poisoning is diagnosed by its symptoms =
+and the typical<br>delayed onset of illness. Diagnosis is confirmed by dete=
+cting the<br>toxin in the feces of patients. Bacteriological confirmation c=
+an also<br>be done by finding exceptionally large numbers of the causative<=
+br>bacteria in implicated foods or in the feces of patients.=0D<br>=0D<br>"=
+5. Associated foods=0D<br>In most instances, the actual cause of poisoning =
+by _C. perfringens_<br>is temperature abuse of prepared foods. Small number=
+s of the organisms<br>are often present after cooking and multiply to food =
+poisoning levels<br>during cool down and storage of prepared foods. Meats, =
+meat products,<br>and gravy are the foods most frequently implicated.=0D<br=
+>=0D<br>"6. Relative frequency of disease=0D<br>Perfringens poisoning is on=
+e of the most commonly reported foodborne<br>illnesses in the USA. There we=
+re 1162 cases in 1981, in 28 separate<br>outbreaks. At least 10-20 outbreak=
+s have been reported annually in the<br>USA for the past 2 decades. Typical=
+ly, dozens or even hundreds of<br>persons are affected. It is probable that=
+ many outbreaks go unreported<br>because the implicated foods or patient fe=
+ces are not tested routinely<br>for _C. perfringens_ or its toxin. CDC esti=
+mates that about 10 000<br>actual cases occur annually in the USA.=0D<br>=0D=
+<br>"7. Course of disease and complications=0D<br>The disease generally las=
+ts 24 hours. In the elderly or infirm,<br>symptoms may last 1-2 weeks. Comp=
+lications and/or death only very<br>rarely occur.=0D<br>=0D<br>"8. Target p=
+opulations=0D<br>Institutional feeding (such as school cafeterias, hospital=
+s, nursing<br>homes, prisons) where large quantities of food are prepared s=
+everal<br>hours before serving is the most common circumstance in which<br>=
+perfringens poisoning occurs. The young and elderly are the most<br>frequen=
+t victims of perfringens poisoning. Except in the case of<br>pig-bel syndro=
+me, complications are few in persons under 30 years of<br>age. Elderly pers=
+ons are more likely to experience prolonged or severe<br>symptoms.=0D<br>=0D=
+<br>"9. Food analysis=0D<br>Standard bacteriological culturing procedures a=
+re used to detect the<br>organism in implicated foods and in feces of patie=
+nts. Serological<br>assays are used for detecting enterotoxin in the feces =
+of patients and<br>for testing the ability of strains to produce toxin. The=
+ procedures<br>take 1-3 days."<br>(<a href=3D"https://u19268662.ct.sendgrid=
+.net/ss/c/TLh_csrC34X_iXpbYoMamyUN6XdlJ8fr-toOm7Q7NFCK32zbsy-i6eAyIyROjHV0E=
+7woY9AZbA6AECYM02zJZSfh-Ep4Y4KYmJYfrAUUGAOiwLwvjQFB9GXUpox4YAlhXTfWDamfxd9-=
+SI1vRIRGZ669mUHpyuC58-p82zHE8BI2_QMQGorKJhZ0L1fLEBW852V7jqtVQDiglTCRUqowMg/=
+434/M1Ud6DGXRjOFs-xUo-f9kg/h3/jNQcviVBep50zzuApuLwPqKYEv0w8UDeW11C0dGXyVo">=
+https://wayback.archive-it.org/7993/20170406190157/https://www.fda.gov/Food=
+/FoodborneIllnessContaminants/CausesOfIllnessBadBugBook/ucm070483.htm</a>)<=
+br>- Mod.LL<br><br>ProMED map:<br>Colorado, United States:<br><a href=3D"ht=
+tps://u19268662.ct.sendgrid.net/ss/c/sSnCkKCWBvais3EuVAOvgy2WOIX7pp1nXnn4Ab=
+wuQ3Z6WbkfhqXYXU-aTMPJ8yThzKO1vzH9OW7VZZR2EuVGfg/434/M1Ud6DGXRjOFs-xUo-f9kg=
+/h4/luDw4dFh8hR3qQ3kFr4SOUBKAoHqtibunojsojttqc4">https://promedmail.org/pro=
+med-post?place=3D8714314,209</a>]<br><br>[See Also:<br>2023=0D<br>----=0D<b=
+r>Clostridium perfringens foodborne illness - Japan (03): (KN) prison<br>ht=
+tp://promedmail.org/post/20231226.8713921=0D<br>Clostridium perfringens foo=
+dborne illness - Japan (02): (Tokyo)<br>http://promedmail.org/post/20230525=
+.8710228=0D<br>Clostridium perfringens foodborne illness - Japan: (HG) nurs=
+ing home<br>http://promedmail.org/post/20230510.8709963=0D<br>2022=0D<br>--=
+--=0D<br>Clostridium perfringens foodborne illness - Japan: (YG) elderly ca=
+re<br>facilities http://promedmail.org/post/20221007.8706004=0D<br>2016=0D<=
+br>----=0D<br>Clostridium perfringens foodborne illness - USA (02): (NM) he=
+alth dept<br>party http://promedmail.org/post/20161225.4722975=0D<br>Clostr=
+idium perfringens foodborne illness - USA: (NY) restaurant<br>http://promed=
+mail.org/post/20161225.4722929=0D<br>Clostridium perfringens foodborne illn=
+ess - Nigeria (03): (FC) fatal,<br>comment http://promedmail.org/post/20160=
+303.4066785=0D<br>Clostridium perfringens foodborne illness - Nigeria (02):=
+ (FC) fatal,<br>pigbel susp http://promedmail.org/post/20160302.4062477=0D<=
+br>Clostridium perfringens foodborne illness - Nigeria: (AC) fatalities,<br=
+>RFI http://promedmail.org/post/20160229.4057668=0D<br>2015=0D<br>----=0D<b=
+r>Clostridium perfringens foodborne illness - USA: (IA) school<br>http://pr=
+omedmail.org/post/20151109.3778579=0D<br>2014=0D<br>----=0D<br>Clostridium =
+perfringens foodborne illness - USA: (MI) restaurant<br>http://promedmail.o=
+rg/post/20140414.2402260=0D<br>2013=0D<br>----=0D<br>Foodborne illness - No=
+rway: (ST) Clostridium perfringens, 2012<br>http://promedmail.org/post/2013=
+0305.1567837=0D<br>2012=0D<br>----=0D<br>Foodborne illness - USA: (SD), Clo=
+stridium perfringens<br>http://promedmail.org/post/20120207.1035743]<br>...=
+..............................................ll/may/jh<br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3Ds1lUNDeDiHnYcXpkGC1SpWae6fQ3Kmzq8XTK67uTkMJoMDAwdT=
+AwMIy0_DhvQETBlqH42M3UxTYE9uZiJz0P64Kcf_3uAGRATiJrYDdP2L5qihilv_eO2RTExBIDF=
+jB6b0IsXhdQblRAd8KfYIbH2rajHPXUpJoj4YVPTGKyrMW3zGH18JCYP9omr0XVwXie27c9_jdC=
+qsa4uCyZlEYCtNvBxgSsMN1VNvL0U5xqosGDs74XJMRGxV83k8mICp99jAlpl5KjcEue9EBY4D4=
+a1ymp5adPp7Naaszi2KzYTGP_IcSbr7JcTh8seRoI8ZYoA22t5rBNa7F3lnttw3TgP20uJBPq_H=
+kPXNINTcULYG4BzIBnqb7J2kzydzdPg67QVB1V5f1gUKQgVcivX_Y7PtBntZ_54hYorADb81rz0=
+dA75gEtM6Sg4jbmiNHQMX_3FBiKTq29nzOf7buFQqupxvX5T2bX25f4wc2vXfmtCfTUpDP5wS6b=
+MuyYXSPiC_aQVRPjgzNwIg-J9T4za2ePlLkG17XcT1BCM0npng9SEStinK6Q2bIwXQLUtP6V7x_=
+pVNFkFKPxJupESNBujfFypOjMFCVfZfYaeqgxH9tkVIoM6D2P75Qtt23jDJnkgnT7Ypuc1rsL1P=
+htZypG60ZqodiW10as1i0573X6zQGPDpUN_wttTAJ5IEdPp-1_-Ff8IWMDHLLsVRVPxDKp3abh5=
+tVzD-fpyIdPRVv1uELfM4W5pxDeVlrKkEP-sGvmtnkR0eY9ju_i1pNDsZ0JVU-dYkF5rIcSUOA8=
+_IPfEj10TOpz0Q-leli7fmAs85mw0J77G7-unSCVBYIibfzEWZATazUlpxdHkoJHXmgasG7gtMQ=
+PpMl1WdvTh4X6rphybVZU-yimkZN0BTIDdisOQtgYY8wgJKUiID1Zg_TM0rqllqXc8s_7yziMCl=
+x9FyC-LCdcWqdmg0MczngEttJzaNC1s81S0qZWtQgeyhtrnEC1q7hiATE9GNKPPJ6-qrRr5lJww=
+Pa9H6243v-sxkTu7MhUz9dR8_Ozh7B54FxBay_5yQquNK4JLCaI_nz83q21fVlJQw4CBOqYtX1t=
+Lfgjbylc3H-s3ZWw-ApOGJyja6X3zv2a6WieOD6eCg4PGQmNjVibylRARIRwnp008yAf_qY7wsA=
+_JQtHa4MGlv25yku3REbu8NccF0nS7NbcP3dC0OOryRZaSTHfhn8=3D" target=3D"_blank" =
+class=3D"Unsubscribe--unsubscribePreferences" style=3D"font-family:sans-ser=
+if;text-decoration:none;">Unsubscribe Preferences</a></div><br>############=
+################################################<br>#######################=
+#####################################<br><br><img src=3D"https://u19268662.=
+ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/434/M1Ud6DGXRjOFs-xUo-f9kg/ho.g=
+if" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"height:1px !imp=
+ortant;width:1px !important;border-width:0 !important;margin-top:0 !importa=
+nt;margin-bottom:0 !important;margin-right:0 !important;margin-left:0 !impo=
+rtant;padding-top:0 !important;padding-bottom:0 !important;padding-right:0 =
+!important;padding-left:0 !important;"/></body>
+</html>
+--c02576046e265fb49a5c9aa0bf42f1edf07aaae4d28350d5ede7ceeeb869--

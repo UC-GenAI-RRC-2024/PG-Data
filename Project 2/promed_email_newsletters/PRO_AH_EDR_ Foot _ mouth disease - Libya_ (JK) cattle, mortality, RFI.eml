@@ -1,0 +1,466 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a98:9a8c:0:b0:1eb:e128:bbe3 with SMTP id p12csp743773eic;
+        Mon, 8 Jan 2024 15:27:15 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IFH3/QqsYA+CsVuqC1SOXwmj8VBIhIg3wF8MQLU2c6sZ4IryAKbbG2LSGdUP4dgeucBIQ7L
+X-Received: by 2002:a05:6808:2025:b0:3bd:3caf:1d18 with SMTP id q37-20020a056808202500b003bd3caf1d18mr48708oiw.61.1704756434748;
+        Mon, 08 Jan 2024 15:27:14 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1704756434; cv=none;
+        d=google.com; s=arc-20160816;
+        b=Teg7N0yqVHAxOWCe549TDiFVsKVGg5BGjokiUQo0YiO4+y4om2OMqxrSq4ymHlr9ar
+         4veXeif6BR1uc43TWnhP8eW7QjNNZSJitQMWXgdiFAmwFHpr+idm2B+8gJznkMF2xswh
+         7CUXPBzswhxyFp8k/RkIQxBYpgdwD+3jMSvLtYslc30Y4e9sf/DZMY23RL4Cv5O/enRb
+         cGiMSvDnIZ5dM6AX6AT5dMa0HE5+Z1vZaNaaxYuQF27XKYiS+gZd9IDztIbTcDIj5idC
+         MQAAlj1ske7rBP4TPfh4LUh7qstty7miJATJ983OfC8GQNuEpTvKv6fIG1YYwsROnhPn
+         Quhw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=5OizOl3Ylz9xQF2G+k6iGdKelS76owvlzS9+vcd+SQs=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=lVKbR7EctUZzjJI4VqC4SS7zhpn+Hhz9Zl30YqYqOYvI+U0lrKjPilht+3A75fkRmX
+         oVUMy7dDBGiyf4FVUvd/GvjgDpqGqBunAxnKm9NF16NjJVbfyVpzY08YVOlStl17+UjH
+         3YIBrltTSy0ctZRzYhjpsEcLqPXKuRwiJdjM6UNyNkOKu06v6/nbJu+7OgLa+InW+4NC
+         PeZop3VbhVN3+c7k3f/BaoyfurCX48pTrvhWVchfDwLEKV/sPBTaCzXTU8QzdCgZm16r
+         xS489MsDZR/sCzeDZqd2cexox5lVjMhscvFkpa9lIdEjxTXeHnz6Ve5u7vHLqMJIbQPA
+         xBtA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=dN0YhFGl;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=yrPZuxw5;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id q6-20020a0c9a46000000b0067f8c92249csi1033698qvd.78.2024.01.08.15.27.14
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 08 Jan 2024 15:27:14 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=dN0YhFGl;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=yrPZuxw5;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=5OizOl3Ylz9xQF2G+k6iGdKelS76owvlzS9+vcd+SQs=;
+	b=dN0YhFGlByukia01UnjtGH7EoceX5n+I+LVeARgnODiWg5VezCL6vTWKW5jsKkR+gd4j
+	CxARYaUaS+IkMJfpJcnC6JkQjsXm45H+quy8NdjFNssizPjfpxMmPGNWCQu9LKTIZX2DDe
+	p8GVctNh1a6odu9nHLnjyPkKjlDV3fnpyh7G/9ohPmIHfyMkLfKW9uCJYcLlDlsTjzKWLI
+	h0MXJ34Fquo8UVYx8A1Pq6CkEemPUH8jEw79fu+ZM1PeAcsvLSwSerP1vatBcKIfRdmCgy
+	C4WTDO9UqIx9A7n+mGfGT2rNlO6419qGN2RC+f+LkrDnGabU4aPc6hndxbjXJPdQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=5OizOl3Ylz9xQF2G+k6iGdKelS76owvlzS9+vcd+SQs=;
+	b=yrPZuxw5zyhPOKOpS3vmVju15XEdM6Q/24dTm4NAMLl38ml56nsjLm2Q3UgB4Z7T40S5
+	a6WJfFOSYvth4lFqxX0gznYw3nnL89xiHznYLZW/RB46aOlQfVARVZxN28c+CPFtojZk4L
+	cKjvREkVCX30EAOrG7F/6RKlGcfr2XDVM=
+Received: by filterdrecv-67b59c969b-mq7xz with SMTP id filterdrecv-67b59c969b-mq7xz-1-659C84CF-4B
+        2024-01-08 23:27:11.749180345 +0000 UTC m=+7188355.597547209
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-20 (SG) with HTTP
+	id c4FPMJPfSweeocMIsM684g
+	Mon, 08 Jan 2024 23:27:11.725 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=7fdf6d1975bc8f18774915423ac260f5155649576948767268d7d52463ff
+Date: Mon, 08 Jan 2024 23:27:14 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <c4FPMJPfSweeocMIsM684g@geopod-ismtpd-20>
+Subject: PRO/AH/EDR> Foot & mouth disease - Libya: (JK) cattle, mortality, RFI
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iBFatwUy5BJ5M3TGImVhSNdYx+NCj4scQIxltbz?=
+ =?us-ascii?Q?ELr+Geev7NiGuybp4ZUNO+QgKgRXaw4Vsox0iZT?=
+ =?us-ascii?Q?+3PINhjqd+7eR2eJS39hbNpzVynLayWI76mi97i?=
+ =?us-ascii?Q?Su=2FEY8MchubspH9hxGlIFpWoJ4V0+zwIcYY7z74?=
+ =?us-ascii?Q?LWjCIoxw4VcyNJNsRX8=2FCscGm4B86Ehx0ieUmT?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUiShGf=2FO8XJWpH34Od4Nd?=
+ =?us-ascii?Q?fxXa6jil96uRcJkF+N+LeVnO1tx80ddOyoyOo=2Fc?=
+ =?us-ascii?Q?Brxcl3ERAm0cOY743=2FFH59DWiSf5OzXORh1DLKt?=
+ =?us-ascii?Q?hb1NMKty3PsA5ju0ZzxCrq1WQuZSEQf=2FJlWtgqv?=
+ =?us-ascii?Q?cZmsyCHlNUZsDS6+MJY=2F661hlRvTo6W0ZK3b3Nk?=
+ =?us-ascii?Q?K7ULAItwGzGwrGa8XcpMtYKfrXqvddUA8Q9+OyQ?=
+ =?us-ascii?Q?JIIrel5ZYbsVpMqLDzBkmi9dspg1KzEk3DwE+Pw?=
+ =?us-ascii?Q?Jm9ma07XHWE3Q0etIaBQ16jYNHPr=2Fi1pZEdSfEx?=
+ =?us-ascii?Q?dYSlFUwI3HlV8fV7Hy5BNYd5Xgl7KbgQnEEPHnn?=
+ =?us-ascii?Q?n6u9BiWOa7TD6S1Hv+b+w7MoAcbb4kkxRvoUjG5?=
+ =?us-ascii?Q?ckJWLsbg98ubLUgCoOQQK=2F8hYvTGvpC0dHNNNal?=
+ =?us-ascii?Q?112TtKADsHjIGXZr9RTLA=2FOyyEvqhv44mpBj+j2?=
+ =?us-ascii?Q?5XCbRkCd9UZ9l7iwloUQv4m6zIVusWd=2F+cTZrUL?=
+ =?us-ascii?Q?+ZmrEuqwaKgd+6iwSJlpPC5S4HfG4eb0u52wy+=2F?=
+ =?us-ascii?Q?tmOFmRabPLoLOl0s2ZC9Qw8J7T63j4+hCu1l7AN?=
+ =?us-ascii?Q?Q9F3xJWmTH0IFJbhSS1pRqyNO91ZHJ0CeJ+RR88?=
+ =?us-ascii?Q?qZPByPHSd+9cxqJ6S2rPKL8Y0a8CU+HlYWPR+8h?=
+ =?us-ascii?Q?VMNeafW8UDnSAKULP75LTu+zskoHc=2FbA2S6lCjI?=
+ =?us-ascii?Q?9VlyBuZIVKdSS3l4TW6LaQXsEESJ=2FPjG7s6p2Oj?=
+ =?us-ascii?Q?K7zVbJ+jDg1SJ=2Fx4p8pJFUHnf5bm3zYeO97y88x?=
+ =?us-ascii?Q?o4Clzs30=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2ETpzaH4xMt?=
+ =?us-ascii?Q?83x89knBnWw7zEAN9IYCYY-R4-rI3VGdV1oMDAw?=
+ =?us-ascii?Q?dTAwMLct8neC13vmvKWJp2KJihZKmt3TxYKGDZE?=
+ =?us-ascii?Q?luYtCfMhPUbFhP41epbeWOwnnFZnSVplbl2yEkg?=
+ =?us-ascii?Q?KZtUBBB2NFpVu=5FbkWarUOvZYYOtBmUyNPyDvXRy?=
+ =?us-ascii?Q?eTd8axKAlWi25td0w=3D=3D=2EkHOfZb0UOckZ5gFGUeh?=
+ =?us-ascii?Q?gkU5CHeV5GCEuT2uJJRBJKPdoMDAwdTAwMJ7ODL?=
+ =?us-ascii?Q?VmUXfT3NotbwkgCStwy1AAZCp50zg5T9OY3VPsV?=
+ =?us-ascii?Q?UPRplrniXH=5FqULJGdaAFyC2iYDfjWCTbfmt=5FOC=5F?=
+ =?us-ascii?Q?Q7HN3tvr2Sop7VkLh6STcZQcfnm0dSrb-HR5Piw?=
+ =?us-ascii?Q?5h9KCvekJ8bytkNOGmkjH6gBSIsvaqA7m9vx4Wh?=
+ =?us-ascii?Q?bl4-S4ZqhFxs4dj55VdYQ9AHQxc59dPIGZwFawV?=
+ =?us-ascii?Q?KpWOc8BW1iTWh1a94Ul=5FRcCRGUiddzgELGy6P8K?=
+ =?us-ascii?Q?cSj6WuJnedFkOyAq5rSgTHtvJfD1cXjwqpHurwc?=
+ =?us-ascii?Q?nxHOc74g7g5mHSKASSdKfWCw-yXvaxjyjQYZVFN?=
+ =?us-ascii?Q?pi=5FkjERbCS3hv7AY-5PpSV40OOXUh9m4zNFS-J7?=
+ =?us-ascii?Q?XfWnMUVdWR9GNIWAoMlbGnfOnDEaR-xn8RLfIRc?=
+ =?us-ascii?Q?nFzs0drDR3I=5FS32lrfEKjkm=5F8RaLNGfakf=5FAAQC?=
+ =?us-ascii?Q?YpvWqR=5F2MkJTWQGnSHJsKErlXd2MFKKzvHRtf1a?=
+ =?us-ascii?Q?JWnrbmqiLENq0wFwu1JJuFygXIquz6SFEFC61kK?=
+ =?us-ascii?Q?KPZrtM92TW56SIDNsZWBcp8HFTykFWZZtpZM7W-?=
+ =?us-ascii?Q?94J86e3961pr=5FmbJVRNI9RQxFLUa=5FqyimtBNGzX?=
+ =?us-ascii?Q?fiXjMcM=5FWk56ZTWLxwxX0c8jThqzhNu2RBFypS4?=
+ =?us-ascii?Q?-FQU8TM-piJHex1CbsaB0YxQOWUztimF1bToUJU?=
+ =?us-ascii?Q?8hiVek17uB7XCDU3bd2X4e7W68SMuPVLkpY=5FS77?=
+ =?us-ascii?Q?za4gYCdlTpWN3GW4M-yefM9anuPBc4tc1eFYHbs?=
+ =?us-ascii?Q?FtxhQprb=5FuRNryNmQV0SZQaPrd=5FI2EOenvHP=5F7K?=
+ =?us-ascii?Q?oJ=5FE05GMbRr3n9PuMfVywXU1z0YWcKPaZBPKAUq?=
+ =?us-ascii?Q?JrPdYqouyZ5abj-6wY7FUUBBnF4LOUVfzHRNa6f?=
+ =?us-ascii?Q?dgZmmqZRFUze-CZopaYB-WD73Y8aX7yRCeUGVG6?=
+ =?us-ascii?Q?zX92xAykLnfOfp2ZYAhWRsBZpjt52iE3eSDwfcL?=
+ =?us-ascii?Q?A-xm3cPwmbdqrW=5FJGfCH3fM7TDykgOWL-=5FiH7Tt?=
+ =?us-ascii?Q?743Z3EHkgaYaIP2EXi9vXjwp0rI1mHX7QtqCpdN?=
+ =?us-ascii?Q?7VE=5F3v4C3FtGQ0eiKiKMwIVuE-s=3D=3E?=
+
+--7fdf6d1975bc8f18774915423ac260f5155649576948767268d7d52463ff
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=iso-8859-1
+Mime-Version: 1.0
+
+FOOT & MOUTH DISEASE - LIBYA: (AL JABAL AL AKHDAR) CATTLE, MORTALITY,
+REQUEST FOR INFORMATION
+***************************************************************************=
+******************
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+Date: Sat 6 Jan 2024
+Source: The Libya Observer [edited]
+<https://libyaobserver.ly/inbrief/cases-foot-and-mouth-disease-and-death-10=
+-calves-al-jabal-al-akhdar-recorded>
+
+
+The director of Livestock Department in Jabal Al Akhdar, Saleh
+Boumubaraka, has announced that 25 cases of foot-and-mouth disease
+have been recorded among cows, including the death of more than 10
+young calves, in light of the lack of medicines to combat the disease
+so far.
+
+In media statements, Boumubaraka explained that more than 2 weeks ago,
+the Environmental Sanitation Agency stopped inspecting meat and cows
+before slaughter, and sealing valid meat, due to lack of capabilities
+and lack of assistance from the competent authorities.
+
+He pointed out that infections in the city of Al-Bayda are widespread
+and have now spread to the municipality of Omar Al-Mukhtar and its
+neighbouring areas, and that infections are at 70%. Mortality is
+increasing significantly, not to mention miscarriages and infertility
+due to the disease. Cases of lumpy skin disease have exceeded 530, and
+more than 65 have died over 2 months.
+
+[Byline: Mohamed Ahmed]
+
+--
+Communicated by:
+ProMED
+via
+ProMED-MENA
+
+[The animal health situation in this region of Libya is very alarming.
+Several media reports have been previously posted in ProMED-MENA
+concerning the spread of other transboundary diseases such as lumpy
+skin disease and bluetongue. ProMED would appreciate receiving
+information from knowledgeable sources in this area regarding the
+current epidemiological situation of foot-and-mouth disease [FMD],
+including species involved, spatiotemporal distribution, and results
+of laboratory tests conducted.
+
+In 2023, 9 FMDV [FMD virus] outbreaks (Topotype O/EA-3) were
+officially reported to WOAH in the following districts: An Nuqat al
+Khams, Az Zawiyah, Al Jifarah, and Misratah. Clinical signs have been
+observed in sheep, goat, and cattle
+(<https://wahis.woah.org/#/in-review/4990?fromPage=3Devent-dashboard-url>).
+- Mod.SF
+
+ProMED map of Al Jabal al Akh=E1=B8'ar, Libya:
+<https://promedmail.org/promed-post?place=3D8714138,69023>]
+
+[See Also:
+2023
+----
+Foot & mouth disease - Algeria (02): (MS, TB) spread, st O, livest
+market closures http://promedmail.org/post/20231220.8713816
+Foot & mouth disease - Algeria: (SF) cattle, serotype pending, WOAH
+http://promedmail.org/post/20231212.8713667
+Foot & mouth disease - Tunisia: (MS, KF) cattle, sheep, st O, spread,
+WOAH http://promedmail.org/post/20230517.8710103
+Foot & mouth disease - Libya (03): livestock, st O, tt EA-3, RFI
+http://promedmail.org/post/20230410.8709432
+Foot & mouth disease - Libya (02): (MS, AR) cattle, sheep, serotype O,
+WOAH http://promedmail.org/post/20230330.8709231
+Foot & mouth disease - Libya: cattle, st O, sheep susp, spread
+http://promedmail.org/post/20230320.8709051
+2022
+----
+Foot & mouth disease - Maghreb (02): Algeria (BU) cattle, spread
+http://promedmail.org/post/20220601.8703608
+Foot & mouth disease - Maghreb: Algeria, Tunisia, epidemiol.,
+transbound. threat http://promedmail.org/post/20220509.8703156
+Foot & mouth disease - Algeria: (BJ, GL) cattle, st O, OIE
+http://promedmail.org/post/20220503.8702983
+Foot & mouth disease - Tunisia (03): cattle, goat, st O, topotype EA-3
+http://promedmail.org/post/20220330.8702296
+Foot & mouth disease - Tunisia (02): (MS) cattle, goat, spread, OIE
+http://promedmail.org/post/20220125.8701061
+Foot & mouth disease - Tunisia: (BA) cattle, st O, OIE
+http://promedmail.org/post/20220115.8700865
+2019
+----
+Foot & mouth disease - Algeria: (TD) goat, sheep, spread
+http://promedmail.org/post/20190603.6501590
+Foot & mouth disease - Tunisia (02): (KS) ovine, spread, vaccination
+http://promedmail.org/post/20190121.6270203
+Foot & mouth disease - Tunisia: (JE, KS) bovine, ovine, st O, spread,
+OIE http://promedmail.org/post/20190111.6253492
+2018
+----
+Foot & mouth disease - Algeria (08): (EB) ovine, suspected, control,
+vaccination http://promedmail.org/post/20181229.6226208
+Foot & mouth disease - Tunisia: bovine, ovine, st O, OIE
+http://promedmail.org/post/20181226.6223828
+Foot & mouth disease - Algeria (07): bovine, spread, OIE
+http://promedmail.org/post/20181018.6098031
+Foot & mouth disease - Algeria (06): (BU) bovine, spread
+http://promedmail.org/post/20180918.6034688
+Foot & mouth disease - Algeria (05): bovine, st O, topotype EA-3,
+spread http://promedmail.org/post/20180805.5947341
+Foot & mouth disease - Algeria (04): bovine, st O, genotyped topotype
+EA-3 http://promedmail.org/post/20180725.5925984
+Foot & mouth disease - Algeria (03): bovine, st O, spread, OIE
+http://promedmail.org/post/20180723.5921355
+Foot & mouth disease - Algeria (02): (TO) bovine, st O, spread
+http://promedmail.org/post/20180718.5912655
+Foot & mouth disease - Algeria: (TO) bovine, st O, OIE
+http://promedmail.org/post/20180630.5883015
+2017
+----
+Foot & mouth disease - Algeria (05): (SF) bovine, control, regional
+alerts http://promedmail.org/post/20170419.4980408]
+.................................................sf/may/gmm/tw/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3Dvu9khNpWuRbpCpcIgvRKM_6R01Heg9anPvFJsv4wUedoMDAwdTAwMKgHQGo=
+3lePNdcYWI0tL3DER_J4licfQbkoVoFATpDun9YpVN8KpdXUAuxbZ67fJqtz3rA4Tb2bEz5uP6G=
+f3tnj0MKkEAcMXKW8e8HHv4AzCGN1IRcXOWJ2lORgPVEw_IgLfm_ImsV3kVvvhW2kTSNqMPFg8p=
+GWY94OB4D067lyRLBFtZoB7cBMSZ5JyjmkU9HdsB_KzZ2PNCU02IIqIk2YTLJoRc6EJ6eU1akVc=
+Jpe08STW9RfTS4FsplhsWf1HzNnnvzya47xWN_XPgfO-on9iNp4BcqV3ANZoWgRWI2Yl4FDg6aT=
+uk1yMMfZWBUAfNcbZTEtke_e1fq9oPagDBI9GdajKWN9zb51lItVT4vxK_nbzsMly8yNMOm72yg=
+RR8kfq4agZ65cP55pofk2RQtXRv6BhwVnI-6YbaKK1eV5AmbIvjj4uW8X4NFZ8Fy_A4zpeWFCK-=
+DAk36Lwob4GpWwn3JdAPu_BwZJsgw-_NXBLHDAuZiwMp9s59TNh6ckSNnwomicnu8STxNK7qHG7=
+rVa2YaIu6ddQCphkutDcLe8BDJ3XSz9PApxzedbDNC6w96shJQvPVWBzgJQKdk5lkId43uHEqjv=
+grygohbi06UhTmNkA-f8oCHzMV0EkYlMZGLQlMd29oED4zqG89kK98_003X1KG1GkhBE75M0mer=
+o0wmSFT24JsRf8kGQnVZn2MNzztEc8LP4LddTcjF8OCsrygsVyVcelNsOdhinpnt2Xa3lzLi8VW=
+_253LCHQR4i4QQ70hY7qqcDBYQRqJHya7u6BVJGfUr4CTGngjafF5QXU6iffkD0fLDefMQipmI3=
+2UCMXrk7IU3oGDYnoFjE3uB0eraWUB0ieZISmq2ekq8ZZtB5v4S3hY3hQRmW6V9UjVZWZX5L6uj=
+4R1n8eCqahlmRBJ9c2PlaH6Io_s_TUkM9nlyoR6GlxhDwV0S3V5bAE7GP9B_0DsSc6CNS7q_05w=
+giI4bfPzILkF_ceTZH8v9RuUBKxFTvENVxOimzX6-XLQYwtP4pqINhfW97_j31ZEUqwI7zBCdZO=
+bQ7wuJ1eJiQYtOUs1e2km5F1VFTKHYn11WlET3rPpJuZ3MLJ89uCyis8IjsfwSKlrL2n8EzN6tB=
+m_lH3tsPfkRHFB6AoCZyWSnnmZgyf8nXUf4l0nangmFOFLq2L7RNOM9votm73gr4 )
+############################################################
+############################################################
+
+--7fdf6d1975bc8f18774915423ac260f5155649576948767268d7d52463ff
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=iso-8859-1
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>FOOT & MOUTH DISEASE - LIBYA: (AL JABAL AL AKHDAR) CATTLE, MORTALITY,=
+<br>REQUEST FOR INFORMATION<br>********************************************=
+*************************************************<br>A ProMED-mail post<br>=
+<a href=3D"https://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisIijp=
+efK5PNjW-mL-YZGnfgDOxU1G3gjwnPSi2Tfv3HA/42t/8RmF6NfwRTW8-oEGvql86Q/h0/kGSgM=
+kY43K5tHj73UxSU-PzTmVFApwSEj6RBeSp0JtA">http://www.promedmail.org</a><br>Pr=
+oMED-mail is a program of the<br>International Society for Infectious Disea=
+ses<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48=
+tisCT5tpD4Upm3qyMCbcYSQvc/42t/8RmF6NfwRTW8-oEGvql86Q/h1/7dK_uf9_B_b3AiYWrMk=
+Uh4ysHoNDw9bndkPLxh7AFus">http://www.isid.org</a><br><br>Date: Sat 6 Jan 20=
+24=0D<br>Source: The Libya Observer [edited]=0D<br><a href=3D"https://u1926=
+8662.ct.sendgrid.net/ss/c/kpB05XP4S3C5he0czVXZ-8maRQc9aDsKWRDo0HTDdNRMCwojF=
+TtK_YsYXkC3xxrXoawXvgHaR5hcoh-TAI2V7ucQQ1rkzTRmdBL8ZcgQRL00FDRp3C2v9fSvCQck=
+2-lNbMym0BpZfZ0kwgMz5GSVSANLkggfxIgnVDesTTjyUR0/42t/8RmF6NfwRTW8-oEGvql86Q/=
+h2/A8NRht_2Zp_sYiNoQyT6qwwCcPxUOdx57e1Lc3-MivE">https://libyaobserver.ly/in=
+brief/cases-foot-and-mouth-disease-and-death-10-calves-al-jabal-al-akhdar-r=
+ecorded</a>=0D<br>=0D<br>=0D<br>The director of Livestock Department in Jab=
+al Al Akhdar, Saleh<br>Boumubaraka, has announced that 25 cases of foot-and=
+-mouth disease<br>have been recorded among cows, including the death of mor=
+e than 10<br>young calves, in light of the lack of medicines to combat the =
+disease<br>so far.=0D<br>=0D<br>In media statements, Boumubaraka explained =
+that more than 2 weeks ago,<br>the Environmental Sanitation Agency stopped =
+inspecting meat and cows<br>before slaughter, and sealing valid meat, due t=
+o lack of capabilities<br>and lack of assistance from the competent authori=
+ties.=0D<br>=0D<br>He pointed out that infections in the city of Al-Bayda a=
+re widespread<br>and have now spread to the municipality of Omar Al-Mukhtar=
+ and its<br>neighbouring areas, and that infections are at 70%. Mortality i=
+s<br>increasing significantly, not to mention miscarriages and infertility<=
+br>due to the disease. Cases of lumpy skin disease have exceeded 530, and<b=
+r>more than 65 have died over 2 months.=0D<br>=0D<br>[Byline: Mohamed Ahmed=
+]=0D<br>=0D<br>--=0D<br>Communicated by:=0D<br>ProMED=0D<br>via=0D<br>ProME=
+D-MENA<br><br>[The animal health situation in this region of Libya is very =
+alarming.<br>Several media reports have been previously posted in ProMED-ME=
+NA<br>concerning the spread of other transboundary diseases such as lumpy<b=
+r>skin disease and bluetongue. ProMED would appreciate receiving<br>informa=
+tion from knowledgeable sources in this area regarding the<br>current epide=
+miological situation of foot-and-mouth disease [FMD],<br>including species =
+involved, spatiotemporal distribution, and results<br>of laboratory tests c=
+onducted.=0D<br>=0D<br>In 2023, 9 FMDV [FMD virus] outbreaks (Topotype O/EA=
+-3) were<br>officially reported to WOAH in the following districts: An Nuqa=
+t al<br>Khams, Az Zawiyah, Al Jifarah, and Misratah. Clinical signs have be=
+en<br>observed in sheep, goat, and cattle<br>(<a href=3D"https://u19268662.=
+ct.sendgrid.net/ss/c/TLh_csrC34X_iXpbYoMam-hfNBcjkmqx8p5hLSO19INJuA3t8-h3R5=
+4iusIRnSrj0MIGzfPDMwZBbiPIxAMBOu7mUV-w7FEE3dmXAk4TX34/42t/8RmF6NfwRTW8-oEGv=
+ql86Q/h3/nXjeuJtU_mGLhscRBag52VCP5f_UdukF2r5YuIsYJPM">https://wahis.woah.or=
+g/#/in-review/4990?fromPage=3Devent-dashboard-url</a>).<br>- Mod.SF=0D<br>=0D=
+<br>ProMED map of Al Jabal al Akh=E1=B8'ar, Libya:<br><a href=3D"https://u1=
+9268662.ct.sendgrid.net/ss/c/sSnCkKCWBvais3EuVAOvgy2WOIX7pp1nXnn4AbwuQ3Z6Wb=
+kfhqXYXU-aTMPJ8yThdBaePljzcMJ43dbM-db1uQ/42t/8RmF6NfwRTW8-oEGvql86Q/h4/Tau5=
+2hR259-dSxM3_MmAKIXpC8oWzLtdRQorrD8QZYU">https://promedmail.org/promed-post=
+?place=3D8714138,69023</a>]<br><br>[See Also:<br>2023=0D<br>----=0D<br>Foot=
+ & mouth disease - Algeria (02): (MS, TB) spread, st O, livest<br>market cl=
+osures http://promedmail.org/post/20231220.8713816=0D<br>Foot & mouth disea=
+se - Algeria: (SF) cattle, serotype pending, WOAH<br>http://promedmail.org/=
+post/20231212.8713667=0D<br>Foot & mouth disease - Tunisia: (MS, KF) cattle=
+, sheep, st O, spread,<br>WOAH http://promedmail.org/post/20230517.8710103=0D=
+<br>Foot & mouth disease - Libya (03): livestock, st O, tt EA-3, RFI<br>htt=
+p://promedmail.org/post/20230410.8709432=0D<br>Foot & mouth disease - Libya=
+ (02): (MS, AR) cattle, sheep, serotype O,<br>WOAH http://promedmail.org/po=
+st/20230330.8709231=0D<br>Foot & mouth disease - Libya: cattle, st O, sheep=
+ susp, spread<br>http://promedmail.org/post/20230320.8709051=0D<br>2022=0D<=
+br>----=0D<br>Foot & mouth disease - Maghreb (02): Algeria (BU) cattle, spr=
+ead<br>http://promedmail.org/post/20220601.8703608=0D<br>Foot & mouth disea=
+se - Maghreb: Algeria, Tunisia, epidemiol.,<br>transbound. threat http://pr=
+omedmail.org/post/20220509.8703156=0D<br>Foot & mouth disease - Algeria: (B=
+J, GL) cattle, st O, OIE<br>http://promedmail.org/post/20220503.8702983=0D<=
+br>Foot & mouth disease - Tunisia (03): cattle, goat, st O, topotype EA-3<b=
+r>http://promedmail.org/post/20220330.8702296=0D<br>Foot & mouth disease - =
+Tunisia (02): (MS) cattle, goat, spread, OIE<br>http://promedmail.org/post/=
+20220125.8701061=0D<br>Foot & mouth disease - Tunisia: (BA) cattle, st O, O=
+IE<br>http://promedmail.org/post/20220115.8700865=0D<br>2019=0D<br>----=0D<=
+br>Foot & mouth disease - Algeria: (TD) goat, sheep, spread<br>http://prome=
+dmail.org/post/20190603.6501590=0D<br>Foot & mouth disease - Tunisia (02): =
+(KS) ovine, spread, vaccination<br>http://promedmail.org/post/20190121.6270=
+203=0D<br>Foot & mouth disease - Tunisia: (JE, KS) bovine, ovine, st O, spr=
+ead,<br>OIE http://promedmail.org/post/20190111.6253492=0D<br>2018=0D<br>--=
+--=0D<br>Foot & mouth disease - Algeria (08): (EB) ovine, suspected, contro=
+l,<br>vaccination http://promedmail.org/post/20181229.6226208=0D<br>Foot & =
+mouth disease - Tunisia: bovine, ovine, st O, OIE<br>http://promedmail.org/=
+post/20181226.6223828=0D<br>Foot & mouth disease - Algeria (07): bovine, sp=
+read, OIE<br>http://promedmail.org/post/20181018.6098031=0D<br>Foot & mouth=
+ disease - Algeria (06): (BU) bovine, spread<br>http://promedmail.org/post/=
+20180918.6034688=0D<br>Foot & mouth disease - Algeria (05): bovine, st O, t=
+opotype EA-3,<br>spread http://promedmail.org/post/20180805.5947341=0D<br>F=
+oot & mouth disease - Algeria (04): bovine, st O, genotyped topotype<br>EA-=
+3 http://promedmail.org/post/20180725.5925984=0D<br>Foot & mouth disease - =
+Algeria (03): bovine, st O, spread, OIE<br>http://promedmail.org/post/20180=
+723.5921355=0D<br>Foot & mouth disease - Algeria (02): (TO) bovine, st O, s=
+pread<br>http://promedmail.org/post/20180718.5912655=0D<br>Foot & mouth dis=
+ease - Algeria: (TO) bovine, st O, OIE<br>http://promedmail.org/post/201806=
+30.5883015=0D<br>2017=0D<br>----=0D<br>Foot & mouth disease - Algeria (05):=
+ (SF) bovine, control, regional<br>alerts http://promedmail.org/post/201704=
+19.4980408]<br>.................................................sf/may/gmm/=
+tw/jh<br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3Dvu9khNpWuRbpCpcIgvRKM_6R01Heg9anPvFJsv4wUedoMDAwdT=
+AwMKgHQGo3lePNdcYWI0tL3DER_J4licfQbkoVoFATpDun9YpVN8KpdXUAuxbZ67fJqtz3rA4Tb=
+2bEz5uP6Gf3tnj0MKkEAcMXKW8e8HHv4AzCGN1IRcXOWJ2lORgPVEw_IgLfm_ImsV3kVvvhW2kT=
+SNqMPFg8pGWY94OB4D067lyRLBFtZoB7cBMSZ5JyjmkU9HdsB_KzZ2PNCU02IIqIk2YTLJoRc6E=
+J6eU1akVcJpe08STW9RfTS4FsplhsWf1HzNnnvzya47xWN_XPgfO-on9iNp4BcqV3ANZoWgRWI2=
+Yl4FDg6aTuk1yMMfZWBUAfNcbZTEtke_e1fq9oPagDBI9GdajKWN9zb51lItVT4vxK_nbzsMly8=
+yNMOm72ygRR8kfq4agZ65cP55pofk2RQtXRv6BhwVnI-6YbaKK1eV5AmbIvjj4uW8X4NFZ8Fy_A=
+4zpeWFCK-DAk36Lwob4GpWwn3JdAPu_BwZJsgw-_NXBLHDAuZiwMp9s59TNh6ckSNnwomicnu8S=
+TxNK7qHG7rVa2YaIu6ddQCphkutDcLe8BDJ3XSz9PApxzedbDNC6w96shJQvPVWBzgJQKdk5lkI=
+d43uHEqjvgrygohbi06UhTmNkA-f8oCHzMV0EkYlMZGLQlMd29oED4zqG89kK98_003X1KG1Gkh=
+BE75M0mero0wmSFT24JsRf8kGQnVZn2MNzztEc8LP4LddTcjF8OCsrygsVyVcelNsOdhinpnt2X=
+a3lzLi8VW_253LCHQR4i4QQ70hY7qqcDBYQRqJHya7u6BVJGfUr4CTGngjafF5QXU6iffkD0fLD=
+efMQipmI32UCMXrk7IU3oGDYnoFjE3uB0eraWUB0ieZISmq2ekq8ZZtB5v4S3hY3hQRmW6V9UjV=
+ZWZX5L6uj4R1n8eCqahlmRBJ9c2PlaH6Io_s_TUkM9nlyoR6GlxhDwV0S3V5bAE7GP9B_0DsSc6=
+CNS7q_05wgiI4bfPzILkF_ceTZH8v9RuUBKxFTvENVxOimzX6-XLQYwtP4pqINhfW97_j31ZEUq=
+wI7zBCdZObQ7wuJ1eJiQYtOUs1e2km5F1VFTKHYn11WlET3rPpJuZ3MLJ89uCyis8IjsfwSKlrL=
+2n8EzN6tBm_lH3tsPfkRHFB6AoCZyWSnnmZgyf8nXUf4l0nangmFOFLq2L7RNOM9votm73gr4" =
+target=3D"_blank" class=3D"Unsubscribe--unsubscribePreferences" style=3D"fo=
+nt-family:sans-serif;text-decoration:none;">Unsubscribe Preferences</a></di=
+v><br>############################################################<br>#####=
+#######################################################<br><br><img src=3D"=
+https://u19268662.ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/42t/8RmF6NfwR=
+TW8-oEGvql86Q/ho.gif" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=
+=3D"height:1px !important;width:1px !important;border-width:0 !important;ma=
+rgin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;=
+margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !importa=
+nt;padding-right:0 !important;padding-left:0 !important;"/></body>
+</html>
+--7fdf6d1975bc8f18774915423ac260f5155649576948767268d7d52463ff--

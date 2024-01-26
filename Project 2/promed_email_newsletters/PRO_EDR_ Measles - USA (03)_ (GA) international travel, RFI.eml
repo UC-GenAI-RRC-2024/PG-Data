@@ -1,0 +1,405 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a98:d84b:0:b0:1eb:e128:bbe3 with SMTP id b11csp1304409eil;
+        Fri, 19 Jan 2024 18:53:17 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IGUKZUgfZwAnKUPHmrTWzQ06pQUwax1V76vH7ZI+463NZ0h5PEEwFucxErdoyFNHvOR1iN4
+X-Received: by 2002:a05:620a:2490:b0:783:369e:a5bc with SMTP id i16-20020a05620a249000b00783369ea5bcmr1542021qkn.48.1705719197468;
+        Fri, 19 Jan 2024 18:53:17 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1705719197; cv=none;
+        d=google.com; s=arc-20160816;
+        b=abv8XSxIcmMX+5DlFjVsn4RSl3Z/qVzzzJPJK3WVzQto+w+R9JShvwQ28ODk2evB9f
+         Q1NAMA4XO4v5A/vqrRld4rsgOcJ0n8EZo+GUsy2SS2XVeM8uESOdd2Pjeu2/F8HlHV3y
+         ys0YAkJR4ioHZJK5mBbk79Sq9zr8dNBBXetNFNGYyX9S0GWGxIDsp29vre2JHKvntXi0
+         HyuJ21c7Mko3uwzoupAkD6cUxv03a5CnS4Td6SflDqp47pTzhI62iOWEvvd1J5sNMrE5
+         dObyUzizmRQMU7OtWWuCljQVIXpMoh3HhimfqOlxX3tkroa7M59xK8kzBjVlEG75/+01
+         kqhA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=zQSptDFlHYA/UuhYxu9OuOeYfMwkQEcyyZb3uDK+pZU=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=fXbFmnS8viQ5aJPJ5/Qym1D437kLgNfB4MOYU9P9CNcn5P2qj3cNt369mUHGaMV4oX
+         cyZoBJCXgPtc8S9nQtMnpCUO3TF0ZUVZrQLnKtUSDvHKsByit4QxUOGlV1GnVBz883iy
+         hOwaQETg3DJPSLkvR0s9OOIlzrnv04uKTb09dwlvhpFXYabHTb2NhakwMYPY7CbploTZ
+         YcHXovSz8Kv104FhtE76jXFxXVnjALTOyvukgSlkJkfhra6lNxl7v/rXh1NRFUEMdwOQ
+         ALZWL52hWip6RuXSGvREHoWfCHIk5U7LnivAPZ5h1WDLkw7n8hkPF5TlILjEyH9HOXhL
+         z1PQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b="BxHNXS6/";
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b="Zs0z/zv6";
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id c26-20020a05620a11ba00b00783660a2e54si670250qkk.169.2024.01.19.18.53.17
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 19 Jan 2024 18:53:17 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b="BxHNXS6/";
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b="Zs0z/zv6";
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=zQSptDFlHYA/UuhYxu9OuOeYfMwkQEcyyZb3uDK+pZU=;
+	b=BxHNXS6/44a9u/5rGlznG6nS0ymjWZSKF/E+Xj5m2mYuXvik/9SpO/ouCXcn5+tLTRfc
+	uXNjVYavAEgXXfN1oNSJSJJHxroTKRBOA9bw14iyeipyixyLKO4PtfD5jmrE1zIiT09R1w
+	jMskolji7CEwArVysjH8V36oDzUkzKd7xLPMMpb9YRF/fkCt8OrLbUkb8YHH9FZgmw+uG6
+	AXBNyd461lRa89lUaSGLdoe/jNkH8M2xLJDO2wa2x6tZVpJv/aZY+0+UgC1S2B3EgtLeyS
+	olzF/2j4ZtITxYrdv1L3CcTqI5C0x2FnpFprE5fClpowU5bA5axD3IgZK36hIcPA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=zQSptDFlHYA/UuhYxu9OuOeYfMwkQEcyyZb3uDK+pZU=;
+	b=Zs0z/zv63Ubl5Lwqm2JYF0llh753xH5kRMZykCh27y8Wa1GgM/rr1WrVwj1wMssdAn6b
+	yMrGtcdgjsbtM0JiB1m6fjlaOYQuVnGUfS2allB8j3Un4wsfyjEPJIDKXBjNzJz7ZqmfFM
+	r7Y9mBJn2KznwTAFZgxQKsZjtyLfuQq80=
+Received: by filterdrecv-59b97c8fcd-692gx with SMTP id filterdrecv-59b97c8fcd-692gx-1-65AB359A-22
+        2024-01-20 02:53:14.771745993 +0000 UTC m=+8151086.715198660
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-14 (SG) with HTTP
+	id XDFnIKPmS26wWhte7W78vw
+	Sat, 20 Jan 2024 02:53:14.752 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=f5f8f815f3e9e730e31871c759823d587dd11f5e8f8ca8b306e28a1b3897
+Date: Sat, 20 Jan 2024 02:53:17 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <XDFnIKPmS26wWhte7W78vw@geopod-ismtpd-14>
+Subject: PRO/EDR> Measles - USA (03): (GA) international travel, RFI
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iBBQbEGH3rBBOUstTdVy3bkTPYj+uHoYrHWYEGa?=
+ =?us-ascii?Q?MSl6p8mHs3WbmaveYVouOADzQrNq3wg5EhiXdV8?=
+ =?us-ascii?Q?tYb2nBIwpq76vM92kuf3AuSrCJPZ6MDb6636IVj?=
+ =?us-ascii?Q?FaZG22o+I5e1m8AmSjL8oO6VtfJRP+K+kiRFPgr?=
+ =?us-ascii?Q?3uf6gkCFB+JIQxOSah1r3A+KBrcrEb57MpxTEM?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUhc93xcG=2F095a5S4+mt=2FG?=
+ =?us-ascii?Q?uYUpctI=2FOGD2dwyi+uvm2j4FCdvuw0l9zcHM8iA?=
+ =?us-ascii?Q?mojOvTXq7jOpDFFNtfsYkHQYACEW8pq1BXXqYmH?=
+ =?us-ascii?Q?oGTsnt6QpE2ZV5WVqnpwfXWoLXx7+4bZMF+yBGg?=
+ =?us-ascii?Q?YzE3ecLFTK4AsZLWMb8aS9pCH+A80yXGcnQtQnN?=
+ =?us-ascii?Q?oWUths6yd3+bj94OYEZQvIHPiCincszT7PQRcgG?=
+ =?us-ascii?Q?z6V7+aDveHuWumA5L7haIjjH7IInhnraiGlxs4F?=
+ =?us-ascii?Q?ID=2FIQVS0Vs8m8KNtZqhVbOfUDuERJEYwDBBto8O?=
+ =?us-ascii?Q?4ySduABCNd4NQN3Xm401UbM4K0chfON9nhwHASR?=
+ =?us-ascii?Q?ogtqfRxJ36zUU2VsORIxJ+gHMwRV5WDIm8+uiB8?=
+ =?us-ascii?Q?RTUtmr2Am8hm0GhuiRq2SWopD97sl7N54RqMJi8?=
+ =?us-ascii?Q?mjHc19UcwWXlHG3wWKerqL9RnxILKPR7xv8g62t?=
+ =?us-ascii?Q?tXRj+Hc55M1WHyFict59kuito6fkZ=2FFOhUJUzoz?=
+ =?us-ascii?Q?a4PW1NA5E4OzayFRdGPCP+DIGCM7Jf7K0dRc5jX?=
+ =?us-ascii?Q?YCQW5NtqsdbxPOTlcVxqX2FNYbYP2a0nDMfchTK?=
+ =?us-ascii?Q?rUX=2FUMyJNtpSqOSIzSBGxb9ns+XdfxPHBLYDuqb?=
+ =?us-ascii?Q?e81mRyCYyAqVYgHjMe2mgr8PqQ2e9bWsLzUwHK+?=
+ =?us-ascii?Q?Ir7ECVMBbzwOpCDxl4+HvL8hxlFJUXEklxtH5kK?=
+ =?us-ascii?Q?A2=2FYfst=2F+E2Lac8l6kz1WEQt80CaRr0ofBF08PD?=
+ =?us-ascii?Q?Gmy02vqbo2UrroBWBxt6ssmsLw=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2EnbjapM-Hm?=
+ =?us-ascii?Q?9HPrPp7kP-dsRkKTqHF-d5GZSh4HfiKo8RoMDAw?=
+ =?us-ascii?Q?dTAwMPS9JCeRcttQDSLCDllpxNsr3-lLV3YaTAr?=
+ =?us-ascii?Q?XCF8CYv5yD5C0eAD=5FRhNrx9ZZlDl765SlQXDMTR?=
+ =?us-ascii?Q?=5F=5F1=5FeJRL7CbpF3kzmCT7kLcag1rLVtwwYeMCDIy?=
+ =?us-ascii?Q?YTuuy3RSXSLVM6O1g=3D=3D=2E1x7GMVSHm9MGswvwRLp?=
+ =?us-ascii?Q?UTYjEI9VKKEh2LedqQhQr97FoMDAwdTAwMPwYT3?=
+ =?us-ascii?Q?cTm6HMziIBGSmgFGIOBwcmuKr40ERAaFlqkF9dq?=
+ =?us-ascii?Q?j6nj2HmvH8P4LzgATgBzIdDEMGHnQ16SsOb1OY5?=
+ =?us-ascii?Q?zX71-RVnhpRxOrJJux=5Fbjn35khI1CdWUnYqNfSb?=
+ =?us-ascii?Q?EYT1-Ib5pDl1F7gHU-XEhE1TckXakTHr=5FaZcH5T?=
+ =?us-ascii?Q?3PRw7V4no-TCUVJaahZqVtv7FSdZeeCvbr4lsGB?=
+ =?us-ascii?Q?P1vsKa0Wt=5Fuos0o3rz1j-gVxVVOCxu2VWnxJtZG?=
+ =?us-ascii?Q?FEgsGUSMrfKdLDQGvkLVDVHUz8XjtLCSaVjRInW?=
+ =?us-ascii?Q?HX84OWl66iNZIR4-wttZCVasblDNNtsjnUaz2aQ?=
+ =?us-ascii?Q?8eEl0pI0aETLg3vA4h5N6FWY9Te83cF6NZbUugC?=
+ =?us-ascii?Q?2XAJq=5Fk9b-B7BbCksZohw3aEdJSe2aGPkIM=5FLj2?=
+ =?us-ascii?Q?Ctias4OyurDr=5FsmqOaqFpMnH4Gz6ZnKeuiISa1o?=
+ =?us-ascii?Q?KVV2k61OPtdAnO2uIW0yHWiv398unYgYo0kt1o=5F?=
+ =?us-ascii?Q?6VTkcXnCPrx03mapoVzG--hPkvg94eWY5w3XOIt?=
+ =?us-ascii?Q?JxXI5iFp9rwjN=5Fk2RxDFZgUpFzajlecm8WYoOGm?=
+ =?us-ascii?Q?Rupz5jAHYZfQwDLK=5FIgZ96l8umkfuv6objfVcgY?=
+ =?us-ascii?Q?9C0Nj-mTYYVtgakR8Nuta7n6l3QHe110sofDRHI?=
+ =?us-ascii?Q?psEJlQUplJ7OyV7zLZyByvQxv8c3aQ1IE7lFSax?=
+ =?us-ascii?Q?sm4xiK-i7IlPCOqgNPIfRJTDQuF5iIPLIZ381rF?=
+ =?us-ascii?Q?yDNn6=5F26A54W0VjJkplOozvIwMQjBp6t8JJl9pK?=
+ =?us-ascii?Q?Im4cCukDXWzfPQuMZf9aMVsoKCtFqFyxA9JAfHZ?=
+ =?us-ascii?Q?kA=5FR2FGMkGmFV2Cm6kgHfBd0Aom7uKcuTiEEAYD?=
+ =?us-ascii?Q?nrnO7KN=5FgVXkZ3wpIzTxu0pSN5aBQCHfn6SqH1=5F?=
+ =?us-ascii?Q?4=5F6WBPGc1IuFiiFd3B0XM2D9J02HtbYaXHEDi0z?=
+ =?us-ascii?Q?2JsXdd6hRCz9Okl1EGgYBdri3XMMZfDBaFy=5Fx9a?=
+ =?us-ascii?Q?F9eZ432YKS7tUiOpFO-z=5FOiFVqNi21768JCG1IE?=
+ =?us-ascii?Q?cb6Hr61kGgxReqH3i53V0OW=3E?=
+
+--f5f8f815f3e9e730e31871c759823d587dd11f5e8f8ca8b306e28a1b3897
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=us-ascii
+Mime-Version: 1.0
+
+MEASLES - USA (03): (GEORGIA) INTERNATIONAL TRAVEL, REQUEST FOR
+INFORMATION
+***************************************************************************
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+Date: Thu 18 Jan 2024
+Source: Georgia Department of Public Health [edited]
+<https://dph.georgia.gov/press-releases/2024-01-18/dph-confirms-measles-cas=
+e-metro-atlanta>
+
+
+The Georgia Department of Public Health (DPH) has confirmed a case of
+measles in an unvaccinated resident of the metro Atlanta area. The
+individual was exposed to measles while traveling out of the country.
+DPH is working to identify anyone who may have had contact with the
+individual while they were infectious.
+
+Measles is very contagious and spreads through the air when an
+infected person coughs or sneezes. Measles virus can stay in the air
+or on surfaces for up to 2 hours after an infected person has left the
+room.
+
+Measles symptoms appear 7 to 14 days after contact with the virus and
+typically include high fever, cough, runny nose, and watery eyes. Then
+a rash of tiny, red spots breaks out. It starts at the head and
+spreads to the rest of the body.
+
+Measles can be prevented with the MMR (measles, mumps, rubella)
+vaccine. The vaccine is safe and effective. The Centers for Disease
+Control and Prevention (CDC) recommends children receive their 1st
+dose of MMR vaccine between 12-15 months of age and a 2nd dose between
+4-6 years old. More than 95% of the people who receive a single dose
+of MMR will develop immunity to all 3 viruses. A 2nd dose boosts
+immunity, typically enhancing protection to 98%.
+
+The last reported case of measles in Georgia was in 2020.
+
+People with symptoms of measles should contact their health care
+provider immediately. DO NOT go to the doctor's office, the hospital,
+or a public health clinic without FIRST calling to let them know about
+your symptoms. Health care providers who suspect measles in a patient
+should notify public health immediately.
+
+For more information about measles, log on to
+<https://dph.georgia.gov/epidemiology/acute-disease-epidemiology/vaccine-pr=
+eventable-diseases/measles>
+or <https://www.cdc.gov/measles/index.html>.
+
+--
+Communicated by:
+ProMED
+
+[It's not clear from the available reports when the patient was likely
+infected nor is any mention made of locations the individual may have
+visited. Any additional information about this case would be greatly
+appreciated. - Mod.JH
+
+ProMED map:
+Georgia, United States:
+<https://promedmail.org/promed-post?place=3D8714347,213>]
+
+[See Also:
+Measles - USA (02): multiple states
+http://promedmail.org/post/20240118.8714292
+Measles update (01): USA (PA) multiple potential exposure sites
+http://promedmail.org/post/20240107.8714111
+2023
+----
+Measles update (64): USA, Russia, Azerbaijan
+http://promedmail.org/post/20231226.8713899
+Measles update (31): Americas, Asia, Africa
+http://promedmail.org/post/20230707.8711001
+Measles update (30): W Pacific, Americas, E Mediterranean, Africa,
+int'l travel http://promedmail.org/post/20230704.8710940
+Measles update (29): E Mediterranean, Europe, Africa, Americas, int'l
+travel http://promedmail.org/post/20230624.8710728
+Measles update (28): Americas, E Mediterranean, W Pacific
+http://promedmail.org/post/20230619.8710660
+Measles update (21): global update
+http://promedmail.org/post/20230428.8709755
+Measles update (20): Europe, Asia, Africa, W. Pacific, Americas,
+Middle East http://promedmail.org/post/20230423.8709653]
+.................................................jh/may/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3DmdqGSEo6sRHCgbnzoSJGw8HFaaBWtFBYEQO19Va_hAdoMDAwdTAwMIUuEcL=
+Co2HLZlebRqdiWzHDFsIi4V_pVb8LA6xsMqZlqn9jdpVf7Lg0zUFupSRZX6WOR-2NjWlsG5XXFT=
+bX1IX4SvRVCPFEsYj2lbxUI72VQOWkc537QmsQHdxpJsGrt6QmODXpBT-0i5V2W1klEDgcmaDB4=
+Fi4LrYRedBDG7KhoDZVK5KwsJNuQa-9zFRXCEbjK0PjzGF_HLE1cjZFonCKYOmMf49bCyWl1hyW=
+coflNuTnxPZqxDTsau3BpwetJK42x4WvVp4nXMp8rW_XWlvg2f1ooEsK8iQaOb0bdaxgYkt68GO=
+T1WBzo7pToCyukwAOUL8WD0_IYuGO5f9AjGWRDV_R1ecH_UfBNjd09iIBLXhIaYCpDnwxNpUDkw=
+Rwa1PALP2H28a8VyT1ukqsk_p_ZzlLeF2Zo_RRfUSx1XYFz3BijUm4cCvuhA8RhVSymqwcT8g5H=
+stPtdRhgZaITmAS9Obp7ZOq8Hur_DmR_uXXomljoH1W0gLZWCTWnnja3eKGgBpjyEYPXsy_GYwG=
+WsFik4SeUC9h3cG1FMntlU_nX6FhBIBweY6Fzk_aaJ8AB6yiOi1GMA3qvR_yARGgT-hZ3VriX1A=
+545I6mB0_B3Rz2NfgbC_JBaC88vvjGMI6qnIRPbZGM_z_LhBMSwOuXlVXXn52MnAfnyj4eZrn5Y=
+E7KkaqxP9difp10vcWdCf1MUpKt0KObxJu4Rwhuh-LoLk14fPAQ07wcI1OKKWW3JYEcgNBVqDNv=
+lSm0ZOrn0etCdqxgnMM74_kJ3ycI0nLH18Q85PLz_f-vqUXbBQKKUf0e65OGYVzABydvjuFEvY7=
+YNYyNfgEIaSUMSIYA3cNApee8AB1r7bjFu-S80CEOdvuiEyWWEht3Hp_4W5tV2KXnaFJkUH_OFk=
+0nF9vZML18bbAem3Eh9_SKdr96pimAcfoqn5U8MUjWu4pewREiV3GbM2JHr4vrLNT8vakXJiLpK=
+A9atuc4ZX0PrMm4EE5W5LEX_JJyuUDdVybX7swsXkan-lpfBpNDwfZXR2gPCwvWX2w5Q6tbYSdx=
+Qf7_aXnleeZbtU1zisQbijcbxv496rVK_900KeiRJjUxu-V_1gkMmL2VtMgNGNOY_eYZMiNegir=
+bvvm_dKbd-N8_NTNJWjMj59HAUmiUTH7ycqy4CmzN6w=3D )
+############################################################
+############################################################
+
+--f5f8f815f3e9e730e31871c759823d587dd11f5e8f8ca8b306e28a1b3897
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>MEASLES - USA (03): (GEORGIA) INTERNATIONAL TRAVEL, REQUEST FOR<br>IN=
+FORMATION<br>**************************************************************=
+*************<br>A ProMED-mail post<br><a href=3D"https://u19268662.ct.send=
+grid.net/ss/c/wscE2ng5fl6JrPIt48tisIijpefK5PNjW-mL-YZGnfgDOxU1G3gjwnPSi2Tfv=
+3HA/435/h7k2G8LGTe-cXi-0fFwl4g/h0/tP7CHjfYNeEB4DG-D2dQvT5puujg1F1Jm7sMe1wlb=
+uk">http://www.promedmail.org</a><br>ProMED-mail is a program of the<br>Int=
+ernational Society for Infectious Diseases<br><a href=3D"https://u19268662.=
+ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisCT5tpD4Upm3qyMCbcYSQvc/435/h7k2G8=
+LGTe-cXi-0fFwl4g/h1/ADvjfcyM5O_YI3ZahRDofzHcjFmUdKe2EgAslBTbiNw">http://www=
+.isid.org</a><br><br>Date: Thu 18 Jan 2024=0D<br>Source: Georgia Department=
+ of Public Health [edited]=0D<br><a href=3D"https://u19268662.ct.sendgrid.n=
+et/ss/c/TUIVIg4PCmni5tP3Q8lzBSzjZJVEvGYi7KbrAufsrnMzk5eMt-qomQl7N-5ufKGtsSp=
+90RgBKv29Kg0CYG6lIzuXZgT2LaKdbKkqrJcLsa3fdaQ9UO1nNbzg-Xm2NS3ih75BrqJC19sqyH=
+JEWXozzA/435/h7k2G8LGTe-cXi-0fFwl4g/h2/19B6A9y4j9IxXTlKsq9GJkgou-Wv6Zwo_dHc=
+kmDBw1U">https://dph.georgia.gov/press-releases/2024-01-18/dph-confirms-mea=
+sles-case-metro-atlanta</a>=0D<br>=0D<br>=0D<br>The Georgia Department of P=
+ublic Health (DPH) has confirmed a case of<br>measles in an unvaccinated re=
+sident of the metro Atlanta area. The<br>individual was exposed to measles =
+while traveling out of the country.<br>DPH is working to identify anyone wh=
+o may have had contact with the<br>individual while they were infectious.=0D=
+<br>=0D<br>Measles is very contagious and spreads through the air when an<b=
+r>infected person coughs or sneezes. Measles virus can stay in the air<br>o=
+r on surfaces for up to 2 hours after an infected person has left the<br>ro=
+om.=0D<br>=0D<br>Measles symptoms appear 7 to 14 days after contact with th=
+e virus and<br>typically include high fever, cough, runny nose, and watery =
+eyes. Then<br>a rash of tiny, red spots breaks out. It starts at the head a=
+nd<br>spreads to the rest of the body.=0D<br>=0D<br>Measles can be prevente=
+d with the MMR (measles, mumps, rubella)<br>vaccine. The vaccine is safe an=
+d effective. The Centers for Disease<br>Control and Prevention (CDC) recomm=
+ends children receive their 1st<br>dose of MMR vaccine between 12-15 months=
+ of age and a 2nd dose between<br>4-6 years old. More than 95% of the peopl=
+e who receive a single dose<br>of MMR will develop immunity to all 3 viruse=
+s. A 2nd dose boosts<br>immunity, typically enhancing protection to 98%.=0D=
+<br>=0D<br>The last reported case of measles in Georgia was in 2020.=0D<br>=0D=
+<br>People with symptoms of measles should contact their health care<br>pro=
+vider immediately. DO NOT go to the doctor's office, the hospital,<br>or a =
+public health clinic without FIRST calling to let them know about<br>your s=
+ymptoms. Health care providers who suspect measles in a patient<br>should n=
+otify public health immediately.=0D<br>=0D<br>For more information about me=
+asles, log on to<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/TUIVI=
+g4PCmni5tP3Q8lzBb6aKUKjcHsmEuJv_OA5d8gOEtFV1H_vBhploRnugTWUkCGlT0FVe-Bj0ee0=
+sE2WPtjYuiq-kRRGla3cUFJ6wmAvF0-W-CiO8HTUNSKwt-MJFa0imz5W_y688eNrERq_fg/435/=
+h7k2G8LGTe-cXi-0fFwl4g/h3/FrtUj5pPKrXiVdfhWDX68id_f9PbujrXI62lDF6vm4U">http=
+s://dph.georgia.gov/epidemiology/acute-disease-epidemiology/vaccine-prevent=
+able-diseases/measles</a><br>or <a href=3D"https://u19268662.ct.sendgrid.ne=
+t/ss/c/TLh_csrC34X_iXpbYoMamyjNbSzOG8uHHjXQPwsjHwgXrPYgrqxrTD141Edmrv85/435=
+/h7k2G8LGTe-cXi-0fFwl4g/h4/klD7t-fwuKxPShb8IJfr6Ygz3VMbm_77UT2MIfRRxrg">htt=
+ps://www.cdc.gov/measles/index.html</a>.=0D<br>=0D<br>--=0D<br>Communicated=
+ by:=0D<br>ProMED<br><br>[It's not clear from the available reports when th=
+e patient was likely<br>infected nor is any mention made of locations the i=
+ndividual may have<br>visited. Any additional information about this case w=
+ould be greatly<br>appreciated. - Mod.JH<br><br>ProMED map:<br>Georgia, Uni=
+ted States:<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/sSnCkKCWBv=
+ais3EuVAOvgy2WOIX7pp1nXnn4AbwuQ3Z6WbkfhqXYXU-aTMPJ8yThiSezda7AVqmKWq-F2jsuP=
+g/435/h7k2G8LGTe-cXi-0fFwl4g/h5/1itqYpKlo8khlTroGudVA03msXPVoCjXF43diDHIRNc=
+">https://promedmail.org/promed-post?place=3D8714347,213</a>]<br><br>[See A=
+lso:<br>Measles - USA (02): multiple states<br>http://promedmail.org/post/2=
+0240118.8714292=0D<br>Measles update (01): USA (PA) multiple potential expo=
+sure sites<br>http://promedmail.org/post/20240107.8714111=0D<br>2023=0D<br>=
+----=0D<br>Measles update (64): USA, Russia, Azerbaijan<br>http://promedmai=
+l.org/post/20231226.8713899=0D<br>Measles update (31): Americas, Asia, Afri=
+ca<br>http://promedmail.org/post/20230707.8711001=0D<br>Measles update (30)=
+: W Pacific, Americas, E Mediterranean, Africa,<br>int'l travel http://prom=
+edmail.org/post/20230704.8710940=0D<br>Measles update (29): E Mediterranean=
+, Europe, Africa, Americas, int'l<br>travel http://promedmail.org/post/2023=
+0624.8710728=0D<br>Measles update (28): Americas, E Mediterranean, W Pacifi=
+c<br>http://promedmail.org/post/20230619.8710660=0D<br>Measles update (21):=
+ global update<br>http://promedmail.org/post/20230428.8709755=0D<br>Measles=
+ update (20): Europe, Asia, Africa, W. Pacific, Americas,<br>Middle East ht=
+tp://promedmail.org/post/20230423.8709653]<br>.............................=
+....................jh/may/jh<br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3DmdqGSEo6sRHCgbnzoSJGw8HFaaBWtFBYEQO19Va_hAdoMDAwdT=
+AwMIUuEcLCo2HLZlebRqdiWzHDFsIi4V_pVb8LA6xsMqZlqn9jdpVf7Lg0zUFupSRZX6WOR-2Nj=
+WlsG5XXFTbX1IX4SvRVCPFEsYj2lbxUI72VQOWkc537QmsQHdxpJsGrt6QmODXpBT-0i5V2W1kl=
+EDgcmaDB4Fi4LrYRedBDG7KhoDZVK5KwsJNuQa-9zFRXCEbjK0PjzGF_HLE1cjZFonCKYOmMf49=
+bCyWl1hyWcoflNuTnxPZqxDTsau3BpwetJK42x4WvVp4nXMp8rW_XWlvg2f1ooEsK8iQaOb0bda=
+xgYkt68GOT1WBzo7pToCyukwAOUL8WD0_IYuGO5f9AjGWRDV_R1ecH_UfBNjd09iIBLXhIaYCpD=
+nwxNpUDkwRwa1PALP2H28a8VyT1ukqsk_p_ZzlLeF2Zo_RRfUSx1XYFz3BijUm4cCvuhA8RhVSy=
+mqwcT8g5HstPtdRhgZaITmAS9Obp7ZOq8Hur_DmR_uXXomljoH1W0gLZWCTWnnja3eKGgBpjyEY=
+PXsy_GYwGWsFik4SeUC9h3cG1FMntlU_nX6FhBIBweY6Fzk_aaJ8AB6yiOi1GMA3qvR_yARGgT-=
+hZ3VriX1A545I6mB0_B3Rz2NfgbC_JBaC88vvjGMI6qnIRPbZGM_z_LhBMSwOuXlVXXn52MnAfn=
+yj4eZrn5YE7KkaqxP9difp10vcWdCf1MUpKt0KObxJu4Rwhuh-LoLk14fPAQ07wcI1OKKWW3JYE=
+cgNBVqDNvlSm0ZOrn0etCdqxgnMM74_kJ3ycI0nLH18Q85PLz_f-vqUXbBQKKUf0e65OGYVzABy=
+dvjuFEvY7YNYyNfgEIaSUMSIYA3cNApee8AB1r7bjFu-S80CEOdvuiEyWWEht3Hp_4W5tV2KXna=
+FJkUH_OFk0nF9vZML18bbAem3Eh9_SKdr96pimAcfoqn5U8MUjWu4pewREiV3GbM2JHr4vrLNT8=
+vakXJiLpKA9atuc4ZX0PrMm4EE5W5LEX_JJyuUDdVybX7swsXkan-lpfBpNDwfZXR2gPCwvWX2w=
+5Q6tbYSdxQf7_aXnleeZbtU1zisQbijcbxv496rVK_900KeiRJjUxu-V_1gkMmL2VtMgNGNOY_e=
+YZMiNegirbvvm_dKbd-N8_NTNJWjMj59HAUmiUTH7ycqy4CmzN6w=3D" target=3D"_blank" =
+class=3D"Unsubscribe--unsubscribePreferences" style=3D"font-family:sans-ser=
+if;text-decoration:none;">Unsubscribe Preferences</a></div><br>############=
+################################################<br>#######################=
+#####################################<br><br><img src=3D"https://u19268662.=
+ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/435/h7k2G8LGTe-cXi-0fFwl4g/ho.g=
+if" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"height:1px !imp=
+ortant;width:1px !important;border-width:0 !important;margin-top:0 !importa=
+nt;margin-bottom:0 !important;margin-right:0 !important;margin-left:0 !impo=
+rtant;padding-top:0 !important;padding-bottom:0 !important;padding-right:0 =
+!important;padding-left:0 !important;"/></body>
+</html>
+--f5f8f815f3e9e730e31871c759823d587dd11f5e8f8ca8b306e28a1b3897--

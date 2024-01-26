@@ -1,0 +1,415 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a05:640c:3013:b0:1ee:4bd3:5fc9 with SMTP id z19csp806062eiw;
+        Sun, 21 Jan 2024 17:58:13 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IH7I3fG4QR4AQ7isr2r54UGsp3Oe+uVFg/r63oCZyxi9xjKj/j5IuHptf7aJuJpd5PUvZxX
+X-Received: by 2002:a05:620a:22a9:b0:783:50d8:e8f8 with SMTP id p9-20020a05620a22a900b0078350d8e8f8mr3041449qkh.77.1705888693116;
+        Sun, 21 Jan 2024 17:58:13 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1705888693; cv=none;
+        d=google.com; s=arc-20160816;
+        b=xpbys7XPFw6O5mItP++9ZNsqK5Hxvu605pLSgfnkdrI3AbOiMZhOD7vVwqo5RgTNmZ
+         AV0V+jRG0EUPTN7UA0UZ2u1m+SlKBX/RLmFqEgCnsidqgkYPc0RAN3FH3z2Zp7W//xUf
+         nlM9MwcCGK+l2TCsoHECXQOfV/+FkDdjoEQzzdHaq4p6gYyV8Te+WnG/+ydECmL2FoEf
+         yvHqqya0Cv/b4hRzWo//KVn8qnHIiiHWYIpxiL34F5KJtbJORU2yN+Pqpm9JTlYO9A7+
+         +UdQijSw0U1X155blbXlkpUWx6qPzodA3n6jvE+HIFWec6Nwcj9efueG/bgY++zxS3UG
+         OlFw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=0WLIE9wVaguLSwDXff2EZE/7nS/zTAfZ3mkVSmGbBZo=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=N58f097gj9osct+X8xPbzQl/5O9TzyTFipDSK7MdKOigjPUAinKyDqQXvgV58syxW8
+         Ju5TT3jQBN2uHCGYviLOGmQHY1fO1kefW37luEBPl0QfzV+JGMhm7ktUNjKfcNLl8OHK
+         1bjfU9NmOJAFkp0VGF7DJHbBvqd7oxXnU0tTdrhjgZ/Sy98XnixI5rrJxmzHkILXPrUB
+         nvApoFWB9xzclhekW60+jm4gNFc0elGSML2doSCbkwUy/tmgFzWndud2Ums5ug3es+64
+         mP6L7Jvs0O+i+GfJCFcjj21yjaS2zrcr3XwUAvgxlfDPx2W6f2oyaE8QeXbUiSTNlwHZ
+         Jpbg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=a15I5Yn5;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=DP95TDEq;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id v23-20020a05620a091700b007831b32d2fdsi4545316qkv.87.2024.01.21.17.58.12
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sun, 21 Jan 2024 17:58:13 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=a15I5Yn5;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=DP95TDEq;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=0WLIE9wVaguLSwDXff2EZE/7nS/zTAfZ3mkVSmGbBZo=;
+	b=a15I5Yn5nbf13chq0in+lwStJBcl/HgsqRd2PkQrPM6N2olyjkOnhR/4jruefSkTIx8Y
+	OEa1ecJHaF/05csbN9sIy5fsZYnFD/CkGWwPH55rigo7PcWte2zMul8Wm7BysP5k8s2xFQ
+	b9oFHDOAnDQ/i4bijQ0Qr0Mj2AFn0C0sYuIge480cJRfUqrMy12D76kBv+rAJ7PsVS2KIL
+	0b0+iDV74akmFqKbwZhnccZHHURH1ZrQCgEICJgfLa5eMjsv4xkULGM6j7OqQmKBRiLKnJ
+	N5DF4IxV2yMELMUK5QX1q+IcAZPVNPnqaMZ/KgXaiIdOPWzKy0BgBd5AdDWHUSbw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=0WLIE9wVaguLSwDXff2EZE/7nS/zTAfZ3mkVSmGbBZo=;
+	b=DP95TDEqVWhbBOba1EMfyEgWPgUfM8WCq30pRz635PRaejU1SxH+1MwvrZw0+Ly/DLQH
+	5NILHmWtUCFwl2swNcnA370Z4BVQxPtK8SLfegCyWZwX6ZwjKwRaRx/DwEHF6H6/eybhkL
+	Is/NtKTe7gjq6I23wWw/xSCYASCMdpZpw=
+Received: by filterdrecv-54568dd86-nzjfx with SMTP id filterdrecv-54568dd86-nzjfx-1-65ADCBB3-6
+        2024-01-22 01:58:11.11811804 +0000 UTC m=+8320562.897798434
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-2 (SG) with HTTP
+	id qFNTLYSIQ2aJWpXq5rEZAg
+	Mon, 22 Jan 2024 01:58:11.108 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=6c093caed60d0bffcd1963a9a95782e3f1182c620405762d54c04ab5b758
+Date: Mon, 22 Jan 2024 01:58:12 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <qFNTLYSIQ2aJWpXq5rEZAg@geopod-ismtpd-2>
+Subject: PRO/EDR> Chemical hazard - Sudan: (KH) treated seeds, MOH warning
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iB1Vfw7er3zmiQ=2FdHltd4ImFCa36l=2F6yOua=2FMxC?=
+ =?us-ascii?Q?wAMz5U9+k+s7NTjFzM36o1Qf59JcMv9tsdzhfR7?=
+ =?us-ascii?Q?+9E+taSQ1bAuFyxNdVzjg1FJtky2ncatmhi6Baz?=
+ =?us-ascii?Q?g6BBKDmWm1Hgnf0Q=2FkEaZ94GpHBouGGZz9JeXO4?=
+ =?us-ascii?Q?We6r158rCoOFaaS4MXoi9LI4gV0h0NhJBJiJVq?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUhc93xcG=2F095a5S4+mt=2FG?=
+ =?us-ascii?Q?uYUpctI=2FOGD2dwyi+uvm2j4FCdvuw0l9zcHM8iA?=
+ =?us-ascii?Q?mojOvTXq7jOpDFFNtfsYkHQYACEW8pq1BXXqYmH?=
+ =?us-ascii?Q?oGTsnt6QpE2ZV5WVqnpwfXWoLXx7+4bobR5x5l1?=
+ =?us-ascii?Q?I=2FmkLgKNml8150lPvudo2nH2+tlrUVY5WvyfpwZ?=
+ =?us-ascii?Q?bG21ixrQ6neRb1bZT+zzQE5KTU9FFADpCtg3854?=
+ =?us-ascii?Q?y0j=2FztV9vK5EQp+zjJ4Dhqsx2uvuUm9qbOLo0pM?=
+ =?us-ascii?Q?uEOpX2oW33bIMtMcZEH2MraaLKUZvhqwcy9LuT0?=
+ =?us-ascii?Q?9ORycrqv7Sbxr0bix1I7DcjgfU+njwhmEnDWqMD?=
+ =?us-ascii?Q?igX+Sc1vMNDrVTf0tKR4SwzItN=2FuQyQlJyvF0Qg?=
+ =?us-ascii?Q?9gSiALk+cGQSUFZi2XyadliEdlGsETzDWyBZEYC?=
+ =?us-ascii?Q?0dplHLlOFkB3bYEPlfa+X+oQ7fVuQoXR1B7WV26?=
+ =?us-ascii?Q?3dPiNH6WTqgVcH4l4vJhBzmHzO1Sx63ndUKrOo4?=
+ =?us-ascii?Q?FYEUxfrnognjKbp7OT1ojIsQZMperadSW080oI4?=
+ =?us-ascii?Q?RGjUfUrmk9B4=2FwpZ26XI=2FmKYxZjTSya=2F+heV64p?=
+ =?us-ascii?Q?yZ33tabBkMz6XiBzZxvtcdIxqLuIFyQGK0Na4ir?=
+ =?us-ascii?Q?oYkJCGMnhd1uBFZkYACV5iKeIKmNC8ixgsnORdK?=
+ =?us-ascii?Q?qegT2DVTAo8BA9d37neuXl+AqFK=2F+h0cddL7oGq?=
+ =?us-ascii?Q?Sf6Wm4ufgijXBV55XHNqab1PLw96=2FqbYWAcWvGi?=
+ =?us-ascii?Q?OUX2YiBenMaqC+iQdn4kEiJ0Mg=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2Evf4uvoBHY?=
+ =?us-ascii?Q?KEmqV1ZKnoUWgKb4GYauxPvv2iKgaSNk5VoMDAw?=
+ =?us-ascii?Q?dTAwMN-duUcEN1ccPLRyQZjjmIC=5FE41d45yQ5RT?=
+ =?us-ascii?Q?Ie26fPcn-g5CbabSeeaJo=5FGlZQNoXqzgmeQjBuZ?=
+ =?us-ascii?Q?Mz=5F8DhE4bWDjI6IL1JoNuZgVxRF9G64lZ4XlpEa?=
+ =?us-ascii?Q?AVEpdL9wEYgzESGIQ=3D=3D=2E4FNzCtgUrvM5TmgvR33?=
+ =?us-ascii?Q?=5FJyYjM2tqMb3iWbkOYHhEvUhoMDAwdTAwMPRQNF?=
+ =?us-ascii?Q?JSfN9vCc-rty6MAqbfpVWoiJKmB0KoaQvlXGg7j?=
+ =?us-ascii?Q?K9ROjMseqfzWTpQBSUPj5xapPnjIpO-2ZwzqOmB?=
+ =?us-ascii?Q?Bbws2BASRIdoDAvW4kKlwzV0dSjscrmjOEd5M-M?=
+ =?us-ascii?Q?z7iR66L2gEmuUMcxXRmVK-V3PgdnenyeAPPijY9?=
+ =?us-ascii?Q?BwC7dhrjWgkAOllTSap9Ak70tEhrigk72C5yQwK?=
+ =?us-ascii?Q?Aj2lnYkl4G7-VLLXd=5FYxnnheUmp8PwqaSx7HuXq?=
+ =?us-ascii?Q?7mTmGLv0EIxJu=5FIgnyn8S8AG2gP9sUVZTz4sseb?=
+ =?us-ascii?Q?kppcLgg1jyeD6=5F9RkFrscTMBBiOQ=5FDwz88XYbp4?=
+ =?us-ascii?Q?DAzIzxC8XPcdX2pH2MFjGNAOoZAlcI5RNZrunlu?=
+ =?us-ascii?Q?e-VF9zpTbYpMsRzcKmO3D0r1t=5FWDZSqxyfV3VeK?=
+ =?us-ascii?Q?VNyFU9Z0Wrb02Taa4XF9uvsERjAJ7Y5FKsp2o=5FR?=
+ =?us-ascii?Q?ksxQinr78ewLGILyFRUd=5FnVTQP3xZK=5FA3EgYamX?=
+ =?us-ascii?Q?8z4R3Z3WeHX83Km5vF55Gr5X62HQmncNgH-iFU7?=
+ =?us-ascii?Q?cYd3AuTG7KM3gNFLu=5FDzOZtSHUl=5FtDFxyPisXg7?=
+ =?us-ascii?Q?s38svx=5FYZMEzKEu-d0pK9d1u1Qj=5FuyaI9am=5FlfT?=
+ =?us-ascii?Q?BJnoYR5bXXNWZNLCTuzBmWZk16JQRseq1nTlJEe?=
+ =?us-ascii?Q?ndPFUjqxoNqO5Y0P85ZxDlMzKAn-SlqNJqyvAjt?=
+ =?us-ascii?Q?wQQLYW6YgxUFD4Qi12bk7wMU0JAZgWZ1uKyojnt?=
+ =?us-ascii?Q?JEZtI2V8zJ95hv1V=5FQq6sl6ya140r9196kfAyRY?=
+ =?us-ascii?Q?d2aBSL66SbOSZ61ac2xSaDTBemIe=5F=5FXVUHOIjG3?=
+ =?us-ascii?Q?=5FQ6lakl6Id5dHxngBQ0qbGPV22qGDsjSQrYu0yC?=
+ =?us-ascii?Q?iJPNaDoY3Ca5ZEmRBYF5YKtw28xqdSYm297=5FQnN?=
+ =?us-ascii?Q?bxEcuVSliYgRiTzBPIYAg=5FBrzIm2SSn7PIuzjVV?=
+ =?us-ascii?Q?M0QJiqXgCkGxJ-cauoJi9-LDROocHnOQUTU5LAB?=
+ =?us-ascii?Q?3TRg2eloQWxJ=5FESEwEnUhLbpkeoJ8E6=5F3l9zV0w?=
+ =?us-ascii?Q?DTPU4pptl=5FDv19TJzyeC7WI=3E?=
+
+--6c093caed60d0bffcd1963a9a95782e3f1182c620405762d54c04ab5b758
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=us-ascii
+Mime-Version: 1.0
+
+CHEMICAL HAZARD - SUDAN: (KHARTOUM) TREATED SEEDS, MOH WARNING
+**************************************************************
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+Date: Thu 18 Jan 2024
+Source: Radio Dabanga Sudan [in Arabic, trans. Mod.MM, abridged,
+edited]
+<http://tinyurl.com/28p7ekwu>
+
+
+The Sudanese ministries of Health, Agriculture and Forestry, and other
+relevant authorities have issued a joint press release warning the
+public from the purchase, intake, or distribution of wheat seeds or
+flour from unknown sources after one of the warring parties looted
+chemically treated wheat seeds from an agricultural company's stores
+in Khartoum state, northeast of Al Haj Youssef neighborhood, East Nile
+locality. The company has mentioned in the report directed to these
+ministries that the treated seeds contain insecticides, pesticides,
+and other toxic chemicals not suitable for animal or human
+consumption.
+
+--
+Communicated by:
+ProMED
+via
+ProMED-MENA
+
+[The recent ongoing armed conflict in Sudan has resulted in chaos in
+most states, with most facilities insecure and subjected to looting
+and theft by armed gangs.
+
+Treated seeds are mixed with pesticides, which are substances meant to
+control pests, including weeds (1). Several pesticides including
+organochloride, organophosphorus, carbamate, and pyrethroid
+insecticides, fungicides, and herbicides are commonly used in wheat
+and to increase agricultural productivity. Exposure to pesticides can
+be dermal, oral, or through inhalation (2). In addition to the acute,
+fatal complication of pesticide poisoning, chronic exposure may lead
+to serious complications such as hepatocellular carcinoma in case of
+chronic exposure to dichlorodiphenyltrichloroethane (DDT).
+
+References
+----------
+1. Basic Information about pesticide ingredients. US Environmental
+Protection Agency. 2 Apr 2018; retrieved 12 Jun 2019;
+<https://www.epa.gov/ingredients-used-pesticide-products/basic-information-=
+about-pesticide-ingredients>.
+2. Hashmi I, Dilshad KA. Adverse health effects of pesticides exposure
+in agricultural and industrial workers of developing country. In:
+Stoytcheva M (Ed): Pesticides --The Impacts of Pesticides Exposure.
+(Croatia: InTech Europe). 2011; doi: 10.5772/1003;
+<https://tinyurl.com/yywuqd3x>.
+
+- Mod.MM
+
+ProMED map of Khartoum, Khartoum, Sudan:
+<https://promedmail.org/promed-post?place=3D8714355,6026>]
+
+[See Also:
+2022
+----
+Foodborne illness - Peru: (HM) fatal, insecticide suspected, RFI
+http://promedmail.org/post/20220422.8702763
+2021
+----
+Foodborne illness - Cote d'Ivoire: fatal, pesticide susp, RFI
+http://promedmail.org/post/20211007.8698913
+2018
+----
+Pesticide poisoning - France (02): (PL) farmworkers, chemical ban
+http://promedmail.org/post/20181107.6132446
+Pesticide poisoning - France: (PL) farmworkers
+http://promedmail.org/post/20181027.6115765
+2017
+----
+Insecticide poisoning - India: (MH) fatal
+http://promedmail.org/post/20171201.5475998
+2016
+----
+Pesticide poisoning - India: (AS) fatal, susp, RFI
+http://promedmail.org/post/20161211.4688847
+2015
+----
+Pesticide poisoning - USA: (WA) farmworkers, 2014
+http://promedmail.org/post/20150123.3112536
+2014
+----
+Pesticide exposure - USA: new protective measures
+http://promedmail.org/post/20140225.2298316
+2013
+----
+Organophosphate poisoning, school lunch - India: (BR)
+http://promedmail.org/post/20130718.1831208]
+.................................................mm/tw/gmm/tw/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3DTsPc_0GKwda5Jp-cY842JMRKaapykk7RKXmP9QxBf1toMDAwdTAwMAJ5Wtx=
+_DsWAFz8STf1Sg6FP-YqQYQm0A4aeP7n5Q3D0KcpWybGXHbgx851SkGxi6mKlyhACTaMr2QGDdZ=
+k_Uo5v2m9tdMdkO1-rcv08koWxRvzp2lIlAfJJwC2fvyzv0yvchX0dGDqnHxKEWE0NrlaNyrk90=
+YuwI3ISWBBdegew4XhVW15thO8XxwL4oAmGey3EFLVRUg-onO075lCNPQMZKllZuCHxdB4vwLbc=
+9tlbDcwSCCO6ZUpeCz8b-VOkmTDapj71Arb76bw14mq7ypNuQ3ciDxNZDrAL84YFE0iWcX66GyE=
+Yv8luQiFE81bSV6AAFW1S-5W7bhQl1i8aj11mxcz2ehiUxyNrmFDK9YQiRkibrq3KGS0hKZdH1N=
+D3KcI4Z_SxeDybw3AuIen2LE-ssyz3pnJ1EnJqO6EPJIDKKDETVoqfRzwjdGWACAy6B2D49XEYD=
+Nx2cvt8_wlWnU9v8P3edJ--JKfZ5r7HBUBH_riE7ox1dN9ChQbp1K8TPaEqqOiHjj5m9gdKvVNP=
+SUDhSLUss4h3OyiZyTBkpvoqcJ84WAc8TanhFl1iYuV3mRWJgjnOYITYOhqZtohs7LOlsNG1qpT=
+b8gKR3kyXN70E8e946plhxB0rpV53zTL1FF3MWud8_DGELPOG_FHl7AE2iDvrA8Mm7kBsdGrCI1=
+uDvoxS4D-u1MQE-C6Po-ih5CRVlWN49UPmGfNPjiUFdEhNyHrINTP5i6AwviKN-Bwd0v0ZuOpoo=
+10Es_OdauZZkEUA9an4JYz1rsTpa4cuiXBExjtjo5eQXjinowKLgosdP8pQ_8R8nw1zERKqTLt2=
+yxxVlugJ8rgdTx7S6O_INrcIn5OfbvEWc69pkjJzC-JzzjzvQXwI96nUe_V0uDOPneKxDvXXP6y=
+sglsFP7kTsF9TIEg_-vVk-z-0SXfJbAYc9h1mGJLYn20lBwMoAYzffe0t64HEmO0Ct4503iKg6g=
+oTOBKRWb-Ud9qWCuH8l8USsoMdSL6Bs7aZYv2Ra6uu_qFBRSCZ5DGCw3THmfhEI7-77gyk__MoR=
+Imp1IywE-Tr6ugDQnxGahxh-1ogBq6l06s7Z94hdBp7FPyYyPZb8m5Mvm5wDwCam77mpGQr9QCm=
+2pyY4804mQluIrVOJt91aVwOoEvUtIjbgvWVhQ6Cjqg=3D )
+############################################################
+############################################################
+
+--6c093caed60d0bffcd1963a9a95782e3f1182c620405762d54c04ab5b758
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>CHEMICAL HAZARD - SUDAN: (KHARTOUM) TREATED SEEDS, MOH WARNING<br>***=
+***********************************************************<br>A ProMED-mai=
+l post<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPI=
+t48tisIijpefK5PNjW-mL-YZGnfgDOxU1G3gjwnPSi2Tfv3HA/437/OrTUN_79RLCTsZrjtVUnh=
+g/h0/tLFOkFdenbNUMFLesRzN51EbTON6nhPIiDL7Eh-rMH0">http://www.promedmail.org=
+</a><br>ProMED-mail is a program of the<br>International Society for Infect=
+ious Diseases<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/wscE2ng5=
+fl6JrPIt48tisCT5tpD4Upm3qyMCbcYSQvc/437/OrTUN_79RLCTsZrjtVUnhg/h1/t7xT3LUpJ=
+-yBoMrwxgB4YtiayKf9uFyVQg13WoYNPnQ">http://www.isid.org</a><br><br>Date: Th=
+u 18 Jan 2024=0D<br>Source: Radio Dabanga Sudan [in Arabic, trans. Mod.MM, =
+abridged,<br>edited]=0D<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/=
+c/DgIMzhc9xO6P0drrFfDxwdN_AFqeVuaJLzO2QKZdSfAiXHc6OAy8qlv9TjOxJcE-/437/OrTU=
+N_79RLCTsZrjtVUnhg/h2/iLHkPCj1hXQiwgsSsg4A7TAPVegNzpqGchjltwgbOec">http://t=
+inyurl.com/28p7ekwu</a>=0D<br>=0D<br>=0D<br>The Sudanese ministries of Heal=
+th, Agriculture and Forestry, and other<br>relevant authorities have issued=
+ a joint press release warning the<br>public from the purchase, intake, or =
+distribution of wheat seeds or<br>flour from unknown sources after one of t=
+he warring parties looted<br>chemically treated wheat seeds from an agricul=
+tural company's stores<br>in Khartoum state, northeast of Al Haj Youssef ne=
+ighborhood, East Nile<br>locality. The company has mentioned in the report =
+directed to these<br>ministries that the treated seeds contain insecticides=
+, pesticides,<br>and other toxic chemicals not suitable for animal or human=
+<br>consumption.=0D<br>=0D<br>--=0D<br>Communicated by:=0D<br>ProMED=0D<br>=
+via=0D<br>ProMED-MENA<br><br>[The recent ongoing armed conflict in Sudan ha=
+s resulted in chaos in<br>most states, with most facilities insecure and su=
+bjected to looting<br>and theft by armed gangs.=0D<br>=0D<br>Treated seeds =
+are mixed with pesticides, which are substances meant to<br>control pests, =
+including weeds (1). Several pesticides including<br>organochloride, organo=
+phosphorus, carbamate, and pyrethroid<br>insecticides, fungicides, and herb=
+icides are commonly used in wheat<br>and to increase agricultural productiv=
+ity. Exposure to pesticides can<br>be dermal, oral, or through inhalation (=
+2). In addition to the acute,<br>fatal complication of pesticide poisoning,=
+ chronic exposure may lead<br>to serious complications such as hepatocellul=
+ar carcinoma in case of<br>chronic exposure to dichlorodiphenyltrichloroeth=
+ane (DDT).=0D<br>=0D<br>References=0D<br>----------=0D<br>1. Basic Informat=
+ion about pesticide ingredients. US Environmental<br>Protection Agency. 2 A=
+pr 2018; retrieved 12 Jun 2019;<br><a href=3D"https://u19268662.ct.sendgrid=
+.net/ss/c/TLh_csrC34X_iXpbYoMam8-k0XHlbccTterV9HgiksLOEm7Lw-yhboDeF8EcydEto=
+FELaAshibXwA6mYGCBQuHOq_yA9asn29EssvR41YTEfCHlBHnGHbTmCI5X6bBgvIhEY8LH-tozW=
+ZDT2eKFoOQ/437/OrTUN_79RLCTsZrjtVUnhg/h3/tW7PgUhVrXed-e_gMcsncTuZmNNOqj1qU4=
+FxJSe5RSw">https://www.epa.gov/ingredients-used-pesticide-products/basic-in=
+formation-about-pesticide-ingredients</a>.=0D<br>2. Hashmi I, Dilshad KA. A=
+dverse health effects of pesticides exposure<br>in agricultural and industr=
+ial workers of developing country. In:<br>Stoytcheva M (Ed): Pesticides --T=
+he Impacts of Pesticides Exposure.<br>(Croatia: InTech Europe). 2011; doi: =
+10.5772/1003;<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/n2BLS7Nz=
+6isdK7W6nsHw634JIlfq0qJstG2_b1jW5mmoZz1WnYMK2QNfp5xtXrPh/437/OrTUN_79RLCTsZ=
+rjtVUnhg/h4/Fv8e4pYIiigaFeLc53wdUK5SayflthAERfD9RZwpUto">https://tinyurl.co=
+m/yywuqd3x</a>.=0D<br>=0D<br>- Mod.MM=0D<br>=0D<br>ProMED map of Khartoum, =
+Khartoum, Sudan:<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/sSnCk=
+KCWBvais3EuVAOvgy2WOIX7pp1nXnn4AbwuQ3Z6WbkfhqXYXU-aTMPJ8yTh5zfFiIa3Z11V0aj_=
+M5io6Q/437/OrTUN_79RLCTsZrjtVUnhg/h5/T74peKaWTdt7Sa6G5xIf53fOd04tNUau3FtUma=
+cmT4I">https://promedmail.org/promed-post?place=3D8714355,6026</a>]<br><br>=
+[See Also:<br>2022=0D<br>----=0D<br>Foodborne illness - Peru: (HM) fatal, i=
+nsecticide suspected, RFI<br>http://promedmail.org/post/20220422.8702763=0D=
+<br>2021=0D<br>----=0D<br>Foodborne illness - Cote d'Ivoire: fatal, pestici=
+de susp, RFI<br>http://promedmail.org/post/20211007.8698913=0D<br>2018=0D<b=
+r>----=0D<br>Pesticide poisoning - France (02): (PL) farmworkers, chemical =
+ban<br>http://promedmail.org/post/20181107.6132446=0D<br>Pesticide poisonin=
+g - France: (PL) farmworkers<br>http://promedmail.org/post/20181027.6115765=0D=
+<br>2017=0D<br>----=0D<br>Insecticide poisoning - India: (MH) fatal<br>http=
+://promedmail.org/post/20171201.5475998=0D<br>2016=0D<br>----=0D<br>Pestici=
+de poisoning - India: (AS) fatal, susp, RFI<br>http://promedmail.org/post/2=
+0161211.4688847=0D<br>2015=0D<br>----=0D<br>Pesticide poisoning - USA: (WA)=
+ farmworkers, 2014<br>http://promedmail.org/post/20150123.3112536=0D<br>201=
+4=0D<br>----=0D<br>Pesticide exposure - USA: new protective measures<br>htt=
+p://promedmail.org/post/20140225.2298316=0D<br>2013=0D<br>----=0D<br>Organo=
+phosphate poisoning, school lunch - India: (BR)<br>http://promedmail.org/po=
+st/20130718.1831208]<br>.................................................mm=
+/tw/gmm/tw/jh<br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3DTsPc_0GKwda5Jp-cY842JMRKaapykk7RKXmP9QxBf1toMDAwdT=
+AwMAJ5Wtx_DsWAFz8STf1Sg6FP-YqQYQm0A4aeP7n5Q3D0KcpWybGXHbgx851SkGxi6mKlyhACT=
+aMr2QGDdZk_Uo5v2m9tdMdkO1-rcv08koWxRvzp2lIlAfJJwC2fvyzv0yvchX0dGDqnHxKEWE0N=
+rlaNyrk90YuwI3ISWBBdegew4XhVW15thO8XxwL4oAmGey3EFLVRUg-onO075lCNPQMZKllZuCH=
+xdB4vwLbc9tlbDcwSCCO6ZUpeCz8b-VOkmTDapj71Arb76bw14mq7ypNuQ3ciDxNZDrAL84YFE0=
+iWcX66GyEYv8luQiFE81bSV6AAFW1S-5W7bhQl1i8aj11mxcz2ehiUxyNrmFDK9YQiRkibrq3KG=
+S0hKZdH1ND3KcI4Z_SxeDybw3AuIen2LE-ssyz3pnJ1EnJqO6EPJIDKKDETVoqfRzwjdGWACAy6=
+B2D49XEYDNx2cvt8_wlWnU9v8P3edJ--JKfZ5r7HBUBH_riE7ox1dN9ChQbp1K8TPaEqqOiHjj5=
+m9gdKvVNPSUDhSLUss4h3OyiZyTBkpvoqcJ84WAc8TanhFl1iYuV3mRWJgjnOYITYOhqZtohs7L=
+OlsNG1qpTb8gKR3kyXN70E8e946plhxB0rpV53zTL1FF3MWud8_DGELPOG_FHl7AE2iDvrA8Mm7=
+kBsdGrCI1uDvoxS4D-u1MQE-C6Po-ih5CRVlWN49UPmGfNPjiUFdEhNyHrINTP5i6AwviKN-Bwd=
+0v0ZuOpoo10Es_OdauZZkEUA9an4JYz1rsTpa4cuiXBExjtjo5eQXjinowKLgosdP8pQ_8R8nw1=
+zERKqTLt2yxxVlugJ8rgdTx7S6O_INrcIn5OfbvEWc69pkjJzC-JzzjzvQXwI96nUe_V0uDOPne=
+KxDvXXP6ysglsFP7kTsF9TIEg_-vVk-z-0SXfJbAYc9h1mGJLYn20lBwMoAYzffe0t64HEmO0Ct=
+4503iKg6goTOBKRWb-Ud9qWCuH8l8USsoMdSL6Bs7aZYv2Ra6uu_qFBRSCZ5DGCw3THmfhEI7-7=
+7gyk__MoRImp1IywE-Tr6ugDQnxGahxh-1ogBq6l06s7Z94hdBp7FPyYyPZb8m5Mvm5wDwCam77=
+mpGQr9QCm2pyY4804mQluIrVOJt91aVwOoEvUtIjbgvWVhQ6Cjqg=3D" target=3D"_blank" =
+class=3D"Unsubscribe--unsubscribePreferences" style=3D"font-family:sans-ser=
+if;text-decoration:none;">Unsubscribe Preferences</a></div><br>############=
+################################################<br>#######################=
+#####################################<br><br><img src=3D"https://u19268662.=
+ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/437/OrTUN_79RLCTsZrjtVUnhg/ho.g=
+if" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"height:1px !imp=
+ortant;width:1px !important;border-width:0 !important;margin-top:0 !importa=
+nt;margin-bottom:0 !important;margin-right:0 !important;margin-left:0 !impo=
+rtant;padding-top:0 !important;padding-bottom:0 !important;padding-right:0 =
+!important;padding-left:0 !important;"/></body>
+</html>
+--6c093caed60d0bffcd1963a9a95782e3f1182c620405762d54c04ab5b758--

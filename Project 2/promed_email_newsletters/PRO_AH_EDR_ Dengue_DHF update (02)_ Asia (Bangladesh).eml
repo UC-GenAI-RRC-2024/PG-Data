@@ -1,0 +1,459 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a98:c004:0:b0:1eb:e128:bbe3 with SMTP id l4csp2974405eic;
+        Sat, 13 Jan 2024 14:56:15 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IHZhuOg3aX96zo6rmg6bUnBOSey9JaWnIk99TTbvQuvgYQc8wnbWtYvsQK/aaTZlbcP/Kpa
+X-Received: by 2002:a05:620a:8420:b0:783:3a6f:1f89 with SMTP id pc32-20020a05620a842000b007833a6f1f89mr3846311qkn.100.1705186575126;
+        Sat, 13 Jan 2024 14:56:15 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1705186575; cv=none;
+        d=google.com; s=arc-20160816;
+        b=CWqlgXh25hY1JEucOjWDomiGcsP4YVlUcrlQSisrSjwZXVxXeHWfHWkRTgASGekUOV
+         ZMVvYbrluiCBhWYHdelpfcoSvtU1aeo63zNZ/sKo8ilDFQ/5Gezkeao2KDvlzvLoPecY
+         /rJTs0THeT5hoqaEwd7lo85XVnHdDC5rYme1FwFzrYM7j0z4qcLE/S+C2wFHBATP9Fed
+         lfTKZfkJOTQPqiZOW9SHoYaISjYVH6ynXgevyyLoUWa/J79OuwUESBJOgdKoN53smrAs
+         YrYRlLbUbh+PA5GPXFW47COS2pU8pt6UHwwmbRw+qpJe0Hbm16pyGY6kM4P1D5dcUhIt
+         cDJg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=bcm0lgVlztzdeW865n0V3z7K5RZ7c0H8WNBwdP6QGH0=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=GZjQgHX1pdjNUQ8mBaa41+iu8nsIs4441b/9vOvFaEgT2gxviww+8fflKd8iSTr3sJ
+         G+Thw7FJ3mjMxkOi5MKNNkge7YtmUwD3YMc+DUkNH0f0TTM0AZQTRsUrv9YV3HSPLjMr
+         n8xukI9bideXL6Y5DWQsI/zcI6trMnzZmTSmHri55fLxedGZiEE6lz0UtG4Cb3X2Xjj7
+         FDONpCSpt4DQ2IaUeAg0jqfzI1lVd/UmW4qveKgzEDF13MhoM5iaWM5J3cXl3ijfFZTN
+         GGKSTSCH7E8PpIMjNA0p/p70kSUUcIRat39EdlaE8mkCAZz2lPACspLldotmJurqP0zV
+         nXDA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=LiO+JNvi;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=sLdafDKu;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id bq42-20020a05620a46aa00b0077f2859aae2si5742097qkb.246.2024.01.13.14.56.14
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sat, 13 Jan 2024 14:56:15 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=LiO+JNvi;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=sLdafDKu;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=bcm0lgVlztzdeW865n0V3z7K5RZ7c0H8WNBwdP6QGH0=;
+	b=LiO+JNviHF7XISREPGM495+BRHpLFdAjOXhkDJi/DpgbF29w9XlACh0SG3jYWoP6HCJ+
+	OFcqtqTexUBInp/g3VlveIYWoA0327ADZKnnzgOBzgS2vpYqmuDPOfggODHZhDHo2rVtrY
+	E+iNNlbVwJ2o6fcOQxvtFxntncDTzKiU4sKdjHNQ9w6UA8yUUendoGQi7hP1QkUcxprxgR
+	bCbIjsMx2qs9DmcVZ11tC0YFubkQvQYP065IcA9Y8X1d5ymBgTizdPdJU2M/+UBwjFvQBo
+	UZ3wK/9kOkh2TxTOBGajOLuPz8cmCZqLWvQODWsJB3f8Q0egqHI6WKfJz2cxXhiw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=bcm0lgVlztzdeW865n0V3z7K5RZ7c0H8WNBwdP6QGH0=;
+	b=sLdafDKupQ6vqd8f2zwyv1Fs02ZDCX4ME94MdakDSvFh8BQxtxNkjHJJOlY9hrFkdCmR
+	baBjZuaHxa/5kae30b5dSiBvkRLk3kLBAD78X0GYPjl7k/IQHf+MKeDz4ny+kAbSEnBYCI
+	1FauQur9DQImT4Vaj7xESrIu4MSXw7jsA=
+Received: by filterdrecv-788ff8d457-kw8tq with SMTP id filterdrecv-788ff8d457-kw8tq-1-65A3150B-B
+        2024-01-13 22:56:11.404247108 +0000 UTC m=+7618449.650716521
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-34 (SG) with HTTP
+	id 7QxFu2AFSJ6k8HAKNkG_kw
+	Sat, 13 Jan 2024 22:56:11.370 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=15f4562da9d4fbb34387f765a700efe10aa2ed2cb08c51f81ec152fb021d
+Date: Sat, 13 Jan 2024 22:56:14 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <7QxFu2AFSJ6k8HAKNkG_kw@geopod-ismtpd-34>
+Subject: PRO/AH/EDR> Dengue/DHF update (02): Asia (Bangladesh)
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iB=2FKCnkgu27UMmg1nTv8lFiWl09ImV1pHl2utFJ?=
+ =?us-ascii?Q?gAMCrCNarxHxX8eKhHZIAxx53JSce2Y4OSYS0Tu?=
+ =?us-ascii?Q?AIFu8AR4O9fOY4NjizIl+JyPPUCgf5=2F5nezow4q?=
+ =?us-ascii?Q?hA4hikBJ4Qcy5+n4NDzXDvVhrtfkSehxIFLhd85?=
+ =?us-ascii?Q?YI8hLUVg6KMo9s2niY6Mn1jx=2F+0T5TURkGCSF0?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUiShGf=2FO8XJWpH34Od4Nd?=
+ =?us-ascii?Q?fxXa6jil96uRcJkF+N+LeVnO1tx80ddOyoyOo=2Fc?=
+ =?us-ascii?Q?Brxcl3ERAm0cOY743=2FFH59DWiSf5OzXORh1DLKt?=
+ =?us-ascii?Q?hb1NMKty3PsA5ju0ZzxCrq1WQuZSEQf=2FJlWtgqv?=
+ =?us-ascii?Q?cZmsyCHlNUZsDPKJc43SNsqonwzn6CHjyTeM7UU?=
+ =?us-ascii?Q?jmRN8E8Ka97n4zFk5wRoIOxUeZVfnUuKGMFf9J+?=
+ =?us-ascii?Q?A4I9dvdcXxnOxI2jCPjD7bw3Sm=2FpXmCEfmCBT7w?=
+ =?us-ascii?Q?RK11UivNZTntnAwQhJMs=2FSqkuvTUrfrv1FmUene?=
+ =?us-ascii?Q?ToCAeBoPjItKGWz=2FBAW89APoye9otd7xcWv3Gdo?=
+ =?us-ascii?Q?MatiXpLobJkq=2FqB0eCQt1MBpuqSWDts87JjvROu?=
+ =?us-ascii?Q?ZAgSmHsuxgVkon65d21Oo6zLUVJSowBWbFLEQHe?=
+ =?us-ascii?Q?eQjFTLx7cUMLCRQ+Y4899ALzAnUs8kAx3gDrloN?=
+ =?us-ascii?Q?WlBp8uHoXGexFfm2bsICMO7e9DcnlHlqzrysSxp?=
+ =?us-ascii?Q?om7FolYjSxIwC4iOiQXiJSpNf6bTGgrwICjOjpV?=
+ =?us-ascii?Q?mYgSGOUSBjHDB2p=2FvErokkgL90z=2F9kzooUMNrWj?=
+ =?us-ascii?Q?uIdwKZY71VJ7Hm24QrdGwqG8jRKBX38Vx8YA7aC?=
+ =?us-ascii?Q?3sLHprw1G7yJVf=2F+ana7kn25=2FoDU6LItm0ZELFI?=
+ =?us-ascii?Q?B84vQNYHPMGHAtCn14hM1JW5IiWYV97Sa6LsRQs?=
+ =?us-ascii?Q?S+d7YJ4SOa+NLgHKao1M5NmrtAE4VGU3Vrpy37v?=
+ =?us-ascii?Q?13AW=2FWqAmvlQGXsy1IYDRv15aQ=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2E=5FTzNKe8Gu?=
+ =?us-ascii?Q?2Q4DWEvurUB2jqvXz2QuX=5F94JtyBGLlEqJoMDAw?=
+ =?us-ascii?Q?dTAwMB4R3A0YjCSELWEdc4yHR-LieMCdP3he2tQ?=
+ =?us-ascii?Q?rQBeeeeT-0B6muRdMy76wh42fQEWJPBw=5FfOG7HU?=
+ =?us-ascii?Q?idK7clfRS8LpCoVYKwnqpGlHb7Qzdb7cvkX7CRQ?=
+ =?us-ascii?Q?yvvuMSYTd2NZ22rNw=3D=3D=2EsKRUBKj2=5FKKl8S-uqHO?=
+ =?us-ascii?Q?=5F71tFykXVfcRbSVGRJNZyafpoMDAwdTAwMC7bW2?=
+ =?us-ascii?Q?b4r26nU4ZWKQFfQWiBkGEe0h9Xu52EQzF85aYUm?=
+ =?us-ascii?Q?iB3KT93A=5F7e1ieZJl9TRv9dJ4FASvozNQXQNL9x?=
+ =?us-ascii?Q?dCEUH9tA0BadPinXSZEXAJQCgrBijvISiwA9sHr?=
+ =?us-ascii?Q?BQIOuz8Z7zst0-kuXoCoPmB2Y370r30ZBnNxfQY?=
+ =?us-ascii?Q?gc0iUXkW5B3YZ=5FG=5FHgsSPPElm9SOENOWki30zuo?=
+ =?us-ascii?Q?Zwdw5hYJSKvisgQb4VUzkVcSgbomFtWsbGsvhqw?=
+ =?us-ascii?Q?=5FIaM7N7QZhUTp9n0v7Dzd1Kae6ddx21zd999EqT?=
+ =?us-ascii?Q?-36jYQOj=5FlH6NtvAAKou-bTDOta0NhB2IOuNswL?=
+ =?us-ascii?Q?fDNPso69XVjxoOf3nzCZEVHVWpvu-9IiJo326T6?=
+ =?us-ascii?Q?UfSH2qxOWXEuU-2oAdJKGP=5FSvBj38fN-bx8GqoI?=
+ =?us-ascii?Q?pkG7UgqfgiNI5S=5FBMK3Y8ajfrVdtvr6s7L4BO2O?=
+ =?us-ascii?Q?Y-Ac6o2nWkd54CKDMRkQ0X-ydEbtbCzc=5FboQttt?=
+ =?us-ascii?Q?mjZtkFRGNs=5FeVOdIP4NSBZFZ4936kBR=5FtGBH0fN?=
+ =?us-ascii?Q?9xhySOI7cVeOYxjQcmIm7tXbU7JBZdrgzDiB5sT?=
+ =?us-ascii?Q?uNLGMulZ9XL51oRAEY0C=5FE7uABJXEWyheTQbC2C?=
+ =?us-ascii?Q?Cn3fWnmd-3G2wSL9a-SuyKPhkdIMTlkFXrqMDsO?=
+ =?us-ascii?Q?R0ZQcDWCqp2XfSO5VebvC9EkdoWyFVBiTXylSLM?=
+ =?us-ascii?Q?oIxU4YYSLuPDNFNDCfY5YnNgUVkz3rc5TSo1ppM?=
+ =?us-ascii?Q?j8dQ2R7QdzN1ic3eSgGwS5bY7=5FagEceUOSMBgLp?=
+ =?us-ascii?Q?0HzMg3-Bbcog3i94jVoNJzf1-P7Z2MdFJfaSDAU?=
+ =?us-ascii?Q?ZojawFHxryrgIZ-XxQBgzk1dQXtC7X2utPJtgVf?=
+ =?us-ascii?Q?sgKvX-ipanN60OKWhPOH48ql3PfIpYY0Xw1SMhy?=
+ =?us-ascii?Q?FxUTbUsw6kJQCmW4yCsNgJm6QtBe499R=5FXZTOLz?=
+ =?us-ascii?Q?AhpvQszaRvC7=5FhEFvo6C-OFSss0AuXXzVm=5FMbDP?=
+ =?us-ascii?Q?6ADeZWsUPwJP9moHWR5vt9JBaB-V17vP76GB9Z5?=
+ =?us-ascii?Q?uvSqRyu36t4ryBgym3zga6J9=5FIe6DDFwUl0kTXG?=
+ =?us-ascii?Q?HMWIsw=3D=3D=3E?=
+
+--15f4562da9d4fbb34387f765a700efe10aa2ed2cb08c51f81ec152fb021d
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=us-ascii
+Mime-Version: 1.0
+
+DENGUE/DHF UPDATE (02): ASIA (BANGLADESH)
+*****************************************
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+Date: Fri 12 Jan 2024 09:22 BST
+Source: bdnews24.com [edited]
+<https://bdnews24.com/health/fhqs46om81>
+
+
+Hospitals in Bangladesh have recorded 17 new cases of dengue fever in
+a day, taking the tally of infections since 1 Jan 2024 to 607 after
+the worst outbreak last year [2023].
+
+The death toll remained unchanged at 4, as there were no fatalities
+from the mosquito-borne disease in the daily count published by the
+Directorate General of Health Services [DGHS] on Friday [12 Jan
+2024].
+
+The new cases included 10 in Dhaka [capital of Bangladesh]. The
+capital also accounted for 134 of the 279 dengue patients undergoing
+treatment at hospitals in the morning.
+
+In 2023, Bangladesh recorded 321 179 hospitalisations and 1705 deaths
+from the viral disease and the outbreak has continued this year
+[2024].
+
+Rising temperatures, along with a lack of effective measures to kill
+the _Aedes aegypti_ mosquito, the known carrier of the virus, are seen
+as the reasons behind the deadliest outbreak last year [2023].
+
+Experts say dengue may affect Bangladesh throughout the year from now
+on, not just in monsoon, if the authorities do not move to prevent the
+disease.
+
+--
+Communicated by:
+ProMED
+via
+ProMED-SoAs
+
+[As per the media report above, so far in 2024, 4 deaths and 607
+dengue cases have been reported in Bangladesh.
+
+To prevent or control dengue transmission, it is necessary to control
+mosquito vector density and/or interrupt human-vector contact.
+Mosquito source reduction and community awareness about vector-borne
+diseases are 2 important activities to control them.
+
+"Dengue viruses are spread to people through the bite of an infected
+_Aedes_ species (_Ae. aegypti_ or _Ae. albopictus_) mosquito"
+(<https://www.cdc.gov/dengue/index.html>).
+
+There is no specific treatment for dengue/severe dengue, and early
+detection and access to proper medical care greatly lower fatality
+rates of severe dengue (<https://tinyurl.com/7w5hxt3x>).
+
+The Bangladesh national guidelines for the clinical management of
+dengue syndrome can be found at
+<http://www.rcmc.com.bd/wp-content/uploads/2019/01/Dengue-Guideline-2018-.p=
+df>.
+- Mod.GS
+
+ProMED map:
+Bangladesh: <https://promedmail.org/promed-post?place=3D8714217,153>]
+
+[See Also:
+2023
+----
+Dengue/DHF update (44): Asia (Bangladesh, Sri Lanka)
+http://promedmail.org/post/20240101.8714008
+Dengue/DHF update (43): Sri Lanka
+http://promedmail.org/post/20231221.8713841
+Dengue/DHF update (41): Asia (Bangladesh, India)
+http://promedmail.org/post/20231219.8713803
+Dengue/DHF update (38): India, update
+http://promedmail.org/post/20231213.8713685
+Dengue/DHF update (35): Bangladesh
+http://promedmail.org/post/20231210.8713624
+Dengue/DHF update (34): Sri Lanka, update
+http://promedmail.org/post/20231207.8713568
+Vector borne diseases - India (02): (JA) chikungunya, dengue
+http://promedmail.org/post/20231202.8713462
+Dengue/DHF update (30): Asia (India)
+http://promedmail.org/post/20231125.8713322
+Dengue/DHF update (27): Asia (Bangladesh) update
+http://promedmail.org/post/20231121.8713249
+Dengue/DHF update (22): Asia (Bangladesh) update
+http://promedmail.org/post/20231108.8713037
+Dengue/DHF update (18): Asia (Bangladesh) update
+http://promedmail.org/post/20231030.8712911
+Dengue/DHF update (14): Asia (India)
+http://promedmail.org/post/20231012.8712594
+Dengue/DHF update (09): Asia (Bangladesh) DENV2 vs DENV3
+http://promedmail.org/post/20230814.8711691
+Dengue/DHF update (05): Asia, Oceania
+http://promedmail.org/post/20230416.8709528
+Dengue/DHF update (01): Asia, 2022
+http://promedmail.org/post/20230108.8707683
+2022
+----
+Dengue/DHF update (10): Asia, vaccine
+http://promedmail.org/post/20221212.8707227
+Dengue/DHF update (09): Asia, Africa
+http://promedmail.org/post/20221203.8707049
+Dengue/DHF update (08): Americas, Asia, Europe, Middle East
+http://promedmail.org/post/20221113.8706717
+Dengue/DHF update (07): Asia, Africa, Americas
+http://promedmail.org/post/20221112.8706699
+Dengue/DHF update (06): Americas, Europe, Asia, Africa
+http://promedmail.org/post/20220907.8705446
+Dengue/DHF update (03): Americas, Middle East, Africa, Pacific, Asia,
+research http://promedmail.org/post/20220513.8703206
+Dengue/DHF update (02): Americas, Africa, Asia, Pacific, Indian Ocean,
+research http://promedmail.org/post/20220322.8702143
+Dengue/DHF update (01): Americas, Asia, research
+http://promedmail.org/post/20220108.8700722
+and other items in the archives]
+.................................................gs/rd/pkb/rd/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3D8bmBN5C1JyGUQJbeHBJeVS-RqrpcCVpK6QsoRjx-o1doMDAwdTAwMFb01p3=
+1p8t7BLADcnoaPq-FaSdegJce7HKziAtZC1hV-2kIEnjK6VqVTfQ1uJlcbrUqVjW7-99pDBHJMo=
+Y5RSj1s8qVVI9Eg3OVBVi_3QQ4smWLoMM3g7ecQEGvVfMIFhUukBqFnxOFKaX_Si3S7cmR3wje6=
+bi7lAoAWrMY_jnVzNCEgTFLR0KBm8X9lvNlkJMxU72DQj2r5vDvLAOPv-13yHpzRwm0qLqqCXkT=
+xjSwgqh_HUNw1ZCpNqr6zcjlDefEG-l3flM0FNmpfwJywUNi4TDzKq9h34EZyYEhqzSlrHlOHWX=
+FeC-RIhhCEGSz1HZSWtXdV-DDV-WJQyJVJYUcYqPc7RA1dphsI-utmlaAnmKuujkGHA5tIkkpg6=
+xM7VeA3MwcrmgVQ_XLZvaTZicfOFL-wKWbYC-QJxFc9iN7Mia8LNe9IAVP_bNCxxXLpDUBQnyoZ=
+bUBLLN082548prQlTCzLwvSneSAoi0SuwX7dqgGdDK2WxpOGpf4WbxnqHafcYtF5CptqlIsoQs1=
+W-_BFfLy6OQdjfg07Wpcug1MQS4btWBVez7YDV4coxnBtSjdSOGop-_1shtKtKzt_QsKjgxE7MY=
+irNfqIIQ9pRh2h9wC9OpmcEl9pvZxOq0yxmfaQtIcn8cfkNw3v9LHFxNYvNDjlOsmvfqjw9dSPO=
+9pkAxh9BVM8Fkz5mDR_1K4nXbk3CKy6QsM5fgSyZopZbYUbMR0qeOFna1JsQ0kJT9mHCfow1NwM=
+1tEdHPZK7LyEJpJjtzU5c8VLf5R3PzNSbdCC9gZftELxcvFYpIf7gJ0lKh2isdWzgk5dhpBEzpe=
+rlQ4l53h070-Pm_UyJev9nXEXeWd3c-FqckzBGI_xNfygeaWlkQW5vJZaAJ-IEDnhloiYNPw34y=
+7Lge0Zl2cpSYlIwXWeCMzGSSl1tUfLGqgnCnD2Xi9s-IFtERKZaPjQnMLPfOkoWpOtFwRUzrq-r=
+DhoKfT7UrokkQj0ctTD_EitctWEqlOEJt_xfxlvkoXWzOgg-PclTnOJTiuzEIe8Y1RyDiIpV-e9=
+0NuCcbcs0UyvO7c7k1pt46yqv0abio_Umtm2_Qli6a72n_sHKxpwCwk82qnD8C4YkiNRuQ84Y-i=
+TifUK0l33jpvC4dgq05BgbP4CE9pkf34OyTX60tgSeST0WnitX3r51X1p2z4_zVg )
+############################################################
+############################################################
+
+--15f4562da9d4fbb34387f765a700efe10aa2ed2cb08c51f81ec152fb021d
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>DENGUE/DHF UPDATE (02): ASIA (BANGLADESH)<br>************************=
+*****************<br>A ProMED-mail post<br><a href=3D"https://u19268662.ct.=
+sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisIijpefK5PNjW-mL-YZGnfgDOxU1G3gjwnPSi=
+2Tfv3HA/42y/gngOvtL5S2CB1GnpEtS7mA/h0/F2IM-FPc6ecrcuWqcj_oIR3DTPnGu8OEIn6CY=
+o30D8E">http://www.promedmail.org</a><br>ProMED-mail is a program of the<br=
+>International Society for Infectious Diseases<br><a href=3D"https://u19268=
+662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisCT5tpD4Upm3qyMCbcYSQvc/42y/gn=
+gOvtL5S2CB1GnpEtS7mA/h1/fzEPl5fciWf4x6jL4yf7q0cqJy9O-xgOyXuB6CTNSbU">http:/=
+/www.isid.org</a><br><br>Date: Fri 12 Jan 2024 09:22 BST=0D<br>Source: bdne=
+ws24.com [edited]=0D<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/y=
+z2fdA_g7iMSh8qzYPxBFvresBj_YWlcBBKr3bVQg-QELw928PBnJHGbexiL4T9j/42y/gngOvtL=
+5S2CB1GnpEtS7mA/h2/nkSGUptAvq9S1g_K1AVbSbCmqkHvIbFrG6rbSL_sB5E">https://bdn=
+ews24.com/health/fhqs46om81</a>=0D<br>=0D<br>=0D<br>Hospitals in Bangladesh=
+ have recorded 17 new cases of dengue fever in<br>a day, taking the tally o=
+f infections since 1 Jan 2024 to 607 after<br>the worst outbreak last year =
+[2023].=0D<br>=0D<br>The death toll remained unchanged at 4, as there were =
+no fatalities<br>from the mosquito-borne disease in the daily count publish=
+ed by the<br>Directorate General of Health Services [DGHS] on Friday [12 Ja=
+n<br>2024].=0D<br>=0D<br>The new cases included 10 in Dhaka [capital of Ban=
+gladesh]. The<br>capital also accounted for 134 of the 279 dengue patients =
+undergoing<br>treatment at hospitals in the morning.=0D<br>=0D<br>In 2023, =
+Bangladesh recorded 321 179 hospitalisations and 1705 deaths<br>from the vi=
+ral disease and the outbreak has continued this year<br>[2024].=0D<br>=0D<b=
+r>Rising temperatures, along with a lack of effective measures to kill<br>t=
+he _Aedes aegypti_ mosquito, the known carrier of the virus, are seen<br>as=
+ the reasons behind the deadliest outbreak last year [2023].=0D<br>=0D<br>E=
+xperts say dengue may affect Bangladesh throughout the year from now<br>on,=
+ not just in monsoon, if the authorities do not move to prevent the<br>dise=
+ase.=0D<br>=0D<br>--=0D<br>Communicated by:=0D<br>ProMED=0D<br>via=0D<br>Pr=
+oMED-SoAs<br><br>[As per the media report above, so far in 2024, 4 deaths a=
+nd 607<br>dengue cases have been reported in Bangladesh.=0D<br>=0D<br>To pr=
+event or control dengue transmission, it is necessary to control<br>mosquit=
+o vector density and/or interrupt human-vector contact.<br>Mosquito source =
+reduction and community awareness about vector-borne<br>diseases are 2 impo=
+rtant activities to control them.=0D<br>=0D<br>"Dengue viruses are spread t=
+o people through the bite of an infected<br>_Aedes_ species (_Ae. aegypti_ =
+or _Ae. albopictus_) mosquito"<br>(<a href=3D"https://u19268662.ct.sendgrid=
+.net/ss/c/TLh_csrC34X_iXpbYoMamwJ5P1fpOmszPYb_ySSidsZxosDrIsG58BqKxw0ljje8/=
+42y/gngOvtL5S2CB1GnpEtS7mA/h3/Ge8An20aVAQCI7ll8hssZdTdY7fwLWIHvsb2VY5C5Hc">=
+https://www.cdc.gov/dengue/index.html</a>).=0D<br>=0D<br>There is no specif=
+ic treatment for dengue/severe dengue, and early<br>detection and access to=
+ proper medical care greatly lower fatality<br>rates of severe dengue (<a h=
+ref=3D"https://u19268662.ct.sendgrid.net/ss/c/n2BLS7Nz6isdK7W6nsHw60iaqm92f=
+nVIwm1lBjAYmx5pkl_t7nY1RDg810FDL9c_/42y/gngOvtL5S2CB1GnpEtS7mA/h4/aNQ7g_3M_=
+4lkWRNpeGful9NdNjLTH7jW0irG7NgfgLA">https://tinyurl.com/7w5hxt3x</a>).=0D<b=
+r>=0D<br>The Bangladesh national guidelines for the clinical management of<=
+br>dengue syndrome can be found at<br><a href=3D"https://u19268662.ct.sendg=
+rid.net/ss/c/wscE2ng5fl6JrPIt48tisK6HsrCS-PnydNO0VsMOqotULi9AGU-br7pw6kAY-l=
+TreItVN0KY0MwdXEyXDv_hxFB5cPMTPuwB7oYHH1n-NPcxFaPj2DM4OHWc6D6uGldY/42y/gngO=
+vtL5S2CB1GnpEtS7mA/h5/zb2X0yyo1WD0C2YK3pjCshXt7JZ2HOQLQ1XSEqDxBvs">http://w=
+ww.rcmc.com.bd/wp-content/uploads/2019/01/Dengue-Guideline-2018-.pdf</a>.<b=
+r>- Mod.GS<br><br>ProMED map:<br>Bangladesh: <a href=3D"https://u19268662.c=
+t.sendgrid.net/ss/c/sSnCkKCWBvais3EuVAOvgy2WOIX7pp1nXnn4AbwuQ3Z6WbkfhqXYXU-=
+aTMPJ8yThjc1iA7B_T1dc-9yUumkmzQ/42y/gngOvtL5S2CB1GnpEtS7mA/h6/_AJAElf0OMgq1=
+i_HUNqhUCnednId_uRrw8pmU6w7ULo">https://promedmail.org/promed-post?place=3D=
+8714217,153</a>]<br><br>[See Also:<br>2023=0D<br>----=0D<br>Dengue/DHF upda=
+te (44): Asia (Bangladesh, Sri Lanka)<br>http://promedmail.org/post/2024010=
+1.8714008=0D<br>Dengue/DHF update (43): Sri Lanka<br>http://promedmail.org/=
+post/20231221.8713841=0D<br>Dengue/DHF update (41): Asia (Bangladesh, India=
+)<br>http://promedmail.org/post/20231219.8713803=0D<br>Dengue/DHF update (3=
+8): India, update<br>http://promedmail.org/post/20231213.8713685=0D<br>Deng=
+ue/DHF update (35): Bangladesh<br>http://promedmail.org/post/20231210.87136=
+24=0D<br>Dengue/DHF update (34): Sri Lanka, update<br>http://promedmail.org=
+/post/20231207.8713568=0D<br>Vector borne diseases - India (02): (JA) chiku=
+ngunya, dengue<br>http://promedmail.org/post/20231202.8713462=0D<br>Dengue/=
+DHF update (30): Asia (India)<br>http://promedmail.org/post/20231125.871332=
+2=0D<br>Dengue/DHF update (27): Asia (Bangladesh) update<br>http://promedma=
+il.org/post/20231121.8713249=0D<br>Dengue/DHF update (22): Asia (Bangladesh=
+) update<br>http://promedmail.org/post/20231108.8713037=0D<br>Dengue/DHF up=
+date (18): Asia (Bangladesh) update<br>http://promedmail.org/post/20231030.=
+8712911=0D<br>Dengue/DHF update (14): Asia (India)<br>http://promedmail.org=
+/post/20231012.8712594=0D<br>Dengue/DHF update (09): Asia (Bangladesh) DENV=
+2 vs DENV3<br>http://promedmail.org/post/20230814.8711691=0D<br>Dengue/DHF =
+update (05): Asia, Oceania<br>http://promedmail.org/post/20230416.8709528=0D=
+<br>Dengue/DHF update (01): Asia, 2022<br>http://promedmail.org/post/202301=
+08.8707683=0D<br>2022=0D<br>----=0D<br>Dengue/DHF update (10): Asia, vaccin=
+e<br>http://promedmail.org/post/20221212.8707227=0D<br>Dengue/DHF update (0=
+9): Asia, Africa<br>http://promedmail.org/post/20221203.8707049=0D<br>Dengu=
+e/DHF update (08): Americas, Asia, Europe, Middle East<br>http://promedmail=
+.org/post/20221113.8706717=0D<br>Dengue/DHF update (07): Asia, Africa, Amer=
+icas<br>http://promedmail.org/post/20221112.8706699=0D<br>Dengue/DHF update=
+ (06): Americas, Europe, Asia, Africa<br>http://promedmail.org/post/2022090=
+7.8705446=0D<br>Dengue/DHF update (03): Americas, Middle East, Africa, Paci=
+fic, Asia,<br>research http://promedmail.org/post/20220513.8703206=0D<br>De=
+ngue/DHF update (02): Americas, Africa, Asia, Pacific, Indian Ocean,<br>res=
+earch http://promedmail.org/post/20220322.8702143=0D<br>Dengue/DHF update (=
+01): Americas, Asia, research<br>http://promedmail.org/post/20220108.870072=
+2=0D<br>and other items in the archives]<br>...............................=
+..................gs/rd/pkb/rd/jh<br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3D8bmBN5C1JyGUQJbeHBJeVS-RqrpcCVpK6QsoRjx-o1doMDAwdT=
+AwMFb01p31p8t7BLADcnoaPq-FaSdegJce7HKziAtZC1hV-2kIEnjK6VqVTfQ1uJlcbrUqVjW7-=
+99pDBHJMoY5RSj1s8qVVI9Eg3OVBVi_3QQ4smWLoMM3g7ecQEGvVfMIFhUukBqFnxOFKaX_Si3S=
+7cmR3wje6bi7lAoAWrMY_jnVzNCEgTFLR0KBm8X9lvNlkJMxU72DQj2r5vDvLAOPv-13yHpzRwm=
+0qLqqCXkTxjSwgqh_HUNw1ZCpNqr6zcjlDefEG-l3flM0FNmpfwJywUNi4TDzKq9h34EZyYEhqz=
+SlrHlOHWXFeC-RIhhCEGSz1HZSWtXdV-DDV-WJQyJVJYUcYqPc7RA1dphsI-utmlaAnmKuujkGH=
+A5tIkkpg6xM7VeA3MwcrmgVQ_XLZvaTZicfOFL-wKWbYC-QJxFc9iN7Mia8LNe9IAVP_bNCxxXL=
+pDUBQnyoZbUBLLN082548prQlTCzLwvSneSAoi0SuwX7dqgGdDK2WxpOGpf4WbxnqHafcYtF5Cp=
+tqlIsoQs1W-_BFfLy6OQdjfg07Wpcug1MQS4btWBVez7YDV4coxnBtSjdSOGop-_1shtKtKzt_Q=
+sKjgxE7MYirNfqIIQ9pRh2h9wC9OpmcEl9pvZxOq0yxmfaQtIcn8cfkNw3v9LHFxNYvNDjlOsmv=
+fqjw9dSPO9pkAxh9BVM8Fkz5mDR_1K4nXbk3CKy6QsM5fgSyZopZbYUbMR0qeOFna1JsQ0kJT9m=
+HCfow1NwM1tEdHPZK7LyEJpJjtzU5c8VLf5R3PzNSbdCC9gZftELxcvFYpIf7gJ0lKh2isdWzgk=
+5dhpBEzperlQ4l53h070-Pm_UyJev9nXEXeWd3c-FqckzBGI_xNfygeaWlkQW5vJZaAJ-IEDnhl=
+oiYNPw34y7Lge0Zl2cpSYlIwXWeCMzGSSl1tUfLGqgnCnD2Xi9s-IFtERKZaPjQnMLPfOkoWpOt=
+FwRUzrq-rDhoKfT7UrokkQj0ctTD_EitctWEqlOEJt_xfxlvkoXWzOgg-PclTnOJTiuzEIe8Y1R=
+yDiIpV-e90NuCcbcs0UyvO7c7k1pt46yqv0abio_Umtm2_Qli6a72n_sHKxpwCwk82qnD8C4Yki=
+NRuQ84Y-iTifUK0l33jpvC4dgq05BgbP4CE9pkf34OyTX60tgSeST0WnitX3r51X1p2z4_zVg" =
+target=3D"_blank" class=3D"Unsubscribe--unsubscribePreferences" style=3D"fo=
+nt-family:sans-serif;text-decoration:none;">Unsubscribe Preferences</a></di=
+v><br>############################################################<br>#####=
+#######################################################<br><br><img src=3D"=
+https://u19268662.ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/42y/gngOvtL5S=
+2CB1GnpEtS7mA/ho.gif" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=
+=3D"height:1px !important;width:1px !important;border-width:0 !important;ma=
+rgin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;=
+margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !importa=
+nt;padding-right:0 !important;padding-left:0 !important;"/></body>
+</html>
+--15f4562da9d4fbb34387f765a700efe10aa2ed2cb08c51f81ec152fb021d--

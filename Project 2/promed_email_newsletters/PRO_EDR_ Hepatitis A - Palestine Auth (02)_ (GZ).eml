@@ -1,0 +1,397 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a98:d84b:0:b0:1eb:e128:bbe3 with SMTP id b11csp1267243eil;
+        Fri, 19 Jan 2024 16:53:19 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IF8aJPN+ibK0HdO6XZFFbcknb8C6i9OtlcEooQ8hwUztRcNDkAg3VuVF98cVVlWide64G7B
+X-Received: by 2002:ad4:5cae:0:b0:67f:b58b:6b0a with SMTP id q14-20020ad45cae000000b0067fb58b6b0amr1007814qvh.114.1705711999302;
+        Fri, 19 Jan 2024 16:53:19 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1705711999; cv=none;
+        d=google.com; s=arc-20160816;
+        b=WNXUU4KTRBSQK84nVYHZz+x/lfEcCco1NVSuwfeR6agevMOi8fxNMY5eqP0UC0x7xS
+         GF+JOeBQHObryuWTX+iLlAIOPnXNYe0SL+bT5sas+JxtwQeAeb0PMgtV/0XluIngKvZt
+         X6jK8xkxXBknHt+K2oc5m7zOL3PoEDDcVURsiBDF3ggL7oZzPflo0snBYn5y1rEA0gBO
+         n8BG0G8zQ5Em+Yr31JRZpOtlTjl1d/RzC6nTOoF0W2LqJPm80k0ayDPJJ5n5DlUA1Z7g
+         f8rBx8yu+eYmhiSl+/4TNGirIDrF32HFNOVe3Ej6iGo3KXfFMGctdHykTIUALbN4dX6i
+         VPdg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=SPZ4dVmLc6kvoqKfPPhRMT4+tsoZJ/6wo6r7eaZIEKk=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=eZRrBsaLAPQ7XUXHranttjtLAa43S1/ypzeUIjjvldc6Tm4q2elCL5C3fBrXgy48JT
+         1uBY1jjUOCncDX6icyiwDvUtTUQpOS86GS4eSE/EAedHYVttXQHmTuzc0AkiOhe44JZv
+         qQAh1ul8ECN6dRHmrLH8/g1luxM8HrpOgQrUGqmlUTr/Qd6gVDQYJJ5wmDGd0bmwxg6m
+         aZwTpk4QVwRzS72VCKxepPQvgVwXHq+NAewbaghr6V9mnrhlKC2zagaSkVL+RZPNs4p6
+         +cuuN656cuI+tITXFCAu4x/rcSD4gFv7OLP9E2TLFonDKo9/baYSbwdVyOhC3Co4zX9O
+         tU/Q==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=E0kNQNVK;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=zYMUFStj;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id e17-20020a0ce3d1000000b0068190e1ba61si461797qvl.191.2024.01.19.16.53.18
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 19 Jan 2024 16:53:19 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=E0kNQNVK;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=zYMUFStj;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=SPZ4dVmLc6kvoqKfPPhRMT4+tsoZJ/6wo6r7eaZIEKk=;
+	b=E0kNQNVKMBcKsm0Q8jm6OsMT1ojL9xPnMlmBNOuTil4yb2fHFeic0CJpybNBDRt4iFRM
+	RrLCHrGrkIzev2cdQpBa0ZifnleN8mtCG59UFBy2HK5zl7WRoHYpnBAp0Fz+sZIil0vvTE
+	GQYEkNlSk45+tIsFXgUsHoy9+/Oj0x2o4lMgmalIIKXU2RyW7D2Kl9I4UtROha+vgC7wiH
+	HkNPjn7imrHc3+HeXwi5vt6eWvNeBUAMwmMhG6HK9a9XHv2u4HYHtACYXx4adpuZic9fo4
+	EFYvDCK1llhauhs1cvxJ/yPtOgjzZo1fMteFYgOalY23oUFbbNY1r3BP06wnwf7Q==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=SPZ4dVmLc6kvoqKfPPhRMT4+tsoZJ/6wo6r7eaZIEKk=;
+	b=zYMUFStjZ8QEkvJ/9EApm0NaVNb82J17hnjLzPLubkAEpptkndrEY6aldq81f3ZywTUf
+	SJx0IebKdfoONHkXcrPDiaYwWiWBDhIUyNsH/0bsSAsjpY/cLDVBEgD93E1zcJamOkuMdL
+	5dy7zuJN7cJpFQmUe2+T+hrd5JtAiu0U4=
+Received: by filterdrecv-5f9f645469-qjpfs with SMTP id filterdrecv-5f9f645469-qjpfs-1-65AB197C-A
+        2024-01-20 00:53:16.285504072 +0000 UTC m=+8143894.557241537
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-16 (SG) with HTTP
+	id Qqc-JfabQ5W1heu5MEVKkA
+	Sat, 20 Jan 2024 00:53:16.097 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=4738d557c0333e1717fca91c7b63e1ac99cca01634cd78847dffaca21408
+Date: Sat, 20 Jan 2024 00:53:18 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <Qqc-JfabQ5W1heu5MEVKkA@geopod-ismtpd-16>
+Subject: PRO/EDR> Hepatitis A - Palestine Auth (02): (GZ)
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iBaeVyrBtwGQVqw3y7oEZUoFsGFg6pwQzClMH1s?=
+ =?us-ascii?Q?=2F5r56kZglHZi8GyPacQLpu8aBGLtFnaRJkVYIwA?=
+ =?us-ascii?Q?1822xv3JMT3M80aFc+P4esdvk+044p22KAKNG1F?=
+ =?us-ascii?Q?zvL2DLUowuAZkce1VTIl5RcQH4QbybL4y3wWt0i?=
+ =?us-ascii?Q?GnCQb7AeYxwJjqoCa8KEtFV0MuOgvGLo9RuXSp?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUhc93xcG=2F095a5S4+mt=2FG?=
+ =?us-ascii?Q?uYUpctI=2FOGD2dwyi+uvm2j4FCdvuw0l9zcHM8iA?=
+ =?us-ascii?Q?mojOvTXq7jOpDFFNtfsYkHQYACEW8pq1BXXqYmH?=
+ =?us-ascii?Q?oGTsnt6QpE2ZV5WVqnpwfXWoLXx7+4bRvzmKmOa?=
+ =?us-ascii?Q?72+JaF04VbtvFlllUQ=2FNXvCGQPCP=2FU8ldqK9Fvk?=
+ =?us-ascii?Q?CiH42xZwZR5Wmmh=2FkpYhDyhMYwN9C0f9HwQrLG1?=
+ =?us-ascii?Q?vRgHWajNC0M9SZ7nUrFrAZhURYdoWwiVz4MMOQd?=
+ =?us-ascii?Q?55SiKTShHUW2Ne4thBt1e4hXVYPA31=2FYmCRvCst?=
+ =?us-ascii?Q?n7NGeNEGh3LQqjaFf1twLvDMtv0OtpfEVZ4zn8U?=
+ =?us-ascii?Q?KY1nFXt+j3HG4n1Vh3mMuJrNFvJEvj=2F=2FjLuMJl2?=
+ =?us-ascii?Q?JSRmJcJ61Cqv0T6W46L+SCy82GjfAU34u9QGNlW?=
+ =?us-ascii?Q?pKTkKM2yavVG+9OPXetKOqGeTqYFU2syUmd2ua4?=
+ =?us-ascii?Q?p1MOxyB2Q8OuhwjfzcYweFKI6Y0uGOdT8+gShJj?=
+ =?us-ascii?Q?ZjSr0V3e6TCbFuJOD6GnMZzbsTPC=2FUxBWr+F1xG?=
+ =?us-ascii?Q?MyekcyC7vRBxk01kWhA95J83joluaJJskGVDCF9?=
+ =?us-ascii?Q?TAlr2aYe8c1JPqB=2FI3h82Qg63tkwHqCNEc27GNM?=
+ =?us-ascii?Q?AFMQG587R+ZVGZ=2FZR0iJk5rqpLXdbEvkV34RbSR?=
+ =?us-ascii?Q?pATsCQN3zjtqNAVMqJg73jXK8i9ueQrdj5vG5Ye?=
+ =?us-ascii?Q?hbZG3luG+KtPB9sPvBygZdXWGsnUHUEb8C9+SON?=
+ =?us-ascii?Q?g0cz6ZsK1XznpzyEc7syMe=2Fa2A=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2E4p0OYltop?=
+ =?us-ascii?Q?muyXgCJ4O=5F=5F6Z1aGJvT4XPmqXepx6ssbHloMDAw?=
+ =?us-ascii?Q?dTAwMMsbsTDjz6ukae6BeLqzV41AVkwc5SUHQZj?=
+ =?us-ascii?Q?QoQXu=5FjeOWGG6fU1Njd0tUgs2NqEJ8nS=5F5GI674?=
+ =?us-ascii?Q?rZhlVt6uoNx-TJrdqHAATWHMwIDJjswPNdZOwjH?=
+ =?us-ascii?Q?6yRgsuV4iOOgbAXog=3D=3D=2EP7tv5tIePdD2hp7i4n5?=
+ =?us-ascii?Q?6oWEwZCE8SCZLee=5FtKY0oQ5JoMDAwdTAwMF6m-J?=
+ =?us-ascii?Q?iAep1ZcQaUj77HeWrb3xnXx89gLDJ5UU9fDL72k?=
+ =?us-ascii?Q?s0qI=5Fa7FfnAdfzcueAtf5IjgtX-787VOLCUKLlI?=
+ =?us-ascii?Q?eFxV1XZoZavDQsJJit4bCpVbNQWie1l8DXX7vYh?=
+ =?us-ascii?Q?whYg-ARwTTPbqt=5F12QjRuIeEt2fxRtUFUXKZIjm?=
+ =?us-ascii?Q?mzBG8nMVfcVDS4ozc3rxmF6ggNuPXQbdZbpizB-?=
+ =?us-ascii?Q?Re5h3wx7WdFpTLj2ZEXS0hla-kVkVU=5FCerZ2YS-?=
+ =?us-ascii?Q?b7JPWxR=5FDKaQe6A-8VHq962ha2=5F-yzPFx8Ebeqq?=
+ =?us-ascii?Q?XYVO=5Fmz0HGcmPVnSoONLvFXND0D5Vy9Is2xN5NW?=
+ =?us-ascii?Q?wOvTGBOCoRp8FKAKIBLx8tguxzdFDLah1JJT=5F9L?=
+ =?us-ascii?Q?YYgnId=5FcXTkAZlHnTR8yTLBL-LPtFzoYAJhAF7s?=
+ =?us-ascii?Q?ByVLHWSPJBzgw8cCL8GrJE8xwXjMF9KvOjjR3RD?=
+ =?us-ascii?Q?jcqAGjFzNpup9UzNZh4N4bG8FOUQDEoNkQrUo2K?=
+ =?us-ascii?Q?wetGh26I3rVquboq2WZ1Lep3-9CQuLETQ4GMmku?=
+ =?us-ascii?Q?Fn8h-UezBi-8wIGQkZD9xfamIoNlEupGpJYjj7J?=
+ =?us-ascii?Q?8fifTJCnZ2eEU7ltnbybBR9tFYkavvBCE7h2-Tj?=
+ =?us-ascii?Q?31zOkWxJEe3vtW6MgQ=5FugQoYCLDq4R7sVMsmgtk?=
+ =?us-ascii?Q?7T6-=5FPTITP9--V3TpxVuBvqRGAdCkTQcoi9HqoG?=
+ =?us-ascii?Q?EBPGQYis2hpGolM6XGqdcaKrMo7SoYXi0b2jSaZ?=
+ =?us-ascii?Q?0nyuEZGZf0h9w1VSTTf6UFAS28hSziAtgZiaMbk?=
+ =?us-ascii?Q?NRoISmg-OcYwYfz6j0ywqiilY-9TMjlG62FnMSX?=
+ =?us-ascii?Q?j=5Fn60RxH9WvS3U4dLovnhC8X77uvzgwzguUgD3g?=
+ =?us-ascii?Q?duUOOVMiXj7vML68pIWs0BKJG36jpPnvcd3a-Hi?=
+ =?us-ascii?Q?UDJe05Sa5IZy-4Z61CJWZ4ytaIQxFPAvhg58wYT?=
+ =?us-ascii?Q?hpiBkAqHw-1xQXzY3KB0=5FBtcbio5heFfbng-BA7?=
+ =?us-ascii?Q?Gw-vip6FnU=5F7tTgmCbL6Z1Re3PslmliypW1tgmK?=
+ =?us-ascii?Q?cA321KWREk5jdsOWrNtRDRF=3E?=
+
+--4738d557c0333e1717fca91c7b63e1ac99cca01634cd78847dffaca21408
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=us-ascii
+Mime-Version: 1.0
+
+HEPATITIS A - PALESTINE AUTHORITY (02): (GAZA)
+**********************************************
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+Date: Fri 19 Jan 2024 09:57 EST
+Source: The Hill [edited]
+<https://thehill.com/policy/international/4417536-gaza-un-warns-viruses-spr=
+eading-poor-conditions/>
+
+
+The UN warned that viruses are spreading in the Gaza Strip amid poor
+sanitary conditions and lack of resources. Palestinians in Gaza have
+limited access to health care, and illness is spreading in overcrowded
+shelters amid Israel's continued bombardment. More than 8000 cases of
+[suspected - Mod.LL] viral hepatitis A are linked to overcrowding in
+shelters, according to Gaza's Ministry of Health. Laboratories in
+hospitals are unable to perform tests due to lack of materials.
+
+WHO Director-General Tedros Adhanom Ghebreyesus said in a post on X,
+formerly known as Twitter, that 24 cases of hepatitis A were confirmed
+but no deaths so far. He added that there are several thousand people
+with jaundice, "presumably also due to Hepatitis A."
+
+Hepatitis A is rarely deadly. It can be transmitted through contact
+with an infectious person or through contaminated water and food,
+according to the WHO. Tedros said in his post that "inhumane living
+conditions" with lack of clean water will enable hepatitis A to spread
+further.
+
+About 60 000 pregnant women are at risk of not getting adequate care
+in case of complications, the UN Office for the Coordination of
+Humanitarian Affairs (OCHA) said in its latest update Thursday [18 Jan
+2024]. Since the start of hostilities, hundreds of premature births
+and miscarriages have been reported.
+
+Water availability is shrinking each day in Gaza, according to OCHA's
+latest update. It added that the current sanitation and water
+conditions pose a high risk for further spread of hepatitis A.
+
+[Byline: Filip Timotija]
+
+--
+Communicated by:
+ProMED
+
+[Waterborne diseases such as viral hepatitis A and E are common in
+wartime and other periods of population upheaval. While some of the
+cases here have reportedly been diagnosed as hepatitis A (presumably
+by detection of IgM anti-HAV antibody), it is possible that hepatitis
+E is also circulating. In low- or middle-income countries with
+substandard water supplies, most children above the age of 10 will be
+IgG anti-HAV seropositive, indicating immunity from subclinical or
+anicteric HAV as a child. Knowing the age of the jaundiced cohort and
+whether more severe cases are occurring in pregnant individuals can
+help suggest whether HEV is involved. - Mod.LL
+
+ProMED map:
+Palestinian Authority:
+<https://promedmail.org/promed-post?place=3D8714337,92>]
+
+[See Also:
+Hepatitis A - Palestinian Auth: (GZ) displaced persons, MOH
+http://promedmail.org/post/20240119.8714317
+2023
+----
+Hepatitis A - Gaza Strip: displaced persons
+http://promedmail.org/post/20231203.8713476
+Hepatitis A - Lebanon: threefold increase vs 2022, Baalbek
+http://promedmail.org/post/20230827.8711851
+2022
+----
+Hepatitis A - Lebanon (02): (TR, AK)
+http://promedmail.org/post/20220619.8703946
+Hepatitis A - Lebanon: (Tripoli)
+http://promedmail.org/post/20220615.8703880
+2015
+----
+Hepatitis A - Lebanon http://promedmail.org/post/20150423.3317814
+2014
+----
+Hepatitis - Lebanon: (BQ) refugee camp, RFI
+http://promedmail.org/post/20141024.2897146]
+.................................................ll/rd/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3DOm_RGP7f7Cwzny10lUsCrpz5HVzhJ91qJDSIR4cXy4JoMDAwdTAwMEPOrs5=
+RoCjiK_ysR7j9fmvcQi7VFMuA5mT5TlgwCeFante3R0s1d2PF-Hr22dT1yVT9msJANCWFe7H1B_=
+ueBLPhVm4LuEqXZHhuAjqNjpMdXfNGcXykf4RC15YK2r8mO48nPWhVjiG-aGXiVI51eBzgYsNgS=
+xEKwSZNuT1RCNGcI4O5FzAFHUqzthhIOpuG9fjbm4WpaG9C8F9cclaKF3D0ZkaHmNEI-0IbtDsV=
+Hmr3B0u2WXBFOcq6vsM5vQS3W5bifTtBxvldOH30qYndrn8EU2hf7sBL6tAq2Z5LV-7ltbevBTC=
+XbPYzi5YAOfsgxVQJfXZSW3dZ3-pdrgaCDkGjdTRf_3W6z9yswgvAe38-ZBiM6bhAXOJuwNBCbx=
+thHDDQZl5of2tK9ZCVT4tqGVFnIX0LRtPJNbU_Y5P3C_u-ZezA1AdWJ7H0xY8IcuUkyyCnEfDNH=
+Mx5OzIG--dFJU3y2IArEX-y6vABakcNMZlRbRd60TIgeJwjFX1MlMkWX4cUqY50MnXL7wHn8zra=
+rOvm5BqJpqYgZuP_bfxUCt-oYEI2if3zn1bvvAszA-DHOUjweaDIdhTXy2VezOenKzjfTWGiHBa=
+w7pYL0qi8JORC6iSsJ78hFZDqi8R4bSCCb_-xZNR9CCfq-BP9FSuFTqeM02PVTB6WJoqo7AMuJA=
+PRtMFstYX562XbuJBMQaOphMYrtrIzjml-GRv-DM02cvWnhlaSP14R08LsEBnTbRd07shAuVHbj=
+2uLwfcw2hfI_M_w-wmwnWiHnJ0xXK5vRsHO7iQWQnGVQDND__yBPB8YbTl63nApxq-JI0BqOrLm=
+Qb3r82GNV0rX0Bv2L3OPSyLqk-GRMt_hvwOZ36SkQ6666d8OrHo_rsixA7wU-asREpUppCRJIZu=
+QM_ACLJGHu4aQ7F3PkQsssEpAC698Q9Rd1SZYya2OLr2uZcquC4dxiMyrVbCTcb2B0t-7sEVUGS=
+2u6gvhvgVenjM2dR6aJ2EfbJ6KD95fcz75STKHC2EkVG-p9G4H77clI5PUpidmEOanIlbiFOBum=
+hmjFH78XDQcW61HodignPHGLu_vPg4tv2Jad1NY6MwZOhpHk7cfmM2IrdRhacSCH1Rq5bTi8JVe=
+APEkQ__PXJXWoEUNjohDpyKGbppgqJrD8VgCSpUwI4k=3D )
+############################################################
+############################################################
+
+--4738d557c0333e1717fca91c7b63e1ac99cca01634cd78847dffaca21408
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>HEPATITIS A - PALESTINE AUTHORITY (02): (GAZA)<br>*******************=
+***************************<br>A ProMED-mail post<br><a href=3D"https://u19=
+268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisIijpefK5PNjW-mL-YZGnfgDOxU=
+1G3gjwnPSi2Tfv3HA/435/5FEFBj57QoCBpMWRTt8Oew/h0/JHqT4Ppbtr9PbCyDonLlf1Cy6zu=
+eXmGA4dRcpuFgOiA">http://www.promedmail.org</a><br>ProMED-mail is a program=
+ of the<br>International Society for Infectious Diseases<br><a href=3D"http=
+s://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisCT5tpD4Upm3qyMCbcYS=
+Qvc/435/5FEFBj57QoCBpMWRTt8Oew/h1/wefBQTepsNnfdzOVkZFDAuJ-Xj6T3gaXwSmf4usMd=
+BQ">http://www.isid.org</a><br><br>Date: Fri 19 Jan 2024 09:57 EST=0D<br>So=
+urce: The Hill [edited]=0D<br><a href=3D"https://u19268662.ct.sendgrid.net/=
+ss/c/n2BLS7Nz6isdK7W6nsHw61x8JxMopQpDENN-UzqPaLE9l6O9pUFkbwWU2V6Hq41SOYoqJ4=
+VKZeJYo30AuTdAIxWbGazF5NDqQiApj4RodumRLN19ZM3bU6QyUAql7l_9DxI7N0EQkhIAqYCxi=
+qPZKg/435/5FEFBj57QoCBpMWRTt8Oew/h2/QI7UEPomqur7aDGf7MvqhEtXGbADpHt11M5ZTIU=
+EzDw">https://thehill.com/policy/international/4417536-gaza-un-warns-viruse=
+s-spreading-poor-conditions/</a>=0D<br>=0D<br>=0D<br>The UN warned that vir=
+uses are spreading in the Gaza Strip amid poor<br>sanitary conditions and l=
+ack of resources. Palestinians in Gaza have<br>limited access to health car=
+e, and illness is spreading in overcrowded<br>shelters amid Israel's contin=
+ued bombardment. More than 8000 cases of<br>[suspected - Mod.LL] viral hepa=
+titis A are linked to overcrowding in<br>shelters, according to Gaza's Mini=
+stry of Health. Laboratories in<br>hospitals are unable to perform tests du=
+e to lack of materials.=0D<br>=0D<br>WHO Director-General Tedros Adhanom Gh=
+ebreyesus said in a post on X,<br>formerly known as Twitter, that 24 cases =
+of hepatitis A were confirmed<br>but no deaths so far. He added that there =
+are several thousand people<br>with jaundice, "presumably also due to Hepat=
+itis A."=0D<br>=0D<br>Hepatitis A is rarely deadly. It can be transmitted t=
+hrough contact<br>with an infectious person or through contaminated water a=
+nd food,<br>according to the WHO. Tedros said in his post that "inhumane li=
+ving<br>conditions" with lack of clean water will enable hepatitis A to spr=
+ead<br>further.=0D<br>=0D<br>About 60 000 pregnant women are at risk of not=
+ getting adequate care<br>in case of complications, the UN Office for the C=
+oordination of<br>Humanitarian Affairs (OCHA) said in its latest update Thu=
+rsday [18 Jan<br>2024]. Since the start of hostilities, hundreds of prematu=
+re births<br>and miscarriages have been reported.=0D<br>=0D<br>Water availa=
+bility is shrinking each day in Gaza, according to OCHA's<br>latest update.=
+ It added that the current sanitation and water<br>conditions pose a high r=
+isk for further spread of hepatitis A.=0D<br>=0D<br>[Byline: Filip Timotija=
+]=0D<br>=0D<br>--=0D<br>Communicated by:=0D<br>ProMED<br><br>[Waterborne di=
+seases such as viral hepatitis A and E are common in<br>wartime and other p=
+eriods of population upheaval. While some of the<br>cases here have reporte=
+dly been diagnosed as hepatitis A (presumably<br>by detection of IgM anti-H=
+AV antibody), it is possible that hepatitis<br>E is also circulating. In lo=
+w- or middle-income countries with<br>substandard water supplies, most chil=
+dren above the age of 10 will be<br>IgG anti-HAV seropositive, indicating i=
+mmunity from subclinical or<br>anicteric HAV as a child. Knowing the age of=
+ the jaundiced cohort and<br>whether more severe cases are occurring in pre=
+gnant individuals can<br>help suggest whether HEV is involved. - Mod.LL<br>=
+<br>ProMED map:<br>Palestinian Authority:<br><a href=3D"https://u19268662.c=
+t.sendgrid.net/ss/c/sSnCkKCWBvais3EuVAOvgy2WOIX7pp1nXnn4AbwuQ3Z6WbkfhqXYXU-=
+aTMPJ8yThHwV4khMoQjl_EeLFp5DRvA/435/5FEFBj57QoCBpMWRTt8Oew/h3/1Ck_MQfdUTaee=
+nmmzvNcchT__fVnw7mgpW45S2QmP2o">https://promedmail.org/promed-post?place=3D=
+8714337,92</a>]<br><br>[See Also:<br>Hepatitis A - Palestinian Auth: (GZ) d=
+isplaced persons, MOH<br>http://promedmail.org/post/20240119.8714317=0D<br>=
+2023=0D<br>----=0D<br>Hepatitis A - Gaza Strip: displaced persons<br>http:/=
+/promedmail.org/post/20231203.8713476=0D<br>Hepatitis A - Lebanon: threefol=
+d increase vs 2022, Baalbek<br>http://promedmail.org/post/20230827.8711851=0D=
+<br>2022=0D<br>----=0D<br>Hepatitis A - Lebanon (02): (TR, AK)<br>http://pr=
+omedmail.org/post/20220619.8703946=0D<br>Hepatitis A - Lebanon: (Tripoli)<b=
+r>http://promedmail.org/post/20220615.8703880=0D<br>2015=0D<br>----=0D<br>H=
+epatitis A - Lebanon http://promedmail.org/post/20150423.3317814=0D<br>2014=0D=
+<br>----=0D<br>Hepatitis - Lebanon: (BQ) refugee camp, RFI<br>http://promed=
+mail.org/post/20141024.2897146]<br>........................................=
+.........ll/rd/jh<br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3DOm_RGP7f7Cwzny10lUsCrpz5HVzhJ91qJDSIR4cXy4JoMDAwdT=
+AwMEPOrs5RoCjiK_ysR7j9fmvcQi7VFMuA5mT5TlgwCeFante3R0s1d2PF-Hr22dT1yVT9msJAN=
+CWFe7H1B_ueBLPhVm4LuEqXZHhuAjqNjpMdXfNGcXykf4RC15YK2r8mO48nPWhVjiG-aGXiVI51=
+eBzgYsNgSxEKwSZNuT1RCNGcI4O5FzAFHUqzthhIOpuG9fjbm4WpaG9C8F9cclaKF3D0ZkaHmNE=
+I-0IbtDsVHmr3B0u2WXBFOcq6vsM5vQS3W5bifTtBxvldOH30qYndrn8EU2hf7sBL6tAq2Z5LV-=
+7ltbevBTCXbPYzi5YAOfsgxVQJfXZSW3dZ3-pdrgaCDkGjdTRf_3W6z9yswgvAe38-ZBiM6bhAX=
+OJuwNBCbxthHDDQZl5of2tK9ZCVT4tqGVFnIX0LRtPJNbU_Y5P3C_u-ZezA1AdWJ7H0xY8IcuUk=
+yyCnEfDNHMx5OzIG--dFJU3y2IArEX-y6vABakcNMZlRbRd60TIgeJwjFX1MlMkWX4cUqY50MnX=
+L7wHn8zrarOvm5BqJpqYgZuP_bfxUCt-oYEI2if3zn1bvvAszA-DHOUjweaDIdhTXy2VezOenKz=
+jfTWGiHBaw7pYL0qi8JORC6iSsJ78hFZDqi8R4bSCCb_-xZNR9CCfq-BP9FSuFTqeM02PVTB6WJ=
+oqo7AMuJAPRtMFstYX562XbuJBMQaOphMYrtrIzjml-GRv-DM02cvWnhlaSP14R08LsEBnTbRd0=
+7shAuVHbj2uLwfcw2hfI_M_w-wmwnWiHnJ0xXK5vRsHO7iQWQnGVQDND__yBPB8YbTl63nApxq-=
+JI0BqOrLmQb3r82GNV0rX0Bv2L3OPSyLqk-GRMt_hvwOZ36SkQ6666d8OrHo_rsixA7wU-asREp=
+UppCRJIZuQM_ACLJGHu4aQ7F3PkQsssEpAC698Q9Rd1SZYya2OLr2uZcquC4dxiMyrVbCTcb2B0=
+t-7sEVUGS2u6gvhvgVenjM2dR6aJ2EfbJ6KD95fcz75STKHC2EkVG-p9G4H77clI5PUpidmEOan=
+IlbiFOBumhmjFH78XDQcW61HodignPHGLu_vPg4tv2Jad1NY6MwZOhpHk7cfmM2IrdRhacSCH1R=
+q5bTi8JVeAPEkQ__PXJXWoEUNjohDpyKGbppgqJrD8VgCSpUwI4k=3D" target=3D"_blank" =
+class=3D"Unsubscribe--unsubscribePreferences" style=3D"font-family:sans-ser=
+if;text-decoration:none;">Unsubscribe Preferences</a></div><br>############=
+################################################<br>#######################=
+#####################################<br><br><img src=3D"https://u19268662.=
+ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/435/5FEFBj57QoCBpMWRTt8Oew/ho.g=
+if" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"height:1px !imp=
+ortant;width:1px !important;border-width:0 !important;margin-top:0 !importa=
+nt;margin-bottom:0 !important;margin-right:0 !important;margin-left:0 !impo=
+rtant;padding-top:0 !important;padding-bottom:0 !important;padding-right:0 =
+!important;padding-left:0 !important;"/></body>
+</html>
+--4738d557c0333e1717fca91c7b63e1ac99cca01634cd78847dffaca21408--

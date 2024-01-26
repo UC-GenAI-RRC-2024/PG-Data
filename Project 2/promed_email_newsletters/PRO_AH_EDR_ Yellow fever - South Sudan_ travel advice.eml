@@ -1,0 +1,410 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a98:c004:0:b0:1eb:e128:bbe3 with SMTP id l4csp4616986eic;
+        Tue, 16 Jan 2024 15:55:17 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IFcPlVrQncT5jc1G9LOio7miA7/22gRkaDxTl9uc5bFVjPGr7cSER66PQeEipsMiGXEAD7g
+X-Received: by 2002:a05:620a:22f0:b0:783:1975:41fa with SMTP id p16-20020a05620a22f000b00783197541famr9051255qki.117.1705449317214;
+        Tue, 16 Jan 2024 15:55:17 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1705449317; cv=none;
+        d=google.com; s=arc-20160816;
+        b=TUx25u1fMA/s2sGM+a4wNqc0c20r1sCThemTVkGO9FjKed4deeqYn12UhQP4vCK9Pm
+         98ypoJaL8iVQFJF3KtfHiwLdRqbAZbjP0zHOk4au9IZWNhO1e3BNktwe68U6FSSpo/t4
+         2VTTMcoEn91uiq/plC6IhFF+wcHNJZhtYyR8J4Sv3daevw55CWmdEEE8JHWoFZg81gJh
+         joqpH8nCWjA/MiUjbvxR8215agb2wptrvEIkUS+DYhaVoLPirdNKYyjCDRqMz5PdU/rB
+         hB27A/9WOvcqr1migW+6kDCVfrfIhIIrQMrSm2C/UlAmI99YtLJl2UrxwpYhLrmaHb12
+         ohbg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=4Kx0L1Unh27dAxhJ1kIpb+FAIo8n3FhIGKnkXz2UccE=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=SXh1XAkEN0fnE/+Fdl9h8KINcpLacA6XiLNU6wE+W1j7OHdqyIYTONTmc9v/HreZq2
+         R1CcsyQVpyttWNcVARvRtlg/flKPbiJZZF620TFP8vPOn1r372JR7tu3dVh+zpYRoPSq
+         V6b4A4G+5Ezbk3uosjzpa2o1+GpZm7BLPab0eMvyyXYcERSwDO5Hf4Z2c7bPOe8S0LMN
+         R1BbN4lL5GKXhLQAzi7Z79io5yKKd4qMJ1dmWlhEuL2CTAs5mYc5bxTzv/hC/riPYXiM
+         GZamISR0fqXOqh52Ow3l5O6Lin6CKHB47b85THBqDdR7UX28kLjK8gTx0hbwYBh+KO4g
+         Mkpg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=IfU9ocn9;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=FNXgv3q5;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id a21-20020a05620a02f500b0078348feade6si8972795qko.317.2024.01.16.15.55.16
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 16 Jan 2024 15:55:17 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=IfU9ocn9;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=FNXgv3q5;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=4Kx0L1Unh27dAxhJ1kIpb+FAIo8n3FhIGKnkXz2UccE=;
+	b=IfU9ocn9iL2BsBcnEKzPtSlyDCe7MTNJwekflFCQrGUzmfBjSp53S/0xET75isx0+BZo
+	n8ifGnOkOcyzM4ab76zBtawYHRlBeymb+Gki9J6fhIhHeV45VRa0HFQ9cw5es22KCVilIa
+	Kz94Qhj8R7r8BRiD/AuabvzFt2uwFkYISbBb7MNNsHHEusT3DeXCMGj/ehV6nMB8eAlV/3
+	PswfDmoq3ZY6foi+bhM4qjauKD/np62oS2vJQ+zFeB0XKUZ1de3MkwfZ857qs2wxnmov3j
+	iy+Lo2FG32OhkWmJ9VsGsCxO4UyzCcvthJPbHwtFOSLUF/6fe1712SY/4TpAaU5Q==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=4Kx0L1Unh27dAxhJ1kIpb+FAIo8n3FhIGKnkXz2UccE=;
+	b=FNXgv3q5KgBf5UtEtXqAljUU9RRA3jot92C5pY2INUckbRK1AxREh4OZQivk7OroVDos
+	WHZImDyXdsouBFK39KS9qvxbp1fLPNaKXCT+gSC+vuGkTP365une5lDsVo6INEehRbwh1Y
+	Jm22iGWB1+QV2l8KuiuaOB4BvydmCmhZA=
+Received: by filterdrecv-64db4f9f4f-hq4gz with SMTP id filterdrecv-64db4f9f4f-hq4gz-1-65A71763-6
+        2024-01-16 23:55:15.069513778 +0000 UTC m=+7881259.777740634
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-32 (SG) with HTTP
+	id 5iqzcOjtRNCcWywoddjMLA
+	Tue, 16 Jan 2024 23:55:14.999 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=bcd462de9674b4cf0435febcef083b87969b04e5408cfc4a3acacf1880e1
+Date: Tue, 16 Jan 2024 23:55:16 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <5iqzcOjtRNCcWywoddjMLA@geopod-ismtpd-32>
+Subject: PRO/AH/EDR> Yellow fever - South Sudan: travel advice
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iBwDp6zPWQkPsNsaXoq0shHxlbXfHEY9NCjYHHA?=
+ =?us-ascii?Q?U=2FmQc3nV9CS=2FGAgn0PWPnGXA9q83svXiAdVcanS?=
+ =?us-ascii?Q?77Y4alls3feLT2FJjaaVZHFAtLFemI5wynulf57?=
+ =?us-ascii?Q?z3an8+GZvFpu7TgYcXeVn6nOjcBtiwMuf+XgGjQ?=
+ =?us-ascii?Q?NCBKCcU4YKl2ZY8YPGox94szSofQxZl59a4ksH?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUiShGf=2FO8XJWpH34Od4Nd?=
+ =?us-ascii?Q?fxXa6jil96uRcJkF+N+LeVnO1tx80ddOyoyOo=2Fc?=
+ =?us-ascii?Q?Brxcl3ERAm0cOY743=2FFH59DWiSf5OzXORh1DLKt?=
+ =?us-ascii?Q?hb1NMKty3PsA5ju0ZzxCrq1WQuZSEQf=2FJlWtgqv?=
+ =?us-ascii?Q?cZmsyCHlNUZsDXNsx69JE8yUSe81DMbyUHwcRH+?=
+ =?us-ascii?Q?Wvr=2Fisg1fBYi2rshCbYWX5WdC0P1XWwUXgezHLT?=
+ =?us-ascii?Q?be7fwY6KfW7rB1Plp4U1r5U9H3zCB71FxBH70SG?=
+ =?us-ascii?Q?r2P0bd2h+iBPIMvU1M0DGiZEG19KwM06ajJDEzG?=
+ =?us-ascii?Q?2YI2O6jwzd+leqUWg1BRcZY4PSGXckihlYn+t=2Fj?=
+ =?us-ascii?Q?eiZBC25H+ilhoy0VQQQZ04fLOuxot5iG1KRtWEk?=
+ =?us-ascii?Q?XCugKpQj0suYdvgxuxnAE8t3BLTnQdxoZ7LiYy9?=
+ =?us-ascii?Q?DHZKTOvvsJ9cDB0=2F4i8gO5DitBswVOb3fHg8gM4?=
+ =?us-ascii?Q?QuU4Fi2KO9dmGREgCKIfRpDG=2F3OBoNMOrPXcEwt?=
+ =?us-ascii?Q?4ruyHPJad9AMXMvoUCI3Y7uLJKKgRxZdhwmXLxM?=
+ =?us-ascii?Q?+2j3Vnv9c0U7YblSlsIH5D7Ou06LsJyH5nXfl9p?=
+ =?us-ascii?Q?QrCROf19B8B=2FUPJ6I8rgCWO6hjNIj+PdZuN720m?=
+ =?us-ascii?Q?j3oWTpuqxW8wTPyDaTiMHi+W9jNa28q9MxDQuOc?=
+ =?us-ascii?Q?ZLlU=2FlAInuLwqW4tk+tZbW8sPo+3+0TocjmzNOX?=
+ =?us-ascii?Q?nD3=2F3XbuFqdXee4cbGgKMmo2fK3wOaO0=2FkoBM1z?=
+ =?us-ascii?Q?4i7vQFZop5+mIl5G=2FpNOQuGW3w=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2EBIwiOGEbN?=
+ =?us-ascii?Q?v6uLmCfDJjw4hruTElag9p1FOHiINiTzb5oMDAw?=
+ =?us-ascii?Q?dTAwMP22MSQEFIGiydiYWd4Cx0woRapcQxhVYTa?=
+ =?us-ascii?Q?9jaFYK7gKHaHheFiDIbuYLqCCE9e8HYko8xk91X?=
+ =?us-ascii?Q?4aPZ9g1stvawoKB53O6nrp3kvqdw6Ic3nt-6BEA?=
+ =?us-ascii?Q?rwp2C=5FYpPq673WkkA=3D=3D=2EuFud7yrK4fGO=5F13oElw?=
+ =?us-ascii?Q?EaYQ9JGtNlx6RAyBhzOMQpj5oMDAwdTAwMBa=5FsP?=
+ =?us-ascii?Q?KM4=5FKqBnajQe3RDrpmjHaG1BL1DcUYbOFPP0TwW?=
+ =?us-ascii?Q?CPdNlqWFR=5FHdVAihYMb91Nh0wzRffkl7o53SfDC?=
+ =?us-ascii?Q?ikoMxavB2BpU-qzs=5FM-zF7g2rbIF6ItmDhNN8=5FZ?=
+ =?us-ascii?Q?AqK6mlKUvUU4a4aMOapsjvKBneFgRPmT1ufzU5f?=
+ =?us-ascii?Q?u26oXCpWzS9pCI8t=5FlMZqin7ImYfJPDtQpxHnJc?=
+ =?us-ascii?Q?NmKLI52tQRgGX3bvNNJQwnLJSPaPBNMlHzwS7Ii?=
+ =?us-ascii?Q?UvDE7HgqJctaKKcAnDvn5VdNiNOUU2V1KaRyCPj?=
+ =?us-ascii?Q?GKYksyp8nksDBuBlpB9ZRGfINZ5QG1TqjbXC1fw?=
+ =?us-ascii?Q?G3jJapA6AxFb=5F0vwH5bhOFducJnXcjBqjFbxM-6?=
+ =?us-ascii?Q?VEe8OZC0haAWuXpiFndCDi73SSgOVg3cytvRxr8?=
+ =?us-ascii?Q?mmhO1ea6d0kLcohhhwOmBUfftQpK8=5FF4dYoedOO?=
+ =?us-ascii?Q?GpQ8oUz1hBaR=5Fanouy4XL6ZhKjWBNuKAoU5TwXH?=
+ =?us-ascii?Q?OqPYLE5d8c8dI4=5FpKs18Gy1XHVWH4z9YKAxo-kg?=
+ =?us-ascii?Q?74VKW6JAO8gaFqj0bRdnrW85TXCBM2ZJiEZaxqd?=
+ =?us-ascii?Q?30EiDkb=5FcQoCl-vJ-bN6Ig9AlPOy08OvF0FfIp2?=
+ =?us-ascii?Q?-KtTd3ndfPMIJrdZ=5FaE=5FeywC-JQlNMeOssWFzIk?=
+ =?us-ascii?Q?WMt-opimopeX8=5Fep22b8lmOwcM8=5FHcclq0qxdPE?=
+ =?us-ascii?Q?1gnVD1glIZRgSvK6VE4At1BbshkJfdi=5FyjyLQC5?=
+ =?us-ascii?Q?sZ88bQJofGpZxVxaODE7OBUAtV4Pp4YxxUgw-GB?=
+ =?us-ascii?Q?Cy1x9yacyZvnSGToY-aq-v4A2z4prtL=5F4dOrrNw?=
+ =?us-ascii?Q?TbTlN5zV5A-skt2KUtMh-3cKkdBADwzx31DGh0q?=
+ =?us-ascii?Q?p5dQnmG-3KkEM3h7ySCkevRGzkf5CD-yUTUGVfH?=
+ =?us-ascii?Q?zrRjdkKU3Krx8tLwXQbTN0d-u297kCD69Afa2I2?=
+ =?us-ascii?Q?K-cHtuUecgIawpSskwKgHtMCvEQaEpBmp2ybvKi?=
+ =?us-ascii?Q?8Y5fN8nkRa0jz-25uff4dqaHwh0=5FENmBwBErZhJ?=
+ =?us-ascii?Q?UX7hv7XxkkrZvwkApvdYV2SBpXCzFmGnJKUb85p?=
+ =?us-ascii?Q?KNwHjA=3D=3D=3E?=
+
+--bcd462de9674b4cf0435febcef083b87969b04e5408cfc4a3acacf1880e1
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=us-ascii
+Mime-Version: 1.0
+
+YELLOW FEVER - SOUTH SUDAN: TRAVEL ADVICE
+*****************************************
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+Date: Wed 10 Jan 2024
+Source: Public Health Scotland [edited]
+<https://www.fitfortravel.nhs.uk/news/newsdetail.aspx?id=3D24601>
+
+
+Public health authorities in South Sudan reported an outbreak of
+yellow fever in Yambio County, West Equatoria State on 24 Dec [2023].
+
+Yellow fever is a disease that is transmitted by infected mosquitoes
+that bite during the day. The most common symptoms are fever, muscle
+pain with prominent obvious backache, headache, loss of appetite, and
+feeling or being sick (nausea or vomiting). A small proportion of
+people that become infected can become severely unwell and die.
+
+Advice to travellers
+--------------------
+If you are visiting an area where yellow fever is present you should:
+- Use personal protective measures to avoid mosquito bites at all
+times
+
+A yellow fever vaccine is available to protect you against yellow
+fever. Vaccination is recommended if you are visiting areas where
+there is a risk of yellow fever transmission. The vaccine is only
+available at designated yellow fever centres.
+
+South Sudan requires a yellow fever vaccination certificate for all
+travellers aged 9 months and older.
+- Locate your nearest yellow fever vaccination centre in Scotland [or
+in other countries. - Mod.TY]
+- Locate your nearest yellow fever vaccination centre in England,
+Wales and Northern Ireland [if in the UK]
+
+Detailed guidance can be found on [Public Health Scotland's]
+fitfortravel advice page on Yellow Fever [or at the CDC site at
+<https://www.cdc.gov/yellowfever/>].
+
+---
+Communicated by:
+ProMED
+
+[Yellow fever (YF) is endemic across sub-Saharan Africa. As of 28 Oct
+2023, the Africa CDC reported a total of 2779 yellow fever cases and
+36 deaths (CFR: 1.3%) in 7 African Union countries. The impacted
+countries are Cameroon (41 cases; 4 deaths), Central African Republic
+(326; 5), Congo (324; 2), Gabon (79; 0), Guinea (178; 4), Nigeria
+(1819; 21), and Uganda (12; 0) (see Yellow fever - Africa (05): update
+http://promedmail.org/post/20231108.8713046). Because some of these
+cases are reported from countries that neighbor South Sudan,
+occurrence of current cases in South Sudan is not surprising.
+
+The above report does not indicate how many YF cases have been
+reported in South Sudan. However, a local TV video (in English) states
+that there have been 5 cases of YF in a town in the west of the
+country near the border with the Democratic Republic of Congo. The
+Ministry of Health, with the assistance of the World Health
+Organization, has mounted a vaccination campaign in the area (video
+accessible at <https://www.youtube.com/watch?v=3DisZBivouP_o>). Prompt
+response is critical because YF can quickly spread. - Mod.TY
+
+ProMED map:
+South Sudan: <https://promedmail.org/promed-post?place=3D8714269,8402>]
+
+[See Also:
+2023
+----
+Yellow fever - Africa (05): update
+http://promedmail.org/post/20231108.8713046
+Yellow fever - Africa: West Africa, fatal
+http://promedmail.org/post/20231124.8713287
+Yellow fever - Africa (04): Senegal (ZG) Central African Republic
+http://promedmail.org/post/20230701.8710883
+Yellow fever - Africa (02): fatal
+http://promedmail.org/post/20230816.8711719
+Yellow fever - Central African Republic: fatal
+http://promedmail.org/post/20230627.8710783
+2022
+----
+Yellow fever - Africa (02): east, west & central Africa, WHO
+http://promedmail.org/post/20221228.8707485
+Yellow fever - Africa: East, West, and Central Africa, WHO
+http://promedmail.org/post/20220905.8705409]
+.................................................sb/jh/ty/rd/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3Drw3aIl7fVz-iCkUePFm1ygrNjHgj6TUor92LRVdbroJoMDAwdTAwMFppxAj=
+5bAnfFIKR9xb3o7XWju3RSvXUw7zhvgtnO81RQwkYBATZesVlzn1aefLIuUIkosoYEHGMgg9DzQ=
+JN8eB59ovkSf8RUTWikMfr3Lw4fbTzCfz4vzufGJOFaaGyWei4Oer0tuMpuzqS31mAl80FTOA2Y=
+KZ3q4SovtCP04KwR22nNU5gf942EHmM9lfotTt3nTcljmIl1AQap7vvpsrQvkfUM-mlIIioc_06=
+DRqvJqYquAov-hsPrEJXkghLssI2gYZAS9tqN4gBwNTupUwTsV7oZ294D-CIHNsWTzV-7ZgpwVj=
+SksBEsJ-K23w3sOsbR37YQdvJ1YQou5cMZ1Ms6vjkova-0eTwUgRoj5YHJ1ymf3Urgs16P54GyP=
+W6PuuH9KwJV4wx0MhWWS3_uOFdfommpIVk3GgDKeKF8N8UjIAwcFbzRVH3TV8v4RyotJ0LmZMLU=
+BzyLA9vqZIp72XrL1iijHvq_OAi9YyT1LB5tF-IOaj4do15NVSCabmGhF27nwbUgnqaiDgsYK4y=
+VamWYatGEr1HvTt-D6mbRFhV-hY463xt2jL9vLMKmdQy1pURwTyryg-uh--sNS7chiug_5MoZxR=
+3Bwmn868dwUm3GebXaxyeOrcTYz4-xAQkn0HZpEAiinUnIKLNNnKtpdllBcO063FhO16AWvs-nr=
+wqtq4pFaJtYm2h15T0uEGblIH8KxiZOrl1az9QGhQ_TcHUwhuhCVs9efpIEafEJbXb_sR-ChEgG=
+yQAJnlcxHLnINb1ggqy2Msf_5M5uOcIlCrXxmiIyfmSM61tFss4Mv1VSRZDzwItLCjrnISobnh6=
+TQ8Kq597G1XoUiS2e3ZbrK-vefgiePLiFDDfoNU6CQpf4_PbFii1CFp3qOD5z4bTbIdOrVAuy5m=
+8aNNTH-THi9EcZ-aX6AYS0O6uWTn_qQb-5qfJXITNzzgSz3KIWBNxyqswGo4Vh-8-7LarZ18Y6H=
+d320UXPygGbPU3DLASHKvPrqO6bVZqlD4Gls-OKFRfwpKZZtVB9pkuyjBDajle5i6OVrpd1V_5Z=
+NiFKnaMOQb9nWL_IX5_xboOczovt6Of_cuUykBb-Bj8I2o51RS5btVQr2-LJrFPFDKRzglCKe2f=
+rxo8nTGc66bPXfIJHkthTh89LIzeOy9ovNh3FvnQ-E3Yfu8Lz86r1O_j7xh5ixUc )
+############################################################
+############################################################
+
+--bcd462de9674b4cf0435febcef083b87969b04e5408cfc4a3acacf1880e1
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>YELLOW FEVER - SOUTH SUDAN: TRAVEL ADVICE<br>************************=
+*****************<br>A ProMED-mail post<br><a href=3D"https://u19268662.ct.=
+sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisIijpefK5PNjW-mL-YZGnfgDOxU1G3gjwnPSi=
+2Tfv3HA/431/yk26JQRgRNauwDpu768L2Q/h0/0ZGItm8RYyLbgfgWi2FazXeMHNzJuyL3JjxvY=
+17u6cE">http://www.promedmail.org</a><br>ProMED-mail is a program of the<br=
+>International Society for Infectious Diseases<br><a href=3D"https://u19268=
+662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisCT5tpD4Upm3qyMCbcYSQvc/431/yk=
+26JQRgRNauwDpu768L2Q/h1/u5wfiALHsK9GIsnhO8jwZRvHRp8m_y8rtFkjUaM3pYQ">http:/=
+/www.isid.org</a><br><br>Date: Wed 10 Jan 2024=0D<br>Source: Public Health =
+Scotland [edited]=0D<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/T=
+Lh_csrC34X_iXpbYoMamzOru6yzMmi0bU6OnEQlOaIyVvcgU0qmdLDjKA0JHAzS_2Ir-TgmeBlD=
+Xk2CrIWJvrROylZxvdN2Zk3M8Kx6sO0/431/yk26JQRgRNauwDpu768L2Q/h2/lcE2ntrpsYL-Q=
+7RDUlaZg4SqSJ8bMlvqq6woy8jH4L8">https://www.fitfortravel.nhs.uk/news/newsde=
+tail.aspx?id=3D24601</a>=0D<br>=0D<br>=0D<br>Public health authorities in S=
+outh Sudan reported an outbreak of<br>yellow fever in Yambio County, West E=
+quatoria State on 24 Dec [2023].=0D<br>=0D<br>Yellow fever is a disease tha=
+t is transmitted by infected mosquitoes<br>that bite during the day. The mo=
+st common symptoms are fever, muscle<br>pain with prominent obvious backach=
+e, headache, loss of appetite, and<br>feeling or being sick (nausea or vomi=
+ting). A small proportion of<br>people that become infected can become seve=
+rely unwell and die.=0D<br>=0D<br>Advice to travellers=0D<br>--------------=
+------=0D<br>If you are visiting an area where yellow fever is present you =
+should:=0D<br>- Use personal protective measures to avoid mosquito bites at=
+ all<br>times=0D<br>=0D<br>A yellow fever vaccine is available to protect y=
+ou against yellow<br>fever. Vaccination is recommended if you are visiting =
+areas where<br>there is a risk of yellow fever transmission. The vaccine is=
+ only<br>available at designated yellow fever centres.=0D<br>=0D<br>South S=
+udan requires a yellow fever vaccination certificate for all<br>travellers =
+aged 9 months and older.=0D<br>- Locate your nearest yellow fever vaccinati=
+on centre in Scotland [or<br>in other countries. - Mod.TY]=0D<br>- Locate y=
+our nearest yellow fever vaccination centre in England,<br>Wales and Northe=
+rn Ireland [if in the UK]=0D<br>=0D<br>Detailed guidance can be found on [P=
+ublic Health Scotland's]<br>fitfortravel advice page on Yellow Fever [or at=
+ the CDC site at<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/TLh_c=
+srC34X_iXpbYoMam-1JyyfEtLmNf-wn39AyA654EcAWMnGJmfsLJgoPirOa/431/yk26JQRgRNa=
+uwDpu768L2Q/h3/qPvk4CyBGkBLyX_39MvrDfdul3Q5Q6KAkdbEYVIuNFA">https://www.cdc=
+.gov/yellowfever/</a>].=0D<br>=0D<br>---=0D<br>Communicated by:=0D<br>ProME=
+D<br><br>[Yellow fever (YF) is endemic across sub-Saharan Africa. As of 28 =
+Oct<br>2023, the Africa CDC reported a total of 2779 yellow fever cases and=
+<br>36 deaths (CFR: 1.3%) in 7 African Union countries. The impacted<br>cou=
+ntries are Cameroon (41 cases; 4 deaths), Central African Republic<br>(326;=
+ 5), Congo (324; 2), Gabon (79; 0), Guinea (178; 4), Nigeria<br>(1819; 21),=
+ and Uganda (12; 0) (see Yellow fever - Africa (05): update<br>http://prome=
+dmail.org/post/20231108.8713046). Because some of these<br>cases are report=
+ed from countries that neighbor South Sudan,<br>occurrence of current cases=
+ in South Sudan is not surprising.=0D<br>=0D<br>The above report does not i=
+ndicate how many YF cases have been<br>reported in South Sudan. However, a =
+local TV video (in English) states<br>that there have been 5 cases of YF in=
+ a town in the west of the<br>country near the border with the Democratic R=
+epublic of Congo. The<br>Ministry of Health, with the assistance of the Wor=
+ld Health<br>Organization, has mounted a vaccination campaign in the area (=
+video<br>accessible at <a href=3D"https://u19268662.ct.sendgrid.net/ss/c/TL=
+h_csrC34X_iXpbYoMam9TAdsv1-Lzj_SieYmp_1oCY7TVLWNjWK8YORzSPrwE7aUjzB_2fnCaKa=
+7TejocdiQ/431/yk26JQRgRNauwDpu768L2Q/h4/wVymKiNJhZIV-dMwiECaMmdFSob5CUCC0Hx=
+65h2vFSw">https://www.youtube.com/watch?v=3DisZBivouP_o</a>). Prompt<br>res=
+ponse is critical because YF can quickly spread. - Mod.TY<br><br>ProMED map=
+:<br>South Sudan: <a href=3D"https://u19268662.ct.sendgrid.net/ss/c/sSnCkKC=
+WBvais3EuVAOvgy2WOIX7pp1nXnn4AbwuQ3Z6WbkfhqXYXU-aTMPJ8yTh_ErZqu8OesJyaXaqHS=
+qZ3w/431/yk26JQRgRNauwDpu768L2Q/h5/gMUGUbLlVYmzCwlIeGnqUiLLWnZO17kTnk9PtPwY=
+ysM">https://promedmail.org/promed-post?place=3D8714269,8402</a>]<br><br>[S=
+ee Also:<br>2023=0D<br>----=0D<br>Yellow fever - Africa (05): update<br>htt=
+p://promedmail.org/post/20231108.8713046=0D<br>Yellow fever - Africa: West =
+Africa, fatal<br>http://promedmail.org/post/20231124.8713287=0D<br>Yellow f=
+ever - Africa (04): Senegal (ZG) Central African Republic<br>http://promedm=
+ail.org/post/20230701.8710883=0D<br>Yellow fever - Africa (02): fatal<br>ht=
+tp://promedmail.org/post/20230816.8711719=0D<br>Yellow fever - Central Afri=
+can Republic: fatal<br>http://promedmail.org/post/20230627.8710783=0D<br>20=
+22=0D<br>----=0D<br>Yellow fever - Africa (02): east, west & central Africa=
+, WHO<br>http://promedmail.org/post/20221228.8707485=0D<br>Yellow fever - A=
+frica: East, West, and Central Africa, WHO<br>http://promedmail.org/post/20=
+220905.8705409]<br>.................................................sb/jh/t=
+y/rd/jh<br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3Drw3aIl7fVz-iCkUePFm1ygrNjHgj6TUor92LRVdbroJoMDAwdT=
+AwMFppxAj5bAnfFIKR9xb3o7XWju3RSvXUw7zhvgtnO81RQwkYBATZesVlzn1aefLIuUIkosoYE=
+HGMgg9DzQJN8eB59ovkSf8RUTWikMfr3Lw4fbTzCfz4vzufGJOFaaGyWei4Oer0tuMpuzqS31mA=
+l80FTOA2YKZ3q4SovtCP04KwR22nNU5gf942EHmM9lfotTt3nTcljmIl1AQap7vvpsrQvkfUM-m=
+lIIioc_06DRqvJqYquAov-hsPrEJXkghLssI2gYZAS9tqN4gBwNTupUwTsV7oZ294D-CIHNsWTz=
+V-7ZgpwVjSksBEsJ-K23w3sOsbR37YQdvJ1YQou5cMZ1Ms6vjkova-0eTwUgRoj5YHJ1ymf3Urg=
+s16P54GyPW6PuuH9KwJV4wx0MhWWS3_uOFdfommpIVk3GgDKeKF8N8UjIAwcFbzRVH3TV8v4Ryo=
+tJ0LmZMLUBzyLA9vqZIp72XrL1iijHvq_OAi9YyT1LB5tF-IOaj4do15NVSCabmGhF27nwbUgnq=
+aiDgsYK4yVamWYatGEr1HvTt-D6mbRFhV-hY463xt2jL9vLMKmdQy1pURwTyryg-uh--sNS7chi=
+ug_5MoZxR3Bwmn868dwUm3GebXaxyeOrcTYz4-xAQkn0HZpEAiinUnIKLNNnKtpdllBcO063FhO=
+16AWvs-nrwqtq4pFaJtYm2h15T0uEGblIH8KxiZOrl1az9QGhQ_TcHUwhuhCVs9efpIEafEJbXb=
+_sR-ChEgGyQAJnlcxHLnINb1ggqy2Msf_5M5uOcIlCrXxmiIyfmSM61tFss4Mv1VSRZDzwItLCj=
+rnISobnh6TQ8Kq597G1XoUiS2e3ZbrK-vefgiePLiFDDfoNU6CQpf4_PbFii1CFp3qOD5z4bTbI=
+dOrVAuy5m8aNNTH-THi9EcZ-aX6AYS0O6uWTn_qQb-5qfJXITNzzgSz3KIWBNxyqswGo4Vh-8-7=
+LarZ18Y6Hd320UXPygGbPU3DLASHKvPrqO6bVZqlD4Gls-OKFRfwpKZZtVB9pkuyjBDajle5i6O=
+Vrpd1V_5ZNiFKnaMOQb9nWL_IX5_xboOczovt6Of_cuUykBb-Bj8I2o51RS5btVQr2-LJrFPFDK=
+RzglCKe2frxo8nTGc66bPXfIJHkthTh89LIzeOy9ovNh3FvnQ-E3Yfu8Lz86r1O_j7xh5ixUc" =
+target=3D"_blank" class=3D"Unsubscribe--unsubscribePreferences" style=3D"fo=
+nt-family:sans-serif;text-decoration:none;">Unsubscribe Preferences</a></di=
+v><br>############################################################<br>#####=
+#######################################################<br><br><img src=3D"=
+https://u19268662.ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/431/yk26JQRgR=
+NauwDpu768L2Q/ho.gif" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=
+=3D"height:1px !important;width:1px !important;border-width:0 !important;ma=
+rgin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;=
+margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !importa=
+nt;padding-right:0 !important;padding-left:0 !important;"/></body>
+</html>
+--bcd462de9674b4cf0435febcef083b87969b04e5408cfc4a3acacf1880e1--

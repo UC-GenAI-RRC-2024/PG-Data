@@ -1,0 +1,607 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a05:640c:2d08:b0:1ee:5ffb:29ea with SMTP id p8csp228622eiu;
+        Mon, 22 Jan 2024 16:45:16 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IHARnJ8enZbJX5qtRg3Wj9ESd6lwvEOgudEntxyPI14geXf5pCVUcfvMLQ09AXKIXFA1qve
+X-Received: by 2002:a05:6214:2421:b0:685:d222:cf99 with SMTP id gy1-20020a056214242100b00685d222cf99mr96026qvb.121.1705970716345;
+        Mon, 22 Jan 2024 16:45:16 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1705970716; cv=none;
+        d=google.com; s=arc-20160816;
+        b=BpzGJZaZg99LmhNLwA+tw579dl/5hI1CVY107ooB/jxxLaM9qgjCwmWzj7yfKThcRC
+         WId6e1QE5VURXPa72k2Bg9cWwwT4AgWntuVGRptH+cQ84AdgbB+yzPi7L8hSNq9W4FJ4
+         RsGY8bsfbq+IDdOW3t6joK/DpdCXCfhr3IBe8Di+DHV2J9k4o7bYNZxQ8r0ztasMXq/K
+         BEPvc8o+3dj+K9OBhWZdHgwTUhk69c8mOVILt6xMNmWIWEfJLunSDcDL459SodiJPGyr
+         +HhseDPSYtIgc84W4lh2WdPLnI0+Yp/fY11dHvG9ykq2UEIFPDimtCnNW/vejK3HsRdU
+         PQbw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=CTFTvGT9/DhezgGRrk7ktXnAZ2+7sTHk0SqO3WE2D88=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=mxa/vLAd8XNFBdSPaqQBFLGMWzPVIpn0yDT1MvxUoF67ikplIGoLkHectgZwltDUxN
+         bYp8JRz4tERJMfivPmmy0R6cGjgK07DhOpQ42fE//bmBv0MKijd4U6CF0x2TVIxW4bfS
+         o+lGzB5sAvOAHhLkmlPm2r8Ohr90ctf9T+yDVemAs8KFeKgITRIYQ4DKgD8awYerEyuK
+         +HdZwqE+s5xj4UlniRsrxBRDYCXbkcAVIv8um2CgkzJd3XS6MUo5/uFqyFJRKJnNW3XZ
+         GzxU/fFRFyG+lMrdunM6QxmiDJcV9zkCWzyOvShptcLiNtMgNYbwKX7UEaWu4v2qG4ES
+         DmmQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=LrsPD4ay;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=p+dQewQw;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id x6-20020a05620a0ec600b007835a8a2d3dsi6512187qkm.421.2024.01.22.16.45.15
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 22 Jan 2024 16:45:16 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=LrsPD4ay;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=p+dQewQw;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=CTFTvGT9/DhezgGRrk7ktXnAZ2+7sTHk0SqO3WE2D88=;
+	b=LrsPD4ay3yt2eo1vRLaYL/Xp7UxpEi751tM/l58a5fHFI7q+5+Fum0GOqyPmrcQ0ur5U
+	oMIAo+rxBINg1QKv8i+sU45BWjODZIpB/2AO55atbhtA/D2vcSiJXh/XJ8RIx24z4rwJWa
+	mSPU3VeFjZcNRH96V38b3/Ee82HbUpsNwZ6WO0ojBkqx1yebczqn9qFGvNChtibENsicbI
+	quuqXPoLFW0O7lPeYzZeoc4F3eDdTitXVjerXyto39fSB9Cl8qKnrqLq0iVTuYDX1Tx057
+	e2ho2kV0Y7nAVCfEGAsSk2YMNolKi4lQVNztovlYT3ZfYuXUK+chfVXpNSR2IJ2w==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=CTFTvGT9/DhezgGRrk7ktXnAZ2+7sTHk0SqO3WE2D88=;
+	b=p+dQewQw2FQWHotzI/hLQmIIXpErP7jPziTtv26Xd0KwMfCL0A9wyXNwoc5HMnnzOWI7
+	ic+B6Vbly33qi3sFwvAzeNqdBKq81AmwtiVZtb72L7NIYfFd04idMMD2DlyCPRzM395XmX
+	D7RRpbhT//4HHzhBIwGjCYuzXnEHgbSw4=
+Received: by filterdrecv-canary-6878984bd8-jrpcg with SMTP id filterdrecv-canary-6878984bd8-jrpcg-1-65AF0C1A-34
+        2024-01-23 00:45:15.049175864 +0000 UTC m=+8402637.963927594
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-9 (SG) with HTTP
+	id _7SbXWtNQtm9at_BcjRj3Q
+	Tue, 23 Jan 2024 00:45:14.840 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=f21b6758d21e0b04f4d4c1ab03cdfb3ca722646648bdf008d1acee812f15
+Date: Tue, 23 Jan 2024 00:45:15 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <_7SbXWtNQtm9at_BcjRj3Q@geopod-ismtpd-9>
+Subject: PRO/AH/EDR> Anthrax - Uganda: (KZ, IB)
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iBUJkOKMue7sdE2KO6xwI7244DLsiALl21addF2?=
+ =?us-ascii?Q?Ngz+bpClQrpAljeTacu9rhIbjnw3PvTQg79yqsM?=
+ =?us-ascii?Q?phDt0eX9p39pl1JrkB3ZPmnas534jzzFenUQGTF?=
+ =?us-ascii?Q?wcpnPRL5=2FvQygjt1XH8f=2FR2qIaQOLzaGtBASbtu?=
+ =?us-ascii?Q?SatEqVpt1yxsOj=2FL8mMaHfouFG2RyT7MwTJnpY?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUiShGf=2FO8XJWpH34Od4Nd?=
+ =?us-ascii?Q?fxXa6jil96uRcJkF+N+LeVnO1tx80ddOyoyOo=2Fc?=
+ =?us-ascii?Q?Brxcl3ERAm0cOY743=2FFH59DWiSf5OzXORh1DLKt?=
+ =?us-ascii?Q?hb1NMKty3PsA5ju0ZzxCrq1WQuZSEQf=2FJlWtgqv?=
+ =?us-ascii?Q?cZmsyCHlNUZsDJ1vDE=2FPt67opI5JjhqkEv9l5Az?=
+ =?us-ascii?Q?q0P2mN5dqq+GnJf2iOJhfgrYU5zKYCqLZAdZ+ME?=
+ =?us-ascii?Q?fp9CoTCXkxaUw=2FUUDoN9LijNJw48Z59zX5wjMNk?=
+ =?us-ascii?Q?yJ65wldXV+pzSToXNbJG15WQDrygJ850L0EIDfI?=
+ =?us-ascii?Q?Uk31o7Z9bkkJA8gptdboRnD5VJPFu3atcLKlogX?=
+ =?us-ascii?Q?haNLO3z3EGIaih=2FUAIVY5BcIBTsV81lRRnVnY0g?=
+ =?us-ascii?Q?ScKi+69v2I1nzfih9sEiSi1IyzFMKYD0oN1FjfP?=
+ =?us-ascii?Q?83yXLP8qyyVNNcBg7XYERqMZXdaNEKypux+627O?=
+ =?us-ascii?Q?pRXMmi31CRYwBDCxPn5ynGz4ZoDiWuLtfmy0IsK?=
+ =?us-ascii?Q?SEMna5PcU+sYJZFJDhbvZX3hC3UcwYXRnyAgtqg?=
+ =?us-ascii?Q?I6xUIcjEGVkH=2FzQhRlNZscG5BIlNQqZnTPyVUur?=
+ =?us-ascii?Q?yDqlfCMrFDgw4hFt=2FB9yNdC1lD1VhYq9HD06k9z?=
+ =?us-ascii?Q?gRebDsGmQkU02i2rLcw+ivxyLgzfbji5jRL5YEB?=
+ =?us-ascii?Q?SNfmgcsCDBiX8JMoNk7gMQiYy6bopE2UsoTUs5U?=
+ =?us-ascii?Q?rTuKsATQbVN0EBL4CjPxFfgWS=2FAgKIz6iSNv7cQ?=
+ =?us-ascii?Q?gkGWThfnhYsQJ0fy+ADEK+EOaw=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2EIyIg3Kly-?=
+ =?us-ascii?Q?ok9HOYUaSvdCikRWd=5Fr=5FV6dxjRd3JEunYxoMDAw?=
+ =?us-ascii?Q?dTAwMKS3iZK7T=5FZJhT2tBaZfyXkomYEEepiy=5FxH?=
+ =?us-ascii?Q?VDCNNjS6PkahufZ4L4JXcaxmlG6HOoAymKUVwxW?=
+ =?us-ascii?Q?aaZ6BA6ulIQxunkFUv7zhkSGH3Pnr5bYrsCQB1W?=
+ =?us-ascii?Q?WjcD=5FYz99rOrrcrgQ=3D=3D=2Ess-Hnkut1-kLaet6mFy?=
+ =?us-ascii?Q?FlzClDbBBawS4bVLvwl4pyiZoMDAwdTAwMOPLWD?=
+ =?us-ascii?Q?X6gOaH65bDGycdHInLrdDy=5FoFwhlvKfi8tMIqUo?=
+ =?us-ascii?Q?-tWS72mL4oPLmsqIRaTdpmXNrjhp7sZx6lI2VAU?=
+ =?us-ascii?Q?a80XABoFs6PXIgngWZAKqwNn=5FYYcwJu=5FANi0VEK?=
+ =?us-ascii?Q?S=5FqBw8tfkYLYvYzH-s=5FECNj2yhmyl-6vE30tQqI?=
+ =?us-ascii?Q?LJzOWKwk0KXdLQwt68KuV6p0Bg423MelG3EUiR8?=
+ =?us-ascii?Q?hWcjrjyOXHxWxzrB-OC0TNRi973MoDU67PnQVPM?=
+ =?us-ascii?Q?JG-t0E3WzExXrSLZqL3RUbW5sE0H4DYTiEVppI=5F?=
+ =?us-ascii?Q?hRtmaOfJoIG3BqUTrrBLR=5FgMEd1OvqOCcl2htRp?=
+ =?us-ascii?Q?zPH2AbxQHhZz-kCPcbcs-Hck5EIWSpDVOW4waMZ?=
+ =?us-ascii?Q?YUVPOkXDglfuZ1xIS5S28PBOFR8Yc=5Fbq5MksQvY?=
+ =?us-ascii?Q?VcGZBUOsjabMCAyOipgNd4Ikmalr=5FI9YvwcngbE?=
+ =?us-ascii?Q?Ihd0DU=5FJsgens-I55canSoCz9JzuQBkjBxCPB6e?=
+ =?us-ascii?Q?ctx5hZSfxWUXMlFYS1=5FlbPDB0XR7t-6JCumzS-y?=
+ =?us-ascii?Q?u---CW2QYLi5qpsJH0-SFTwJB3Izznz0vNXHQtC?=
+ =?us-ascii?Q?hxxiJmFySXz0iJOBMombBlrDcN4W6oGj-LbUBIS?=
+ =?us-ascii?Q?6vo5aLqXC=5F9N5JxxaF0XDl7OHL1w8jlWIvHew1t?=
+ =?us-ascii?Q?Wom-df7-JkwWgg3rsvaANqMIBqZjQY6qfkb-jvm?=
+ =?us-ascii?Q?UkZHisQStayIqWac8z3fa3nEjYPyJqhwly7KpxY?=
+ =?us-ascii?Q?kJPyGt3dz4KBPYvsz=5FU2HHmmSRMcMekYeoReTM9?=
+ =?us-ascii?Q?HBbOmTeOHf-Z0ZH=5F3qNnAazwN1qxmF4byPCT7So?=
+ =?us-ascii?Q?8jTK38KghXR55cAFzJIcOEBYc7yhLv49ql9wcZX?=
+ =?us-ascii?Q?g7MUye7=5F7-QQSlJksSVnnmQFFCHSnNLtzuuXfhB?=
+ =?us-ascii?Q?jjn8GM79ogF1Ba9DYPxJne2X3iFdI66t9ubWKna?=
+ =?us-ascii?Q?AQAWJtWxmIdmOQB9ZgIkS4V8OjgQ16UVrZ2XCay?=
+ =?us-ascii?Q?xrAgcEk-gWHbmatKaBu1wpjWx99nUyf9-W64w-6?=
+ =?us-ascii?Q?BZK0G0h8T2zTkcGVAs9wWKhJ1MrrByrLSWM19v8?=
+ =?us-ascii?Q?--Gs=5Fa7MWsGMvIr1lIJvTV6QP1E=3D=3E?=
+
+--f21b6758d21e0b04f4d4c1ab03cdfb3ca722646648bdf008d1acee812f15
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=us-ascii
+Mime-Version: 1.0
+
+ANTHRAX - UGANDA: (KAZO, IBANDA)
+********************************
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+[1]
+Date: Sun 21 Jan 2024
+Source: The Independent [edited]
+<http://tinyurl.com/etkpnjzp>
+
+
+Authorities in Kazo District have confirmed an outbreak of Anthrax in
+Mirama village, Kazo sub-county. This has raised concerns,
+particularly among those reliant on selling animals and animal
+products for their livelihoods.
+
+John Baptist Asiimwe, the district production officer, revealed that
+of the 7 samples sent to Entebbe for testing, 4 returned positive for
+anthrax [_Bacillus anthracis_].
+
+To contain the spread of the disease, Asiimwe outlined several
+measures. These include registering all meat handlers in the district,
+ensuring that they possess health certificates before handling meat,
+enforcing the requirement for cattle traders to have licenses issued
+by the Ministry of Animal Husbandry for buying and selling animals
+within the district, and conducting ring vaccination of all suspected
+animal species. Asiimwe mentioned that they are coordinating with
+ministry officials to secure vaccines for the vaccination of all
+animals in the district.
+
+Rev. Mugisha Katugunda, the District Chairperson, emphasized efforts
+to sensitize the public about anthrax disease. He warned against
+consuming meat from dead animals as a preventive measure.
+
+Kazo now joins Ibanda, Mbarara, and Kiruhura as districts that have
+been affected by anthrax, leading to quarantine measures being imposed
+to curb its spread. This anthrax outbreak coincides with the cattle
+corridor's struggle to contain foot-and-mouth disease, resulting in
+over 5 districts imposing quarantine measures to control its spread.
+
+Anthrax is a zoonotic disease caused by _Bacillus anthracis_, a
+spore-like bacteria producing potent toxins harmful to animals and
+humans. While ruminants may succumb rapidly with minimal signs, human
+symptoms typically begin with a flu-like illness and raised boil-like
+lesions on the skin.
+
+--
+Communicated by:
+ProMED
+via
+ProMED-EAFR
+
+******
+[2]
+Date: Fri 19 Jan 2024
+Source: The Independent [edited]
+<https://www.independent.co.ug/ibanda-imposes-livestock-quarantine-to-curb-=
+anthrax/>
+
+
+Authorities in Ibanda district [Western Region] have enforced a
+quarantine on the movement of cattle and the sale of animal products
+following an outbreak of anthrax.
+
+According to the Ibanda District Chief Administrative Officer Ruhemba
+Kweronda, the district has registered sporadic cases of anthrax
+disease in humans who are suspected to have handled meat from infected
+dead animals.
+
+Kweronda says the disease that was first noticed in November last year
+[2023] was reported in Rugaaga 1 and IV villages of Keihangara Sub
+County, where 9 people who confessed to having slaughtered a dead
+animal tested positive for anthrax.
+
+He adds that early this month [January 2024] one person from Mbonwa
+Parish Rukiri Sub County tested positive and currently 12 people from
+Kakoma are showing signs. He also said that 2 animals died abruptly in
+Kigarama ward Ibanda Municipality and samples have been collected and
+taken to the laboratory.
+
+According to Kweronda, all slaughter activities and movement of
+livestock will be temporarily enforced for one month in Ibanda
+Municipality and Ibanda South Constituency.
+
+He says other measures put in place to curb the spread of the disease
+include registering all meat handlers in the district, enforcing the
+requirement by all cattle traders to have cattle trading licenses
+issued by the Ministry of Animal Husbandry, carrying out ring
+vaccination of all suspected animal species in areas of Keihangara sub
+county Bisheshe Division, Rukiri Sub County and Kagongo division, but
+also continued sensitization and surveillance activities.
+
+Dr Hillary Arinaitwe, the District Veterinary Officer says that they
+have written to the Ministry of Agriculture demanding vaccines.
+
+In December [2023], authorities in Kyotera district enforced a
+complete ban on the movement of livestock and its products to halt the
+spread of anthrax.
+
+For nearly a month, the district has grappled with a rare outbreak of
+anthrax. This outbreak has claimed at least 6 lives and led to several
+hospitalizations.
+
+Anthrax is a zoonotic caused by _Bacillus anthracis_, a spore-like
+bacteria that produces strong toxins that are dangerous to animals and
+humans. Ruminants such as cows, goats, and sheep can quickly die with
+their carcasses showing little signs of infection but in human beings,
+symptoms begin with a flu-like illness, raised boil-like lesions on
+the skin.
+
+Meanwhile, officials in Kiruhura District have extended the closure of
+4 animal markets to control the spread of foot and mouth disease in
+the district.
+
+The 4 markets are Nyakasahara, Kyiebuza, Kyeshama livestock markets,
+and Kitura goat Market.
+
+In the Circular from the Kiruhura District Chief Administrative
+Officer Charles Kiberu Nsubuga, to all lower local council
+chairpersons dated 12 Jan 2024, they should ensure continued
+enforcement of the directive.
+
+--
+Communicated by:
+ProMED
+
+[The presence of anthrax, coupled with ongoing challenges such as
+foot-and-mouth disease in the cattle corridor, underscores the complex
+health risks faced by both animals and the community. The measures
+taken by authorities, including registering meat handlers, enforcing
+health certificates, and conducting ring vaccination, are crucial
+steps in mitigating the impact. However, sustained public awareness
+campaigns and strict adherence to preventive measures, such as
+avoiding the consumption of meat from deceased animals, are essential.
+- Mod.TU
+
+ProMED map:
+Uganda: <https://promedmail.org/promed-post?place=3D8714395,97>]
+
+[See Also:
+2023
+----
+Anthrax - Uganda (02): (KS) livestock, susp
+http://promedmail.org/post/20231228.8713949
+Anthrax - Zambia (03): outbreak, FAO investigation, infected meat,
+confirmed http://promedmail.org/post/20231214.8713704
+Anthrax: Uganda, Malawi, Philippines, human, fatal
+http://promedmail.org/post/20231130.8713422
+Anthrax - Uganda: (IB) human, infected meat susp
+http://promedmail.org/post/20231109.8713066
+Anthrax - Zambia (02): human
+http://promedmail.org/post/20231103.8712979
+Anthrax - Zambia: (SO) cattle, human
+http://promedmail.org/post/20231102.8712954
+Anthrax - Kenya (12): (NR) human, fatal, livestock vaccination
+campaign http://promedmail.org/post/20230922.8712281
+Anthrax - Kenya (11): (NR) sheep, human, fatal
+http://promedmail.org/post/20230920.8712241
+Anthrax - Kenya (10): (NR) livestock vaccination
+http://promedmail.org/post/20230621.8710691
+Anthrax - Kenya (09): (KK) active control & surveillance
+http://promedmail.org/post/20230619.8710658
+Anthrax - Kenya (08): (MU) human
+http://promedmail.org/post/20230523.8710209
+Anthrax - Kenya (07): (EB) human, cattle, dog, cat, contaminated meat,
+susp. http://promedmail.org/post/20230322.8709084
+Anthrax - Kenya (06): (WJ,NK) camel, cattle, human
+http://promedmail.org/post/20230111.8707745
+Anthrax - Kenya (05): (NK) human, cattle, susp
+http://promedmail.org/post/20230109.8707712
+Anthrax - Kenya (04): (KI) human/cattle cases, free vaccination
+scheduled http://promedmail.org/post/20230108.8707702
+Anthrax - Kenya (03): (KI) human, cattle cases, free vaccination
+scheduled http://promedmail.org/post/20230107.8707681
+Anthrax - Kenya (02): (KI) livestock quarantine
+http://promedmail.org/post/20230104.8707628
+Anthrax - Kenya: (NT) cattle, human fatal, contaminated meat susp
+http://promedmail.org/post/20230101.8707574
+2022
+----
+Anthrax - Zambia (02): (WE) cattle, RFI
+http://promedmail.org/post/20221123.8706858
+Anthrax - Zambia: (SO) wild buffalo, cattle, susp
+http://promedmail.org/post/20221104.8706566
+2019
+----
+Anthrax - Botswana (03): (CH) elephant, comment
+http://promedmail.org/post/20191025.6744711
+Anthrax - Botswana (02): (CH) elephant, susp
+http://promedmail.org/post/20191023.6742740
+Anthrax - Botswana: (CH) elephant, OIE
+http://promedmail.org/post/20190515.6470481
+2018
+----
+Anthrax - Zambia (06): (MU) hippopotamus, susp
+http://promedmail.org/post/20181118.6152733
+2017
+----
+Anthrax - Zambia (05): (WE) fatalities
+http://promedmail.org/post/20170208.4824664
+Anthrax - Zambia (04): (WE) bovine, OIE
+http://promedmail.org/post/20170124.4787317
+Anthrax - Zambia (03): (WE)
+http://promedmail.org/post/20170123.4784428
+Anthrax - Zambia (02): (WE)
+http://promedmail.org/post/20170111.4757580
+Anthrax - Zambia: (WE) bovine epizootic
+http://promedmail.org/post/20170109.4750719
+2014
+----
+Anthrax - Kenya (05): (NR) human, bovine
+http://promedmail.org/post/20140823.2717173]
+.................................................tu/tw/ya/tw/mo/jh/may/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3DBW2u1QMhHLcWn6VH5nySJYPkih3fLOOqyTd8HghqSRpoMDAwdTAwMAwop-R=
+h3Efek0j5iRWg66SAGnYP4l1PGPVNxuOB4i7GSVAVg-YE1CeKbye-EDXNichyEx7QjvXGSj3glX=
+HRlRjd6L5-n1UZdUH3XfAX_Wn_yuVdxRKOcMliqtvReQQL4w-qwqyUIcxUtxQ3kvUc_HSyeCt6u=
+B55LZ6gi_m6Jyi__37SWQrf7ct32_PSRqHVfmJyeUIer3B_8ZJu1KBtx4AmApLHIytXT7o0sZRd=
+YhHF6ykPhJ04lz5uR186RrZYL4XX-hfu4kj35tyKDZAUnCNv4Ndo7HNkhr70NP_p-nksbHaNv45=
+b5hE4U4mwqCAypLAjpooWdSAWEhiEs10abkpJGG3TZfHe9TuxeJvkms2lI_fvZLlp-v91V1yiup=
+0ZAfguThV8UU991XBjmgf-kTrSPvrCTkBe5E0NdgDSigq085IVxnuM-C5dTLsgIWlO2S10Vstzz=
+rO_VT-Ed5cMAU0azm_jAJdX-8uDOarBcAUm171Ew9-JY5X40RTvdxkqNWiLaD6vmQoTXmYRGF3-=
+8SFb9uThLoGeWfXQe7aC8Wa8PyI9yXtlhh9_YkvtbX77h_ojYfvobNZkSwEzyuIa-FHib5yQoHX=
+py_6GDKINBlptXk6Rt8CWhcqIhAiWAUsbDEFgKb7dlPHIXdGNgCC92RDPSLM_YwaHrpXRLhHpWv=
+cDlp6oUB-Z7I0k2Y060kjwY-PB6iWnjaf4EG56ReSD7u4pJxaVzwfd9A1ttS9SORrdlMdrtPr4E=
+axnYfllcWzGyhDq4-n-Y2e70qzEBvXm7EkgbrXIT6_YO-MD86G1qMfSi7zsyuCDsBpeuT6rAwDL=
+7O-4yXJ0K2wEW3CmEdq6DZ6pHfSoiKziGYP8R4yQPn0KYhMnfhxsqB8SfDWfzn8GnHadrCDFHTk=
+g1dKNjpucu9ZIgAS2GUVeAtcPcv8Eo1pksrICz-_VGC38hwSX2xUopxISRbikXXUxiMLscjOeuc=
+KmVI2RVlkLpHKdoXPCy_Evr_EtPpxCu2dyGjJXeWhcKDO9o2EGZWWbpVGso0IPhlN0c-N1yripN=
+PIg9yiODpEKiOyU63d8TA_cKep5rSGuOq0tJ25-32bduCwKhR3tzsQpyJqwtVnyUTO54hiQpNqK=
+i12uscszFyRvEpTRa_AqP4vltoK6DGH5YPCoaSgrT_PI-lVNh8Fb5BNviS6MA7FI )
+############################################################
+############################################################
+
+--f21b6758d21e0b04f4d4c1ab03cdfb3ca722646648bdf008d1acee812f15
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>ANTHRAX - UGANDA: (KAZO, IBANDA)<br>********************************<=
+br>A ProMED-mail post<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/=
+wscE2ng5fl6JrPIt48tisIijpefK5PNjW-mL-YZGnfgDOxU1G3gjwnPSi2Tfv3HA/438/Vq3rgn=
+jBRMatj5834VZWdw/h0/FunYrQVJgLKBXORq-RO61pCEGdgwVHkLSUIo3-9bs5k">http://www=
+.promedmail.org</a><br>ProMED-mail is a program of the<br>International Soc=
+iety for Infectious Diseases<br><a href=3D"https://u19268662.ct.sendgrid.ne=
+t/ss/c/wscE2ng5fl6JrPIt48tisCT5tpD4Upm3qyMCbcYSQvc/438/Vq3rgnjBRMatj5834VZW=
+dw/h1/Lhu6rdVzUqvrQrLXxUJOw154nrVuU1mg4eC1bIngy-Q">http://www.isid.org</a><=
+br><br>[1]=0D<br>Date: Sun 21 Jan 2024=0D<br>Source: The Independent [edite=
+d]=0D<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/DgIMzhc9xO6P0drr=
+FfDxwYNbTYkJAX32alBUGdekexFvdkIp1yxrbVBW_Z6bcbFv/438/Vq3rgnjBRMatj5834VZWdw=
+/h2/PqsYchfMNHKVgjf85YEpde0_-sn-hnxsTrMKpbETDDc">http://tinyurl.com/etkpnjz=
+p</a>=0D<br>=0D<br>=0D<br>Authorities in Kazo District have confirmed an ou=
+tbreak of Anthrax in<br>Mirama village, Kazo sub-county. This has raised co=
+ncerns,<br>particularly among those reliant on selling animals and animal<b=
+r>products for their livelihoods.=0D<br>=0D<br>John Baptist Asiimwe, the di=
+strict production officer, revealed that<br>of the 7 samples sent to Entebb=
+e for testing, 4 returned positive for<br>anthrax [_Bacillus anthracis_].=0D=
+<br>=0D<br>To contain the spread of the disease, Asiimwe outlined several<b=
+r>measures. These include registering all meat handlers in the district,<br=
+>ensuring that they possess health certificates before handling meat,<br>en=
+forcing the requirement for cattle traders to have licenses issued<br>by th=
+e Ministry of Animal Husbandry for buying and selling animals<br>within the=
+ district, and conducting ring vaccination of all suspected<br>animal speci=
+es. Asiimwe mentioned that they are coordinating with<br>ministry officials=
+ to secure vaccines for the vaccination of all<br>animals in the district.=0D=
+<br>=0D<br>Rev. Mugisha Katugunda, the District Chairperson, emphasized eff=
+orts<br>to sensitize the public about anthrax disease. He warned against<br=
+>consuming meat from dead animals as a preventive measure.=0D<br>=0D<br>Kaz=
+o now joins Ibanda, Mbarara, and Kiruhura as districts that have<br>been af=
+fected by anthrax, leading to quarantine measures being imposed<br>to curb =
+its spread. This anthrax outbreak coincides with the cattle<br>corridor's s=
+truggle to contain foot-and-mouth disease, resulting in<br>over 5 districts=
+ imposing quarantine measures to control its spread.=0D<br>=0D<br>Anthrax i=
+s a zoonotic disease caused by _Bacillus anthracis_, a<br>spore-like bacter=
+ia producing potent toxins harmful to animals and<br>humans. While ruminant=
+s may succumb rapidly with minimal signs, human<br>symptoms typically begin=
+ with a flu-like illness and raised boil-like<br>lesions on the skin.=0D<br=
+>=0D<br>--=0D<br>Communicated by:=0D<br>ProMED=0D<br>via=0D<br>ProMED-EAFR=0D=
+<br>=0D<br>******=0D<br>[2]=0D<br>Date: Fri 19 Jan 2024=0D<br>Source: The I=
+ndependent [edited]=0D<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c=
+/TLh_csrC34X_iXpbYoMam8xDGlajlF0tY_ayiUsdCtiAIZdcLNteGL0KP2H3vYt4fvqABzlMO-=
+-LkFS5wZeCkCt3Zrb4ZQlZYZsYrnNF_hYCiSR0yOtFly_Vg0i4ciZh/438/Vq3rgnjBRMatj583=
+4VZWdw/h3/KtBglBVSAJDnod_25SZUf4l2A1R1OTciB3AN3fEhYQI">https://www.independ=
+ent.co.ug/ibanda-imposes-livestock-quarantine-to-curb-anthrax/</a>=0D<br>=0D=
+<br>=0D<br>Authorities in Ibanda district [Western Region] have enforced a<=
+br>quarantine on the movement of cattle and the sale of animal products<br>=
+following an outbreak of anthrax.=0D<br>=0D<br>According to the Ibanda Dist=
+rict Chief Administrative Officer Ruhemba<br>Kweronda, the district has reg=
+istered sporadic cases of anthrax<br>disease in humans who are suspected to=
+ have handled meat from infected<br>dead animals.=0D<br>=0D<br>Kweronda say=
+s the disease that was first noticed in November last year<br>[2023] was re=
+ported in Rugaaga 1 and IV villages of Keihangara Sub<br>County, where 9 pe=
+ople who confessed to having slaughtered a dead<br>animal tested positive f=
+or anthrax.=0D<br>=0D<br>He adds that early this month [January 2024] one p=
+erson from Mbonwa<br>Parish Rukiri Sub County tested positive and currently=
+ 12 people from<br>Kakoma are showing signs. He also said that 2 animals di=
+ed abruptly in<br>Kigarama ward Ibanda Municipality and samples have been c=
+ollected and<br>taken to the laboratory.=0D<br>=0D<br>According to Kweronda=
+, all slaughter activities and movement of<br>livestock will be temporarily=
+ enforced for one month in Ibanda<br>Municipality and Ibanda South Constitu=
+ency.=0D<br>=0D<br>He says other measures put in place to curb the spread o=
+f the disease<br>include registering all meat handlers in the district, enf=
+orcing the<br>requirement by all cattle traders to have cattle trading lice=
+nses<br>issued by the Ministry of Animal Husbandry, carrying out ring<br>va=
+ccination of all suspected animal species in areas of Keihangara sub<br>cou=
+nty Bisheshe Division, Rukiri Sub County and Kagongo division, but<br>also =
+continued sensitization and surveillance activities.=0D<br>=0D<br>Dr Hillar=
+y Arinaitwe, the District Veterinary Officer says that they<br>have written=
+ to the Ministry of Agriculture demanding vaccines.=0D<br>=0D<br>In Decembe=
+r [2023], authorities in Kyotera district enforced a<br>complete ban on the=
+ movement of livestock and its products to halt the<br>spread of anthrax.=0D=
+<br>=0D<br>For nearly a month, the district has grappled with a rare outbre=
+ak of<br>anthrax. This outbreak has claimed at least 6 lives and led to sev=
+eral<br>hospitalizations.=0D<br>=0D<br>Anthrax is a zoonotic caused by _Bac=
+illus anthracis_, a spore-like<br>bacteria that produces strong toxins that=
+ are dangerous to animals and<br>humans. Ruminants such as cows, goats, and=
+ sheep can quickly die with<br>their carcasses showing little signs of infe=
+ction but in human beings,<br>symptoms begin with a flu-like illness, raise=
+d boil-like lesions on<br>the skin.=0D<br>=0D<br>Meanwhile, officials in Ki=
+ruhura District have extended the closure of<br>4 animal markets to control=
+ the spread of foot and mouth disease in<br>the district.=0D<br>=0D<br>The =
+4 markets are Nyakasahara, Kyiebuza, Kyeshama livestock markets,<br>and Kit=
+ura goat Market.=0D<br>=0D<br>In the Circular from the Kiruhura District Ch=
+ief Administrative<br>Officer Charles Kiberu Nsubuga, to all lower local co=
+uncil<br>chairpersons dated 12 Jan 2024, they should ensure continued<br>en=
+forcement of the directive.=0D<br>=0D<br>--=0D<br>Communicated by:=0D<br>Pr=
+oMED<br><br>[The presence of anthrax, coupled with ongoing challenges such =
+as<br>foot-and-mouth disease in the cattle corridor, underscores the comple=
+x<br>health risks faced by both animals and the community. The measures<br>=
+taken by authorities, including registering meat handlers, enforcing<br>hea=
+lth certificates, and conducting ring vaccination, are crucial<br>steps in =
+mitigating the impact. However, sustained public awareness<br>campaigns and=
+ strict adherence to preventive measures, such as<br>avoiding the consumpti=
+on of meat from deceased animals, are essential.<br>- Mod.TU<br><br>ProMED =
+map:<br>Uganda: <a href=3D"https://u19268662.ct.sendgrid.net/ss/c/sSnCkKCWB=
+vais3EuVAOvgy2WOIX7pp1nXnn4AbwuQ3Z6WbkfhqXYXU-aTMPJ8yThQpEbvmx-IcojcY_nhXd_=
+OQ/438/Vq3rgnjBRMatj5834VZWdw/h4/JL1TiJu9fo4QYrDIFPht-LAEra7buuveUvKTiOSboZ=
+g">https://promedmail.org/promed-post?place=3D8714395,97</a>]<br><br>[See A=
+lso:<br>2023=0D<br>----=0D<br>Anthrax - Uganda (02): (KS) livestock, susp<b=
+r>http://promedmail.org/post/20231228.8713949=0D<br>Anthrax - Zambia (03): =
+outbreak, FAO investigation, infected meat,<br>confirmed http://promedmail.=
+org/post/20231214.8713704=0D<br>Anthrax: Uganda, Malawi, Philippines, human=
+, fatal<br>http://promedmail.org/post/20231130.8713422=0D<br>Anthrax - Ugan=
+da: (IB) human, infected meat susp<br>http://promedmail.org/post/20231109.8=
+713066=0D<br>Anthrax - Zambia (02): human<br>http://promedmail.org/post/202=
+31103.8712979=0D<br>Anthrax - Zambia: (SO) cattle, human<br>http://promedma=
+il.org/post/20231102.8712954=0D<br>Anthrax - Kenya (12): (NR) human, fatal,=
+ livestock vaccination<br>campaign http://promedmail.org/post/20230922.8712=
+281=0D<br>Anthrax - Kenya (11): (NR) sheep, human, fatal<br>http://promedma=
+il.org/post/20230920.8712241=0D<br>Anthrax - Kenya (10): (NR) livestock vac=
+cination<br>http://promedmail.org/post/20230621.8710691=0D<br>Anthrax - Ken=
+ya (09): (KK) active control & surveillance<br>http://promedmail.org/post/2=
+0230619.8710658=0D<br>Anthrax - Kenya (08): (MU) human<br>http://promedmail=
+.org/post/20230523.8710209=0D<br>Anthrax - Kenya (07): (EB) human, cattle, =
+dog, cat, contaminated meat,<br>susp. http://promedmail.org/post/20230322.8=
+709084=0D<br>Anthrax - Kenya (06): (WJ,NK) camel, cattle, human<br>http://p=
+romedmail.org/post/20230111.8707745=0D<br>Anthrax - Kenya (05): (NK) human,=
+ cattle, susp<br>http://promedmail.org/post/20230109.8707712=0D<br>Anthrax =
+- Kenya (04): (KI) human/cattle cases, free vaccination<br>scheduled http:/=
+/promedmail.org/post/20230108.8707702=0D<br>Anthrax - Kenya (03): (KI) huma=
+n, cattle cases, free vaccination<br>scheduled http://promedmail.org/post/2=
+0230107.8707681=0D<br>Anthrax - Kenya (02): (KI) livestock quarantine<br>ht=
+tp://promedmail.org/post/20230104.8707628=0D<br>Anthrax - Kenya: (NT) cattl=
+e, human fatal, contaminated meat susp<br>http://promedmail.org/post/202301=
+01.8707574=0D<br>2022=0D<br>----=0D<br>Anthrax - Zambia (02): (WE) cattle, =
+RFI<br>http://promedmail.org/post/20221123.8706858=0D<br>Anthrax - Zambia: =
+(SO) wild buffalo, cattle, susp<br>http://promedmail.org/post/20221104.8706=
+566=0D<br>2019=0D<br>----=0D<br>Anthrax - Botswana (03): (CH) elephant, com=
+ment<br>http://promedmail.org/post/20191025.6744711=0D<br>Anthrax - Botswan=
+a (02): (CH) elephant, susp<br>http://promedmail.org/post/20191023.6742740=0D=
+<br>Anthrax - Botswana: (CH) elephant, OIE<br>http://promedmail.org/post/20=
+190515.6470481=0D<br>2018=0D<br>----=0D<br>Anthrax - Zambia (06): (MU) hipp=
+opotamus, susp<br>http://promedmail.org/post/20181118.6152733=0D<br>2017=0D=
+<br>----=0D<br>Anthrax - Zambia (05): (WE) fatalities<br>http://promedmail.=
+org/post/20170208.4824664=0D<br>Anthrax - Zambia (04): (WE) bovine, OIE<br>=
+http://promedmail.org/post/20170124.4787317=0D<br>Anthrax - Zambia (03): (W=
+E)<br>http://promedmail.org/post/20170123.4784428=0D<br>Anthrax - Zambia (0=
+2): (WE)<br>http://promedmail.org/post/20170111.4757580=0D<br>Anthrax - Zam=
+bia: (WE) bovine epizootic<br>http://promedmail.org/post/20170109.4750719=0D=
+<br>2014=0D<br>----=0D<br>Anthrax - Kenya (05): (NR) human, bovine<br>http:=
+//promedmail.org/post/20140823.2717173]<br>................................=
+.................tu/tw/ya/tw/mo/jh/may/jh<br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3DBW2u1QMhHLcWn6VH5nySJYPkih3fLOOqyTd8HghqSRpoMDAwdT=
+AwMAwop-Rh3Efek0j5iRWg66SAGnYP4l1PGPVNxuOB4i7GSVAVg-YE1CeKbye-EDXNichyEx7Qj=
+vXGSj3glXHRlRjd6L5-n1UZdUH3XfAX_Wn_yuVdxRKOcMliqtvReQQL4w-qwqyUIcxUtxQ3kvUc=
+_HSyeCt6uB55LZ6gi_m6Jyi__37SWQrf7ct32_PSRqHVfmJyeUIer3B_8ZJu1KBtx4AmApLHIyt=
+XT7o0sZRdYhHF6ykPhJ04lz5uR186RrZYL4XX-hfu4kj35tyKDZAUnCNv4Ndo7HNkhr70NP_p-n=
+ksbHaNv45b5hE4U4mwqCAypLAjpooWdSAWEhiEs10abkpJGG3TZfHe9TuxeJvkms2lI_fvZLlp-=
+v91V1yiup0ZAfguThV8UU991XBjmgf-kTrSPvrCTkBe5E0NdgDSigq085IVxnuM-C5dTLsgIWlO=
+2S10VstzzrO_VT-Ed5cMAU0azm_jAJdX-8uDOarBcAUm171Ew9-JY5X40RTvdxkqNWiLaD6vmQo=
+TXmYRGF3-8SFb9uThLoGeWfXQe7aC8Wa8PyI9yXtlhh9_YkvtbX77h_ojYfvobNZkSwEzyuIa-F=
+Hib5yQoHXpy_6GDKINBlptXk6Rt8CWhcqIhAiWAUsbDEFgKb7dlPHIXdGNgCC92RDPSLM_YwaHr=
+pXRLhHpWvcDlp6oUB-Z7I0k2Y060kjwY-PB6iWnjaf4EG56ReSD7u4pJxaVzwfd9A1ttS9SORrd=
+lMdrtPr4EaxnYfllcWzGyhDq4-n-Y2e70qzEBvXm7EkgbrXIT6_YO-MD86G1qMfSi7zsyuCDsBp=
+euT6rAwDL7O-4yXJ0K2wEW3CmEdq6DZ6pHfSoiKziGYP8R4yQPn0KYhMnfhxsqB8SfDWfzn8GnH=
+adrCDFHTkg1dKNjpucu9ZIgAS2GUVeAtcPcv8Eo1pksrICz-_VGC38hwSX2xUopxISRbikXXUxi=
+MLscjOeucKmVI2RVlkLpHKdoXPCy_Evr_EtPpxCu2dyGjJXeWhcKDO9o2EGZWWbpVGso0IPhlN0=
+c-N1yripNPIg9yiODpEKiOyU63d8TA_cKep5rSGuOq0tJ25-32bduCwKhR3tzsQpyJqwtVnyUTO=
+54hiQpNqKi12uscszFyRvEpTRa_AqP4vltoK6DGH5YPCoaSgrT_PI-lVNh8Fb5BNviS6MA7FI" =
+target=3D"_blank" class=3D"Unsubscribe--unsubscribePreferences" style=3D"fo=
+nt-family:sans-serif;text-decoration:none;">Unsubscribe Preferences</a></di=
+v><br>############################################################<br>#####=
+#######################################################<br><br><img src=3D"=
+https://u19268662.ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/438/Vq3rgnjBR=
+Matj5834VZWdw/ho.gif" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=
+=3D"height:1px !important;width:1px !important;border-width:0 !important;ma=
+rgin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;=
+margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !importa=
+nt;padding-right:0 !important;padding-left:0 !important;"/></body>
+</html>
+--f21b6758d21e0b04f4d4c1ab03cdfb3ca722646648bdf008d1acee812f15--

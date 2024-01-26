@@ -1,0 +1,412 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a98:d84b:0:b0:1eb:e128:bbe3 with SMTP id b11csp1304650eil;
+        Fri, 19 Jan 2024 18:54:14 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IEg6nk/0uuU4V4PXhccwolnFKA2Y7dwWW2v3WlHZERjAe2C8V+h6oushjI0TULHQgbAsIvO
+X-Received: by 2002:a05:620a:205d:b0:783:2c5f:939c with SMTP id d29-20020a05620a205d00b007832c5f939cmr1090402qka.39.1705719254386;
+        Fri, 19 Jan 2024 18:54:14 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1705719254; cv=none;
+        d=google.com; s=arc-20160816;
+        b=NHfS2DAAyj3XY0PvEF6/UTJOJhw48TzlYvqYBphN3S935TZVDQvU0aHj3hCL9gA768
+         0OsN6ll/EEuHO565AiuqTX7XXYH6mlM1vYLRcxdNdvjePLvS+nsIe0kERBwwYoWgMWeW
+         b6DLStj2mNvrzNAso+OxzyeDJsYMX8Qfjwhq7rixMZQ9tvX9zWkS2tMh2DAghBcr/8Cv
+         e9OZXuZC7wXQ+r0I09qDiyoJL77xP43Nv5OoDy9yd+tXCNVSCUFWaTyU1BXfXF/dYau1
+         eZtEHguF1axRpmQ9dSt8qUtYJl8Ew6t34jeQ4aoZY2ZAHdlNG1lYUA8MXlhjq69LalPF
+         RwYg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=/PtKytVfS2N40XO6YD0QKJR0z0dRUrA1raSjOKi/5ww=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=a8IIR59wfR8Q2H4gGlUK10/wXy5lxG7bEyq+8+dq/ITeJW8TnNzTW3ULj8VkBRigej
+         MZ1QcPSum2UnmuFF/dWdPfejBqtrRp+LgR4TX7JjfH+oEKSk43bqBN52eXHImrFpFrtN
+         h+TZ8sABlsLlo2ZCoTB8n4DXusIKzpXRCwZ3ztdIRZD0a2uz+Jc0CQ9Of1fkFSMVtMWb
+         ahpzvoiulMgN6RhwFYwVTFTojFvJumXtXyoMK0UifwBwE0j7KZ7voYTZxos2dcWKaUHT
+         CSo098BJa++m/tN3oUmms+cAcGpflwNkkaL+ZUsP9m7YS1k5JRF0MvhcDWN8k37sMjcP
+         MVPw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=JhHKPLCT;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=NqygosXF;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id h26-20020a05620a21da00b007836b33647bsi686271qka.347.2024.01.19.18.54.13
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 19 Jan 2024 18:54:14 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=JhHKPLCT;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=NqygosXF;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=/PtKytVfS2N40XO6YD0QKJR0z0dRUrA1raSjOKi/5ww=;
+	b=JhHKPLCT+LjmmE1U9l6d/gD9M1su7xRc6EKJpXuqAol/a83NW1CExKFb7qQZqBLQt9Hf
+	eGYNtX83JPxmgqS+sv1tqdxNJ58ntGGpFMpZuoxsNB68D5cUognVtxRJSm0Zn870l4C0rS
+	eGm49/PtEQ8p9/HbdW6nwOoSJTfjuU1bXxblkZbaIWQVzqCNb3KOLDbLiNMOLMQ1czWYA4
+	CEOyr+okgkmc4zxjPnGDVpfhcqQUT5xQnE7lCuIKzfEMXvO6JBTurqfqjFEfxQ9J7LrXVr
+	cMg1HhK9Ce37CEmEUM5AZGOXweldU1YWtORckJtT8MNi9Lw26phuj5bZDD+wgNxw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=/PtKytVfS2N40XO6YD0QKJR0z0dRUrA1raSjOKi/5ww=;
+	b=NqygosXFFdA8WD/oMtseS12mNw7ZauFkE3q4SfP8kV2PnETAOXFVKDzadV9aixDXsNrN
+	CrQ1YZll32f0f3b9EATMZjK7hKcwA0BE1il9kGj1h21zAO3/RJz6QnM6Jc/oLHB8FVyl94
+	opo/69c9szlt9aU139d2PVEZvfp5SJF/w=
+Received: by filterdrecv-b84d646b4-9wgct with SMTP id filterdrecv-b84d646b4-9wgct-1-65AB35D3-1B
+        2024-01-20 02:54:11.571424619 +0000 UTC m=+8151177.251446966
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-27 (SG) with HTTP
+	id 91vZtiQaQkaDmETjUu-Lig
+	Sat, 20 Jan 2024 02:54:11.416 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=a0d191856615b80897059b1a15edd0e640f323cd8c1adf9d5a4b5d5636ca
+Date: Sat, 20 Jan 2024 02:54:13 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <91vZtiQaQkaDmETjUu-Lig@geopod-ismtpd-27>
+Subject: PRO/EDR> Measles - Canada (01): (SK) international travel
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iBQeRB225=2FHZOWCPDddLpAWoVea8jF2WCmwJj+G?=
+ =?us-ascii?Q?9v6X8WnjGPM3H4XennsRLPso422aFKQAKoxR6ND?=
+ =?us-ascii?Q?BSqOAu2890MYljOF5v0TdicUYiA4UeT7iUcVTRS?=
+ =?us-ascii?Q?5MQQIbti7=2F+2cqDjd0fcBGlx5QEW2BuM9EZVvNc?=
+ =?us-ascii?Q?JyeO4XAa9C1tpwRkeGqeOH2qT=2FLkjYVI6=2FnrTg?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUhc93xcG=2F095a5S4+mt=2FG?=
+ =?us-ascii?Q?uYUpctI=2FOGD2dwyi+uvm2j4FCdvuw0l9zcHM8iA?=
+ =?us-ascii?Q?mojOvTXq7jOpDFFNtfsYkHQYACEW8pq1BXXqYmH?=
+ =?us-ascii?Q?oGTsnt6QpE2ZV5WVqnpwfXWoLXx7+4ZXqPct6HE?=
+ =?us-ascii?Q?W90txVQdHLJ3BFAScm0Hr+4W1C8lDfuAIA7VgjZ?=
+ =?us-ascii?Q?5tP8NOLFLELsKc2po2Wht8fKpqDwjThBstI3vs7?=
+ =?us-ascii?Q?Pyz44nhoyyVCTuVMDW5oWC89YH9UMnW7uNsU1WF?=
+ =?us-ascii?Q?J9Y4wUooFnabK8msIqEe70T49NU+roamDbadX91?=
+ =?us-ascii?Q?lVmCGdgGmeRmXHbo7UDq9dU9kXkL2z6tq6odwTC?=
+ =?us-ascii?Q?2EIgJtd9sRcTQ=2FcRSLG2hqxJ93BDk8xLg6IMQdu?=
+ =?us-ascii?Q?Ls+T7aW=2FViXtIQJr+Mcc4RO0NdjvJHa9Z1RcBey?=
+ =?us-ascii?Q?mlBuQFrdj+afFLN8XVjWgVpWgUXODBgQWftiPv3?=
+ =?us-ascii?Q?6L+cy77BDhGp7eRkZUEy9pkaLDuKHbr1gbjZyrg?=
+ =?us-ascii?Q?M3vh7hlhQK327w68gxLTlODbmb+vphOEdDFeLmZ?=
+ =?us-ascii?Q?8iVi+gsWNvCa33V6V3NiAYNE4Kpded3aZmZA=2F9N?=
+ =?us-ascii?Q?zbo2125CcxAW27ShHbY8WKQY7gztZAi4Az1FByv?=
+ =?us-ascii?Q?p1A7wzG5qN5w2XwAv3WeD1jl9be4shGPw5LgoxV?=
+ =?us-ascii?Q?SWErTJ9Gptx=2FGi8CeYO5Ov97s2bE=2FBTjc1wwB=2FF?=
+ =?us-ascii?Q?eK1G=2FGLX9mDFl524aJ6w6HSi7jWvTH=2FqEkyI4Ub?=
+ =?us-ascii?Q?Br1ZfrSomdoWTXMhKZcDtM=2FamQ=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2E2A-z=5FS6LB?=
+ =?us-ascii?Q?8KEwyMYNLPalXtAGR77tn7uA69PuL217y1oMDAw?=
+ =?us-ascii?Q?dTAwMBSu5yyGvNF7HQNbTVHQbRHYfy0uO-Lenyt?=
+ =?us-ascii?Q?EG6X6G-=5F8=5FVkiOMxsnp-pAw0CLMVgqGpLP4pmX3?=
+ =?us-ascii?Q?0zGhO9jYf=5FiIrZGiAcbDFO3EGsGj0sKihO04x=5Fj?=
+ =?us-ascii?Q?uLX3WoDYyFtisUXhg=3D=3D=2Ew8RYoV18lwJx5SBlPoa?=
+ =?us-ascii?Q?nUs0VN8n6aoQljCf378pHemZoMDAwdTAwMLb4Ui?=
+ =?us-ascii?Q?sGkUzSER6odtSZxATiUwYcYeOkSxC7O=5FvKwNrH7?=
+ =?us-ascii?Q?MljjAxj=5FFew73v=5FrieTocoN95jTOBCtu-mjslWx?=
+ =?us-ascii?Q?7HkiMzVTmcHID1i2LLarrvO8uwHZizIC0tT9ONl?=
+ =?us-ascii?Q?4cc46j4t7L0MprFrZWXOxYkOYbAxEfDZ8llETeT?=
+ =?us-ascii?Q?rmCf51YajtVhQLCm0hNyO0osTRnLJLdITJcH0Gk?=
+ =?us-ascii?Q?OZa8xxFdIHXgVH=5FSn-fKXn1yv9ihpSRc8sFARVH?=
+ =?us-ascii?Q?yzxdi8PWRWdpJ2mDmKILtEVjaNh8=5F-wmC37RVlH?=
+ =?us-ascii?Q?Pd4qeW4FFcPJIpplxld94uEGCVC1l99=5FvEcuxyu?=
+ =?us-ascii?Q?qv9nQGwZrw0U0xaJuuSl5BylRwPQrfJU0xqsr9j?=
+ =?us-ascii?Q?WKQuWAABvtKY=5F0Ah1QRQns99m6ORBRkTPwflk3L?=
+ =?us-ascii?Q?-ZhmyB4rdI0fZbwrurcpT6T-KneJKEPzjw0v3Yx?=
+ =?us-ascii?Q?Uyq7qA=5FCiMOfEgtL7IYIDcYCFINGRB8-F6J0NNi?=
+ =?us-ascii?Q?Wa-heAXFXDqkAIkIhgIrfQn8YzG-5ZhkmCr-kiD?=
+ =?us-ascii?Q?bJdYj=5FUsbRpAf9tPwX53DBgZWWrrUjtFG0U=5Fu0a?=
+ =?us-ascii?Q?=5FS9x4vYASG6MR1-1k16F2YRdPoqmscplRqfaMd8?=
+ =?us-ascii?Q?k7NtI6DOkB37gzwFG1j68sP-93o3t79AELD299g?=
+ =?us-ascii?Q?Vj0hXisDrxpu=5FKZcTMzss2MGw2P0FqpDTAKOK=5FA?=
+ =?us-ascii?Q?EmxMeBQWyRq=5Fjbcn-EoZNl=5FylD3po7bVcK8eFvl?=
+ =?us-ascii?Q?POJNWyOwm8-iru3Ne6Tj2G1rnfatqGNP7NTbSv6?=
+ =?us-ascii?Q?sL8bx8r4Eu6GetkmnmQy-WHazRlUgl7ov-wp4r8?=
+ =?us-ascii?Q?ZiRmPYGcn4XERaSMhttcyDqa78e7syR=5FedrQarr?=
+ =?us-ascii?Q?0jKzkiCnyIV0bHbayky4srZb0vgfH8wwfLdDPpR?=
+ =?us-ascii?Q?ZMpk5V5ZYmhbNzYTca99ojuS7UQpoxQ0zXnxKkp?=
+ =?us-ascii?Q?=5Fq0IKbBSSosAxh-SXl6hQMxPgqxAIo7bAduyQ4y?=
+ =?us-ascii?Q?AhHLc4wQzYVh6WbLyjoLhnRv8iYRgCVM4QKHE4H?=
+ =?us-ascii?Q?V5kZtAsEUD0=5Fo=5FFDvOPBnPz=3E?=
+
+--a0d191856615b80897059b1a15edd0e640f323cd8c1adf9d5a4b5d5636ca
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=iso-8859-1
+Mime-Version: 1.0
+
+MEASLES - CANADA (01): (SASKATCHEWAN) INTERNATIONAL TRAVEL
+**********************************************************
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+Date: Fri 19 Jan 2024
+Source: Star Phoenix [edited]
+<https://thestarphoenix.com/news/local-news/case-of-highly-contagious-disea=
+se-measles-found-in-saskatoon>
+
+
+A case of the highly contagious disease measles has been identified in
+Saskatoon.
+
+Saskatchewan Health Authority (SHA) said in a news release on Friday
+[19 Jan 2024] that one case of measles had been confirmed in a
+Saskatoon resident who had travelled overseas. Measles is a nationally
+notifiable disease in Canada.
+
+Symptoms of measles can include fever, cough, runny nose, red eyes,
+fatigue, and irritability. Small, white spots form inside the mouth
+and throat, and a red blotchy rash develops on the face and spreads
+down the body about 3 to 7 days after symptoms begin. The rash can
+last 4 to 7 days.
+
+Anyone who was at of the following locations during the listed times
+should monitor for these symptoms.
+
+When: Sunday, 7 Jan 2024 from 3:30 p.m. to 7 p.m.
+Where: Reitman's in Stonebridge (3011 Clarence Avenue S), Dollarama in
+Stonebridge (3011 Clarence Avenue S), Walmart in Stonebridge (3035
+Clarence Avenue S)
+
+When: Tuesday, 9 Jan 2024 from 1:30 p.m. to 4:30 p.m.
+Where: 1st floor Arts Building Caf=E9 at University of Saskatchewan (9
+Campus Drive)
+
+When: Tuesday, 16 Jan 2024 from 7 a.m. to 9:30 a.m.
+Where: Royal University Hospital adult emergency waiting room
+
+If anyone has any symptoms and was also at any of the listed locations
+during the identified times, SHA said they should wear a mask and call
+811 for directions. If anyone is in medical distress, they recommend
+going to an emergency room or calling 911, while also identifying a
+possible measles exposure.
+
+Anyone who was potentially exposed at RUH emergency may also be
+eligible for pre-emptive treatment, SHA said, if they were born in
+1964 or later and have not received 2 doses of measles vaccine --
+measles-rubella (MR), measles-mumps-rubella (MMR) and/or
+measles-mumps-Germana-varicella (MMRV).
+
+Those eligible are asked to attend a clinic at Northeast Health Centre
+at 407 Ludlow Street on 20 or 21 Jan 2024 between 9 a.m. and 3:45 p.m.
+No appointment is required.
+
+--
+Communicated by:
+ProMED
+
+[No mention is made of the country to which the individual had
+traveled or their vaccination status. As the airport isn't listed as
+one of the exposure locations, the patient presumably developed
+symptoms upon return to Saskatchewan. International travel and low
+vaccination rates continue to drive measles outbreaks globally. -
+Mod.JH
+
+ProMED map:
+Saskatchewan Province, Canada:
+<https://promedmail.org/promed-post?place=3D8714348,262>]
+
+[See Also:
+Measles - USA (02): multiple states
+http://promedmail.org/post/20240118.8714292
+Measles update (01): USA (PA) multiple potential exposure sites
+http://promedmail.org/post/20240107.8714111
+2023
+----
+Measles update (64): USA, Russia, Azerbaijan
+http://promedmail.org/post/20231226.8713899
+Measles update (31): Americas, Asia, Africa
+http://promedmail.org/post/20230707.8711001
+Measles update (30): W Pacific, Americas, E Mediterranean, Africa,
+int'l travel http://promedmail.org/post/20230704.8710940
+Measles update (29): E Mediterranean, Europe, Africa, Americas, int'l
+travel http://promedmail.org/post/20230624.8710728
+Measles update (28): Americas, E Mediterranean, W Pacific
+http://promedmail.org/post/20230619.8710660
+Measles update (21): global update
+http://promedmail.org/post/20230428.8709755
+Measles update (20): Europe, Asia, Africa, W. Pacific, Americas,
+Middle East http://promedmail.org/post/20230423.8709653]
+.................................................jh/may/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3D71obQvpEiy4dP0g1Wue24IodtTUC_ZefhyO9PzclC2BoMDAwdTAwMPOkrB3=
+H85S_lY7ramGWOw9CnbqHb_CO-2iIvvrl90u4leWKbHy9GylpK8i0BCgaCHBzx81pb5KJDNr0kl=
+bPDC4gZ49L4utpAssdAhUS0UBEWmvpa3VVnzCmv7nxnkc-bcAItg9yKYwzZdby__5I13VquY5G6=
+-1DvvaZKt2Dip8_KEJGCTz_Qq4mq0ZJh5mlb3kZdQbf4QTOzYQdRt7OcFUdN2ON357d2OrfyYTo=
+TKQHgW19KiPycaLHULNyTM8wNCMhsiR5IeS_ySQ-Om7GO7WMNWRuQmUHnV1aqqUkYkGy9GQE89k=
+mVVDHrsppRN96Zt4Sl1ZCjPj1r3X7EjjXHdV5GeeO1YedUOI8-XTd9dRfL05ufB0paPuPJieofu=
+zWimzS3jo65xcA3q2hPJvraaCFRvmbDNNTjCGah8rn6ldczXpqXf94-aMvDuHUQYlX5OSXY-9Z9=
+V86T7ibcBuNkFuv8e6Slxh1aE4VWsOW0enHpjvbCENz39_vHhQ24BvlmYMEHiiByA2v3eg3HBcZ=
+bzEKRpSi-rwwf3xwYm71KTndo6z_spAFNG6OCotdxkoKLBUyFmArb-Ipza9xxI6nuybmo3szQK7=
+rbPzcK7nzCoMyHN3-0tq1pn7CrHHYuXQ-iOuxX7A8oiev6M_oIZdgV_tUk_GGZGUQI6uXPdzPHL=
+P9VLjIJZfLu-cYVkwycOeOWgLqNSwr7RBtwGXocg7_2BNAslr6jsRjFwFvXKs880oMT3FScTky7=
+4JKA299CppFgsSwGCb3py05PGKO3v4yXC-2vHfvbESAi4BV6o9d6keYMA2JV1SqKaGj4NyGsgvH=
+CSOtUTgy-Bdqet2vYslQ1dH6fz92hUsni0aY8ODDRRlysUpiQoVMOjGv5Fo4z6_3L2ryayn1P6s=
+KzU9_Px-vPSc6WDD8yxR6tOAsHavvuiBRE2EmCXmsfREK4Xhqf_6O-0Z0uwZZtfJUOnQC7dSG-k=
+i4pGsxpuTcWAEsed_wEYIVDpYHardGDX2gR4OfJ0Qfpdy2NOTMqgicErOsSrIecUgM0ZR3IuXgM=
+RU8sEdyLwLRpORikFe7cTVDL_Wa228swLIJps7GMSukykBEahpd7Hs-j6oxOAu_IxwPLOBnz7DM=
+9i7lkVsMTpTb5m_Te2nQg-1hEDbZiG3Y3e6L1PAjB7Q=3D )
+############################################################
+############################################################
+
+--a0d191856615b80897059b1a15edd0e640f323cd8c1adf9d5a4b5d5636ca
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=iso-8859-1
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>MEASLES - CANADA (01): (SASKATCHEWAN) INTERNATIONAL TRAVEL<br>*******=
+***************************************************<br>A ProMED-mail post<b=
+r><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisIi=
+jpefK5PNjW-mL-YZGnfgDOxU1G3gjwnPSi2Tfv3HA/435/ffGIULe2RDSapYLlt7xSfQ/h0/ZRh=
+4NGQFfIZi-Yl5YOKyzruM-VMYd-IGrU5Yu7Onjq8">http://www.promedmail.org</a><br>=
+ProMED-mail is a program of the<br>International Society for Infectious Dis=
+eases<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt=
+48tisCT5tpD4Upm3qyMCbcYSQvc/435/ffGIULe2RDSapYLlt7xSfQ/h1/1fGpVtjjCdVFK2tsO=
+B5SP4PPSMJJ1N99hNt9fD0whUo">http://www.isid.org</a><br><br>Date: Fri 19 Jan=
+ 2024=0D<br>Source: Star Phoenix [edited]=0D<br><a href=3D"https://u1926866=
+2.ct.sendgrid.net/ss/c/n2BLS7Nz6isdK7W6nsHw6xsljIkVQ0Gr3AbngbD1kqN-5DGW-M5J=
+BLT9UZPCE9GPLEzE2hyTPDSAqk3p_nv8Tpeig_yjIluWcI--8EB9dOuaUjAIPupHnl6tHGfImor=
+YRbLyR1_tPNGIKaqDfZd3Bg/435/ffGIULe2RDSapYLlt7xSfQ/h2/RMYH8f9TREG8zSwWytasR=
+0gfNwZuHCWu8N8KJLgytcI">https://thestarphoenix.com/news/local-news/case-of-=
+highly-contagious-disease-measles-found-in-saskatoon</a>=0D<br>=0D<br>=0D<b=
+r>A case of the highly contagious disease measles has been identified in<br=
+>Saskatoon.=0D<br>=0D<br>Saskatchewan Health Authority (SHA) said in a news=
+ release on Friday<br>[19 Jan 2024] that one case of measles had been confi=
+rmed in a<br>Saskatoon resident who had travelled overseas. Measles is a na=
+tionally<br>notifiable disease in Canada.=0D<br>=0D<br>Symptoms of measles =
+can include fever, cough, runny nose, red eyes,<br>fatigue, and irritabilit=
+y. Small, white spots form inside the mouth<br>and throat, and a red blotch=
+y rash develops on the face and spreads<br>down the body about 3 to 7 days =
+after symptoms begin. The rash can<br>last 4 to 7 days.=0D<br>=0D<br>Anyone=
+ who was at of the following locations during the listed times<br>should mo=
+nitor for these symptoms.=0D<br>=0D<br>When: Sunday, 7 Jan 2024 from 3:30 p=
+.m. to 7 p.m.=0D<br>Where: Reitman's in Stonebridge (3011 Clarence Avenue S=
+), Dollarama in<br>Stonebridge (3011 Clarence Avenue S), Walmart in Stonebr=
+idge (3035<br>Clarence Avenue S)=0D<br>=0D<br>When: Tuesday, 9 Jan 2024 fro=
+m 1:30 p.m. to 4:30 p.m.=0D<br>Where: 1st floor Arts Building Caf=E9 at Uni=
+versity of Saskatchewan (9<br>Campus Drive)=0D<br>=0D<br>When: Tuesday, 16 =
+Jan 2024 from 7 a.m. to 9:30 a.m.=0D<br>Where: Royal University Hospital ad=
+ult emergency waiting room=0D<br>=0D<br>If anyone has any symptoms and was =
+also at any of the listed locations<br>during the identified times, SHA sai=
+d they should wear a mask and call<br>811 for directions. If anyone is in m=
+edical distress, they recommend<br>going to an emergency room or calling 91=
+1, while also identifying a<br>possible measles exposure.=0D<br>=0D<br>Anyo=
+ne who was potentially exposed at RUH emergency may also be<br>eligible for=
+ pre-emptive treatment, SHA said, if they were born in<br>1964 or later and=
+ have not received 2 doses of measles vaccine --<br>measles-rubella (MR), m=
+easles-mumps-rubella (MMR) and/or<br>measles-mumps-Germana-varicella (MMRV)=
+.=0D<br>=0D<br>Those eligible are asked to attend a clinic at Northeast Hea=
+lth Centre<br>at 407 Ludlow Street on 20 or 21 Jan 2024 between 9 a.m. and =
+3:45 p.m.<br>No appointment is required.=0D<br>=0D<br>--=0D<br>Communicated=
+ by:=0D<br>ProMED<br><br>[No mention is made of the country to which the in=
+dividual had<br>traveled or their vaccination status. As the airport isn't =
+listed as<br>one of the exposure locations, the patient presumably develope=
+d<br>symptoms upon return to Saskatchewan. International travel and low<br>=
+vaccination rates continue to drive measles outbreaks globally. -<br>Mod.JH=
+<br><br>ProMED map:<br>Saskatchewan Province, Canada:<br><a href=3D"https:/=
+/u19268662.ct.sendgrid.net/ss/c/sSnCkKCWBvais3EuVAOvgy2WOIX7pp1nXnn4AbwuQ3Z=
+6WbkfhqXYXU-aTMPJ8yThNXSpJdTDarFmV-KPIsQZWA/435/ffGIULe2RDSapYLlt7xSfQ/h3/a=
+lTt_rSZxWBdFc88fkGN4_-MM3jbrG8wQicRBYl7WGE">https://promedmail.org/promed-p=
+ost?place=3D8714348,262</a>]<br><br>[See Also:<br>Measles - USA (02): multi=
+ple states<br>http://promedmail.org/post/20240118.8714292=0D<br>Measles upd=
+ate (01): USA (PA) multiple potential exposure sites<br>http://promedmail.o=
+rg/post/20240107.8714111=0D<br>2023=0D<br>----=0D<br>Measles update (64): U=
+SA, Russia, Azerbaijan<br>http://promedmail.org/post/20231226.8713899=0D<br=
+>Measles update (31): Americas, Asia, Africa<br>http://promedmail.org/post/=
+20230707.8711001=0D<br>Measles update (30): W Pacific, Americas, E Mediterr=
+anean, Africa,<br>int'l travel http://promedmail.org/post/20230704.8710940=0D=
+<br>Measles update (29): E Mediterranean, Europe, Africa, Americas, int'l<b=
+r>travel http://promedmail.org/post/20230624.8710728=0D<br>Measles update (=
+28): Americas, E Mediterranean, W Pacific<br>http://promedmail.org/post/202=
+30619.8710660=0D<br>Measles update (21): global update<br>http://promedmail=
+.org/post/20230428.8709755=0D<br>Measles update (20): Europe, Asia, Africa,=
+ W. Pacific, Americas,<br>Middle East http://promedmail.org/post/20230423.8=
+709653]<br>.................................................jh/may/jh<br></=
+body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3D71obQvpEiy4dP0g1Wue24IodtTUC_ZefhyO9PzclC2BoMDAwdT=
+AwMPOkrB3H85S_lY7ramGWOw9CnbqHb_CO-2iIvvrl90u4leWKbHy9GylpK8i0BCgaCHBzx81pb=
+5KJDNr0klbPDC4gZ49L4utpAssdAhUS0UBEWmvpa3VVnzCmv7nxnkc-bcAItg9yKYwzZdby__5I=
+13VquY5G6-1DvvaZKt2Dip8_KEJGCTz_Qq4mq0ZJh5mlb3kZdQbf4QTOzYQdRt7OcFUdN2ON357=
+d2OrfyYToTKQHgW19KiPycaLHULNyTM8wNCMhsiR5IeS_ySQ-Om7GO7WMNWRuQmUHnV1aqqUkYk=
+Gy9GQE89kmVVDHrsppRN96Zt4Sl1ZCjPj1r3X7EjjXHdV5GeeO1YedUOI8-XTd9dRfL05ufB0pa=
+PuPJieofuzWimzS3jo65xcA3q2hPJvraaCFRvmbDNNTjCGah8rn6ldczXpqXf94-aMvDuHUQYlX=
+5OSXY-9Z9V86T7ibcBuNkFuv8e6Slxh1aE4VWsOW0enHpjvbCENz39_vHhQ24BvlmYMEHiiByA2=
+v3eg3HBcZbzEKRpSi-rwwf3xwYm71KTndo6z_spAFNG6OCotdxkoKLBUyFmArb-Ipza9xxI6nuy=
+bmo3szQK7rbPzcK7nzCoMyHN3-0tq1pn7CrHHYuXQ-iOuxX7A8oiev6M_oIZdgV_tUk_GGZGUQI=
+6uXPdzPHLP9VLjIJZfLu-cYVkwycOeOWgLqNSwr7RBtwGXocg7_2BNAslr6jsRjFwFvXKs880oM=
+T3FScTky74JKA299CppFgsSwGCb3py05PGKO3v4yXC-2vHfvbESAi4BV6o9d6keYMA2JV1SqKaG=
+j4NyGsgvHCSOtUTgy-Bdqet2vYslQ1dH6fz92hUsni0aY8ODDRRlysUpiQoVMOjGv5Fo4z6_3L2=
+ryayn1P6sKzU9_Px-vPSc6WDD8yxR6tOAsHavvuiBRE2EmCXmsfREK4Xhqf_6O-0Z0uwZZtfJUO=
+nQC7dSG-ki4pGsxpuTcWAEsed_wEYIVDpYHardGDX2gR4OfJ0Qfpdy2NOTMqgicErOsSrIecUgM=
+0ZR3IuXgMRU8sEdyLwLRpORikFe7cTVDL_Wa228swLIJps7GMSukykBEahpd7Hs-j6oxOAu_Ixw=
+PLOBnz7DM9i7lkVsMTpTb5m_Te2nQg-1hEDbZiG3Y3e6L1PAjB7Q=3D" target=3D"_blank" =
+class=3D"Unsubscribe--unsubscribePreferences" style=3D"font-family:sans-ser=
+if;text-decoration:none;">Unsubscribe Preferences</a></div><br>############=
+################################################<br>#######################=
+#####################################<br><br><img src=3D"https://u19268662.=
+ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/435/ffGIULe2RDSapYLlt7xSfQ/ho.g=
+if" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"height:1px !imp=
+ortant;width:1px !important;border-width:0 !important;margin-top:0 !importa=
+nt;margin-bottom:0 !important;margin-right:0 !important;margin-left:0 !impo=
+rtant;padding-top:0 !important;padding-bottom:0 !important;padding-right:0 =
+!important;padding-left:0 !important;"/></body>
+</html>
+--a0d191856615b80897059b1a15edd0e640f323cd8c1adf9d5a4b5d5636ca--

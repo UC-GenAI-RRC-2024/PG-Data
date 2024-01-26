@@ -1,0 +1,401 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a05:640c:3013:b0:1ee:4bd3:5fc9 with SMTP id z19csp343372eiw;
+        Sat, 20 Jan 2024 17:36:17 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IFME85f8nalnAQO/SkW7D8MaT8pKCvgFVjXWJFj+qzLUoFIrhWkgBezaTs2BFpFsMDeXdRP
+X-Received: by 2002:a05:6214:20a2:b0:686:1e2:747e with SMTP id 2-20020a05621420a200b0068601e2747emr978392qvd.71.1705800977659;
+        Sat, 20 Jan 2024 17:36:17 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1705800977; cv=none;
+        d=google.com; s=arc-20160816;
+        b=ood8A3gYlCS1HIa/vB8nvjrsW/2jmsscQGh1C4j44qF/OqHdEj8RYWJZfdpm7sZJe/
+         e+fgHkVIv2x00+Ec94a9TFp2bhwJyrwLDU40I0NIFBvz1A/B5VGctGoiXhe/wII+Z9FZ
+         z/exwECqQqs0GxWA/XA+uqAArsLhffkHp5TAyiGBkkY7Wf76iUFBkzzGqfY9uyPScu9X
+         JyhJxjoS/akJduEsaHBqlZXZF8UnKm6n0KgNSKLMBFSNk2QXiL/kpi6qrT/TGVR897zD
+         XwmWPCsbZcmOihaC+FKAX1LI5HQmjm/o2Bfn4XLWyODgghOxZWXFB6tSdj2uShSTEOHD
+         UhIg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=vr/gRCI/yRvHbajn6BOw3T6FvEpxQQM9RmJg6vA4oW8=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=iLdRcb3I+yWEfBfHHFZVaU57CFzd297kokGxy5AnC5qFz3tX86fUr6iwmHZ+0w8G19
+         5HyUw/WaBF2VvVkg1wXgOl1MNxZw0nMvaQrG2jV8fqFFE0o41VO3PA/0GVI9HHWQavnL
+         n7Gq547sVyJgpiaju6P8VLicKVjDhS7CdGUir1siY+qo0SDBnZpkbGaOORyb4pqCMJVD
+         XcaiqCLfOrNgvOfEqDKZES/jrOdLB+yUHQUKk+8+Do/oqeBQ+jj2H8SKpsGQa5OlpcA2
+         V0hUxmtK2UNYCM9JCOzou6euPzOKa3ifgeJ/yGf0PCdEEIx+I3X4VbensBLZN+2fbN3q
+         n5PA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=X3L5rEfm;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=Nn3I+pDi;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id b18-20020a0ccd12000000b00681993a0b3asi2569072qvm.265.2024.01.20.17.36.17
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sat, 20 Jan 2024 17:36:17 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=X3L5rEfm;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=Nn3I+pDi;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=vr/gRCI/yRvHbajn6BOw3T6FvEpxQQM9RmJg6vA4oW8=;
+	b=X3L5rEfmn67ELbRJaZF4yubN5fyzh8U1jI2Q1uYQQbN9KFCJvr6wq8JfT1jHYNc5Er4W
+	Qa9ysNTyF32K0dKSwu2STOdo+WJgAOCzqad6FS1a+w7bO/wPAvRExEDTmlep3OOPTxtt0I
+	WKKReRzOHrfBBIbFZexRL9As4b+V+AMTYuX1r1FZ5OaCxHHC1lBNpQ3xjMPZis3BalnnPu
+	w4k1pbd/TaApC+LehZD2YVicE4uB9bJQA64INRfuIK3XsyiTx+ogtgc38BoIZtw6RDlQNZ
+	vyGXcZ4U5ddKHV0kuiT95Ya9usnEkZBwnef1U2Z/lpBFZsDdcGyWZZgf6AaKvFKw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=vr/gRCI/yRvHbajn6BOw3T6FvEpxQQM9RmJg6vA4oW8=;
+	b=Nn3I+pDiFy6/v79nJlJZAKfEmEnTVLXjnTcB04UPjmxzJasRBAtoM7e3JfKAIowDlPUC
+	MIaEBuTdQVc5NuxZcKqZ5lwvMM9dGJwMRmG12HLszHBOBHaeaEMjHp0y45KUchgjbsR4HU
+	ZwPlrfYIBS493qghVu8JMyjFo5V6lftUc=
+Received: by filterdrecv-568669ddb-f92s6 with SMTP id filterdrecv-568669ddb-f92s6-1-65AC750D-40
+        2024-01-21 01:36:13.705779957 +0000 UTC m=+8232900.795451695
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-29 (SG) with HTTP
+	id 3Mk2sH98SG-1lF2Ndiw8bw
+	Sun, 21 Jan 2024 01:36:13.679 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=ac7aa5b0ca69969c0bbb1e7f19f319825516d57da20245da51dc5b653ec9
+Date: Sun, 21 Jan 2024 01:36:17 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <3Mk2sH98SG-1lF2Ndiw8bw@geopod-ismtpd-29>
+Subject: PRO/AH/EDR> Zika virus (03): Thailand, northeastern region
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iBEntmIrvb=2F+hZNtcfdSTU2PsMQIh7J4aqAHo5H?=
+ =?us-ascii?Q?NXXKepAC7aBLSzr2FIIrRtaMo=2FLWDeKJQ4IlfCZ?=
+ =?us-ascii?Q?9mHAmHfvnpSAaDKcYowFV5RIZmQpJjQnXdNwXKx?=
+ =?us-ascii?Q?ssDIdhY205yl3eJeoPXDh5kdm4NROuCCLlY5Iiw?=
+ =?us-ascii?Q?zZSqXx50zvKlYYzdU+uPOYvYVp00j3HnHGkfDw?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUiShGf=2FO8XJWpH34Od4Nd?=
+ =?us-ascii?Q?fxXa6jil96uRcJkF+N+LeVnO1tx80ddOyoyOo=2Fc?=
+ =?us-ascii?Q?Brxcl3ERAm0cOY743=2FFH59DWiSf5OzXORh1DLKt?=
+ =?us-ascii?Q?hb1NMKty3PsA5ju0ZzxCrq1WQuZSEQf=2FJlWtgqv?=
+ =?us-ascii?Q?cZmsyCHlNUZsDS0LixTJt0bg3nVbIDw3PMAvnos?=
+ =?us-ascii?Q?+9aNBSea5rhMAjCWBp3BGj0dVCR0HzmmgP=2FHyQ+?=
+ =?us-ascii?Q?8UjRNrCUJiypth7Z5gKmvKP5WA2Y1qEiPH=2FiJmO?=
+ =?us-ascii?Q?Mge6MTeowsWz8DicKRU4x9IojwXUv5po3WyWG=2F6?=
+ =?us-ascii?Q?biVo2dPX17oHfoh9LJuGJ=2FdbmckL54Ra+OqUGSl?=
+ =?us-ascii?Q?Lvy9M4hEYkHyY4E=2FIRWw1hQQuk5w7rNC9yBHoYO?=
+ =?us-ascii?Q?b2kriEDvwxZU2EVt1FEaFD5tJccnF9W5nj8LWq5?=
+ =?us-ascii?Q?q4+HRosI2EaZCzplOLWbGlXTX4yh3=2FP8e+Qth2D?=
+ =?us-ascii?Q?VAB0vzeqeQmAuBracIzw3eeOUfZLmPaRIQkR0xn?=
+ =?us-ascii?Q?wJAz4QUnEa+9DoHkic6pz26tv=2FL4T8Hrh5rxUPf?=
+ =?us-ascii?Q?o7o7AIse9G8kCAJkxsDTl7fLGdLmWrRqqcQ4HAS?=
+ =?us-ascii?Q?xZ3G6F8MUKaeQgVIx2C2A4yoQdvu4JrrLmm94ro?=
+ =?us-ascii?Q?s=2F4rDs=2FEBPOsZ=2FRQTVlKzB4GZCMziv5D4oezN1c?=
+ =?us-ascii?Q?OcTmYkbCurOL4KmY4eXl1jAKrpnLoVPBwXZM=2F2d?=
+ =?us-ascii?Q?qQUL4VBHqxSYDrvP6X1vW8kNwg=2FI2OYQv6v8TUX?=
+ =?us-ascii?Q?vTB2ntKrdX+CUUl+9dLL49xKbg=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2EiWnzwew9j?=
+ =?us-ascii?Q?u09CV-uFCW2HicaIe5n8SN6MgsZeGQpTAJoMDAw?=
+ =?us-ascii?Q?dTAwMJGa0z8fYGfLqMADGL6yelD-K=5FKqamqYzwd?=
+ =?us-ascii?Q?3VHSe3L2=5FAQVuiht95T=5FzsBBY5tQjCilCEGWNQ5?=
+ =?us-ascii?Q?nK0P=5FtjfGTdoBXfx=5FueKglI-EXaXHgyr2I8NXt7?=
+ =?us-ascii?Q?K6CB=5FfgkSHuZ7AEpQ=3D=3D=2EPjv6ESOMSdMQmYh-zlD?=
+ =?us-ascii?Q?s3RLEqMosRAtb7doItJH93mVoMDAwdTAwMPo3bz?=
+ =?us-ascii?Q?CSXELaWhDZ6eS61cn1bwVR6RE5=5FAvco3BMkSgcb?=
+ =?us-ascii?Q?MGZguhY=5FE-GhvZBIwxS2-lPV1W9TnXlH1GqFJMe?=
+ =?us-ascii?Q?-BCNpSoH=5FF9EuCfmiuAVOukbb1G=5FZhdV6BD9xZT?=
+ =?us-ascii?Q?bMp=5FY5iAmDf=5FzaIPMROaLoKs=5FCA0DJZzoMbqEcA?=
+ =?us-ascii?Q?WQHVjDmjOfyd=5F8dUgULG2B5tsE34X1g=5FDDuCPuD?=
+ =?us-ascii?Q?NpuFwYoU8W7bwU4VskBfKQRaSaElPxFtC1XTogN?=
+ =?us-ascii?Q?eirtQai2qMlLny3VBt8vjbsq5QbWq=5FFawDOeRg5?=
+ =?us-ascii?Q?fRqMkmn-ekPjgn53mLQQsvrfj7XFW40yvAnd2Rd?=
+ =?us-ascii?Q?IVPr0cAiJA=5FNUtQxdivi37DARYYUd7TyXJJ0zZe?=
+ =?us-ascii?Q?1BhNgyfc4V00yuf4GcqERIVj=5FeOGi04QrsEDdAl?=
+ =?us-ascii?Q?47DpXYZhILrpF1dP-ygb=5FLGVLy5IzmbNeWPcMEI?=
+ =?us-ascii?Q?j9Kj4sZDWcbStpmqLUl1AKQ2-Fu5C1TsJRKUcF3?=
+ =?us-ascii?Q?uZ5btoHtaEHzPReR0JzNv1XhEcLqrJuesOsjNxM?=
+ =?us-ascii?Q?WWe4Jdjh8UU2It9CjBJzSn0UCTnUd6zp2AAEAP0?=
+ =?us-ascii?Q?1Dhd=5FvYaGynySNxi=5FxPiqsIeQsmB7dKtvI=5FLTV=5F?=
+ =?us-ascii?Q?XvmJtuZRFV7Y2LkwPdr2ogUF6j6sf9cl89k3aFA?=
+ =?us-ascii?Q?F7U8kxQhjwS2zdIebE5uikwTIIFDtvk9mqX04r0?=
+ =?us-ascii?Q?s3lXlA6bYrCpQ5U5CVP7SYM1S3NioJvgrEaaR3w?=
+ =?us-ascii?Q?bXfTGOhtyBn8Mahe-qM7P7As=5FSXUlzLGA1=5F93MM?=
+ =?us-ascii?Q?a1C=5F54aPoaKWvExbGPvu=5F2PSdx5RiP-AaSJLiLG?=
+ =?us-ascii?Q?9Jvkd5bgvXtfWlL19VBdwaZfwjG1kjNieZpkKA9?=
+ =?us-ascii?Q?iZobn9geTFUFNvt5E6GKd-oBeTllxARdNaeYyKV?=
+ =?us-ascii?Q?d5NgtZOLg9lLT1jPU12lbZriqiHgqgJgbj1BjQF?=
+ =?us-ascii?Q?Fnoz2VMUXKwZS3sSEGjIzsPeepMZgzuFq6HFwqv?=
+ =?us-ascii?Q?pdZQeGFHgYz46BUoPyrLPEVXQqAsmqksFxf0j7U?=
+ =?us-ascii?Q?VW=5FH6pBXR4v715gcRDytXOV=5FiQN2IWoN8m3i4fQ?=
+ =?us-ascii?Q?JoH2=5FQ=3D=3D=3E?=
+
+--ac7aa5b0ca69969c0bbb1e7f19f319825516d57da20245da51dc5b653ec9
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=us-ascii
+Mime-Version: 1.0
+
+ZIKA VIRUS (03): THAILAND, NORTHEASTERN REGION
+**********************************************
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+Date: Wed 17 Jan 2024
+Source: Pattaya Mail [edited]
+<https://www.pattayamail.com/thailandnews/zika-virus-cases-rise-in-northeas=
+t-thailand-450128>
+
+
+Zika virus cases rise in Northeast Thailand
+-------------------------------------------
+Public health authorities in Nakhon Ratchasima province are on alert
+for a potential Zika virus outbreak after 19 cases were reported in
+the lower Northeast region. The cases detected between 1-3 Jan 2024
+included 14 in Surin and 5 in Nakhon Ratchasima, with most patients
+being under 14 years of age.
+=20
+Across Thailand [in 2023, see Zika virus (02): Thailand 2023
+http://promedmail.org/post/20240112.8714175], the Zika virus has
+affected at least 758 individuals in 36 provinces, with Chanthaburi,
+Phetchabun, and Trat experiencing the highest number of infections.
+Nakhon Ratchasima-based Region 9 Disease Control Office Director Dr
+Taweechai Wisanuyothin said Zika [virus] is transmitted by mosquitoes,
+similar to dengue fever and chikungunya [viruses].
+=20
+Symptoms of the Zika virus include rashes, fever, headaches, and joint
+and muscle pains. The public, especially pregnant women or those
+planning pregnancy, are advised to seek medical attention if they
+exhibit these symptoms due to the risk of birth defects or
+developmental delays in infants.
+=20
+Dr Taweechai underscored the importance of obstetricians monitoring
+pregnant women infected with Zika. He urged the public to maintain
+cleanliness in their homes and neighborhoods to prevent mosquito
+breeding. Since mosquitoes breed in clean, stagnant water, covering
+water containers near homes is crucial. The use of insect repellents
+is also recommended to reduce the likelihood of mosquito bites.=20
+
+--
+Communicated by:
+ProMED
+
+[After peak Zika virus transmission in 2023, new cases are appearing
+in the lower northeastern region so far this year (2024). Given that
+the Zika virus vector, _Aedes aegypti_ is widespread across Thailand,
+one can expect ongoing Zika virus cases across the country with
+possible transmission "hot spots". There is no commercially available
+Zika virus vaccine yet, so the only preventive measures people can
+implement are avoidance of mosquito bites and elimination of breeding
+sites as the Thai health official above advises.
+
+As noted in the previous ProMED post, not only should pregnant women
+residents and tourists take the recommended precautions to avoid Zika
+virus infection, but their male partners should as well because the
+virus can be sexually transmitted. Men cannot rely on the appearance
+of symptoms as the only indication of infection, because many infected
+individuals are asymptomatic and yet might be able to transmit the
+virus to their pregnant partners. As CDC recommends, if one decides to
+travel to Thailand or other Zika virus-endemic countries, prevent
+mosquito bites and sexual exposure to Zika during and after travel,
+and wait 2 months after returning before becoming pregnant. - Mod.TY
+
+ProMED map:
+Thailand: <https://promedmail.org/promed-post?place=3D8714369,151>]
+
+[See Also:
+Zika virus (02): Thailand 2023
+http://promedmail.org/post/20240112.8714175
+Zika virus (01): Asia (Thailand) USA CDC warning
+http://promedmail.org/post/20240102.8714026
+2023
+----
+Zika virus (12): Europe (Netherlands ex Thailand)
+http://promedmail.org/post/20231227.8713924
+Zika virus (11): Germany ex Thailand
+http://promedmail.org/post/20231213.8713690
+2020
+----
+Zika virus (02): Americas, Asia, research, observations
+http://promedmail.org/post/20200329.7156225]
+.................................................sb/jh/ty/may/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3DSk3nbme4mLXf3RbnljTTvVxxga2JDV__h-kIfu1j9qRoMDAwdTAwMDlBmUD=
+bBQVkswUTcf6YK1CfgCv-KHFCv4fvSg1UouZLXQSZNzPdh2EMbrZY_IjYTV37ap-bO1thdYjri3=
+hPNk8-Qremwz7tptbnS9sQoPklxdKDOJYTH52fpdch7_ZCjR5cwnf_n9kFWwKAMK72BPavQ1sC7=
+-Z5BYwTHdQ6l7QptqzodUai5bxqWp3eP1A0tPgRTIbxsx7_Lnn4RGpH-i6DQdpczreDZ7PVePX1=
+1fvtfwh-K54XY0yBsC7oXq4at41wAmkuFl9d7XwDDDN1zksK1qBkoVdE6B-TABiLr-r3t2u8ng7=
+DWi4vvw_Z2JDAuupCOtXBeE0oZjYmbkVe9cE1zgiZoMi3t7aqXliOZpc4ALaPTA8ZtCdIotnaYb=
+a5OveatmRhyQy9f_SQV6sQN1-0UHr2lWQ8XHTBaLnAva9WQcDjCuT_6BvwdcMhjlbzdXlrlC6wM=
+PmKwA3JX9b1UO7ispVw7GSjUQOvjiXyOnQ1v6CzwvfEut71Rb8fvzVzZq-9lSBjW4ce_oWK-eKQ=
+BNH-zMYDIIFxXXA7i60Ng5gkj0LDJ2kRNAic56M6TmBZ45p8AgjGAhUFOKy59Ar0wIZnjDZN5ZS=
+0boaG9RoRQqtS15kb9cNYQMQgimlcOWeB_-qZpVxRigLK0Mq0Fks1h0mpoJsmAEe84U3xga3vhn=
+htKj3cxtP9rIppw7yIiLan6dhQWwzPhv-Sp8bzFDJ-niVzKgbcZdBqTc77hOjKKOKTRkymVcL9Q=
+7kFZzd9LRfgZOZkaG7ZEUJzOcEyA9p8s6ikxApzINMIxo0NxId76jEidOvmUDH7u-VmZfg_JKY5=
+VEQvlPFrzavVKQjV7S645f6jM9QRbgeh7wN0_dFUlfypgYpBB7dufkCHrokhHUyHVYOaebDXLXY=
+aFEkpWMteMJVdd6VnrtLHSlgp-ZAjwaAGiPo5-HV2I-QgnV2b6HMGWjmJhf2YFoHm3OvHhHbj4j=
+-Vy0VIPJxT89AYgctzcBsFzv-Gk3DEZgT0XBJp3Ozt1fCCq-dy4GToWyFnLEqVyqsr13WUJvfyf=
+J-E3MyYlFfoRBrz--bJAlFReEccg6Q6KR-Z09QJ8vxD5oS0l5-LhxzANrBaDqNS0qpuWK4yKHUb=
+ZdI2ImpvN0q4_GBbMIn27QrceGSs5318fsSYKkUE1kKssvyH4z47Q9GoXj6Ys9rx )
+############################################################
+############################################################
+
+--ac7aa5b0ca69969c0bbb1e7f19f319825516d57da20245da51dc5b653ec9
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>ZIKA VIRUS (03): THAILAND, NORTHEASTERN REGION<br>*******************=
+***************************<br>A ProMED-mail post<br><a href=3D"https://u19=
+268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisIijpefK5PNjW-mL-YZGnfgDOxU=
+1G3gjwnPSi2Tfv3HA/436/L-gb567QTmivgHB10vgeFA/h0/K8XZfINCPqzsAnhutzLs5AWnlsb=
+yJhQq82bTGDB6d1E">http://www.promedmail.org</a><br>ProMED-mail is a program=
+ of the<br>International Society for Infectious Diseases<br><a href=3D"http=
+s://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisCT5tpD4Upm3qyMCbcYS=
+Qvc/436/L-gb567QTmivgHB10vgeFA/h1/FirVQ_Jw-Ax4L3na6E46Pv9Xflp7svpgkLw1q_3pY=
+zY">http://www.isid.org</a><br><br>Date: Wed 17 Jan 2024=0D<br>Source: Patt=
+aya Mail [edited]=0D<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/T=
+Lh_csrC34X_iXpbYoMamw9-StA7qRpfts2KS1RrSsTYxgmnVi5O29WAoPPHqG0tIwsNXn2bg6JL=
+YZW-eyeWgQJRcoJgsBkTMbrkxFNsQDCQDG0ZcTJgTnNpmM0kPiCjdkvtVvg1JPnvJPNmWt6p0w/=
+436/L-gb567QTmivgHB10vgeFA/h2/XHTfCWeBkMZBs7XHoIb9oMRAZtEkbjpydaCnQgmyRnY">=
+https://www.pattayamail.com/thailandnews/zika-virus-cases-rise-in-northeast=
+-thailand-450128</a>=0D<br>=0D<br>=0D<br>Zika virus cases rise in Northeast=
+ Thailand=0D<br>-------------------------------------------=0D<br>Public he=
+alth authorities in Nakhon Ratchasima province are on alert<br>for a potent=
+ial Zika virus outbreak after 19 cases were reported in<br>the lower Northe=
+ast region. The cases detected between 1-3 Jan 2024<br>included 14 in Surin=
+ and 5 in Nakhon Ratchasima, with most patients<br>being under 14 years of =
+age.=0D<br>=20=0D<br>Across Thailand [in 2023, see Zika virus (02): Thailan=
+d 2023<br>http://promedmail.org/post/20240112.8714175], the Zika virus has<=
+br>affected at least 758 individuals in 36 provinces, with Chanthaburi,<br>=
+Phetchabun, and Trat experiencing the highest number of infections.<br>Nakh=
+on Ratchasima-based Region 9 Disease Control Office Director Dr<br>Taweecha=
+i Wisanuyothin said Zika [virus] is transmitted by mosquitoes,<br>similar t=
+o dengue fever and chikungunya [viruses].=0D<br>=20=0D<br>Symptoms of the Z=
+ika virus include rashes, fever, headaches, and joint<br>and muscle pains. =
+The public, especially pregnant women or those<br>planning pregnancy, are a=
+dvised to seek medical attention if they<br>exhibit these symptoms due to t=
+he risk of birth defects or<br>developmental delays in infants.=0D<br>=20=0D=
+<br>Dr Taweechai underscored the importance of obstetricians monitoring<br>=
+pregnant women infected with Zika. He urged the public to maintain<br>clean=
+liness in their homes and neighborhoods to prevent mosquito<br>breeding. Si=
+nce mosquitoes breed in clean, stagnant water, covering<br>water containers=
+ near homes is crucial. The use of insect repellents<br>is also recommended=
+ to reduce the likelihood of mosquito bites.=20=0D<br>=0D<br>--=0D<br>Commu=
+nicated by:=0D<br>ProMED<br><br>[After peak Zika virus transmission in 2023=
+, new cases are appearing<br>in the lower northeastern region so far this y=
+ear (2024). Given that<br>the Zika virus vector, _Aedes aegypti_ is widespr=
+ead across Thailand,<br>one can expect ongoing Zika virus cases across the =
+country with<br>possible transmission "hot spots". There is no commercially=
+ available<br>Zika virus vaccine yet, so the only preventive measures peopl=
+e can<br>implement are avoidance of mosquito bites and elimination of breed=
+ing<br>sites as the Thai health official above advises.=0D<br>=0D<br>As not=
+ed in the previous ProMED post, not only should pregnant women<br>residents=
+ and tourists take the recommended precautions to avoid Zika<br>virus infec=
+tion, but their male partners should as well because the<br>virus can be se=
+xually transmitted. Men cannot rely on the appearance<br>of symptoms as the=
+ only indication of infection, because many infected<br>individuals are asy=
+mptomatic and yet might be able to transmit the<br>virus to their pregnant =
+partners. As CDC recommends, if one decides to<br>travel to Thailand or oth=
+er Zika virus-endemic countries, prevent<br>mosquito bites and sexual expos=
+ure to Zika during and after travel,<br>and wait 2 months after returning b=
+efore becoming pregnant. - Mod.TY<br><br>ProMED map:<br>Thailand: <a href=
+=3D"https://u19268662.ct.sendgrid.net/ss/c/sSnCkKCWBvais3EuVAOvgy2WOIX7pp1n=
+Xnn4AbwuQ3Z6WbkfhqXYXU-aTMPJ8yTh7tFNVyCc5l5tZIIKonuCOw/436/L-gb567QTmivgHB1=
+0vgeFA/h3/nfnv-qa45hB78PEOFy7x_EPniacwbAnvG4wvy7k4l_o">https://promedmail.o=
+rg/promed-post?place=3D8714369,151</a>]<br><br>[See Also:<br>Zika virus (02=
+): Thailand 2023<br>http://promedmail.org/post/20240112.8714175=0D<br>Zika =
+virus (01): Asia (Thailand) USA CDC warning<br>http://promedmail.org/post/2=
+0240102.8714026=0D<br>2023=0D<br>----=0D<br>Zika virus (12): Europe (Nether=
+lands ex Thailand)<br>http://promedmail.org/post/20231227.8713924=0D<br>Zik=
+a virus (11): Germany ex Thailand<br>http://promedmail.org/post/20231213.87=
+13690=0D<br>2020=0D<br>----=0D<br>Zika virus (02): Americas, Asia, research=
+, observations<br>http://promedmail.org/post/20200329.7156225]<br>.........=
+........................................sb/jh/ty/may/jh<br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3DSk3nbme4mLXf3RbnljTTvVxxga2JDV__h-kIfu1j9qRoMDAwdT=
+AwMDlBmUDbBQVkswUTcf6YK1CfgCv-KHFCv4fvSg1UouZLXQSZNzPdh2EMbrZY_IjYTV37ap-bO=
+1thdYjri3hPNk8-Qremwz7tptbnS9sQoPklxdKDOJYTH52fpdch7_ZCjR5cwnf_n9kFWwKAMK72=
+BPavQ1sC7-Z5BYwTHdQ6l7QptqzodUai5bxqWp3eP1A0tPgRTIbxsx7_Lnn4RGpH-i6DQdpczre=
+DZ7PVePX11fvtfwh-K54XY0yBsC7oXq4at41wAmkuFl9d7XwDDDN1zksK1qBkoVdE6B-TABiLr-=
+r3t2u8ng7DWi4vvw_Z2JDAuupCOtXBeE0oZjYmbkVe9cE1zgiZoMi3t7aqXliOZpc4ALaPTA8Zt=
+CdIotnaYba5OveatmRhyQy9f_SQV6sQN1-0UHr2lWQ8XHTBaLnAva9WQcDjCuT_6BvwdcMhjlbz=
+dXlrlC6wMPmKwA3JX9b1UO7ispVw7GSjUQOvjiXyOnQ1v6CzwvfEut71Rb8fvzVzZq-9lSBjW4c=
+e_oWK-eKQBNH-zMYDIIFxXXA7i60Ng5gkj0LDJ2kRNAic56M6TmBZ45p8AgjGAhUFOKy59Ar0wI=
+ZnjDZN5ZS0boaG9RoRQqtS15kb9cNYQMQgimlcOWeB_-qZpVxRigLK0Mq0Fks1h0mpoJsmAEe84=
+U3xga3vhnhtKj3cxtP9rIppw7yIiLan6dhQWwzPhv-Sp8bzFDJ-niVzKgbcZdBqTc77hOjKKOKT=
+RkymVcL9Q7kFZzd9LRfgZOZkaG7ZEUJzOcEyA9p8s6ikxApzINMIxo0NxId76jEidOvmUDH7u-V=
+mZfg_JKY5VEQvlPFrzavVKQjV7S645f6jM9QRbgeh7wN0_dFUlfypgYpBB7dufkCHrokhHUyHVY=
+OaebDXLXYaFEkpWMteMJVdd6VnrtLHSlgp-ZAjwaAGiPo5-HV2I-QgnV2b6HMGWjmJhf2YFoHm3=
+OvHhHbj4j-Vy0VIPJxT89AYgctzcBsFzv-Gk3DEZgT0XBJp3Ozt1fCCq-dy4GToWyFnLEqVyqsr=
+13WUJvfyfJ-E3MyYlFfoRBrz--bJAlFReEccg6Q6KR-Z09QJ8vxD5oS0l5-LhxzANrBaDqNS0qp=
+uWK4yKHUbZdI2ImpvN0q4_GBbMIn27QrceGSs5318fsSYKkUE1kKssvyH4z47Q9GoXj6Ys9rx" =
+target=3D"_blank" class=3D"Unsubscribe--unsubscribePreferences" style=3D"fo=
+nt-family:sans-serif;text-decoration:none;">Unsubscribe Preferences</a></di=
+v><br>############################################################<br>#####=
+#######################################################<br><br><img src=3D"=
+https://u19268662.ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/436/L-gb567QT=
+mivgHB10vgeFA/ho.gif" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=
+=3D"height:1px !important;width:1px !important;border-width:0 !important;ma=
+rgin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;=
+margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !importa=
+nt;padding-right:0 !important;padding-left:0 !important;"/></body>
+</html>
+--ac7aa5b0ca69969c0bbb1e7f19f319825516d57da20245da51dc5b653ec9--

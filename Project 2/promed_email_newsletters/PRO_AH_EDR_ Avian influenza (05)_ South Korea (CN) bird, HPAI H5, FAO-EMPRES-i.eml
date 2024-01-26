@@ -1,0 +1,427 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a98:c004:0:b0:1eb:e128:bbe3 with SMTP id l4csp633874eic;
+        Tue, 9 Jan 2024 17:14:16 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IEEMQWsanqngZOAnqGn6w9eK0YMbj+5cL/Juv6HunIcT02gS3oXqaHaVF1u7HxtK19DyvP8
+X-Received: by 2002:ac8:5bcd:0:b0:429:867e:4aeb with SMTP id b13-20020ac85bcd000000b00429867e4aebmr469316qtb.84.1704849256565;
+        Tue, 09 Jan 2024 17:14:16 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1704849256; cv=none;
+        d=google.com; s=arc-20160816;
+        b=m9CvQimr4c2IOhvoXJdNza2NbLjExlW3xru8jt7j72BBkiwDxpwi7UTmdaKuCAg/mj
+         amp8OdOJXJ9OzJylzjn60hyxdbg14lcgYPXmK2vLYg8Pqrkt54vHc5iFroENhcMtX+tC
+         JsCZrS5vfeNiA6PxcSQv0OFZnzNCZtMX/43nCpzRoM66qmQi5UaMzzp3igvNghlC/+Sj
+         y2Jxq9Oe+YZwXSiFm/eDJkJAjdtjEfQfDFaOF0oWBH+eWBORf2sDkMRpQPPCWxsca9Yd
+         d1Gk8W4DPHou7B/Jro0koH/+qb8mdQkIDcaN4FtnxLEuvPdYv43pdPSrNsLxf1tBU3Wm
+         sMOQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=9acYkPmrQRSmJi4MO5EIr0v+XmOJGMxB+1e5grexsLA=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=f8FvmZabCsXBA5sgdivb8GOjadOOZdYf/nH+TX+7No+Zdqm/7v8v92olIgbpYZUhCJ
+         QYhfSYATC8Y8koGi+MXhYGvdSWwgreZ5pn9aL6mj6TcNCvJjstvENBPpOZbPmnxPpfyb
+         sVzaNia3Jew9PJzxlzK33jXNfhAYjnI3Wx3P7c5ewdsiMmcQtWNxEjEpXvhB+V0GsZvI
+         N242Trp7gE3tkABTEDK0g/vt0arSPatVt4XsLYZLUAHkafkLfzRxcFCmQ94qgDFSawa3
+         IEXwgftUczl9/YQCNh6lBSYe+Fq1YGDoyOfj5lk/YoGMkg9eQ8ldfj9C9XQfRorSh967
+         kMMQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=UmSBBasu;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=O9NG7+kU;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id bv15-20020a05622a0a0f00b00429a21c0635si3237631qtb.659.2024.01.09.17.14.16
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 09 Jan 2024 17:14:16 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=UmSBBasu;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=O9NG7+kU;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=9acYkPmrQRSmJi4MO5EIr0v+XmOJGMxB+1e5grexsLA=;
+	b=UmSBBasuP0CHtsdSzwNyF09Q2ALF6n7q3MpEMwX2z8ezyk/m8CePs1iwYOsmdHtii5qF
+	9vOh63a8H6dJxErHMCgdSig34a7WokEKrrLjsV/xC32lYRyf2yimZIgOVdq2ug7UbDXABM
+	+bQB3HPXHkbAPKcdVdBVkotMYruxESt1xmP8jXV+Ade0KurcrqNx4CHcmn9xKvjZ9s7FGD
+	jCr9If/KM9/OhB+7IxxiutXws54KDRtu6O0qTf4BIjHW+dbIqGsP09epYNFQnRTqN2LOhr
+	hpT51/mCKAGcvknK/Om3pBJi7kAy5zcaBdD2R/Vi6URqmVh7r/88V0CZh5OQqtUg==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=9acYkPmrQRSmJi4MO5EIr0v+XmOJGMxB+1e5grexsLA=;
+	b=O9NG7+kUjWCkcuvRIFNcX34YNZ/X18Vi1wjXDDsDzx9rwVbxOEnQFlQuHSHbktsIAwi1
+	R6+TDtSZbLRLRCZjAsE8ZEa5atCeqG3nXPDkb264q5jzzzP+w2hA/G4LCcJHIjHX/O7wmp
+	YkBe5mX0NWxqzWX6PpQezvw9rseMMYKKQ=
+Received: by filterdrecv-75cb66975-4dsl6 with SMTP id filterdrecv-75cb66975-4dsl6-1-659DEF65-1A
+        2024-01-10 01:14:13.173879191 +0000 UTC m=+7281131.100652884
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-13 (SG) with HTTP
+	id YfUvh5b_Sju4G9Ic25HF_w
+	Wed, 10 Jan 2024 01:14:13.148 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=026218bb43b407c07fc0b2b60cce5abc8ed0e2a020bd6b0482e3df0d069c
+Date: Wed, 10 Jan 2024 01:14:16 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <YfUvh5b_Sju4G9Ic25HF_w@geopod-ismtpd-13>
+Subject: PRO/AH/EDR> Avian influenza (05): South Korea (CN) bird, HPAI H5,
+ FAO-EMPRES-i
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iBJjyq6=2FYyDaajwYGmIQhaLfp+jsMXGnFo3pPel?=
+ =?us-ascii?Q?16pDSZ4II53pTUbWYeHGYWhacChnsk4gn87bi=2FR?=
+ =?us-ascii?Q?UqWafu1Z+Ch3hrWp7AM6erVHK2z3cAmKtTPTgLi?=
+ =?us-ascii?Q?gOfEByyKkMgrfYTM728TGckeFk3MBFxKD5+lRmH?=
+ =?us-ascii?Q?XxEVgOkrORlYmtxYFXknboMpk+ie1FvbHz=2FoYJ?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUiShGf=2FO8XJWpH34Od4Nd?=
+ =?us-ascii?Q?fxXa6jil96uRcJkF+N+LeVnO1tx80ddOyoyOo=2Fc?=
+ =?us-ascii?Q?Brxcl3ERAm0cOY743=2FFH59DWiSf5OzXORh1DLKt?=
+ =?us-ascii?Q?hb1NMKty3PsA5ju0ZzxCrq1WQuZSEQf=2FJlWtgqv?=
+ =?us-ascii?Q?cZmsyCHlNUZsDAOmu78Y3ritSxVd44ud2X9axPE?=
+ =?us-ascii?Q?AGPZiFEylErU8ku7k=2FuM+dN9Bumb6nCgEIL6lfe?=
+ =?us-ascii?Q?8nTqQ7fIdvUEu0tqDlidn3Y16k2hGeGsW8uL=2FRI?=
+ =?us-ascii?Q?1SsyAyODvUza8mSHMnJM9EPhTkEFfzuDC422S2r?=
+ =?us-ascii?Q?933RoC3fBoULFlLt9uZW+8qW9UvAeov=2FJafpGjE?=
+ =?us-ascii?Q?tC5vavDe1zfU56tL7XfEvivrZ2Jme22tfbA6p+N?=
+ =?us-ascii?Q?Pz2EGELpl5NfKXQsHXBqvUcc8jjQ7JnqzFrvYyB?=
+ =?us-ascii?Q?1S1LyM+oCFtuKihFdJ5rZMTc47gIxVCV3MXQNE=2F?=
+ =?us-ascii?Q?Qa=2FBVRTY9x141lelbbWhxpY1hw+JiCciQh=2F6SkJ?=
+ =?us-ascii?Q?+MOhJe2N=2FUsx0=2FdARCmiJj22Ap1w0vbhmCteRh9?=
+ =?us-ascii?Q?zGdTD4SvcPBimMgzSIFgRhjo5=2Fp+qw5FmnARXF=2F?=
+ =?us-ascii?Q?NEWHS3CEdww3vLI9SXy30AhMPShqTPmbuaaIGzm?=
+ =?us-ascii?Q?XI+rIi4mraq4oYJt4N5LSJwOWqawsXiG8oNSylb?=
+ =?us-ascii?Q?4RHH=2F1hVa3oa+NK9mnxOE4nkFnr29rtcLqswfJS?=
+ =?us-ascii?Q?aHtiY5V1=2Fzj0BFCOgUHoVr3ObpIiBzi2L6ldCCv?=
+ =?us-ascii?Q?6zCjqcy2Xay900IvlCO+ZEHTEw=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2EKKCtsM8EZ?=
+ =?us-ascii?Q?z3S5=5F1PGrJHGnNgucz9pK6FRdj7qWFrZa9oMDAw?=
+ =?us-ascii?Q?dTAwMEa7BHNql2efIk66pe4ti0ODH09hCvPBS61?=
+ =?us-ascii?Q?SnVTVmb-2iuDAQ0YNnqjn9IwsBkzKoMOajFPdc1?=
+ =?us-ascii?Q?3-UA24cZHYxaVLBuvxuvzYi4mn2vZGNRXQ=5FSAWO?=
+ =?us-ascii?Q?CLOTeLZYGaqSrA4XQ=3D=3D=2Ez9e2lY6IxNMXOcwH3yD?=
+ =?us-ascii?Q?HYxYTFoVcNexWIYPhfbP1WMJoMDAwdTAwMJpbvr?=
+ =?us-ascii?Q?1P=5FNBkFBfRH79wdHy9zi-PYBJBJlZ69N69V0hrn?=
+ =?us-ascii?Q?uHsjUKwlYboXqViDW15XhnmkvDbDloZc0Prsh0X?=
+ =?us-ascii?Q?J=5FmfSJ9OSSPkvFHUomwHVhHzG2jBrDtcqEeFNYV?=
+ =?us-ascii?Q?RtmXegLWk3OgrZljuwoURElTWvNtXinjhgd1c8v?=
+ =?us-ascii?Q?S=5FNCs=5FePC3rHbtrQNmMiK-LiTf87qTWLuO3yte6?=
+ =?us-ascii?Q?wRD-LFCEllI16Kt3EGZtLXGU=5FUmx8zsu4vmFT4m?=
+ =?us-ascii?Q?xmUB03s6Rth6FCFUYAgFG8JNS9dgNLAaunShQNG?=
+ =?us-ascii?Q?r4JcF5Wo=5F8wRtIvyPGABN9FQ5qI7O4ug-gAAUJi?=
+ =?us-ascii?Q?ZvSV0fcZimGXz0pFmX=5FbfxiXY8zhhAG8Q8VDLVl?=
+ =?us-ascii?Q?KqxxJOXa-F=5F5T5lQhoNlYBRpCngIw8f5UDALoZ0?=
+ =?us-ascii?Q?sr1GdyxQqhtXBRgWaQa0ECTpq4DspKD7o-fZuxT?=
+ =?us-ascii?Q?Oe1xsTAPXFoxorV=5F7nYN2ygNStcYP-BpxUiE7VQ?=
+ =?us-ascii?Q?eyiFTdIAlfINyJE62d9trGzmupkYytP3nILu7KI?=
+ =?us-ascii?Q?hm=5F70qV-svJd5C7F9CQnM7dZLS7n93sMBCaK1u8?=
+ =?us-ascii?Q?mhgnw9HDW4yoqilhdToObBYuxFRERpHT8JHhn8k?=
+ =?us-ascii?Q?57D-vzVqMrrU7bM17I7m0lRaM8AV6LyKhcgtNq2?=
+ =?us-ascii?Q?jYNTo6LvATUWxi1PgZRu1C344biY6elVLctJpdB?=
+ =?us-ascii?Q?folUyeD5RX0aa2bwSXFvqFOTF29vZmiKb9eF3h9?=
+ =?us-ascii?Q?q600Azu9zIKOuqij=5FrVGCmcTYRWjyeE4Q6TtL9P?=
+ =?us-ascii?Q?KHJCuulk-W9e6QGHaSLq8EqKHNnriitLjwt=5FXnI?=
+ =?us-ascii?Q?8rp0dJjHo2Gqha6rJSPdnYWSYtjQVMZCeauDZih?=
+ =?us-ascii?Q?-FmMpA2s5RV8-UjgA5Zqz25aXD694QIDWvkHA-K?=
+ =?us-ascii?Q?eQHbwscxCw=5FKO5x7n5G01xRI-xEJji509k3o5Gk?=
+ =?us-ascii?Q?1rbbaMk5oWQn=5Fw3b0kcewwapYU6ILt2nP-CQU2g?=
+ =?us-ascii?Q?0E99quAd0dckcVfDXqkxKVnco8bGV-Hl-qUoFQc?=
+ =?us-ascii?Q?RuSIgBZZgQh-mz=5FDkH-qhSYmaIKyL75Iyj7cheF?=
+ =?us-ascii?Q?l44Sqw=3D=3D=3E?=
+
+--026218bb43b407c07fc0b2b60cce5abc8ed0e2a020bd6b0482e3df0d069c
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=us-ascii
+Mime-Version: 1.0
+
+AVIAN INFLUENZA (05): SOUTH KOREA (JEOLLONAM-DO) BIRD, HPAI H5,
+FAO-EMPRES-I
+***************************************************************************=
+*
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+Date: Mon 8 Jan 2024
+Source: UN Food & Agriculture Organization (FAO)/EMPRES-i (FAO
+Emergency Prevention System, Global Animal Disease Information System)
+[edited]
+<https://empres-i.apps.fao.org/event-report/370519>
+
+
+General information
+-------------------
+Reported: 8 Jan 2024
+Observed: 20 Dec 2023
+Disease: Influenza - avian
+Disease serotypes: H5 HPAI
+Source: -
+Status: Confirmed
+Outbreak location: Republic of Korea, Chollanam-do
+[The location and details of the outbreak can be seen via the source
+URL above.]
+
+Affected animals
+Animal Type / Animal Class / Species / At Risk / Cases / Deaths /
+Destroyed / Slaughtered
+Domestic / Birds / Unspecified bird / 16 500 / 100 / 6 / 16 494 / -
+
+--
+Communicated by:
+ProMED
+via
+ProMED-MBDS
+
+["South Jeolla Province (Jeollanam-do), also known as Jeonnam, is a
+province in the Honam region, South Korea, and the southernmost
+province in mainland Korea. South Jeolla borders the provinces of
+North Jeolla to the north, South Gyeongsang to the northeast, and Jeju
+to the southwest in the Korea Strait"
+(<https://en.wikipedia.org/wiki/South_Jeolla_Province>). - Mod.TTM
+
+ProMED map:
+South Korea: <https://promedmail.org/promed-post?place=3D8714154,195>]
+
+[See Also:
+Avian influenza (03): Japan (GF) poultry, HPAI, South Korea (CN) HPAI
+H5N1, duck http://promedmail.org/post/20240107.8714113
+2023
+----
+Avian influenza (197): S. Korea, bird, HPAI H5N6, spread, WOAH
+http://promedmail.org/post/20231220.8713813
+Avian influenza (194): S. Korea (CB) poultry, HPAI H5N1, spread
+http://promedmail.org/post/20231215.8713737
+Avian influenza (185): S. Korea (CN) HPAI H5, duck
+http://promedmail.org/post/20231206.8713544
+Avian influenza (183): Europe (Belgium) Asia (South Korea) poultry,
+HPAI H5N1 http://promedmail.org/post/20231205.8713514
+2019
+----
+Avian influenza (49): South Korea (HN) H5, wild bird, susp
+http://promedmail.org/post/20191023.6742535
+2018
+----
+Avian influenza (56): South Korea, HPAI H5N6, poultry, spread
+http://promedmail.org/post/20180319.5696923
+Avian influenza (22): South Korea (KG) HPAI H5N6, poultry, spread
+http://promedmail.org/post/20180131.5597048
+Avian influenza (09): South Korea (CN) HPAI H5N6, poultry, spread
+http://promedmail.org/post/20180109.5547908
+Avian influenza (03): South Korea (CN) HPAI H5N6, poultry, spread
+http://promedmail.org/post/20180103.5535803
+2017
+----
+Avian influenza (176): South Korea (CB) HPAI H5N6, poultry, spread
+http://promedmail.org/post/20171225.5522769
+Avian influenza (172): South Korea (CB, CN) HPAI H5N6, surveillance,
+epidemiology http://promedmail.org/post/20171221.5517086
+Avian influenza (162): South Korea (CJ) HPAI H5N6, migratory birds
+http://promedmail.org/post/20171128.5470698
+Avian influenza (159): South Korea (CB) HPAI H5N6, poultry, OIE
+http://promedmail.org/post/20171121.5456037
+Avian influenza (158): South Korea (CB) HPAI H5N6, poultry
+http://promedmail.org/post/20171120.5454505
+Avian influenza (143): South Korea, H7N7, wild bird
+http://promedmail.org/post/20170928.5347499
+Avian influenza (118): South Korea, wild birds, HPAI H5N8, OIE
+http://promedmail.org/post/20170628.5133964
+Avian influenza (117): South Korea (TG) poultry, HPAI, spread,
+serotyping pending http://promedmail.org/post/20170624.5127394
+Avian influenza (111): South Korea, poultry, HPAI H5N8, spread
+http://promedmail.org/post/20170605.5084212
+Avian influenza (101): South Korea, poultry, HPAI H5N8, OIE
+http://promedmail.org/post/20170515.5037395
+Avian influenza (47): South Korea, HPAI H5N6, poultry, spread
+http://promedmail.org/post/20170211.4832764
+Avian influenza (20): N Korea (PY) poultry, susp, RFI
+http://promedmail.org/post/20170118.4774002]
+.................................................ttm/rd/st/may/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3D_lxfm7LEWnDM_hpOBrURWCSvNNsxy8nFzbp2jSWciMBoMDAwdTAwMDmdKFb=
+pt4L8-6GGFl6L1gbfu1yk3OFdkAgiGhyzdv8PUbmp6FHN25UyVJxSY64D92FRJEdq_Ik__YGzUI=
+UlxCqGgsidGosM2gBR2zO0W6JtdkXTvqlxsNkN2BzAyn1y_UzEWjpGinTHOOtV6BXOcSY9jnagx=
+fzMPGSMLLKtleiwohHl5uMh_KeOkM0ECDBPiCukx7hLBwqPpkwSbJGDHR6y6C2NmfmjHnfwRqq4=
+7L_TRMhNOZqlZTUcLgdphxVLiPTDQZF2m9p_3BSehaN_2-P2HjosN1UCMqAAXhDRETcGkV1xmPm=
+bSFzyikAxgJNmokpVo-a-8q5p5Mf7Byb-R6O-wqbAzvUJHn4Rvs5yhN8UL8Tlz6KZiIML3_NuDw=
+Twl066ffOzVDQC7_gkXXt5V9keqmwaPczGXHCMUgdKgirO9o7d9JfcgyweIE9Iznv-yVGTeQLK3=
+ID0_fdOIaLbEVDEDXz4bT0TgL18_DqcrH5HNkGZ7urliC9AWtp_Nfwcuw7zkVsmmnVqULRs0sj0=
+YRYi3_rmrGOEfU3d1Uqlp8omUh3_e4bDjOs7m7BIOKOTd4tfahfSF-yAfdLR8_17dOcdQKBEiTP=
+OirL8NZr0t-OkAjRQQu4UikZbUCvl7NDKDmZPV4hetJ-OAtCFtixjwDc0ipiOTw4h3lm1xen_Tk=
+kZ95CLXKJktBppWgw0nQQsIulWlCQrrpb8nkN50fuaDyaXmKKiISFqDjriV13-mo2tS_UiQ8Y4H=
+x8KhZ5gwmCu3amBdBB0LYg3DmfIxiBxX8hG9qQZGGissia364BeZjr5buzUiFVaGPyEGi-YjtjW=
+TS2wuXMmkfjJA1vQqjnN6OLyQmrCyFrzzidq4Y8f1U6pn65BZLbl65uGzSlBH8o5lo277TWC9P8=
+NhfLqJSg2GGk5E23GJpql-K8WKotVjX7d6ptzN4J-Q5im0qlXsQdwSWyO9cEgIDcCE7Iqy6nfOa=
+IsdgHMEhiKeZ4iaEyzjcVQ7v5do88OmeRi6e8n7IHwTcTRMSQOeLlyJksl98sVNMX7Wvipp6T9X=
+9r69yL4QEOVMN2sG3wuJwwUdNfM_gw44OuJCYrr4fSLqaCnE4m-wo-eqX2Pc3RdwK8hHiPOFlyh=
+p5-a-u4_lWAXoykfgEZcrQbG9y2bjhJhgFGG_q47krQxuhxIVzoa0HaiGbN8WRTJ )
+############################################################
+############################################################
+
+--026218bb43b407c07fc0b2b60cce5abc8ed0e2a020bd6b0482e3df0d069c
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>AVIAN INFLUENZA (05): SOUTH KOREA (JEOLLONAM-DO) BIRD, HPAI H5,<br>FA=
+O-EMPRES-I<br>*************************************************************=
+***************<br>A ProMED-mail post<br><a href=3D"https://u19268662.ct.se=
+ndgrid.net/ss/c/wscE2ng5fl6JrPIt48tisIijpefK5PNjW-mL-YZGnfgDOxU1G3gjwnPSi2T=
+fv3HA/42v/vIGmAmFKTSWi63c3NNyohA/h0/sUGKIu5M_pBDRAVcrx6Msz4lynIge4gpjFARHUj=
+eomc">http://www.promedmail.org</a><br>ProMED-mail is a program of the<br>I=
+nternational Society for Infectious Diseases<br><a href=3D"https://u1926866=
+2.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisCT5tpD4Upm3qyMCbcYSQvc/42v/vIGm=
+AmFKTSWi63c3NNyohA/h1/92_mJsaA6xatjIMhfjfxbHRC_T9oOpNbL4Mfk_s7XeY">http://w=
+ww.isid.org</a><br><br>Date: Mon 8 Jan 2024=0D<br>Source: UN Food & Agricul=
+ture Organization (FAO)/EMPRES-i (FAO<br>Emergency Prevention System, Globa=
+l Animal Disease Information System)<br>[edited]=0D<br><a href=3D"https://u=
+19268662.ct.sendgrid.net/ss/c/u6Jy221DtLTd6phwYNECnW0YA46JLkhEyaOXFIXO6C3rg=
+ikrSAiSv8L48xwhly3w1KEMXxiU3r50OCm4Edu_Zw/42v/vIGmAmFKTSWi63c3NNyohA/h2/-hW=
+xEXqTmp03BHqcaIQRId2nZgi5BEY3Z4ypYoxJPEA">https://empres-i.apps.fao.org/eve=
+nt-report/370519</a>=0D<br>=0D<br>=0D<br>General information=0D<br>--------=
+-----------=0D<br>Reported: 8 Jan 2024=0D<br>Observed: 20 Dec 2023=0D<br>Di=
+sease: Influenza - avian=0D<br>Disease serotypes: H5 HPAI=0D<br>Source: -=0D=
+<br>Status: Confirmed=0D<br>Outbreak location: Republic of Korea, Chollanam=
+-do=0D<br>[The location and details of the outbreak can be seen via the sou=
+rce<br>URL above.]=0D<br>=0D<br>Affected animals=0D<br>Animal Type / Animal=
+ Class / Species / At Risk / Cases / Deaths /<br>Destroyed / Slaughtered=0D=
+<br>Domestic / Birds / Unspecified bird / 16 500 / 100 / 6 / 16 494 / -=0D<=
+br>=0D<br>--=0D<br>Communicated by:=0D<br>ProMED=0D<br>via=0D<br>ProMED-MBD=
+S<br><br>["South Jeolla Province (Jeollanam-do), also known as Jeonnam, is =
+a<br>province in the Honam region, South Korea, and the southernmost<br>pro=
+vince in mainland Korea. South Jeolla borders the provinces of<br>North Jeo=
+lla to the north, South Gyeongsang to the northeast, and Jeju<br>to the sou=
+thwest in the Korea Strait"<br>(<a href=3D"https://u19268662.ct.sendgrid.ne=
+t/ss/c/u6Jy221DtLTd6phwYNECndCVDGULFcCLoA-Mb23Mb1Vr1NK7JGfVc1EmReaPn4yiTyyN=
+jqxCtsYzzmkeI5re-A/42v/vIGmAmFKTSWi63c3NNyohA/h3/eMv2nVXs_3tayMc58BPE_AY_TH=
+10ofeIt_yL-UKGfWc">https://en.wikipedia.org/wiki/South_Jeolla_Province</a>)=
+. - Mod.TTM<br><br>ProMED map:<br>South Korea: <a href=3D"https://u19268662=
+.ct.sendgrid.net/ss/c/sSnCkKCWBvais3EuVAOvgy2WOIX7pp1nXnn4AbwuQ3Z6WbkfhqXYX=
+U-aTMPJ8yThJ7mCFrnUmhe9o2vgeaCcGw/42v/vIGmAmFKTSWi63c3NNyohA/h4/wyDdbAaRepO=
+JjJAcoAntlUf0PGP6zplO-hFUvtygvrw">https://promedmail.org/promed-post?place=
+=3D8714154,195</a>]<br><br>[See Also:<br>Avian influenza (03): Japan (GF) p=
+oultry, HPAI, South Korea (CN) HPAI<br>H5N1, duck http://promedmail.org/pos=
+t/20240107.8714113=0D<br>2023=0D<br>----=0D<br>Avian influenza (197): S. Ko=
+rea, bird, HPAI H5N6, spread, WOAH<br>http://promedmail.org/post/20231220.8=
+713813=0D<br>Avian influenza (194): S. Korea (CB) poultry, HPAI H5N1, sprea=
+d<br>http://promedmail.org/post/20231215.8713737=0D<br>Avian influenza (185=
+): S. Korea (CN) HPAI H5, duck<br>http://promedmail.org/post/20231206.87135=
+44=0D<br>Avian influenza (183): Europe (Belgium) Asia (South Korea) poultry=
+,<br>HPAI H5N1 http://promedmail.org/post/20231205.8713514=0D<br>2019=0D<br=
+>----=0D<br>Avian influenza (49): South Korea (HN) H5, wild bird, susp<br>h=
+ttp://promedmail.org/post/20191023.6742535=0D<br>2018=0D<br>----=0D<br>Avia=
+n influenza (56): South Korea, HPAI H5N6, poultry, spread<br>http://promedm=
+ail.org/post/20180319.5696923=0D<br>Avian influenza (22): South Korea (KG) =
+HPAI H5N6, poultry, spread<br>http://promedmail.org/post/20180131.5597048=0D=
+<br>Avian influenza (09): South Korea (CN) HPAI H5N6, poultry, spread<br>ht=
+tp://promedmail.org/post/20180109.5547908=0D<br>Avian influenza (03): South=
+ Korea (CN) HPAI H5N6, poultry, spread<br>http://promedmail.org/post/201801=
+03.5535803=0D<br>2017=0D<br>----=0D<br>Avian influenza (176): South Korea (=
+CB) HPAI H5N6, poultry, spread<br>http://promedmail.org/post/20171225.55227=
+69=0D<br>Avian influenza (172): South Korea (CB, CN) HPAI H5N6, surveillanc=
+e,<br>epidemiology http://promedmail.org/post/20171221.5517086=0D<br>Avian =
+influenza (162): South Korea (CJ) HPAI H5N6, migratory birds<br>http://prom=
+edmail.org/post/20171128.5470698=0D<br>Avian influenza (159): South Korea (=
+CB) HPAI H5N6, poultry, OIE<br>http://promedmail.org/post/20171121.5456037=0D=
+<br>Avian influenza (158): South Korea (CB) HPAI H5N6, poultry<br>http://pr=
+omedmail.org/post/20171120.5454505=0D<br>Avian influenza (143): South Korea=
+, H7N7, wild bird<br>http://promedmail.org/post/20170928.5347499=0D<br>Avia=
+n influenza (118): South Korea, wild birds, HPAI H5N8, OIE<br>http://promed=
+mail.org/post/20170628.5133964=0D<br>Avian influenza (117): South Korea (TG=
+) poultry, HPAI, spread,<br>serotyping pending http://promedmail.org/post/2=
+0170624.5127394=0D<br>Avian influenza (111): South Korea, poultry, HPAI H5N=
+8, spread<br>http://promedmail.org/post/20170605.5084212=0D<br>Avian influe=
+nza (101): South Korea, poultry, HPAI H5N8, OIE<br>http://promedmail.org/po=
+st/20170515.5037395=0D<br>Avian influenza (47): South Korea, HPAI H5N6, pou=
+ltry, spread<br>http://promedmail.org/post/20170211.4832764=0D<br>Avian inf=
+luenza (20): N Korea (PY) poultry, susp, RFI<br>http://promedmail.org/post/=
+20170118.4774002]<br>.................................................ttm/r=
+d/st/may/jh<br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3D_lxfm7LEWnDM_hpOBrURWCSvNNsxy8nFzbp2jSWciMBoMDAwdT=
+AwMDmdKFbpt4L8-6GGFl6L1gbfu1yk3OFdkAgiGhyzdv8PUbmp6FHN25UyVJxSY64D92FRJEdq_=
+Ik__YGzUIUlxCqGgsidGosM2gBR2zO0W6JtdkXTvqlxsNkN2BzAyn1y_UzEWjpGinTHOOtV6BXO=
+cSY9jnagxfzMPGSMLLKtleiwohHl5uMh_KeOkM0ECDBPiCukx7hLBwqPpkwSbJGDHR6y6C2Nmfm=
+jHnfwRqq47L_TRMhNOZqlZTUcLgdphxVLiPTDQZF2m9p_3BSehaN_2-P2HjosN1UCMqAAXhDRET=
+cGkV1xmPmbSFzyikAxgJNmokpVo-a-8q5p5Mf7Byb-R6O-wqbAzvUJHn4Rvs5yhN8UL8Tlz6KZi=
+IML3_NuDwTwl066ffOzVDQC7_gkXXt5V9keqmwaPczGXHCMUgdKgirO9o7d9JfcgyweIE9Iznv-=
+yVGTeQLK3ID0_fdOIaLbEVDEDXz4bT0TgL18_DqcrH5HNkGZ7urliC9AWtp_Nfwcuw7zkVsmmnV=
+qULRs0sj0YRYi3_rmrGOEfU3d1Uqlp8omUh3_e4bDjOs7m7BIOKOTd4tfahfSF-yAfdLR8_17dO=
+cdQKBEiTPOirL8NZr0t-OkAjRQQu4UikZbUCvl7NDKDmZPV4hetJ-OAtCFtixjwDc0ipiOTw4h3=
+lm1xen_TkkZ95CLXKJktBppWgw0nQQsIulWlCQrrpb8nkN50fuaDyaXmKKiISFqDjriV13-mo2t=
+S_UiQ8Y4Hx8KhZ5gwmCu3amBdBB0LYg3DmfIxiBxX8hG9qQZGGissia364BeZjr5buzUiFVaGPy=
+EGi-YjtjWTS2wuXMmkfjJA1vQqjnN6OLyQmrCyFrzzidq4Y8f1U6pn65BZLbl65uGzSlBH8o5lo=
+277TWC9P8NhfLqJSg2GGk5E23GJpql-K8WKotVjX7d6ptzN4J-Q5im0qlXsQdwSWyO9cEgIDcCE=
+7Iqy6nfOaIsdgHMEhiKeZ4iaEyzjcVQ7v5do88OmeRi6e8n7IHwTcTRMSQOeLlyJksl98sVNMX7=
+Wvipp6T9X9r69yL4QEOVMN2sG3wuJwwUdNfM_gw44OuJCYrr4fSLqaCnE4m-wo-eqX2Pc3RdwK8=
+hHiPOFlyhp5-a-u4_lWAXoykfgEZcrQbG9y2bjhJhgFGG_q47krQxuhxIVzoa0HaiGbN8WRTJ" =
+target=3D"_blank" class=3D"Unsubscribe--unsubscribePreferences" style=3D"fo=
+nt-family:sans-serif;text-decoration:none;">Unsubscribe Preferences</a></di=
+v><br>############################################################<br>#####=
+#######################################################<br><br><img src=3D"=
+https://u19268662.ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/42v/vIGmAmFKT=
+SWi63c3NNyohA/ho.gif" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=
+=3D"height:1px !important;width:1px !important;border-width:0 !important;ma=
+rgin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;=
+margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !importa=
+nt;padding-right:0 !important;padding-left:0 !important;"/></body>
+</html>
+--026218bb43b407c07fc0b2b60cce5abc8ed0e2a020bd6b0482e3df0d069c--

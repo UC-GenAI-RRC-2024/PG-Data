@@ -1,0 +1,541 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a05:640c:3013:b0:1ee:4bd3:5fc9 with SMTP id z19csp332106eiw;
+        Sat, 20 Jan 2024 17:19:13 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IE7T6Ui1lPKm4m3TotrgDoaP+HtKRnFWvvtlX738fmjUvyTSCUZ2gc1jCNESyj+2xgct5VK
+X-Received: by 2002:a05:620a:394d:b0:783:2c7d:ec23 with SMTP id qs13-20020a05620a394d00b007832c7dec23mr3106125qkn.37.1705799953484;
+        Sat, 20 Jan 2024 17:19:13 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1705799953; cv=none;
+        d=google.com; s=arc-20160816;
+        b=Fc82wScKkstOQgus5Jq/GLRgWSeJH4nkwSg2xHHWauT865YwWdJlpN56Qh4VtduFaZ
+         29yDPq9JFe+9AO4oVSmOYVoEoDXPUR7MGr6LbsFAFWUjgxoGaaVq61kBJgQKwu9GzH9m
+         SdtBVmc83wgcZUNsktMVl86eq8UV5XJUZp/0XGNcjyTI8WJMePWMvcuKA1slV9/66aPP
+         OOIDdfh0ynGsjuL7vso1e6r7p7XtGfmLb0AJr0Obk2Lo5RJbuNTwvEOejSsAqHQc9otO
+         dnyOHMzg/Bo/kMDz1XEiBasDKYE9qwguMMh2w65wShliVaDXIKsaUcmsyV2a4fcEjB67
+         Whtw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=brT6C5ubzo6/LDmL+RiUmOnxqIIQTVW/xuMnTbL/FYs=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=cBt9wmn5jw8oWpHTMdPdJfiCsBwb9fDYEzIRAX2Oq21cq5KZH44gAuF0gqcfNMe3bz
+         6kELcKYp4/Uur69u3DVJeu9qZmNOYg+WHF+U324war7VsgECahe/YqRliTZR0XGX1Gz9
+         C8aUKr1PTGTf5gaG3Aqe7JGypJNb3HChODI37pFsnQ45VJrqXi5A4xS1Iz/RmhAqXFXQ
+         3R6zmHkYMjWKBmvKNvrX5GvrYKQzlnkyXzWc2tr+or5o8nUk+x0I0nh7uVX0kxzHrcUu
+         ica3jY54xaecdi4iNVtrDSyxcLCxbPx0qzXmElYVnMg1dFP4XWRE5lU5kbiK0/BV6DhB
+         Rwvg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=keSyTqLE;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b="Jna/4cvH";
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id u24-20020a05620a121800b0078394e6e7a2si1696654qkj.407.2024.01.20.17.19.12
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sat, 20 Jan 2024 17:19:13 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=keSyTqLE;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b="Jna/4cvH";
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=brT6C5ubzo6/LDmL+RiUmOnxqIIQTVW/xuMnTbL/FYs=;
+	b=keSyTqLEJ+bfZbk1KwW2HrskTNc4ZCAVvS1bhSIVUzSduxC5IPQliGHB3+IjjaAYAAC6
+	VsY9w+cXJ6oNwJCIKsJY12eiOkcapvq88YnU4z/e2EBs6EuNRiNL8HJyZDcSdEe81roO9F
+	ZNa8Joi+LKbm4dHnxyjZbx8ykvmEBfeJZUvnyxsRbCECRKwy8fK1RAHKpaqCVrxvjSyWFX
+	oanxQKOo3zssyVYZKzFe5QKgR8tFn/taRUgLCjbc3dtfzxYayakq6NFa4fbArj/Hiw2XAA
+	nL1P2P1hvL1FGJjz5cyNOJOwuM8xQCUsUOw/gonwCSecCgwyd6syokEsDK5KFf9g==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=brT6C5ubzo6/LDmL+RiUmOnxqIIQTVW/xuMnTbL/FYs=;
+	b=Jna/4cvHOLKx/YhMEbBOiNxWZe8uYYgaAmOCTGn22WPQ/hlvHeKk+XAcsRQ22eEi8zOM
+	4VBMEhRn4AYHcyWaUx/a7sZK3Td1LbCxomngf1XykJBlcIDiC5ZygttM7VzI9ntQPRzUPU
+	mDc6DRDMaesCUwLgZC6hwwPpMz0XxuR1k=
+Received: by filterdrecv-5579bc58-g2c5p with SMTP id filterdrecv-5579bc58-g2c5p-1-65AC710E-11
+        2024-01-21 01:19:10.281015701 +0000 UTC m=+8231864.311795070
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-36 (SG) with HTTP
+	id kO4NRsaPQAuLBdpnbgZCZg
+	Sun, 21 Jan 2024 01:19:10.131 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=3f1c7644b23b7f0fa2712d581fa3967035172895f52c549b7a3869443e07
+Date: Sun, 21 Jan 2024 01:19:12 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <kO4NRsaPQAuLBdpnbgZCZg@geopod-ismtpd-36>
+Subject: PRO/AH/EDR> Undiagnosed deaths, livestock - India (02): (PB) foot &
+ mouth, nitrogen poisoning conf.
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iBcj=2FFDS4wq78n1czJN3envGzMEPIk6dv7t2Z12?=
+ =?us-ascii?Q?YYldSne=2FBwnzfbfEwogVQcb635oe0KYOedDkr6k?=
+ =?us-ascii?Q?UBuEtgo=2FvdvOPT42WOIyEtz5501QzfB6V6ROike?=
+ =?us-ascii?Q?vouK0rxNX3ceI6RaLOqVoOcKFCLuwC1VALp7ofa?=
+ =?us-ascii?Q?ofBDdZP6MUGs4fXAl=2FZ75sLwJZKP0d7qFNQmwq?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUiShGf=2FO8XJWpH34Od4Nd?=
+ =?us-ascii?Q?fxXa6jil96uRcJkF+N+LeVnO1tx80ddOyoyOo=2Fc?=
+ =?us-ascii?Q?Brxcl3ERAm0cOY743=2FFH59DWiSf5OzXORh1DLKt?=
+ =?us-ascii?Q?hb1NMKty3PsA5ju0ZzxCrq1WQuZSEQf=2FJlWtgqv?=
+ =?us-ascii?Q?cZmsyCHlNUZsDDKwHwKTUDjjyjw2383vdAi8hxH?=
+ =?us-ascii?Q?w1L9T9FlaCanSgaCs7JEC6JKZMDM=2Fg3pg78KgPC?=
+ =?us-ascii?Q?2rUke9U+XutCNuwIFWDR61QGL36rFFuOAroTfcM?=
+ =?us-ascii?Q?kBHMox3L31ZtogogUmMrHpE4KNe1ST=2Fl3byvVci?=
+ =?us-ascii?Q?A2yzdC5a1EcHz0WmaofAXbpTSWf9sYpWayqK=2Fxk?=
+ =?us-ascii?Q?aFHw7goUmNWdkD7sSYY31ExfJClVeTJKX4BF=2Fqd?=
+ =?us-ascii?Q?6YwE8IqvDWGvIclqd=2Fq5GZs0twa8xPN6nJNZwF0?=
+ =?us-ascii?Q?RxY+tg3I8HBc9z4SfnZyaoIPSh5GYmqeDS5KB7N?=
+ =?us-ascii?Q?EcImZDEpvhmRirYxsYGnpjiLar7UGmzC50t2oz8?=
+ =?us-ascii?Q?yXSM=2FaNv3a5GNIIM8JkbEJ5P4KuMDWyt4xVkSD8?=
+ =?us-ascii?Q?mquTUYli7PUUWGobu=2FWdxXbIDHaoEguuId4cKa6?=
+ =?us-ascii?Q?A7EtknLAuNSknk1q=2FoExrCJEQ1uswibzb5YRqMs?=
+ =?us-ascii?Q?FgvxqzpFWTfCTNSEkpHGn=2FDds590WJJhe=2F917qq?=
+ =?us-ascii?Q?OkzTlk39fRw5iULmejIWkyLmEIMYHhnOkZkNg13?=
+ =?us-ascii?Q?4kRAmwPYmP57i0rPjqWxeMa9y6DfdNJ=2FBWblJZw?=
+ =?us-ascii?Q?87seuaaCOEy0stgqA=2Fs1o2YAnA=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2EXLok3bYni?=
+ =?us-ascii?Q?U8yPmgfoXSzyHm4kgyfmqFFOjhg-LjO8e1oMDAw?=
+ =?us-ascii?Q?dTAwMIdcR24MEDzrMpw-ba7d5GzQug9=5Fjc=5F1y-t?=
+ =?us-ascii?Q?mRZJ63LVyMgbjVg9ejnO0BwxMvHFHa4pn5GoPYS?=
+ =?us-ascii?Q?1=5F=5FX4zFuwc=5FvoBeYCaT4bKl4CpaeYAMo41MhI5A?=
+ =?us-ascii?Q?--y9PVHtSjLa=5FPOnQ=3D=3D=2E2SY9y1ED=5FTWvnDKKExg?=
+ =?us-ascii?Q?XYhSXZ-us2wH4ySK9S=5FgFGDhoMDAwdTAwMJ4Qm9?=
+ =?us-ascii?Q?m3IkOei0gIhgIzcOvwjoXLGva-WJ5tXAyeQ879q?=
+ =?us-ascii?Q?=5FtvwZnXFe6LIyHb9UtjyTaHqlHazVh5lvc2aZZd?=
+ =?us-ascii?Q?jAAK9WEViAJynHLKoJtQ5uAduy1IBcf3wKzpAhs?=
+ =?us-ascii?Q?GJV5LCJFn5fNxYt1fABBYE-3pMkDsXemibE7PcO?=
+ =?us-ascii?Q?dj1RD1AOHSUketaIVL4UgUVAUWHJ76GOTLkgk8T?=
+ =?us-ascii?Q?pSURGLx1tElLAbwwnZTcpkx2GRB5QbDlzPxukGq?=
+ =?us-ascii?Q?B3IQ0IMJutPc3TtO081l2DkVm5DeNpnzfv9GBrA?=
+ =?us-ascii?Q?D9dxfqSsm1CthNaFCdwRHjhlDiyE322WOHC74lz?=
+ =?us-ascii?Q?ph2gsIRzut66EWAomS90VrByggwZk20wXe-Jwaq?=
+ =?us-ascii?Q?HgbXH3wFDRinZG09rLhx74b9DGPpv=5FiYAJiOmrH?=
+ =?us-ascii?Q?0yAappL-Muy6mNSOs84w8PSwxp=5F9c12wZGQuDoA?=
+ =?us-ascii?Q?s3-DqRdB7IGUTqe5PmGwfZeORvj6frF=5FB4179kx?=
+ =?us-ascii?Q?tKols4VzrP=5FuiZrmilOGx7=5FNC9FCBFnkuSjZ3NT?=
+ =?us-ascii?Q?PDKV6zExObLq-PNAoBB0tQMRLR1=5FhADkc685FFe?=
+ =?us-ascii?Q?HhG07qtv0=5FYTeaHBQuvpKmrotQG77S6A6HQYEUc?=
+ =?us-ascii?Q?zTDrs6qnKWuowKul5NNPPciO6y06vzKG-862E=5Fd?=
+ =?us-ascii?Q?hANTL9hfZb3iKQwQq7KnXbtqCcTQhnjMgHTNq0m?=
+ =?us-ascii?Q?YU9vE7lx5Xdbs=5FgZu6wWPj8tYTI-Y0eGP1=5FovY=5F?=
+ =?us-ascii?Q?1P81Z2-BuS55=5FqXW2Ii5lodN=5FTezxOVVNB=5FpYUu?=
+ =?us-ascii?Q?5-ovKZHj0xwZ4sIE62-n-SzNPtE8FRtzR7Mo9TO?=
+ =?us-ascii?Q?21e3HneiDtR3oHKtUajrQjEUH8BUXRC91=5FBQXFB?=
+ =?us-ascii?Q?zXMfcn8jDGwhXBdjRwvBHQr86Bqp-Hiu0ADAxKS?=
+ =?us-ascii?Q?H-ieGKa3K2f0lP5-HTYF8cW0hkyGOGSMtqxoR3z?=
+ =?us-ascii?Q?8Z3RvmXj7l6gCZs9LBS8Sp41miGUhald7QOn7Z=5F?=
+ =?us-ascii?Q?DguSCH2OgIuiLRJmDWKlKn1s7dUNV0d6eoLpoBv?=
+ =?us-ascii?Q?Khlwt=5FPb-SoHF9K82tRrOmf=5FUWb4yADuyPfkEbS?=
+ =?us-ascii?Q?NuGPhQ=3D=3D=3E?=
+
+--3f1c7644b23b7f0fa2712d581fa3967035172895f52c549b7a3869443e07
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=us-ascii
+Mime-Version: 1.0
+
+UNDIAGNOSED DEATHS, LIVESTOCK - INDIA (02): (PUNJAB) FOOT & MOUTH
+DISEASE, NITROGEN POISONING CONFIRMED
+***************************************************************************=
+****************************
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+Date: Thu 18 Jan 2024
+Source: Hindustan Times [edited]
+<https://www.hindustantimes.com/cities/chandigarh-news/deaths-of-livestock-=
+in-bathinda-foot-and-mouth-disease-nitrogen-toxicity-in-fodder-behind-morta=
+lity-lab-report-101705516724007.html>
+
+
+Bathinda [district, Punjab state, India] deputy director of animal
+husbandry Dr Rajdeep Singh on [Wed 17 Jan 2024] said a detailed
+programme would be formulated by tomorrow [18 Jan 2024] based on the
+lab reports. He said 13 more samples would be sent to Jalandhar-based
+north regional disease diagnostic laboratory for further health
+analysis.
+
+Laboratory analysis has concluded that the highly infectious
+foot-and-mouth disease (FMD), nitrogen toxicity, and 2 other factors
+were responsible for the deaths of over 60 cattle and acute sickness
+among the livestock in 2 Bathinda villages.
+
+He said 13 more samples would be sent to Jalandhar-based north
+regional disease diagnostic laboratory for further health analysis.
+
+Veterinary experts had taken 5 samples from Raike Kalan and Sooch
+villages this week after a large number of cows and buffaloes were
+found afflicted with high fever and other ailments, and the
+authorities were inconclusive on the type of infection behind it.
+
+As per the state animal husbandry department, 62 dairy animals have
+died, and more than 70 animals are under treatment at the 2 villages
+of Bathinda. The deputy director said no new animal mortality was
+reported in the last 24 hours, and surveillance is underway in the
+affected places.
+
+"The report by the Jalandhar laboratory states that pneumonia and
+blood infection caused by ticks were among other factors behind the
+sickness of the livestock. Positive infection of FMD, a contagious
+viral infection among the cattle, needs more attention as it indicates
+the animals may not have been administered vaccination," he added.
+
+The lab reports have also stated that samples concluded nitrogen
+poisoning as a key factor behind the incidents, confirming that the
+ruminants were fed green fodder with high levels of urea content.
+Dairy farmers should ensure safe fodder for the animals, added the
+official.
+
+[Byline: Vishal Joshi]
+
+--
+Communicated by:
+ProMED
+via
+ProMED-SoAs
+
+[ProMED and ProMED-SoAs readers are referred to the ProMED-SoAs
+positing: Undiagnosed deaths, cattle - India: (Punjab) RFI
+http://promedmail.org/post/20240119.8714328, available at
+<https://promedmail.org/?lang=3Dsoas>.
+
+The causes of deaths of the bovine animals in the reported areas were
+nitrogen poisoning and foot-and-mouth disease (FMD), as revealed by
+the results of laboratory testing, according to the news report
+above.
+
+FMD is a highly infectious viral disease, and the disease is endemic
+in India. Bovine animals are vaccinated twice a year in the country to
+protect them from being affected with the disease. As suspected, the
+animals died might have not been timely vaccinated against the
+disease.
+
+Whether the animals also suffered from nitrogen poisoning needs to be
+ascertained carefully, because in a similar epidemiological situation,
+as described in the article, animals could also predispose to nitrate
+poisoning.
+
+"Nitrate poisoning (toxicosis) in animals (especially ruminants)
+results from excess consumption of nitrates from plants or water or
+via ingestion of nitrate-containing fertilizers. The nitrate ion
+(NO3-) is reduced to nitrite ion (NO2-), which is rapidly absorbed and
+leads to the formation of methemoglobin, which inhibits oxygen
+transport. This results in dyspnea, cyanotic mucous membranes,
+weakness, and, if severe, death due to anoxia. Ruminants are more
+susceptible because rumen flora can rapidly reduce nitrates to
+nitrites. Methylene blue, administered IV, will reverse the
+methemoglobinemia and may be effective as a treatment with supportive
+care. Ocular fluid specimens are most appropriate sample for
+postmortem, with laboratory testing of suspected sources of nitrate
+exposure."
+(<https://www.msdvetmanual.com/toxicology/nitrate-and-nitrite-poisoning/nit=
+rate-and-nitrite-poisoning-in-animals>)
+
+"Non protein nitrogen (NPN) poisoning (toxicosis) results from
+excessive consumption of sources of NPN or urea. It is acute and often
+rapidly fatal, with clinical signs including muscle tremors, abdominal
+pain, incoordination, respiratory distress, and recumbency, then
+death. Diagnosis can be made by analysis of postmortem samples for
+ammonia content and of suspected sources for non protein nitrogen
+content; ruminal pH > 7.5 is supportive of the diagnosis. Treatment
+includes removal of suspected source materials, ruminal infusion of
+acetic acid and cold water, as well as supportive therapy."
+(<https://www.msdvetmanual.com/toxicology/nonprotein-nitrogen-poisoning/non=
+protein-nitrogen-poisoning-in-animals>)
+
+Bathinda district is a district in the Malwa region of Punjab, India.
+(<https://en.wikipedia.org/wiki/Bathinda_district>) - Mod.PKB
+
+ProMED map of Punjab State, India:
+<https://promedmail.org/promed-post?place=3D8714353,316>]
+
+[See Also:
+Undiagnosed deaths, livestock - India: (JA) RFI
+http://promedmail.org/post/20240104.8714054
+2023
+----
+Undiagnosed deaths, cattle - Colombia: (VC) RFI
+http://promedmail.org/post/20230831.8711903
+Undiagnosed deaths, cattle - Jersey (02): botulism susp
+http://promedmail.org/post/20230217.8708441
+Undiagnosed deaths, cattle - Jersey: notifiable diseases excluded, RFI
+http://promedmail.org/post/20230127.8708001
+2022
+----
+Undiagnosed deaths, goat - Colombia: (LG) RFI
+http://promedmail.org/post/20221214.8707283
+Undiagnosed deaths - Jordan (02): (IR) livestock, abortion, anthrax
+susp, RFI http://promedmail.org/post/20221022.8706296
+Undiagnosed deaths, horse - Libya: respiratory disease suspected, RFI
+http://promedmail.org/post/20221004.8705960
+Undiagnosed deaths, pig - India: (UP) RFI
+http://promedmail.org/post/20220719.8704508
+Undiagnosed deaths - Jordan: (MA) cattle, RFI
+http://promedmail.org/post/20220607.8703732
+Undiagnosed deaths - Cambodia: (SR) cattle, buffalo, RFI
+http://promedmail.org/post/20220605.8703699
+2021
+----
+Undiagnosed deaths, cattle - India (02): (UP) RFI
+http://promedmail.org/post/20211228.8700532
+Undiagnosed deaths, cattle - India: (MN) RFI
+http://promedmail.org/post/20211225.8700472
+Undiagnosed disease, livestock - Pakistan: (SD) RFI
+http://promedmail.org/post/20210802.8564083
+Undiagnosed deaths, sheep - India (02): (TN) RFI
+http://promedmail.org/post/20210612.8443177
+Undiagnosed deaths, pig - China: (NM) RFI
+http://promedmail.org/post/20210324.8267469
+2019
+----
+Undiagnosed deaths, cattle - Turkmenistan: (AL) RFI
+http://promedmail.org/post/20190624.6535971
+and other items in the archives]
+.................................................pkb/rd/pkb/mo/jh/pkb/tw/pk=
+b/tw/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3DqjDDEmmAouVrq5puaDd00-K2-Q8UrHlRpBF68svP9IdoMDAwdTAwMIPlOH8=
+R99vq5RNV3pj0DR1SWQS7PcBAVlCSzmeTAIIM5PA5vJzdhjbHb4NCMEkKvVoOEbxS-zJARto_cY=
+VASi4dktEqAVG_oYKIVxOZAuh05JKnZkInsD1BzlbRhFcjPinNFgMVQcTAZs25H8D6DivHI70k0=
+FA8kvu1nEohiz8VCh0KnSJqligiZG7Jk_wzZVWElrgl1AQvOXiD73_cIssZIs34Yukjmm1uqGsa=
+zQB6nWAv6IVlIFdOLs2eT6ri0lv53IlYEsCahfSstvNP8aqwQm3HN4dd_mFz1lcs6N3-sY0EbUP=
+5r3V2i2YHf9skNPl8Jjq8pPD7XYbbGBcocarfuKWqlOWwF5_l2LE0TLKOfNiX0SEJ-bwYKD9bBA=
+s7r3Td55tEjo7tnFUPQjK1KQ4sA90abzfFCe8ez2Yd0Ii8UJRltXcnRLy1QMdNzzLKXSDvss9J7=
+4Oj4Z7_El1s5mCH7RGtuhe5Jc5wTzNEeyE0CrEsOS4YVEKNpZdYuZ-QlvNMYjWq42ZCEwIB0ZvG=
+NwGhhmT9PdrVjVaQ2_kCeyWZQq1sNfDvgC8jfCxnHVrpPNz2a39Qdve8om6fXuwVHQ8tv22Tp8m=
+MLWohXGaJo0MN6SPBSMtDk2pcOKGKfwILDjz3oXzFU_v1mFavAVFNi2YbzQGvh7mvL6wqOTqT15=
+bK_sGkVtOmzdRCixxmTNZcHN-I1ly1XuKNiq57LUBueKYBusOa2qjpsY9PGmh_lhr0rLmqO5xF_=
+38IFSkbfnlJLf5PcAVSW6HBfQXt-1VdJSbEqbp8MtjfjOOaB8XswNNq6UY1QKSKL-kN2aawB4TQ=
+URS6Yon6XAJsOfadPC2VTToAeoDf_1uydYaXuseBrVlh9xtY3NnBQiThZseOBtvA2YPwdRmzH3P=
+Og_zDDsEz-qh5_2d6uBchOmmj6w0KAvPJmsrjUrOhN9o47ZkXiIB9oxtCgsnXr3AhFyh3ycI7Sd=
+5joeVOvLD4yGKlwANof43byzQ6c3Ywoju6pJ0Ps5R_yNUaIjphbx0VPAJou21WwTF2cXJTLAGgw=
+gpcVv7tLFpO6SoFLA5RvYFXmvfBU7Edhf93MWp8qJ-wzB9qkBp2cb9kM1vEm-f1y2ZRaAKzUeJm=
+dxUdaKrzkr2k8DiqUp-MsrlqOkhFR9xbjZOqhbw1tvyvgTTO6XcTHkbyZoOkVIX7 )
+############################################################
+############################################################
+
+--3f1c7644b23b7f0fa2712d581fa3967035172895f52c549b7a3869443e07
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>UNDIAGNOSED DEATHS, LIVESTOCK - INDIA (02): (PUNJAB) FOOT & MOUTH<br>=
+DISEASE, NITROGEN POISONING CONFIRMED<br>**********************************=
+*********************************************************************<br>A =
+ProMED-mail post<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/wscE2=
+ng5fl6JrPIt48tisIijpefK5PNjW-mL-YZGnfgDOxU1G3gjwnPSi2Tfv3HA/436/HmEw9Y1aTge=
+s0Gzz8cUD2A/h0/vjM7ksYNyVKoOealUC653zO3GrbynWWlEPD6Hf7rmfc">http://www.prom=
+edmail.org</a><br>ProMED-mail is a program of the<br>International Society =
+for Infectious Diseases<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/=
+c/wscE2ng5fl6JrPIt48tisCT5tpD4Upm3qyMCbcYSQvc/436/HmEw9Y1aTges0Gzz8cUD2A/h1=
+/FZbWou1cTgujzUmFsD6vxgYjmv9ZPWRZMscA14-AFBo">http://www.isid.org</a><br><b=
+r>Date: Thu 18 Jan 2024=0D<br>Source: Hindustan Times [edited]=0D<br><a hre=
+f=3D"https://u19268662.ct.sendgrid.net/ss/c/TLh_csrC34X_iXpbYoMam8m2l03VBB3=
+t9AtIXSmPX82Ct5Xx43llpxHW217N9tJ74v5s-YjmyU_8mKK-Mb6VWsaZDabUFxzW9ttuAotHbj=
+6VHLTcP66AwORiEv29yo4hKPpMDucaaVs2exiNfV3JOjoQftaeFoDlZ0NbqE6JNOBrKZ4FhAt3I=
+nGcDHMu_psNv7BtTsp1nLzrvyElwv292I0B37pZ0UWWitZLInORkKEWX3aukSpIiRHofz-VlTM4=
+W8iToC3CDFe5PVSnxnwnYw/436/HmEw9Y1aTges0Gzz8cUD2A/h2/8hF-UPBd_YzdIJYis8xfNV=
+q6rYJ89CUekje48IpGEtY">https://www.hindustantimes.com/cities/chandigarh-new=
+s/deaths-of-livestock-in-bathinda-foot-and-mouth-disease-nitrogen-toxicity-=
+in-fodder-behind-mortality-lab-report-101705516724007.html</a>=0D<br>=0D<br=
+>=0D<br>Bathinda [district, Punjab state, India] deputy director of animal<=
+br>husbandry Dr Rajdeep Singh on [Wed 17 Jan 2024] said a detailed<br>progr=
+amme would be formulated by tomorrow [18 Jan 2024] based on the<br>lab repo=
+rts. He said 13 more samples would be sent to Jalandhar-based<br>north regi=
+onal disease diagnostic laboratory for further health<br>analysis.=0D<br>=0D=
+<br>Laboratory analysis has concluded that the highly infectious<br>foot-an=
+d-mouth disease (FMD), nitrogen toxicity, and 2 other factors<br>were respo=
+nsible for the deaths of over 60 cattle and acute sickness<br>among the liv=
+estock in 2 Bathinda villages.=0D<br>=0D<br>He said 13 more samples would b=
+e sent to Jalandhar-based north<br>regional disease diagnostic laboratory f=
+or further health analysis.=0D<br>=0D<br>Veterinary experts had taken 5 sam=
+ples from Raike Kalan and Sooch<br>villages this week after a large number =
+of cows and buffaloes were<br>found afflicted with high fever and other ail=
+ments, and the<br>authorities were inconclusive on the type of infection be=
+hind it.=0D<br>=0D<br>As per the state animal husbandry department, 62 dair=
+y animals have<br>died, and more than 70 animals are under treatment at the=
+ 2 villages<br>of Bathinda. The deputy director said no new animal mortalit=
+y was<br>reported in the last 24 hours, and surveillance is underway in the=
+<br>affected places.=0D<br>=0D<br>"The report by the Jalandhar laboratory s=
+tates that pneumonia and<br>blood infection caused by ticks were among othe=
+r factors behind the<br>sickness of the livestock. Positive infection of FM=
+D, a contagious<br>viral infection among the cattle, needs more attention a=
+s it indicates<br>the animals may not have been administered vaccination," =
+he added.=0D<br>=0D<br>The lab reports have also stated that samples conclu=
+ded nitrogen<br>poisoning as a key factor behind the incidents, confirming =
+that the<br>ruminants were fed green fodder with high levels of urea conten=
+t.<br>Dairy farmers should ensure safe fodder for the animals, added the<br=
+>official.=0D<br>=0D<br>[Byline: Vishal Joshi]=0D<br>=0D<br>--=0D<br>Commun=
+icated by:=0D<br>ProMED=0D<br>via=0D<br>ProMED-SoAs<br><br>[ProMED and ProM=
+ED-SoAs readers are referred to the ProMED-SoAs<br>positing: Undiagnosed de=
+aths, cattle - India: (Punjab) RFI<br>http://promedmail.org/post/20240119.8=
+714328, available at<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/0=
+oc7vsq5mmLjPwOs4PjMhy8PNnWOX7vm-KABxI_6_SIGGjDAUk_91uRj7G_ai8Eo/436/HmEw9Y1=
+aTges0Gzz8cUD2A/h3/FplKI1XcCXZK6GHzBOo5Fl9AJHnsIKPFIgZwKuIJX_Y">https://pro=
+medmail.org/?lang=3Dsoas</a>.=0D<br>=0D<br>The causes of deaths of the bovi=
+ne animals in the reported areas were<br>nitrogen poisoning and foot-and-mo=
+uth disease (FMD), as revealed by<br>the results of laboratory testing, acc=
+ording to the news report<br>above.=0D<br>=0D<br>FMD is a highly infectious=
+ viral disease, and the disease is endemic<br>in India. Bovine animals are =
+vaccinated twice a year in the country to<br>protect them from being affect=
+ed with the disease. As suspected, the<br>animals died might have not been =
+timely vaccinated against the<br>disease.=0D<br>=0D<br>Whether the animals =
+also suffered from nitrogen poisoning needs to be<br>ascertained carefully,=
+ because in a similar epidemiological situation,<br>as described in the art=
+icle, animals could also predispose to nitrate<br>poisoning.=0D<br>=0D<br>"=
+Nitrate poisoning (toxicosis) in animals (especially ruminants)<br>results =
+from excess consumption of nitrates from plants or water or<br>via ingestio=
+n of nitrate-containing fertilizers. The nitrate ion<br>(NO3-) is reduced t=
+o nitrite ion (NO2-), which is rapidly absorbed and<br>leads to the formati=
+on of methemoglobin, which inhibits oxygen<br>transport. This results in dy=
+spnea, cyanotic mucous membranes,<br>weakness, and, if severe, death due to=
+ anoxia. Ruminants are more<br>susceptible because rumen flora can rapidly =
+reduce nitrates to<br>nitrites. Methylene blue, administered IV, will rever=
+se the<br>methemoglobinemia and may be effective as a treatment with suppor=
+tive<br>care. Ocular fluid specimens are most appropriate sample for<br>pos=
+tmortem, with laboratory testing of suspected sources of nitrate<br>exposur=
+e."<br>(<a href=3D"https://u19268662.ct.sendgrid.net/ss/c/TLh_csrC34X_iXpbY=
+oMamzBNayb_e_AOXaj1IZeSanoNJ4M6QRx5aDBrD257vyhIopJqGdc3KXnOxXflUSA-P-NkYEZd=
+GdmISQ3uU0_MBgiukbvKEwopdxqWMQG-KQviZDxn4XUCDjBxSVADLWcO2f5X4YvSH4srWUedoP7=
+-BoU/436/HmEw9Y1aTges0Gzz8cUD2A/h4/5koXyLGfgGmWiZfXC79bVGBrAwbORIZZlki0AOyP=
+LT4">https://www.msdvetmanual.com/toxicology/nitrate-and-nitrite-poisoning/=
+nitrate-and-nitrite-poisoning-in-animals</a>)=0D<br>=0D<br>"Non protein nit=
+rogen (NPN) poisoning (toxicosis) results from<br>excessive consumption of =
+sources of NPN or urea. It is acute and often<br>rapidly fatal, with clinic=
+al signs including muscle tremors, abdominal<br>pain, incoordination, respi=
+ratory distress, and recumbency, then<br>death. Diagnosis can be made by an=
+alysis of postmortem samples for<br>ammonia content and of suspected source=
+s for non protein nitrogen<br>content; ruminal pH > 7.5 is supportive of th=
+e diagnosis. Treatment<br>includes removal of suspected source materials, r=
+uminal infusion of<br>acetic acid and cold water, as well as supportive the=
+rapy."<br>(<a href=3D"https://u19268662.ct.sendgrid.net/ss/c/TLh_csrC34X_iX=
+pbYoMamzBNayb_e_AOXaj1IZeSanoNJ4M6QRx5aDBrD257vyhI2mTpC1wtvzHyITOUfbneOCpkR=
+HgAYnaeUDeag7d8B2CIo02T_vUsUjiIr5LAEhsidwoIX7JvxodI_0avxFUWhILrhx1ggsrnNjPE=
+9nK35Ww/436/HmEw9Y1aTges0Gzz8cUD2A/h5/wWSsm9FVZJlBuC5XWLFW6S068wg8BkztUouem=
+e0srJk">https://www.msdvetmanual.com/toxicology/nonprotein-nitrogen-poisoni=
+ng/nonprotein-nitrogen-poisoning-in-animals</a>)=0D<br>=0D<br>Bathinda dist=
+rict is a district in the Malwa region of Punjab, India.<br>(<a href=3D"htt=
+ps://u19268662.ct.sendgrid.net/ss/c/u6Jy221DtLTd6phwYNECndCVDGULFcCLoA-Mb23=
+Mb1UJr10Q8lyKOFIIrqXbxoqxfIHmERtBnBeprb4gALXmyg/436/HmEw9Y1aTges0Gzz8cUD2A/=
+h6/OUblQ-qXnWbMq_2nCNPaIzECaW1gmDWoVS1J-HMOQz8">https://en.wikipedia.org/wi=
+ki/Bathinda_district</a>) - Mod.PKB=0D<br>=0D<br>ProMED map of Punjab State=
+, India:<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/sSnCkKCWBvais=
+3EuVAOvgy2WOIX7pp1nXnn4AbwuQ3Z6WbkfhqXYXU-aTMPJ8yThyLIuDIRlX9fxNbkl2r044g/4=
+36/HmEw9Y1aTges0Gzz8cUD2A/h7/v6ybDzWtYH4zqyjqjk6DNEi78Ph7zov7AniEz2PkcNQ">h=
+ttps://promedmail.org/promed-post?place=3D8714353,316</a>]<br><br>[See Also=
+:<br>Undiagnosed deaths, livestock - India: (JA) RFI<br>http://promedmail.o=
+rg/post/20240104.8714054=0D<br>2023=0D<br>----=0D<br>Undiagnosed deaths, ca=
+ttle - Colombia: (VC) RFI<br>http://promedmail.org/post/20230831.8711903=0D=
+<br>Undiagnosed deaths, cattle - Jersey (02): botulism susp<br>http://prome=
+dmail.org/post/20230217.8708441=0D<br>Undiagnosed deaths, cattle - Jersey: =
+notifiable diseases excluded, RFI<br>http://promedmail.org/post/20230127.87=
+08001=0D<br>2022=0D<br>----=0D<br>Undiagnosed deaths, goat - Colombia: (LG)=
+ RFI<br>http://promedmail.org/post/20221214.8707283=0D<br>Undiagnosed death=
+s - Jordan (02): (IR) livestock, abortion, anthrax<br>susp, RFI http://prom=
+edmail.org/post/20221022.8706296=0D<br>Undiagnosed deaths, horse - Libya: r=
+espiratory disease suspected, RFI<br>http://promedmail.org/post/20221004.87=
+05960=0D<br>Undiagnosed deaths, pig - India: (UP) RFI<br>http://promedmail.=
+org/post/20220719.8704508=0D<br>Undiagnosed deaths - Jordan: (MA) cattle, R=
+FI<br>http://promedmail.org/post/20220607.8703732=0D<br>Undiagnosed deaths =
+- Cambodia: (SR) cattle, buffalo, RFI<br>http://promedmail.org/post/2022060=
+5.8703699=0D<br>2021=0D<br>----=0D<br>Undiagnosed deaths, cattle - India (0=
+2): (UP) RFI<br>http://promedmail.org/post/20211228.8700532=0D<br>Undiagnos=
+ed deaths, cattle - India: (MN) RFI<br>http://promedmail.org/post/20211225.=
+8700472=0D<br>Undiagnosed disease, livestock - Pakistan: (SD) RFI<br>http:/=
+/promedmail.org/post/20210802.8564083=0D<br>Undiagnosed deaths, sheep - Ind=
+ia (02): (TN) RFI<br>http://promedmail.org/post/20210612.8443177=0D<br>Undi=
+agnosed deaths, pig - China: (NM) RFI<br>http://promedmail.org/post/2021032=
+4.8267469=0D<br>2019=0D<br>----=0D<br>Undiagnosed deaths, cattle - Turkmeni=
+stan: (AL) RFI<br>http://promedmail.org/post/20190624.6535971=0D<br>and oth=
+er items in the archives]<br>..............................................=
+...pkb/rd/pkb/mo/jh/pkb/tw/pkb/tw/jh<br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3DqjDDEmmAouVrq5puaDd00-K2-Q8UrHlRpBF68svP9IdoMDAwdT=
+AwMIPlOH8R99vq5RNV3pj0DR1SWQS7PcBAVlCSzmeTAIIM5PA5vJzdhjbHb4NCMEkKvVoOEbxS-=
+zJARto_cYVASi4dktEqAVG_oYKIVxOZAuh05JKnZkInsD1BzlbRhFcjPinNFgMVQcTAZs25H8D6=
+DivHI70k0FA8kvu1nEohiz8VCh0KnSJqligiZG7Jk_wzZVWElrgl1AQvOXiD73_cIssZIs34Yuk=
+jmm1uqGsazQB6nWAv6IVlIFdOLs2eT6ri0lv53IlYEsCahfSstvNP8aqwQm3HN4dd_mFz1lcs6N=
+3-sY0EbUP5r3V2i2YHf9skNPl8Jjq8pPD7XYbbGBcocarfuKWqlOWwF5_l2LE0TLKOfNiX0SEJ-=
+bwYKD9bBAs7r3Td55tEjo7tnFUPQjK1KQ4sA90abzfFCe8ez2Yd0Ii8UJRltXcnRLy1QMdNzzLK=
+XSDvss9J74Oj4Z7_El1s5mCH7RGtuhe5Jc5wTzNEeyE0CrEsOS4YVEKNpZdYuZ-QlvNMYjWq42Z=
+CEwIB0ZvGNwGhhmT9PdrVjVaQ2_kCeyWZQq1sNfDvgC8jfCxnHVrpPNz2a39Qdve8om6fXuwVHQ=
+8tv22Tp8mMLWohXGaJo0MN6SPBSMtDk2pcOKGKfwILDjz3oXzFU_v1mFavAVFNi2YbzQGvh7mvL=
+6wqOTqT15bK_sGkVtOmzdRCixxmTNZcHN-I1ly1XuKNiq57LUBueKYBusOa2qjpsY9PGmh_lhr0=
+rLmqO5xF_38IFSkbfnlJLf5PcAVSW6HBfQXt-1VdJSbEqbp8MtjfjOOaB8XswNNq6UY1QKSKL-k=
+N2aawB4TQURS6Yon6XAJsOfadPC2VTToAeoDf_1uydYaXuseBrVlh9xtY3NnBQiThZseOBtvA2Y=
+PwdRmzH3POg_zDDsEz-qh5_2d6uBchOmmj6w0KAvPJmsrjUrOhN9o47ZkXiIB9oxtCgsnXr3AhF=
+yh3ycI7Sd5joeVOvLD4yGKlwANof43byzQ6c3Ywoju6pJ0Ps5R_yNUaIjphbx0VPAJou21WwTF2=
+cXJTLAGgwgpcVv7tLFpO6SoFLA5RvYFXmvfBU7Edhf93MWp8qJ-wzB9qkBp2cb9kM1vEm-f1y2Z=
+RaAKzUeJmdxUdaKrzkr2k8DiqUp-MsrlqOkhFR9xbjZOqhbw1tvyvgTTO6XcTHkbyZoOkVIX7" =
+target=3D"_blank" class=3D"Unsubscribe--unsubscribePreferences" style=3D"fo=
+nt-family:sans-serif;text-decoration:none;">Unsubscribe Preferences</a></di=
+v><br>############################################################<br>#####=
+#######################################################<br><br><img src=3D"=
+https://u19268662.ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/436/HmEw9Y1aT=
+ges0Gzz8cUD2A/ho.gif" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=
+=3D"height:1px !important;width:1px !important;border-width:0 !important;ma=
+rgin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;=
+margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !importa=
+nt;padding-right:0 !important;padding-left:0 !important;"/></body>
+</html>
+--3f1c7644b23b7f0fa2712d581fa3967035172895f52c549b7a3869443e07--

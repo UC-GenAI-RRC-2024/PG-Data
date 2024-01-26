@@ -1,0 +1,430 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a98:d84b:0:b0:1eb:e128:bbe3 with SMTP id b11csp500470eil;
+        Thu, 18 Jan 2024 11:47:17 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IEu3HdDBdZoXGxFgu4pP8HxgyRvsF+UWfSYm0kcPlQlNV2c5Fbo51nZ/uiW6izxsLgMZLnE
+X-Received: by 2002:a9d:68da:0:b0:6dd:de75:7fa6 with SMTP id i26-20020a9d68da000000b006ddde757fa6mr1555252oto.2.1705607237441;
+        Thu, 18 Jan 2024 11:47:17 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1705607237; cv=none;
+        d=google.com; s=arc-20160816;
+        b=KS5lUugkrses+pq6yvx36cevP23JKhh1mgqUHqhcD9FNCTnM02FEm7mC7wvoFFn4vc
+         TYep6ZQHKYlQbser07ojJe5Hlxoyw6e4X1XM7ErpuVgBWJ53gVdsmSPg5fE61Q3QDMxu
+         PHbevf2Mf4ATtqGD5ikelGIT5LSIr0b1CUgimJ2iKgEE/4EjkZLLQko2JkhYQS6czvEx
+         YERqw3BpWAdKz5jwiirtsIzJEvMgut126qmcmD1nxIb+WMv31ZiSXUGpmCllT3bQrvn1
+         yefwKc/X3ir2IBDv+hntoIoOqlg3UTqCTnAa4d0LWAY5f3YFsoKve97s0nWWMDaP6gj1
+         uBbQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=wtGJq6GWxpnK9WJvUzyufl7gVn0dDeHSItvgxvaUN48=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=dGvbIbaHnBhPoFcJ6uHVqU4jPf6bAewS+QiWvQL61yi35M5u2EOid0AozA8cnoXuCM
+         xBBWibWuTHYYMKLulPZ+XMvuQile7aXACSxNoMuBGnCgeJVZoWVWRNVL3p9cJvQw7JFE
+         qf1ghialvfGVpem0Rmh+f+oIdtHaXHR0b8M4xQBqs7/EVQUUbAnwKJPZlT/GMLSIbrFt
+         1LV+YapgQSG2QX8WPezbqJD+8LxW5nusOZLXVYifSN98w8+UCzTZYAzL2kvke1VjRCVK
+         7zQDL/pTOOEE6qX2kopW0G7ny3rppZXY9iVjl5lHNDfjql4rdbciGIhi1O9ngWfmLMk7
+         1MpA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=qA96oV54;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=Z2qgjuwr;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id x11-20020a05620a0b4b00b007837fa200eesi1531152qkg.257.2024.01.18.11.47.17
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 18 Jan 2024 11:47:17 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=qA96oV54;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=Z2qgjuwr;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=wtGJq6GWxpnK9WJvUzyufl7gVn0dDeHSItvgxvaUN48=;
+	b=qA96oV54Aj1mryqsDbsFgpW3Nw87pYps0wc3tffUoNY9gLOV+R+mjnkw0Z7E3mQVFh72
+	G3qfPoLz1YQJcAXjnpruSW6UUeuDjTta4fF/XrkAgdSFMmv61FzkfH1AOOso7WG7yD/Q6A
+	fkRBqTvILnZgGR88opXQ4LrlTzJUQYrAC03qtqtJg/YxUPwsdTExhkNexlZMypxgi07mw7
+	kUmjsUEQ6P5OHjuMuFHZ1ff6tZTD0Zt7YPbXvSvoOaCUlwmOmkgfOgctSo/Dj8wWNs0l5q
+	kn2lbVWiGLQimuU5JIqj6b2neY5I1SBvQ2KkIN53SoCUEhqPU/NgnWQfK8Y9vu4A==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=wtGJq6GWxpnK9WJvUzyufl7gVn0dDeHSItvgxvaUN48=;
+	b=Z2qgjuwrrKRfzPOGyIYUdUiaByVTSAfC9ruj8fcECfj/Q+ncAol3Z085/IOGAW4zIn7b
+	ybDW4nddiocbRBk7WTeNw8kwGHH/y7BzwofylPDbYf4IlxUmny5cmkJsaGSAMS9CCR15tk
+	vOvWHDtmpIkjozT6Qgkd7wq8WP+XL493E=
+Received: by filterdrecv-66b6fdb7fb-dmqfd with SMTP id filterdrecv-66b6fdb7fb-dmqfd-1-65A98042-C
+        2024-01-18 19:47:14.122597516 +0000 UTC m=+8039145.431583514
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-0 (SG) with HTTP
+	id N__Rec95RzCIOZZVG5827Q
+	Thu, 18 Jan 2024 19:47:14.066 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=87d5ab04f781b893521a0af96d43310c593771b9acdf56089cbd0cdcbde1
+Date: Thu, 18 Jan 2024 19:47:16 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <N__Rec95RzCIOZZVG5827Q@geopod-ismtpd-0>
+Subject: PRO/EDR> Norovirus - USA (02): cruise ship
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iBajCjy5R6yxfPW6vUvpJH1cm2C7gX=2F4f511tod?=
+ =?us-ascii?Q?ztlOiy4aTRYNXrslnGIkIC1RYxakrIiKrnS9Jyj?=
+ =?us-ascii?Q?Jo+lEPWUbLaG435xj32fCv=2FANKD1ZvSRfRKc0ek?=
+ =?us-ascii?Q?qS1qbNwJsGLyV0G4UlRehCASUxOxB3eeHrku+Fc?=
+ =?us-ascii?Q?v7erDF4TFBoLamfFy1yJ5ZkXWz5XVCLbO0ij=2Fb?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUhc93xcG=2F095a5S4+mt=2FG?=
+ =?us-ascii?Q?uYUpctI=2FOGD2dwyi+uvm2j4FCdvuw0l9zcHM8iA?=
+ =?us-ascii?Q?mojOvTXq7jOpDFFNtfsYkHQYACEW8pq1BXXqYmH?=
+ =?us-ascii?Q?oGTsnt6QpE2ZV5WVqnpwfXWoLXx7+4bvrVlKKVb?=
+ =?us-ascii?Q?Q0AcBX2mr3yUnJlKxDtzfJJ48H8bkzOYVDot5jN?=
+ =?us-ascii?Q?sqS2qzGnvQGwtoLVeezbmOLFBu=2Fxyqas1CcGbgg?=
+ =?us-ascii?Q?U6erp+hlm8GZ1MXBhwp2hySMMyKhkXgPxqCu0qs?=
+ =?us-ascii?Q?LjMx=2F36D6Pb48+wv+Nq94I4j9fdOpFNZKHzW65u?=
+ =?us-ascii?Q?qilvIx9xjwcE9iMUWruBxWLgzQzUuiiZD5lLKnX?=
+ =?us-ascii?Q?cBZUERAOq95ugZRT0VSb7icObm7atxeXPPxsZeH?=
+ =?us-ascii?Q?gjA9cSZxsdwYxWUZepfRM=2Fu8Q=2F8fFF8xocR7DXL?=
+ =?us-ascii?Q?NRGnr0tvbUUI4t6aMovy2i+uIj=2F3v0D+S7UTSHN?=
+ =?us-ascii?Q?Z5wBZXR5LFD6wJaZtmmjcYaGEGq1R+d8qjLDNEu?=
+ =?us-ascii?Q?jeaohhue03EAR0SfmMocV+TnLTZZgcZB91ZhoqF?=
+ =?us-ascii?Q?LDpD5JA=2F+FOgFkh98WMIfrutoDtfpgrbfYmBdW4?=
+ =?us-ascii?Q?jPMndXRIXpYWFyO=2FjAzlRvIsDmccsdtg239ir7k?=
+ =?us-ascii?Q?gLRcl7SAF8ER7Sbkd98QX7dHLvEE9mTnnlaOIbm?=
+ =?us-ascii?Q?UjUaWwVr0LI1X02QebxCMb=2Fb9+ThduMtZ3PGJPq?=
+ =?us-ascii?Q?QyeYG0rzhltIPKaJO4Vn2Q3=2FhAg3259G+34DB3I?=
+ =?us-ascii?Q?sIUiaLb59P0a3UmWXUf2sO4zxQ=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2E3LRr0BzTY?=
+ =?us-ascii?Q?un4jl6l7qTEaqACa-PMxnfORwADK1yjJnJoMDAw?=
+ =?us-ascii?Q?dTAwMKOHvC6T4jP1PnVowIDavUJdzTpdLo5595H?=
+ =?us-ascii?Q?8dqKyr=5FprW9azjfmTj1MONT28X0a0SYYhtbjzwM?=
+ =?us-ascii?Q?RXWggUI3XEKKLSWQsgFGPZ5UQJtEE1VX7k5K5tn?=
+ =?us-ascii?Q?Aifg=5FqKurWkIFlJaQ=3D=3D=2EIxgCAkVIZCfjUgeaTGv?=
+ =?us-ascii?Q?BJHHNS4pdu6oDC966rpPweXRoMDAwdTAwMFF7Nw?=
+ =?us-ascii?Q?uzNyqy-DI95LNpsXb5b5KZBmTizAJ4o34uMLryf?=
+ =?us-ascii?Q?m1l7kpx1=5FfPEhgSmrq5UR=5F5dAnfPz-cfqlQ4=5F9t?=
+ =?us-ascii?Q?5v3W3KJcsJ=5F5k4vTMT2-SQm9PK2ZvnqjHZw0-uU?=
+ =?us-ascii?Q?rBt57rR-habpwtC681zlRZRfGtUFJORi7fSI95h?=
+ =?us-ascii?Q?b2fJGdGsZ1-rR41RRiHhYn83LbKZgHKUVFUOquu?=
+ =?us-ascii?Q?WFRBEOKK2-lA2p=5F=5F-qtRUZWUShkQWsWlLixuvYf?=
+ =?us-ascii?Q?JwhVfQU2NNPf9RWfVSN6tfCR2IVQm46OXXF=5FXNF?=
+ =?us-ascii?Q?b=5F2IQXtRPhdYbUQqYeGerxiXQBkXBDYpe=5FrFoKH?=
+ =?us-ascii?Q?Le4aVDVE7vXJHE9F=5FpjyGwe3U=5FxRJh7Z2a78Iix?=
+ =?us-ascii?Q?hKGUCKhpzu3kUihm61D4WhE71xQC88PnOM58fEO?=
+ =?us-ascii?Q?zP0NEafb4Wwi7iHcKbU1xxRDYCp6KT4QoEf1RFO?=
+ =?us-ascii?Q?ZLDqpViAGoZUqWbyY1aUN1qjQ2nLXK6lNoOCJZR?=
+ =?us-ascii?Q?BrRKpAi1Ot9uBSRBpOHsgyt0=5Fk8XXYmoyN51kbL?=
+ =?us-ascii?Q?6OrjOi8zAixiwVXrh=5FFxw6Uw6kgW8oowXKrHLnT?=
+ =?us-ascii?Q?NlJQQ5-FTWl3=5FLGLmHYV8XkHkSfmYBBo5mrU0J=5F?=
+ =?us-ascii?Q?vNDzcgVm1506RXw82gDw2QuY6mlGN4t6e=5F7jlJ8?=
+ =?us-ascii?Q?-Eh5ChflNKZykRQKVW7fmEktnAnW3LR2CFudw1v?=
+ =?us-ascii?Q?6MxNjmi6bU31o95QPxMHR1d4GqTTdzfOcugD1Hl?=
+ =?us-ascii?Q?s=5FLH7W6FR5mjpssWwZy=5FBpnbrLGkEVCcc0N2q4j?=
+ =?us-ascii?Q?-qVmklLfINcz7puZO6MrI7IyAhG9ge56AcvdJa1?=
+ =?us-ascii?Q?XoVtdbVc6sKuDocTc9WkNMBO1gTQk5MUhRv2yw8?=
+ =?us-ascii?Q?n3hrhRaRSPChKXxjEQw3hAWMi47FpaAfUKanDOO?=
+ =?us-ascii?Q?DG4ooC5LVFabl2PScck3asWIil5JdV3nU5Phaua?=
+ =?us-ascii?Q?3fDWS4JHQe9VT-FcplqXUVEoUC3LIXJchGnctaq?=
+ =?us-ascii?Q?WcpxWDBff3B=5FyRqYFP5DHdxGkAb=5FRTnK4EHKLHq?=
+ =?us-ascii?Q?IC-AA2xcEdrBPBSM6pTiI41=3E?=
+
+--87d5ab04f781b893521a0af96d43310c593771b9acdf56089cbd0cdcbde1
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=us-ascii
+Mime-Version: 1.0
+
+NOROVIRUS - USA (02): CRUISE SHIP
+*********************************
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+Date: Mon 15 Jan 2024
+Source: Business Insider [edited]
+<https://www.businessinsider.com/celebrity-cruises-constellation-cruise-shi=
+p-norovirus-stomach-flu-outbreak-2024-1>
+
+
+One hundred people aboard Celebrity Cruises' recent Celebrity
+Constellation sailing reported norovirus symptoms, making it the 1st
+cruise ship outbreak of 2024, according to the CDC. On 3 Jan [2024],
+the Celebrity Constellation and its 2056 guests departed on a 9-night
+cruise. Unfortunately for these vacationers, seasickness wasn't their
+only issue. By the end of the cruise on 12 Jan [2024], 100 passengers
+-- 92 guests and 8 crew -- had reported being sick, the CDC said.
+
+Amid the outbreak, the ship and its crew isolated the infected
+travelers, ramped up cleaning and disinfecting, and collected stool
+samples for testing, the agency reported. Celebrity Cruises did not
+immediately respond to a request for comment from Business Insider
+about this incident.
+
+Norovirus, also known as the stomach flu, is one of the most common
+virus outbreaks on cruise ships. These packed floating hotels create
+the ideal environment for the highly contagious bug to quickly spread,
+often through infected people and contaminated water, food, and
+surfaces.
+
+Once a traveler has been infected, it can quickly ruin their vacation:
+the 4 predominant symptoms are vomiting, diarrhea, nausea, and stomach
+pain.
+
+This recent incident isn't the premium cruise line's 1st run-in with
+the stomach bug. According to the CDC, 3 of the 13 norovirus outbreaks
+aboard cruise ships in 2023 were on Celebrity's vessels. This includes
+an episode in May 2023 that infected almost 200 travelers on the
+Celebrity Summit. Despite these outbreaks, in 2023, 3 Celebrity
+Cruises ships received a perfect sanitation score from the CDC
+following random ship inspections.
+
+[Byline: Brittany Chang]
+
+--
+Communicated by:
+ProMED
+
+[The following is a list of CDC-reported norovirus outbreaks on cruise
+ships in 2023 <https://www.cdc.gov/nceh/vsp/surv/gilist.htm>:
+
+Cruise line / Cruise ship / Sailing dates / Causative agent
+-----------------------------------------------------------
+Viking Cruises / Viking Neptune / 6-20 Jun 2023 / norovirus
+Celebrity Cruises / Celebrity Summit / 15-25 May 2023 / norovirus
+Holland America / Nieuw Amsterdam / 6-21 May 2023 / norovirus
+Princess Cruises / Grand Princess / 31 Mar-28 Apr 2023 / norovirus
+Princess Cruises / Emerald Princess / 17 Mar-1 Apr 2023 / norovirus
+Royal Caribbean International / Enchantment of the Seas / 23-31 Mar
+2023 / norovirus
+Royal Caribbean International / Enchantment of the Seas / 11-23 Mar
+2023 / norovirus
+Celebrity Cruises / Celebrity Equinox / 9-18 Mar 2023 / norovirus
+Celebrity Cruises / Celebrity Constellation / 6-17 Mar 2023 /
+norovirus
+Princess Cruises / Ruby Princess / 26 Feb-5 Mar 2023 / norovirus
+Royal Caribbean International / Jewel of the Seas / 28 Jan-3 Feb 2023
+/ norovirus
+Royal Caribbean International / Brilliance of the Seas / 16-21 Jan
+2023 / norovirus
+P&O Cruises / Arcadia / 3 Jan-13 Apr 2023 / norovirus
+- Mod.LL
+
+ProMED map:
+United States: <https://promedmail.org/promed-post?place=3D8714315,106>]
+
+[See Also:
+Norovirus - USA: (CA) raw oysters
+http://promedmail.org/post/20240113.8714218
+2023
+----
+Norovirus - USA (09): (IL) restaurant susp., university students
+http://promedmail.org/post/20231125.8713321
+Norovirus - USA (08): oyster, 2022
+http://promedmail.org/post/20230902.8711923
+Norovirus - USA (07): (MN) oyster ex Canada (NS), alert, recall
+http://promedmail.org/post/20230716.8711186
+Norovirus - USA (06): cruise ship
+http://promedmail.org/post/20230625.8710745
+Norovirus - USA (05): (HI,MN) frozen raw oysters ex South Korea,
+alert, recall http://promedmail.org/post/20230614.8710595
+Norovirus - USA (04): cruise ship
+http://promedmail.org/post/20230608.8710480
+Norovirus - USA (03): (CA) restaurant
+http://promedmail.org/post/20230526.8710265
+Norovirus - USA (02): (LA) oysters ex TX
+http://promedmail.org/post/20230414.8709494
+Norovirus - USA: (TX) Caribbean cruise ship
+http://promedmail.org/post/20230311.8708879]
+.................................................ll/tw/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3DEXJ3M2Ljnn2GmyOSV3acYQH2CFWs_fvReUJ-_y3DQZRoMDAwdTAwMKxU3A8=
+r1UrtWkOIspPxQ7cR6J3aJKZ64K-zqRGZ6v-WfhFfqXu0ccWSQNCZWdqvXA_XpA2_SIrA6DA_sP=
+SuGWvzDqhJgaxZ2SWQ_QiAG-tLt2hVnT4rQarDhpvh2iPf2_cwYrlrqbqqTglKRRlIDS7JOT5qs=
+fTBmWTf_qoBYL3INxcXTBShV0VbujS5iXtSLmIsE7w55uOpVbvEdDY2p2vVf5pK7a7Lcg5OFExW=
+N9yh5slPiXPU9Olw0qBd-0IQRuAJRzVAryg65yMoQydmZ2tno3E-dhLws-EoX0CHrbNiYBgPSBd=
+WBxjZUySldtfx3Fzjh8VLznX4RySVlfK68-EBCgA6TGeXV1sD_PQAUgRA6xB8eti3hp1d9BWIV4=
+uvo1GxhURO0v3M4sHbU8-KLpSt1gbE6rvbk0IrCw8-VSlpsbSI4DKRljfDp4UDXPvlKJuVHm0tG=
+3jCNFr4fK5py8zAb70uwTITf0P__Ev9yLyhWaxVS9UgAiZU6RolHxj1TAKSlTXVUmnY1uGWo7hL=
+DeZdqmMr0LmaOXqrHOkE95KbLOCZUx0Ad1KXk3x_90qsLRLCLL-MR1R4_yUDH6EtO6AjqJuxSGF=
+ehLhlE0YKPqp9KvQ-LCFQSLl_0bOUB_GVI7l8AnSiGoJnzmA3ijZDpJgSr_BO46zRRiUP_8tB9I=
+GTvYOHphVs49xgPfBEzbPtHUul3ad4_7Ps9KpeZteVeOdzsbf4msJpoAORQ55xAFr6WBma1WS8q=
+M0NM-wfqS7vMPPGUjKxzT4shjh2r4Zp6jHVru1IuxPZKY9lRKJ3pdb6_FQ6_fWPg0OVQvvma7EQ=
+zTSDNE546Q23ELQCi9saMKJR2B9fBsEx_JwQDD-FFKT5qD9vh79HmzamZgsf56nYFyYah7E1dY8=
+B7yVo76P6rYxNwaDv0YQXuB6QEST0t6H76_0VATwpv8IOYORN-9_Udp_ShS54xAHnCNExAzMPkl=
+78G0h_MlOji_O9O539b4GAV7OcGcpd29v_dBHDfyOGW06xNW4AVAwdH1l5s_f2k57QupKJ_ZQkw=
+DrF2lsT5AiiICwjus6EdvYdPl-uyljsaQFEaMTs94W9LA4FhXjAqDknwfzA_E7AmmkxYYQ2MyIq=
+7Hd0j_jZ2PRuuyM-fPpVUXHr9jwqwFanWMg7HlNnQxo=3D )
+############################################################
+############################################################
+
+--87d5ab04f781b893521a0af96d43310c593771b9acdf56089cbd0cdcbde1
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>NOROVIRUS - USA (02): CRUISE SHIP<br>********************************=
+*<br>A ProMED-mail post<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/=
+c/wscE2ng5fl6JrPIt48tisIijpefK5PNjW-mL-YZGnfgDOxU1G3gjwnPSi2Tfv3HA/433/ggpn=
+Ks4ZSa-MnrFiJRQNHg/h0/SI0GskDr-SOiyiL_3B2Gna91UcMnJQC_tUqTcfqVm2k">http://w=
+ww.promedmail.org</a><br>ProMED-mail is a program of the<br>International S=
+ociety for Infectious Diseases<br><a href=3D"https://u19268662.ct.sendgrid.=
+net/ss/c/wscE2ng5fl6JrPIt48tisCT5tpD4Upm3qyMCbcYSQvc/433/ggpnKs4ZSa-MnrFiJR=
+QNHg/h1/hBy8qJ2u41yp_Ce4NQvI6RyRhQb36y8Pg3IQcK9ugRk">http://www.isid.org</a=
+><br><br>Date: Mon 15 Jan 2024=0D<br>Source: Business Insider [edited]=0D<b=
+r><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/TLh_csrC34X_iXpbYoMam-K=
+m8mjtc3iol-g8QqNcCbPbjvAG7XnQaPcpQL7netXPYmXm3nDzWmGo9cMkw3Q3TWrbU9pJrUEPMr=
+_0It2CCgIkvBf57CO8L0ZXna5mD48to9XtI0gJtEwyXHK-q28T9o-PQWOQF3bXDPP5mx8e7zE/4=
+33/ggpnKs4ZSa-MnrFiJRQNHg/h2/2qUbPkpScww6IHEKNOEFFjypXj24Y7I-DhkEBYPTkvs">h=
+ttps://www.businessinsider.com/celebrity-cruises-constellation-cruise-ship-=
+norovirus-stomach-flu-outbreak-2024-1</a>=0D<br>=0D<br>=0D<br>One hundred p=
+eople aboard Celebrity Cruises' recent Celebrity<br>Constellation sailing r=
+eported norovirus symptoms, making it the 1st<br>cruise ship outbreak of 20=
+24, according to the CDC. On 3 Jan [2024],<br>the Celebrity Constellation a=
+nd its 2056 guests departed on a 9-night<br>cruise. Unfortunately for these=
+ vacationers, seasickness wasn't their<br>only issue. By the end of the cru=
+ise on 12 Jan [2024], 100 passengers<br>-- 92 guests and 8 crew -- had repo=
+rted being sick, the CDC said.=0D<br>=0D<br>Amid the outbreak, the ship and=
+ its crew isolated the infected<br>travelers, ramped up cleaning and disinf=
+ecting, and collected stool<br>samples for testing, the agency reported. Ce=
+lebrity Cruises did not<br>immediately respond to a request for comment fro=
+m Business Insider<br>about this incident.=0D<br>=0D<br>Norovirus, also kno=
+wn as the stomach flu, is one of the most common<br>virus outbreaks on crui=
+se ships. These packed floating hotels create<br>the ideal environment for =
+the highly contagious bug to quickly spread,<br>often through infected peop=
+le and contaminated water, food, and<br>surfaces.=0D<br>=0D<br>Once a trave=
+ler has been infected, it can quickly ruin their vacation:<br>the 4 predomi=
+nant symptoms are vomiting, diarrhea, nausea, and stomach<br>pain.=0D<br>=0D=
+<br>This recent incident isn't the premium cruise line's 1st run-in with<br=
+>the stomach bug. According to the CDC, 3 of the 13 norovirus outbreaks<br>=
+aboard cruise ships in 2023 were on Celebrity's vessels. This includes<br>a=
+n episode in May 2023 that infected almost 200 travelers on the<br>Celebrit=
+y Summit. Despite these outbreaks, in 2023, 3 Celebrity<br>Cruises ships re=
+ceived a perfect sanitation score from the CDC<br>following random ship ins=
+pections.=0D<br>=0D<br>[Byline: Brittany Chang]=0D<br>=0D<br>--=0D<br>Commu=
+nicated by:=0D<br>ProMED<br><br>[The following is a list of CDC-reported no=
+rovirus outbreaks on cruise<br>ships in 2023 <a href=3D"https://u19268662.c=
+t.sendgrid.net/ss/c/TLh_csrC34X_iXpbYoMam_orM1JZbhItOqqFJER4EP478XXhtoh8-eE=
+oEeKlbiRKbudIJLnq_QpjwIzhNZ0glw/433/ggpnKs4ZSa-MnrFiJRQNHg/h3/762dYcFKf5WyB=
+TB7Aoh-j_D2OiX3_mBv4YN9MuOBqFY">https://www.cdc.gov/nceh/vsp/surv/gilist.ht=
+m</a>:=0D<br>=0D<br>Cruise line / Cruise ship / Sailing dates / Causative a=
+gent=0D<br>-----------------------------------------------------------=0D<b=
+r>Viking Cruises / Viking Neptune / 6-20 Jun 2023 / norovirus=0D<br>Celebri=
+ty Cruises / Celebrity Summit / 15-25 May 2023 / norovirus=0D<br>Holland Am=
+erica / Nieuw Amsterdam / 6-21 May 2023 / norovirus=0D<br>Princess Cruises =
+/ Grand Princess / 31 Mar-28 Apr 2023 / norovirus=0D<br>Princess Cruises / =
+Emerald Princess / 17 Mar-1 Apr 2023 / norovirus=0D<br>Royal Caribbean Inte=
+rnational / Enchantment of the Seas / 23-31 Mar<br>2023 / norovirus=0D<br>R=
+oyal Caribbean International / Enchantment of the Seas / 11-23 Mar<br>2023 =
+/ norovirus=0D<br>Celebrity Cruises / Celebrity Equinox / 9-18 Mar 2023 / n=
+orovirus=0D<br>Celebrity Cruises / Celebrity Constellation / 6-17 Mar 2023 =
+/<br>norovirus=0D<br>Princess Cruises / Ruby Princess / 26 Feb-5 Mar 2023 /=
+ norovirus=0D<br>Royal Caribbean International / Jewel of the Seas / 28 Jan=
+-3 Feb 2023<br>/ norovirus=0D<br>Royal Caribbean International / Brilliance=
+ of the Seas / 16-21 Jan<br>2023 / norovirus=0D<br>P&O Cruises / Arcadia / =
+3 Jan-13 Apr 2023 / norovirus=0D<br>- Mod.LL<br><br>ProMED map:<br>United S=
+tates: <a href=3D"https://u19268662.ct.sendgrid.net/ss/c/sSnCkKCWBvais3EuVA=
+Ovgy2WOIX7pp1nXnn4AbwuQ3Z6WbkfhqXYXU-aTMPJ8yThSF-Dl-LXuivUfbA4QGAxRA/433/gg=
+pnKs4ZSa-MnrFiJRQNHg/h4/l5byW0HyY1mshdfv5Vj-GGF1CIN-rTovJJYUqLH4Dvw">https:=
+//promedmail.org/promed-post?place=3D8714315,106</a>]<br><br>[See Also:<br>=
+Norovirus - USA: (CA) raw oysters<br>http://promedmail.org/post/20240113.87=
+14218=0D<br>2023=0D<br>----=0D<br>Norovirus - USA (09): (IL) restaurant sus=
+p., university students<br>http://promedmail.org/post/20231125.8713321=0D<b=
+r>Norovirus - USA (08): oyster, 2022<br>http://promedmail.org/post/20230902=
+.8711923=0D<br>Norovirus - USA (07): (MN) oyster ex Canada (NS), alert, rec=
+all<br>http://promedmail.org/post/20230716.8711186=0D<br>Norovirus - USA (0=
+6): cruise ship<br>http://promedmail.org/post/20230625.8710745=0D<br>Norovi=
+rus - USA (05): (HI,MN) frozen raw oysters ex South Korea,<br>alert, recall=
+ http://promedmail.org/post/20230614.8710595=0D<br>Norovirus - USA (04): cr=
+uise ship<br>http://promedmail.org/post/20230608.8710480=0D<br>Norovirus - =
+USA (03): (CA) restaurant<br>http://promedmail.org/post/20230526.8710265=0D=
+<br>Norovirus - USA (02): (LA) oysters ex TX<br>http://promedmail.org/post/=
+20230414.8709494=0D<br>Norovirus - USA: (TX) Caribbean cruise ship<br>http:=
+//promedmail.org/post/20230311.8708879]<br>................................=
+.................ll/tw/jh<br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3DEXJ3M2Ljnn2GmyOSV3acYQH2CFWs_fvReUJ-_y3DQZRoMDAwdT=
+AwMKxU3A8r1UrtWkOIspPxQ7cR6J3aJKZ64K-zqRGZ6v-WfhFfqXu0ccWSQNCZWdqvXA_XpA2_S=
+IrA6DA_sPSuGWvzDqhJgaxZ2SWQ_QiAG-tLt2hVnT4rQarDhpvh2iPf2_cwYrlrqbqqTglKRRlI=
+DS7JOT5qsfTBmWTf_qoBYL3INxcXTBShV0VbujS5iXtSLmIsE7w55uOpVbvEdDY2p2vVf5pK7a7=
+Lcg5OFExWN9yh5slPiXPU9Olw0qBd-0IQRuAJRzVAryg65yMoQydmZ2tno3E-dhLws-EoX0CHrb=
+NiYBgPSBdWBxjZUySldtfx3Fzjh8VLznX4RySVlfK68-EBCgA6TGeXV1sD_PQAUgRA6xB8eti3h=
+p1d9BWIV4uvo1GxhURO0v3M4sHbU8-KLpSt1gbE6rvbk0IrCw8-VSlpsbSI4DKRljfDp4UDXPvl=
+KJuVHm0tG3jCNFr4fK5py8zAb70uwTITf0P__Ev9yLyhWaxVS9UgAiZU6RolHxj1TAKSlTXVUmn=
+Y1uGWo7hLDeZdqmMr0LmaOXqrHOkE95KbLOCZUx0Ad1KXk3x_90qsLRLCLL-MR1R4_yUDH6EtO6=
+AjqJuxSGFehLhlE0YKPqp9KvQ-LCFQSLl_0bOUB_GVI7l8AnSiGoJnzmA3ijZDpJgSr_BO46zRR=
+iUP_8tB9IGTvYOHphVs49xgPfBEzbPtHUul3ad4_7Ps9KpeZteVeOdzsbf4msJpoAORQ55xAFr6=
+WBma1WS8qM0NM-wfqS7vMPPGUjKxzT4shjh2r4Zp6jHVru1IuxPZKY9lRKJ3pdb6_FQ6_fWPg0O=
+VQvvma7EQzTSDNE546Q23ELQCi9saMKJR2B9fBsEx_JwQDD-FFKT5qD9vh79HmzamZgsf56nYFy=
+Yah7E1dY8B7yVo76P6rYxNwaDv0YQXuB6QEST0t6H76_0VATwpv8IOYORN-9_Udp_ShS54xAHnC=
+NExAzMPkl78G0h_MlOji_O9O539b4GAV7OcGcpd29v_dBHDfyOGW06xNW4AVAwdH1l5s_f2k57Q=
+upKJ_ZQkwDrF2lsT5AiiICwjus6EdvYdPl-uyljsaQFEaMTs94W9LA4FhXjAqDknwfzA_E7Ammk=
+xYYQ2MyIq7Hd0j_jZ2PRuuyM-fPpVUXHr9jwqwFanWMg7HlNnQxo=3D" target=3D"_blank" =
+class=3D"Unsubscribe--unsubscribePreferences" style=3D"font-family:sans-ser=
+if;text-decoration:none;">Unsubscribe Preferences</a></div><br>############=
+################################################<br>#######################=
+#####################################<br><br><img src=3D"https://u19268662.=
+ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/433/ggpnKs4ZSa-MnrFiJRQNHg/ho.g=
+if" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"height:1px !imp=
+ortant;width:1px !important;border-width:0 !important;margin-top:0 !importa=
+nt;margin-bottom:0 !important;margin-right:0 !important;margin-left:0 !impo=
+rtant;padding-top:0 !important;padding-bottom:0 !important;padding-right:0 =
+!important;padding-left:0 !important;"/></body>
+</html>
+--87d5ab04f781b893521a0af96d43310c593771b9acdf56089cbd0cdcbde1--

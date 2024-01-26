@@ -1,0 +1,387 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a98:c004:0:b0:1eb:e128:bbe3 with SMTP id l4csp3968193eic;
+        Mon, 15 Jan 2024 14:47:15 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IGGPkSN8xn+IXjTTHBcDf93BTzSbdzienAQ9+no2CBJkgz5kuua9VV9DfwiAjQ9R0G0R8qQ
+X-Received: by 2002:a05:6214:20c1:b0:681:2255:7392 with SMTP id 1-20020a05621420c100b0068122557392mr7977830qve.9.1705358834843;
+        Mon, 15 Jan 2024 14:47:14 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1705358834; cv=none;
+        d=google.com; s=arc-20160816;
+        b=Z6jZZ3xLYBzITlKqj+MlUTthIJqUJRUci1Cn83Z6BnfYXP03KgIztH801+7R+TPDJi
+         hgoRljn61SsLCS0V+Cdb8ES5vrFlzTOeYZDkBSt0MGtlpcE+02l07Di6QXqspXipJ9wA
+         ViuMbwZJn638kg3gzIGF3JEcvxr6fsaKg8IfvNkTk+gBG41gjmjUdzHGnCp6kEunLRe1
+         njOCJi/5S4zl/MGw/GCTQKXGzO1rGWakXs2beEQD6IjjLalE80FJoQvoliVsMSQpDV1A
+         /EKVlJOUHwPJN4pNeHh7OsqkLR4/LTiVTlnpJos5kGI/tXE1hphe6Q54W6SMOTcIF5lZ
+         WYNQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=EMZq2DCPApq2T1ei2ixQlDX+nQzazi0UxG9HIFKRuRU=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=x2VSmiPGeaHtvcKl0h3M1Vdq8u4YlbPDYzPcvAcY2sajB58MvQtvNkmodzL8okOb1/
+         zU2FDzAP8j+Ao/Diz8xg5eLi233g2qkiQSMYosaEVdwH3j1iZreJVC1C4Z4LhJmc2pXl
+         ROTY4y7Jl5oNLC2QKa1kxVXeFxaHb/QorMHq/f7uTzOsuX5gO/Y7R0JIhMmaEgHdOCEO
+         zxvaM4+vx06Ib0dOW0NfKq+VuPeMt5NcdUFgLZJX0Rfa1UXhgKFPduW4xnVQqAdRkYJ+
+         LvHK6z3LBbnpWM6+X/ceK0e1r0y2rH0pMXvCcvQFaYlt79TrrzGPJVGmk8/Njebtwjad
+         bSaw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=mkDbns+5;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=r6boFTeP;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id v5-20020a0c9c05000000b0067f9f2f4bc9si8632302qve.173.2024.01.15.14.47.14
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 15 Jan 2024 14:47:14 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=mkDbns+5;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=r6boFTeP;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=EMZq2DCPApq2T1ei2ixQlDX+nQzazi0UxG9HIFKRuRU=;
+	b=mkDbns+5m0auYyWCt8sFAFMZ/s1M+0ctMPJ+jjnT5TKKfkpcnWQQJ4xXWX3gxIAsU1v3
+	Wh6+lktqJAmqX47bQgwK82X2W8Mc0tyFtmJyvW+gEFVcyhJAQ9J/ykogFnNaTVsLkdFSGg
+	dfArKLCOcKuvowFBsOhByJrwCDY0R6D/wXxuoqrqZ8T9NF0cGvcQVku5fn5ik902eerlJl
+	yQH7Yst+Bt7U0h23rTg+S0VavzlTf/XkLORNv6RODGoB8AWfSWKdI2g/rSvm9/pm5Mb5xL
+	eCxsddeUXuRmQrG0UxoZfsBJ7xhw1MioNWaiXZ2zz4G7T33VEkdQnx+2Vc8S6QeA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=EMZq2DCPApq2T1ei2ixQlDX+nQzazi0UxG9HIFKRuRU=;
+	b=r6boFTePMVOlRN6pOSkqEPRdMdy+tcr8r1m9i+dwhQqy//2QZk1QgmhhpbZnAcUNPc93
+	Kd7NvHULRWqzyj+Rala0JNwvyVtOZ5Heh6pV7QMfDP54U1qU+2wvKUeYFNzrvUR/TH0Tb2
+	ORhavQT156NiIZo1//pk/IMUm9wpmsTxo=
+Received: by filterdrecv-cb6564d98-xv84j with SMTP id filterdrecv-cb6564d98-xv84j-1-65A5B5EF-2C
+        2024-01-15 22:47:11.473135944 +0000 UTC m=+7790708.805445426
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-4 (SG) with HTTP
+	id jZV7IcVfRAG8ZT87HokU_A
+	Mon, 15 Jan 2024 22:47:11.434 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=586831a2851e0b899cd8cdf2a95a6d3000fccd56b1ed2f7f346f2ecbceb0
+Date: Mon, 15 Jan 2024 22:47:14 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <jZV7IcVfRAG8ZT87HokU_A@geopod-ismtpd-4>
+Subject: PRO/EDR> Carbon monoxide poisoning - Algeria: (BL) family members,
+ fatal
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iB1MvYmxHccnBwget9S1FtV4C89IZgYkVfEuuj0?=
+ =?us-ascii?Q?cFMRAJzB7bVlewAOGiY1GVtEONGWPvMmMRpkhI3?=
+ =?us-ascii?Q?mFeqSf6wuEOoKA1Ot1VrxvjNnFYZBk2OO0=2FivgG?=
+ =?us-ascii?Q?VIEAUVrSETK0l3E71izyZ+Cd98a5TFkgSDChEDW?=
+ =?us-ascii?Q?XFx27IPneMbH9CEGcOS8sqi5i3SYrJpvwPkjEM?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUhc93xcG=2F095a5S4+mt=2FG?=
+ =?us-ascii?Q?uYUpctI=2FOGD2dwyi+uvm2j4FCdvuw0l9zcHM8iA?=
+ =?us-ascii?Q?mojOvTXq7jOpDFFNtfsYkHQYACEW8pq1BXXqYmH?=
+ =?us-ascii?Q?oGTsnt6QpE2ZV5WVqnpwfXWoLXx7+4ZKhxJlqKN?=
+ =?us-ascii?Q?+lFM3loju=2FRepK490o4e4tDs1LyVrvDAYiBkDiV?=
+ =?us-ascii?Q?CyDfv+v7Y4VG8lo4V1kjDGXC9HgB4pEccLejwj9?=
+ =?us-ascii?Q?c6lhloWktiqZAECbVNlpiuccX6uIhD6Q35vlhP+?=
+ =?us-ascii?Q?Xi85YujQ2OZ9ShWOryYwraENMVqbBATVK+=2FiOaR?=
+ =?us-ascii?Q?+oPDT2zxDvXQ80Y6gQ6UMg6WP2FS+RkHf0plGbA?=
+ =?us-ascii?Q?7nGeMgdZfryw6Dm=2Fd=2FXbu5kkR9YU2caekAwIVcD?=
+ =?us-ascii?Q?7qfPatiL2PK8ts0g7zA40o42Xtr4dKM1aWgNUr6?=
+ =?us-ascii?Q?w909uMIBBdbJ=2F2liB+XGx6GoaY9JnvtOxEZHFUO?=
+ =?us-ascii?Q?JRLePy=2FkvsOWxBA21h=2FgaL+LaiGEqs6qfnTjMdD?=
+ =?us-ascii?Q?nwS2f3hF1ciKGSwGe30JCzWwGaevnZQPfW7j=2Fr7?=
+ =?us-ascii?Q?StglNZJGiEYEVolc281bMJh44LMedjqboOrJAeK?=
+ =?us-ascii?Q?1E+sxKU=2FgE3S1UAHOUsBjhnGI2+J8oYHOM+oqnQ?=
+ =?us-ascii?Q?5EtLbQQqMjRQPduYnH0I5QBlDLmGfDLtcOHz3BN?=
+ =?us-ascii?Q?Gz0CuEQd9drBOwgKqugGXWuybW4+e3Z4zUqW19t?=
+ =?us-ascii?Q?xxHBhn+E4BIEJgLruH2ehh6qwwT4YLSW8YfP9Xd?=
+ =?us-ascii?Q?REXt8l36wiXp1VyuBJbqtNiXuw=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2E8Pd9fVb30?=
+ =?us-ascii?Q?BQrjfs12ui9zAaQe7fL2vCsRldusDiSk9hoMDAw?=
+ =?us-ascii?Q?dTAwMDDXDZuO0XVmC56kSZ=5Fh-DWc0iYson2wRoh?=
+ =?us-ascii?Q?AtYMXQLC5LmILReMQQGrfvEepZoWaIpnXPS9FhZ?=
+ =?us-ascii?Q?w=5F4ugRFW=5FKQOBHQzyPAE4uI05miQudjlEMxO2Fg?=
+ =?us-ascii?Q?lRmmYvyUSqUkbFtmA=3D=3D=2ERSbqsnxvTvWf13u7fKZ?=
+ =?us-ascii?Q?X1zmxeh=5FQTlPyNCw3M3f9rFxoMDAwdTAwMC1qBK?=
+ =?us-ascii?Q?tRUc9F5dpIZRZB9ijVdsyHnOqbmZf1oEZeXCPif?=
+ =?us-ascii?Q?2r5MV=5FazLxGT7lOHf=5FeMrZWC7DUIwS34xjmtk00?=
+ =?us-ascii?Q?syTBkAdjyMg3uTJ9E-tl6BE1sloM=5FpkSIQ7dmsu?=
+ =?us-ascii?Q?deHe-2sBCnojP6lUG4B4ZWfv4mSOvIiO2nTzjux?=
+ =?us-ascii?Q?zNPVcDRHz3GIoXqzsOi0AVYmU8ykPx7z=5Fx0dtLS?=
+ =?us-ascii?Q?UXEwtDcK7cGkcXYFaaCM19VsNTG1XK2kvy30RM1?=
+ =?us-ascii?Q?t37G=5Fmnxbd=5FQwD4qOurjGvfJCvuW6HZkmUO34Ie?=
+ =?us-ascii?Q?BGBVJDNq=5Fe=5FVv-VWNqimF7OTSB2DzOfIpW0W9fT?=
+ =?us-ascii?Q?QrIXOoBntv4DGeGIy6IMawrOJ3CEgZWHcT-abnn?=
+ =?us-ascii?Q?zTir-TjdjUlPAjn0Z69ENTTiDhvTUFyvuChBwze?=
+ =?us-ascii?Q?NGROb717X7SzQF5GV=5FKmpD9uX0RbUO4CVeCuyWK?=
+ =?us-ascii?Q?Wmx=5Fi2wZHAKn4ZwhwJps5yNAmHHOKVneHq9Tfnw?=
+ =?us-ascii?Q?71cLVPea9bZmvmdjZfGdoXmf2Cd3fVMvCotOB6e?=
+ =?us-ascii?Q?dqJfIE7WznLplbUHULA=5FBGP3rLdvNMoGlDftTZO?=
+ =?us-ascii?Q?TM9103zPDy8wzl8KNj3HDAzZbjS5-5hg3NEEOsg?=
+ =?us-ascii?Q?KDAbenqaJ4wdmw5PSCfDgLve05asUnBTLPrMvGV?=
+ =?us-ascii?Q?WD8L4C6icYBY=5FfRmJ3KmPAo2DiYbGOu2SsXjtHt?=
+ =?us-ascii?Q?=5FwJuktrA9AkOGpEg=5FQtHOrQBxHh2A9dWdiebmIX?=
+ =?us-ascii?Q?Dh4YyAhEY1XX19PBNUzUFnn23STy3aAVAxJuvgl?=
+ =?us-ascii?Q?jlZFBhARTcvQvSCY=5FltIIf2zfclhoMz1EV92HYc?=
+ =?us-ascii?Q?6F1JiPHZlppN3Qg-IGEV8U0dAA29i=5FRWp1ChR5p?=
+ =?us-ascii?Q?ViEuIplHUzkoswKstz3fz5ta1QCmGi3Tsj7bFEO?=
+ =?us-ascii?Q?ZtUXJPrphjJf3ZLzr-clfAUws42fsIAT-DVvX4c?=
+ =?us-ascii?Q?bO04bCt-dYCvmlC9-bmy-S6um0xBageVh8L9QUP?=
+ =?us-ascii?Q?76zg7jUZmT6xYY7Ma6ZWtjiXt0OrugpPNJz24Xp?=
+ =?us-ascii?Q?op59CPMpDrtxrx866emkMsO=3E?=
+
+--586831a2851e0b899cd8cdf2a95a6d3000fccd56b1ed2f7f346f2ecbceb0
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=us-ascii
+Mime-Version: 1.0
+
+CARBON MONOXIDE POISONING - ALGERIA: (BLIDA) FAMILY MEMBERS, FATAL
+******************************************************************
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+Date: Sat 13 Jan 2024
+Source: ENTV [in Arabic, trans. Mod.MM, abridged, edited]
+<http://tinyurl.com/45wuwkvt>
+
+
+According to the Algerian Civil Protection Agency on Friday night [12
+Jan 2024], a 17-year-old girl died while 3 members of her family were
+admitted as cases of carbon monoxide gas poisoning after exposure to
+carbon monoxide gas emitted from home boilers. The local health
+authorities initiated a health education campaign orienting the public
+about the risks of the use of unsafe water boilers.
+
+--
+Communicated by:
+ProMED
+via
+ProMED-MENA
+
+[Carbon monoxide (CO) poisoning is becoming an emerging public health
+threat in Algeria and the north African region. The decreasing
+temperature in the winter season causes people to revert to using
+traditional unsafe heating systems such as wood stoves and water
+boilers that emit high levels of carbon monoxide in closed spaces.
+
+CO is an odorless and colorless gas that may gradually accumulate in
+enclosed spaces such as mines and closed apartments that use gas
+furnaces, which leads to fatalities. In lower doses, a person may
+experience headache, dizziness, or faintness. In other instances, the
+high level of CO can be fatal, with little or no warning.
+
+More health education to the population about the risks of using such
+unsafe heating methods, as proposed by the community-based campaign
+mentioned in the newswire above, and provision of affordable safe
+alternatives may help in decreasing the current noticeable rise of
+carbon monoxide poisoning incidents like in this case above. - Mod.MM
+
+ProMED map:
+Blida, Algeria:
+<https://promedmail.org/promed-post?place=3D8714256,65187>]
+
+[See Also:
+2022
+----
+Carbon monoxide poisoning - USA: (PA) childcare facility
+http://promedmail.org/post/20221012.8706114
+Carbon monoxide poisoning - Bahamas: (EM) Amer. tourists, resort,
+fatal, CO detec. http://promedmail.org/post/20220527.8703492
+Undiagnosed deaths - Bahamas (02): (EM) Amer. tourists, resort, carbon
+monoxide http://promedmail.org/post/20220526.8703472
+2019
+----
+Carbon monoxide poisoning - Canada: (MB)
+http://promedmail.org/post/20190712.6564012
+Carbon monoxide poisoning - USA: keyless car problem, deaths
+http://promedmail.org/post/20190629.6544624
+Carbon monoxide poisoning - Nigeria: (IM) fatal
+http://promedmail.org/post/20190616.6521651
+2018
+----
+Carbon monoxide poisoning - USA (02): (IL)
+http://promedmail.org/post/20181202.6176862
+Carbon monoxide poisoning - USA: (MD)
+http://promedmail.org/post/20180326.5712196
+2017
+----
+Carbon monoxide poisoning - USA (02): (NY)
+http://promedmail.org/post/20170615.5106765
+Carbon monoxide poisoning - USA: (MI) fatalities
+http://promedmail.org/post/20170403.4943212
+2016
+----
+Carbon monoxide poisoning - USA: (NC)
+http://promedmail.org/post/20161215.4699575]
+.................................................mm/rd/gmm/tw/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3DHbBiHgZHSsY-oYRzOkcv6oKcodsUtef15vEt9h3nSKdoMDAwdTAwMAVLJi_=
+3q1ww8utRGTok91lqa2DehN1sd95p_pH0Cw75V_L4InfrjaUeTmQlkqRVcUVQ1Pb9MaZdn9z-pu=
+cd4dE2DeQEGrK3QZjsbJv4EUm06EM37XlrjKnkTqfBUOpH74ki4c-X_kTC5E6tzQUHSPbIhp0j5=
+JdlxBlCdm1PDHjq_bN1gZsIRQ9cQb4Vm_8hD2w-8bk01FkWoawCAdvAe49jnAl0-Aehrc_eVWGI=
+1eJjplqIwKnnLu_i1Pcrte23htjIt5DQ7H6NZLnt4bGtw4RGItPGZ-dTrqVRJsuxMzOkPV7UXVp=
+f7tASco-rYGCOsJdS4GJWnKQoKhyE6K3o4rj6qnqne96TG8EYSO-bfm6sMMv8f9nL67ij-LTH1l=
+8rI9W68ovBdpJ9fhhzDeVR8KlJaPcruzutplkTn7yaQIGGFpQ-WJhSHD2hzpxdD-ujcb3SqfVey=
+kjbDb5YrxRd9-1xLt1FvA7tLU13Mjk7kXWp-N26qjqa9Azz7LEtD0HZJJLH044uQCfMnGg8zhP-=
+GOV6gztcM1ubtrJBbewVK-78rHGv-0JIB0m6nXkNqHl1J5KbxUOa2xTmgYhPZaR_wOED9OFO7d3=
+I5r27AJXh380vciTf8zdRK76hbYTgGlVWLNJE2BW7JYEvzyBkeHYLWLmOyMcJBsdTx80KVVOn21=
+JsXZuavGWjf6ZQ3Bj_A_qUTLynnkqt0Yp-qsjyUuLS1u9sfpPjZQzdzsh8XTp7YQ758JI_imDyR=
+ltumRDpA4HQWWVg5lY1WzgSwrdJnJ4VPRZt7d5Yvr-z-g-ph65vDg-2jwfzfpIxv0mTnBltWsc8=
+E-PcvUE4TlAk8zMZDyAZyKAS-GtGdZNMGVjDKCK56w-XZBre5qZB1yjcOfCqKzPEJ748HwWl6ws=
+pwPkXlbHwwtSQq2O1oYth1aaMu5qp92Ci-bz9xHV4ojisTbNTvtrdvZbS6zNqsss_SUqjSnMA__=
+uhOEp6bY1FPwTZMzkz-tiUdj0Lfxhpdq_NPxpFKUPRmGLeYJDoCMhjpZ9QlWpyFAdmqmohCpwjt=
+44ZYgfsvw-PB3SCcK57Tn_rAMocPwwAsN033SdgvEQbmnDKV3kZQp3nJj6CZO2JXRXABZwJ0cet=
+7xoi0HijgS7lBAn6Zw6ScsgbDRxKG1LhGLSD8nolu6I=3D )
+############################################################
+############################################################
+
+--586831a2851e0b899cd8cdf2a95a6d3000fccd56b1ed2f7f346f2ecbceb0
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>CARBON MONOXIDE POISONING - ALGERIA: (BLIDA) FAMILY MEMBERS, FATAL<br=
+>******************************************************************<br>A Pr=
+oMED-mail post<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/wscE2ng=
+5fl6JrPIt48tisIijpefK5PNjW-mL-YZGnfgDOxU1G3gjwnPSi2Tfv3HA/430/baeEYpgMTeq2A=
+tpcfZ6CGQ/h0/xqB3B9IqT2m6thzWljF22_T5yQ7kYAfmsj9Tu_hy3P4">http://www.promed=
+mail.org</a><br>ProMED-mail is a program of the<br>International Society fo=
+r Infectious Diseases<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/=
+wscE2ng5fl6JrPIt48tisCT5tpD4Upm3qyMCbcYSQvc/430/baeEYpgMTeq2AtpcfZ6CGQ/h1/8=
+e5T_WaPJJWNnNIaeYoUO1jlQ_Z6WhiV8Jx3j1ZKCQY">http://www.isid.org</a><br><br>=
+Date: Sat 13 Jan 2024=0D<br>Source: ENTV [in Arabic, trans. Mod.MM, abridge=
+d, edited]=0D<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/DgIMzhc9=
+xO6P0drrFfDxwVJKMJ2Oa830dJJQSn6dSPeM74Q4hGIluTXu-I1ot4kn/430/baeEYpgMTeq2At=
+pcfZ6CGQ/h2/Ewf1wer0SmrZ7QhxY_PGawpnfL2d4GCwTTTqUQe3jRw">http://tinyurl.com=
+/45wuwkvt</a>=0D<br>=0D<br>=0D<br>According to the Algerian Civil Protectio=
+n Agency on Friday night [12<br>Jan 2024], a 17-year-old girl died while 3 =
+members of her family were<br>admitted as cases of carbon monoxide gas pois=
+oning after exposure to<br>carbon monoxide gas emitted from home boilers. T=
+he local health<br>authorities initiated a health education campaign orient=
+ing the public<br>about the risks of the use of unsafe water boilers.=0D<br=
+>=0D<br>--=0D<br>Communicated by:=0D<br>ProMED=0D<br>via=0D<br>ProMED-MENA<=
+br><br>[Carbon monoxide (CO) poisoning is becoming an emerging public healt=
+h<br>threat in Algeria and the north African region. The decreasing<br>temp=
+erature in the winter season causes people to revert to using<br>traditiona=
+l unsafe heating systems such as wood stoves and water<br>boilers that emit=
+ high levels of carbon monoxide in closed spaces.=0D<br>=0D<br>CO is an odo=
+rless and colorless gas that may gradually accumulate in<br>enclosed spaces=
+ such as mines and closed apartments that use gas<br>furnaces, which leads =
+to fatalities. In lower doses, a person may<br>experience headache, dizzine=
+ss, or faintness. In other instances, the<br>high level of CO can be fatal,=
+ with little or no warning.=0D<br>=0D<br>More health education to the popul=
+ation about the risks of using such<br>unsafe heating methods, as proposed =
+by the community-based campaign<br>mentioned in the newswire above, and pro=
+vision of affordable safe<br>alternatives may help in decreasing the curren=
+t noticeable rise of<br>carbon monoxide poisoning incidents like in this ca=
+se above. - Mod.MM<br><br>ProMED map:<br>Blida, Algeria:<br><a href=3D"http=
+s://u19268662.ct.sendgrid.net/ss/c/sSnCkKCWBvais3EuVAOvgy2WOIX7pp1nXnn4Abwu=
+Q3Z6WbkfhqXYXU-aTMPJ8yThioFHJC4Hbp7ojr8piOUciw/430/baeEYpgMTeq2AtpcfZ6CGQ/h=
+3/jLbkzdbSxE2E28-Th1AGONdMHxXVE9oYb7JBSKb1Ds4">https://promedmail.org/prome=
+d-post?place=3D8714256,65187</a>]<br><br>[See Also:<br>2022=0D<br>----=0D<b=
+r>Carbon monoxide poisoning - USA: (PA) childcare facility<br>http://promed=
+mail.org/post/20221012.8706114=0D<br>Carbon monoxide poisoning - Bahamas: (=
+EM) Amer. tourists, resort,<br>fatal, CO detec. http://promedmail.org/post/=
+20220527.8703492=0D<br>Undiagnosed deaths - Bahamas (02): (EM) Amer. touris=
+ts, resort, carbon<br>monoxide http://promedmail.org/post/20220526.8703472=0D=
+<br>2019=0D<br>----=0D<br>Carbon monoxide poisoning - Canada: (MB)<br>http:=
+//promedmail.org/post/20190712.6564012=0D<br>Carbon monoxide poisoning - US=
+A: keyless car problem, deaths<br>http://promedmail.org/post/20190629.65446=
+24=0D<br>Carbon monoxide poisoning - Nigeria: (IM) fatal<br>http://promedma=
+il.org/post/20190616.6521651=0D<br>2018=0D<br>----=0D<br>Carbon monoxide po=
+isoning - USA (02): (IL)<br>http://promedmail.org/post/20181202.6176862=0D<=
+br>Carbon monoxide poisoning - USA: (MD)<br>http://promedmail.org/post/2018=
+0326.5712196=0D<br>2017=0D<br>----=0D<br>Carbon monoxide poisoning - USA (0=
+2): (NY)<br>http://promedmail.org/post/20170615.5106765=0D<br>Carbon monoxi=
+de poisoning - USA: (MI) fatalities<br>http://promedmail.org/post/20170403.=
+4943212=0D<br>2016=0D<br>----=0D<br>Carbon monoxide poisoning - USA: (NC)<b=
+r>http://promedmail.org/post/20161215.4699575]<br>.........................=
+........................mm/rd/gmm/tw/jh<br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3DHbBiHgZHSsY-oYRzOkcv6oKcodsUtef15vEt9h3nSKdoMDAwdT=
+AwMAVLJi_3q1ww8utRGTok91lqa2DehN1sd95p_pH0Cw75V_L4InfrjaUeTmQlkqRVcUVQ1Pb9M=
+aZdn9z-pucd4dE2DeQEGrK3QZjsbJv4EUm06EM37XlrjKnkTqfBUOpH74ki4c-X_kTC5E6tzQUH=
+SPbIhp0j5JdlxBlCdm1PDHjq_bN1gZsIRQ9cQb4Vm_8hD2w-8bk01FkWoawCAdvAe49jnAl0-Ae=
+hrc_eVWGI1eJjplqIwKnnLu_i1Pcrte23htjIt5DQ7H6NZLnt4bGtw4RGItPGZ-dTrqVRJsuxMz=
+OkPV7UXVpf7tASco-rYGCOsJdS4GJWnKQoKhyE6K3o4rj6qnqne96TG8EYSO-bfm6sMMv8f9nL6=
+7ij-LTH1l8rI9W68ovBdpJ9fhhzDeVR8KlJaPcruzutplkTn7yaQIGGFpQ-WJhSHD2hzpxdD-uj=
+cb3SqfVeykjbDb5YrxRd9-1xLt1FvA7tLU13Mjk7kXWp-N26qjqa9Azz7LEtD0HZJJLH044uQCf=
+MnGg8zhP-GOV6gztcM1ubtrJBbewVK-78rHGv-0JIB0m6nXkNqHl1J5KbxUOa2xTmgYhPZaR_wO=
+ED9OFO7d3I5r27AJXh380vciTf8zdRK76hbYTgGlVWLNJE2BW7JYEvzyBkeHYLWLmOyMcJBsdTx=
+80KVVOn21JsXZuavGWjf6ZQ3Bj_A_qUTLynnkqt0Yp-qsjyUuLS1u9sfpPjZQzdzsh8XTp7YQ75=
+8JI_imDyRltumRDpA4HQWWVg5lY1WzgSwrdJnJ4VPRZt7d5Yvr-z-g-ph65vDg-2jwfzfpIxv0m=
+TnBltWsc8E-PcvUE4TlAk8zMZDyAZyKAS-GtGdZNMGVjDKCK56w-XZBre5qZB1yjcOfCqKzPEJ7=
+48HwWl6wspwPkXlbHwwtSQq2O1oYth1aaMu5qp92Ci-bz9xHV4ojisTbNTvtrdvZbS6zNqsss_S=
+UqjSnMA__uhOEp6bY1FPwTZMzkz-tiUdj0Lfxhpdq_NPxpFKUPRmGLeYJDoCMhjpZ9QlWpyFAdm=
+qmohCpwjt44ZYgfsvw-PB3SCcK57Tn_rAMocPwwAsN033SdgvEQbmnDKV3kZQp3nJj6CZO2JXRX=
+ABZwJ0cet7xoi0HijgS7lBAn6Zw6ScsgbDRxKG1LhGLSD8nolu6I=3D" target=3D"_blank" =
+class=3D"Unsubscribe--unsubscribePreferences" style=3D"font-family:sans-ser=
+if;text-decoration:none;">Unsubscribe Preferences</a></div><br>############=
+################################################<br>#######################=
+#####################################<br><br><img src=3D"https://u19268662.=
+ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/430/baeEYpgMTeq2AtpcfZ6CGQ/ho.g=
+if" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"height:1px !imp=
+ortant;width:1px !important;border-width:0 !important;margin-top:0 !importa=
+nt;margin-bottom:0 !important;margin-right:0 !important;margin-left:0 !impo=
+rtant;padding-top:0 !important;padding-bottom:0 !important;padding-right:0 =
+!important;padding-left:0 !important;"/></body>
+</html>
+--586831a2851e0b899cd8cdf2a95a6d3000fccd56b1ed2f7f346f2ecbceb0--

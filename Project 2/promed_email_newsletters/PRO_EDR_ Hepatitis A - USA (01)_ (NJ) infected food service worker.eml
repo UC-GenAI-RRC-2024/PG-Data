@@ -1,0 +1,508 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a98:c004:0:b0:1eb:e128:bbe3 with SMTP id l4csp2530642eic;
+        Fri, 12 Jan 2024 16:36:18 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IHSnyGjEJtAbZ2heRLIjRoKly6wCGqNwWfXLLFjefyopDrf3vkyWbFnkNiA0ByXQePsVmkE
+X-Received: by 2002:a05:620a:4108:b0:783:3095:8c43 with SMTP id j8-20020a05620a410800b0078330958c43mr2803861qko.81.1705106177963;
+        Fri, 12 Jan 2024 16:36:17 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1705106177; cv=none;
+        d=google.com; s=arc-20160816;
+        b=kpDjdtIF4NllOdnOht1mFlfQJFnqROcUiWxdE2+hHDL6UJwdcmeRP0eDV2qFklIxFR
+         lEnm+ihNhOLJ01bzyPwU0w0+33lj7WO8JfdDWy3f3g1kpZZkT8kGWYXuDXypVFnkn7fc
+         7ZSSZJxaz8GHSRJUCM0s3ec7f3QKyVvkmAEGDDJnVPWynYfycM8kYr/25DsVQiN0wfr1
+         Xq4JtZG+Kz/cRtI70ce8FRdWdBxNAY8m/7MlgPAEvN11RbbOE2K5nacW7WRuKLZgShPj
+         EFZmrtZRdq9IOlB1x+lZYddnE+On4X87LAB2GmqsEX5dvqvn+/MoDEkXdtnITIQeBNbt
+         G07w==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=iLFpEuzxvK3uN8R36RGXREUFd6x9RtohLyAo9MNjw8o=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=RBrjvYYWWwYzaLb9+m78Cqo7DDcDriOBbkwt/0R+2gXayoEdPWc32xUHXyDqyFpa5c
+         VEV3zCzWeoT+bHWg2Lr7MOJExjH7XmPG2TWsjP8aF1CZjNDYbiUpg98RwBPk+221xhIl
+         nquQJ8atiIKsRYd9JQNI3aCzOyhPfpsBoxQRiXzOgNDvYK2UEqocFmi81DHfwNzCqU+s
+         1q4fGfQy6mFd5PSLtoxP9lattAut34/pu+DdetrSAv1TFb/VAykSRnIr0WQoW0poAI3E
+         ok7UeU6Q9mRqNFRKPPJ4x/WoyRVtw4GjIzIHLPTqBA5P9fdqu7s7xJHMq5i2lS14KpYg
+         UWIA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=EPC+HwhL;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b="g/j8TgFI";
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id d2-20020a0cb2c2000000b0067aa7e04719si4075192qvf.367.2024.01.12.16.36.17
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 12 Jan 2024 16:36:17 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=EPC+HwhL;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b="g/j8TgFI";
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=iLFpEuzxvK3uN8R36RGXREUFd6x9RtohLyAo9MNjw8o=;
+	b=EPC+HwhLhXFpBDpdM6CwIJYSFvNG6EUM3rZEaFdTfIgbq9lSXF45jBZJ2ygDuuWVNoQa
+	aQLSjSht13hrAEovMlr58dL2ago5vqOO/qT/qRf1eGw4eZ8Vpi0EMOClu2axpxyx0VyAYh
+	XORo5SLmsfMYs16QpZquIPjZ+nmxjXS3K4rPr8IOnMs+KogTDu9i7uZEIYb+axSPoCCAGa
+	DpDhDEdsUPqgT1Cjt+XViOFJhLr4/4oU5Z4TofcejyfM2CTTzEM3ZvFmwFLoqDKS3/RWJB
+	Esjugo98GUjZsclpAWiwmh8tOq0VyuLfd7eBGoo/XgxcoAaPPcfgaR2O/Eo9yBCg==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=iLFpEuzxvK3uN8R36RGXREUFd6x9RtohLyAo9MNjw8o=;
+	b=g/j8TgFIeiTDWD5LhDM04PdEirqjHkTj8NtRojFCucunfThS3IsvkRhxSmeMg2+TVPFx
+	iXyA0jW7irrxWDeS+lEhkduCwppeG3BF1E6iKLSwh5WhvJ0ttVBWZzQ28XLF0yU5CvycXB
+	GAN5BnAZF0stZiTFINUudUmYxrIqyIXgM=
+Received: by filterdrecv-59b97c8fcd-xrrrk with SMTP id filterdrecv-59b97c8fcd-xrrrk-1-65A1DAFD-68
+        2024-01-13 00:36:13.997584821 +0000 UTC m=+7538064.339049225
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-18 (SG) with HTTP
+	id XtdulK9LTO22BqTB0us74w
+	Sat, 13 Jan 2024 00:36:13.978 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=2070db53e30f6225ecac6e468329a1061cd4517eb7008dd98fcc19516366
+Date: Sat, 13 Jan 2024 00:36:17 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <XtdulK9LTO22BqTB0us74w@geopod-ismtpd-18>
+Subject: PRO/EDR> Hepatitis A - USA (01): (NJ) infected food service worker
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iBohNnEi8uRat9V=2FeZiy8jacCVXf6gc2U1QSxfg?=
+ =?us-ascii?Q?N8LGA6AC36mXBLhjJFMqD+Y0luxhyM4rzWvxQYP?=
+ =?us-ascii?Q?aVuI1ILM1UKJuSKlcTM3iPNkW6Q7dVugdAHM7je?=
+ =?us-ascii?Q?xuVGH1IDAJCyMoFblDfN9ojRqzFAwD6Pw6r+BMv?=
+ =?us-ascii?Q?bJ03jQDGns2g5eY2KItcOcRxOD7b8uhGSy9081?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUhc93xcG=2F095a5S4+mt=2FG?=
+ =?us-ascii?Q?uYUpctI=2FOGD2dwyi+uvm2j4FCdvuw0l9zcHM8iA?=
+ =?us-ascii?Q?mojOvTXq7jOpDFFNtfsYkHQYACEW8pq1BXXqYmH?=
+ =?us-ascii?Q?oGTsnt6QpE2ZV5WVqnpwfXWoLXx7+4ZjUbRP9PK?=
+ =?us-ascii?Q?n+E+CukMdBsuczKzT06ApoRsGOuDk0fJwTi++QN?=
+ =?us-ascii?Q?CLYi2iBLy5Qn68Lbk0c6QhH4qLEbZlenV0DPNSb?=
+ =?us-ascii?Q?0wEeZ4W9Xlgz+nCtKiXlV8apjQIkoZqWiWw8UvG?=
+ =?us-ascii?Q?cK3zL08xkALQxiNBE59Rp27YJSutV80pY0TE96V?=
+ =?us-ascii?Q?p0jt=2F6QP79gf8U5IwCFgIxvqiuoFciQFwQhbxxo?=
+ =?us-ascii?Q?2SGtTBOibOLFoUjIOwVYj2As8QwRCl1OYEZkxId?=
+ =?us-ascii?Q?ihUuqrI1AccwLcklXz9JA=2F+pGysm+HtrCJIgY7E?=
+ =?us-ascii?Q?dZigg=2Fa+wd8yu8CCAQYwgP1FCcweP00+m2RME4P?=
+ =?us-ascii?Q?L=2FaT=2F5DlymL5ozNDMk+nEIlboAvwhYYBBPcI489?=
+ =?us-ascii?Q?Y3OHh07g73JIsU6tFOtsk2wp0qTBf1BUl56ZkuZ?=
+ =?us-ascii?Q?oOcwqvar4EAKUcmN2Py4nfrx6P5Y1SDxDxjFYxV?=
+ =?us-ascii?Q?mleFAyvQSICwVQ4c098vBdPSmb84vXLdU2q9atR?=
+ =?us-ascii?Q?cJUaT=2FZY5+fjpo7z74OC9b2UOvjS+x0PPBMm71D?=
+ =?us-ascii?Q?B3sNPz=2FaqsgrBQXtIh1YnrayaZNFY+RKdi03t3J?=
+ =?us-ascii?Q?pUeu9QpwzvQwTpHoYwof+YOrRfF+C=2FfKwnIlNvC?=
+ =?us-ascii?Q?BchcwqaBUlbKfLoUCEdBEKw=2Fug=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2EM0ts3OTCa?=
+ =?us-ascii?Q?Fv=5F-Adc9OIgE0b8yy1=5Fy5oVfKuX=5FJoxV5loMDAw?=
+ =?us-ascii?Q?dTAwMCOm63TfXxxtVj93Jj81XrKUqCTEsedywBm?=
+ =?us-ascii?Q?9eDux8BZ9f1sahopUJs6JPczEX=5F3JsLBEhXCapp?=
+ =?us-ascii?Q?6soo8iU5rZHokI5OrCjccJOE7DGxpuizTi8oTk2?=
+ =?us-ascii?Q?0rPeOr4U-aQpB68Xg=3D=3D=2Eyw61IFvJA3CgHwp0osx?=
+ =?us-ascii?Q?tnlB84WONMTmlWxcCSlkhOIJoMDAwdTAwMAXNzQ?=
+ =?us-ascii?Q?EISrTx8xXRVK=5FZZ5SscH=5FNyudNqguBHdEyRp4Uw?=
+ =?us-ascii?Q?w7lOdNM1Z41AG0-d0cZAD2ZdRC4OSZoEHxWoxyC?=
+ =?us-ascii?Q?-MZVixPcUbcISslSBH4zr2MdYkSx2THgr1KviqE?=
+ =?us-ascii?Q?-0m81R1xG8yVgHyalK6c8dGvC3-eKsrm0H5cfRM?=
+ =?us-ascii?Q?fz0uZUpch6cUTmUcUSV2yxOA3t9RIQiEjR0yqqA?=
+ =?us-ascii?Q?NSkd=5F5MmyA0sIgeUl4EadGiDQRH=5F8daWAt-74D9?=
+ =?us-ascii?Q?8G8eCyrTGAfOfA5ysdLcoj-PsX4mEkvhfoQkAvA?=
+ =?us-ascii?Q?n6t47kaxvU6cpyTvg7TfpXdGtJ5KH4Ww9Hkmovs?=
+ =?us-ascii?Q?TyBkOZXOhz2tBcIX1FDcCqHESBqQRufAgJg7CBX?=
+ =?us-ascii?Q?TfF2v0z3lUY7kcxRtreLBqqkpPv49PeyYwGi22U?=
+ =?us-ascii?Q?pkk=5FnUAyqF0aFYnwSXaSavZlP9c99Sp4qEO0qSP?=
+ =?us-ascii?Q?dkqG-Hm8aH7DqpHxcgwow7BPgkssaXF98hLhYyV?=
+ =?us-ascii?Q?QjaQ7oNyqYUWRukf4BrEubeU7iI8dF6UJ77Fig4?=
+ =?us-ascii?Q?NkhthopRtK8uJK0TmT5RuNob1BOvjbNVMQbPrJt?=
+ =?us-ascii?Q?6o28B1iiE5NLi4zV6XX7t3wS=5FOswVsa6Ln4YtO2?=
+ =?us-ascii?Q?9caSbavIaVs9tVK6vSEDWrm-EcMJrI4x-l1IVL7?=
+ =?us-ascii?Q?6ffB7FAVMVPK2sZ2CUcVOxePrqua1F34i6hWpRO?=
+ =?us-ascii?Q?hOPUnrKEqbY1r-Sw3EUO=5FDAbEx7B8i8X58jqEqM?=
+ =?us-ascii?Q?kohTAv20GW23m49ISS5Ty5UhM2PDAOOpSc6JKff?=
+ =?us-ascii?Q?2JzWMRNt37vzr6UKRsiYLuXIMQhLP5V4rxkxC7p?=
+ =?us-ascii?Q?i10vy8PgkKAzkmE7Vw3v0AqSqvAoKIRNTmPOsJE?=
+ =?us-ascii?Q?SLHT5mEIOBzn0RvRLvoa0S6m19lviEMN6J3rd63?=
+ =?us-ascii?Q?I=5FcqhoIhErOTcfC78XctPu17-RCzVY9XKkAI7ce?=
+ =?us-ascii?Q?YVsNSCrCHkt=5FqLwV0OwajRrOVxP5uQ0pZ6kF3tn?=
+ =?us-ascii?Q?efFe6sQOxOk9Zhljwawm0sKb8yNs-9t7D2lgoiz?=
+ =?us-ascii?Q?bDb0kffoDxP1yZbEYSHhyOq=3E?=
+
+--2070db53e30f6225ecac6e468329a1061cd4517eb7008dd98fcc19516366
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=us-ascii
+Mime-Version: 1.0
+
+HEPATITIS A - USA (01): (NEW JERSEY) INFECTED FOOD SERVICE WORKER
+*****************************************************************
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+Date: Thu 11 Jan 2024
+Source: Fox 29 News Philadelphia [edited]
+<https://www.fox29.com/news/food-handler-at-deptford-olive-garden-test-posi=
+tive-for-hepatitis-a>
+
+
+Food handler at Deptford Olive Garden tests positive for hepatitis A:
+officials
+---------------------------------------------------------------------------=
+----
+Health officials in Gloucester County say a food handler at a Deptford
+Olive Garden recently tested positive for hepatitis A. The employee
+last worked at the Italian food chain on Almonesson Road between 26
+and 31 Dec 2023, health officials said.
+
+Hepatitis A is described as a viral illness with symptoms that include
+abdominal pain, nausea, tiredness, and jaundice. Health officials say
+people who previously received the hepatitis A vaccine should not be
+at risk for illness, and unvaccinated people also remain at low risk.
+
+Vaccines have been made available by the health department for
+unvaccinated Olive Garden employees who may have been exposed to
+hepatitis A. Officials said the Olive Garden was given a
+"Satisfactory" rating during a health inspection last March 2023, and
+passed a re-inspection on Wednesday [10 Jan 2024].
+
+In a statement to FOX 29, Olive Garden said:
+
+"The ill front-of-house team member last worked 10 days before they
+were diagnosed and will not be permitted to return to work until being
+officially released by a doctor.
+
+While hepatitis A is not easily transmitted from one person to
+another, we've been working closely with the health department to
+ensure we have all of the right processes in place to protect our team
+members and our guests. We are not aware of any other team members or
+guests becoming ill.
+
+We place the highest priority on having the cleanest and safest
+restaurants in the restaurant industry. Across the country, many local
+health departments point to our standards as a model for other
+companies to follow."
+
+--
+Communicated by:
+ProMED
+
+[The restaurant's statement reports that the case was in a
+"front-of-the-house" person which suggests, if the employee does not
+handle the food, a low risk to the diners but person-to-person
+transmission of HAV does occur with close contact including the
+personnel who do handle/prepare the food. HAV infection can be
+asymptomatic but can still be infectious.
+
+Overall, the peak infectivity time for fecal-oral transmission of
+hepatitis A virus (HAV) is in the week before symptoms develop. It is
+not clear when that was in this case.
+
+It is likely, but unstated, that food handler index cases are
+unimmunized, and any cluster secondary cases could have been avoided
+if routine immunization of food handlers were the rule. Two recent
+outbreaks of food handler-associated hepatitis A in the United States
+with fatalities bear witness to the fact that, while the risk of HAV
+in food handlers may not be high, if infected, the food handler
+represents a real risk to those eating in the restaurant. If such
+cases occur, the public relations and financial damage to the
+restaurant could be very significant. Although vaccine mandates in
+today's world are problematic, restaurant-associated food
+handler-related outbreaks of HAV are preventable.
+
+A recent Canadian case is noteworthy even more because it occurred
+related to an airport, and travelers could be going anywhere and not
+know about their potential exposure, although usually mild-moderate,
+to a potentially lethal infection.
+
+Postexposure prophylaxis with HAV vaccine can be useful if used within
+2 weeks of exposure. - Mod.LL
+
+ProMED map:
+New Jersey, United States:
+<https://promedmail.org/promed-post?place=3D8714199,232>]
+
+[See Also:
+2023
+----
+Hepatitis A - USA (14): (MA) homelessness, injection drug use
+http://promedmail.org/post/20231214.8713724
+Hepatitis A - USA (13): (GA) infected food handler
+http://promedmail.org/post/20231118.8713223
+Hepatitis A - USA, Canada: (ME), (AB airport)
+http://promedmail.org/post/20231019.8712700
+Hepatitis A - USA (12): homelessness, illicit drug use, fatalities,
+CDC http://promedmail.org/post/20231024.8712724
+Hepatitis A - USA (11): (ME) infected food handler
+http://promedmail.org/post/20231006.8712492
+Hepatitis A - USA (10): (NJ) infected food handler
+http://promedmail.org/post/20230929.8712375
+Hepatitis A - USA (09): (MI) infected food handler
+http://promedmail.org/post/20230917.8712173
+Hepatitis A - USA (08): (CA) infected food handler
+http://promedmail.org/post/20230814.8711692
+Hepatitis A - Canada (03): (AB) food handler
+http://promedmail.org/post/20230704.8710927
+Hepatitis A - USA (07): frozen strawberries, alert, expanded recall
+http://promedmail.org/post/20230611.8710529
+Hepatitis A - USA (06): (CA) San Diego County, homeless people
+http://promedmail.org/post/20230526.8710264
+Hepatitis A - Canada (02): (BC) food handler
+http://promedmail.org/post/20230516.8710096
+Hepatitis A - Canada: (ON) food handler
+http://promedmail.org/post/20230514.8710054
+Hepatitis A - USA (05): frozen strawberries
+http://promedmail.org/post/20230510.8709975
+Hepatitis A - USA (04): (PA)
+http://promedmail.org/post/20230423.8709639
+Hepatitis A - USA (03): frozen strawberries
+http://promedmail.org/post/20230414.8709493
+Hepatitis A - USA (02): (WA) frozen strawberries, alert, recall
+http://promedmail.org/post/20230318.8709019
+Hepatitis A - USA: (CA) San Diego County, fatal
+http://promedmail.org/post/20230217.8708437
+2022
+----
+Hepatitis A - USA (08): (VA)
+http://promedmail.org/post/20220720.8704527
+Hepatitis A - USA, Canada: imported strawberries, alert
+http://promedmail.org/post/20220529.8703562
+Hepatitis A - Canada (02): (AB, SK) imported strawberries, alert,
+recall http://promedmail.org/post/20220528.8703531
+Hepatitis A - USA (07): (VA) injection drug population
+http://promedmail.org/post/20220308.8701879
+Hepatitis A - USA (06): (VA) alert
+http://promedmail.org/post/20220203.8701228
+Hepatitis A - USA (05): (PA) restaurant cluster, fatal
+http://promedmail.org/post/20220119.8700972
+Hepatitis A - USA (04): (NC):
+http://promedmail.org/post/20220115.8700869
+Hepatitis A - USA (03): (VA) restaurant customer cluster, 4th fatality
+http://promedmail.org/post/20220108.8700738
+Hepatitis A - USA (02): (PA) restaurant cluster, fatal
+http://promedmail.org/post/20220108.8700737
+Hepatitis A - USA (01): (PA) restaurant cluster, fatal
+http://promedmail.org/post/20220106.8700688]
+.................................................ll/may/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3Dr_Gu-uQAi7h5DY5sndFFkaQ6HfhJdsg-OVWR0E0WukBoMDAwdTAwMCSr8EP=
+UR8s60bfcEKmnlfCQ0pSelaMLTO3PLGDx7EMnEJTVbYwmxF-rFJsS6mbqZIy-LK9WQIfIDk6mhO=
+VyxwgJytN2J4IqU2JJo5nt4uo8tbC1wdwwAzb7qCvBTpUmbjRc2DB_2hywLSWJgxuPhCVZR4npj=
+4TJpw54SD5WVi7HD7-NJjd4qEnWHT7P2AOg1g9tohDl-zuuRz-v2YZlkGag36eCfEXWOS6kJNg4=
+Cefg6wPNw2agzCfBlqyg0VaY94TlOW5WV5iI7QaX4N1ViHi4i4c3b0MGG6KSSAAWfDVHTgqOQDV=
+LI8s-pXSMQvmM0nOYtK6vnqfbzrtcAk9lPvt650l-bemIYh9D_P6sgNwHvIuDZzAKwru4EED8FI=
+2nRBBigrnt5h64gsqIW7dojORlBKnSBELptmycmh8mdmmOymkeR3AfYYOwT1JQVFKHhZ0uiHvLd=
+Z9ARHdkpeV6S_CfplH48c1w8qcbVOoluKkjKf_qZ5gfjDHDMNs8mvdkHRICpFW50CQrl1eP4w09=
+qJ-kS2pZp0AWzwqx745i2TqtgDZ8aM3vrDZBojXgOdFlRThgPFuSu_xu4na7jSwtsATrcC9LQKU=
+Zj4xnWHRLXgVqIDDyEGUps-35q8Vn3j2DcCit8o2_E-5D1r59BJ9chFenEpGjKS916VDS4hUsUG=
+Inun7IIYpVII2FBTL75YUe66z4YodKVyR9mlqQ0yzyo7AQxdmAiSt5oYJuhbhxRevJupHHjV4gw=
+w_pPJsIMEWEIWowgsiV0CY0LhgVftJN9Yzv5JoMP0Ym9y0qJVqQ7E2VtDHtRJ5ynFFuIgxcK5AM=
+fv_TfrDAWY7NaO_rcJ6FO5MxydNVC-AWC3g7OHOQaHe29kGl9pLD9OPKLjdz6vKQL9rtkulAJ8g=
+dpmyN6FMw0Dn6mAA7btgsRC8BYs1f7cCiHDzHSh_tuGpKl1e_OXE1LEP2IY-DvrwbW8jyM9isBb=
+h_2uq0qjpK4gKJ_qu3tnmXX5opBhc4hNEFqWEzrHceVj5ac8Q3mRDEXK5UnyghaKBETUC8YjH7l=
+yIAe569hfk0Fge4E_kEpJoVNkCup-mw0eSkv-5TYpg3moE1YDJG4v2j9d5vWqIqJFF4sQKHsstj=
+WPyFpdNFhzTaqBeGHdPNE2tv3nYDdfBJnhStUab1o6s=3D )
+############################################################
+############################################################
+
+--2070db53e30f6225ecac6e468329a1061cd4517eb7008dd98fcc19516366
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>HEPATITIS A - USA (01): (NEW JERSEY) INFECTED FOOD SERVICE WORKER<br>=
+*****************************************************************<br>A ProM=
+ED-mail post<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/wscE2ng5f=
+l6JrPIt48tisIijpefK5PNjW-mL-YZGnfgDOxU1G3gjwnPSi2Tfv3HA/42y/eXXBr4p0TxepFAu=
+SSSP1Mg/h0/_IwGxs4ByJvUCQ0Menia72VJ7mfT_cMQbYcOYxvuxqc">http://www.promedma=
+il.org</a><br>ProMED-mail is a program of the<br>International Society for =
+Infectious Diseases<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/ws=
+cE2ng5fl6JrPIt48tisCT5tpD4Upm3qyMCbcYSQvc/42y/eXXBr4p0TxepFAuSSSP1Mg/h1/4ZC=
+EWEVloeA4NNFgZuSd52PqG4_3WEQpDByg4JZGBOU">http://www.isid.org</a><br><br>Da=
+te: Thu 11 Jan 2024=0D<br>Source: Fox 29 News Philadelphia [edited]=0D<br><=
+a href=3D"https://u19268662.ct.sendgrid.net/ss/c/TLh_csrC34X_iXpbYoMam-9nNo=
+1NGlZXzzddusAdgWFiHM5ASvdYadEHbqzpNN6569B_shEWviE5_2M-tVuudLPIGVPnxDNPesh3m=
+n-herKCKLJB3S20yJ7ejawuYqcQnqXGoDzpjEb2fgRpv-HVOw/42y/eXXBr4p0TxepFAuSSSP1M=
+g/h2/zfJaNPw0WhBW3dLxs5TQpgHJiPWRK63J5Aydhlx7_QQ">https://www.fox29.com/new=
+s/food-handler-at-deptford-olive-garden-test-positive-for-hepatitis-a</a>=0D=
+<br>=0D<br>=0D<br>Food handler at Deptford Olive Garden tests positive for =
+hepatitis A:<br>officials=0D<br>-------------------------------------------=
+------------------------------------=0D<br>Health officials in Gloucester C=
+ounty say a food handler at a Deptford<br>Olive Garden recently tested posi=
+tive for hepatitis A. The employee<br>last worked at the Italian food chain=
+ on Almonesson Road between 26<br>and 31 Dec 2023, health officials said.=0D=
+<br>=0D<br>Hepatitis A is described as a viral illness with symptoms that i=
+nclude<br>abdominal pain, nausea, tiredness, and jaundice. Health officials=
+ say<br>people who previously received the hepatitis A vaccine should not b=
+e<br>at risk for illness, and unvaccinated people also remain at low risk.=0D=
+<br>=0D<br>Vaccines have been made available by the health department for<b=
+r>unvaccinated Olive Garden employees who may have been exposed to<br>hepat=
+itis A. Officials said the Olive Garden was given a<br>"Satisfactory" ratin=
+g during a health inspection last March 2023, and<br>passed a re-inspection=
+ on Wednesday [10 Jan 2024].=0D<br>=0D<br>In a statement to FOX 29, Olive G=
+arden said:=0D<br>=0D<br>"The ill front-of-house team member last worked 10=
+ days before they<br>were diagnosed and will not be permitted to return to =
+work until being<br>officially released by a doctor.=0D<br>=0D<br>While hep=
+atitis A is not easily transmitted from one person to<br>another, we've bee=
+n working closely with the health department to<br>ensure we have all of th=
+e right processes in place to protect our team<br>members and our guests. W=
+e are not aware of any other team members or<br>guests becoming ill.=0D<br>=0D=
+<br>We place the highest priority on having the cleanest and safest<br>rest=
+aurants in the restaurant industry. Across the country, many local<br>healt=
+h departments point to our standards as a model for other<br>companies to f=
+ollow."=0D<br>=0D<br>--=0D<br>Communicated by:=0D<br>ProMED<br><br>[The res=
+taurant's statement reports that the case was in a<br>"front-of-the-house" =
+person which suggests, if the employee does not<br>handle the food, a low r=
+isk to the diners but person-to-person<br>transmission of HAV does occur wi=
+th close contact including the<br>personnel who do handle/prepare the food.=
+ HAV infection can be<br>asymptomatic but can still be infectious.=0D<br>=0D=
+<br>Overall, the peak infectivity time for fecal-oral transmission of<br>he=
+patitis A virus (HAV) is in the week before symptoms develop. It is<br>not =
+clear when that was in this case.=0D<br>=0D<br>It is likely, but unstated, =
+that food handler index cases are<br>unimmunized, and any cluster secondary=
+ cases could have been avoided<br>if routine immunization of food handlers =
+were the rule. Two recent<br>outbreaks of food handler-associated hepatitis=
+ A in the United States<br>with fatalities bear witness to the fact that, w=
+hile the risk of HAV<br>in food handlers may not be high, if infected, the =
+food handler<br>represents a real risk to those eating in the restaurant. I=
+f such<br>cases occur, the public relations and financial damage to the<br>=
+restaurant could be very significant. Although vaccine mandates in<br>today=
+'s world are problematic, restaurant-associated food<br>handler-related out=
+breaks of HAV are preventable.=0D<br>=0D<br>A recent Canadian case is notew=
+orthy even more because it occurred<br>related to an airport, and travelers=
+ could be going anywhere and not<br>know about their potential exposure, al=
+though usually mild-moderate,<br>to a potentially lethal infection.=0D<br>=0D=
+<br>Postexposure prophylaxis with HAV vaccine can be useful if used within<=
+br>2 weeks of exposure. - Mod.LL<br><br>ProMED map:<br>New Jersey, United S=
+tates:<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/sSnCkKCWBvais3E=
+uVAOvgy2WOIX7pp1nXnn4AbwuQ3Z6WbkfhqXYXU-aTMPJ8yThIKfYueq74B26cdcrjgbJDQ/42y=
+/eXXBr4p0TxepFAuSSSP1Mg/h3/9XmEvHEq6DewhOQRVF4QY44UAYybfb68VjMZfHNOiaU">htt=
+ps://promedmail.org/promed-post?place=3D8714199,232</a>]<br><br>[See Also:<=
+br>2023=0D<br>----=0D<br>Hepatitis A - USA (14): (MA) homelessness, injecti=
+on drug use<br>http://promedmail.org/post/20231214.8713724=0D<br>Hepatitis =
+A - USA (13): (GA) infected food handler<br>http://promedmail.org/post/2023=
+1118.8713223=0D<br>Hepatitis A - USA, Canada: (ME), (AB airport)<br>http://=
+promedmail.org/post/20231019.8712700=0D<br>Hepatitis A - USA (12): homeless=
+ness, illicit drug use, fatalities,<br>CDC http://promedmail.org/post/20231=
+024.8712724=0D<br>Hepatitis A - USA (11): (ME) infected food handler<br>htt=
+p://promedmail.org/post/20231006.8712492=0D<br>Hepatitis A - USA (10): (NJ)=
+ infected food handler<br>http://promedmail.org/post/20230929.8712375=0D<br=
+>Hepatitis A - USA (09): (MI) infected food handler<br>http://promedmail.or=
+g/post/20230917.8712173=0D<br>Hepatitis A - USA (08): (CA) infected food ha=
+ndler<br>http://promedmail.org/post/20230814.8711692=0D<br>Hepatitis A - Ca=
+nada (03): (AB) food handler<br>http://promedmail.org/post/20230704.8710927=0D=
+<br>Hepatitis A - USA (07): frozen strawberries, alert, expanded recall<br>=
+http://promedmail.org/post/20230611.8710529=0D<br>Hepatitis A - USA (06): (=
+CA) San Diego County, homeless people<br>http://promedmail.org/post/2023052=
+6.8710264=0D<br>Hepatitis A - Canada (02): (BC) food handler<br>http://prom=
+edmail.org/post/20230516.8710096=0D<br>Hepatitis A - Canada: (ON) food hand=
+ler<br>http://promedmail.org/post/20230514.8710054=0D<br>Hepatitis A - USA =
+(05): frozen strawberries<br>http://promedmail.org/post/20230510.8709975=0D=
+<br>Hepatitis A - USA (04): (PA)<br>http://promedmail.org/post/20230423.870=
+9639=0D<br>Hepatitis A - USA (03): frozen strawberries<br>http://promedmail=
+.org/post/20230414.8709493=0D<br>Hepatitis A - USA (02): (WA) frozen strawb=
+erries, alert, recall<br>http://promedmail.org/post/20230318.8709019=0D<br>=
+Hepatitis A - USA: (CA) San Diego County, fatal<br>http://promedmail.org/po=
+st/20230217.8708437=0D<br>2022=0D<br>----=0D<br>Hepatitis A - USA (08): (VA=
+)<br>http://promedmail.org/post/20220720.8704527=0D<br>Hepatitis A - USA, C=
+anada: imported strawberries, alert<br>http://promedmail.org/post/20220529.=
+8703562=0D<br>Hepatitis A - Canada (02): (AB, SK) imported strawberries, al=
+ert,<br>recall http://promedmail.org/post/20220528.8703531=0D<br>Hepatitis =
+A - USA (07): (VA) injection drug population<br>http://promedmail.org/post/=
+20220308.8701879=0D<br>Hepatitis A - USA (06): (VA) alert<br>http://promedm=
+ail.org/post/20220203.8701228=0D<br>Hepatitis A - USA (05): (PA) restaurant=
+ cluster, fatal<br>http://promedmail.org/post/20220119.8700972=0D<br>Hepati=
+tis A - USA (04): (NC):<br>http://promedmail.org/post/20220115.8700869=0D<b=
+r>Hepatitis A - USA (03): (VA) restaurant customer cluster, 4th fatality<br=
+>http://promedmail.org/post/20220108.8700738=0D<br>Hepatitis A - USA (02): =
+(PA) restaurant cluster, fatal<br>http://promedmail.org/post/20220108.87007=
+37=0D<br>Hepatitis A - USA (01): (PA) restaurant cluster, fatal<br>http://p=
+romedmail.org/post/20220106.8700688]<br>...................................=
+..............ll/may/jh<br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3Dr_Gu-uQAi7h5DY5sndFFkaQ6HfhJdsg-OVWR0E0WukBoMDAwdT=
+AwMCSr8EPUR8s60bfcEKmnlfCQ0pSelaMLTO3PLGDx7EMnEJTVbYwmxF-rFJsS6mbqZIy-LK9WQ=
+IfIDk6mhOVyxwgJytN2J4IqU2JJo5nt4uo8tbC1wdwwAzb7qCvBTpUmbjRc2DB_2hywLSWJgxuP=
+hCVZR4npj4TJpw54SD5WVi7HD7-NJjd4qEnWHT7P2AOg1g9tohDl-zuuRz-v2YZlkGag36eCfEX=
+WOS6kJNg4Cefg6wPNw2agzCfBlqyg0VaY94TlOW5WV5iI7QaX4N1ViHi4i4c3b0MGG6KSSAAWfD=
+VHTgqOQDVLI8s-pXSMQvmM0nOYtK6vnqfbzrtcAk9lPvt650l-bemIYh9D_P6sgNwHvIuDZzAKw=
+ru4EED8FI2nRBBigrnt5h64gsqIW7dojORlBKnSBELptmycmh8mdmmOymkeR3AfYYOwT1JQVFKH=
+hZ0uiHvLdZ9ARHdkpeV6S_CfplH48c1w8qcbVOoluKkjKf_qZ5gfjDHDMNs8mvdkHRICpFW50CQ=
+rl1eP4w09qJ-kS2pZp0AWzwqx745i2TqtgDZ8aM3vrDZBojXgOdFlRThgPFuSu_xu4na7jSwtsA=
+TrcC9LQKUZj4xnWHRLXgVqIDDyEGUps-35q8Vn3j2DcCit8o2_E-5D1r59BJ9chFenEpGjKS916=
+VDS4hUsUGInun7IIYpVII2FBTL75YUe66z4YodKVyR9mlqQ0yzyo7AQxdmAiSt5oYJuhbhxRevJ=
+upHHjV4gww_pPJsIMEWEIWowgsiV0CY0LhgVftJN9Yzv5JoMP0Ym9y0qJVqQ7E2VtDHtRJ5ynFF=
+uIgxcK5AMfv_TfrDAWY7NaO_rcJ6FO5MxydNVC-AWC3g7OHOQaHe29kGl9pLD9OPKLjdz6vKQL9=
+rtkulAJ8gdpmyN6FMw0Dn6mAA7btgsRC8BYs1f7cCiHDzHSh_tuGpKl1e_OXE1LEP2IY-DvrwbW=
+8jyM9isBbh_2uq0qjpK4gKJ_qu3tnmXX5opBhc4hNEFqWEzrHceVj5ac8Q3mRDEXK5UnyghaKBE=
+TUC8YjH7lyIAe569hfk0Fge4E_kEpJoVNkCup-mw0eSkv-5TYpg3moE1YDJG4v2j9d5vWqIqJFF=
+4sQKHsstjWPyFpdNFhzTaqBeGHdPNE2tv3nYDdfBJnhStUab1o6s=3D" target=3D"_blank" =
+class=3D"Unsubscribe--unsubscribePreferences" style=3D"font-family:sans-ser=
+if;text-decoration:none;">Unsubscribe Preferences</a></div><br>############=
+################################################<br>#######################=
+#####################################<br><br><img src=3D"https://u19268662.=
+ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/42y/eXXBr4p0TxepFAuSSSP1Mg/ho.g=
+if" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"height:1px !imp=
+ortant;width:1px !important;border-width:0 !important;margin-top:0 !importa=
+nt;margin-bottom:0 !important;margin-right:0 !important;margin-left:0 !impo=
+rtant;padding-top:0 !important;padding-bottom:0 !important;padding-right:0 =
+!important;padding-left:0 !important;"/></body>
+</html>
+--2070db53e30f6225ecac6e468329a1061cd4517eb7008dd98fcc19516366--

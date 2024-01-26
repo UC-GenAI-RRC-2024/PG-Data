@@ -1,0 +1,416 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a05:640c:2d08:b0:1ee:5ffb:29ea with SMTP id p8csp175210eiu;
+        Mon, 22 Jan 2024 14:26:16 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IET5hN0ciIWQMirQ8Gfm07X8bm+37QHOcan8/7xcTT1kZ50d4Nv7vWv9gnLNudF4LiW9+rr
+X-Received: by 2002:ad4:5aa9:0:b0:681:8b4b:da59 with SMTP id u9-20020ad45aa9000000b006818b4bda59mr7688809qvg.78.1705962376514;
+        Mon, 22 Jan 2024 14:26:16 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1705962376; cv=none;
+        d=google.com; s=arc-20160816;
+        b=UgGPhf3Y4TbVDIsQh1khGP0k5ReKMmvR4hNld96eb05pfs+MaCBiOLNf9vwM+zf8+5
+         kcfuLVFCUA+Cb5kd6Mp/SSm0vqhDGZOYvOUIMXHLISayYEstwFf+MaCtyizW7cJF9UD8
+         vPz7CSENbelg+Jv4RW/pkuJKWStWF+xA7weXiai/RqxhP5Ssg59NJEtekbQVWCw66YiA
+         gu1F9IQ6Y9ZlKIbx4bN4H9clDuIa89fF9XCJMj/eINdRqhaLTLdtYP98lx+rqeT9wJES
+         oXuPVnu+PKDXSw4ouA3A1E5QAy0ET+8L6o2Wpy9zwbEsFPHVLbHOKy8fzwTvVtP/kJMb
+         gsnQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=e2neYtRsFlSyBdf3DCS3gf270/0Kl7jNZz8EVVU/k6s=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=h8zJkBXBoJk/GIADHn4NjQb2Ewjqxaw4rLPIwEF97fhpKvDk9Fc0DfD9o0PNgjpln5
+         Kg3eNQlqLaWupV9AVkkuXiChOY34Jo0hkwgyXVOVQeYCMwEPNyxLuQEXHZSr7Ld4X2lT
+         lK6qG5amzIJisZJy/IRnwQuP6Txx57p1iR7jXZU65c51kCF/5IxDtocYQ0TUMYsEeg92
+         OOjkpdmdOa2XDGKYNXp3TnPJ2VVB34U/JNq1GyXLa4T3rshb3qj1a3xZcE4OW8S5zzNg
+         L/+J1cNqE2WA/z8N8cQOy0kdd7mkmJKgSm6nYi/XQl1w5J25pmxJB72J6JdpIIib3H+Q
+         imTA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=nxeE8bxD;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=wQ1LqXEy;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id i14-20020a0c9c8e000000b006818b866df0si6239538qvf.594.2024.01.22.14.26.16
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 22 Jan 2024 14:26:16 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=nxeE8bxD;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=wQ1LqXEy;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=e2neYtRsFlSyBdf3DCS3gf270/0Kl7jNZz8EVVU/k6s=;
+	b=nxeE8bxDuu6osv+RRCZCHTpKn2ODmFr/dgoMPVYxgSVr2vemV+0ALh7cL0m/yQ7lf5Rw
+	sHO40pmijJ+9iMyyoZ+aJwqiDQRGIaHSg7G3JPpMqJOuBbZ1FW8tcShjNElIVRK5Oa0/uc
+	8cvjPFKEOb4CDh5drGgnHd1hhKxuyi5CvCkLkqo+yE4g8PooiaJDqFOFHf/nD7//zWK4HJ
+	6nEYfW1q85V1t33LS5LmJfTUA+x4whCDP0ecGo+ZqKqTzY9G/6idWL+u3tAFaQk5pooWj+
+	IVmUweGvOQb/2R0bFC/20jTysE6Vr/oeQ96+5IP/Wl6VbKQb8XpuLLPHawcG4UYw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=e2neYtRsFlSyBdf3DCS3gf270/0Kl7jNZz8EVVU/k6s=;
+	b=wQ1LqXEy3RijIuhusMfhMK3yA/YWm66waWnNDMAPCJX3x6MtvB7Ks+Yvt1s8hIIDyJEP
+	QxdK33HUMm7680FxWXx3kkc1AzwvgJKgSxmc2f2vWp4TSQcbkDQKx2Slygtgy4UZk7xOx3
+	c0rWRI0A2+Ob4qNaHSRJexV2cdRDfLT2Q=
+Received: by filterdrecv-5f9f645469-rpt58 with SMTP id filterdrecv-5f9f645469-rpt58-1-65AEEB85-2C
+        2024-01-22 22:26:13.437097069 +0000 UTC m=+8394297.324246482
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-25 (SG) with HTTP
+	id OJfCofIVQLOVk7mbprbPsg
+	Mon, 22 Jan 2024 22:26:13.253 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=3c4a9410de50920d142043203e4322939cff19e364470d764e65d481e83c
+Date: Mon, 22 Jan 2024 22:26:15 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <OJfCofIVQLOVk7mbprbPsg@geopod-ismtpd-25>
+Subject: PRO/EDR> Diphtheria - Guinea: vaccine shortage
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iBYxhsNG94waGB81rBY32d181WbdzwZoRA6e=2FHW?=
+ =?us-ascii?Q?axDIboacerFuxzgyVQLGjUZMjIrIwGOrrilYpx2?=
+ =?us-ascii?Q?oc2xUO=2FY0=2FZQkbq1TiHOMJ0X5oanr4gPIm8ZWEP?=
+ =?us-ascii?Q?JGYf+HpGMPMxI4ULOsjV9sCLXAODBVUtDQG8CkT?=
+ =?us-ascii?Q?q31H1mhYDem+JrVoPNGk3sSd7gqXpa=2F4=2FvswVN?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUhc93xcG=2F095a5S4+mt=2FG?=
+ =?us-ascii?Q?uYUpctI=2FOGD2dwyi+uvm2j4FCdvuw0l9zcHM8iA?=
+ =?us-ascii?Q?mojOvTXq7jOpDFFNtfsYkHQYACEW8pq1BXXqYmH?=
+ =?us-ascii?Q?oGTsnt6QpE2ZV5WVqnpwfXWoLXx7+4bVsHrKrNU?=
+ =?us-ascii?Q?bLZRzTyReXicjY=2FijTdNwlKlRVVq0UprVGjl0yx?=
+ =?us-ascii?Q?ld3ZP2SXcKaMqg8m5AeTPv7L1zGdx9=2Fb2vfNmIl?=
+ =?us-ascii?Q?HX9=2F=2F0XNGtq5OFv4wcJZFD0l34fVxpm7aVYUQHj?=
+ =?us-ascii?Q?tM7JSWIbvh=2FHkOdLO6N1xS9N1QCfixmC8XnSMHZ?=
+ =?us-ascii?Q?CrWQ3KIPC7cXj8llsqBDlYjUCjfEAHnxsI0lN=2FD?=
+ =?us-ascii?Q?A4q2ddURasl9JqOaL=2FBdQPcHmaEZeMo8Dq5u0Vf?=
+ =?us-ascii?Q?mJKvYYHKD+URcHp+78TPfJ5Y1LkATDqxme+Sgzp?=
+ =?us-ascii?Q?bihg7Up5PVaSKNbHaKWl6lt70D7LisUNdyj9NBM?=
+ =?us-ascii?Q?6CJvNlS82rz5aup3f6dk5XvdqESJgG4HDfHuK8=2F?=
+ =?us-ascii?Q?nNUhwAm4aK9Fpn3Y0gP81MyKIrLOxaItbAiXyYj?=
+ =?us-ascii?Q?nGPyVohSwpW4QR+t=2Fq4NCyL8AXnXkEeUibRr4cE?=
+ =?us-ascii?Q?8iWscAdh=2FtLqscs6ZtnB9ICkvmHFvYn4FCk+rtK?=
+ =?us-ascii?Q?fpw=2FXriqq0ZEVNpR0UmL2pwMAqqO9IPUhigtvWn?=
+ =?us-ascii?Q?3k9QMnkmbDhUZmw2hsWyzwWTcdnkO0LdwXxAvNP?=
+ =?us-ascii?Q?x8nIVKPh=2FuOHhU78E7AuPCevQKjKa0I4bq0QuWD?=
+ =?us-ascii?Q?7MAQXc0OIma7wyBAXMEXpwpPQg=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2EH55dEViVv?=
+ =?us-ascii?Q?ZefTAov8HMrSFSl-umyTOJ0k8CsVtBaEi5oMDAw?=
+ =?us-ascii?Q?dTAwMBLRA=5FXLp78Ysq6d2Ra6=5FOGgde8W78GZz6N?=
+ =?us-ascii?Q?1hO4h6cqDlLqbxSe76tmnsHCHZ8wBbFyVMQiqzA?=
+ =?us-ascii?Q?mt0zQJDvZKxkZkBqPFVhuCU9eeEARPPiCW8hGyH?=
+ =?us-ascii?Q?nexIbc-8cyZlh9bKw=3D=3D=2EZMS10G83J9QwVkznmb0?=
+ =?us-ascii?Q?2Q4xPCvXQ4Rs7-9A6OTLB2gdoMDAwdTAwMPKXEW?=
+ =?us-ascii?Q?evntJl9h6ESKP8wJucmnq2fab4TiqZwq-H4lKwF?=
+ =?us-ascii?Q?AOYAHzGz8H3xv=5F5dNKujAmP4JyKOwZNirx57=5FhA?=
+ =?us-ascii?Q?gFhpL6rJdahJZrl=5FV0EA2JdVzkT824T-ni3h5vV?=
+ =?us-ascii?Q?=5F1pRECJ8DwuEnKxrrIPugek1iW3feGTlvlMcKES?=
+ =?us-ascii?Q?G6uimqw8y5LDIEfuZxJW1NAwxkLJT8eov9q7qj-?=
+ =?us-ascii?Q?h59gvK2DFdb=5F-tnJZXkP4hiaNvkxp94sT=5Fo-tyx?=
+ =?us-ascii?Q?IphnBrwsCBOmp69GxeZ0eAHzs75UTutwQ4phlCy?=
+ =?us-ascii?Q?Mysi72yu2o2rryjZsok9i6jycIUCQNuJXvIRsrT?=
+ =?us-ascii?Q?WZN5Dbgu1C2EanEBFf6RVACX68S=5F79CRQ-Qaxa-?=
+ =?us-ascii?Q?qrQtOS6JAJn=5FrFg6Vppg1kw4MmG1WFLfz-TV2lY?=
+ =?us-ascii?Q?PDXxm6fcvUwevGPEiOo5Jf4k-7CQnDlZ=5F1YAu8Q?=
+ =?us-ascii?Q?JUeHmodrj0dRJUZOXg8yit1ZFLDUm8O9NZAQQGJ?=
+ =?us-ascii?Q?Jbeknr6V0ZSA8IKL4HIbfycLMfu7m61Ujs3WIXL?=
+ =?us-ascii?Q?yhuYwRqN01Zolxn32xsQMBn8lDl8gGWrGkCIJRh?=
+ =?us-ascii?Q?MYdfP9rTnh-YZNeZcIw7uZaVcvCX9CL-Ip99IhW?=
+ =?us-ascii?Q?Q6nRiDuCr55oUszbaN5rOmeLDnoK=5F5Ep=5FjeUn0W?=
+ =?us-ascii?Q?DXI0zcSPnP5XiHJ2rqY9Dht5YoYWRVfwRR8-Hcd?=
+ =?us-ascii?Q?38bFUhwXIe0nmRokG=5F4OfcSdoGU7wI4z0OROVUe?=
+ =?us-ascii?Q?NFuHIiU98chw7mtWLDzDKi8WJmU1miGYd=5FNmS0f?=
+ =?us-ascii?Q?RxICJGr6h82WCVYezlkuT=5F1koOiX-kSB0yFIAQB?=
+ =?us-ascii?Q?OEzzuDukrVlTR0v-AXpAbiN27uFEIQMvf5xH4wi?=
+ =?us-ascii?Q?8S7HEYcU78twhHAAwhariDIENUq=5F=5FbV6JufscUd?=
+ =?us-ascii?Q?WZoWl32=5FliXz7q6qFcY3WjZH6EQ7FLdcJNdXFsr?=
+ =?us-ascii?Q?FY1Uvc5Syzdz5Aj-s3evh8Jgy8o3uQMIhSyQOlC?=
+ =?us-ascii?Q?oZM5qpeZ42USWUH0SYh1pq=5FR7Dtj0WBJbBLiuw4?=
+ =?us-ascii?Q?TQjoIILKZGumNSntn=5F=5FVHh9=3E?=
+
+--3c4a9410de50920d142043203e4322939cff19e364470d764e65d481e83c
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=iso-8859-1
+Mime-Version: 1.0
+
+DIPHTHERIA - GUINEA: VACCINE SHORTAGE
+*************************************
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+Date: Fri 19 Jan 2024
+Source: Development Diaries [edited]
+<https://developmentdiaries.com/guinea-health-ministry-should-provide-inclu=
+sive-diphtheria-response/>
+
+
+After disappearing for over 30 years in Guinea, cases of diphtheria
+are on the rise, and the government needs to step in to curb the
+outbreak. Development Diaries reports that Guinea is facing a shortage
+of vaccines for the disease and lacks health professionals with
+knowledge of treating the disease.
+
+Diphtheria is a bacterial infection that attacks the respiratory
+tract. Airborne droplets transmit it and can be fatal, especially for
+small children. If an antitoxin is not administered quickly, the
+fast-growing pseudo membrane can soon block an infected person's
+airways, leaving them struggling to breathe. It can be
+life-threatening.
+
+The lack of resources to tackle the disease is a big challenge that
+must be addressed immediately to avoid a health crisis in the West
+African country.
+
+"We lack health professionals who know how to recognise and treat this
+disease," M=E9decins Sans Fronti=E8res (MSF) Deputy Medical Coordinator,
+Charles Tolno, said. "The treatment is complex and requires a lot of
+resources, especially in terms of the antitoxin's availability. Given
+its scarcity, we have no choice but to be selective in giving it to
+patients with the most severe symptoms."
+
+While development partners are providing crucial support in response
+to the outbreak, the government of Guinea must step up efforts to
+address the situation. Development Diaries calls on the Guinean
+Ministry of Health to intensify its support for providing adequate
+medical facilities and training for medical workers. We also urge
+development partners working in the country to collaborate with the
+government to ensure an inclusive response to the diphtheria outbreak
+is achieved.
+
+[Byline: Jesse Kolo]
+
+--
+Communicated by:
+ProMED
+via
+ProMED-EAFR
+
+[The West African nation of Guinea faced a diphtheria outbreak last
+year (2023), and the number of cases is currently increasing. In order
+to flatten the epidemic curve, health authorities must ensure the
+availability of vaccines, with a particular focus on the most
+vulnerable populations. Unfortunately, the shortage of vaccines is
+hindering efforts to achieve this objective. - Mod.RBY
+
+ProMED map of Guinea:
+<https://promedmail.org/promed-post?place=3D8714340,45>]
+
+[See Also:
+Diphtheria - Nigeria http://promedmail.org/post/20240120.8714345
+2023
+----
+Diphtheria - France: ex West Africa, multidrug resistance
+http://promedmail.org/post/20231117.8713196
+Diphtheria - Asia, Africa: Pakistan (KP) South Africa (WC) fatal,
+prison http://promedmail.org/post/20231111.8713097
+Diphtheria - SE Asia (06): India (HR) fatal
+http://promedmail.org/post/20231025.8712821
+Diphtheria - SE Asia (04): Indonesia (JR) fatal
+http://promedmail.org/post/20230807.8711603
+Diphtheria - SE Asia (03): Indonesia (JI)
+http://promedmail.org/post/20230709.8711048
+Diphtheria - South Africa: (NL, WC) antitoxin shortage
+http://promedmail.org/post/20230519.8710144
+Diphtheria - SE Asia (02): Indonesia (JR) fatal, more cases, vaccine
+campaign, RFI http://promedmail.org/post/20230319.8709034
+Diphtheria - SE Asia: Indonesia, fatal, more cases, vaccine campaign,
+alert http://promedmail.org/post/20230222.8708538
+2022
+----
+Diphtheria - France: migrants, toxigenic Corynebacterium
+diphtheriae/C. ulcerans http://promedmail.org/post/20221230.8707531
+Diphtheria - Australia: (NSW) unvaccinated children
+http://promedmail.org/post/20220705.8704239
+2018
+----
+Diphtheria - Philippines: increased cases, 4 regions
+http://promedmail.org/post/20181215.6210623
+Diphtheria - Indonesia: fatal, more cases, vaccine campaign
+http://promedmail.org/post/20180106.5542510]
+.................................................rb/rd/ya/tw/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3DDP0BKQopQmjmRmZiC0piDKOhOzyoMzaRvrS9B29OefZoMDAwdTAwMHNysr8=
+kGqlM9iXxlOColhhETdrinUFeRLhjyuPhj8XF_6qCzzON2g-da8asZWUEOvGf7gR0Hh8Gj_QbeN=
+aJxN22rs0ztZ48V9WL-jLBY-FPFHSYZ7o9BtiDr1S9wk6mz9KeisBRfG8CDFPfdsvuo2K4GuC_9=
+SzIYNdkyEyR-jBBVb-WJg6f0M3p4Pn14BHIjH0Mvk2Cp7Le6hklhnXbCXn2ibBqGUSX5lIuwK6n=
+ynV934SberQlAhEsWuEy8Eo_Z04JZ6GzGJK5eA-4UeSIdLsYbEHOTt9cxkx2rKnpO3O1w1Uwq2A=
+lRL1zFCygutCbs-5oAIPmfBHW2OVVFUO7lszMYlSuTYqv9yP6jO8uZFmpOKsQKG8-NVU0_z-EJn=
+n-gExoNQcLb4SnQzqr8r_UQQAFlzrDQTr6hGK2Kll3LDUfybpTovOPUkIOdGyiaNQ6BxWmhhqzy=
+IX19ctd4cT9XNWnt4Nz9o6qyulVXQRUyPGP5lyqpSifZLM0bryif7hhxEc_G2CMSwVZgkzm6kOK=
+7niVtU19aTVosv3js4ZIy8p9bAKdifC0gyld4tUAf_Nvdgmh9JnruyfqmhMYYvUhhg_zdurwI9Y=
+LALe5CjU-nGHtVYCl8Sb2Udv_QqBZqhtoo9Qf22JmbBkvF7-ldmLUwUmSmKuNnQ5bI3qZhs5DL7=
+KoqqvpvobQ1iiH1dvG4I_hqOddgXMERMd_QeOOC6B5_Zom3OZJUdqgxuu0lbJoqCjFsk5DsgIj3=
+-A0bbNBGuCpG54u3UdfTkYxLs-X-eF_14pOWVfEPCYS5J1QjJb1EoWCy3O2yj7-TdylUevRPxea=
+c-Is6DFjza9E3xTHojUpU50bzJsEpw4oKA_Bz9AEbPiT5WRpfu9KRB_Qcc3LFEb4Gd6Koi5nx1b=
+v1DUhvzD6muuxFvlatkSiS5XcCb19JHvzSshlSsWjFChgNwuMELEQRp8L0UOZOuCnD5xP_YhBkE=
+anHrIHKk7Td_vDWd-LdVJSb-Wy1ciroFvXfyHegVikMrBM1dQJb9CAHq70zSPWJaaYg5W_qxu6E=
+keQrxm78gTLuqwYtT2Ahndy1cFXKby1dB0E8BR6f1UKvM8dhpK5AHGPXeNKnZhGQQHRoyODOA0K=
+TNYntchw7S9ky5_u8EfSCxZ5eMxFfarLvidi5uN5Nac=3D )
+############################################################
+############################################################
+
+--3c4a9410de50920d142043203e4322939cff19e364470d764e65d481e83c
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=iso-8859-1
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>DIPHTHERIA - GUINEA: VACCINE SHORTAGE<br>****************************=
+*********<br>A ProMED-mail post<br><a href=3D"https://u19268662.ct.sendgrid=
+.net/ss/c/wscE2ng5fl6JrPIt48tisIijpefK5PNjW-mL-YZGnfgDOxU1G3gjwnPSi2Tfv3HA/=
+437/Q3HGQSJgSN2k0MtAS2avIw/h0/RR8txvdI2I0fLbsB0I3r-Q5enBrkLeHcpkU1YGpH3sA">=
+http://www.promedmail.org</a><br>ProMED-mail is a program of the<br>Interna=
+tional Society for Infectious Diseases<br><a href=3D"https://u19268662.ct.s=
+endgrid.net/ss/c/wscE2ng5fl6JrPIt48tisCT5tpD4Upm3qyMCbcYSQvc/437/Q3HGQSJgSN=
+2k0MtAS2avIw/h1/f6okNEfLKClOqt9Cw8xruZJfufDfvQBLbpZz9G384Ug">http://www.isi=
+d.org</a><br><br>Date: Fri 19 Jan 2024=0D<br>Source: Development Diaries [e=
+dited]=0D<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/TUIVIg4PCmni=
+5tP3Q8lzBU52j8kcFAtaYM0bDCvtF4-x4HAYMO9nZ0UOBCHf1tTxI6IF02tYZmiTFybEsr1_SN5=
+svDX2sClHHUNEKcG4TgrQ6M1XFLM0_lKci54hIMO__14c64iaHE2i1EA6wLh9Xg/437/Q3HGQSJ=
+gSN2k0MtAS2avIw/h2/cnxaDs7fChdF2tCB5Mz0feFelQns44CYL5l61SxV9yE">https://dev=
+elopmentdiaries.com/guinea-health-ministry-should-provide-inclusive-diphthe=
+ria-response/</a>=0D<br>=0D<br>=0D<br>After disappearing for over 30 years =
+in Guinea, cases of diphtheria<br>are on the rise, and the government needs=
+ to step in to curb the<br>outbreak. Development Diaries reports that Guine=
+a is facing a shortage<br>of vaccines for the disease and lacks health prof=
+essionals with<br>knowledge of treating the disease.=0D<br>=0D<br>Diphtheri=
+a is a bacterial infection that attacks the respiratory<br>tract. Airborne =
+droplets transmit it and can be fatal, especially for<br>small children. If=
+ an antitoxin is not administered quickly, the<br>fast-growing pseudo membr=
+ane can soon block an infected person's<br>airways, leaving them struggling=
+ to breathe. It can be<br>life-threatening.=0D<br>=0D<br>The lack of resour=
+ces to tackle the disease is a big challenge that<br>must be addressed imme=
+diately to avoid a health crisis in the West<br>African country.=0D<br>=0D<=
+br>"We lack health professionals who know how to recognise and treat this<b=
+r>disease," M=E9decins Sans Fronti=E8res (MSF) Deputy Medical Coordinator,<=
+br>Charles Tolno, said. "The treatment is complex and requires a lot of<br>=
+resources, especially in terms of the antitoxin's availability. Given<br>it=
+s scarcity, we have no choice but to be selective in giving it to<br>patien=
+ts with the most severe symptoms."=0D<br>=0D<br>While development partners =
+are providing crucial support in response<br>to the outbreak, the governmen=
+t of Guinea must step up efforts to<br>address the situation. Development D=
+iaries calls on the Guinean<br>Ministry of Health to intensify its support =
+for providing adequate<br>medical facilities and training for medical worke=
+rs. We also urge<br>development partners working in the country to collabor=
+ate with the<br>government to ensure an inclusive response to the diphtheri=
+a outbreak<br>is achieved.=0D<br>=0D<br>[Byline: Jesse Kolo]=0D<br>=0D<br>-=
+-=0D<br>Communicated by:=0D<br>ProMED=0D<br>via=0D<br>ProMED-EAFR<br><br>[T=
+he West African nation of Guinea faced a diphtheria outbreak last<br>year (=
+2023), and the number of cases is currently increasing. In order<br>to flat=
+ten the epidemic curve, health authorities must ensure the<br>availability =
+of vaccines, with a particular focus on the most<br>vulnerable populations.=
+ Unfortunately, the shortage of vaccines is<br>hindering efforts to achieve=
+ this objective. - Mod.RBY=0D<br>=0D<br>ProMED map of Guinea:<br><a href=3D=
+"https://u19268662.ct.sendgrid.net/ss/c/sSnCkKCWBvais3EuVAOvgy2WOIX7pp1nXnn=
+4AbwuQ3Z6WbkfhqXYXU-aTMPJ8yThLPlK2eWzUAwFwlRQD7rV3w/437/Q3HGQSJgSN2k0MtAS2a=
+vIw/h3/qnJD6V2DHPBbi09pcOIW5P4YnIcvxJIWKg2T3Hndv_o">https://promedmail.org/=
+promed-post?place=3D8714340,45</a>]<br><br>[See Also:<br>Diphtheria - Niger=
+ia http://promedmail.org/post/20240120.8714345=0D<br>2023=0D<br>----=0D<br>=
+Diphtheria - France: ex West Africa, multidrug resistance<br>http://promedm=
+ail.org/post/20231117.8713196=0D<br>Diphtheria - Asia, Africa: Pakistan (KP=
+) South Africa (WC) fatal,<br>prison http://promedmail.org/post/20231111.87=
+13097=0D<br>Diphtheria - SE Asia (06): India (HR) fatal<br>http://promedmai=
+l.org/post/20231025.8712821=0D<br>Diphtheria - SE Asia (04): Indonesia (JR)=
+ fatal<br>http://promedmail.org/post/20230807.8711603=0D<br>Diphtheria - SE=
+ Asia (03): Indonesia (JI)<br>http://promedmail.org/post/20230709.8711048=0D=
+<br>Diphtheria - South Africa: (NL, WC) antitoxin shortage<br>http://promed=
+mail.org/post/20230519.8710144=0D<br>Diphtheria - SE Asia (02): Indonesia (=
+JR) fatal, more cases, vaccine<br>campaign, RFI http://promedmail.org/post/=
+20230319.8709034=0D<br>Diphtheria - SE Asia: Indonesia, fatal, more cases, =
+vaccine campaign,<br>alert http://promedmail.org/post/20230222.8708538=0D<b=
+r>2022=0D<br>----=0D<br>Diphtheria - France: migrants, toxigenic Corynebact=
+erium<br>diphtheriae/C. ulcerans http://promedmail.org/post/20221230.870753=
+1=0D<br>Diphtheria - Australia: (NSW) unvaccinated children<br>http://prome=
+dmail.org/post/20220705.8704239=0D<br>2018=0D<br>----=0D<br>Diphtheria - Ph=
+ilippines: increased cases, 4 regions<br>http://promedmail.org/post/2018121=
+5.6210623=0D<br>Diphtheria - Indonesia: fatal, more cases, vaccine campaign=
+<br>http://promedmail.org/post/20180106.5542510]<br>.......................=
+..........................rb/rd/ya/tw/jh<br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3DDP0BKQopQmjmRmZiC0piDKOhOzyoMzaRvrS9B29OefZoMDAwdT=
+AwMHNysr8kGqlM9iXxlOColhhETdrinUFeRLhjyuPhj8XF_6qCzzON2g-da8asZWUEOvGf7gR0H=
+h8Gj_QbeNaJxN22rs0ztZ48V9WL-jLBY-FPFHSYZ7o9BtiDr1S9wk6mz9KeisBRfG8CDFPfdsvu=
+o2K4GuC_9SzIYNdkyEyR-jBBVb-WJg6f0M3p4Pn14BHIjH0Mvk2Cp7Le6hklhnXbCXn2ibBqGUS=
+X5lIuwK6nynV934SberQlAhEsWuEy8Eo_Z04JZ6GzGJK5eA-4UeSIdLsYbEHOTt9cxkx2rKnpO3=
+O1w1Uwq2AlRL1zFCygutCbs-5oAIPmfBHW2OVVFUO7lszMYlSuTYqv9yP6jO8uZFmpOKsQKG8-N=
+VU0_z-EJnn-gExoNQcLb4SnQzqr8r_UQQAFlzrDQTr6hGK2Kll3LDUfybpTovOPUkIOdGyiaNQ6=
+BxWmhhqzyIX19ctd4cT9XNWnt4Nz9o6qyulVXQRUyPGP5lyqpSifZLM0bryif7hhxEc_G2CMSwV=
+Zgkzm6kOK7niVtU19aTVosv3js4ZIy8p9bAKdifC0gyld4tUAf_Nvdgmh9JnruyfqmhMYYvUhhg=
+_zdurwI9YLALe5CjU-nGHtVYCl8Sb2Udv_QqBZqhtoo9Qf22JmbBkvF7-ldmLUwUmSmKuNnQ5bI=
+3qZhs5DL7KoqqvpvobQ1iiH1dvG4I_hqOddgXMERMd_QeOOC6B5_Zom3OZJUdqgxuu0lbJoqCjF=
+sk5DsgIj3-A0bbNBGuCpG54u3UdfTkYxLs-X-eF_14pOWVfEPCYS5J1QjJb1EoWCy3O2yj7-Tdy=
+lUevRPxeac-Is6DFjza9E3xTHojUpU50bzJsEpw4oKA_Bz9AEbPiT5WRpfu9KRB_Qcc3LFEb4Gd=
+6Koi5nx1bv1DUhvzD6muuxFvlatkSiS5XcCb19JHvzSshlSsWjFChgNwuMELEQRp8L0UOZOuCnD=
+5xP_YhBkEanHrIHKk7Td_vDWd-LdVJSb-Wy1ciroFvXfyHegVikMrBM1dQJb9CAHq70zSPWJaaY=
+g5W_qxu6EkeQrxm78gTLuqwYtT2Ahndy1cFXKby1dB0E8BR6f1UKvM8dhpK5AHGPXeNKnZhGQQH=
+RoyODOA0KTNYntchw7S9ky5_u8EfSCxZ5eMxFfarLvidi5uN5Nac=3D" target=3D"_blank" =
+class=3D"Unsubscribe--unsubscribePreferences" style=3D"font-family:sans-ser=
+if;text-decoration:none;">Unsubscribe Preferences</a></div><br>############=
+################################################<br>#######################=
+#####################################<br><br><img src=3D"https://u19268662.=
+ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/437/Q3HGQSJgSN2k0MtAS2avIw/ho.g=
+if" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"height:1px !imp=
+ortant;width:1px !important;border-width:0 !important;margin-top:0 !importa=
+nt;margin-bottom:0 !important;margin-right:0 !important;margin-left:0 !impo=
+rtant;padding-top:0 !important;padding-bottom:0 !important;padding-right:0 =
+!important;padding-left:0 !important;"/></body>
+</html>
+--3c4a9410de50920d142043203e4322939cff19e364470d764e65d481e83c--

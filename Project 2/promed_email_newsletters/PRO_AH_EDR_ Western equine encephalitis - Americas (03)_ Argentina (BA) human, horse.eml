@@ -1,0 +1,446 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a98:c004:0:b0:1eb:e128:bbe3 with SMTP id l4csp2528253eic;
+        Fri, 12 Jan 2024 16:30:19 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IGUJKoBS/MvM6+0eiQQALZpl82PtJ02smE08Ly5Id+dAHtdyHKCrunsXvpOl0WVoAF5GF4C
+X-Received: by 2002:a17:90a:4902:b0:28e:975:a6d5 with SMTP id c2-20020a17090a490200b0028e0975a6d5mr1377928pjh.73.1705105819646;
+        Fri, 12 Jan 2024 16:30:19 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1705105819; cv=none;
+        d=google.com; s=arc-20160816;
+        b=igQq4GjS1xOs6DTH7Mv4GrrVj7ArNNJteTJzoAC535W+jnbs+fgY6iSqEsnkXmiVv7
+         A2bBuEL1jgjZRSL9Kb+sZyInlWfKnMg/60HHbO9RV65Dc4ko7D3GFHr/SeE/Padff+VH
+         6npk5KSBRMxgRYmbA7dmZv4ewFFt7jvFjZCeoaZG+dI7IIsWuvj6zF1W87YGXLofUV20
+         fKEsmY2ByH3eBroQk1F8ym8ury88Xmc1MHwAb+gx84YQQl/BgTyA3v3h0cy/xeOcCVQN
+         no67ejEPeATXBmb9BHa3+HpuJhvbu/Xacj0mTTOwV+Grpp1+zWtukvtVZo0ssEJ7qPUC
+         fJJg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=51WEpqsxXpkDpjM1IRBTTFoqFz0X4v5IoBx0bB+Yh40=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=JtsAI6W79zvgHkSzpXOd6N75TU8E3khYOKZiK4+NGd8FfuWpnChKonbcwOC4EFk0hW
+         ajQiC7sZk60B3q4JNZ9Ch5R1+A4c85jGOinjXWLuge/GEZwx023MN3MYCvukDquqtAds
+         TvWRMin7H6cE67FnViRNmmwUctEEMQ5iy329bUeFCYVk8+I0/U96uyAL4u8v0fLr1HAs
+         AY5l+mziU/D4gLFx9RlEcarf450ANDpPhAQAPjq6YgzNqujbys1wKdYvB0JNUiy1S1jA
+         Gnra07kJN5FY0znLsntmGNZ8UTMs8XWlILNDcB+Ge8sz6B5AYFdVrwWkpZctryXqSmd1
+         Af5A==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=BwgeWZQa;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=qGkC1Iaw;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id f13-20020a17090ac28d00b0028c68d1b85bsi4315839pjt.19.2024.01.12.16.30.18
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 12 Jan 2024 16:30:19 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=BwgeWZQa;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=qGkC1Iaw;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=51WEpqsxXpkDpjM1IRBTTFoqFz0X4v5IoBx0bB+Yh40=;
+	b=BwgeWZQam11GAzltttXyCsuZIn1iWdyt4Sbzmw+TyLFZSCmQUKeSxcnpTA+5SmVe7KuN
+	o++Cvx51BE8ddof/bD6xmkJZMQwZGPBciRjjxTzfScaLIrq6j9qcok4fVwDMiVB2PX3KKJ
+	3RLqjtjFdlIit+2P6k+AOyr1p4Lerofk7Lk2HZPBL7YAEhxefXYEZ/QsVqsw/jNaUfqEqi
+	s3BJCNlg66VTKT7yxfujLgwqootOmaUsZLM6U0E1B9E4A8X04TC5vekgLpi2d2F7ILxSRY
+	/m2TNfkgkzerfdX+9YHllYGPHzQrydwW3PqoX6VuRLWjpypdiiPcz4uVsRaKxRNw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=51WEpqsxXpkDpjM1IRBTTFoqFz0X4v5IoBx0bB+Yh40=;
+	b=qGkC1Iaw2UHxhUSCSjRrJAZW7Omo963Y+dZlLI1hNXVsLI5LFTrrbU2LoHQkVFZ6dkJ6
+	/LTzCEs9MJodJlQNZuAOV0EhEqq5plJAfZ1dgfQhl0v3NiDQAVblvFJo8LaaTBVBSVh0yP
+	xzOJhta+eGaM/SorwTLS2kN1Ha5W82isQ=
+Received: by filterdrecv-86b8f958d7-sxbm6 with SMTP id filterdrecv-86b8f958d7-sxbm6-1-65A1D999-99
+        2024-01-13 00:30:17.820178539 +0000 UTC m=+7537722.976892036
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-27 (SG) with HTTP
+	id nhI46WKaSwWqeyM2-rMU7Q
+	Sat, 13 Jan 2024 00:30:17.672 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=5e37d4d9303162fd90609bd99d5f12903b75f2ccab6f310727c7b49ec4ab
+Date: Sat, 13 Jan 2024 00:30:18 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <nhI46WKaSwWqeyM2-rMU7Q@geopod-ismtpd-27>
+Subject: PRO/AH/EDR> Western equine encephalitis - Americas (03): Argentina
+ (BA) human, horse
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iBX85UdMO+1zKQo3K45IsstrgUHsO0mPP2x6Fcj?=
+ =?us-ascii?Q?ame2Y+v64=2FnMQAwuFtnj0HPpKhyN05OrADEDvjS?=
+ =?us-ascii?Q?CRoZFzO5AAizfXfZyx3Zsn93wZpMWIdwxxYVLol?=
+ =?us-ascii?Q?xBYHBmxw7n0Xq7w3hk9j3fO=2F8SvWW0kEG9okjCz?=
+ =?us-ascii?Q?uqeDezVaSlLqY=2F1kzS9YtvTeFjRycWFlmQm9u4?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUiShGf=2FO8XJWpH34Od4Nd?=
+ =?us-ascii?Q?fxXa6jil96uRcJkF+N+LeVnO1tx80ddOyoyOo=2Fc?=
+ =?us-ascii?Q?Brxcl3ERAm0cOY743=2FFH59DWiSf5OzXORh1DLKt?=
+ =?us-ascii?Q?hb1NMKty3PsA5ju0ZzxCrq1WQuZSEQf=2FJlWtgqv?=
+ =?us-ascii?Q?cZmsyCHlNUZsDV3J46x3eHRNptcSn2IbJZedq1Y?=
+ =?us-ascii?Q?hkroQ5CZ7inTKqDNlMbMd08VRXaxJwv9IzvYlVF?=
+ =?us-ascii?Q?DoH1D5HK7EO9uNqfqJaM5+PLtvdIMmVCuBehJUl?=
+ =?us-ascii?Q?RlceSz32ppGwk9RcZobylgrvYOneppjBttm9kOx?=
+ =?us-ascii?Q?1BWk+NFyI=2FZrwIblgG93g9=2FUXeLLEU9dm6+Vd9A?=
+ =?us-ascii?Q?bCF75pxQehPs1tF7t36AJdfZ6MIsiCFtq04NZR=2F?=
+ =?us-ascii?Q?wuKorGq=2FviFZRtviXtnUQGGQil7j=2F4DTuaRhHzs?=
+ =?us-ascii?Q?5MK43bZ3OE7Pk3PWq8QQPb=2F7ZeWgj77sqYxiDM8?=
+ =?us-ascii?Q?Xu=2FyL0gKac9mQPtk=2FraMkzsa2aKKtUAWt+JrkYS?=
+ =?us-ascii?Q?WEa=2FAR1HOi5QJBwSwxPUeWRgLwCDJ53NySS5iBH?=
+ =?us-ascii?Q?AFSdHEhKy7zK4XtDKKJO=2FsllGOUmiZvPfzewY=2Fb?=
+ =?us-ascii?Q?pPuSpRhsFSPUY6snEIEZQ8GZZvaEoMbUUcn5CjS?=
+ =?us-ascii?Q?wRRjqR4i9xSmEFa52vVtCPDy+4uUO6+Xq131eGp?=
+ =?us-ascii?Q?p2vgM9co0hrJ86TYxQ9re1jHhNn=2FLS0Mj6rd2Ta?=
+ =?us-ascii?Q?joGLok54OhW6CROnonNZkOpY0B+W5FM0QBxrLyx?=
+ =?us-ascii?Q?6l+RRdkjTB2MO3ojb8pjsj7XcA=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2E5PCRlpFEn?=
+ =?us-ascii?Q?l=5FZFnhP4KAkouEj58nYLMHvKOrBQmPvF0ZoMDAw?=
+ =?us-ascii?Q?dTAwMOC8u61oa6HQQ6t0zJqkgNcbTU-UR3V6=5FR9?=
+ =?us-ascii?Q?HlV9YuoidwQqz=5FqwGrtbg97qvNFmS=5Fh0WkUC3p-?=
+ =?us-ascii?Q?7wgsDe4y=5FRo-aMfW6=5F29D6fB2WwB9Z1xVhfXbFt?=
+ =?us-ascii?Q?xoqR5erYL=5FDbx-Fow=3D=3D=2EUNFkDCnMBvcy-tfVwan?=
+ =?us-ascii?Q?azRSA=5FY9uPtHPZ10oV2-lRjhoMDAwdTAwMK2b7-?=
+ =?us-ascii?Q?bwFi5Tqf58Tf08nOGeJ6svuFJ7KAVmf7hVVKFyq?=
+ =?us-ascii?Q?iZkRotuTxCy=5FgbZToRc9CeWeFkiUupqoimhNRia?=
+ =?us-ascii?Q?nO1Y5gzEDDNaJtZhu055SZcOEWWHzF4oksOE=5F5T?=
+ =?us-ascii?Q?HKbA7aYAksbG6=5F0rFqYcaagY6Jed59mOBF55wGG?=
+ =?us-ascii?Q?gnRtI-ZUI-Zvy8DBg3KWPIScdv4WkP58-W-45Jw?=
+ =?us-ascii?Q?HVLL=5FhAajT-LPoE=5FqwSloIYo4IoiK1fcqy8-ZZf?=
+ =?us-ascii?Q?GQ2iqAjD4tAhTqSeR5SDQ6Rn-NHYW2YBKyz1x-6?=
+ =?us-ascii?Q?V3nPFzRB-ZDeVHRHGmuyzbhOVybgaWI=5FLE695Zw?=
+ =?us-ascii?Q?52ltQ2YKys2DQkqj7Gxhdl5ZMc6v1UYwez07DKj?=
+ =?us-ascii?Q?rfnKjM8NU=5FaNsgQ4v0swzXrcMXVKBDm3UxFjaLi?=
+ =?us-ascii?Q?EH1k-z8rDQqj3Y2jwIyOxUvlrEGunluj-YbrP4T?=
+ =?us-ascii?Q?6zAKFaXkc2G6IcETz2ve8FwxJeLrQ340Y7e6x6-?=
+ =?us-ascii?Q?T20WyoBa3TFStCveWkL2hwSnYLBG=5FRqP4zE88Bc?=
+ =?us-ascii?Q?t1BSyE8dKxQT3EMN9kPg3YqGIcuZFGrB7G0XMDK?=
+ =?us-ascii?Q?-X-2EJ5254whOKsShV4snUv3kWwvPvqKAoFHT=5FJ?=
+ =?us-ascii?Q?xGjnVSqviMq065NHkhsNblp2w=5FLuxsBjP0Y9Ax4?=
+ =?us-ascii?Q?ESRSYC5Wt=5FQpvB8Qrgdo28ZD0Q6CgAmPnMXzthO?=
+ =?us-ascii?Q?8xrvyd92ctg16Qd6pbz0AHL2R5hKQPwhHNfoUO-?=
+ =?us-ascii?Q?nN-w2RclCPfdq-MFlShpD110MP5yJh6Ot2hIbW3?=
+ =?us-ascii?Q?rlhziGKB4HT5jO51Vkg07JPpMbcTFJRa6xCUUpw?=
+ =?us-ascii?Q?l0rC0G3u3uDIOlQ4MJ4rHSOfOxoTNB1I27t5WsK?=
+ =?us-ascii?Q?3G76fQbxbZrFe4OYk=5FuTZRCz34bLZSlyQl0Ga8O?=
+ =?us-ascii?Q?WUZ2Gr8L867PBX7pnwGJ7dIxCN-2aCnJa0ViGw7?=
+ =?us-ascii?Q?AyjLEZune8OT0KmU8sI4tqpB5sJD733FnvdXAXI?=
+ =?us-ascii?Q?boihwKVsv6X5fBSnAyP6YKjjeBUrHoZZASIrRo2?=
+ =?us-ascii?Q?Xyjt-NfNMFOqIgqwB=5FCUfr4ytyUIVRRXANZZNVu?=
+ =?us-ascii?Q?JlWrtA=3D=3D=3E?=
+
+--5e37d4d9303162fd90609bd99d5f12903b75f2ccab6f310727c7b49ec4ab
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=iso-8859-1
+Mime-Version: 1.0
+
+WESTERN EQUINE ENCEPHALITIS - AMERICAS (03): ARGENTINA (BUENOS AIRES)
+HUMAN, HORSE
+***************************************************************************=
+*******
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+Date: Wed 10 Jan 2024
+Source: La Trocha Digital [in Spanish, trans Mod.TY, edited]
+<https://www.latrochadigital.com.ar/2024/01/10/encefalomielitis-equina-dos-=
+casos-en-junin/>
+
+
+There are 2 human cases of western equine encephalomyelitis [WEE] in
+Jun=EDn. The information was confirmed to a local media outlet in
+Jun=EDn by relatives of the patient, who has been hospitalized since 26
+Dec 2023.=20
+
+A local development leader has been hospitalized for several days in a
+healthcare center in our city due to a case of Western Equine
+Encephalomyelitis (WEE). This patient has been hospitalized for
+several days in the Intensive Care Unit of the General Interzonal
+Hospital for Acute Patients since last 26 Dec 2023. Furthermore, a
+family member indicated that "he has been here in the Hospital since
+26 Dec 2023 and in the last few days "He contracted hospital-acquired
+pneumonia," which worsened his general health condition.
+
+A resident of Fort=EDn Tiburcio also contracted the disease in General
+Villegas. The patient works in rural areas, specifically at harvest.
+This 2nd case of WEE was confirmed in the last few hours. Official
+sources told Grupo La Verdad that this older aged man, domiciled in
+the Fort=EDn Tiburcio locality, contracted the illness in General
+Villegas, and that he was transferred to our city for tracking his
+condition.
+
+The risk of spread of this disease is great because the equine case
+fatality rate (the percentage of clinically ill horses that die) is
+between 20 to 30% for WEE, while the rest of the affected animals can
+convalesce and be left with neurological sequelae in some cases.
+
+At the end of November [2023], the Government declared a national
+health emergency for WEE after Senasa confirmed the existence of a new
+outbreak in C=F3rdoba. This zoonosis is considered as exotic, was
+detected in the territory for the last time in 1988 and one that can
+be transmitted to humans.
+
+The emergence of WEE [in horses] was confirmed by the Vanella
+Institute of the National University of C=F3rdoba during the day on
+Wednesday [10 Jan 2024], after the case that was studied in the town
+of San Francisco, located in the east of the province, proved
+positive. In parallel, they reported that there are 11 other specimens
+under analysis as a result of the deaths of 6 horses that were
+reported in recent days.
+
+Through publication in the Official Bulletin, the authorities
+announced that extraordinary, exceptional and containment health
+measures would be immediately implemented to avoid spread of the
+disease, among them, ratified the restriction of concentration and
+movement of horses.
+
+The official order was given 3 days after an alarm was given in
+northern Santa Fe province, after confirming the unusual horse
+ailment, a disease that could be transferred to the humans.
+
+In this way, the National Directorate of Animal Health, belonging to
+the National Health and Agroalimentaria Quality Service, is the entity
+in charge of formulating the emergency protocols of to apply and carry
+out the control process, prevention and surveillance, with the aim of
+containing, preventing and avoiding the spread of the condition that
+could affect both horses as well as human beings.
+
+--
+Communicated by:
+ProMED
+via
+ProMED-ESP
+
+[More human and equine WEE cases continue to be reported in Argentina,
+this time in Buenos Aires province. In the above report, there is no
+mention of a vaccination campaign for equine animals nor is the
+mosquito vector involved in transmission of WEE virus mentioned. There
+is no commercially available vaccine for humans. It will be
+interesting to learn which prevention measures are initiated and if
+they are successful in reducing cases in horses and humans. - Mod.TY
+
+ProMED map:
+Argentina: <https://promedmail.org/promed-post?place=3D8714176,4>]
+
+[See Also:
+Western equine encephalitis - Americas (02): (Argentina) human,
+equine, vectors http://promedmail.org/post/20240103.8714032
+Western equine encephalitis - Americas (01): (Argentina, Paraguay)
+horse http://promedmail.org/post/20240103.8714036
+2023
+----
+Western equine encephalitis - Americas (02): (Argentina) human,
+equine, vectors http://promedmail.org/post/20240103.8714032
+Western equine encephalitis - Argentina (04): human, horse, WHO
+summary http://promedmail.org/post/20231229.8713965
+Western equine encephalitis - Argentina (03): (BA) 1st detection in
+sheep: http://promedmail.org/post/20231223.8713863
+Western equine encephalitis - Argentina (02): (SF) human:
+http://promedmail.org/post/20231220.8713826
+Western equine encephalitis - Americas: Argentina, Uruguay, horse
+http://promedmail.org/post/20231214.8713710
+Western equine encephalitis - Argentina: horse
+http://promedmail.org/post/20231201.8713440]
+.................................................ty/may/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3DoYuNHJlv-D6LOUxC-tHqMpuNlQvpNWQrWA7HEXslu35oMDAwdTAwMBYVrkV=
+cZghkzePyuuolNJt6NWyIE2knXlywibg1aC6VPtQAjC8kyrFl51LLdR5lmGTsQJO898Ke8IuxWG=
+riWAkqYKGZ9uBFpRY1sIq3DX1ai1_LU2qCzPlrGOPFy-4lqdd9hhY8RF4bgx_Wy5PhiDhqSyITd=
+K22A42c_32QybTeNtLsdndEfnEskYRiC_crbiJZSeXhPRGhY6DIc_kLwLJc4l7pimlT0GFWq3XW=
+CB50c-ZU7NfTTGu1qQZivKkX3GZIewD5ltxjAHLnwfOkB8DWL6D51Yn3sAAkMQuiv5JzCu1bLv8=
+KuZxlF4cSwQXe96NDlarnhc-Oul7Dh8U4ps7Yg49QrYQ5HEofdCqLX-jlXRSLGXmwW6D1SaYhVk=
+1Cy7rJfGZ1202SYs2xeYkzHyx2AIocfAuojxwvFqSeZ2s-AdHnOoaqTVlKe5o6zMSCQndRxWC7s=
+67pCZuDTAwSukGZ9VijEkFXY1tya6eUaEHv0O5hEksKUluZEGNlwS0K4_l86KUSREviecQwPUhA=
+pIOQpJfEsVXT3kKUwWrektLiyPB3Yv8ZmZUvprwoEdRXg4uWGEF-5awPfMwn7e_HkdhjLlO51Zx=
+jlTJoDw3o_s60Zk5qriHKSeLwyxpSCf4GCdUIoiF7nNFIR6b66KTC1rpzTjZmJ_V4cbKa7u2qd_=
+y4SI3HLMR78NEQ0ospVTKvPuZwary-4wmqkJ2q5_xUgNLHYM9blikKQiWby2alxBHh62EKdvofA=
+yMRwM0OViHYjqYekaO4PD4Qd9w4bKcGDugJckQCkY-MqikMRGv4oJQAAOOkKrmBwpwHSqq3pt_A=
+xG5Krpjb-fNug2A316c63Uo7UjA9QuCb92SWz80VCveZxq5csuI9bfCH6OAqwugmUSERflQg_VM=
+DcOu1Lt5cqVMfSZIHU4obJh9zFXEaqYZ1jhAD9UZPi_W3yg3aCCN5YtmKZxJeSbmamgo3R-LJua=
+gE-neIdJtPGND2PMymqunnYH_9Y7DB3Fs4ZTIu4RHe9FpLRPtLZVx9yxxDc5Tr30WPTGAdINbll=
+ABbW-TuB-u7wNAmuMnEaj3ITgGW8vKBV6ptcNf3X9QmCRLEsMEVPj7mhAIeWO_6X7K0mT6u21Zs=
+wo3wWBDwWxwviiSIk2L75FODvIICEVMJ-KPWKzf7VDwIsDRF0NDHz5vPcGtFWJkN )
+############################################################
+############################################################
+
+--5e37d4d9303162fd90609bd99d5f12903b75f2ccab6f310727c7b49ec4ab
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=iso-8859-1
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>WESTERN EQUINE ENCEPHALITIS - AMERICAS (03): ARGENTINA (BUENOS AIRES)=
+<br>HUMAN, HORSE<br>*******************************************************=
+***************************<br>A ProMED-mail post<br><a href=3D"https://u19=
+268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisIijpefK5PNjW-mL-YZGnfgDOxU=
+1G3gjwnPSi2Tfv3HA/42y/xBP4ddyqQoeFF_yZeT391A/h0/aHTAUc6o4VNeGMu9jYdzpNpk1lq=
+nijJnt-0OACynWiw">http://www.promedmail.org</a><br>ProMED-mail is a program=
+ of the<br>International Society for Infectious Diseases<br><a href=3D"http=
+s://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisCT5tpD4Upm3qyMCbcYS=
+Qvc/42y/xBP4ddyqQoeFF_yZeT391A/h1/ZLG1NIDcB_eJRn3w8tjerN-jLbusAg4Ft-1HjP3vI=
+og">http://www.isid.org</a><br><br>Date: Wed 10 Jan 2024=0D<br>Source: La T=
+rocha Digital [in Spanish, trans Mod.TY, edited]=0D<br><a href=3D"https://u=
+19268662.ct.sendgrid.net/ss/c/TLh_csrC34X_iXpbYoMam3_d_GO7okNyVbAjJsQv_q_dB=
+gZNHDDT___fUVWEwNi44OmJHA6woylmmgRbSajJPWWkNaZVnTzAaJQU1--y8HAvD8oFBPl5OETN=
+DRRQDF2nX5EaVPDbQIUWVYtxe4ol5Q/42y/xBP4ddyqQoeFF_yZeT391A/h2/6mkKHSQ4XPkeNO=
+eMYRBS5j9UNpYm_chb6NtOENZijwA">https://www.latrochadigital.com.ar/2024/01/1=
+0/encefalomielitis-equina-dos-casos-en-junin/</a>=0D<br>=0D<br>=0D<br>There=
+ are 2 human cases of western equine encephalomyelitis [WEE] in<br>Jun=EDn.=
+ The information was confirmed to a local media outlet in<br>Jun=EDn by rel=
+atives of the patient, who has been hospitalized since 26<br>Dec 2023.=20=0D=
+<br>=0D<br>A local development leader has been hospitalized for several day=
+s in a<br>healthcare center in our city due to a case of Western Equine<br>=
+Encephalomyelitis (WEE). This patient has been hospitalized for<br>several =
+days in the Intensive Care Unit of the General Interzonal<br>Hospital for A=
+cute Patients since last 26 Dec 2023. Furthermore, a<br>family member indic=
+ated that "he has been here in the Hospital since<br>26 Dec 2023 and in the=
+ last few days "He contracted hospital-acquired<br>pneumonia," which worsen=
+ed his general health condition.=0D<br>=0D<br>A resident of Fort=EDn Tiburc=
+io also contracted the disease in General<br>Villegas. The patient works in=
+ rural areas, specifically at harvest.<br>This 2nd case of WEE was confirme=
+d in the last few hours. Official<br>sources told Grupo La Verdad that this=
+ older aged man, domiciled in<br>the Fort=EDn Tiburcio locality, contracted=
+ the illness in General<br>Villegas, and that he was transferred to our cit=
+y for tracking his<br>condition.=0D<br>=0D<br>The risk of spread of this di=
+sease is great because the equine case<br>fatality rate (the percentage of =
+clinically ill horses that die) is<br>between 20 to 30% for WEE, while the =
+rest of the affected animals can<br>convalesce and be left with neurologica=
+l sequelae in some cases.=0D<br>=0D<br>At the end of November [2023], the G=
+overnment declared a national<br>health emergency for WEE after Senasa conf=
+irmed the existence of a new<br>outbreak in C=F3rdoba. This zoonosis is con=
+sidered as exotic, was<br>detected in the territory for the last time in 19=
+88 and one that can<br>be transmitted to humans.=0D<br>=0D<br>The emergence=
+ of WEE [in horses] was confirmed by the Vanella<br>Institute of the Nation=
+al University of C=F3rdoba during the day on<br>Wednesday [10 Jan 2024], af=
+ter the case that was studied in the town<br>of San Francisco, located in t=
+he east of the province, proved<br>positive. In parallel, they reported tha=
+t there are 11 other specimens<br>under analysis as a result of the deaths =
+of 6 horses that were<br>reported in recent days.=0D<br>=0D<br>Through publ=
+ication in the Official Bulletin, the authorities<br>announced that extraor=
+dinary, exceptional and containment health<br>measures would be immediately=
+ implemented to avoid spread of the<br>disease, among them, ratified the re=
+striction of concentration and<br>movement of horses.=0D<br>=0D<br>The offi=
+cial order was given 3 days after an alarm was given in<br>northern Santa F=
+e province, after confirming the unusual horse<br>ailment, a disease that c=
+ould be transferred to the humans.=0D<br>=0D<br>In this way, the National D=
+irectorate of Animal Health, belonging to<br>the National Health and Agroal=
+imentaria Quality Service, is the entity<br>in charge of formulating the em=
+ergency protocols of to apply and carry<br>out the control process, prevent=
+ion and surveillance, with the aim of<br>containing, preventing and avoidin=
+g the spread of the condition that<br>could affect both horses as well as h=
+uman beings.=0D<br>=0D<br>--=0D<br>Communicated by:=0D<br>ProMED=0D<br>via=0D=
+<br>ProMED-ESP<br><br>[More human and equine WEE cases continue to be repor=
+ted in Argentina,<br>this time in Buenos Aires province. In the above repor=
+t, there is no<br>mention of a vaccination campaign for equine animals nor =
+is the<br>mosquito vector involved in transmission of WEE virus mentioned. =
+There<br>is no commercially available vaccine for humans. It will be<br>int=
+eresting to learn which prevention measures are initiated and if<br>they ar=
+e successful in reducing cases in horses and humans. - Mod.TY<br><br>ProMED=
+ map:<br>Argentina: <a href=3D"https://u19268662.ct.sendgrid.net/ss/c/sSnCk=
+KCWBvais3EuVAOvgy2WOIX7pp1nXnn4AbwuQ3Z6WbkfhqXYXU-aTMPJ8yThWW8vtLFn-SfV2DFW=
+qRYQ4g/42y/xBP4ddyqQoeFF_yZeT391A/h3/P6FDGtCXSYtg-79p97aE-AnLPLEYiUg8TR_Dfe=
+Ase7c">https://promedmail.org/promed-post?place=3D8714176,4</a>]<br><br>[Se=
+e Also:<br>Western equine encephalitis - Americas (02): (Argentina) human,<=
+br>equine, vectors http://promedmail.org/post/20240103.8714032=0D<br>Wester=
+n equine encephalitis - Americas (01): (Argentina, Paraguay)<br>horse http:=
+//promedmail.org/post/20240103.8714036=0D<br>2023=0D<br>----=0D<br>Western =
+equine encephalitis - Americas (02): (Argentina) human,<br>equine, vectors =
+http://promedmail.org/post/20240103.8714032=0D<br>Western equine encephalit=
+is - Argentina (04): human, horse, WHO<br>summary http://promedmail.org/pos=
+t/20231229.8713965=0D<br>Western equine encephalitis - Argentina (03): (BA)=
+ 1st detection in<br>sheep: http://promedmail.org/post/20231223.8713863=0D<=
+br>Western equine encephalitis - Argentina (02): (SF) human:<br>http://prom=
+edmail.org/post/20231220.8713826=0D<br>Western equine encephalitis - Americ=
+as: Argentina, Uruguay, horse<br>http://promedmail.org/post/20231214.871371=
+0=0D<br>Western equine encephalitis - Argentina: horse<br>http://promedmail=
+.org/post/20231201.8713440]<br>............................................=
+.....ty/may/jh<br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3DoYuNHJlv-D6LOUxC-tHqMpuNlQvpNWQrWA7HEXslu35oMDAwdT=
+AwMBYVrkVcZghkzePyuuolNJt6NWyIE2knXlywibg1aC6VPtQAjC8kyrFl51LLdR5lmGTsQJO89=
+8Ke8IuxWGriWAkqYKGZ9uBFpRY1sIq3DX1ai1_LU2qCzPlrGOPFy-4lqdd9hhY8RF4bgx_Wy5Ph=
+iDhqSyITdK22A42c_32QybTeNtLsdndEfnEskYRiC_crbiJZSeXhPRGhY6DIc_kLwLJc4l7piml=
+T0GFWq3XWCB50c-ZU7NfTTGu1qQZivKkX3GZIewD5ltxjAHLnwfOkB8DWL6D51Yn3sAAkMQuiv5=
+JzCu1bLv8KuZxlF4cSwQXe96NDlarnhc-Oul7Dh8U4ps7Yg49QrYQ5HEofdCqLX-jlXRSLGXmwW=
+6D1SaYhVk1Cy7rJfGZ1202SYs2xeYkzHyx2AIocfAuojxwvFqSeZ2s-AdHnOoaqTVlKe5o6zMSC=
+QndRxWC7s67pCZuDTAwSukGZ9VijEkFXY1tya6eUaEHv0O5hEksKUluZEGNlwS0K4_l86KUSREv=
+iecQwPUhApIOQpJfEsVXT3kKUwWrektLiyPB3Yv8ZmZUvprwoEdRXg4uWGEF-5awPfMwn7e_Hkd=
+hjLlO51ZxjlTJoDw3o_s60Zk5qriHKSeLwyxpSCf4GCdUIoiF7nNFIR6b66KTC1rpzTjZmJ_V4c=
+bKa7u2qd_y4SI3HLMR78NEQ0ospVTKvPuZwary-4wmqkJ2q5_xUgNLHYM9blikKQiWby2alxBHh=
+62EKdvofAyMRwM0OViHYjqYekaO4PD4Qd9w4bKcGDugJckQCkY-MqikMRGv4oJQAAOOkKrmBwpw=
+HSqq3pt_AxG5Krpjb-fNug2A316c63Uo7UjA9QuCb92SWz80VCveZxq5csuI9bfCH6OAqwugmUS=
+ERflQg_VMDcOu1Lt5cqVMfSZIHU4obJh9zFXEaqYZ1jhAD9UZPi_W3yg3aCCN5YtmKZxJeSbmam=
+go3R-LJuagE-neIdJtPGND2PMymqunnYH_9Y7DB3Fs4ZTIu4RHe9FpLRPtLZVx9yxxDc5Tr30WP=
+TGAdINbllABbW-TuB-u7wNAmuMnEaj3ITgGW8vKBV6ptcNf3X9QmCRLEsMEVPj7mhAIeWO_6X7K=
+0mT6u21Zswo3wWBDwWxwviiSIk2L75FODvIICEVMJ-KPWKzf7VDwIsDRF0NDHz5vPcGtFWJkN" =
+target=3D"_blank" class=3D"Unsubscribe--unsubscribePreferences" style=3D"fo=
+nt-family:sans-serif;text-decoration:none;">Unsubscribe Preferences</a></di=
+v><br>############################################################<br>#####=
+#######################################################<br><br><img src=3D"=
+https://u19268662.ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/42y/xBP4ddyqQ=
+oeFF_yZeT391A/ho.gif" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=
+=3D"height:1px !important;width:1px !important;border-width:0 !important;ma=
+rgin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;=
+margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !importa=
+nt;padding-right:0 !important;padding-left:0 !important;"/></body>
+</html>
+--5e37d4d9303162fd90609bd99d5f12903b75f2ccab6f310727c7b49ec4ab--

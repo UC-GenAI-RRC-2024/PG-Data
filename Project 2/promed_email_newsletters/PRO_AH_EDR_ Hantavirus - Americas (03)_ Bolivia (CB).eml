@@ -1,0 +1,466 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a98:d84b:0:b0:1eb:e128:bbe3 with SMTP id b11csp650659eil;
+        Thu, 18 Jan 2024 17:43:15 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IEG3nRdBajvkpU7XREDYIsK18R9GniK/Agkw0h+gf/AZN7A7PZsMldXD1khL0lnemCO8G2z
+X-Received: by 2002:ac8:5c08:0:b0:42a:1748:aa5 with SMTP id i8-20020ac85c08000000b0042a17480aa5mr486616qti.26.1705628595267;
+        Thu, 18 Jan 2024 17:43:15 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1705628595; cv=none;
+        d=google.com; s=arc-20160816;
+        b=lguMnz7gP8z+WtqpnrhAnF3CxuFPrFiSFAv6FXwXiJSm1CKjC0S4F8xON3hpIZbaZJ
+         h/d2w376jORaEnUd96UcWs+mmUlIUyNB8ueRQ991F0rO9A3lEUnvoJYz0OoWb3jElIqM
+         axe7f+8Su27IYjGwZVX/E61/EiIyXW2IY3GdPhxsyUj8/f9KzheU1bEbxqGB1zMBdBaT
+         SEFU6btD/oV4yitjtLWxL0dIqunCMrBIe53C639dDre8c0CmAjPgAd18kb/yIJURIbG1
+         Pv5h+KRZ/ZJuX72Ac5SDoSC2IyYW8unpFjtGhyriz5floGvvQGPPhAMohigre3KSyz1x
+         P1IA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=RT0n/WeHWsC7zLXjUTGkcZm2zRCreutX8NzuJ7WNX4Y=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=Vr72q441ErkDhsDulITAeCJfqHX9SEuBifx0RCT7vEgsEuCdqaGhmISGfRXnUoD9PL
+         b/7jTd2Vyqf393p8UOKuf8f569hn5NtuPdYWeVWC7KiRBPoDwg14nROw6DdTrV07mJ5C
+         O0Y4QvydWrurGP3RGEVyUaJlL0Y9FFeMo0UyiEYhE8/+AJebjArdC3E22GfWPWPA0uvX
+         DFLURZHCO2dcuMolwqoRyPiNQL/lmrHBypIw5+iLKMw4ydvWCwOGWTMnma8dkKtnuhgc
+         VSgaaHAYgbpFz6eoNYnuK6WZy8GezozVGm7/xEbAKCiH56ytlcx6h1hsjQ+Q8axQwYcQ
+         ka2Q==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=e2uTdJVR;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=gdAgH6f+;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id k11-20020a05622a03cb00b004278982e02fsi15309271qtx.544.2024.01.18.17.43.14
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 18 Jan 2024 17:43:15 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=e2uTdJVR;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=gdAgH6f+;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=RT0n/WeHWsC7zLXjUTGkcZm2zRCreutX8NzuJ7WNX4Y=;
+	b=e2uTdJVRnK6x3/q/nkvx+F/aLnhP2z+mXsSLCol+mMy6sVzvzMZx+/5yJASCKDmqJ2iN
+	Nl80KXnMqD3JsYkaBJo+FbL3yO/YTyxZakgNioq5u5ShKvSMFGrNuSG2gQhAB9QoHVjIpc
+	iDl+bw+I5ExOZHhM0p61UP5XWUk6PCqy1+8J8uk22WAv7oUHe7jtRCDiIaB6VKFkRX+4SN
+	l2ctvS5TYCNY3WGgeeXd8Uz3MI0xVpbKYC9J/w2pM9kZKxmEAgcr13ZR5bptjXFHUjkF7M
+	tgGXcV/0hh65987Y9OJiekmC+LPF5+PYjJPTmyMdNWXF7kn0ev1hCrbkAcYVLruQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=RT0n/WeHWsC7zLXjUTGkcZm2zRCreutX8NzuJ7WNX4Y=;
+	b=gdAgH6f+f2GeHqgKXRrCzhwweK7vB2Y2SIHd/42YtJq5LfoklIUbL5ZO7vlVKMe37C4z
+	NnaiMqlAyR9nQvwN8VlH6H7nXEz4mj8yj3K33TK6fZshZkWMNiDIIOVNop3yJUg81fv7zB
+	/2xEqLxAzGpFd816xU2mpxwxqGKGBiwvk=
+Received: by filterdrecv-5f9f645469-f8wjb with SMTP id filterdrecv-5f9f645469-f8wjb-1-65A9D3B0-2E
+        2024-01-19 01:43:12.659319996 +0000 UTC m=+8060515.056090518
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-26 (SG) with HTTP
+	id 2mgFkuSCQ1uVZ1EXEb2onw
+	Fri, 19 Jan 2024 01:43:12.489 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=405504d963738334ab8010d8f41bb7ed6e319773bebbf56f7bf0ca939c9f
+Date: Fri, 19 Jan 2024 01:43:14 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <2mgFkuSCQ1uVZ1EXEb2onw@geopod-ismtpd-26>
+Subject: PRO/AH/EDR> Hantavirus - Americas (03): Bolivia (CB)
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iB4=2FUa0LenRiL15PItQP32VOpPB1NL0fENPSeci?=
+ =?us-ascii?Q?g9XjyRIlr1n8wE92KnB+47kFLjmyfk7OowqRHpB?=
+ =?us-ascii?Q?zC8cw3XdNlSuqg6XGTS5WDvbihUbepbup6J+X1Y?=
+ =?us-ascii?Q?OAOE7KFzbsaVqlhPhqKdRUxk=2FxOdSAo2NHBdj+d?=
+ =?us-ascii?Q?AOEGN0gN8qVI7J5iNE8Penpmi8cM5fR2Ba5bz9?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUiShGf=2FO8XJWpH34Od4Nd?=
+ =?us-ascii?Q?fxXa6jil96uRcJkF+N+LeVnO1tx80ddOyoyOo=2Fc?=
+ =?us-ascii?Q?Brxcl3ERAm0cOY743=2FFH59DWiSf5OzXORh1DLKt?=
+ =?us-ascii?Q?hb1NMKty3PsA5ju0ZzxCrq1WQuZSEQf=2FJlWtgqv?=
+ =?us-ascii?Q?cZmsyCHlNUZsDXioUfL5ReKx5bdjJ1zX7qkq1R=2F?=
+ =?us-ascii?Q?9b1U=2F6c70Y2OptfbyMH=2FSKnNEaWGtW50iZ8Upxu?=
+ =?us-ascii?Q?McP0QbpZWNusWe35yJdUF8X2kNZCab7myveh4U5?=
+ =?us-ascii?Q?mN+cB5TG5gVoeQTiRKE5Pl1FSXYvBDv+bFXM7ow?=
+ =?us-ascii?Q?CHGAhwut7LY00wlzeh=2FEmmNHica0dqH2Z6wOmCx?=
+ =?us-ascii?Q?cH3O3TGPPbuH7xCGTM9GY6mPoxjpLQZK=2FPIMqGh?=
+ =?us-ascii?Q?suamaq4Yesg1RBxte7MTIk2hD53vuL85pfwaqgI?=
+ =?us-ascii?Q?Z3pe+c7cIjOqHSHzWIgDVQjjaO8sLbeXq87RkaP?=
+ =?us-ascii?Q?zDRZUWq0mIf4dq1k5bIlnEUk4+XzTEXWwhpxNHs?=
+ =?us-ascii?Q?uTNSr07WJ0hMFOIRI7jx6Ws6vhjVN4GM0wQDM40?=
+ =?us-ascii?Q?nz+GtPG+mHXr=2FF8QSY=2FpOPetRPSAxPJ3Dx6I+BK?=
+ =?us-ascii?Q?7hA9L8bCd669GbxoWU6UuriNA2jCDHUuIju15Kv?=
+ =?us-ascii?Q?1ZDCHqyN929yNDGyiPrgzM5bR1+EJiADgU9aNm3?=
+ =?us-ascii?Q?CrvNIkypamj6QU5AkIqVx+NZExevqJlyGxIEXzo?=
+ =?us-ascii?Q?NBQ5UlSbYOQc+oCoBD7IqKjb0bYN5FepN1rcqCm?=
+ =?us-ascii?Q?MnPbnxlD7ZHii+EJVEHh1Ku1pw=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2EZpDq4rV24?=
+ =?us-ascii?Q?12k63xZqkNOOejsocaxGlv-PZYtrZDpRHNoMDAw?=
+ =?us-ascii?Q?dTAwMC8dL51VUzCf52cSRWV-SvOPSYIz-CYt5DC?=
+ =?us-ascii?Q?HA-djzLifGj870NEuJFJ5TUYoNbiCGOCXvoRgDt?=
+ =?us-ascii?Q?WmLxf9JBiI6WueI1wugL3cwsSR6YlIzFj0m0lPZ?=
+ =?us-ascii?Q?RNK79HLb9=5FXhm-8Bg=3D=3D=2ET2V4oqmlB18tZIN4h0-?=
+ =?us-ascii?Q?J4r-6RviOAZfSrc4f8mnrcwhoMDAwdTAwMN2PEp?=
+ =?us-ascii?Q?6bBiHHlt4=5FyeNVBH-OhKDeTKiMhPttZ=5FBx54EUH?=
+ =?us-ascii?Q?FVM6aR6GuWfIVFPo1C9iPYs2EpStEYHjpTbJfNB?=
+ =?us-ascii?Q?pHFbDo0Gt7mc12SNxrKd0fpOqEcwAum-X5U5vjP?=
+ =?us-ascii?Q?A=5F4REvvnXsxojmUazETp6zvMEXw7n99EsoQHLRb?=
+ =?us-ascii?Q?fVCyy88RZcbHCC0X9i65T7OaWnH8Eufm=5FDwT8WG?=
+ =?us-ascii?Q?YJqjxB7estIOO67WInxMt61L-Rw-=5FXQYCsD64aD?=
+ =?us-ascii?Q?B755WWCeUZMP40VWe1dkJwoheYoe4FZn29bNJEe?=
+ =?us-ascii?Q?Ue9J3DYrlgyAR3PZe-KmrobToPX7wmlUQbVQsBu?=
+ =?us-ascii?Q?gTUdY23h8KbAqCApZLXT3jqPyypn-=5FXWo5jxEen?=
+ =?us-ascii?Q?TnUfm3VMuujQwGRqC3hxftBw7tju5W8cSygcYX-?=
+ =?us-ascii?Q?6KAfljwq-bpYVktLGBuKPp9t3urlnplMcdhDQ-F?=
+ =?us-ascii?Q?dr1tVbECIMrTmFUf01y3zsF-EvvOuXmZLmmnDB3?=
+ =?us-ascii?Q?qIhedN6IkQ86Cjr4QIbArAuiEo=5FkTIenmOjYA4N?=
+ =?us-ascii?Q?h88=5FRYUqDKQxQ5odCKI3--o8IO5wAIokDCXRPQy?=
+ =?us-ascii?Q?TJhe2-uRLSmYFo0QrNT2mAcu6KnY3KNvBLGj9Tb?=
+ =?us-ascii?Q?cMV8nqDIgJvE=5FQe25cyw5lWXnbvkkl=5FNxmVcC12?=
+ =?us-ascii?Q?WM8bbVuhvX7t66zQtwYMPm37pIWmNgiGhwsbh6B?=
+ =?us-ascii?Q?cD1qJ5L4-iE3ummdB4YNnj2FuIWcamMpCIKZOOh?=
+ =?us-ascii?Q?xn3RoOnqNRGDoU=5F-EQLARcRc5apwcwVdRQKc2wZ?=
+ =?us-ascii?Q?XGjJMT8eLxdFGBv5RKVJpYC1u9Guxi=5FStJMwBFH?=
+ =?us-ascii?Q?eBBSAmXW-IqP1zCWkIlwDXvy6WX7Xvtr3FoC8o8?=
+ =?us-ascii?Q?psij6FHitoXOm8TxMjl2=5FVyIgxY-EMjlOaMAU=5FD?=
+ =?us-ascii?Q?A=5FlvEHRMKhN79XCTCNV=5F2xh8g6SUu5Liv5xeXLk?=
+ =?us-ascii?Q?5MQueNtQG34AfqldzGrU2KpKvqfL7YX5v3FW4o1?=
+ =?us-ascii?Q?PYLbkO1CpKcaeDmB3JQ8Qyw3KDVdJOuexB221db?=
+ =?us-ascii?Q?mCyGQzs5wqt8IrxL6HPGYOw87qQnry9FT56Wsax?=
+ =?us-ascii?Q?42m3pQ=3D=3D=3E?=
+
+--405504d963738334ab8010d8f41bb7ed6e319773bebbf56f7bf0ca939c9f
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=iso-8859-1
+Mime-Version: 1.0
+
+HANTAVIRUS - AMERICAS (03): BOLIVIA (COCHABAMBA)
+************************************************
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+Date: Tue 16 Jan 2024
+Source: Uniel [in Spanish trans. Mod.TY, edited]
+<https://noticias.unitel.bo/sociedad/un-hombre-es-el-primer-fallecido-por-h=
+antavirus-en-cochabamba-y-su-hija-presenta-sintomas-OA10769733>
+
+
+A man is the 1st to die from hantavirus [infection] in Cochabamba and
+his daughter presents symptoms
+---------------------------------------------------------------------------=
+-----
+The Departmental Health Service (SEDES) of Cochabamba confirmed this
+Tuesday [16 Jan 2023] the 1st death from a hantavirus [infection] in
+the Cochabamba tropics in 2024.
+
+The Director of Epidemiology of the institution, Rub=E9n Castillo,
+stated that the individual is a 48-year-old man who arrived in
+critical condition at a health center.
+
+"There are 2 people who have the disease, one of whom had
+complications and died because they did not go to a health center
+first," says Castillo.
+
+The other case, in the same family environment of the man who died, is
+the 16-year-old daughter who presented symptoms of hantavirus
+[infection]. Castillo reported that the young woman was transferred
+from the Tropics to the city of Cochabamba and is hospitalized in a
+3rd-level center. The girl was in a delicate clinical condition with
+symptoms of respiratory complications, abdominal pain and bleeding.
+She was taken to intensive care on the 1st day of admission.
+
+Symptoms
+--------
+The authority explained that the disease begins with fever, back and
+bone pain, in addition to generally feeling ill. Then "these symptoms
+move to the respiratory level," such as pressure in the chest and
+difficulty breathing. He highlighted that if this disease is not
+treated it can become complicated in 2 or3 days until death.
+
+What is the hantavirus?
+-----------------------
+It is a severe acute viral disease, caused by a Hantavirus. Mice
+(mainly long-tailed ones) transmit it to people, shedding the virus in
+saliva, feces and urine.
+
+Hantaviruses are a type of virus found in rodents in different parts
+of the world.
+
+SEDES recommends that the population keep clean the places where food
+is stored, common areas and rooms. In addition, avoid scattering
+crumbs or food residues that could attract the presence of these
+rodents.
+
+--
+Communicated by:
+ProMED
+
+[Hantaviruses can cause serious and sometime fatal disease. The advice
+to seek medical attention promptly given above is essential.
+Hantaviruses are endemic in rodents in tropical, lowland Bolivia and
+human cases occur there sporadically. Last year (2023), there were 107
+suspected and 5 confirmed cases of this disease in lowland Bolivia.=20
+
+As mentioned in previous posts, the hantaviruses involved in these
+cases are not specified. The ecological settings where these cases
+occurred are not described, making it difficult to determine which of
+several hantaviruses may be involved. In lowland Bolivia, the
+hantaviruses that might be involved, and their rodent hosts with their
+images, include the following:
+- Laguna Negra virus (_Calomys laucha_
+<http://www.faunaparaguay.com/images/Calomys%20laucha%20enciso%2031aug2011.=
+jpg>
+and _C. callosus_
+<http://www.faunaparaguay.com/calomyscallosus.html>);
+- Bermejo virus (Chaco rice rat _Oligoryzomys chacoensis_
+<http://www.faunaparaguay.com/oligorizomyschacoensis.html>); and
+- Oran virus (_O. longicaudatus_
+<http://calphotos.berkeley.edu/imgs/512x768/0000_0000/0711/1203.jpeg>).
+
+As Dr. Jan Clement pointed out previously, a battery of hantavirus
+diagnostic agents, including Seoul virus antigens, is required to
+reach a definitive diagnosis. - Mod.TY
+
+ProMED map:
+Bolivia: <https://promedmail.org/promed-post?place=3D8714296,5>]
+
+[See Also:
+2023
+----
+Hantavirus - Americas (34): Bolivia (SC):
+http://promedmail.org/post/20231014.8712626
+Hantavirus - Americas (33): Bolivia, fatal
+http://promedmail.org/post/20231010.8712553
+Hantavirus - Americas (32): Bolivia (SC)
+http://promedmail.org/post/20231005.8712470
+Hantavirus - Americas (30): Bolivia (LP) fatal
+http://promedmail.org/post/20230911.8712069
+Hantavirus - Americas (23): Bolivia (LP)
+http://promedmail.org/post/20230702.8710898
+Hantavirus - Americas (18): Bolivia (CB)
+http://promedmail.org/post/20230427.8709718
+2022
+----
+Hantavirus - Americas (27): Bolivia (SC)
+http://promedmail.org/post/20220828.8705273
+Hantavirus - Americas (25): Bolivia (TR)
+http://promedmail.org/post/20220728.8704733
+Hantavirus - Americas (21): Bolivia (TR)
+http://promedmail.org/post/20220708.8704291
+Hantavirus - Americas (17): Bolivia (LP)
+http://promedmail.org/post/20220501.8702971
+Hantavirus - Americas (06): Bolivia (LP)
+http://promedmail.org/post/20220219.8701544]
+.................................................mo/jh/ty/may/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3D0YhakYBof-8Wv5pgehqyq4ix5yB4kYrqmH4KDACGNItoMDAwdTAwMDuVHVB=
+il_KrGkKhQMNE6asRg1o7BoIQOgBB2OPvX5kKy8SSyOPint3L8aJLMUDerz5GaQhl6H8JXinlQR=
+Tr_Zjk8YC36Ggn-D9Nk24Os4trz3sn8RAqI-4GuTcsMq-oxia_m1PHVCySYkvsKDmyVUsFtcYmL=
+nro1S1bWdxHhnnbmDhmvAR9JripM5-hXpd4PK1_1wbhTMN79D4YPDxy06bClettkuZ1bopk1xX-=
+8TCjjRYDoCb4ccGfFXFhBdnVJ3Zm0BpPzBeIX9DewZxdhXGRtRiFDxKHV6wyWFAwmGQm6DZq20B=
+eV6IBCL1Fiziyy-siUsKFiWMzu0isOLqHe5CguTtrmHVG-QHeKGXDSRj6LOwdzr8xuUuOA8OY5h=
+X7E6LZ8KNO5d6JgQvtK0FhuhgWirs1W2qu8Nj_VxdbzqVOqjORO0oRruf0YuJSbKzzq3QXqMTaG=
+oTGTI8uslq8KtRnLE_at7QA1KeWqDBW28lucvQKLBb_1BKUNt5J2hKpFeXZjrdWl8HmgsfAbNI3=
+BUzWs2_U4PLMTewJb8fD9BeDRSco3MRIN0o9AItJ2rZhQiNjPsihdHIT861wYmuWkl1xVwDBsZ_=
+kvjtN-Ihm9IVuKFJ8P7d-4d3hjFztH49XNBfkLgriFbVDRQaWuJh33gedFQC5mua6pLTbeoLwUR=
+NCIQAJBwpU3LN5t7rJYJt5uzDGVHlg_g01G0KMRk6n7xko0BZmLjeQOvnTm8AyThuRqdQdM1BPr=
+JNzU1sduOEPXNVZA0wpnS_Q9yl_rXyo3dv-EaaKJyID1Qieqc0nr2Luc6IW9NjhmP04PsFbJaJ-=
+pyRqboOinrsmk7C3mTp659TOscgKs6S9duvfc4QAkpXyvws1yfVJ32nMQWNzL4sR0DsQJ0bLkzk=
+-ltJsMfbNe8QHw8pohpac9mkv36OaM4eZnsb9rDi3RNpmAXfUxIGbF5BoGJJVGOxmSiHQmpRJaZ=
+Hp3wckgAdiLNkc9DBqBkh2tX9XPZJr6fcGN5z2dh322FZnDmjsEeExwsq926yX9fopjv6rc-7Aq=
+FxFSqyJGvs9hfw2gefzbOw1Bn274HtsKzufwSrnZP4g1GuOBL4rBYjWav_zDnf3BASEYHffQt0D=
+ZV5hnFf_bmcpmFYIQauVzOYiME1QxFjQhnyilxxmUpDJH3u0L_y3T2qoqkLnqwvQ )
+############################################################
+############################################################
+
+--405504d963738334ab8010d8f41bb7ed6e319773bebbf56f7bf0ca939c9f
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=iso-8859-1
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>HANTAVIRUS - AMERICAS (03): BOLIVIA (COCHABAMBA)<br>*****************=
+*******************************<br>A ProMED-mail post<br><a href=3D"https:/=
+/u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisIijpefK5PNjW-mL-YZGnfg=
+DOxU1G3gjwnPSi2Tfv3HA/434/mkKCfMdeRDOh0KT3as3KLg/h0/mAbvdk865iK6rCwRCt3piSv=
+d0y8KJrSV2W1NmU5CxA8">http://www.promedmail.org</a><br>ProMED-mail is a pro=
+gram of the<br>International Society for Infectious Diseases<br><a href=3D"=
+https://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisCT5tpD4Upm3qyMC=
+bcYSQvc/434/mkKCfMdeRDOh0KT3as3KLg/h1/ffajOWNh8_KVHETyo5Wmz7hba85s-zSs4tdAH=
+PbTxLc">http://www.isid.org</a><br><br>Date: Tue 16 Jan 2024=0D<br>Source: =
+Uniel [in Spanish trans. Mod.TY, edited]=0D<br><a href=3D"https://u19268662=
+.ct.sendgrid.net/ss/c/MKq6VgKU8EpKB9-MN4UVgaaEyKy-23rpQA9lkqcrbQwD2BjjwE_9i=
+SgAObT_bFWsni1zWVR9QSoBZZpLeVly_6Um2x_MysubltVivYn90a_rg8uQksty3tztw7IkUuBI=
+gvcAzDov05eZHZxaJDaYRikJ4Rhf4r3qJXguJ-2ixY1PwkVSm7Wg6OAaOZvISHhA/434/mkKCfM=
+deRDOh0KT3as3KLg/h2/S-HxBtE1c3uyKdvvr1TDAIgSs_kPoIHv8q6mpRGx_I0">https://no=
+ticias.unitel.bo/sociedad/un-hombre-es-el-primer-fallecido-por-hantavirus-e=
+n-cochabamba-y-su-hija-presenta-sintomas-OA10769733</a>=0D<br>=0D<br>=0D<br=
+>A man is the 1st to die from hantavirus [infection] in Cochabamba and<br>h=
+is daughter presents symptoms=0D<br>---------------------------------------=
+-----------------------------------------=0D<br>The Departmental Health Ser=
+vice (SEDES) of Cochabamba confirmed this<br>Tuesday [16 Jan 2023] the 1st =
+death from a hantavirus [infection] in<br>the Cochabamba tropics in 2024.=0D=
+<br>=0D<br>The Director of Epidemiology of the institution, Rub=E9n Castill=
+o,<br>stated that the individual is a 48-year-old man who arrived in<br>cri=
+tical condition at a health center.=0D<br>=0D<br>"There are 2 people who ha=
+ve the disease, one of whom had<br>complications and died because they did =
+not go to a health center<br>first," says Castillo.=0D<br>=0D<br>The other =
+case, in the same family environment of the man who died, is<br>the 16-year=
+-old daughter who presented symptoms of hantavirus<br>[infection]. Castillo=
+ reported that the young woman was transferred<br>from the Tropics to the c=
+ity of Cochabamba and is hospitalized in a<br>3rd-level center. The girl wa=
+s in a delicate clinical condition with<br>symptoms of respiratory complica=
+tions, abdominal pain and bleeding.<br>She was taken to intensive care on t=
+he 1st day of admission.=0D<br>=0D<br>Symptoms=0D<br>--------=0D<br>The aut=
+hority explained that the disease begins with fever, back and<br>bone pain,=
+ in addition to generally feeling ill. Then "these symptoms<br>move to the =
+respiratory level," such as pressure in the chest and<br>difficulty breathi=
+ng. He highlighted that if this disease is not<br>treated it can become com=
+plicated in 2 or3 days until death.=0D<br>=0D<br>What is the hantavirus?=0D=
+<br>-----------------------=0D<br>It is a severe acute viral disease, cause=
+d by a Hantavirus. Mice<br>(mainly long-tailed ones) transmit it to people,=
+ shedding the virus in<br>saliva, feces and urine.=0D<br>=0D<br>Hantaviruse=
+s are a type of virus found in rodents in different parts<br>of the world.=0D=
+<br>=0D<br>SEDES recommends that the population keep clean the places where=
+ food<br>is stored, common areas and rooms. In addition, avoid scattering<b=
+r>crumbs or food residues that could attract the presence of these<br>roden=
+ts.=0D<br>=0D<br>--=0D<br>Communicated by:=0D<br>ProMED<br><br>[Hantaviruse=
+s can cause serious and sometime fatal disease. The advice<br>to seek medic=
+al attention promptly given above is essential.<br>Hantaviruses are endemic=
+ in rodents in tropical, lowland Bolivia and<br>human cases occur there spo=
+radically. Last year (2023), there were 107<br>suspected and 5 confirmed ca=
+ses of this disease in lowland Bolivia.=20=0D<br>=0D<br>As mentioned in pre=
+vious posts, the hantaviruses involved in these<br>cases are not specified.=
+ The ecological settings where these cases<br>occurred are not described, m=
+aking it difficult to determine which of<br>several hantaviruses may be inv=
+olved. In lowland Bolivia, the<br>hantaviruses that might be involved, and =
+their rodent hosts with their<br>images, include the following:=0D<br>- Lag=
+una Negra virus (_Calomys laucha_<br><a href=3D"https://u19268662.ct.sendgr=
+id.net/ss/c/wscE2ng5fl6JrPIt48tisEYiwPRjvAYlRv4ljRXcPnEMPYVHmOeeV7Zx0XGwJH5=
+kZAw5mQjp9fq7gqhEKi6rA3CornQ3dcSJiBNVItlSjzwjwvBmQoKcohtH4K5hpn-n/434/mkKCf=
+MdeRDOh0KT3as3KLg/h3/iz-yo6fA_wXVs2fBgHffz_c7YVI0B6q_H5aHeItHJ_g">http://ww=
+w.faunaparaguay.com/images/Calomys%20laucha%20enciso%2031aug2011.jpg</a><br=
+>and _C. callosus_<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/wsc=
+E2ng5fl6JrPIt48tisEYiwPRjvAYlRv4ljRXcPnFV2VDXkpDi9FdQ2NykrViIWtdP8EYN4MVfPZ=
+Kw0E-xnw/434/mkKCfMdeRDOh0KT3as3KLg/h4/4PinCwdVC2jKc0a9eD8KMpv_4halnqvfNrzJ=
+a3dxBtM">http://www.faunaparaguay.com/calomyscallosus.html</a>);=0D<br>- Be=
+rmejo virus (Chaco rice rat _Oligoryzomys chacoensis_<br><a href=3D"https:/=
+/u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisEYiwPRjvAYlRv4ljRXcPnH=
+zwgR5EtG9-bpqruRKHgZ49urxH6bmfizovPf07ZCWYw/434/mkKCfMdeRDOh0KT3as3KLg/h5/U=
+v_hcgIOx3nbANdq_4z6xUzDxP2FdSWGZ23zTbKXL4I">http://www.faunaparaguay.com/ol=
+igorizomyschacoensis.html</a>); and=0D<br>- Oran virus (_O. longicaudatus_<=
+br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/QJZUkr_KvbLRfkAxH3SJ5X=
+sGgEhqRqpgGckVt5GIBvWKrcSExZOK06X3vYfWUGLtmD4jdpuO0vTZVPSMyw52FhDUNtlMdPtZT=
+SDzVVnHPpY/434/mkKCfMdeRDOh0KT3as3KLg/h6/7lRWcmLsgP7ee7mRc9Ep8bl6kG19_9LASW=
+52iz1HG10">http://calphotos.berkeley.edu/imgs/512x768/0000_0000/0711/1203.j=
+peg</a>).=0D<br>=0D<br>As Dr. Jan Clement pointed out previously, a battery=
+ of hantavirus<br>diagnostic agents, including Seoul virus antigens, is req=
+uired to<br>reach a definitive diagnosis. - Mod.TY<br><br>ProMED map:<br>Bo=
+livia: <a href=3D"https://u19268662.ct.sendgrid.net/ss/c/sSnCkKCWBvais3EuVA=
+Ovgy2WOIX7pp1nXnn4AbwuQ3Z6WbkfhqXYXU-aTMPJ8yThMxe-sfs68RAIM2I19FM49g/434/mk=
+KCfMdeRDOh0KT3as3KLg/h7/pqEBUdCfUi3_jSnD6KmqxURkb808cYoQSXnGCH0G6nw">https:=
+//promedmail.org/promed-post?place=3D8714296,5</a>]<br><br>[See Also:<br>20=
+23=0D<br>----=0D<br>Hantavirus - Americas (34): Bolivia (SC):<br>http://pro=
+medmail.org/post/20231014.8712626=0D<br>Hantavirus - Americas (33): Bolivia=
+, fatal<br>http://promedmail.org/post/20231010.8712553=0D<br>Hantavirus - A=
+mericas (32): Bolivia (SC)<br>http://promedmail.org/post/20231005.8712470=0D=
+<br>Hantavirus - Americas (30): Bolivia (LP) fatal<br>http://promedmail.org=
+/post/20230911.8712069=0D<br>Hantavirus - Americas (23): Bolivia (LP)<br>ht=
+tp://promedmail.org/post/20230702.8710898=0D<br>Hantavirus - Americas (18):=
+ Bolivia (CB)<br>http://promedmail.org/post/20230427.8709718=0D<br>2022=0D<=
+br>----=0D<br>Hantavirus - Americas (27): Bolivia (SC)<br>http://promedmail=
+.org/post/20220828.8705273=0D<br>Hantavirus - Americas (25): Bolivia (TR)<b=
+r>http://promedmail.org/post/20220728.8704733=0D<br>Hantavirus - Americas (=
+21): Bolivia (TR)<br>http://promedmail.org/post/20220708.8704291=0D<br>Hant=
+avirus - Americas (17): Bolivia (LP)<br>http://promedmail.org/post/20220501=
+.8702971=0D<br>Hantavirus - Americas (06): Bolivia (LP)<br>http://promedmai=
+l.org/post/20220219.8701544]<br>...........................................=
+......mo/jh/ty/may/jh<br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3D0YhakYBof-8Wv5pgehqyq4ix5yB4kYrqmH4KDACGNItoMDAwdT=
+AwMDuVHVBil_KrGkKhQMNE6asRg1o7BoIQOgBB2OPvX5kKy8SSyOPint3L8aJLMUDerz5GaQhl6=
+H8JXinlQRTr_Zjk8YC36Ggn-D9Nk24Os4trz3sn8RAqI-4GuTcsMq-oxia_m1PHVCySYkvsKDmy=
+VUsFtcYmLnro1S1bWdxHhnnbmDhmvAR9JripM5-hXpd4PK1_1wbhTMN79D4YPDxy06bClettkuZ=
+1bopk1xX-8TCjjRYDoCb4ccGfFXFhBdnVJ3Zm0BpPzBeIX9DewZxdhXGRtRiFDxKHV6wyWFAwmG=
+Qm6DZq20BeV6IBCL1Fiziyy-siUsKFiWMzu0isOLqHe5CguTtrmHVG-QHeKGXDSRj6LOwdzr8xu=
+UuOA8OY5hX7E6LZ8KNO5d6JgQvtK0FhuhgWirs1W2qu8Nj_VxdbzqVOqjORO0oRruf0YuJSbKzz=
+q3QXqMTaGoTGTI8uslq8KtRnLE_at7QA1KeWqDBW28lucvQKLBb_1BKUNt5J2hKpFeXZjrdWl8H=
+mgsfAbNI3BUzWs2_U4PLMTewJb8fD9BeDRSco3MRIN0o9AItJ2rZhQiNjPsihdHIT861wYmuWkl=
+1xVwDBsZ_kvjtN-Ihm9IVuKFJ8P7d-4d3hjFztH49XNBfkLgriFbVDRQaWuJh33gedFQC5mua6p=
+LTbeoLwURNCIQAJBwpU3LN5t7rJYJt5uzDGVHlg_g01G0KMRk6n7xko0BZmLjeQOvnTm8AyThuR=
+qdQdM1BPrJNzU1sduOEPXNVZA0wpnS_Q9yl_rXyo3dv-EaaKJyID1Qieqc0nr2Luc6IW9NjhmP0=
+4PsFbJaJ-pyRqboOinrsmk7C3mTp659TOscgKs6S9duvfc4QAkpXyvws1yfVJ32nMQWNzL4sR0D=
+sQJ0bLkzk-ltJsMfbNe8QHw8pohpac9mkv36OaM4eZnsb9rDi3RNpmAXfUxIGbF5BoGJJVGOxmS=
+iHQmpRJaZHp3wckgAdiLNkc9DBqBkh2tX9XPZJr6fcGN5z2dh322FZnDmjsEeExwsq926yX9fop=
+jv6rc-7AqFxFSqyJGvs9hfw2gefzbOw1Bn274HtsKzufwSrnZP4g1GuOBL4rBYjWav_zDnf3BAS=
+EYHffQt0DZV5hnFf_bmcpmFYIQauVzOYiME1QxFjQhnyilxxmUpDJH3u0L_y3T2qoqkLnqwvQ" =
+target=3D"_blank" class=3D"Unsubscribe--unsubscribePreferences" style=3D"fo=
+nt-family:sans-serif;text-decoration:none;">Unsubscribe Preferences</a></di=
+v><br>############################################################<br>#####=
+#######################################################<br><br><img src=3D"=
+https://u19268662.ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/434/mkKCfMdeR=
+DOh0KT3as3KLg/ho.gif" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=
+=3D"height:1px !important;width:1px !important;border-width:0 !important;ma=
+rgin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;=
+margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !importa=
+nt;padding-right:0 !important;padding-left:0 !important;"/></body>
+</html>
+--405504d963738334ab8010d8f41bb7ed6e319773bebbf56f7bf0ca939c9f--

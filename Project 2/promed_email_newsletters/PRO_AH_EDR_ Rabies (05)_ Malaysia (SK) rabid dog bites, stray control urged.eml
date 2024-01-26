@@ -1,0 +1,948 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a05:640c:1195:b0:1eb:e128:bbe3 with SMTP id o21csp113340eip;
+        Wed, 17 Jan 2024 15:07:22 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IGH7VvsVC8zDsCAUXwA+D36UYiY5CD0fM8XdZUel5MVsrmm+NtUUpJQFUTTdAGk5QSxC+Es
+X-Received: by 2002:a05:6214:1c88:b0:681:56e6:da67 with SMTP id ib8-20020a0562141c8800b0068156e6da67mr9030988qvb.129.1705532841691;
+        Wed, 17 Jan 2024 15:07:21 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1705532841; cv=none;
+        d=google.com; s=arc-20160816;
+        b=q9sksNWlN1qI3ijQK+ePK4uDunyxHrxlH+hlx2bCljjUaXNvCXGY5jAzA7F/QW9CqK
+         zgTB+RtslOtyce/hICsRM7PSQerS/eet6VOldjSJh0/6f1eu5l1qOlR+j3r9yconGHL2
+         ocsJZyjuGlRnpJ3u5l1LfYJKSQe3xPvFdrwTCAvCqDFn2ptUoJ97sPI4X0VRRRYyGIDe
+         we5gK0n3ruOHqZxxSVqq9GINaN7Ij/T/mH7afAXrvtqnhpFvp6IVF6bvdl3H6XwjrNJk
+         LCCfZCG7y62VOS2f7kYOoDo5XJTPs1PiSZwL+b9NSqTueeqPTtT0bLiMnanMV034RX4D
+         6gcA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=2WQT4l/r52c4uEuk7xcqLJkCZwpaFj6TO4IBzd3aDKM=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=X382F+xcZRJUXkOuoqeN7sHPouZ41TyizIChV1PjcqaN2x7WRl6qhnOjFMcGvixN4m
+         U9JA/BtQaex0M4ZnPGaXG2f7Sg1bYHbCbyMYolhpBzH8YFJPMIepmJMu00k7isq0Nxg4
+         wkdcw9ReZ/eHH1hyHWq/pMutw41glISqx1cQWuDkTfCKw521gD66qHE/5RngMONXQn4p
+         8U1cYloyGsYPqzvgL0o5712DFo2vdf4eFn3UYzz6mjX9qB1GljnZSpIX8ywNzVjkX/90
+         7OTFgdn4aan+EyUgzkU3qyUzXCpP+/VgtZAFJypYAcJlQOZzXYJ0blErSV5ZeNWJyEA4
+         7SBQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=atExNcid;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=QKacA9QJ;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id z19-20020a0cf013000000b0067f27b5ec64si12412450qvk.141.2024.01.17.15.07.21
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 17 Jan 2024 15:07:21 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=atExNcid;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=QKacA9QJ;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=2WQT4l/r52c4uEuk7xcqLJkCZwpaFj6TO4IBzd3aDKM=;
+	b=atExNcideBBp46vaY3gPcvaxMCrKnwZXzhnzL8i/JLvDbFf/A05EJEE6/K3PS+o6sarL
+	6nA6k4qCvvRWmZu62J7Ax/26hq4FrK4ZrYIcb11XOylx9sDzdhzZ+nrB4d3LPKpec+R2FW
+	JBSb3NthnAE/n7q8EsZTJbLi81JSJsnUkhx+UgTgCcZDqynRXCVLrRMd/q8oJHu2wFCKN2
+	QT9IZIqwGMZU6xaf31rg3dL4kgcuC5nCI0Qo1mMoWOsfeDCWXYHKiaUbXwtdqgbrgAQAFo
+	4dixy3iNmgS5FbjT6qZoJaI6DZYFUfzQGS+o4s6IAz7NJLE19aFp2+UL5waspZIw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=2WQT4l/r52c4uEuk7xcqLJkCZwpaFj6TO4IBzd3aDKM=;
+	b=QKacA9QJ/B8WLUsxZN60cez94YH64xq8v4I6m5s/CN1Xvb10WgeHksqH1Zx5OnYbJqjp
+	9Sw2CK2Ya6wZgT84HeMsJRxUJPaXq/5j4Oa/eDuT8mmTycdmNtWGq2QHhgpUZvDDNOSmb3
+	jcR0vNaryYYSRzxAA4zD3tKxo0VO6V+rU=
+Received: by filterdrecv-64944f8955-bj4f2 with SMTP id filterdrecv-64944f8955-bj4f2-1-65A85DA6-10
+        2024-01-17 23:07:18.258148916 +0000 UTC m=+7964748.738900224
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-19 (SG) with HTTP
+	id 3WLQ6GEgTOGUHWUgoE_lVA
+	Wed, 17 Jan 2024 23:07:18.099 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=9575a6bd4639f84f93104ba2a71bacf5378649588817bbde4c34f2123ac9
+Date: Wed, 17 Jan 2024 23:07:20 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <3WLQ6GEgTOGUHWUgoE_lVA@geopod-ismtpd-19>
+Subject: PRO/AH/EDR> Rabies (05): Malaysia (SK) rabid dog bites, stray control
+ urged
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iBk2nH86ErlgtNsH23WJRWmRWqZMn5eX0fKFo4y?=
+ =?us-ascii?Q?17JFDUZX6KYoIzJFbViPEDgnBFL43mvcpZC+JA0?=
+ =?us-ascii?Q?iHfoNIi=2FDTIcELj3Ixdsap39x3tsXPKYYUhD3Ba?=
+ =?us-ascii?Q?RW2RTXngjwozCJHeRNTwVpCKDsZnHybs9XxqpvM?=
+ =?us-ascii?Q?JitXHZI4hHINgY7keSK3kfuQXpHfkOC31MOO59?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUiShGf=2FO8XJWpH34Od4Nd?=
+ =?us-ascii?Q?fxXa6jil96uRcJkF+N+LeVnO1tx80ddOyoyOo=2Fc?=
+ =?us-ascii?Q?Brxcl3ERAm0cOY743=2FFH59DWiSf5OzXORh1DLKt?=
+ =?us-ascii?Q?hb1NMKty3PsA5ju0ZzxCrq1WQuZSEQf=2FJlWtgqv?=
+ =?us-ascii?Q?cZmsyCHlNUZsDgOyysRBrIvFVWV3Sbq3lqM8Bpl?=
+ =?us-ascii?Q?49Y9hnoAtOUV+=2FwOU1g1JdeoaRw23rhU+HC+6Ji?=
+ =?us-ascii?Q?3hFpz5npK9NIZ0JXdp9ja2USCke7b5PqJEaq+EB?=
+ =?us-ascii?Q?4O=2FUe50lhIbsQUp3cLbTPjsBVDO07x9oX8aMZoa?=
+ =?us-ascii?Q?j5YAr532y0sEz=2FooAk=2FOpR2wHtkwZ6JoYA=2F3GkW?=
+ =?us-ascii?Q?k=2FrfvO3EdYAvn2mjYjVh96dvRKXEmFTWH6Y16wH?=
+ =?us-ascii?Q?PgddosbT=2FFL+XFsAiNOi8ExQDKGaFdxwUtS6bc0?=
+ =?us-ascii?Q?QEWN9Cj64KyMegVqE1KZqPgkiPwJ8lT938D0+6t?=
+ =?us-ascii?Q?1YIbzCMjK0+h4=2FcHurtmgcA854ZQv6iemDs0sOe?=
+ =?us-ascii?Q?5xiKtbpBtVvpuj1=2F2WzOxg6S1nqBcVBVRGDYKyE?=
+ =?us-ascii?Q?EQcmdSm15Pvjix0QjOmTHTfudsSGFZqwI7a3WiP?=
+ =?us-ascii?Q?goEEWj0eUSC8oqqViD6C2iCPkD0x4byGFPbEHiz?=
+ =?us-ascii?Q?MmkrYqPs4Eisn8o+y2T8p5SGIbdA7906fJ+pvzl?=
+ =?us-ascii?Q?6OVBUVCANuncf1qZKzAEB1xzxF34U8wxvfO3Wmz?=
+ =?us-ascii?Q?PXPRrsX1Ykjxds61c1ZdkDZFhMGp6uvplAwXjMd?=
+ =?us-ascii?Q?QT7TtTX4=2FHYNpTRP3vJ6RVFhKA=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2EzRVHyoYlo?=
+ =?us-ascii?Q?jyQ64ZWMXyVm1dr=5FTPPLL8ibZYZg3J3dnVoMDAw?=
+ =?us-ascii?Q?dTAwMEJn7FNLVjEL=5FFX4=5FpE=5FknqunADzR1PYYlv?=
+ =?us-ascii?Q?bWwLu0Jc2qRpXXT0US0nDzBUYV-1H0LBz5eNE4U?=
+ =?us-ascii?Q?48Jpk0Cklgxp19P1fdQAOhVctrupeNveebwt5nP?=
+ =?us-ascii?Q?tu-czp=5FMVawCh3K3w=3D=3D=2EMbnOvD90KokkmYNjSV7?=
+ =?us-ascii?Q?LV6iO7VLh=5FTCIiGdRr2kiqkZoMDAwdTAwMALvQN?=
+ =?us-ascii?Q?57=5F2nRSv2WToUXOpbZGHQj-kepmegWjkXpziWJe?=
+ =?us-ascii?Q?0DlmeSMvowwx-iekCM6fCH4nFLc4BI0l6cf7ExB?=
+ =?us-ascii?Q?cPZt78BVuwpvvezsddHJRY6sDKQTIwpMBp7T7xr?=
+ =?us-ascii?Q?Cb6F9mwxmo5Wv5AHZ8bGBQRs637QcMjwY2aVHwc?=
+ =?us-ascii?Q?bW=5FDPV2=5FGWMFKyzwhxWwys-uXAwEv53=5F5zhd=5FcR?=
+ =?us-ascii?Q?aAWtyG2QVjp5mYEnAFM3uIXcUjnxFGGb1fnz9b3?=
+ =?us-ascii?Q?s5lJW0sHH604c0JTIakwff1HfeeeOCAWkf=5FJJB7?=
+ =?us-ascii?Q?5aOyX0zRF6H=5FpI5Dh8PWTczwB00DmpqPk3Em1mK?=
+ =?us-ascii?Q?CnfhCUKoqHTa61sG1xdQy7BQLMB65zxfcOF7GIH?=
+ =?us-ascii?Q?j9uctbuVI08WpRWNx5LiAFoBt4YdmWnCZYQsyTa?=
+ =?us-ascii?Q?dmC1B5o7n01n03L31szErwvsfwn-4KMPdQ18bBC?=
+ =?us-ascii?Q?yMu-qznZewfHfGNdlTjECGl9OjPDM8Ef68FfXif?=
+ =?us-ascii?Q?ud7CIXBO7BD5QeZr3PvMAhqiYTIjyaMOhGcvJi1?=
+ =?us-ascii?Q?8l91LYdIpcJfX1-XREmxOOewO-wAgqAHJ61c6c7?=
+ =?us-ascii?Q?yANQ5m-4jsWE3cqywUCaxPXuriZMqTbQbzes7ci?=
+ =?us-ascii?Q?=5FxsZSLshwae3LyCrfz7ve8QAsOf3Lvcrf6cJTjq?=
+ =?us-ascii?Q?VwtwJaGFptRIyZDKdcnZf5-=5FJLilKseeRUV3xB3?=
+ =?us-ascii?Q?4iBIkhJy0r5VfGFVuQ3gpfw5HLWWlh5VZtl2Tmt?=
+ =?us-ascii?Q?KeJg9JpZAMy8LzTNd4uiQNhz8UebxfwO1=5FJnRx3?=
+ =?us-ascii?Q?gGTA=5FgBMVD731ePal6N0D=5Ff3JoTU2gCuvb3zE-i?=
+ =?us-ascii?Q?Q5Da6WweoxAybqTpKX9B--xgY3lo5u6ifxP1PBJ?=
+ =?us-ascii?Q?audu0Y8ZvvzOGFy5O6GdbNfvn9n4n0izCvdBnAb?=
+ =?us-ascii?Q?m6YJWsbmGOqiwBEKwVoTuTR96Y=5FrTdYFooPYfNU?=
+ =?us-ascii?Q?lwAOkI1=5F9KS3xPtURx1kPnqPOHzAvGGV7Yrm6Y=5F?=
+ =?us-ascii?Q?pdIKGS-0brDkU3nRLQ2rMtIHKv07I2x=5Fp0DGsZj?=
+ =?us-ascii?Q?1869hoppbUXzrMHZ5gxErXBRkUux8hWIKi9ZBne?=
+ =?us-ascii?Q?EW-roA=3D=3D=3E?=
+
+--9575a6bd4639f84f93104ba2a71bacf5378649588817bbde4c34f2123ac9
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=utf-8
+Mime-Version: 1.0
+
+RABIES (05): MALAYSIA (SARAWAK) RABID DOG BITES, IMPLEMENTATION OF
+STRAY CONTROL URGED
+***************************************************************************=
+***********
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+[1]
+Date: Tue 16 Jan 2024
+Source: Malay Mail [edited]
+<https://www.malaymail.com/news/malaysia/2024/01/16/sarawak-minister-kuchin=
+g-bintulu-declared-rabies-infected-areas/112758>
+
+
+Kuching and Bintulu have been declared rabies-infected areas.
+
+Sarawak Minister for Food Industry, Commodity and Regional Development
+Datuk Stephen Rundi Utom said of the 16 samples collected, 12 dogs
+tested positive for rabies, 8 of which were in Kuching, 1 each in
+Padawan and Bau, and 2 in Bintulu.
+
+"All dogs tested are free-roaming and unvaccinated. Therefore, I would
+like to remind the public to take extra precautions and go to the
+clinic if bitten by an animal without fail," he said in a statement
+here today [16 Jan 2024].
+
+Rundi said, earlier today [16 Jan 2024], he had also signed the
+anti-rabies vaccination order under Section 40 (1) Veterinary Public
+Health Ordinance 1999 which requires that all dogs within the state to
+be submitted to anti-rabies vaccination and annual booster.
+
+He said dog owners must also be responsible for ensuring their pets
+are vaccinated with the anti-rabies vaccine.
+
+"Any owner or person in charge of a dog who fails to comply shall be
+liable to a fine of up to RM2500 [USD 530]. Dogs that are already
+exposed to rabies and do not have proper evidence of vaccination will
+be put to sleep," he said.
+
+Rundi said the Sarawak Department of Veterinary Services (DVS)
+together with the Immune Belt Enforcement Team and Sarawak Security
+and Enforcement Unit (UKPS) had intensified the anti-rabies
+vaccination programmes throughout the state.
+
+"The public can get their free dog anti-rabies vaccination at any
+government's veterinary offices during office hours or during the mass
+vaccination programme which will be announced from time to time on the
+official Sarawak DVS Facebook page. This year [2024] we target to
+vaccinate up to 50 000 dogs," he said.
+
+According to the State Health Department, Sarawak recorded 16 deaths
+last year [2023] from 18 human rabies cases.
+
+The cumulative total human rabies cases since July 2017 now stood at
+73, with 66 deaths.
+
+--
+Communicated by:
+ProMED
+via
+ProMED-MBDS
+
+[The following are some highlights of the challenges for rabies
+elimination in ASEAN Member States:
+"- AMS have a target to vaccinate at least 70% of the dog population
+-- this target is not reached in most settings.
+- Parenteral vaccine presents well-known challenges for vaccinating
+stray dogs; oral rabies vaccine may support increasing vaccination
+coverage=20
+- Budget allocation for purchasing, distributing, and administering
+canine rabies vaccines falls short of requirements in most AMS.=20
+- Limited resources and staff in animal health sector, including
+limited ability to engage private contractors to support mass dog
+vaccination efforts.
+- Dog bite victims not accessing post-exposure prophylaxis (PEP) due
+to lack of awareness of rabies risk, difficulties accessing health
+services, and costs of treatment.
+- Gaps in access to PEP are particularly pronounced in rural and
+remote areas, where most rabies deaths occur."
+(<https://rr-asia.woah.org/wp-content/uploads/2023/05/005_rabies-situation-=
+in-ams_2-4-may-bali.pdf>
+
+In terms of travelers' health, CDC indicates that "Rabid dogs are
+commonly found in Malaysia. However, if you are bitten or scratched by
+a dog or other mammal while in Malaysia, rabies treatment is often
+available. Consider rabies vaccination before your trip if your
+activities mean you will be around dogs or wildlife.
+
+"Travelers more likely to encounter rabid animals include
+=E2=80=A2 Campers, adventure travelers, or cave explorers (spelunkers)
+=E2=80=A2 Veterinarians, animal handlers, field biologists, or laboratory
+workers handling animal specimens
+=E2=80=A2 Visitors to rural areas
+
+"Since children are more likely to be bitten or scratched by a dog or
+other animals, consider rabies vaccination for children traveling to
+Malaysia".
+(<https://wwwnc.cdc.gov/travel/destinations/traveler/none/malaysia>)
+
+It is expected that the enhanced regulation coupled with appropriate
+measures for stray dogs will lead to the owned-dog full vaccination
+coverage in the 2 cities. - Mod.ST]
+
+******
+[2]
+Date: Mon 15 Jan 2024 4:57 p.m. MYT
+Source: Malay Mail [abridged, edited]
+<https://www.malaymail.com/news/malaysia/2024/01/15/make-kuching-streets-st=
+rays-free-environment-stampin-mp-says-after-recent-incidents-of-dog-bites/1=
+12563>
+
+
+Stampin [federal constituency] MP [Member of Parliament] Chong Chieng
+Jen today [15 Jan 2024] urged the state government and the Kuching
+South City Council (MBKS) to implement a strays-free environment in
+the city following recent rabid dog bite incidents in a housing
+estate.
+
+However, he explained that he is not advocating for the senseless
+culling of stray dogs, proposing instead for the government to set
+aside a plot of land to keep the stray dogs caught by MBKS and test
+them for rabies.
+
+"Stray dogs found to be positive will need to be culled while the
+non-infected ones will be neutered," he said in a statement.
+
+He said anyone claiming to be the owner of the dogs caught by MBKS can
+always claim back the dog subject to reimbursing MBKS for the expenses
+incurred and payment of a fine imposed for letting out the dogs. Chong
+urged the state government and MBKS to take immediate action in the
+interest of public safety.
+
+He said the recent rabid dog bite incidents incident involving 11
+victims at Tabuan Desa Indah has exposed the lackadaisical attitude
+and ineffectiveness of the state government and MBKS in handling the
+rabies control in the city.
+
+[Byline: Sulok Tawie]
+
+--
+Communicated by:
+ProMED
+via
+ProMED-MBDS
+
+["Kuching, officially the City of Kuching, is the capital and the most
+populous city in the state of Sarawak in Malaysia. It is also the
+capital of Kuching Division. The city is on the Sarawak River at the
+southwest tip of the state of Sarawak on the island of Borneo." -
+Mod.TTM
+(<https://en.wikipedia.org/wiki/Kuching>)]
+
+******
+[3]
+Date: Sun 14 Jan 2024 3:48 p.m. MYT
+Source: Malay Mail [edited]
+<https://www.malaymail.com/news/malaysia/2024/01/14/health-ministry-all-dog=
+-bite-victimsin-sarawak-stable/112372>
+
+
+All dog-bite victims in Sarawak are reported to be stable and have
+been administered rabies vaccination and rabies immunoglobulin (RIG)
+treatment, the Health Ministry (MOH) said today [14 Jan 2024].
+
+In a statement regarding the rabies-infected dog situation in Kuching,
+Sarawak, the ministry said that the cases involve 11 individuals who
+were treated as outpatients and one case who was admitted to the
+hospital for wound debridement and was discharged last Thursday [11
+Jan 2024].
+
+All 11 cases were bitten by the same stray dog, which was captured by
+the local authority (PBT) on 8 Jan [2024]. The laboratory test
+conducted by the Veterinary Services Department (DVS) on 11 Jan [2024]
+confirmed a positive rabies status.
+
+"As for the 12th case, reported to be bitten by a pet dog at Lorong
+Tabuan Timur, Kuching, the victim received treatment at the Sarawak
+General Hospital on 7 Jan [2024]. The dog was voluntarily surrendered
+to the PBT, and subsequent DVS laboratory test confirmed it to be
+rabies positive," the statement read.
+
+On 11 Jan [2024], Kuching South City Council (MBKS) mayor Datuk Wee
+Hong Seng reported 12 cases of people bitten by infected dogs in the
+Tabuan Desa Indah and Lorong Tabuan Timur areas, Sarawak.
+
+MOH said the Sarawak State Health Department, together with DVS, PBT,
+and relevant local agencies, would intensify control activities in the
+affected areas with the local community, including conducting dog
+vaccination campaigns to curb the spread of rabies infection.
+
+According to MOH, rabies infection can be prevented if given early
+treatment before being referred to health facilities. The ministry
+also outlined several rabies preventive measures, including
+immediately washing wounds on the skin or body parts that have been
+licked, bitten, or scratched by animals using running water and soap
+for at least 15 minutes and ensuring the completion of anti-rabies
+vaccination according to scheduled appointments.
+
+MOH also advised the public against handling stray animals, whether
+alive or dead, such as dogs and cats, and to report to the DVS or PBT
+for further action.
+
+--
+Communicated by:
+ProMED
+via
+ProMED-MBDS
+
+******
+[4]
+Date: Thu 11 Jan 2024 7:11 p.m. MYT
+Source: Free Malaysia Today [edited]
+<https://www.freemalaysiatoday.com/category/nation/2024/01/11/dog-with-rabi=
+es-bites-11-people-within-a-day/>
+
+
+A dog infected with rabies bit 11 people in Kuching, Sarawak, within
+24 hours on Sunday [7 Jan 2024].
+
+Kuching South City Council mayor Wee Hong Seng said the victims were
+aged between 11 and 81. He said he was "disturbed and distressed" by
+what happened.
+
+According to DayakDaily, Wee said there was a separate incident where
+a pet dog with rabies bit its owner. He said the victims have to go
+through the excruciating experience of undergoing treatment and
+waiting for months to see if it had been effective in curbing the
+disease.
+
+"I am sending my thoughts and best wishes to the families of the 12
+people bitten by the rabid dogs and hoping they will have a full
+recovery," he said.
+
+Wee said the majority of deaths caused by rabies so far were due to
+the victims' failure to report being bitten by dogs. He urged the
+public to seek treatment immediately if they were bitten by dogs or
+cats, even if they are their own pets.
+
+Sarawak has reported 73 cases involving humans since the outbreak of
+rabies was declared in July 2017, with 66 people dead. In 2023, 16
+people died from the disease, a slight increase compared to the 14
+recorded the year before [2022].
+
+Currently, 11 hospitals in Sarawak offer rabies immunoglobulin jabs
+for high-risk cases.
+
+--
+Communicated by:
+ProMED
+via
+ProMED-MBDS
+
+According to a Malay Mail article dated 13 Oct 2023, "The total area
+in Sarawak declared as rabies infected since 2017 is 73, said Food
+Industry, Commodity and Regional Development Minister Dakuk Seri Dr
+Stephen Rundi Utom. He pointed out that this year [2023] 91 dogs, 7
+cats, and 2 other animals were positive for rabies out of 572 samples
+tested.
+
+"'Animal rabies cases were detected in Kuching (51), Padawan (13),
+Samarahan (8), Bintulu (7), Tebedu (6), Lundu (6), Bau (2), Sibu (2),
+Lawas (1), Marudi (1), Selangau (1), Siburan (1), and Simunjan (1),'
+said Dr Rundi in a statement on the rabies situation in Sarawak.
+
+"Giving further details, he said as of yesterday [12 Oct 2023] the
+total number of dogs vaccinated by Department of Veterinary Services
+(DVS) Sarawak and Immune Belt Enforcement Team (IBET) across Sarawak
+was 36 567 dogs against the targeted 40 000 heads by year-end."
+(<https://www.malaymail.com/news/malaysia/2023/10/13/sarawak-minister-says-=
+73-areas-in-state-declared-as-rabies-infected/95928>)
+
+"Rabies is endemic in humans and animals in the Asia Pacific Region
+(AP Region), with dog-mediated rabies being the predominant source of
+disease. However, it is often under-diagnosed, under-reported, and
+under-funded, and is therefore considered to be a neglected disease.
+Over 95% of human rabies cases are associated with dog bites. Rabies
+control and subsequent elimination necessitate a multi-sectoral
+collaboration, using a One Health approach to stop disease
+transmission at its source."
+
+"As humans have close bonds with dogs, the threat of rabies
+transmission remains perpetual unless active surveillance and control
+measures are taken in dogs, the region's primary animal reservoirs for
+rabies virus. [As rabies is] a zoonotic disease that thrives depending
+on socio-cultural, economic, and human-led activities, it is essential
+to use a One Health approach in tackling the disease."
+(<https://rr-asia.woah.org/en/projects/rabies/>)
+
+The One Health approach in rabies case prevention aligns with the
+World Health Organization's (WHO) Global Strategic Plan, aiming to
+eliminate human deaths caused by dog-mediated rabies by 2030. -
+Mod.TTM
+
+[ProMED map of Sarawak, Malaysia:
+<https://promedmail.org/promed-post?place=3D8714241,2565>]
+
+[See Also:
+ProMED
+-------
+Rabies (04): Viet Nam (PY) dog bite mistaken as scratch from collar,
+fatal http://promedmail.org/post/20240113.8714212
+Rabies (02): India (Jammu and Kashmir) human, dog
+http://promedmail.org/post/20240110.8714167
+Rabies (01): India (GA) human, dog
+http://promedmail.org/post/20240104.87140672023
+2023
+----
+Rabies (57): India (KA) dog bite, human exposure
+http://promedmail.org/post/20231226.8713898
+Rabies (56): Viet Nam (GL) long incubation period
+http://promedmail.org/post/20231225.8713886
+Rabies (55): Myanmar (MO) dog, WOAH
+http://promedmail.org/post/20231223.8713873
+Rabies (52): India, dog bite, increase
+http://promedmail.org/post/20231210.8713623
+Rabies (50): India (UP) human, cat, dog, fatal
+http://promedmail.org/post/20231202.8713464
+Rabies (45): India (UP) human, dog
+http://promedmail.org/post/20231030.8712889
+Rabies (27): Asia (India, Philippines) human, dog
+http://promedmail.org/post/20230621.8710690
+2022
+----
+Rabies (53): Asia (Israel, India) animal, human, epidemiology, control
+http://promedmail.org/post/20221206.8707113
+Rabies (41): Asia (Afghanistan, India, Israel, Malaysia, Philippines,
+Vietnam) http://promedmail.org/post/20221001.8705891
+Rabies (32): Asia (Malaysia, Bhutan) human, dog
+http://promedmail.org/post/20201205.7995796
+Rabies (12): Asia (India) wolf, zoo
+http://promedmail.org/post/20220404.8702407
+Rabies (09): Eurasia (Ukraine, India, Israel) cat, human, cow, control
+http://promedmail.org/post/20220310.8701906
+2021
+----
+Rabies (31): Eurasia (India, Israel, Ukraine), Africa (S Africa)
+human, animal http://promedmail.org/post/20210827.8626789
+Rabies (25): Asia (India, Nepal) human, dog; (Israel) jackal, human
+exp http://promedmail.org/post/20210711.8511091
+2020
+----
+Rabies (19): Asia (Malaysia, Indonesia, Japan ex Philippines) animal,
+human http://promedmail.org/post/20200628.7517416
+Rabies (05): Asia (Israel, Bangladesh) animal, human
+http://promedmail.org/post/20200219.7005843
+2019
+----
+Rabies (46): Asia (Myanmar) dog, OIE
+http://promedmail.org/post/20190928.6698321
+Rabies (33): Asia (Cambodia) human, dog
+http://promedmail.org/post/20190605.6499719
+Rabies (29): Europe, Asia (Norway ex Philippines) human, dog
+http://promedmail.org/post/20190516.6471701
+Rabies (23): Asia (Thailand) human
+http://promedmail.org/post/20190428.6446053
+Rabies (21): Eurasia, Armenia (TV) dog, OIE
+http://promedmail.org/post/20190424.6436412
+Rabies (19): Eurasia, Armenia (AV), dog, OIE
+http://promedmail.org/post/20190418.6429961
+Rabies (18): Asia (Qatar ex Nepal) human, sylvatic exposure susp.,
+comment http://promedmail.org/post/20190416.6425196
+Rabies (17): Asia (Qatar ex Nepal) human, sylvatic exposure suspected,
+comment http://promedmail.org/post/20190411.6416702
+Rabies (16): Asia (Qatar ex Nepal) human, sylvatic exposure suspected
+http://promedmail.org/post/20190410.6412045
+Rabies (03): Africa, Asia, human, cattle, dog, counterfeit vaccine
+http://promedmail.org/post/20190202.6291746
+
+ProMED-MBDS
+-----------
+Rabies - Malaysia (01): (Sarawak) rabid dog bites, strays-free
+environment urged http://promedmail.org/post/20240115.8714241
+2023
+----
+Rabies - Malaysia (03): (Sarawak) pet dog
+http://promedmail.org/post/20231022.8712762
+Rabies - Malaysia (02): (Sarawak) human, fatal, pet dog exposure
+20230921.8712252
+Rabies - Malaysia: (Sarawak) update
+http://promedmail.org/post/20230307.8708788
+2022
+----
+Rabies - Malaysia (03): (Sarawak) increase, preventive measures
+20220926.8705803
+Rabies - Malaysia (02): (Selangor) fatal
+http://promedmail.org/post/20220410.8702524
+Rabies - Malaysia: (Sarawak) dog susp, human exposure
+20220221.8701572
+2021
+----
+Rabies - Malaysia (04): (Sarawak) dog vaccination
+http://promedmail.org/post/20210803.8565870
+Rabies - Malaysia (03): (Sarawak)
+http://promedmail.org/post/20210611.8439882
+Rabies - Malaysia (02): (Sarawak)
+http://promedmail.org/post/20210525.8380332
+Rabies - Malaysia: (Sarawak) fatal
+http://promedmail.org/post/20210314.8246518
+2020
+----
+Rabies - Malaysia (03): Sarawak, dog susp, human
+http://promedmail.org/post/20201225.8045922
+Rabies - Malaysia (02): (Sarawak) dog, human
+http://promedmail.org/post/20201130.7981479
+Rabies - Malaysia: (Sarawak)
+http://promedmail.org/post/20201026.7890934]]
+.................................................ttm/tw/st/tw/st/may/tw/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3DDE8j5b9dddIn5EQUIu0DuRsP4gMKl2OSQKKM6xtHp4loMDAwdTAwMHrJXxc=
+vBiKW5n19aLII3Tp7A1RZnLDi9kj44LFTFi7QAjM6WUQZTxqRObM9bcvYhAfcfV3H3cCVxEzEY-=
+_guMUNBQt9WJPY8LTGgMeDbjQ63K6jdXveZepjfFN_yeCeNrzgGO-E65nVNfQREr7la0xCmSaMx=
+Xhsx-Ozz_Dv7HR343Gj7Fmyn-Qx-mkEI7h51NR4iBei2Jx9ZpVlCPFT8fiYCYCu0KvfStrPVoge=
+Y88B93E1Qm1iEqKp37nliyp63sH9Na49Y-RYVfSaltFQ9K2HOoz-EheJm3nmI8ddzfhilGaW2ql=
+7HjJvfoAIyTZiWCmpm8OAxLyLe0MY5QiHkn_XFaOMdALxVEXY4xYCmihjhOAgYRDzsyPZ-dQVO_=
+t9fsqz8Aq7qXN6mre10HOHi_LlwFHhM3KoMT40T-fzPLw9kWv8c8d74BCruYK-w712Olm_AXN3a=
+LVE3pkxIq2yT2vVBFjwjuqDjiPFmiGAe5td_PgylpmfagKtDpl2LKURNyv57iPvanbVhirUqzlM=
+zfTHcmw5MGhq8KCu8zIHEN0UXEssJVSN566nmDRFZ1poa9_YAM3nZmyMMac3SpB9eceZ7cq16_n=
+eljpZYufcOmbmu_HmhscEmuw6HoRU4TzhaRHMjMplXKVv4VCmQBMELaGAihziDLjMA2gj3F3s-j=
+YXygQYCNbq_HUqxPC7EHGIY9BKizkUyEhbc-ugu0DGMYLVqS00vZz_ZZi92VUv_gTef5Rb60KZz=
+P7TqEO31y4Oj9lonnEfnK47j9QRvsIlCCHlG3URBHC7RQDJx0_BPkc1MAyAoJlWMnlFwHLicQLG=
+euETT1E_DedS0V-6pxERSDjUzfpFWiIhgWbttN4gCN6xclckONi500D4SSiZZApOgHD8oZEEKT5=
+gjtXnn7cf39NBToh0DEUCywdfiOS_hgP5EIa78uhRB6WpoeGnD-Wzp5vrtjfIGYYcDE8KHfHuFo=
+XheDWJ8EEnYp0wHodfloxZ_hlG-nkMyd9xJWdPafzmao7UCZDjjwHEmOTo6z6GzCW1Rp98incUW=
+qjplJP63J6vzm13tFAJ7-k1ZkElR0_uAZqHhSykTWnlEVY-LHj7U1DZoA6qaCWCZ3K8ys3y-S7_=
+v0ZhpHBHEhJjlifrnNQnOzliX-9Nzds9dm7YNivf80f0DLtfdJSGDmjmFm73QLBe )
+############################################################
+############################################################
+
+--9575a6bd4639f84f93104ba2a71bacf5378649588817bbde4c34f2123ac9
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>RABIES (05): MALAYSIA (SARAWAK) RABID DOG BITES, IMPLEMENTATION OF<br=
+>STRAY CONTROL URGED<br>***************************************************=
+***********************************<br>A ProMED-mail post<br><a href=3D"htt=
+ps://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisIijpefK5PNjW-mL-YZ=
+GnfgDOxU1G3gjwnPSi2Tfv3HA/432/__75uCSnTjyje_1JEHeLVw/h0/iBUGXYlMAde8RgSbXUs=
+xY0Jp9HMloDfqNyDrSKgJ6hE">http://www.promedmail.org</a><br>ProMED-mail is a=
+ program of the<br>International Society for Infectious Diseases<br><a href=
+=3D"https://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisCT5tpD4Upm3=
+qyMCbcYSQvc/432/__75uCSnTjyje_1JEHeLVw/h1/pkZ3KI2mSjxOx4WlHu5WgPp7XpZCZc_Ov=
+66ePrnHD4U">http://www.isid.org</a><br><br>[1]=0D<br>Date: Tue 16 Jan 2024=0D=
+<br>Source: Malay Mail [edited]=0D<br><a href=3D"https://u19268662.ct.sendg=
+rid.net/ss/c/TLh_csrC34X_iXpbYoMam7ahPUvJCgaVXAWsO3Ya-pBEKV8Wt8tBNcfAgpKZ74=
+0w1GaHaH3zR4jYnl4SPm10uWvWmRd3QZYe_DlORNtn1iErgrZcIEWXyZDC8uXS17Wsw-22Kgt51=
+bDHf_TwkUgnKsCjfKKwrrkr_Lq42h6bbEtYsOM29v7YZaZgQJvFa98v/432/__75uCSnTjyje_1=
+JEHeLVw/h2/E8yKPZuTtEJrhBJp93pd05OHb5v72SOJDieKvZ8LKVo">https://www.malayma=
+il.com/news/malaysia/2024/01/16/sarawak-minister-kuching-bintulu-declared-r=
+abies-infected-areas/112758</a>=0D<br>=0D<br>=0D<br>Kuching and Bintulu hav=
+e been declared rabies-infected areas.=0D<br>=0D<br>Sarawak Minister for Fo=
+od Industry, Commodity and Regional Development<br>Datuk Stephen Rundi Utom=
+ said of the 16 samples collected, 12 dogs<br>tested positive for rabies, 8=
+ of which were in Kuching, 1 each in<br>Padawan and Bau, and 2 in Bintulu.=0D=
+<br>=0D<br>"All dogs tested are free-roaming and unvaccinated. Therefore, I=
+ would<br>like to remind the public to take extra precautions and go to the=
+<br>clinic if bitten by an animal without fail," he said in a statement<br>=
+here today [16 Jan 2024].=0D<br>=0D<br>Rundi said, earlier today [16 Jan 20=
+24], he had also signed the<br>anti-rabies vaccination order under Section =
+40 (1) Veterinary Public<br>Health Ordinance 1999 which requires that all d=
+ogs within the state to<br>be submitted to anti-rabies vaccination and annu=
+al booster.=0D<br>=0D<br>He said dog owners must also be responsible for en=
+suring their pets<br>are vaccinated with the anti-rabies vaccine.=0D<br>=0D=
+<br>"Any owner or person in charge of a dog who fails to comply shall be<br=
+>liable to a fine of up to RM2500 [USD 530]. Dogs that are already<br>expos=
+ed to rabies and do not have proper evidence of vaccination will<br>be put =
+to sleep," he said.=0D<br>=0D<br>Rundi said the Sarawak Department of Veter=
+inary Services (DVS)<br>together with the Immune Belt Enforcement Team and =
+Sarawak Security<br>and Enforcement Unit (UKPS) had intensified the anti-ra=
+bies<br>vaccination programmes throughout the state.=0D<br>=0D<br>"The publ=
+ic can get their free dog anti-rabies vaccination at any<br>government's ve=
+terinary offices during office hours or during the mass<br>vaccination prog=
+ramme which will be announced from time to time on the<br>official Sarawak =
+DVS Facebook page. This year [2024] we target to=0D<br>vaccinate up to 50 0=
+00 dogs," he said.=0D<br>=0D<br>According to the State Health Department, S=
+arawak recorded 16 deaths<br>last year [2023] from 18 human rabies cases.=0D=
+<br>=0D<br>The cumulative total human rabies cases since July 2017 now stoo=
+d at<br>73, with 66 deaths.=0D<br>=0D<br>--=0D<br>Communicated by:=0D<br>Pr=
+oMED=0D<br>via=0D<br>ProMED-MBDS=0D<br>=0D<br>[The following are some highl=
+ights of the challenges for rabies<br>elimination in ASEAN Member States:=0D=
+<br>"- AMS have a target to vaccinate at least 70% of the dog population=0D=
+<br>-- this target is not reached in most settings.=0D<br>- Parenteral vacc=
+ine presents well-known challenges for vaccinating<br>stray dogs; oral rabi=
+es vaccine may support increasing vaccination<br>coverage=20=0D<br>- Budget=
+ allocation for purchasing, distributing, and administering<br>canine rabie=
+s vaccines falls short of requirements in most AMS.=20=0D<br>- Limited reso=
+urces and staff in animal health sector, including<br>limited ability to en=
+gage private contractors to support mass dog<br>vaccination efforts.=0D<br>=
+- Dog bite victims not accessing post-exposure prophylaxis (PEP) due<br>to =
+lack of awareness of rabies risk, difficulties accessing health<br>services=
+, and costs of treatment.=0D<br>- Gaps in access to PEP are particularly pr=
+onounced in rural and<br>remote areas, where most rabies deaths occur."<br>=
+(<a href=3D"https://u19268662.ct.sendgrid.net/ss/c/suRyKAAhd_WyEaNz14Vl-k2b=
+yiv_LMJYHMxvYOBQfB94UtCmeJxIs3VGf4KDb_wWNfPXLLY2kz5umRtVm69NCFEVnNWV4G1pMbF=
+QKgc-c0w7-gwvO0WJepT4BvjAD9jNOUEhCjBZy0Pp-xsJ7uMSqQ/432/__75uCSnTjyje_1JEHe=
+LVw/h3/0-alprTMyXrmh25uvQB5-bCwGEfvUl_GJd40S0UKq60">https://rr-asia.woah.or=
+g/wp-content/uploads/2023/05/005_rabies-situation-in-ams_2-4-may-bali.pdf</=
+a>=0D<br>=0D<br>In terms of travelers' health, CDC indicates that "Rabid do=
+gs are<br>commonly found in Malaysia. However, if you are bitten or scratch=
+ed by<br>a dog or other mammal while in Malaysia, rabies treatment is often=
+<br>available. Consider rabies vaccination before your trip if your<br>acti=
+vities mean you will be around dogs or wildlife.=0D<br>=0D<br>"Travelers mo=
+re likely to encounter rabid animals include=0D<br>=E2=80=A2 Campers, adven=
+ture travelers, or cave explorers (spelunkers)=0D<br>=E2=80=A2 Veterinarian=
+s, animal handlers, field biologists, or laboratory<br>workers handling ani=
+mal specimens=0D<br>=E2=80=A2 Visitors to rural areas=0D<br>=0D<br>"Since c=
+hildren are more likely to be bitten or scratched by a dog or<br>other anim=
+als, consider rabies vaccination for children traveling to<br>Malaysia".<br=
+>(<a href=3D"https://u19268662.ct.sendgrid.net/ss/c/TLh_csrC34X_iXpbYoMam0y=
+k53gLuaxD0hpHJCqf4KX_jHPYRC0PnJNThn6uU6fMGBtHSwBW0T6XZjVuLtoV0vDabKKqDva4Ee=
+SnXnnDTHU/432/__75uCSnTjyje_1JEHeLVw/h4/q5tthezv20VRLD9q9O2A4dMtgm4wKQU5RMe=
+dPFRYBw4">https://wwwnc.cdc.gov/travel/destinations/traveler/none/malaysia<=
+/a>)=0D<br>=0D<br>It is expected that the enhanced regulation coupled with =
+appropriate<br>measures for stray dogs will lead to the owned-dog full vacc=
+ination<br>coverage in the 2 cities. - Mod.ST]=0D<br>=0D<br>******=0D<br>[2=
+]=0D<br>Date: Mon 15 Jan 2024 4:57 p.m. MYT=0D<br>Source: Malay Mail [abrid=
+ged, edited]=0D<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/TLh_cs=
+rC34X_iXpbYoMam7ahPUvJCgaVXAWsO3Ya-pBEKV8Wt8tBNcfAgpKZ740ww304410vx1qOHp7I5=
+kBgwkLGNoHnLh5Z4KJJyzmVIyprwKe-1Mw9CItVNsmV7VfvqcYRlvGqIGy5h--GgqFn-WwRQWUI=
+okrkZPTXUfysOyd3fySX4OqxwC_qGknE4jNuwKfFkD0BDTPUsplmdlsJCoqtfKvUnBMD6zrErSD=
+fFvU/432/__75uCSnTjyje_1JEHeLVw/h5/P0Hq-m4ktRzolRvb6hRSqFW-fZF4dZXz6zob7oIB=
+4NM">https://www.malaymail.com/news/malaysia/2024/01/15/make-kuching-street=
+s-strays-free-environment-stampin-mp-says-after-recent-incidents-of-dog-bit=
+es/112563</a>=0D<br>=0D<br>=0D<br>Stampin [federal constituency] MP [Member=
+ of Parliament] Chong Chieng<br>Jen today [15 Jan 2024] urged the state gov=
+ernment and the Kuching<br>South City Council (MBKS) to implement a strays-=
+free environment in<br>the city following recent rabid dog bite incidents i=
+n a housing<br>estate.=0D<br>=0D<br>However, he explained that he is not ad=
+vocating for the senseless<br>culling of stray dogs, proposing instead for =
+the government to set<br>aside a plot of land to keep the stray dogs caught=
+ by MBKS and test<br>them for rabies.=0D<br>=0D<br>"Stray dogs found to be =
+positive will need to be culled while the<br>non-infected ones will be neut=
+ered," he said in a statement.=0D<br>=0D<br>He said anyone claiming to be t=
+he owner of the dogs caught by MBKS can<br>always claim back the dog subjec=
+t to reimbursing MBKS for the expenses<br>incurred and payment of a fine im=
+posed for letting out the dogs. Chong<br>urged the state government and MBK=
+S to take immediate action in the<br>interest of public safety.=0D<br>=0D<b=
+r>He said the recent rabid dog bite incidents incident involving 11<br>vict=
+ims at Tabuan Desa Indah has exposed the lackadaisical attitude<br>and inef=
+fectiveness of the state government and MBKS in handling the<br>rabies cont=
+rol in the city.=0D<br>=0D<br>[Byline: Sulok Tawie]=0D<br>=0D<br>--=0D<br>C=
+ommunicated by:=0D<br>ProMED=0D<br>via=0D<br>ProMED-MBDS=0D<br>=0D<br>["Kuc=
+hing, officially the City of Kuching, is the capital and the most<br>populo=
+us city in the state of Sarawak in Malaysia. It is also the<br>capital of K=
+uching Division. The city is on the Sarawak River at the<br>southwest tip o=
+f the state of Sarawak on the island of Borneo." -<br>Mod.TTM=0D<br>(<a hre=
+f=3D"https://u19268662.ct.sendgrid.net/ss/c/u6Jy221DtLTd6phwYNECndCVDGULFcC=
+LoA-Mb23Mb1Wc6kCVElJexke6jzt92ADt/432/__75uCSnTjyje_1JEHeLVw/h6/A_bFblggGZA=
+XXddklcZzI1nazrtV4-haycYKxipmYOQ">https://en.wikipedia.org/wiki/Kuching</a>=
+)]=0D<br>=0D<br>******=0D<br>[3]=0D<br>Date: Sun 14 Jan 2024 3:48 p.m. MYT=0D=
+<br>Source: Malay Mail [edited]=0D<br><a href=3D"https://u19268662.ct.sendg=
+rid.net/ss/c/TLh_csrC34X_iXpbYoMam7ahPUvJCgaVXAWsO3Ya-pBEKV8Wt8tBNcfAgpKZ74=
+0wRvW3klVvAgJlCOr4Tt34KiKwCZ1DWhHsVg3U2y9MtfXAMYEYlOWyriBDfOfzCtXQoAb6YvTQ_=
+EcTSTWsoQnxTXsFNZ5sV7Prl29iv1gj87I/432/__75uCSnTjyje_1JEHeLVw/h7/Wxi8SHOpSL=
+M311klXtBve_PzGLNShDy-kVjFr0pZGiE">https://www.malaymail.com/news/malaysia/=
+2024/01/14/health-ministry-all-dog-bite-victimsin-sarawak-stable/112372</a>=0D=
+<br>=0D<br>=0D<br>All dog-bite victims in Sarawak are reported to be stable=
+ and have<br>been administered rabies vaccination and rabies immunoglobulin=
+ (RIG)<br>treatment, the Health Ministry (MOH) said today [14 Jan 2024].=0D=
+<br>=0D<br>In a statement regarding the rabies-infected dog situation in Ku=
+ching,<br>Sarawak, the ministry said that the cases involve 11 individuals =
+who<br>were treated as outpatients and one case who was admitted to the<br>=
+hospital for wound debridement and was discharged last Thursday [11<br>Jan =
+2024].=0D<br>=0D<br>All 11 cases were bitten by the same stray dog, which w=
+as captured by<br>the local authority (PBT) on 8 Jan [2024]. The laboratory=
+ test<br>conducted by the Veterinary Services Department (DVS) on 11 Jan [2=
+024]<br>confirmed a positive rabies status.=0D<br>=0D<br>"As for the 12th c=
+ase, reported to be bitten by a pet dog at Lorong<br>Tabuan Timur, Kuching,=
+ the victim received treatment at the Sarawak<br>General Hospital on 7 Jan =
+[2024]. The dog was voluntarily surrendered<br>to the PBT, and subsequent D=
+VS laboratory test confirmed it to be<br>rabies positive," the statement re=
+ad.=0D<br>=0D<br>On 11 Jan [2024], Kuching South City Council (MBKS) mayor =
+Datuk Wee<br>Hong Seng reported 12 cases of people bitten by infected dogs =
+in the<br>Tabuan Desa Indah and Lorong Tabuan Timur areas, Sarawak.=0D<br>=0D=
+<br>MOH said the Sarawak State Health Department, together with DVS, PBT,<b=
+r>and relevant local agencies, would intensify control activities in the<br=
+>affected areas with the local community, including conducting dog<br>vacci=
+nation campaigns to curb the spread of rabies infection.=0D<br>=0D<br>Accor=
+ding to MOH, rabies infection can be prevented if given early<br>treatment =
+before being referred to health facilities. The ministry<br>also outlined s=
+everal rabies preventive measures, including<br>immediately washing wounds =
+on the skin or body parts that have been<br>licked, bitten, or scratched by=
+ animals using running water and soap<br>for at least 15 minutes and ensuri=
+ng the completion of anti-rabies<br>vaccination according to scheduled appo=
+intments.=0D<br>=0D<br>MOH also advised the public against handling stray a=
+nimals, whether<br>alive or dead, such as dogs and cats, and to report to t=
+he DVS or PBT<br>for further action.=0D<br>=0D<br>--=0D<br>Communicated by:=0D=
+<br>ProMED=0D<br>via=0D<br>ProMED-MBDS=0D<br>=0D<br>******=0D<br>[4]=0D<br>=
+Date: Thu 11 Jan 2024 7:11 p.m. MYT=0D<br>Source: Free Malaysia Today [edit=
+ed]=0D<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/TLh_csrC34X_iXp=
+bYoMam6KO77Kt4RQ_Gkb4eH4BMIXkTopO83MD4YMMuyPOKPKB65WlifSkjhLc9jnkPvTweRqn3S=
+rqXCjh7z-L0epaGfrqbOb-OTzPxlymt9Al_1RHnh7-l5TbiVM0zdtZNKoYoeRJqNQpy8VRVXytz=
+YjTsF0/432/__75uCSnTjyje_1JEHeLVw/h8/VuxVFWdqb6z3Y5omLUOfj3yaFwYgppL1GeCpjo=
+bAdIE">https://www.freemalaysiatoday.com/category/nation/2024/01/11/dog-wit=
+h-rabies-bites-11-people-within-a-day/</a>=0D<br>=0D<br>=0D<br>A dog infect=
+ed with rabies bit 11 people in Kuching, Sarawak, within<br>24 hours on Sun=
+day [7 Jan 2024].=0D<br>=0D<br>Kuching South City Council mayor Wee Hong Se=
+ng said the victims were<br>aged between 11 and 81. He said he was "disturb=
+ed and distressed" by<br>what happened.=0D<br>=0D<br>According to DayakDail=
+y, Wee said there was a separate incident where<br>a pet dog with rabies bi=
+t its owner. He said the victims have to go<br>through the excruciating exp=
+erience of undergoing treatment and<br>waiting for months to see if it had =
+been effective in curbing the<br>disease.=0D<br>=0D<br>"I am sending my tho=
+ughts and best wishes to the families of the 12<br>people bitten by the rab=
+id dogs and hoping they will have a full<br>recovery," he said.=0D<br>=0D<b=
+r>Wee said the majority of deaths caused by rabies so far were due to<br>th=
+e victims' failure to report being bitten by dogs. He urged the<br>public t=
+o seek treatment immediately if they were bitten by dogs or<br>cats, even i=
+f they are their own pets.=0D<br>=0D<br>Sarawak has reported 73 cases invol=
+ving humans since the outbreak of<br>rabies was declared in July 2017, with=
+ 66 people dead. In 2023, 16<br>people died from the disease, a slight incr=
+ease compared to the 14<br>recorded the year before [2022].=0D<br>=0D<br>Cu=
+rrently, 11 hospitals in Sarawak offer rabies immunoglobulin jabs<br>for hi=
+gh-risk cases.=0D<br>=0D<br>--=0D<br>Communicated by:=0D<br>ProMED=0D<br>vi=
+a=0D<br>ProMED-MBDS=0D<br>=0D<br>According to a Malay Mail article dated 13=
+ Oct 2023, "The total area<br>in Sarawak declared as rabies infected since =
+2017 is 73, said Food<br>Industry, Commodity and Regional Development Minis=
+ter Dakuk Seri Dr<br>Stephen Rundi Utom. He pointed out that this year [202=
+3] 91 dogs, 7<br>cats, and 2 other animals were positive for rabies out of =
+572 samples<br>tested.=0D<br>=0D<br>"'Animal rabies cases were detected in =
+Kuching (51), Padawan (13),<br>Samarahan (8), Bintulu (7), Tebedu (6), Lund=
+u (6), Bau (2), Sibu (2),<br>Lawas (1), Marudi (1), Selangau (1), Siburan (=
+1), and Simunjan (1),'<br>said Dr Rundi in a statement on the rabies situat=
+ion in Sarawak.=0D<br>=0D<br>"Giving further details, he said as of yesterd=
+ay [12 Oct 2023] the<br>total number of dogs vaccinated by Department of Ve=
+terinary Services<br>(DVS) Sarawak and Immune Belt Enforcement Team (IBET) =
+across Sarawak<br>was 36 567 dogs against the targeted 40 000 heads by year=
+-end."=0D<br>(<a href=3D"https://u19268662.ct.sendgrid.net/ss/c/TLh_csrC34X=
+_iXpbYoMam7ahPUvJCgaVXAWsO3Ya-pBEKV8Wt8tBNcfAgpKZ740wn8Mgv8gV_u7lAX_lROwG0T=
+52TeE1fX1zz1U_3FYa3eZokyUeERI8peFmtzKyLTe4QNCHSXTustd92vI4RhRvOnE1ym2_FzOrd=
+15IxQ41zzCYuu9JtxEw0qYSDJCP7Xtq/432/__75uCSnTjyje_1JEHeLVw/h9/lK95xa9GEJPVd=
+hGYco4dOlIIxVWWSD_vP2NlOEU5BOY">https://www.malaymail.com/news/malaysia/202=
+3/10/13/sarawak-minister-says-73-areas-in-state-declared-as-rabies-infected=
+/95928</a>)=0D<br>=0D<br>"Rabies is endemic in humans and animals in the As=
+ia Pacific Region<br>(AP Region), with dog-mediated rabies being the predom=
+inant source of<br>disease. However, it is often under-diagnosed, under-rep=
+orted, and<br>under-funded, and is therefore considered to be a neglected d=
+isease.<br>Over 95% of human rabies cases are associated with dog bites. Ra=
+bies<br>control and subsequent elimination necessitate a multi-sectoral<br>=
+collaboration, using a One Health approach to stop disease<br>transmission =
+at its source."=0D<br>=0D<br>"As humans have close bonds with dogs, the thr=
+eat of rabies<br>transmission remains perpetual unless active surveillance =
+and control<br>measures are taken in dogs, the region's primary animal rese=
+rvoirs for<br>rabies virus. [As rabies is] a zoonotic disease that thrives =
+depending<br>on socio-cultural, economic, and human-led activities, it is e=
+ssential<br>to use a One Health approach in tackling the disease."=0D<br>(<=
+a href=3D"https://u19268662.ct.sendgrid.net/ss/c/suRyKAAhd_WyEaNz14Vl-k2byi=
+v_LMJYHMxvYOBQfB_FfroBbWDPb_LdfChYGgSP7YE8lnxBr994QzbjQqQ6AQ/432/__75uCSnTj=
+yje_1JEHeLVw/h10/IYlbV2A6MaFJzfbDXpjpHc2n1fQZcCHtlxdZY5pKxaA">https://rr-as=
+ia.woah.org/en/projects/rabies/</a>)=0D<br>=0D<br>The One Health approach i=
+n rabies case prevention aligns with the<br>World Health Organization's (WH=
+O) Global Strategic Plan, aiming to<br>eliminate human deaths caused by dog=
+-mediated rabies by 2030. -<br>Mod.TTM<br><br>[ProMED map of Sarawak, Malay=
+sia:<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/sSnCkKCWBvais3EuV=
+AOvgy2WOIX7pp1nXnn4AbwuQ3Z6WbkfhqXYXU-aTMPJ8yTh5lxeEvuoGRXk7E2xuR9OCA/432/_=
+_75uCSnTjyje_1JEHeLVw/h11/SpvWESxKS0e2kaAEaAH1LeG1U8N45H1S07H3AWRU_g4">http=
+s://promedmail.org/promed-post?place=3D8714241,2565</a>]<br><br>[See Also:<=
+br>ProMED=0D<br>-------=0D<br>Rabies (04): Viet Nam (PY) dog bite mistaken =
+as scratch from collar,<br>fatal http://promedmail.org/post/20240113.871421=
+2=0D<br>Rabies (02): India (Jammu and Kashmir) human, dog<br>http://promedm=
+ail.org/post/20240110.8714167=0D<br>Rabies (01): India (GA) human, dog<br>h=
+ttp://promedmail.org/post/20240104.87140672023=0D<br>2023=0D<br>----=0D<br>=
+Rabies (57): India (KA) dog bite, human exposure<br>http://promedmail.org/p=
+ost/20231226.8713898=0D<br>Rabies (56): Viet Nam (GL) long incubation perio=
+d<br>http://promedmail.org/post/20231225.8713886=0D<br>Rabies (55): Myanmar=
+ (MO) dog, WOAH<br>http://promedmail.org/post/20231223.8713873=0D<br>Rabies=
+ (52): India, dog bite, increase<br>http://promedmail.org/post/20231210.871=
+3623=0D<br>Rabies (50): India (UP) human, cat, dog, fatal<br>http://promedm=
+ail.org/post/20231202.8713464=0D<br>Rabies (45): India (UP) human, dog<br>h=
+ttp://promedmail.org/post/20231030.8712889=0D<br>Rabies (27): Asia (India, =
+Philippines) human, dog<br>http://promedmail.org/post/20230621.8710690=0D<b=
+r>2022=0D<br>----=0D<br>Rabies (53): Asia (Israel, India) animal, human, ep=
+idemiology, control<br>http://promedmail.org/post/20221206.8707113=0D<br>Ra=
+bies (41): Asia (Afghanistan, India, Israel, Malaysia, Philippines,<br>Viet=
+nam) http://promedmail.org/post/20221001.8705891=0D<br>Rabies (32): Asia (M=
+alaysia, Bhutan) human, dog<br>http://promedmail.org/post/20201205.7995796=0D=
+<br>Rabies (12): Asia (India) wolf, zoo<br>http://promedmail.org/post/20220=
+404.8702407=0D<br>Rabies (09): Eurasia (Ukraine, India, Israel) cat, human,=
+ cow, control<br>http://promedmail.org/post/20220310.8701906=0D<br>2021=0D<=
+br>----=0D<br>Rabies (31): Eurasia (India, Israel, Ukraine), Africa (S Afri=
+ca)<br>human, animal http://promedmail.org/post/20210827.8626789=0D<br>Rabi=
+es (25): Asia (India, Nepal) human, dog; (Israel) jackal, human<br>exp http=
+://promedmail.org/post/20210711.8511091=0D<br>2020=0D<br>----=0D<br>Rabies =
+(19): Asia (Malaysia, Indonesia, Japan ex Philippines) animal,<br>human htt=
+p://promedmail.org/post/20200628.7517416=0D<br>Rabies (05): Asia (Israel, B=
+angladesh) animal, human<br>http://promedmail.org/post/20200219.7005843=0D<=
+br>2019=0D<br>----=0D<br>Rabies (46): Asia (Myanmar) dog, OIE<br>http://pro=
+medmail.org/post/20190928.6698321=0D<br>Rabies (33): Asia (Cambodia) human,=
+ dog<br>http://promedmail.org/post/20190605.6499719=0D<br>Rabies (29): Euro=
+pe, Asia (Norway ex Philippines) human, dog<br>http://promedmail.org/post/2=
+0190516.6471701=0D<br>Rabies (23): Asia (Thailand) human<br>http://promedma=
+il.org/post/20190428.6446053=0D<br>Rabies (21): Eurasia, Armenia (TV) dog, =
+OIE<br>http://promedmail.org/post/20190424.6436412=0D<br>Rabies (19): Euras=
+ia, Armenia (AV), dog, OIE<br>http://promedmail.org/post/20190418.6429961=0D=
+<br>Rabies (18): Asia (Qatar ex Nepal) human, sylvatic exposure susp.,<br>c=
+omment http://promedmail.org/post/20190416.6425196=0D<br>Rabies (17): Asia =
+(Qatar ex Nepal) human, sylvatic exposure suspected,<br>comment http://prom=
+edmail.org/post/20190411.6416702=0D<br>Rabies (16): Asia (Qatar ex Nepal) h=
+uman, sylvatic exposure suspected<br>http://promedmail.org/post/20190410.64=
+12045=0D<br>Rabies (03): Africa, Asia, human, cattle, dog, counterfeit vacc=
+ine<br>http://promedmail.org/post/20190202.6291746=0D<br>=0D<br>ProMED-MBDS=0D=
+<br>-----------=0D<br>Rabies - Malaysia (01): (Sarawak) rabid dog bites, st=
+rays-free<br>environment urged http://promedmail.org/post/20240115.8714241=0D=
+<br>2023=0D<br>----=0D<br>Rabies - Malaysia (03): (Sarawak) pet dog<br>http=
+://promedmail.org/post/20231022.8712762=0D<br>Rabies - Malaysia (02): (Sara=
+wak) human, fatal, pet dog exposure=0D<br>20230921.8712252=0D<br>Rabies - M=
+alaysia: (Sarawak) update<br>http://promedmail.org/post/20230307.8708788=0D=
+<br>2022=0D<br>----=0D<br>Rabies - Malaysia (03): (Sarawak) increase, preve=
+ntive measures=0D<br>20220926.8705803=0D<br>Rabies - Malaysia (02): (Selang=
+or) fatal<br>http://promedmail.org/post/20220410.8702524=0D<br>Rabies - Mal=
+aysia: (Sarawak) dog susp, human exposure=0D<br>20220221.8701572=0D<br>2021=0D=
+<br>----=0D<br>Rabies - Malaysia (04): (Sarawak) dog vaccination<br>http://=
+promedmail.org/post/20210803.8565870=0D<br>Rabies - Malaysia (03): (Sarawak=
+)<br>http://promedmail.org/post/20210611.8439882=0D<br>Rabies - Malaysia (0=
+2): (Sarawak)<br>http://promedmail.org/post/20210525.8380332=0D<br>Rabies -=
+ Malaysia: (Sarawak) fatal<br>http://promedmail.org/post/20210314.8246518=0D=
+<br>2020=0D<br>----=0D<br>Rabies - Malaysia (03): Sarawak, dog susp, human<=
+br>http://promedmail.org/post/20201225.8045922=0D<br>Rabies - Malaysia (02)=
+: (Sarawak) dog, human<br>http://promedmail.org/post/20201130.7981479=0D<br=
+>Rabies - Malaysia: (Sarawak)<br>http://promedmail.org/post/20201026.789093=
+4]]<br>.................................................ttm/tw/st/tw/st/may=
+/tw/jh<br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3DDE8j5b9dddIn5EQUIu0DuRsP4gMKl2OSQKKM6xtHp4loMDAwdT=
+AwMHrJXxcvBiKW5n19aLII3Tp7A1RZnLDi9kj44LFTFi7QAjM6WUQZTxqRObM9bcvYhAfcfV3H3=
+cCVxEzEY-_guMUNBQt9WJPY8LTGgMeDbjQ63K6jdXveZepjfFN_yeCeNrzgGO-E65nVNfQREr7l=
+a0xCmSaMxXhsx-Ozz_Dv7HR343Gj7Fmyn-Qx-mkEI7h51NR4iBei2Jx9ZpVlCPFT8fiYCYCu0Kv=
+fStrPVogeY88B93E1Qm1iEqKp37nliyp63sH9Na49Y-RYVfSaltFQ9K2HOoz-EheJm3nmI8ddzf=
+hilGaW2ql7HjJvfoAIyTZiWCmpm8OAxLyLe0MY5QiHkn_XFaOMdALxVEXY4xYCmihjhOAgYRDzs=
+yPZ-dQVO_t9fsqz8Aq7qXN6mre10HOHi_LlwFHhM3KoMT40T-fzPLw9kWv8c8d74BCruYK-w712=
+Olm_AXN3aLVE3pkxIq2yT2vVBFjwjuqDjiPFmiGAe5td_PgylpmfagKtDpl2LKURNyv57iPvanb=
+VhirUqzlMzfTHcmw5MGhq8KCu8zIHEN0UXEssJVSN566nmDRFZ1poa9_YAM3nZmyMMac3SpB9ec=
+eZ7cq16_neljpZYufcOmbmu_HmhscEmuw6HoRU4TzhaRHMjMplXKVv4VCmQBMELaGAihziDLjMA=
+2gj3F3s-jYXygQYCNbq_HUqxPC7EHGIY9BKizkUyEhbc-ugu0DGMYLVqS00vZz_ZZi92VUv_gTe=
+f5Rb60KZzP7TqEO31y4Oj9lonnEfnK47j9QRvsIlCCHlG3URBHC7RQDJx0_BPkc1MAyAoJlWMnl=
+FwHLicQLGeuETT1E_DedS0V-6pxERSDjUzfpFWiIhgWbttN4gCN6xclckONi500D4SSiZZApOgH=
+D8oZEEKT5gjtXnn7cf39NBToh0DEUCywdfiOS_hgP5EIa78uhRB6WpoeGnD-Wzp5vrtjfIGYYcD=
+E8KHfHuFoXheDWJ8EEnYp0wHodfloxZ_hlG-nkMyd9xJWdPafzmao7UCZDjjwHEmOTo6z6GzCW1=
+Rp98incUWqjplJP63J6vzm13tFAJ7-k1ZkElR0_uAZqHhSykTWnlEVY-LHj7U1DZoA6qaCWCZ3K=
+8ys3y-S7_v0ZhpHBHEhJjlifrnNQnOzliX-9Nzds9dm7YNivf80f0DLtfdJSGDmjmFm73QLBe" =
+target=3D"_blank" class=3D"Unsubscribe--unsubscribePreferences" style=3D"fo=
+nt-family:sans-serif;text-decoration:none;">Unsubscribe Preferences</a></di=
+v><br>############################################################<br>#####=
+#######################################################<br><br><img src=3D"=
+https://u19268662.ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/432/__75uCSnT=
+jyje_1JEHeLVw/ho.gif" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=
+=3D"height:1px !important;width:1px !important;border-width:0 !important;ma=
+rgin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;=
+margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !importa=
+nt;padding-right:0 !important;padding-left:0 !important;"/></body>
+</html>
+--9575a6bd4639f84f93104ba2a71bacf5378649588817bbde4c34f2123ac9--

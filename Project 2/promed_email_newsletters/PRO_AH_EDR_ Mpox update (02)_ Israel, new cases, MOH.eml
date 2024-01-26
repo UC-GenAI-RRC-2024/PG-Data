@@ -1,0 +1,510 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a98:c004:0:b0:1eb:e128:bbe3 with SMTP id l4csp1706518eic;
+        Thu, 11 Jan 2024 09:44:16 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IGdTfzpy8EZzcuR02BXPwe4I1YHMeYIe5cULtYhXw0BxEfcq8s0b3sWwgWmY1w3MaeF790q
+X-Received: by 2002:a81:ef02:0:b0:5ed:d178:4d33 with SMTP id o2-20020a81ef02000000b005edd1784d33mr133348ywm.41.1704995055599;
+        Thu, 11 Jan 2024 09:44:15 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1704995055; cv=none;
+        d=google.com; s=arc-20160816;
+        b=EvDRTrEOSiqQDCgs5Qhliz9qmrlEDnGrQ40L4mNCa++ThAAGTlJzuu1C4xMEaSB5dy
+         jj2+Vn52iGRfVbXhIyfOonblvlPXDDCDVyFLziclypKKJLsNXWWQkP9WW/f+G5PIpQRX
+         DdBEL8OKJt1F47BUYms9/SUGCSr71p1lmS/c9IjIo5gMl4yk22SQ1IhKFSEOh4qScwft
+         vk2IS6LARlVhuMGIusTdzsSR63C9ltRW+rQzyeLJSc5rIz5Qt6jxVXWTquoKrNISaB8C
+         5QphhIIg6FR9mLDI0DX4GPqmDFxyo/2UisohfdZ2MIGS1w5ejOZEGZpJbA74selmUi6d
+         s26w==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=BnK6I85T5qAXAlvNRyK/qRfkgXOTbQV9HG/z6rLdP30=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=TKtMScs2EkfolULAu0qc7miCq6HtRPp4yEiMzmBFIrtDqU54w7jJVa8inWK5rVFwdX
+         IezEkA7TQg3MUO0hFULgMFrYixR/jKn+C99RjodunYrICwvVrDM+4u860c9MVkOXL8+R
+         qccYYR+J1mQ7W7XSqnCRXTlz+8oKAN4lq2RqXoyU26VBSnbjWnhF+W+G5Quah51IOQVo
+         pun4jcPoEd2BDzCBYyKX7gaHp0yYYTfr6kS4cRH4ZNMQ7wSUwZA9SP0t9ltsR7m+rT8y
+         5Xmg6RHqHCSDDytV4QoH0PB645xVS0npl+h8niDk1KG9WdCRrE/4bv5QqKD22enMQst4
+         sI4Q==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b="BlafW6/R";
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b="cDI/Qb6B";
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id y2-20020a0ce042000000b0067f7c4b9ac1si1195741qvk.313.2024.01.11.09.44.15
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 11 Jan 2024 09:44:15 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b="BlafW6/R";
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b="cDI/Qb6B";
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=BnK6I85T5qAXAlvNRyK/qRfkgXOTbQV9HG/z6rLdP30=;
+	b=BlafW6/Ry91DHFTSVzXc5+FtMMEYQqS2v7bpazWZKTkub6Ry4ZEkmaEZsdJPpF3Rtsp+
+	eWk/tsPAk6KShPUcklW+wFiiecZJTKZJWTEbnwT1Bz9dvp1z0MRqutoqe57SXbwlTB2Da4
+	KWTNlpXrPB5oi9uTTqXIuG+BvdaTWYm4Pi1h20JxsptsdApZKie9uTslTJETaTTLwB/yop
+	qJmb4JKeYpYMWwR0mlfZghZm9VrQGQ5l0PaDcD6zhUTkMOqmNhJWu7yoAUgXClSXT/5x7o
+	MUPuLBp2jX9R3Sg36mNaz+sBDlECP1v1dBFQ7kxdtCmXq2vSx1dAMMR8kDx+FKPg==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=BnK6I85T5qAXAlvNRyK/qRfkgXOTbQV9HG/z6rLdP30=;
+	b=cDI/Qb6BX8vH7BwNBm1mKOSGCzEcF3h7XgQG+hA79QaAX7N91aAvL5oG6lOpFtx/WXGx
+	fDzkXOtSeFH31KsRUrnUc4MhMg2OZMThsMVJdIvPMhiap6SBENyUQgd0qwE1sn18JkESpi
+	cEHG/B0CfF1QL1YyZdbbY/bU+joGhBxB4=
+Received: by filterdrecv-59b97c8fcd-92qpd with SMTP id filterdrecv-59b97c8fcd-92qpd-1-65A028EF-19
+        2024-01-11 17:44:15.087656763 +0000 UTC m=+3011100.012839690
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-25 (SG) with HTTP
+	id G_iXwL5kThCnNzC629E2YQ
+	Thu, 11 Jan 2024 17:44:15.036 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=3615e40fbc18bce9ea7f0ffb77bd428db710985d8b60ec0f08935a149f5f
+Date: Thu, 11 Jan 2024 17:44:15 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <G_iXwL5kThCnNzC629E2YQ@geopod-ismtpd-25>
+Subject: PRO/AH/EDR> Mpox update (02): Israel, new cases, MOH
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iBTVu3O1u0W46q1mhJakwtXNIdtxfTygel0XS9H?=
+ =?us-ascii?Q?PgO=2FaZopygZ0PkwZVz0PeNXoa+FmNabGBtuuUkr?=
+ =?us-ascii?Q?VFL8qDL+3JsnQW3nTfgtfKI9WsxuVmyxzFSII9n?=
+ =?us-ascii?Q?5ScFhJL0rCb1dFfmPsU0RJjRsZ31c05Nergx+7d?=
+ =?us-ascii?Q?qIQw9TVs0jbJn+vozvWWw1WPcnPfJVZbuqZ394?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUiShGf=2FO8XJWpH34Od4Nd?=
+ =?us-ascii?Q?fxXa6jil96uRcJkF+N+LeVnO1tx80ddOyoyOo=2Fc?=
+ =?us-ascii?Q?Brxcl3ERAm0cOY743=2FFH59DWiSf5OzXORh1DLKt?=
+ =?us-ascii?Q?hb1NMKty3PsA5ju0ZzxCrq1WQuZSEQf=2FJlWtgqv?=
+ =?us-ascii?Q?cZmsyCHlNUZsDmNulQ8vDbZOJRBDgXlpu8mE7WH?=
+ =?us-ascii?Q?NtM9KNg0tR2VYihPgrxZM+SQZ80vSh3S5IhglWo?=
+ =?us-ascii?Q?v6x8+PeQfkYSvHn380Hi094kv1kHlzgcRBI5BVg?=
+ =?us-ascii?Q?aa6iSPKE46ed2GPZhc5O=2FiKBIQxWbhQ2A2cgEgf?=
+ =?us-ascii?Q?LruO7rGfvOrFXNb2UmjX21pQ=2FbBQmv=2Fs7mMnBGz?=
+ =?us-ascii?Q?iA6dOpqNYx4KRnp6QCQbpG4X+dBGVPiksKFTJWt?=
+ =?us-ascii?Q?S16cBZb2oeEBbCCAaDkaJbsDETRlKayIKfKy72f?=
+ =?us-ascii?Q?Qdl55cQZFutON6cZqspCmJsdyb4dR14S6l1euHI?=
+ =?us-ascii?Q?XTXuFl07QKvgOwRLHd7EGDZTl8VQXye98o3fpc+?=
+ =?us-ascii?Q?Im4OKFam3zuyr0tw1UJUaPk2qR7y=2F2ZsbjA5Fds?=
+ =?us-ascii?Q?7vINPhiBWF=2F4Gbie4QSG5SZiLfGQ4TsIT1gdepr?=
+ =?us-ascii?Q?30ygSC4xU5wmBNxGyZvZD5br0CqalI1uEzM8pZI?=
+ =?us-ascii?Q?TvgDJ7TskygBJBthIFZYjKWj1+3=2FfOxUrZoSagv?=
+ =?us-ascii?Q?irFX5AJGlkKwuZkSMdMZB6SGTVDkfFkbuEa7iVW?=
+ =?us-ascii?Q?N3OjNsJQyF5HjjRcZ30TAA=2Fzc0W5ji1yG76eWGU?=
+ =?us-ascii?Q?ldtjYT7Nups97wpJpFQnh3+mSQ=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2EiQH9QGz-X?=
+ =?us-ascii?Q?hgl1oz9vNb7lA=5Fqtr9hX2bQnHe-END=5FGv9oMDAw?=
+ =?us-ascii?Q?dTAwMJFGpBOOv0DaZi-Cb2LRAD0ozN88hwGaIYw?=
+ =?us-ascii?Q?WKG5kmvZhW3R7kiQ1VZUZN-ifSVHIlAiVo5PB1j?=
+ =?us-ascii?Q?6QEfgC05AFikKL6RL3lOtPZlBYX8q5Rm2LFsvIw?=
+ =?us-ascii?Q?T5COsD77MM3XAhTTg=3D=3D=2ET9B1BGFWmkIlIV2b5VB?=
+ =?us-ascii?Q?UIu6Ur1zivBMhaDhCvXd75T5oMDAwdTAwMD83N5?=
+ =?us-ascii?Q?0-3Rx5uA5D0IAbCaSQtOffLQuBBF7NDdQ905M02?=
+ =?us-ascii?Q?QVOeMLf4MeQN6bWbetrt1v=5F5uxFQqJ5MTVYEKAb?=
+ =?us-ascii?Q?y4bohsO4GEL=5F9EfFIeIumz6faSSYV336gyINEZ-?=
+ =?us-ascii?Q?vZcbT5BFAv=5FlYkHi-Lm8JVLGp=5FHEEookMOADc37?=
+ =?us-ascii?Q?bd4Q7fcT6RYKbd=5Fr-O49HEv7gRNyHVWi-bLMyOB?=
+ =?us-ascii?Q?e15SphxIDAGK30HP=5FP2y76DLZHwOyz=5FkRluCSmE?=
+ =?us-ascii?Q?ERjP=5FyjomPm4d3bNcms83SpzHwKi0Uth-HKrykX?=
+ =?us-ascii?Q?8FXt8TbTDKbwJVM6bALc4WdgWlPtYmkK9PtPKnI?=
+ =?us-ascii?Q?VKE6Ib7kRxYNN38IS7rbQ7LYWnVt5AtuI1ohfKA?=
+ =?us-ascii?Q?v6r4VTaAChcroYNp0CHtYB0P771ZSUJ3vZo1-Vz?=
+ =?us-ascii?Q?OG1s=5FpYMQ=5FPqFcMyocCU4yApQifORbtCnRXs3T8?=
+ =?us-ascii?Q?amyB02WRmShkbBcgWUZ6xj7FQqLhwQDaVoduH5j?=
+ =?us-ascii?Q?BlJp79wFDLwj6ix0ctdJmhydUg3=5FtHLF-ldPyq6?=
+ =?us-ascii?Q?XwnsOBjUtligoG4kmaBAG2UDn7BTbioGUsZQook?=
+ =?us-ascii?Q?1BzSohnLNY66ifNcwRnWnT3jOar33aAd9ZI-NNB?=
+ =?us-ascii?Q?8I1DxRzkAZ2FUkqbb9qirpZS0aEXF8c9pvmhq3y?=
+ =?us-ascii?Q?r1zrrUKEyFAtlC5jEqdmpk-YevZngRuIi1mg4vo?=
+ =?us-ascii?Q?u333l-WKpViORhnm1I3NjLZ97f1F=5FT0vLPrkh=5Ff?=
+ =?us-ascii?Q?gu6b2tO3nhwl7OaiE4QiFKd=5FQHJMwpId4jOCwxZ?=
+ =?us-ascii?Q?Ltc7pygH60RE=5Fzec2qv4TB4onixXM5=5FdcOjs=5Fao?=
+ =?us-ascii?Q?taHCyYHM8dOHAq3r30P9iEq8qFH441wuDHgCKMa?=
+ =?us-ascii?Q?DUCVmBwg3gBi-oMmeF5ycIL=5Fb8SiqczpYthrFDm?=
+ =?us-ascii?Q?T7rXfm8i=5Fle28VX-mU9pbt0L5gM3Gsx7dFoNqO-?=
+ =?us-ascii?Q?VHULlllU-wb9GfqB-f5YH65101C-8UlAHtZ-xhS?=
+ =?us-ascii?Q?0NjgrIxZNMuctUfc=5FleScJUutcyHYD=5FsKrrHvNv?=
+ =?us-ascii?Q?n-LUIt4EZ=5FKcmORd4FF=5FjK5k1Bd9W7N6IraJj=5F4?=
+ =?us-ascii?Q?8OthVw=3D=3D=3E?=
+
+--3615e40fbc18bce9ea7f0ffb77bd428db710985d8b60ec0f08935a149f5f
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=us-ascii
+Mime-Version: 1.0
+
+MPOX UPDATE (02): ISRAEL, NEW CASES, MOH
+****************************************
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+Date: Wed 10 Jan 2024
+Source: Times Now [abridged, edited]
+<https://www.timesnownews.com/health/cases-of-monkeypox-reported-in-israel-=
+symptoms-and-preventive-measures-of-the-viral-infection-article-106687461>
+
+
+New cases of mpox have been detected in Israel, according to the
+Israeli Health Ministry. However, the ministry did not specify the
+exact number of mpox cases in the country. On Tuesday [9 Jan 2024],
+the Israel Medical Association said that there were 5 new cases
+alongside 2 suspected cases, as reported by news agency Xinhua.
+
+Anyone who develops a fever and a blistering rash or has been in close
+contact with a person suspected of having mpox has been urged to
+contact a doctor. In 2023 Israel reported only one case of mpox, while
+in 2022 Israel reported 262 mpox cases.
+
+--
+Communicated by:
+ProMED
+via
+ProMED-MENA
+
+[Mpox (MPX) is a highly contagious viral zoonotic disease, primarily
+found in the tropical rainforest areas of central and west Africa. It
+is caused by the mpox virus, a member of the _Orthopoxvirus_ genus in
+the family Poxviridae. Mpox is usually a self-limited disease with
+symptoms similar to but milder than smallpox symptoms. Mpox is
+transmitted to humans through close contact with an infected person or
+animal through body fluids, respiratory droplets, and contaminated
+materials. - Mod.MM
+
+ProMED map of Israel:
+<https://promedmail.org/promed-post?place=3D8714172,90>]
+
+[See Also:
+Mpox update (01): Cambodia, new cases
+http://promedmail.org/post/20240105.8714076
+2023
+----
+Mpox update (51): Cambodia (PP) local case
+http://promedmail.org/post/20231214.8713728
+Mpox update (50): Viet Nam (Mekong Delta region)
+http://promedmail.org/post/20231208.8713590
+Mpox update (49): WHO, Congo DR, USA (ID), Indonesia
+http://promedmail.org/post/20231127.8713353
+Mpox update (48): Viet Nam, Taiwan, Indonesia
+http://promedmail.org/post/20231115.8713148
+Mpox update (47): Congo DR (KU), Malaysia, Indonesia (Jakarta), RFI
+http://promedmail.org/post/20231102.8712960
+Mpox update (46): Pakistan (KP) ex Saudi Arabia
+http://promedmail.org/post/20231102.8712956
+Mpox update (45): Viet Nam, fatal, immunocompromised patient
+http://promedmail.org/post/20231026.8712826
+Mpox update (44): tecovirimat resistance, HIV
+http://promedmail.org/post/20231025.8712791
+Mpox update (43): worldwide cases, Viet Nam, vaccination
+http://promedmail.org/post/20231015.8712649
+Mpox update (42): UK, Viet Nam
+http://promedmail.org/post/20231009.8712516
+Mpox update (41): cases, Vietnam, Congo DR, RFI
+http://promedmail.org/post/20230929.8712374
+Mpox update (40): worldwide, Congo DR, Laos
+http://promedmail.org/post/20230926.8712311
+Mpox update (39): cases, China, England, vaccination
+http://promedmail.org/post/20230915.8712118
+Mpox update (38): Thailand, MSM, teenagers
+http://promedmail.org/post/20230904.8711966
+Mpox update (37): Pakistan, USA, Congo DR
+http://promedmail.org/post/20230901.8711932
+Mpox update (36): Malaysia, RFI
+http://promedmail.org/post/20230825.8711837
+Mpox update (35): Spain, Pakistan
+http://promedmail.org/post/20230822.8711787
+Mpox update (34): Taiwan, fatal, corr
+http://promedmail.org/post/20230815.8711712
+Mpox update (34): Taiwan, fatal
+http://promedmail.org/post/20230815.8711702
+Mpox update (33): China, Australia
+http://promedmail.org/post/20230813.8711686
+Mpox update (32): Taiwan http://promedmail.org/post/20230810.8711633
+Mpox update (31): http://promedmail.org/post/20230805.8711570
+Mpox update (30): cases, steroids, Trinidad and Tobago, Pakistan,
+Portugal, RFI http://promedmail.org/post/20230801.8711442
+Mpox update (29): cases, Congo DR
+http://promedmail.org/post/20230724.8711303
+Mpox update (28): cases, comment, Trinidad & Tobago, UK, Germany,
+comparison http://promedmail.org/post/20230714.8711137
+Mpox update (27): cases, Cameroon, Thailand, RFI
+http://promedmail.org/post/20230711.8710983
+Mpox update (26): cases, USA, Canada, Israel, South Korea
+http://promedmail.org/post/20230701.8710843
+Mpox update (25): cases, vaccine, China, resurgence
+http://promedmail.org/post/20230625.8710712
+Mpox update (24): cases, detection, UK, PCR
+http://promedmail.org/post/20230622.8710641
+Mpox update (23): viral shedding, Beijing, STI, Taiwan
+http://promedmail.org/post/20230616.8710543
+Mpox update (22): cases, recurrent outbreaks, UK
+http://promedmail.org/post/20230611.8710429
+Mpox update (21): USA, Cameroon, cases, wastewater
+http://promedmail.org/post/20230528.8710251
+Mpox update (20): cases, WHO, USA, France
+http://promedmail.org/post/20230519.8710125
+Mpox update (19): USA, South Korea, Brazil, cases, resurgence, RFI
+http://promedmail.org/post/20230513.8709994
+Mpox update (18): WHO, Pakistan, USA, sociobehavioral factors
+http://promedmail.org/post/20230508.8709908
+Mpox update (17): cases, South Korea, Japan, Pakistan, UK
+http://promedmail.org/post/20230501.8709757
+Mpox update (16): cases, disparities, South Korea
+http://promedmail.org/post/20230422.8709604
+Mpox update (15): cases, Japan, AIDS-defining
+http://promedmail.org/post/20230414.8709457
+Mpox update (14): worldwide, USA, Congo DR (HU), vaccination
+http://promedmail.org/post/20230409.8709364
+Mpox update (13): cases, Netherlands, virtual ward
+http://promedmail.org/post/20230402.8709218
+Mpox update (12): Japan, TikTok, Jamaica, vaccination
+http://promedmail.org/post/20230324.8709105
+Mpox update (11): cases, incubation, reinfection, Mexico, Jynneos
+http://promedmail.org/post/20230318.8708975
+Mpox update (10): Taiwan, undetected case, death, treatment
+http://promedmail.org/post/20230311.8708853
+Mpox update (09): worldwide, USA, Taiwan, occupational transm,
+sampling, immunology http://promedmail.org/post/20230303.8708676
+Mpox update (08): worldwide, Belgium
+http://promedmail.org/post/20230224.8708552
+Mpox update (07): worldwide, USA, WHO, wastewater
+http://promedmail.org/post/20230217.8708422
+Mpox update (06): worldwide, antivirals
+http://promedmail.org/post/20230210.8708259
+Mpox update (05): worldwide, USA
+http://promedmail.org/post/20230202.8708119
+Mpox update (04): worldwide, USA, drug sensitivity, evolution, Viet
+Nam http://promedmail.org/post/20230126.8707984
+Mpox update (03): worldwide, USA, DR Congo
+http://promedmail.org/post/20230120.8707842
+Mpox update (02): worldwide, USA, antivirals
+http://promedmail.org/post/20230113.8707762
+Mpox update (01): worldwide, USA, breakthrough cases, unvaccinated,
+women http://promedmail.org/post/20230106.8707651]
+.................................................mm/may/gmm/tw/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3DbVMd_2MVByTv9O7xEe_dHuR_Rs93C3IbBByVRwU1VmhoMDAwdTAwMJd2hND=
+G5H8BdJeYpczN_86H3OZgkYWHuzNerFeC1IPtA7AkfJdsveZwTjqZjScJsuvHG4DenIpqZyZCBh=
+WUygEJzE4SurO77tLnvW4iQtg-Aci-t0UbAGqBU3Kalg1ZZpfDylzZ8vTeO6UUTqNGu8mW94RnM=
+Q2WHW2A50pmVbf93PT35fJutWdPjnNOjso8fHFlK5oGmFBeWgVaZXId0iX0oXs0VR1dGimGys0q=
+JM52LNit861dewmK2JBjgPsWb19Y67-jgW_G-Bf6NmOAV_HKw4Al3XTYsLRXpRcFg_QDUPpFwIH=
+6z6xn5HuRkj7FAoeaQ7Ax6q8UeKT3Yhs0En2C50xYQ3U9Hyoael2tLVkiJHyUaBSRxrYhGioBBY=
+7XS-Lv6xt8XE9Zuf2iYQYOoSY8RvqsYazElSEtOHUI1MxlxGxsLPuGOb8VX34-pjWGnC-8Xjsfm=
+40E2qMQpvGSKdoYbYt3y1MlZKvFbnQJvvH7A2KNLJy3u3axd5tF0Qt69y67y3mPjLZd6wq1Q9ss=
+8eORetdOY2e-DQ7qHQDCvgU1_Cyo4iUZsbBF_5PVEWF-Zrk5ke1K06FYyTXFZtcEwFQFoPMuinQ=
+mPd6HvlBL42n4AkWBH41PNLAUUfEjZMTZ9QYi3ev9aahhgpaKGp2W_ajjPBPGVLOFgarxO7zwg7=
+u3fmaakZMOjFhD7OlnBy45RkKlv7duw_45wheQUsymWU3IR3JK6Pmz2F0hQtc5VzmO3MgG-GvrL=
+_Cue4YFcEJzT-v0NVKs07cSOGJon9Ud6PjSzjfVLF3ED4ziK5rJoZ0UWqUjqg_v9eqn3q3w9Gtz=
+a3JmmYc5iuPVB7-M4lC6z4DlsbgjvXxcUFV5u-QZIveR8pDHUov32ZBxo1obq2iYb0LojYPcesY=
+olxeaFEJN23uW7SQYBrM60ksjk6P7-TKCupgyulYZBtSCutcIiqIF09xAONnmFfFZyq-Hu8XaCE=
+xaUMmySsr6qMqWhn2y1okKOBhiRx-mb9CTy02eSvKnECOpX0Rt9JZFvW86i4Cco-lqBWg6zpgof=
+iUG5yJ035ehUlI8AwJ_zRgbU-IGQMKSIeB6pR_TngI6_r5ASXDglNlVqcUnjcjb5VRC1FQDx6ga=
+00eH_--jH5LNIjcREVw4wfD1aKDh3Ed2NKmN5Um2vF6ney5K1dUp4LQWeRE2CiON )
+############################################################
+############################################################
+
+--3615e40fbc18bce9ea7f0ffb77bd428db710985d8b60ec0f08935a149f5f
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>MPOX UPDATE (02): ISRAEL, NEW CASES, MOH<br>*************************=
+***************<br>A ProMED-mail post<br><a href=3D"https://u19268662.ct.se=
+ndgrid.net/ss/c/wscE2ng5fl6JrPIt48tisIijpefK5PNjW-mL-YZGnfgDOxU1G3gjwnPSi2T=
+fv3HA/42w/WIAS747NQmi_3SnDLIJbGg/h0/C1U-Z5F0KUv3O5Q02oTJI1dt4awv_x2azyaxTu4=
+VhjA">http://www.promedmail.org</a><br>ProMED-mail is a program of the<br>I=
+nternational Society for Infectious Diseases<br><a href=3D"https://u1926866=
+2.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisCT5tpD4Upm3qyMCbcYSQvc/42w/WIAS=
+747NQmi_3SnDLIJbGg/h1/SFCDQOLYRHzaBDnFfIs-nB33g04Zd88LA_Bg1MBa6rM">http://w=
+ww.isid.org</a><br><br>Date: Wed 10 Jan 2024=0D<br>Source: Times Now [abrid=
+ged, edited]=0D<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/TLh_cs=
+rC34X_iXpbYoMam3M-iC_2Pom9RivnBLB86bk2UYT4kCudRnX9TOGHlK9Q2iyIt8dCq7e17XqBK=
+k5sUXnUul0QWhOSLIYzcsKd-79K81jPzTCHs5H-2vnUXBxBr-BSKVv_fJkdgvtbY0NYpN-Iguef=
+G_4iTGZSoIvzSUzk3PXrc8lXuuoxnjfbDfN4LYsKlEs2MUucdvE4XXdl3g/42w/WIAS747NQmi_=
+3SnDLIJbGg/h2/swCzpwykvvfVFo8yJg9GCF1Hgtp8e9fnW6hJwqTRpcs">https://www.time=
+snownews.com/health/cases-of-monkeypox-reported-in-israel-symptoms-and-prev=
+entive-measures-of-the-viral-infection-article-106687461</a>=0D<br>=0D<br>=0D=
+<br>New cases of mpox have been detected in Israel, according to the<br>Isr=
+aeli Health Ministry. However, the ministry did not specify the<br>exact nu=
+mber of mpox cases in the country. On Tuesday [9 Jan 2024],<br>the Israel M=
+edical Association said that there were 5 new cases<br>alongside 2 suspecte=
+d cases, as reported by news agency Xinhua.=0D<br>=0D<br>Anyone who develop=
+s a fever and a blistering rash or has been in close<br>contact with a pers=
+on suspected of having mpox has been urged to<br>contact a doctor. In 2023 =
+Israel reported only one case of mpox, while<br>in 2022 Israel reported 262=
+ mpox cases.=0D<br>=0D<br>--=0D<br>Communicated by:=0D<br>ProMED=0D<br>via=0D=
+<br>ProMED-MENA<br><br>[Mpox (MPX) is a highly contagious viral zoonotic di=
+sease, primarily<br>found in the tropical rainforest areas of central and w=
+est Africa. It<br>is caused by the mpox virus, a member of the _Orthopoxvir=
+us_ genus in<br>the family Poxviridae. Mpox is usually a self-limited disea=
+se with<br>symptoms similar to but milder than smallpox symptoms. Mpox is<b=
+r>transmitted to humans through close contact with an infected person or<br=
+>animal through body fluids, respiratory droplets, and contaminated<br>mate=
+rials. - Mod.MM=0D<br>=0D<br>ProMED map of Israel:<br><a href=3D"https://u1=
+9268662.ct.sendgrid.net/ss/c/sSnCkKCWBvais3EuVAOvgy2WOIX7pp1nXnn4AbwuQ3Z6Wb=
+kfhqXYXU-aTMPJ8yThMFuAH_p-g7ghhO-lIG5nCg/42w/WIAS747NQmi_3SnDLIJbGg/h3/9_yu=
+ge8ot1B0psLERrk2R9tm13kcbVhnVx0tYHrcGWk">https://promedmail.org/promed-post=
+?place=3D8714172,90</a>]<br><br>[See Also:<br>Mpox update (01): Cambodia, n=
+ew cases<br>http://promedmail.org/post/20240105.8714076=0D<br>2023=0D<br>--=
+--=0D<br>Mpox update (51): Cambodia (PP) local case<br>http://promedmail.or=
+g/post/20231214.8713728=0D<br>Mpox update (50): Viet Nam (Mekong Delta regi=
+on)<br>http://promedmail.org/post/20231208.8713590=0D<br>Mpox update (49): =
+WHO, Congo DR, USA (ID), Indonesia<br>http://promedmail.org/post/20231127.8=
+713353=0D<br>Mpox update (48): Viet Nam, Taiwan, Indonesia<br>http://promed=
+mail.org/post/20231115.8713148=0D<br>Mpox update (47): Congo DR (KU), Malay=
+sia, Indonesia (Jakarta), RFI<br>http://promedmail.org/post/20231102.871296=
+0=0D<br>Mpox update (46): Pakistan (KP) ex Saudi Arabia<br>http://promedmai=
+l.org/post/20231102.8712956=0D<br>Mpox update (45): Viet Nam, fatal, immuno=
+compromised patient<br>http://promedmail.org/post/20231026.8712826=0D<br>Mp=
+ox update (44): tecovirimat resistance, HIV<br>http://promedmail.org/post/2=
+0231025.8712791=0D<br>Mpox update (43): worldwide cases, Viet Nam, vaccinat=
+ion<br>http://promedmail.org/post/20231015.8712649=0D<br>Mpox update (42): =
+UK, Viet Nam<br>http://promedmail.org/post/20231009.8712516=0D<br>Mpox upda=
+te (41): cases, Vietnam, Congo DR, RFI<br>http://promedmail.org/post/202309=
+29.8712374=0D<br>Mpox update (40): worldwide, Congo DR, Laos<br>http://prom=
+edmail.org/post/20230926.8712311=0D<br>Mpox update (39): cases, China, Engl=
+and, vaccination<br>http://promedmail.org/post/20230915.8712118=0D<br>Mpox =
+update (38): Thailand, MSM, teenagers<br>http://promedmail.org/post/2023090=
+4.8711966=0D<br>Mpox update (37): Pakistan, USA, Congo DR<br>http://promedm=
+ail.org/post/20230901.8711932=0D<br>Mpox update (36): Malaysia, RFI<br>http=
+://promedmail.org/post/20230825.8711837=0D<br>Mpox update (35): Spain, Paki=
+stan<br>http://promedmail.org/post/20230822.8711787=0D<br>Mpox update (34):=
+ Taiwan, fatal, corr<br>http://promedmail.org/post/20230815.8711712=0D<br>M=
+pox update (34): Taiwan, fatal<br>http://promedmail.org/post/20230815.87117=
+02=0D<br>Mpox update (33): China, Australia<br>http://promedmail.org/post/2=
+0230813.8711686=0D<br>Mpox update (32): Taiwan http://promedmail.org/post/2=
+0230810.8711633=0D<br>Mpox update (31): http://promedmail.org/post/20230805=
+.8711570=0D<br>Mpox update (30): cases, steroids, Trinidad and Tobago, Paki=
+stan,<br>Portugal, RFI http://promedmail.org/post/20230801.8711442=0D<br>Mp=
+ox update (29): cases, Congo DR<br>http://promedmail.org/post/20230724.8711=
+303=0D<br>Mpox update (28): cases, comment, Trinidad & Tobago, UK, Germany,=
+<br>comparison http://promedmail.org/post/20230714.8711137=0D<br>Mpox updat=
+e (27): cases, Cameroon, Thailand, RFI<br>http://promedmail.org/post/202307=
+11.8710983=0D<br>Mpox update (26): cases, USA, Canada, Israel, South Korea<=
+br>http://promedmail.org/post/20230701.8710843=0D<br>Mpox update (25): case=
+s, vaccine, China, resurgence<br>http://promedmail.org/post/20230625.871071=
+2=0D<br>Mpox update (24): cases, detection, UK, PCR<br>http://promedmail.or=
+g/post/20230622.8710641=0D<br>Mpox update (23): viral shedding, Beijing, ST=
+I, Taiwan<br>http://promedmail.org/post/20230616.8710543=0D<br>Mpox update =
+(22): cases, recurrent outbreaks, UK<br>http://promedmail.org/post/20230611=
+.8710429=0D<br>Mpox update (21): USA, Cameroon, cases, wastewater<br>http:/=
+/promedmail.org/post/20230528.8710251=0D<br>Mpox update (20): cases, WHO, U=
+SA, France<br>http://promedmail.org/post/20230519.8710125=0D<br>Mpox update=
+ (19): USA, South Korea, Brazil, cases, resurgence, RFI<br>http://promedmai=
+l.org/post/20230513.8709994=0D<br>Mpox update (18): WHO, Pakistan, USA, soc=
+iobehavioral factors<br>http://promedmail.org/post/20230508.8709908=0D<br>M=
+pox update (17): cases, South Korea, Japan, Pakistan, UK<br>http://promedma=
+il.org/post/20230501.8709757=0D<br>Mpox update (16): cases, disparities, So=
+uth Korea<br>http://promedmail.org/post/20230422.8709604=0D<br>Mpox update =
+(15): cases, Japan, AIDS-defining<br>http://promedmail.org/post/20230414.87=
+09457=0D<br>Mpox update (14): worldwide, USA, Congo DR (HU), vaccination<br=
+>http://promedmail.org/post/20230409.8709364=0D<br>Mpox update (13): cases,=
+ Netherlands, virtual ward<br>http://promedmail.org/post/20230402.8709218=0D=
+<br>Mpox update (12): Japan, TikTok, Jamaica, vaccination<br>http://promedm=
+ail.org/post/20230324.8709105=0D<br>Mpox update (11): cases, incubation, re=
+infection, Mexico, Jynneos<br>http://promedmail.org/post/20230318.8708975=0D=
+<br>Mpox update (10): Taiwan, undetected case, death, treatment<br>http://p=
+romedmail.org/post/20230311.8708853=0D<br>Mpox update (09): worldwide, USA,=
+ Taiwan, occupational transm,<br>sampling, immunology http://promedmail.org=
+/post/20230303.8708676=0D<br>Mpox update (08): worldwide, Belgium<br>http:/=
+/promedmail.org/post/20230224.8708552=0D<br>Mpox update (07): worldwide, US=
+A, WHO, wastewater<br>http://promedmail.org/post/20230217.8708422=0D<br>Mpo=
+x update (06): worldwide, antivirals<br>http://promedmail.org/post/20230210=
+.8708259=0D<br>Mpox update (05): worldwide, USA<br>http://promedmail.org/po=
+st/20230202.8708119=0D<br>Mpox update (04): worldwide, USA, drug sensitivit=
+y, evolution, Viet<br>Nam http://promedmail.org/post/20230126.8707984=0D<br=
+>Mpox update (03): worldwide, USA, DR Congo<br>http://promedmail.org/post/2=
+0230120.8707842=0D<br>Mpox update (02): worldwide, USA, antivirals<br>http:=
+//promedmail.org/post/20230113.8707762=0D<br>Mpox update (01): worldwide, U=
+SA, breakthrough cases, unvaccinated,<br>women http://promedmail.org/post/2=
+0230106.8707651]<br>.................................................mm/may=
+/gmm/tw/jh<br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3DbVMd_2MVByTv9O7xEe_dHuR_Rs93C3IbBByVRwU1VmhoMDAwdT=
+AwMJd2hNDG5H8BdJeYpczN_86H3OZgkYWHuzNerFeC1IPtA7AkfJdsveZwTjqZjScJsuvHG4Den=
+IpqZyZCBhWUygEJzE4SurO77tLnvW4iQtg-Aci-t0UbAGqBU3Kalg1ZZpfDylzZ8vTeO6UUTqNG=
+u8mW94RnMQ2WHW2A50pmVbf93PT35fJutWdPjnNOjso8fHFlK5oGmFBeWgVaZXId0iX0oXs0VR1=
+dGimGys0qJM52LNit861dewmK2JBjgPsWb19Y67-jgW_G-Bf6NmOAV_HKw4Al3XTYsLRXpRcFg_=
+QDUPpFwIH6z6xn5HuRkj7FAoeaQ7Ax6q8UeKT3Yhs0En2C50xYQ3U9Hyoael2tLVkiJHyUaBSRx=
+rYhGioBBY7XS-Lv6xt8XE9Zuf2iYQYOoSY8RvqsYazElSEtOHUI1MxlxGxsLPuGOb8VX34-pjWG=
+nC-8Xjsfm40E2qMQpvGSKdoYbYt3y1MlZKvFbnQJvvH7A2KNLJy3u3axd5tF0Qt69y67y3mPjLZ=
+d6wq1Q9ss8eORetdOY2e-DQ7qHQDCvgU1_Cyo4iUZsbBF_5PVEWF-Zrk5ke1K06FYyTXFZtcEwF=
+QFoPMuinQmPd6HvlBL42n4AkWBH41PNLAUUfEjZMTZ9QYi3ev9aahhgpaKGp2W_ajjPBPGVLOFg=
+arxO7zwg7u3fmaakZMOjFhD7OlnBy45RkKlv7duw_45wheQUsymWU3IR3JK6Pmz2F0hQtc5VzmO=
+3MgG-GvrL_Cue4YFcEJzT-v0NVKs07cSOGJon9Ud6PjSzjfVLF3ED4ziK5rJoZ0UWqUjqg_v9eq=
+n3q3w9Gtza3JmmYc5iuPVB7-M4lC6z4DlsbgjvXxcUFV5u-QZIveR8pDHUov32ZBxo1obq2iYb0=
+LojYPcesYolxeaFEJN23uW7SQYBrM60ksjk6P7-TKCupgyulYZBtSCutcIiqIF09xAONnmFfFZy=
+q-Hu8XaCExaUMmySsr6qMqWhn2y1okKOBhiRx-mb9CTy02eSvKnECOpX0Rt9JZFvW86i4Cco-lq=
+BWg6zpgofiUG5yJ035ehUlI8AwJ_zRgbU-IGQMKSIeB6pR_TngI6_r5ASXDglNlVqcUnjcjb5VR=
+C1FQDx6ga00eH_--jH5LNIjcREVw4wfD1aKDh3Ed2NKmN5Um2vF6ney5K1dUp4LQWeRE2CiON" =
+target=3D"_blank" class=3D"Unsubscribe--unsubscribePreferences" style=3D"fo=
+nt-family:sans-serif;text-decoration:none;">Unsubscribe Preferences</a></di=
+v><br>############################################################<br>#####=
+#######################################################<br><br><img src=3D"=
+https://u19268662.ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/42w/WIAS747NQ=
+mi_3SnDLIJbGg/ho.gif" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=
+=3D"height:1px !important;width:1px !important;border-width:0 !important;ma=
+rgin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;=
+margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !importa=
+nt;padding-right:0 !important;padding-left:0 !important;"/></body>
+</html>
+--3615e40fbc18bce9ea7f0ffb77bd428db710985d8b60ec0f08935a149f5f--

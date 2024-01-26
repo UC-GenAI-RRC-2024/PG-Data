@@ -1,0 +1,752 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a98:d84b:0:b0:1eb:e128:bbe3 with SMTP id b11csp1160806eil;
+        Fri, 19 Jan 2024 12:15:19 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IEoeP0Dff0nrODi+G+wQZcKMErDBXhvBzOy0cGT4rsi19CbJRtl0cq8bvtTUejVEnCt3QTU
+X-Received: by 2002:a05:620a:b09:b0:783:53e2:f465 with SMTP id t9-20020a05620a0b0900b0078353e2f465mr2099105qkg.52.1705695318733;
+        Fri, 19 Jan 2024 12:15:18 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1705695318; cv=none;
+        d=google.com; s=arc-20160816;
+        b=NveJv9pNHPupTp0tAOotVlBSd5AC85y/y3WUmYuO8rW50d7Q/ZMmCMuI6J8Gw8YRoe
+         9trZE8t4pXKFmJ0CT/rzm0jcM7P7VR+dnQxf7CKotnaqC+OhHZ9lqfoZt/UQFPKyz8Ng
+         Mdy6RtOqSfeNPUhDmpROYFESXyttl9qZhP4xfM0UnQaznjxUM1HgS3CCGaz44Nc3nEJy
+         Wyz65FYTLkIlUEFGBWkE+mRmx/jIlZim8KLSr24QGHxKD0uWAK/12sIrkNz+A+YHAqKg
+         2js8VqeVOUgS3BHDR63Ae6mkfRjsooWJtGwuS+fTZ1dGYIuTGp66gMcfgj/I77q17r8F
+         TP7Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=b8eqJFKC74MiZTDxN8id/Lf+EwDJiT6oX53F8+qFmBU=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=b1M2QMRwVRiIt/eIQOWe1DxnCDYZM7StdLr/YqjgzDQVsmlzFky/Zl1F75uzz4MPZB
+         8ycXmYyTO9yquRUqvWuS4xjVXtyqfZ+6aPyKAT4BlmMjdbZdypn7SDglU4yq3xBDcyoX
+         1okB68BQ6JLpf2a3+ZB40kMp9Bp92+LRazcneaqscEjASgLKaDqu7wwXuNlLGXlyQ0jA
+         vLZQtHoKlARqApCVQPF7Ui6Full2bvtU0STnY7nKZdkXF0v4P5UAElckI5uxx2cjIKH3
+         KYkRZw9h+wOa2D6IM/4jIG37sgrfMc6lb6B0XGSsV+XOqLKI1UwFIR9VxHBBOd9xwiNt
+         +kVQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=i9JNPUmL;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=Y8oQsCKD;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id w11-20020ac857cb000000b0042a29b33242si1343720qta.168.2024.01.19.12.15.17
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 19 Jan 2024 12:15:18 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=i9JNPUmL;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=Y8oQsCKD;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=b8eqJFKC74MiZTDxN8id/Lf+EwDJiT6oX53F8+qFmBU=;
+	b=i9JNPUmLe8z+qbKdYXTX+Rh0eGPPAcW9RKEc7qTUfVBuPUrejlpxXvQRiUR6j3jpddok
+	az82lMxo4tpDYO3rhROad6tU8+LrDZ0ip+gmsXdHx4WIGfIfqUXfwvSCO+fnGSbjL2UWPF
+	amw/QERrzvvUfRy6XhzXD40jqKuvkNV6ibRGGzvWwThqYKCgUzv13VdfmnnOLCrdLC13oG
+	CbwzQ9ITrmTt7C9S0Vyqw+sjAz7Todu6ILekj01/E2BMLQX9enb9Jitt9QfN0IsubZR/dr
+	swhNZ1I3nPQzn5YYR8yM+BluP8vapVt9jmbIDZN/ESC7c94UIPA9UU09icGLgO5A==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=b8eqJFKC74MiZTDxN8id/Lf+EwDJiT6oX53F8+qFmBU=;
+	b=Y8oQsCKDWriZ/AeRi/vTeWL8ogH4rpcgBRmGl+G3YpZp0vdX68kHVUP0tnEKf6AdWA0y
+	f9jXwrQfElwe+OwY6IZyyITNUH8Fiu75dHMaPmsrq4N+ZrSuPRJpvY3hJhK786isr4djqT
+	wc6FdpwssAbauRAHvpEudChVU2m9qMwNg=
+Received: by filterdrecv-5599bcbfcb-jhtd2 with SMTP id filterdrecv-5599bcbfcb-jhtd2-1-65AAD853-25
+        2024-01-19 20:15:15.281845256 +0000 UTC m=+8127253.450085416
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-14 (SG) with HTTP
+	id fbjctAgAR3yCi6gJjJK-2w
+	Fri, 19 Jan 2024 20:15:15.137 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=a53a9e156b308d090a72d919b1422fd8f0b569e53345d0869508717ee487
+Date: Fri, 19 Jan 2024 20:15:17 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <fbjctAgAR3yCi6gJjJK-2w@geopod-ismtpd-14>
+Subject: PRO/AH/EDR> Lassa fever - West Africa (03): Nigeria
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iB3vBQ=2F5aMNBKdV6i7oiggF+gpDhB6OdG132RRe?=
+ =?us-ascii?Q?6yVxN06JeZp7Pn9CcE+6bCw8rCiveyScze1oLNG?=
+ =?us-ascii?Q?StkWogHefn0LRJ34DtnNMjzyqFEdK0vRpEFIPc2?=
+ =?us-ascii?Q?Dqi=2FUjYJOVR0TOcUQu2k+E56EkQ1KFRxi58n7=2F2?=
+ =?us-ascii?Q?1AYS9QGEW6ef5qoIMXGiRV0OkIV5ncbNfKUpbC?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUiShGf=2FO8XJWpH34Od4Nd?=
+ =?us-ascii?Q?fxXa6jil96uRcJkF+N+LeVnO1tx80ddOyoyOo=2Fc?=
+ =?us-ascii?Q?Brxcl3ERAm0cOY743=2FFH59DWiSf5OzXORh1DLKt?=
+ =?us-ascii?Q?hb1NMKty3PsA5ju0ZzxCrq1WQuZSEQf=2FJlWtgqv?=
+ =?us-ascii?Q?cZmsyCHlNUZsDVvJWLH1IeF0u8eu2I6H72=2FOt+d?=
+ =?us-ascii?Q?tDDeqDvIJRR7prfSPY6naCJ46QWPrDgSb7H7I2f?=
+ =?us-ascii?Q?b5tvlavNc7lDUoLW71RMhXUQbKs7vRDPjImzsaJ?=
+ =?us-ascii?Q?I7a4ug17cy1p0iOp=2FZC0V5gJd7s+oE4MYqxTLw0?=
+ =?us-ascii?Q?osak3tIqTZRaI1mm8RJuZi6zUYKs2z471WLW2vv?=
+ =?us-ascii?Q?t2=2FLosGU+atYClKSH8KFiHkFWNAnutky0CzSQEH?=
+ =?us-ascii?Q?CzTmV8998SVJdKXwjX0CJRZGZLfxyBvnheKrHGz?=
+ =?us-ascii?Q?NuwuoVmC94zp0EWRlpzw7GEI9+nLh0QOwv8wWZQ?=
+ =?us-ascii?Q?yx1FnlrjMun+ij8shAxOndk5gNNXseJIn92vzd5?=
+ =?us-ascii?Q?skFEKAWc1ma7TAWQ26T9SS98lYBA4NGomuh9+8o?=
+ =?us-ascii?Q?J85xp5wh66dLv1szzPVTViRYkmUJikPbo7BaiIE?=
+ =?us-ascii?Q?Y1h6T3Zi1AEj9A2cz4wkeLqmfl0gBlpKZpGKuyw?=
+ =?us-ascii?Q?2hw35CGc+oppiIylQdlm3Msd2K5z7Isp9Qpzvm+?=
+ =?us-ascii?Q?u5kjysSi4ZqRbu5ciQ8h9ppbkHwY1aj3G7K4SEO?=
+ =?us-ascii?Q?LJ7oifajgvvCcUQP3OOyYAC08NsfCMnX4PXOGtc?=
+ =?us-ascii?Q?cSCqxms=2Fv7F+wKlbJYavF4qrmw=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2EQVAFlyFaf?=
+ =?us-ascii?Q?3w4ClskWWkh1Y4ln-S3E=5Fm4XhNkOc4yQ6toMDAw?=
+ =?us-ascii?Q?dTAwMGSQ4jp3uA9E6Dcwohz0mJXKguM57TD2uQ9?=
+ =?us-ascii?Q?t2YfsOmkHBDtCwo=5Fy8EiPvo74gJvkm3Ae1DeoCU?=
+ =?us-ascii?Q?nGgHR28=5F6PvRAjAk2ZPA3MFDdaXqvnR8N7kyDCE?=
+ =?us-ascii?Q?0LynyVn4fyJ1XoOaQ=3D=3D=2EPji6fM8Q8I9qn90sxjB?=
+ =?us-ascii?Q?LnabVsfWJRNZSs389uPMVpBBoMDAwdTAwMBrPhY?=
+ =?us-ascii?Q?5wHN8WwI3ugRdi85D9ysSqyh-pH0fxes17YzJLA?=
+ =?us-ascii?Q?sNrSQokxFesQIiKDneQKNbJArLfPXQYvfHaiOVo?=
+ =?us-ascii?Q?vR=5FZz1PArg2YebAYvql8N541jYMJDdEJdfMcoN0?=
+ =?us-ascii?Q?7FJ3R3Teb1GssZHRoXBrSvVeE90F50=5F9n7rflHw?=
+ =?us-ascii?Q?vXLHDZ5sGNcmtyuulfXjhxK5dOcSnvUte7Z0zRc?=
+ =?us-ascii?Q?ShFhzXVRIN0lbJmIREG3t7iIyFPMDMmfZSXQ98I?=
+ =?us-ascii?Q?IvLYmyu6L01kKGJ225u-YVK6-6jTj9yWogKYede?=
+ =?us-ascii?Q?ILt-3dIqu2fR0=5FAHabyBJui7b9Xn8fKiheHM70k?=
+ =?us-ascii?Q?la9X0oqkkel3RSOS6s9-PU=5FIJ66ptXqXnfKvXVj?=
+ =?us-ascii?Q?OY4dVGhTWIk=5FtbOfLKRuR=5FR=5F2wWoiJDED5aJ-vU?=
+ =?us-ascii?Q?i5edyyONPmD6il3KgWQPhYYGaU7UdK-LoJ=5FSO7=5F?=
+ =?us-ascii?Q?VoKfi=5F55BPJSenLH23Zbjw5rGvy=5Fk1BcjS1MUWm?=
+ =?us-ascii?Q?Alut8VjN9H=5F4m=5FlxAIB5vUkLp3FSY3-3=5FjxP5hj?=
+ =?us-ascii?Q?0HBzjes4zlN5ud3KOf3rbNM9eBQW0VRN8vxxwKO?=
+ =?us-ascii?Q?Xj-YBv-U2t3JW84leh4dj2D7V2CGSsyNk86yijD?=
+ =?us-ascii?Q?yjgtjl9Lend2k9m0=5FjmLDg-yn-VngYpe5t9G3JB?=
+ =?us-ascii?Q?mrZ09wl92T5DhWFh4eP82ugiHpurLlMa2meW3jA?=
+ =?us-ascii?Q?MsuAQEkTNRq3ASrUtYbq-Bzk9rJhff136X-BNuz?=
+ =?us-ascii?Q?dYBWk1kTKFn1ojboOgdcxwMBRzWyyP5FUV-pTFo?=
+ =?us-ascii?Q?Bc4MnrymmHbPd0zJkCAKINUwk4UIZ6I2d62LNfe?=
+ =?us-ascii?Q?WqAchES7v1CSeAjqp219qn4FKPdG0cCi4b=5FZoHA?=
+ =?us-ascii?Q?tbOOgU0k2jT5J3AvsiOSeFn=5FLCfdi56wO4=5FJPZc?=
+ =?us-ascii?Q?mmwufpximaq7OoaS03zH6j5IHSvE-jecvQuV12I?=
+ =?us-ascii?Q?n7q=5FH-CWpZl9VM6LLZUheBHOj5OmZqOejVY4WPh?=
+ =?us-ascii?Q?e6PDqY=5FnMMv22pIrOb5L4mI8BzDgLfrkvhIk=5FJo?=
+ =?us-ascii?Q?dc-774nHe5rX8Wsee7bhiwEJ=5FV2=5FiFPnGhN0hI8?=
+ =?us-ascii?Q?=5F86jhg=3D=3D=3E?=
+
+--a53a9e156b308d090a72d919b1422fd8f0b569e53345d0869508717ee487
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=us-ascii
+Mime-Version: 1.0
+
+LASSA FEVER - WEST AFRICA (03): NIGERIA
+***************************************
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+In this update:
+[1] National
+[2] Gombe State
+[3] Cross River
+
+******
+[1] National
+Date: Sun 7 Jan 2024
+Source: Nigeria Centre for Disease Control (NCDC) [edited]
+<http://tinyurl.com/349xha7m>
+
+
+Table 1: Summary of the current week (1), cumulative Epi week 1, 2024
+and comparison with the previous year (2023)
+
+Current week 1 (1-7 Jan 2024) / Cumulative week 1, 2024 / Cumulative
+week 1, 2023
+- Suspected cases: 190 / 190 / 143
+- Confirmed cases: 53 / 53 / 10
+- Probable cases: 0 / 0 / 0
+- Deaths: 6 / 6 / 8
+- Case fatality rate (CFR [%]): 11.3 / 11.3 / 27.6.
+- Number of states affected: 9 / 9 / 6
+- Local government areas (LGAs) affected: 27 / 27 / 13
+
+Highlights
+----------
+- In week 1, the number of new confirmed cases increased from 43 in
+epi week 52, 2023 to 53 in epi week 1, 2024 cases. These were reported
+in Ondo, Edo, Bauchi, Benue, Taraba, Ebonyi, Enugu, Imo, and Plateau
+States (Table 3).
+- Cumulatively from week 1, 2024, 6 deaths have been reported with a
+case fatality rate (CFR) of 11.3% which is lower than the CFR for the
+same period in 2023 (27.6%).
+-  In total for 2024, 9 states have recorded at least one confirmed
+case across 27 local government areas (Figures 2 and 3).
+- 71% of all confirmed Lassa fever cases were reported from these 3
+states (Ondo, Edo, and Bauchi) while 29% were reported from 6 states
+with confirmed Lassa fever cases. Of the 71% confirmed cases, Ondo
+reported 25%, Edo 25%, and Bauchi 21%.
+- The predominant age group affected is 21-30 years (range: 4 to 75
+years, median age: 32 years). The male-to-female ratio for confirmed
+cases is 1:0.9 (Figure 4).
+- The number of suspected cases increased compared to that reported
+for the same period in 2023.
+- 2 new healthcare workers were affected in the reporting week 1.
+- National Lassa fever multi-partner, multi-sectoral Emergency
+Operations Centre (EOC) activated to coordinate the response
+activities at all levels.
+
+[The following are available at the source URL above:]
+Figure 1 [graph]. Confirmed Lassa fever cases in Nigeria
+epidemiological week 48, 2023 to week 1, 2024
+Figure 2 [map]. Confirmed Lassa fever cases by States in Nigeria, week
+1, 2024
+Figure 3 [map]. Confirmed Lassa fever rate per 100 000 population for
+LGAs in Nigeria, week 1, 2024
+Table 2: Key indicators for current week 2023 and trend compared to
+the previous week, Nigeria
+Table 3: Weekly and cumulative number of suspected and confirmed cases
+for 2024
+Figure 4 [graph]. Age and sex pyramid showing the number of confirmed
+Lassa fever cases for 2024
+Figure 5 [graph]: Number of confirmed cases with case fatality rate
+(CFR) by state week 1, 2024
+Figure 6 [graph]: Trend of confirmed cases by epidemiological week,
+2019-2024, Nigeria
+
+Response activities
+-------------------
+- Confirmed cases are treated at identified treatment centres across
+the states
+- Dissemination of reviewed case management and safe burial practices
+guidelines
+- Diagnosis of all samples in Lassa fever testing laboratories across
+the country
+- Reports on the preparedness survey in the 36 states and FCT to
+assess preparedness, readiness, and response to Lassa fever
+disseminated
+- Dissemination of media content including press releases, tweets,
+public advisories, etc.
+- Held the first Lassa Fever webinar for 2024 focused on "Empowering
+Communities to Combat Lassa Fever"
+- Held a meeting with CEPI to strengthen the implementation of
+research activities both during the outbreak and at peace time.
+- Off-site support on IPC and safe burial to affected states
+- Monitoring of outbreak emergency composite indicators to guide
+action
+- Incident management system/multi-sectoral Public Health Emergency
+Operation Centres (PHEOC) activated at the national and some affected
+states
+
+Challenges
+----------
+- Late presentation of cases leading to CFR higher than the national
+target
+- Poor health-seeking behaviour due to the high cost of treatment and
+clinical management of Lassa fever
+- Poor environmental sanitation conditions observed in high-burden
+communities
+- Poor awareness observed in high-burden communities
+
+Notes on this report
+--------------------
+Data Source: Information for this disease was case-based data
+retrieved from the National Lassa fever Emergency Operations Centre.
+
+Case definitions
+----------------
+- Suspected case: any individual presenting with one or more of the
+following: malaise, fever, headache, sore throat, cough, nausea,
+vomiting, diarrhoea, myalgia, chest pain, hearing loss, and either (a)
+history of contact with excreta or urine of rodents; or (b) history of
+contact with a probable or confirmed Lassa fever case within 21 days
+of onset of symptoms, OR (c) any person with inexplicable
+bleeding/hemorrhagia.
+- Confirmed case: any suspected case with laboratory confirmation
+(positive IgM antibody, PCR, or virus isolation).
+- Probable case: any suspected case (see definition above) who died or
+absconded without collection of specimen for laboratory testing.
+- Contact: anyone who has been exposed to an infected person, or to an
+infected person's secretions, excretions, or tissues within 3 weeks of
+last contact with a confirmed or probable case of Lassa fever.
+
+Calculations
+------------
+- Case fatality rate (CFR) for this disease is reported for confirmed
+cases only.
+
+--
+Communicated by:
+ProMED
+
+[The number of cases peaked earlier last year (2023) during weeks 2-5.
+The graph in Figure 6 shows an early and relatively higher peak in
+case numbers last year (2023) compared with earlier years. In most
+years, case numbers remain relatively flat on the graph from week 17
+onward. It will be interesting to see if cases again rise early this
+year (2024). The report above confirms that Ondo, Edo, and Bauchi
+states have the most confirmed cases again so far in 2024. The number
+of states affected is 9 so far this year (2024), and the number of
+local government areas (LGAs) with at least one case is 27.
+Unfortunately, 2 new healthcare workers were affected in the reporting
+week 1.
+
+Transmission of LF virus occurs when individuals are in contact with
+rodent reservoir host excreta or are within healthcare facilities. It
+is encouraging to learn from previous reports this year (2024) that
+risk communications and community engagement activities have been
+scaled up across states in Nigeria using television, radio, print,
+social media, and other strategies for avoidance of contact with
+rodent virus reservoirs and their excreta. These efforts may have
+contributed to the decline in the number of cases over the past
+month.
+
+Images of the rodent reservoirs of Lassa fever virus: _Mastomys
+natalensis_:
+<https://www.inaturalist.org/taxa/45326-Mastomys-natalensis>;
+_Mastomys erythroleucus_ and _Hylomyscus pamfi_:
+<https://punchng.com/nigerias-large-rat-population-threatens-lassa-fever-wa=
+r/>
+
+One hopes that the ongoing public information campaign will help the
+local population avoid the entry of these reservoir rodents into their
+houses and other buildings. - Mod.TY]
+
+******
+[2] Gombe State
+Date: Thu 18 Jan 2024
+Source: Blueprint [edited]
+<https://blueprint.ng/lassa-fever-outbreak-hits-gombe-governor-declares-pre=
+ventive-measures/>
+
+
+Gombe state Commissioner of Health, Dr. Habu Dahiru, has announced the
+unfortunate occurrence of the first outbreak of Lassa fever in the
+state, urging widespread information sharing to curtail the situation
+promptly.
+
+Dr. Dahiru said cases in the state over the past 5 years have created
+concerns. He said in 2018, 3 cases were reported while in 2019 and
+2020, the number rose to 6 cases each whereas there were no reported
+cases in 2021. However, in 2023, the state faced a surge with 24
+suspected cases.
+
+The commissioner disclosed that the first confirmed case in 2024 was a
+25-year-old driver who had recently travelled to Adamawa and spent 2
+weeks there. Upon his return, he exhibited symptoms such as fever,
+headache, and abdominal pain. Initially admitted to a local hospital,
+the deteriorating condition prompted a referral to the teaching
+hospital. A Lassa test was conducted, and the patient was confirmed
+positive.
+
+According to him, a systematic approach involving case identification,
+isolation, and treatment has been activated. The health system has
+implemented a laboratory pillar for the collection of samples from
+suspected cases for further investigation.
+
+The commissioner added that a risk communication pillar has been
+established to educate the public on the transmission of Lassa fever,
+emphasising that the virus is primarily transmitted through rats,
+which harbour and spread the infection. He cautioned against improper
+food handling practices, such as allowing rats to contaminate stored
+food products or leaving utensils exposed overnight.
+
+The commissioner stressed that collective efforts were essential to
+contain the outbreak and protect the health of the community.
+
+--
+Communicated by:
+ProMED
+
+******
+[3] Cross River
+Date: Thu 18 Jan 2024
+Source: Naija News [edited]
+<https://www.naijanews.com/2024/01/18/one-dead-as-cross-river-records-lassa=
+-fever-outbreak/>
+
+
+The Cross River State Ministry of Health has raised an alarm regarding
+an outbreak of Lassa fever, leading to one fatality in the Ejah
+Community of Osupong Ward 1, Obubra Local Government Area of the
+state.
+
+In a statement released on Thursday [18 Jan 2024] and signed by the
+Commissioner of Health, Dr. Egbe Ayuk, citizens were informed of the
+outbreak, which was confirmed through an investigation into the
+deceased, establishing that the cause of death was Lassa fever.
+
+The statement reads: "This is to notify the public of Lassa fever
+outbreak in Ejah Community of Osupong Ward 1, Obubra LGA.
+
+"Investigation has been concluded today (Wednesday [17 Jan 2024]), and
+details of the deceased, a resident of Obubra, gotten from Federal
+University Teaching Hospital Abakaliki, Ebony State -- confirmed he
+died of Lassa fever.
+
+"We have consequently activated the Cross River State Emergency
+Operation Centre.
+
+"The State Rapid Response Team will be going to Obubra on Thursday [18
+Jan 2024] to join the LGA team to ensure: contact tracing, line
+listing, and decontamination of affected premises.
+
+"Also, awareness creation and risk communication, as well as
+mobilisation of Lassa fever commodities, consumables, and personal
+protective equipment to General Hospital Obubra and other locations,
+have been activated," Ayuk stated.
+
+[Byline: Ikenna Ngere]
+
+--
+Communicated by:
+ProMED
+
+[Sporadic cases such as those reported above in Gombe and Cross River
+states are not unusual. Transmission is not as frequent as in Ondo,
+Edo, and Bauchi states as reported in the national report above or in
+2023 reports. Even though these 2 states are not "hot spots" for
+transmission, state residents should follow the advice of their health
+officials and take the necessary measures needed to avoid contact with
+the reservoir rodents and their excreta. - Mod.TY
+
+ProMED map:
+Nigeria: <https://promedmail.org/promed-post?place=3D8714327,62>]
+
+[See Also:
+Lassa fever - West Africa (02): Nigeria, update
+http://promedmail.org/post/20240115.8714244
+Lassa fever - West Africa (01): Nigeria (BE) fatal
+http://promedmail.org/post/20240106.8714080
+2023
+----
+Lassa fever - West Africa (14): Nigeria (BE)
+http://promedmail.org/post/20231231.8713999
+Lassa fever - West Africa (13): Nigeria
+http://promedmail.org/post/20231227.8713928
+Lassa fever - West Africa (12): Nigeria
+http://promedmail.org/post/20231011.8712574
+Lassa fever - West Africa (08): Nigeria
+http://promedmail.org/post/20230408.8709407
+Lassa fever - West Africa (07): Nigeria
+http://promedmail.org/post/20230308.8708805
+Lassa fever - West Africa (03): Nigeria
+http://promedmail.org/post/20230213.8708341
+Lassa fever - West Africa (02): Nigeria
+http://promedmail.org/post/20230124.8707942
+Lassa fever - West Africa: Nigeria, 2022
+http://promedmail.org/post/20230111.8707735]
+.................................................jh/ty/rd/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3D_bzIGR-nNJjU-XjyHrqQ5tR09HaPwAXHkLbNrKDNO3hoMDAwdTAwMNMbZTK=
+g_C1VQHjFhPL9z5bqjh5tA-MacUau9_lhwoAPMcckw3DfUs8s69---v-sT_MekS_iOdSIPgYrR7=
+AUUW1yYwaLgvI3Z4YDyQJ-Kq7XZ6IzviYEUordgwOU_sDkiEA__6k71G38udQWHMur0mGbhkyuN=
+-ycdxVCkwPdORQkxTTE-y1pg-rJJpwDvI2O_tKSb-WxPfg-eEK1zt2oKFGn0OTr6UDw7qniD3de=
+XA-8o4GPTXChzXQ1TIGul3HVE_gtGXtnOsSX67sCsvdI7fMKufgQQ_wdpQpUFz3X7keub0HnvIW=
+OrRIAnLNdfFmoIOXZOSYclBMTavJWu3Xgn5e2JK_8QqR8ZqvFWaMth7OJpXkfjlnEPn9a8HSca8=
+2ZBmyzHTIpzO50_-Ta690S0GSAM6jds6aaCChHNZ7N0mLmgbsY_R_0ped8PYx-Npjt7yYSp63xM=
+ufSTVsDQBQEX_4tDHTRhuZVuKJAO_jUs1DbMB51sipX6AL4_EJ-iTcWtxAH4lOIKnULq36jbsCQ=
+gwmtEywrpvSTcre1cDPzMPHY9eC4ax918PmQtHAq6rjLQ4LsawJosFypLD-YsswkNTnztNmAX2-=
+ndtrEe_rnQ1UOwlWGj_Z3bU2YWDsO47gMN2dILo48GQOrHP_o9B3wweNWp3b8EdeqmWxyVEzog7=
+vsGrK1OTP99XP5AEeKIR0W6J1LVQ2Y99t_XW2J_OKkYYtGw9ErERW02CLxur8KPaw1gF9UgI4Rf=
+FwwPeDcYvMERwL4IkD89hPKQIkRmmD-1LGeaUygb9bqlm0r2ynnQUGqF0NSVWYblr1X_eT3bRF5=
+TXxrLsAoJV8abDUBYQTnttuNj8DEVIM1oWuyORmdrXPixbFuyG0FdkcnyT5DMrv6EnKg0DHFbYe=
+40Zo7f0kXrKUBKnXq9IVihAuyJq1ERW11g2cKePvedBWZNBxKnLuMRr9bOol67YkpZDOJ9Vh5TK=
+Q5ipVFlQ02Dshw5b7qKvnKWiesPktF6Uz-Ajusp1cf8JdUi8LxRuyPl61dusuAUtHPqEob73vKL=
+mqMDS_51y8LcheSJG1g6qYm2UfOoP9etf3oWows9Fg0ig00EBx5FiD7c_9Rb6NTFJmHmOcjqxOd=
+yrfcCViWUq5B_GI-tXeZGVQOfysTigyZxuc24NsDZToDIrrsbFm9Lw3dPgLc2lwZ )
+############################################################
+############################################################
+
+--a53a9e156b308d090a72d919b1422fd8f0b569e53345d0869508717ee487
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>LASSA FEVER - WEST AFRICA (03): NIGERIA<br>**************************=
+*************<br>A ProMED-mail post<br><a href=3D"https://u19268662.ct.send=
+grid.net/ss/c/wscE2ng5fl6JrPIt48tisIijpefK5PNjW-mL-YZGnfgDOxU1G3gjwnPSi2Tfv=
+3HA/434/XP7EWpteSYe1LFlJ2fXugw/h0/sBSyP-wriYMm1YrZQ5IhWVlcyUSZhKMwOZIjOuXkp=
+H8">http://www.promedmail.org</a><br>ProMED-mail is a program of the<br>Int=
+ernational Society for Infectious Diseases<br><a href=3D"https://u19268662.=
+ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisCT5tpD4Upm3qyMCbcYSQvc/434/XP7EWp=
+teSYe1LFlJ2fXugw/h1/Egs4hcTQ7S_z4Zj2VGdUYJzxW1gndngztUETgpIAn_g">http://www=
+.isid.org</a><br><br>In this update:=0D<br>[1] National=0D<br>[2] Gombe Sta=
+te=0D<br>[3] Cross River=0D<br>=0D<br>******=0D<br>[1] National=0D<br>Date:=
+ Sun 7 Jan 2024=0D<br>Source: Nigeria Centre for Disease Control (NCDC) [ed=
+ited]=0D<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/DgIMzhc9xO6P0=
+drrFfDxwdpnyExbuN6AUtJfAY4rFECgYK93lxx0akjaenmm4c1e/434/XP7EWpteSYe1LFlJ2fX=
+ugw/h2/sdiYg-eXUiURFqTwJ_PPGTiEHHHqeIxsdFgjvPRt7VE">http://tinyurl.com/349x=
+ha7m</a>=0D<br>=0D<br>=0D<br>Table 1: Summary of the current week (1), cumu=
+lative Epi week 1, 2024<br>and comparison with the previous year (2023)=0D<=
+br>=0D<br>Current week 1 (1-7 Jan 2024) / Cumulative week 1, 2024 / Cumulat=
+ive<br>week 1, 2023=0D<br>- Suspected cases: 190 / 190 / 143=0D<br>- Confir=
+med cases: 53 / 53 / 10=0D<br>- Probable cases: 0 / 0 / 0=0D<br>- Deaths: 6=
+ / 6 / 8=0D<br>- Case fatality rate (CFR [%]): 11.3 / 11.3 / 27.6.=0D<br>- =
+Number of states affected: 9 / 9 / 6=0D<br>- Local government areas (LGAs) =
+affected: 27 / 27 / 13=0D<br>=0D<br>Highlights=0D<br>----------=0D<br>- In =
+week 1, the number of new confirmed cases increased from 43 in<br>epi week =
+52, 2023 to 53 in epi week 1, 2024 cases. These were reported<br>in Ondo, E=
+do, Bauchi, Benue, Taraba, Ebonyi, Enugu, Imo, and Plateau<br>States (Table=
+ 3).=0D<br>- Cumulatively from week 1, 2024, 6 deaths have been reported wi=
+th a<br>case fatality rate (CFR) of 11.3% which is lower than the CFR for t=
+he<br>same period in 2023 (27.6%).=0D<br>-  In total for 2024, 9 states hav=
+e recorded at least one confirmed<br>case across 27 local government areas =
+(Figures 2 and 3).=0D<br>- 71% of all confirmed Lassa fever cases were repo=
+rted from these 3<br>states (Ondo, Edo, and Bauchi) while 29% were reported=
+ from 6 states<br>with confirmed Lassa fever cases. Of the 71% confirmed ca=
+ses, Ondo<br>reported 25%, Edo 25%, and Bauchi 21%.=0D<br>- The predominant=
+ age group affected is 21-30 years (range: 4 to 75<br>years, median age: 32=
+ years). The male-to-female ratio for confirmed<br>cases is 1:0.9 (Figure 4=
+).=0D<br>- The number of suspected cases increased compared to that reporte=
+d<br>for the same period in 2023.=0D<br>- 2 new healthcare workers were aff=
+ected in the reporting week 1.=0D<br>- National Lassa fever multi-partner, =
+multi-sectoral Emergency<br>Operations Centre (EOC) activated to coordinate=
+ the response<br>activities at all levels.=0D<br>=0D<br>[The following are =
+available at the source URL above:]=0D<br>Figure 1 [graph]. Confirmed Lassa=
+ fever cases in Nigeria<br>epidemiological week 48, 2023 to week 1, 2024=0D=
+<br>Figure 2 [map]. Confirmed Lassa fever cases by States in Nigeria, week<=
+br>1, 2024=0D<br>Figure 3 [map]. Confirmed Lassa fever rate per 100 000 pop=
+ulation for<br>LGAs in Nigeria, week 1, 2024=0D<br>Table 2: Key indicators =
+for current week 2023 and trend compared to<br>the previous week, Nigeria=0D=
+<br>Table 3: Weekly and cumulative number of suspected and confirmed cases<=
+br>for 2024=0D<br>Figure 4 [graph]. Age and sex pyramid showing the number =
+of confirmed<br>Lassa fever cases for 2024=0D<br>Figure 5 [graph]: Number o=
+f confirmed cases with case fatality rate<br>(CFR) by state week 1, 2024=0D=
+<br>Figure 6 [graph]: Trend of confirmed cases by epidemiological week,<br>=
+2019-2024, Nigeria=0D<br>=0D<br>Response activities=0D<br>-----------------=
+--=0D<br>- Confirmed cases are treated at identified treatment centres acro=
+ss<br>the states=0D<br>- Dissemination of reviewed case management and safe=
+ burial practices<br>guidelines=0D<br>- Diagnosis of all samples in Lassa f=
+ever testing laboratories across<br>the country=0D<br>- Reports on the prep=
+aredness survey in the 36 states and FCT to<br>assess preparedness, readine=
+ss, and response to Lassa fever<br>disseminated=0D<br>- Dissemination of me=
+dia content including press releases, tweets,<br>public advisories, etc.=0D=
+<br>- Held the first Lassa Fever webinar for 2024 focused on "Empowering<br=
+>Communities to Combat Lassa Fever"=0D<br>- Held a meeting with CEPI to str=
+engthen the implementation of<br>research activities both during the outbre=
+ak and at peace time.=0D<br>- Off-site support on IPC and safe burial to af=
+fected states=0D<br>- Monitoring of outbreak emergency composite indicators=
+ to guide<br>action=0D<br>- Incident management system/multi-sectoral Publi=
+c Health Emergency<br>Operation Centres (PHEOC) activated at the national a=
+nd some affected<br>states=0D<br>=0D<br>Challenges=0D<br>----------=0D<br>-=
+ Late presentation of cases leading to CFR higher than the national<br>targ=
+et=0D<br>- Poor health-seeking behaviour due to the high cost of treatment =
+and<br>clinical management of Lassa fever=0D<br>- Poor environmental sanita=
+tion conditions observed in high-burden<br>communities=0D<br>- Poor awarene=
+ss observed in high-burden communities=0D<br>=0D<br>Notes on this report=0D=
+<br>--------------------=0D<br>Data Source: Information for this disease wa=
+s case-based data<br>retrieved from the National Lassa fever Emergency Oper=
+ations Centre.=0D<br>=0D<br>Case definitions=0D<br>----------------=0D<br>-=
+ Suspected case: any individual presenting with one or more of the<br>follo=
+wing: malaise, fever, headache, sore throat, cough, nausea,<br>vomiting, di=
+arrhoea, myalgia, chest pain, hearing loss, and either (a)<br>history of co=
+ntact with excreta or urine of rodents; or (b) history of<br>contact with a=
+ probable or confirmed Lassa fever case within 21 days<br>of onset of sympt=
+oms, OR (c) any person with inexplicable<br>bleeding/hemorrhagia.=0D<br>- C=
+onfirmed case: any suspected case with laboratory confirmation<br>(positive=
+ IgM antibody, PCR, or virus isolation).=0D<br>- Probable case: any suspect=
+ed case (see definition above) who died or<br>absconded without collection =
+of specimen for laboratory testing.=0D<br>- Contact: anyone who has been ex=
+posed to an infected person, or to an<br>infected person's secretions, excr=
+etions, or tissues within 3 weeks of<br>last contact with a confirmed or pr=
+obable case of Lassa fever.=0D<br>=0D<br>Calculations=0D<br>------------=0D=
+<br>- Case fatality rate (CFR) for this disease is reported for confirmed<b=
+r>cases only.=0D<br>=0D<br>--=0D<br>Communicated by:=0D<br>ProMED=0D<br>=0D=
+<br>[The number of cases peaked earlier last year (2023) during weeks 2-5.<=
+br>The graph in Figure 6 shows an early and relatively higher peak in<br>ca=
+se numbers last year (2023) compared with earlier years. In most<br>years, =
+case numbers remain relatively flat on the graph from week 17<br>onward. It=
+ will be interesting to see if cases again rise early this<br>year (2024). =
+The report above confirms that Ondo, Edo, and Bauchi<br>states have the mos=
+t confirmed cases again so far in 2024. The number<br>of states affected is=
+ 9 so far this year (2024), and the number of<br>local government areas (LG=
+As) with at least one case is 27.<br>Unfortunately, 2 new healthcare worker=
+s were affected in the reporting<br>week 1.=0D<br>=0D<br>Transmission of LF=
+ virus occurs when individuals are in contact with<br>rodent reservoir host=
+ excreta or are within healthcare facilities. It<br>is encouraging to learn=
+ from previous reports this year (2024) that<br>risk communications and com=
+munity engagement activities have been<br>scaled up across states in Nigeri=
+a using television, radio, print,<br>social media, and other strategies for=
+ avoidance of contact with<br>rodent virus reservoirs and their excreta. Th=
+ese efforts may have<br>contributed to the decline in the number of cases o=
+ver the past<br>month.=0D<br>=0D<br>Images of the rodent reservoirs of Lass=
+a fever virus: _Mastomys<br>natalensis_:<br><a href=3D"https://u19268662.ct=
+.sendgrid.net/ss/c/TLh_csrC34X_iXpbYoMam4sjE9WPFtGrXqhBKqKh8LcNSLbkSrJl-WII=
+zbwpSkEN9-r2B3HPdh7ag4KuE0FtqePdQPP4ZE7rXKILUbv6JB8/434/XP7EWpteSYe1LFlJ2fX=
+ugw/h3/FFii37V8FrlM9xA5GqTVI-aA6b3XrmomN6YQOcwuSOA">https://www.inaturalist=
+.org/taxa/45326-Mastomys-natalensis</a>;<br>_Mastomys erythroleucus_ and _H=
+ylomyscus pamfi_:<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/0oc7=
+vsq5mmLjPwOs4PjMh5SCIcE0xYz35O2wI8nBr-FKHJsG0aMj8GzoxL9Vt1kK7lX1MTIFNfOkVZU=
+xFBIW8Tp2c1xM1OrN-2okXoX1GWqAfzIQR7HgOEcEagrmw-jm/434/XP7EWpteSYe1LFlJ2fXug=
+w/h4/pAmHMR5A5rYOCJKBd-s2CYqnFidhiQd4_q9McKjKM7o">https://punchng.com/niger=
+ias-large-rat-population-threatens-lassa-fever-war/</a>=0D<br>=0D<br>One ho=
+pes that the ongoing public information campaign will help the<br>local pop=
+ulation avoid the entry of these reservoir rodents into their<br>houses and=
+ other buildings. - Mod.TY]=0D<br>=0D<br>******=0D<br>[2] Gombe State=0D<br=
+>Date: Thu 18 Jan 2024=0D<br>Source: Blueprint [edited]=0D<br><a href=3D"ht=
+tps://u19268662.ct.sendgrid.net/ss/c/yz2fdA_g7iMSh8qzYPxBFmphX7-77PjdOrxk8I=
+SI9iK36Ec77HN8iFRBvKSV-HUXLi4jV4xN7nBot-DU41YkBlgLgS47jtaUEvc_XmKQwRzU8CAbn=
+XPYdciUG3Es15IjR3gqRYYtvoICVtUudQ0vcA/434/XP7EWpteSYe1LFlJ2fXugw/h5/Ll4jidz=
+UBroVD5N6Td8N7-97BIMWSVLRXNksFY4jvEo">https://blueprint.ng/lassa-fever-outb=
+reak-hits-gombe-governor-declares-preventive-measures/</a>=0D<br>=0D<br>=0D=
+<br>Gombe state Commissioner of Health, Dr. Habu Dahiru, has announced the<=
+br>unfortunate occurrence of the first outbreak of Lassa fever in the<br>st=
+ate, urging widespread information sharing to curtail the situation<br>prom=
+ptly.=0D<br>=0D<br>Dr. Dahiru said cases in the state over the past 5 years=
+ have created<br>concerns. He said in 2018, 3 cases were reported while in =
+2019 and<br>2020, the number rose to 6 cases each whereas there were no rep=
+orted<br>cases in 2021. However, in 2023, the state faced a surge with 24<b=
+r>suspected cases.=0D<br>=0D<br>The commissioner disclosed that the first c=
+onfirmed case in 2024 was a<br>25-year-old driver who had recently travelle=
+d to Adamawa and spent 2<br>weeks there. Upon his return, he exhibited symp=
+toms such as fever,<br>headache, and abdominal pain. Initially admitted to =
+a local hospital,<br>the deteriorating condition prompted a referral to the=
+ teaching<br>hospital. A Lassa test was conducted, and the patient was conf=
+irmed<br>positive.=0D<br>=0D<br>According to him, a systematic approach inv=
+olving case identification,<br>isolation, and treatment has been activated.=
+ The health system has<br>implemented a laboratory pillar for the collectio=
+n of samples from<br>suspected cases for further investigation.=0D<br>=0D<b=
+r>The commissioner added that a risk communication pillar has been<br>estab=
+lished to educate the public on the transmission of Lassa fever,<br>emphasi=
+sing that the virus is primarily transmitted through rats,<br>which harbour=
+ and spread the infection. He cautioned against improper<br>food handling p=
+ractices, such as allowing rats to contaminate stored<br>food products or l=
+eaving utensils exposed overnight.=0D<br>=0D<br>The commissioner stressed t=
+hat collective efforts were essential to<br>contain the outbreak and protec=
+t the health of the community.=0D<br>=0D<br>--=0D<br>Communicated by:=0D<br=
+>ProMED=0D<br>=0D<br>******=0D<br>[3] Cross River=0D<br>Date: Thu 18 Jan 20=
+24=0D<br>Source: Naija News [edited]=0D<br><a href=3D"https://u19268662.ct.=
+sendgrid.net/ss/c/TLh_csrC34X_iXpbYoMamzu0YFoRHhSl6VIXxgBoPGGGw4_9_jHiZ5GcN=
+hc8OVZlzckCpNoQErkQ7s6xL1vhq3Jva-lk_sxG4-VJfC5LzttLBuzZ80IJgZImDcRJH4Tc-Js_=
+ilwh8lqw9CQpiu-77A/434/XP7EWpteSYe1LFlJ2fXugw/h6/zn5MLAzGT7JIPWUPKtMTSdQ49N=
+NKbYe_QSj6V96P3nE">https://www.naijanews.com/2024/01/18/one-dead-as-cross-r=
+iver-records-lassa-fever-outbreak/</a>=0D<br>=0D<br>=0D<br>The Cross River =
+State Ministry of Health has raised an alarm regarding<br>an outbreak of La=
+ssa fever, leading to one fatality in the Ejah<br>Community of Osupong Ward=
+ 1, Obubra Local Government Area of the<br>state.=0D<br>=0D<br>In a stateme=
+nt released on Thursday [18 Jan 2024] and signed by the<br>Commissioner of =
+Health, Dr. Egbe Ayuk, citizens were informed of the<br>outbreak, which was=
+ confirmed through an investigation into the<br>deceased, establishing that=
+ the cause of death was Lassa fever.=0D<br>=0D<br>The statement reads: "Thi=
+s is to notify the public of Lassa fever<br>outbreak in Ejah Community of O=
+supong Ward 1, Obubra LGA.=0D<br>=0D<br>"Investigation has been concluded t=
+oday (Wednesday [17 Jan 2024]), and<br>details of the deceased, a resident =
+of Obubra, gotten from Federal<br>University Teaching Hospital Abakaliki, E=
+bony State -- confirmed he<br>died of Lassa fever.=0D<br>=0D<br>"We have co=
+nsequently activated the Cross River State Emergency<br>Operation Centre.=0D=
+<br>=0D<br>"The State Rapid Response Team will be going to Obubra on Thursd=
+ay [18<br>Jan 2024] to join the LGA team to ensure: contact tracing, line<b=
+r>listing, and decontamination of affected premises.=0D<br>=0D<br>"Also, aw=
+areness creation and risk communication, as well as<br>mobilisation of Lass=
+a fever commodities, consumables, and personal<br>protective equipment to G=
+eneral Hospital Obubra and other locations,<br>have been activated," Ayuk s=
+tated.=0D<br>=0D<br>[Byline: Ikenna Ngere]=0D<br>=0D<br>--=0D<br>Communicat=
+ed by:=0D<br>ProMED<br><br>[Sporadic cases such as those reported above in =
+Gombe and Cross River<br>states are not unusual. Transmission is not as fre=
+quent as in Ondo,<br>Edo, and Bauchi states as reported in the national rep=
+ort above or in<br>2023 reports. Even though these 2 states are not "hot sp=
+ots" for<br>transmission, state residents should follow the advice of their=
+ health<br>officials and take the necessary measures needed to avoid contac=
+t with<br>the reservoir rodents and their excreta. - Mod.TY<br><br>ProMED m=
+ap:<br>Nigeria: <a href=3D"https://u19268662.ct.sendgrid.net/ss/c/sSnCkKCWB=
+vais3EuVAOvgy2WOIX7pp1nXnn4AbwuQ3Z6WbkfhqXYXU-aTMPJ8yThxsaTAT26NyuTIriKgtvU=
+qg/434/XP7EWpteSYe1LFlJ2fXugw/h7/2d2e1-8tWjeshY7HmYnHwLheEBaXfzAtDyNdG8VgUL=
+Q">https://promedmail.org/promed-post?place=3D8714327,62</a>]<br><br>[See A=
+lso:<br>Lassa fever - West Africa (02): Nigeria, update<br>http://promedmai=
+l.org/post/20240115.8714244=0D<br>Lassa fever - West Africa (01): Nigeria (=
+BE) fatal<br>http://promedmail.org/post/20240106.8714080=0D<br>2023=0D<br>-=
+---=0D<br>Lassa fever - West Africa (14): Nigeria (BE)<br>http://promedmail=
+.org/post/20231231.8713999=0D<br>Lassa fever - West Africa (13): Nigeria<br=
+>http://promedmail.org/post/20231227.8713928=0D<br>Lassa fever - West Afric=
+a (12): Nigeria<br>http://promedmail.org/post/20231011.8712574=0D<br>Lassa =
+fever - West Africa (08): Nigeria<br>http://promedmail.org/post/20230408.87=
+09407=0D<br>Lassa fever - West Africa (07): Nigeria<br>http://promedmail.or=
+g/post/20230308.8708805=0D<br>Lassa fever - West Africa (03): Nigeria<br>ht=
+tp://promedmail.org/post/20230213.8708341=0D<br>Lassa fever - West Africa (=
+02): Nigeria<br>http://promedmail.org/post/20230124.8707942=0D<br>Lassa fev=
+er - West Africa: Nigeria, 2022<br>http://promedmail.org/post/20230111.8707=
+735]<br>.................................................jh/ty/rd/jh<br></b=
+ody>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3D_bzIGR-nNJjU-XjyHrqQ5tR09HaPwAXHkLbNrKDNO3hoMDAwdT=
+AwMNMbZTKg_C1VQHjFhPL9z5bqjh5tA-MacUau9_lhwoAPMcckw3DfUs8s69---v-sT_MekS_iO=
+dSIPgYrR7AUUW1yYwaLgvI3Z4YDyQJ-Kq7XZ6IzviYEUordgwOU_sDkiEA__6k71G38udQWHMur=
+0mGbhkyuN-ycdxVCkwPdORQkxTTE-y1pg-rJJpwDvI2O_tKSb-WxPfg-eEK1zt2oKFGn0OTr6UD=
+w7qniD3deXA-8o4GPTXChzXQ1TIGul3HVE_gtGXtnOsSX67sCsvdI7fMKufgQQ_wdpQpUFz3X7k=
+eub0HnvIWOrRIAnLNdfFmoIOXZOSYclBMTavJWu3Xgn5e2JK_8QqR8ZqvFWaMth7OJpXkfjlnEP=
+n9a8HSca82ZBmyzHTIpzO50_-Ta690S0GSAM6jds6aaCChHNZ7N0mLmgbsY_R_0ped8PYx-Npjt=
+7yYSp63xMufSTVsDQBQEX_4tDHTRhuZVuKJAO_jUs1DbMB51sipX6AL4_EJ-iTcWtxAH4lOIKnU=
+Lq36jbsCQgwmtEywrpvSTcre1cDPzMPHY9eC4ax918PmQtHAq6rjLQ4LsawJosFypLD-YsswkNT=
+nztNmAX2-ndtrEe_rnQ1UOwlWGj_Z3bU2YWDsO47gMN2dILo48GQOrHP_o9B3wweNWp3b8Edeqm=
+WxyVEzog7vsGrK1OTP99XP5AEeKIR0W6J1LVQ2Y99t_XW2J_OKkYYtGw9ErERW02CLxur8KPaw1=
+gF9UgI4RfFwwPeDcYvMERwL4IkD89hPKQIkRmmD-1LGeaUygb9bqlm0r2ynnQUGqF0NSVWYblr1=
+X_eT3bRF5TXxrLsAoJV8abDUBYQTnttuNj8DEVIM1oWuyORmdrXPixbFuyG0FdkcnyT5DMrv6En=
+Kg0DHFbYe40Zo7f0kXrKUBKnXq9IVihAuyJq1ERW11g2cKePvedBWZNBxKnLuMRr9bOol67YkpZ=
+DOJ9Vh5TKQ5ipVFlQ02Dshw5b7qKvnKWiesPktF6Uz-Ajusp1cf8JdUi8LxRuyPl61dusuAUtHP=
+qEob73vKLmqMDS_51y8LcheSJG1g6qYm2UfOoP9etf3oWows9Fg0ig00EBx5FiD7c_9Rb6NTFJm=
+HmOcjqxOdyrfcCViWUq5B_GI-tXeZGVQOfysTigyZxuc24NsDZToDIrrsbFm9Lw3dPgLc2lwZ" =
+target=3D"_blank" class=3D"Unsubscribe--unsubscribePreferences" style=3D"fo=
+nt-family:sans-serif;text-decoration:none;">Unsubscribe Preferences</a></di=
+v><br>############################################################<br>#####=
+#######################################################<br><br><img src=3D"=
+https://u19268662.ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/434/XP7EWpteS=
+Ye1LFlJ2fXugw/ho.gif" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=
+=3D"height:1px !important;width:1px !important;border-width:0 !important;ma=
+rgin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;=
+margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !importa=
+nt;padding-right:0 !important;padding-left:0 !important;"/></body>
+</html>
+--a53a9e156b308d090a72d919b1422fd8f0b569e53345d0869508717ee487--

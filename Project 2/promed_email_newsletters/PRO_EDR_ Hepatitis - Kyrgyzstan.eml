@@ -1,0 +1,368 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a98:d84b:0:b0:1eb:e128:bbe3 with SMTP id b11csp1272672eil;
+        Fri, 19 Jan 2024 17:08:16 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IFkVX3eTQrVDl8gqJQekRyiUjXGlqx+MU5PN6HKEbWkhLEh37VBbz2t9Q3cxZDewWtGlomd
+X-Received: by 2002:a05:620a:3709:b0:783:7891:f84c with SMTP id de9-20020a05620a370900b007837891f84cmr1011830qkb.95.1705712896450;
+        Fri, 19 Jan 2024 17:08:16 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1705712896; cv=none;
+        d=google.com; s=arc-20160816;
+        b=Vo87TrFFZy/SMfqHzRv7Kwi7fd687yMaBIVBSjZyKk56Qs4luZn+tOx5b9fFq7u19g
+         +l3Rxg8nMf3awUdgbsLHNXYuQt2r2jLySBtVMSrAhD4kgaF27/vhNiujjh23r5ng/Nns
+         aCt3Jer906riwrnkNsp/oVYdmcjnyskpWgy5Z6tlC6wWqXQI6SfcntyrjTPhFpcNyCb3
+         9wI/wNe1Fq5Y9agJxcAdve/HRo16+LLEwPdcJrwgEsRTlgk1Y972DfTkeQLvl9p+TsAm
+         nhLJmhG5HGhWCZina4fyfV8jqyhvG8fwFhBjhN/htBburRuOiTGpLllJvBoeGo/Vxuqq
+         vOuw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=H2tYXR1tPirpzOzuaxAVMLlyzauPydEK4lb9Z6uwZ+c=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=eTwzISmv9mctuzlPh491P2Jp8Z+RKzJYayYFuEUgVjhlWFSAHFcUwVz6VIaOSiTJP3
+         afsnWhv6aXM9M5wJCUf4evg/PxE1oeg7kUNZlJ9LpG37MJv+ZbB7DNXc2CEHdxypIx+J
+         +ck5w7l9k4RFaIA+0wnMQXS8+ZuyMo3X0/JSo4gFsBCg1aYaBFG4tVlPitb5nQDMI73x
+         lREYDxhBsoNRu+KPBVI+wCWViRHJJb3uFCgBg06LeG+Kzg2Z9WopTSYrqHkc7/jbVImp
+         AchgJ4U1Bk+Q1QnFb2hhLPK7E6IGujhGVlz8wpjagS8/Mt0bGJzEBKrz5QYLI5BJlocI
+         TkEw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b="eruoK9p/";
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=mfYxILv4;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id bk40-20020a05620a1a2800b00783577b7501si549597qkb.357.2024.01.19.17.08.15
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 19 Jan 2024 17:08:16 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b="eruoK9p/";
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=mfYxILv4;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=H2tYXR1tPirpzOzuaxAVMLlyzauPydEK4lb9Z6uwZ+c=;
+	b=eruoK9p/RXnMR1efmj+54rAi2Vn1qLRbJ4WxC+fIGX5QSwA05OclWN3nIffF6aBkAzLP
+	BSCwHoJ6K7QaOuWMeBDhgV0kVtJm//yatB7IKySVLllvQVrXk7UHuXKPrHKIArPrWJFr9r
+	we4EgQhAGhhKHcrTRA5Jj5Ym2B//SzyWIfP2jeqEwetqw6qz9lNY1Nyjt9I9Ntaru7skIv
+	VrXkpM5hKgcz1Q1klImtIRg1wbwRNUVrBKB8RQ0xlPkJIiGnhJ+Oou5BbiMV6JGnEZ+C3z
+	088DMyTS0Fomja792OkcuikLxz24SKai73D5lJrcGmM5ZCNLIceiXoIGGHjiEKiQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=H2tYXR1tPirpzOzuaxAVMLlyzauPydEK4lb9Z6uwZ+c=;
+	b=mfYxILv42yLiQb33/TbDFRUuJjAOIDzijFtbgNbR1nmxMqKTraGtNfi1y2SVPoOgv848
+	Qvfp4eRFrxD0SIqiHKo1CxVnEfUSO50M0wZv3TzlgqRGT80jOjcpZ/XRGD1qb7nFO2V8rM
+	dswUvurEqUpzzyUg15rUMbK9p2NTZJOkc=
+Received: by filterdrecv-67746b998-zvrvv with SMTP id filterdrecv-67746b998-zvrvv-1-65AB1CFD-75
+        2024-01-20 01:08:13.816012271 +0000 UTC m=+8144794.196324296
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-17 (SG) with HTTP
+	id xS09yHv_TYu169JKPVU96A
+	Sat, 20 Jan 2024 01:08:13.651 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=3086337ed4f4deeff99f26cd48f8e41d0ceea8a05d2407b5428e9f5e8eec
+Date: Sat, 20 Jan 2024 01:08:15 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <xS09yHv_TYu169JKPVU96A@geopod-ismtpd-17>
+Subject: PRO/EDR> Hepatitis - Kyrgyzstan
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iBWypPosDccJSPvxBTtQMMuYsvtR5EC8SOeIwW1?=
+ =?us-ascii?Q?fQHAx8kuWTRhnBlAoxjezbM1pHo+DGb8LV6tQnC?=
+ =?us-ascii?Q?LQAui7x4Uuxk7R2Gp4SEX+b9oMLVoIfs9qatjHc?=
+ =?us-ascii?Q?kHwN1scu4SZYDI6i3J7oh1B8blyi3kB1TziOsES?=
+ =?us-ascii?Q?9AfBJFQga6+LTCeRpS1=2FannwEZ+0=2FRWPPwhdTD?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUhc93xcG=2F095a5S4+mt=2FG?=
+ =?us-ascii?Q?uYUpctI=2FOGD2dwyi+uvm2j4FCdvuw0l9zcHM8iA?=
+ =?us-ascii?Q?mojOvTXq7jOpDFFNtfsYkHQYACEW8pq1BXXqYmH?=
+ =?us-ascii?Q?oGTsnt6QpE2ZV5WVqnpwfXWoLXx7+4a9EKLkiV8?=
+ =?us-ascii?Q?IMWoR6OveOJV8dP8cbo455Kbk8UYnbE14itueX=2F?=
+ =?us-ascii?Q?7QZ=2FCZEI2IfPxHQVArH=2FPRLQDX9LcvDJKqD=2F0qb?=
+ =?us-ascii?Q?q4wuzMVQAICw1=2FWlBOfxmViCxHNuKLQZQsyjDuU?=
+ =?us-ascii?Q?S77WMdIndsaMytJlDn3QzkIJMMIJek9mgbUztho?=
+ =?us-ascii?Q?7aWGKjKy6nVzsYIIWqS3QaxP5Jh+TrRuASeLhvb?=
+ =?us-ascii?Q?EcjrY8=2Ftp5ZXc5HzLJd3f65tWENk2EJXZepncDH?=
+ =?us-ascii?Q?YC0oGGcchLeffpYJb4OTn6raUy2lTum9vmsyicw?=
+ =?us-ascii?Q?oHyJD0ghjTKd9XN9ZW8DpBPLvyR02QDazn1dXY3?=
+ =?us-ascii?Q?r9xHp7KAN1Bzl819BOfiBpKH3xo54ZFDx0RYbob?=
+ =?us-ascii?Q?yyVcfvrmGmnL81IFHmRpoA=2FxiCpHL9OQydVfdnr?=
+ =?us-ascii?Q?=2FONJuTk3aoV1MIa+RFS3OCMQOqIkvyZbl=2FEnCVn?=
+ =?us-ascii?Q?b17KOsnipMW=2F92VdJbq+jbOYvd+NdXxt7iObSkF?=
+ =?us-ascii?Q?6Le66BsU9X96s6dLX4x+YtJCLEkOplORZ1Tgo1E?=
+ =?us-ascii?Q?iNzUhTVcgusoDDRpJlyEAw24RQ+vLdjTfpi3O02?=
+ =?us-ascii?Q?mWNL7QGKoLydAByUhWMgXOpmZTmExZpGTElSVdn?= =?us-ascii?Q?0OyV?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2E5imFW=5FYP9?=
+ =?us-ascii?Q?flOcnOFge-IB66zmqg06X3PCUY-PHXqkiRoMDAw?=
+ =?us-ascii?Q?dTAwMNjtxDB2hNnuU5=5F2B6ynhZBi4syP5q0FzIQ?=
+ =?us-ascii?Q?mMBg7KG53WbfxYbx1kP-F2lYASpwNoKr79NWbZM?=
+ =?us-ascii?Q?E95wJ5fXU1FUSwM5fQK8DtqXy9ucS30fIPoNxQA?=
+ =?us-ascii?Q?QY2rtE4x1nsht0ajQ=3D=3D=2E53yVj353=5FcZ44UuJ2SD?=
+ =?us-ascii?Q?4fbWw-TdPZA-c2ZIvbBKI7UtoMDAwdTAwMGXjia?=
+ =?us-ascii?Q?wMEE7-P8=5F6x8URuUT7t1pia4axG1CLb5HbWjpzA?=
+ =?us-ascii?Q?cHgmtskF=5F2LdL2o86NPoEZ6T25333jJf8OHHK-I?=
+ =?us-ascii?Q?t50ImO3mZW2gPW6OoK=5FOluEmpVZ=5FtCWmoyqSdYQ?=
+ =?us-ascii?Q?KO--SRb5RTa50HkNe1ty1i=5FE-K35HfmYIW-0OhI?=
+ =?us-ascii?Q?I0HcUFOG5vUd56=5Fn-iJ0aTsbqFEjckVyT4e1lE3?=
+ =?us-ascii?Q?yQUzivmV4QK14WtKVG7iGnvaq1-8B6eW1zJO4n3?=
+ =?us-ascii?Q?agdzFh37rwp6HbewkPDF3J4eOGbK5XVFzeRk8qE?=
+ =?us-ascii?Q?POR60t0O8xo0pEmVwvv-ilxsLbf4zgc4=5F5enaON?=
+ =?us-ascii?Q?qP8f9YIFatJ6ticdvzesZnQwcxgftBJeN=5F-ELs=5F?=
+ =?us-ascii?Q?XSEPnZqtpBg-PZ8VKn--IEbCDu0982HwFilxpB9?=
+ =?us-ascii?Q?iKFTT04bR8JcJEeeyFs95GR9SncW2=5Ft8liDMVpk?=
+ =?us-ascii?Q?woF62=5F0US98zFEVVIy10ZIWcxHXs7f9Gu5mxVSj?=
+ =?us-ascii?Q?ORCiUiqvaH9sgUB8q1NLrpC1Ai83HZKWlKESjZw?=
+ =?us-ascii?Q?4qznHo3VyftoM-6BvDq6jzMVxC9O0zrsEPUaovR?=
+ =?us-ascii?Q?GXXyKXx7VxHJR=5FDVR-t1dIkyyQ0RFsxv6qT-IZ2?=
+ =?us-ascii?Q?KsgcAOf6SFY6EI6zke38ByF=5Fy6PTvqI5fgZElaf?=
+ =?us-ascii?Q?D9NeZ1ukwhIoYyCGwdxFy1f40QBds5PjPV3Cvej?=
+ =?us-ascii?Q?fHXzh5o=5FS0hoG6dSChVL3s0rr2jRBaB8cFdHvtS?=
+ =?us-ascii?Q?yiAlstyH7qSlSVa6WxigN6Ui5XYi-crRHNKIcQp?=
+ =?us-ascii?Q?6qpO80lvt5Paq9WfACHFCfu32Jps1KtNw9dOrW7?=
+ =?us-ascii?Q?0ornxe1uefmlvm0mRPg0ziax27ydAPDmXBpZQLW?=
+ =?us-ascii?Q?CNsc2HertgemQXESbmz4udpIWTZ9Z3GJRfgBcjm?=
+ =?us-ascii?Q?VcPdTQB9xRId4H6Op-yuI8Uid2v=5Fhm0OIHc3-BK?=
+ =?us-ascii?Q?A3uNWnEiIUN7M=5FupcW1VNSmOKQzZGhSlIObzrNj?=
+ =?us-ascii?Q?45LdcQGCAkx0P18MzWzcYhquFVKfKRNy8PLgUq9?=
+ =?us-ascii?Q?mUJiNtvUBdRkLz1W3ihrgIT=3E?=
+
+--3086337ed4f4deeff99f26cd48f8e41d0ceea8a05d2407b5428e9f5e8eec
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=us-ascii
+Mime-Version: 1.0
+
+HEPATITIS - KYRGYZSTAN
+**********************
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+Date: Fri 19 Jan 2024
+Source: AKIpress [edited]
+<https://akipress.com/news:755369:Kyrgyzstan_records_14,000_new_hepatitis_c=
+ases/>
+
+
+Kyrgyzstan records 14 000 new hepatitis cases
+---------------------------------------------
+14 000 new cases of various types of hepatitis have been recorded in
+Kyrgyzstan, Health Minister Alymkadyr Beishenaliev said at a meeting
+of the Parliament on 17 Jan 2024. According to him, 60% of cases are
+among adults, 40% are among children.
+
+"In total, 35 000 people are registered at hospitals. In order to
+prevent the spread of the disease, the Ministry of Health has a
+sufficient amount of vaccine. Citizens are not getting vaccinated.
+They refuse due to religious beliefs." he said.
+
+--
+Communicated by:
+ProMED
+
+[There are 5 classical hepatitis viruses. Types A and E have
+fecal-oral transmission and are generally self-limited although the
+zoonotic genotypes of HEV may cause chronic infection in
+immunocompromised people. Types B, C, and D are generally transmitted
+by blood or body fluids and may be chronic. Type D (or delta) is a
+defective virus that requires HBV to be present for replication. There
+are effective vaccines to prevent types A and B.
+
+No further breakdown is given regarding the types diagnosed here. Many
+of the HBV and HCV cases may be initial diagnoses but could be already
+chronic infections. - Mod.LL
+
+ProMED map:
+Kyrgyzstan: <https://promedmail.org/promed-post?place=3D8714342,138>]
+
+[See Also:
+2023
+----
+Hepatitis A - Kazakhstan: (Zhetysu) children
+http://promedmail.org/post/20230817.8711728
+2010
+----
+Hepatitis A - Kazakhstan: (PA) schoolchildren
+http://promedmail.org/post/20101109.4061
+Hepatitis A - Russia: Moscow http://promedmail.org/post/20100429.1393
+2009
+----
+Hepatitis A, school children - Russia: (RZ)
+http://promedmail.org/post/20091020.3604
+Hepatitis A - Russia: (BK) http://promedmail.org/post/20090520.1890
+2005
+----
+Hepatitis A - Russia (Nizhniy Novgorod) (08)
+http://promedmail.org/post/20051201.3466
+Hepatitis A - Russia (Nizhniy Novgorod)
+http://promedmail.org/post/20050915.2725
+Hepatitis A - Russia (Vologda)
+http://promedmail.org/post/20050902.2598
+Hepatitis A - Russia (Tver) (07)
+http://promedmail.org/post/20050622.1758
+Hepatitis A - Russia (Tver) http://promedmail.org/post/20050609.1606]
+.................................................ll/may/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3D8MNGE91RlEvleCvVWZv82irwZMwo3GSirW8LB9YYPx9oMDAwdTAwMMwXRxY=
+kHk8MbxyZ68_BE4IuVW7-nB9VKh5piqE3Eg0B3Mw1mq8AURhIFqtCTcaoA8Xq3E-tQBMEMKv4qS=
+Mb3s1afBchfn9JtN1eEDgqETGMRO5yWKujEj2QCvnDWsF0Mqjj6sNxJGBu3RIMUshkUUtwbybQH=
+xoOk9Q8GPRK9zjY8VY3JiZ5Bl16oELFKoKIIFOGLDRyl4z8IszY4mAyH84iQaYYfBo7X5HbE5UK=
+ICrTtwqk30ruLAokzKTr15KAaxx3B_eiIjYyLaYZe6cICffe6AoKwP-VxPFvx04N2Wiko65wssx=
+b7jrs1o9E_e7BUr2TQgktWHbJ64nZ0yfsYpyaUuzOD8OwV9Nwj2n1tO7WgsVUmrOzpZdg3y1yF9=
+brTb63YWAP1g6gAKVNxw9dg1nqjA87iLGGleDm28V78W62joNK0gFOvm4BQx0AkLwOu3ztdJNd1=
+OsezOG_jHe8Kb75hesQQY6ZAxeWZYEDljSmEi5_fM_B5mdJouedAYJ4GtUw_C_2H_7ZzkDoJ8FA=
+P5vJA5_uAK1rCojfhH7K568z_8n_VNIj8tLVLxeAVt6Vz45AVNRA_7GCOBXJxESP2HGDdMeW061=
+5QBhOXdFQTkmYEOlYN2wr24A7FFc3DdqAc6-5F2kBbbtyJo1uNWbLPIGfT_Ozb-tn3okuTPLj4R=
+v_rAhkFu8KRUMt1vJsvYExNZ2qYAcmJe-vLx2lRNhSnV5Exi0iWRjkcHNgraFcm-VGwTQcWnmVz=
+WSujmZPEB0XbJT6E5ynQS_kKP_ly-UB7BREZpjoZjR_nk8Q88evFrmAubetmFak-Yfs3v4zmBnP=
+RpgaT5K8ak41akYQQKf_P7mBvsLv_WFILUXxJFYJA_jaRb4BLtyKmR2uawkR978Y7lcjtiB2SKh=
+kPGss2UDezuvXhlBxv8ntq_9ZV7A46VLI7qnnkTVqqtOUKE--kwOFOWgnzHvv50eJmFswH30SPk=
+8yRBeO1xHTdSUckt9-9PS8g6U0tSF6aDfqDNQkB-U8_407k41xCFX7atvGrlEcwnQOGE1yEBMSI=
+yMGJRA06O3O1LjxSD0vFxEFpvQk7aA5vc37vzYeiM6TRbEyuK6__9P0F3aJU-1EGutSEPfL2Jd3=
+sor3fikOuLzQ4EVh2soWffiIdwO1NVEZr0aoChvsJoU=3D )
+############################################################
+############################################################
+
+--3086337ed4f4deeff99f26cd48f8e41d0ceea8a05d2407b5428e9f5e8eec
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>HEPATITIS - KYRGYZSTAN<br>**********************<br>A ProMED-mail pos=
+t<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48ti=
+sIijpefK5PNjW-mL-YZGnfgDOxU1G3gjwnPSi2Tfv3HA/435/P3Icnhb3Q92mfXqJ-inWUA/h0/=
+qIvrRe8bVqFEhaIJVHbpBDWEehm1a0Qn65w-qpE6IS0">http://www.promedmail.org</a><=
+br>ProMED-mail is a program of the<br>International Society for Infectious =
+Diseases<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6Jr=
+PIt48tisCT5tpD4Upm3qyMCbcYSQvc/435/P3Icnhb3Q92mfXqJ-inWUA/h1/YXcMCWuL6o3k8G=
+jReSOKk5fVY9TvCWWfSC3mNHBQbtA">http://www.isid.org</a><br><br>Date: Fri 19 =
+Jan 2024=0D<br>Source: AKIpress [edited]=0D<br><a href=3D"https://u19268662=
+.ct.sendgrid.net/ss/c/sSnCkKCWBvais3EuVAOvg2F8naTfQxhUWtOEs9x8DvMa2ptvFVkxQ=
+N5Ur7L3n7lYzNg1yILewnA_I97O_J4vep-70CjVpkvOXdODnbTTPQU6ORg9jlLVBS2HG0oDqAS0=
+/435/P3Icnhb3Q92mfXqJ-inWUA/h2/wU_kcIcak_czdYfWLy0_knylReHfpz1AwxjEpo_JAHg"=
+>https://akipress.com/news:755369:Kyrgyzstan_records_14,000_new_hepatitis_c=
+ases/</a>=0D<br>=0D<br>=0D<br>Kyrgyzstan records 14 000 new hepatitis cases=0D=
+<br>---------------------------------------------=0D<br>14 000 new cases of=
+ various types of hepatitis have been recorded in<br>Kyrgyzstan, Health Min=
+ister Alymkadyr Beishenaliev said at a meeting<br>of the Parliament on 17 J=
+an 2024. According to him, 60% of cases are<br>among adults, 40% are among =
+children.=0D<br>=0D<br>"In total, 35 000 people are registered at hospitals=
+. In order to<br>prevent the spread of the disease, the Ministry of Health =
+has a<br>sufficient amount of vaccine. Citizens are not getting vaccinated.=
+<br>They refuse due to religious beliefs." he said.=0D<br>=0D<br>--=0D<br>C=
+ommunicated by:=0D<br>ProMED<br><br>[There are 5 classical hepatitis viruse=
+s. Types A and E have<br>fecal-oral transmission and are generally self-lim=
+ited although the<br>zoonotic genotypes of HEV may cause chronic infection =
+in<br>immunocompromised people. Types B, C, and D are generally transmitted=
+<br>by blood or body fluids and may be chronic. Type D (or delta) is a<br>d=
+efective virus that requires HBV to be present for replication. There<br>ar=
+e effective vaccines to prevent types A and B.=0D<br>=0D<br>No further brea=
+kdown is given regarding the types diagnosed here. Many<br>of the HBV and H=
+CV cases may be initial diagnoses but could be already<br>chronic infection=
+s. - Mod.LL<br><br>ProMED map:<br>Kyrgyzstan: <a href=3D"https://u19268662.=
+ct.sendgrid.net/ss/c/sSnCkKCWBvais3EuVAOvgy2WOIX7pp1nXnn4AbwuQ3Z6WbkfhqXYXU=
+-aTMPJ8yThmm0soe-ns1Mrd2jFytIvSg/435/P3Icnhb3Q92mfXqJ-inWUA/h3/FJ1awlK7CvTV=
+P14EF0b_tyRk2J37Y2QVHOHmrhCnR0Y">https://promedmail.org/promed-post?place=
+=3D8714342,138</a>]<br><br>[See Also:<br>2023=0D<br>----=0D<br>Hepatitis A =
+- Kazakhstan: (Zhetysu) children<br>http://promedmail.org/post/20230817.871=
+1728=0D<br>2010=0D<br>----=0D<br>Hepatitis A - Kazakhstan: (PA) schoolchild=
+ren<br>http://promedmail.org/post/20101109.4061=0D<br>Hepatitis A - Russia:=
+ Moscow http://promedmail.org/post/20100429.1393=0D<br>2009=0D<br>----=0D<b=
+r>Hepatitis A, school children - Russia: (RZ)<br>http://promedmail.org/post=
+/20091020.3604=0D<br>Hepatitis A - Russia: (BK) http://promedmail.org/post/=
+20090520.1890=0D<br>2005=0D<br>----=0D<br>Hepatitis A - Russia (Nizhniy Nov=
+gorod) (08)<br>http://promedmail.org/post/20051201.3466=0D<br>Hepatitis A -=
+ Russia (Nizhniy Novgorod)<br>http://promedmail.org/post/20050915.2725=0D<b=
+r>Hepatitis A - Russia (Vologda)<br>http://promedmail.org/post/20050902.259=
+8=0D<br>Hepatitis A - Russia (Tver) (07)<br>http://promedmail.org/post/2005=
+0622.1758=0D<br>Hepatitis A - Russia (Tver) http://promedmail.org/post/2005=
+0609.1606]<br>.................................................ll/may/jh<br=
+></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3D8MNGE91RlEvleCvVWZv82irwZMwo3GSirW8LB9YYPx9oMDAwdT=
+AwMMwXRxYkHk8MbxyZ68_BE4IuVW7-nB9VKh5piqE3Eg0B3Mw1mq8AURhIFqtCTcaoA8Xq3E-tQ=
+BMEMKv4qSMb3s1afBchfn9JtN1eEDgqETGMRO5yWKujEj2QCvnDWsF0Mqjj6sNxJGBu3RIMUshk=
+UUtwbybQHxoOk9Q8GPRK9zjY8VY3JiZ5Bl16oELFKoKIIFOGLDRyl4z8IszY4mAyH84iQaYYfBo=
+7X5HbE5UKICrTtwqk30ruLAokzKTr15KAaxx3B_eiIjYyLaYZe6cICffe6AoKwP-VxPFvx04N2W=
+iko65wssxb7jrs1o9E_e7BUr2TQgktWHbJ64nZ0yfsYpyaUuzOD8OwV9Nwj2n1tO7WgsVUmrOzp=
+Zdg3y1yF9brTb63YWAP1g6gAKVNxw9dg1nqjA87iLGGleDm28V78W62joNK0gFOvm4BQx0AkLwO=
+u3ztdJNd1OsezOG_jHe8Kb75hesQQY6ZAxeWZYEDljSmEi5_fM_B5mdJouedAYJ4GtUw_C_2H_7=
+ZzkDoJ8FAP5vJA5_uAK1rCojfhH7K568z_8n_VNIj8tLVLxeAVt6Vz45AVNRA_7GCOBXJxESP2H=
+GDdMeW0615QBhOXdFQTkmYEOlYN2wr24A7FFc3DdqAc6-5F2kBbbtyJo1uNWbLPIGfT_Ozb-tn3=
+okuTPLj4Rv_rAhkFu8KRUMt1vJsvYExNZ2qYAcmJe-vLx2lRNhSnV5Exi0iWRjkcHNgraFcm-VG=
+wTQcWnmVzWSujmZPEB0XbJT6E5ynQS_kKP_ly-UB7BREZpjoZjR_nk8Q88evFrmAubetmFak-Yf=
+s3v4zmBnPRpgaT5K8ak41akYQQKf_P7mBvsLv_WFILUXxJFYJA_jaRb4BLtyKmR2uawkR978Y7l=
+cjtiB2SKhkPGss2UDezuvXhlBxv8ntq_9ZV7A46VLI7qnnkTVqqtOUKE--kwOFOWgnzHvv50eJm=
+FswH30SPk8yRBeO1xHTdSUckt9-9PS8g6U0tSF6aDfqDNQkB-U8_407k41xCFX7atvGrlEcwnQO=
+GE1yEBMSIyMGJRA06O3O1LjxSD0vFxEFpvQk7aA5vc37vzYeiM6TRbEyuK6__9P0F3aJU-1EGut=
+SEPfL2Jd3sor3fikOuLzQ4EVh2soWffiIdwO1NVEZr0aoChvsJoU=3D" target=3D"_blank" =
+class=3D"Unsubscribe--unsubscribePreferences" style=3D"font-family:sans-ser=
+if;text-decoration:none;">Unsubscribe Preferences</a></div><br>############=
+################################################<br>#######################=
+#####################################<br><br><img src=3D"https://u19268662.=
+ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/435/P3Icnhb3Q92mfXqJ-inWUA/ho.g=
+if" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"height:1px !imp=
+ortant;width:1px !important;border-width:0 !important;margin-top:0 !importa=
+nt;margin-bottom:0 !important;margin-right:0 !important;margin-left:0 !impo=
+rtant;padding-top:0 !important;padding-bottom:0 !important;padding-right:0 =
+!important;padding-left:0 !important;"/></body>
+</html>
+--3086337ed4f4deeff99f26cd48f8e41d0ceea8a05d2407b5428e9f5e8eec--

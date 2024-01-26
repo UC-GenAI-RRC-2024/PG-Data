@@ -1,0 +1,522 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a98:c004:0:b0:1eb:e128:bbe3 with SMTP id l4csp3962040eic;
+        Mon, 15 Jan 2024 14:28:19 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IGZwHqO46CSLrPwrYvu/QzFxuG33bWJHcSPdYN8L07A2mdLx1T6PhGO0UhSAvf1ZnbFRacf
+X-Received: by 2002:a17:902:6e08:b0:1d4:419c:3c86 with SMTP id u8-20020a1709026e0800b001d4419c3c86mr6504589plk.82.1705357699427;
+        Mon, 15 Jan 2024 14:28:19 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1705357699; cv=none;
+        d=google.com; s=arc-20160816;
+        b=ri7KP2ePQR1MGcNZA5mFXnG4UfOnvw16LY+iomOZ48bgWrtjHrEWpKiHzjTEM5tBoD
+         tvQhsEqi9AZfyZAY4hWRT6lfJ6wKSdnGbyRxQ5tX0bC5OY4EZElFrEovuWdP5dcyqE7X
+         M2okSrY3JOm8n/xLP7f9pLdHeAdGmOjJlb5F3GSQocDn2hfKPLl8o9cg/72njaaIBgbE
+         joG0F18BlOYGcJKdeU3P/N9YTwC8JDKBFPgvyk/vybyggKWV60ASYWQS81ylcZCj7mH6
+         1p0poNdl3l5PVwCvKqCeIUChxqBucbjkOozAV4Pn40Ae8aUeI7cb6p6O0j8HnSCealHd
+         SZRA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=huwX6AGmo69Ffsg0k8FOCJ5d41UGUjQc1m6pfM52pYA=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=HJbQt1JU/pTTJtzGBzBQqD7bkWaqPR8u3X4FKkrXu/rIEX3M5mvjtFAbTzIO/jlIa1
+         q19GwdXgmhWPmPD0Kh0G1KaeJV1VB7fLn6QSftL4Fk9YatXgQ0UPhSS2MtvnPAL+UQEI
+         WxxEO9qz5b8FR2kvZkpYgWbx7qAyjdjOwlxJG+ev8Mz2OP6nuA+Ku46PeZT4eSxWSisG
+         2PwJqLB8FJih7gAGT1Oel4ndcUgvvylhhEJu04bBsHtqqiTHIFuHi9nN3g0v/y3llnRx
+         P//u3ph/61x5C05qs6FmV9mDU5e56j3rY1iQQhxQFp9qs/DB/BIBQe7W+e96XbUgXtqc
+         mdLA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b="RNkh/QB0";
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=rxI50zWW;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id i11-20020a17090a974b00b0028ced82a7dcsi12424969pjw.4.2024.01.15.14.28.18
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 15 Jan 2024 14:28:19 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b="RNkh/QB0";
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=rxI50zWW;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=huwX6AGmo69Ffsg0k8FOCJ5d41UGUjQc1m6pfM52pYA=;
+	b=RNkh/QB0bHMQYLWOUz2iY/p0xlWaCc3yz6yHxY4PD3VKizduF4lNfXeU8QeVix4dE4nu
+	kdaB8lG2CpVO5K8C8pQmgwp8yTB4PhC1+AVxbJA7kRLtSf9aLRfc6ABuZtRL0NoYyriwbC
+	XaBGNcPapNHTB28aFbYVnzqyw91oXvgGWJMsAChzVqEUY96qX4ITegyXqIVAynhyNmZOTe
+	stmODE0b+/LKQA5Z1uKaWZd3/cUgbgjnmVtSvaEAy27cPI4pot64snp+BDX74JIzIIjyIB
+	tdxkKlFi7rmaW/SJHpqlF8k7gdNvT8fUb1ErNrWPjm2aILl5gwe39P0YL1DOgaxQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=huwX6AGmo69Ffsg0k8FOCJ5d41UGUjQc1m6pfM52pYA=;
+	b=rxI50zWW3tyzPa8UufsxtRNMXlENUQtfve2GdFcTSAYBvtTyYCzctjFXJzkqOmMiU3ZR
+	LoQ2f5jd7udrh6LNfsTDEWprR7O/s2VwDiUXWZ3clwz4RjUEK4P7SyvarTsnVnOIoNztoX
+	9O01ippyMaKPL4tmtGIjWLTDUOzX5fKr0=
+Received: by filterdrecv-78db7c6dd4-q5746 with SMTP id filterdrecv-78db7c6dd4-q5746-1-65A5B17E-5
+        2024-01-15 22:28:14.102438483 +0000 UTC m=+7789601.976213654
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-35 (SG) with HTTP
+	id Vm7xbvkHQiynWSkB_52J-Q
+	Mon, 15 Jan 2024 22:28:13.977 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=879fe34a7e76fa2c80741c38faca70577ff126fcf185678955d24967874b
+Date: Mon, 15 Jan 2024 22:28:17 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <Vm7xbvkHQiynWSkB_52J-Q@geopod-ismtpd-35>
+Subject: PRO/EDR> Shigellosis - USA (02): (Philadelphia) antimicrobial
+ resistant, homelessness
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iBDH4mJ47qsLFE6u7Qr=2F8E7WlhyTFqPS3GCutwl?=
+ =?us-ascii?Q?c2AOsSEpDdgBqGZ7bMxoUyzxbOr2ks+9eazt=2FH7?=
+ =?us-ascii?Q?rPz+3u5EZY6z8assbp5SDSdAGPhypa+bebpSYcR?=
+ =?us-ascii?Q?HQbXmmj9p3Ql9Tr+4Za4p+26xwR30SHiWi3uBlM?=
+ =?us-ascii?Q?+deZVCbyrEKZVmxUfKPA5mGZgnHUo7xrnQLkn9?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUhc93xcG=2F095a5S4+mt=2FG?=
+ =?us-ascii?Q?uYUpctI=2FOGD2dwyi+uvm2j4FCdvuw0l9zcHM8iA?=
+ =?us-ascii?Q?mojOvTXq7jOpDFFNtfsYkHQYACEW8pq1BXXqYmH?=
+ =?us-ascii?Q?oGTsnt6QpE2ZV5WVqnpwfXWoLXx7+4ZoYPbk32L?=
+ =?us-ascii?Q?KhEObw8sN1i9EUYWR3Su6V5cdcqu=2FDRlrEVteXf?=
+ =?us-ascii?Q?A7coHOGCczWZBdgcRvgaTItOZQABh97gg+hUlV3?=
+ =?us-ascii?Q?rlBhUNd7KHQ2kJp6Ejm7JSygV8lTkIVBw8aCZU3?=
+ =?us-ascii?Q?haOHDgWiMuCyHhaJvAFCpjvwrOKBrD4Q54muUYA?=
+ =?us-ascii?Q?7D1D2fGMruRP0aWwDFTSegODU2QOIfHa3p8rINg?=
+ =?us-ascii?Q?K1xdQxNArnONDZed5QC6odSxT8KkhV+i42y031G?=
+ =?us-ascii?Q?0by5HtlXf7nyWvzXh2t=2Ff+1qwbylsFRWx9LYuwm?=
+ =?us-ascii?Q?OzACXkoYPm3CAK7jjeyQHSEXHkav40WsiyScv9g?=
+ =?us-ascii?Q?gRb+DDbRqsuFFDEPR1UN8eCd+FC4KzGjdR4OmHq?=
+ =?us-ascii?Q?UkqpqgGM437HGKF8XdbwNoPq8u0gN9Dy6eLLfiJ?=
+ =?us-ascii?Q?riMTtAeDFN1n6g2GrwhyJAW8vcfLNOCgZXoH=2FxZ?=
+ =?us-ascii?Q?+pfnzHSpuzcePy1TLmq74tj8Fliyeylxr9HMG+C?=
+ =?us-ascii?Q?eOxBjO2NCr7Jyq8QEKtMl=2Fw10GBeZ0NL+oMU4s5?=
+ =?us-ascii?Q?FqFYaJDr3jUTzIgmSdMnN+xPD+ZZj9pSDJgLnwR?=
+ =?us-ascii?Q?FEQaXITcSgzz0Ejm6VmWFUmC8=2FtrJghR2jBCPWh?=
+ =?us-ascii?Q?86XEKyRFF2CeefxTrSraB6Dggw=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2E6nsdN8PXu?=
+ =?us-ascii?Q?9g6mj061dtYb7bNFlhfdQ40=5F3yPPqLgaSJoMDAw?=
+ =?us-ascii?Q?dTAwMOuVkWvE26icxgFZye1UflIf8ligh-DuF52?=
+ =?us-ascii?Q?epgApO9rIlTy8mOQvm6GXbFaZHOifphNgrOS8ZK?=
+ =?us-ascii?Q?rYqMyn7AFGcU8CaqCSSvc2aRgjBuJUZL45FteK3?=
+ =?us-ascii?Q?PNjeV45q8WVo8QCdw=3D=3D=2EGukNrkf7UrKfkcEqOx9?=
+ =?us-ascii?Q?JK3rgNlGJsUGfHKMTJgaoHAdoMDAwdTAwMF0CSf?=
+ =?us-ascii?Q?zyK82qnCl6-uvup-GlO5jp-MhdxMHzqVMv9nkpD?=
+ =?us-ascii?Q?Rqth7lY4va9ohwg4QPmeCioI6ziGgXbL-eiU8nZ?=
+ =?us-ascii?Q?TO03F2a8gQyQ2gEMAv9D9NLg8mrWXzeXZeE6o2Z?=
+ =?us-ascii?Q?2SpxrZwbVVGdi-j9JQJqXMktjbr5f--lKdD0tY=5F?=
+ =?us-ascii?Q?=5FkzZbgMZhw3u5OviGx-d5kGwNogGirISETsXQC5?=
+ =?us-ascii?Q?4Ei-6j5y1Av8tKFpvq2gtvNdpmlB6oPVsWLaH10?=
+ =?us-ascii?Q?8hC8Zk3him6WS0Cp6em0kKnu-j5PAYatfxkZvgW?=
+ =?us-ascii?Q?eeE1kRlDVx-hrqSk=5F7xnzmtvBJTR0vyYVcgpCh3?=
+ =?us-ascii?Q?VxeIxFGLLf6jqWFUKBd3LI5g2pUvJq=5F0rtDpqCR?=
+ =?us-ascii?Q?eeBEjJrVNCjdglBnGhMUpnlrrAjMgSMSn5EPm1O?=
+ =?us-ascii?Q?avg3SqNEsdrmlHDvNBWZ1TY6-gCiLDnRUxwzgHI?=
+ =?us-ascii?Q?YqlFkb2lJxr6i1nWHbkqQpjMVMOkosoGZY469Le?=
+ =?us-ascii?Q?RxGjHg7oDdCKF=5F7XPpRSBHkTyDdxO9dgVtJF0ir?=
+ =?us-ascii?Q?7=5FxaeWjUu1Xk2qEjdLJ3WZiEL5nQEGtYCa9tkNU?=
+ =?us-ascii?Q?SgRzy4Hp1CwWOqsnYdR-p7WKFb467BSjocIMsmN?=
+ =?us-ascii?Q?7DZg5h6CjEB-YV-W9R8TlbryH4IZUyHR3vQpAb2?=
+ =?us-ascii?Q?9Ti1JdI-HUBy=5FQxl95R251bIk89gKJ-7OXPvzht?=
+ =?us-ascii?Q?zmeD2nJ8M-2UqlxrMLlGTt7pTkn7pkaklfTpH4p?=
+ =?us-ascii?Q?HNGEG4DTc0u=5F858Zj6UyIR8slcZJTcu2OVVpLG8?=
+ =?us-ascii?Q?fZ8=5FFFfyG5Q2HD0EH=5F0t9GdHSWiOPFIfnTb4mKV?=
+ =?us-ascii?Q?pFuA=5F5fTvVFCpt=5FOEqnUI6czNfZp8GSniHNcGkz?=
+ =?us-ascii?Q?r9obLHRA5LtLm6DjGuaVXkHdwPP2VJOc02eBHjm?=
+ =?us-ascii?Q?QDnxv5eoJHbS6oYhBKbhKPcOCGlHNtBbFThz0fg?=
+ =?us-ascii?Q?ToFBrZyS4dL-WNiclxNvPZJG-UZRVO8ekBMcGuM?=
+ =?us-ascii?Q?9CrYz0HBmfUOlAqQi7-6=5FCIy6rBoKt935L=5F6AcG?=
+ =?us-ascii?Q?ugQkAAVFRwpJRJ2-D3D3bMA=3E?=
+
+--879fe34a7e76fa2c80741c38faca70577ff126fcf185678955d24967874b
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=us-ascii
+Mime-Version: 1.0
+
+SHIGELLOSIS - USA (02): (PHILADELPHIA) ANTIMICROBIAL RESISTANT,
+HOMELESSNESS
+***************************************************************************=
+*
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+Date: Sun 14 Jan 2024
+Source: Medical Xpress via the Philadelphia Inquirer [abridged,
+edited]
+<https://medicalxpress.com/news/2024-01-shigella-antibiotic-resistant-bacte=
+ria-philly.html>
+
+
+Shigellosis, an increasingly hard to treat bacterial infection, is on
+the rise in Philadelphia, especially among people who are experiencing
+homelessness or use opioids. A total of 80 cases were reported to city
+health officials in October and November 2023, combined, according to
+an advisory issued last month [December 2023] by the Philadelphia
+Department of Health. They included 12 children who were infected. In
+comparison, fewer than 10 cases were reported per month from January
+through September 2023.
+
+_Shigella_ is a bacterium that causes bloody diarrhea, fever, and
+stomach pain. It passes from one person to another when small amounts
+of fecal matter are ingested, which can happen when people do not wash
+their hands after using the bathroom, during sex, and by drinking
+dirty water. People experiencing homelessness and without access to
+clean bathrooms are at higher risk of a _Shigella_ infection. Infected
+patients can get well without treatment, but more serious cases can
+require antibacterial drugs. Shigellosis can be fatal.
+
+"This is more than the typical food poisoning that people experience,"
+said Richard Ebright, a microbiologist at Rutgers University. "This is
+a much more severe infection."
+
+In 2023, the CDC warned of a rise in _Shigella_ strains that can evade
+antibiotics. The city has not detected locally the strains of
+_Shigella_ that are resistant to nearly all antibacterials. Still, lab
+testing on the strains circulating in Philadelphia show that many of
+the drugs that were typically used to treat the disease are often no
+longer effective, the health department noted. The development means
+health-care providers cannot rely on some common and easily accessible
+antimicrobials, said David Hyun, the director of the antibacterial
+resistance project at Pew Charitable Trusts.
+
+"We've been gradually seeing resistance patterns going up," Hyun
+said.
+
+[Byline: Abraham Gutman]
+
+--
+Communicated by:
+ProMED
+
+[Unlike most causes of bacterial enteritis, the inoculum of _Shigella_
+able to cause disease is much lower. The link to the CDC report on
+resistance in shigellosis can be found at
+<https://emergency.cdc.gov/han/2023/han00486.asp>.
+
+_Shigella_ was discovered more than 100 years ago by the Japanese
+microbiologist Kiyoshi Shiga, for whom the genus is named. There are 4
+species: _S. boydii_, _S. dysenteriae_, _S. flexneri_, and _S.
+sonnei_. _Shigella_ organisms can survive transit through the stomach
+because they are less susceptible to acid than other bacteria; for
+this reason, as few as 10-100 organisms can cause disease. Ingested
+bacteria pass into the small intestine where they multiply; large
+numbers of bacteria then pass into the colon, where they enter the
+colonic cells. Given its relatively low infectious dose, transmission
+can occur via contaminated food and water or via direct
+person-to-person spread, including sexual practices commoner in men
+who have sex with men. Humans are the only natural reservoir for the
+disease.
+
+The bacterium is the classical cause of bacterial dysentery (formerly
+known as flux or the bloody flux), an inflammatory disorder of the
+colon, which results in severe diarrhea containing mucus and/or blood
+in the feces with fever, abdominal pain, and rectal tenesmus (pain
+while passing diarrhea).
+
+A relatively recent review on shigellosis follows:
+
+Citation: Kotloff K L, Riddle M S, Platts-Mills J A, et al.
+Shigellosis. Lancet. 2018; 391: 801-12;
+<https://doi.org/10.1016/S0140-6736(17)33296-8>.
+---------------------------------------------------------------------------=
+-----------------------------------------
+"Summary
+--------
+"Shigellosis is a clinical syndrome caused by invasion of the
+epithelium lining the terminal ileum, colon, and rectum by _Shigella_
+species. Although infections occur globally and in people of all ages,
+endemic infections among children aged 1-4 years living in low-income
+and middle-income settings constitute most of the disease burden. The
+versatile manifestations of these highly contagious organisms range
+from acute watery diarrhoea to fulminant dysentery characterised by
+frequent scant bloody stools with fever, prostration, and abdominal
+cramps. A broad array of uncommon, but often severe, intestinal and
+extraintestinal complications can occur. Despite marked reductions in
+mortality during the past 3 decades, there are roughly 164 000 annual
+deaths attributable to shigellosis. Intercontinental dissemination of
+multiresistant _Shigella_ strains, facilitated by travellers and men
+who have sex with men, has prompted new recommendations for antibiotic
+therapy. Awareness of disease burden and the emerging threats posed by
+_Shigella_ have accelerated interest in development of shigella
+vaccines, many of which are being tested in clinical trials." - Mod.LL
+
+ProMED map:
+Philadelphia, Pennsylvania, United States:
+<https://promedmail.org/promed-post?place=3D8714243,257>]
+
+[See Also:
+Shigellosis - USA (01): (WA)
+http://promedmail.org/post/20240113.8714200
+2023
+----
+Shigellosis - USA (04): (WA)
+http://promedmail.org/post/20231214.8713723
+Shigellosis - USA (03): (CA) union conference, hotel
+http://promedmail.org/post/20230914.8712129
+Shigellosis - USA (02): (WA)
+http://promedmail.org/post/20230901.8711916
+Shigellosis - USA: XDR, int'l travel, MSM, CDC HAN, mostly S. sonnei,
+alert http://promedmail.org/post/20230226.8708603
+2022
+----
+Shigellosis - USA (03): (CA)
+http://promedmail.org/post/20220330.8702307
+Shigellosis - USA (02): (CA)
+http://promedmail.org/post/20220306.8701847
+Shigellosis - USA: (CA) http://promedmail.org/post/20220227.8701699
+2021
+----
+Shigellosis - USA (06): (CA) homeless individuals
+http://promedmail.org/post/20211222.8700434
+Shigellosis - USA (05): (CA) homeless individuals
+http://promedmail.org/post/20211113.8699654
+Shigellosis - USA (04): (CA) homeless individuals
+http://promedmail.org/post/20211026.8699278
+Shigellosis - USA (03): (CA) homeless individuals
+http://promedmail.org/post/20211012.8699003
+Shigellosis - USA (02): (KS) wildlife park, non-zoonotic, RFI
+http://promedmail.org/post/20210811.8587171
+Shigellosis - USA: (KS) wildlife park, RFI
+http://promedmail.org/post/20210630.8486452
+2019
+----
+Shigellosis - USA: (Guam) http://promedmail.org/post/20190319.6375402
+2018
+----
+Shigellosis, st sonnei - USA: (VT) retirement community, multidrug
+resistant http://promedmail.org/post/20181107.6132342]
+.................................................ll/tw/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3Dbuiw63TdH-WjMdL6_w5wfo9daGYJWSSXHMvLxcINczRoMDAwdTAwMOG1oER=
+a3YAQI8D2WVuNoRKD7iGGbGr7kWZMevYZ9E8uF417rcx8tM8IY98mB8GczDO3RX_Khqm9NrsB1w=
+Xph1Jb4SatVDyTs1rze84baBgoLEp2njWXFS1rWvrtXQMxnwEA4GCYCSXW_gOiuFLvLPa3Az5iQ=
+bZWifUmaeJbm4ZuS6OXnibQjHfjT7gC180_5e4bPOCJAckXyM5PwiKucf_MJbPzPUG-JYj7LOuz=
+nRFR1lx6bd7D6A7NKeFF0ck1UvOShb80Rtli_SykjZtUxttB_Ve7rNn_X7cJvL1RiYFhr7apW7y=
+6ycykOMwTA0sWz4OgSOVQ2yARgYZLgTjCPgIXOSa59pjqfc92YlqgprWzCLNRZ0FQfxtGId3B79=
+Rb09VowzLtbcSQIMr1zhyp9LEt_ruu93e4gTdZqlbOEOzH1CmP5dcjpbHV0R-NV3UZ9Hw1a_nNf=
+dkdbYmAgAyw3H8jHNXWYoo2Q4D35nSVF4lAQdMm3-8ZWdpwyp_qNXOIGUwtumQ96tuFyDiDFq38=
+TNVX_IB6QHwdXbydASoKc_SPDb7vQ1_Rw3zPxaiHLpbawRxMeRqTlCoY-93BYNmxKJvp3-wu-jb=
+NjxsZgVMVrddJhH3TakDHly1cLLgWx0E0PaGhzrvHZgitL1xXu2WDJSS6X_QI9jKq-uBOw9xgqt=
+YRUL2aSYYaqA3Bhv7q-__gbArhO95DN4Jw3XzmlFG38zd-CJf4jTrtUS0haTJaX8X-oLbpxHWS8=
+whdjmGD2rRDGY3xcx_oQhSRDVFtnPUBeqHBA6LhVAFIGr4jAGKIyQm5C4KQPjL3ffeSMl7nDMoA=
+Y-7neOlAn_A0O2dHPxBWMOy6PYvjpsm5zakHh8Rxr4Fv9t8olGo8BWHGS5NNCwiJmwzGYosN_jv=
+dtLrg8xesHIxihfsSfyMk6tCxteg_BwNuaRt2MOTjQEVo3ycgnC7I5KxJD_Wy7xjJMwK5XQAIps=
+WBtiRcsMxgJQ6UYhimh1xO0uxaB1mMCgBMV3_RvVoXdJJSOVOkkwMysuM6FCpECIYuNcZaz8vhm=
+8xMbyuc2spc9d19eDveVzj96YhH30oXbq5OSxCxpIllyFzNW2I5QlZ2Jl4NSRyuQFautYMWefWU=
+U2bA3iMaGrOEdlUV-k9XXsjLKQyPyw0wqzcBy3Cofjg=3D )
+############################################################
+############################################################
+
+--879fe34a7e76fa2c80741c38faca70577ff126fcf185678955d24967874b
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>SHIGELLOSIS - USA (02): (PHILADELPHIA) ANTIMICROBIAL RESISTANT,<br>HO=
+MELESSNESS<br>*************************************************************=
+***************<br>A ProMED-mail post<br><a href=3D"https://u19268662.ct.se=
+ndgrid.net/ss/c/wscE2ng5fl6JrPIt48tisIijpefK5PNjW-mL-YZGnfgDOxU1G3gjwnPSi2T=
+fv3HA/430/NzFx-6CXQn6NPLcy0CSU2A/h0/5nphxr7jl_wKLoabnKt_fqXFisPyvlB6cjubLur=
+NGmk">http://www.promedmail.org</a><br>ProMED-mail is a program of the<br>I=
+nternational Society for Infectious Diseases<br><a href=3D"https://u1926866=
+2.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisCT5tpD4Upm3qyMCbcYSQvc/430/NzFx=
+-6CXQn6NPLcy0CSU2A/h1/NyvaAn4Xop_dnctLhA26llMedEQ-ZGqzznDV766NJyg">http://w=
+ww.isid.org</a><br><br>Date: Sun 14 Jan 2024=0D<br>Source: Medical Xpress v=
+ia the Philadelphia Inquirer [abridged,<br>edited]=0D<br><a href=3D"https:/=
+/u19268662.ct.sendgrid.net/ss/c/P7ifjHQ-88vLP93KziIlkWipyvxTEkigrsDGMZ77bRB=
+r6ETS8I9vc1IgLreTc4zQFIwTb0Kjym4uklWqeVAFg_y-L7AYS0TleF3gORK3b2Ut4ZY5L5fEJe=
+uEAnfwY0p2knyAzsGeTWWlDlijEzHDpA/430/NzFx-6CXQn6NPLcy0CSU2A/h2/aYL8xf6eFiRu=
+pUa3IMscuczefdY0c2fbot-GLJwZ2Ts">https://medicalxpress.com/news/2024-01-shi=
+gella-antibiotic-resistant-bacteria-philly.html</a>=0D<br>=0D<br>=0D<br>Shi=
+gellosis, an increasingly hard to treat bacterial infection, is on<br>the r=
+ise in Philadelphia, especially among people who are experiencing<br>homele=
+ssness or use opioids. A total of 80 cases were reported to city<br>health =
+officials in October and November 2023, combined, according to<br>an adviso=
+ry issued last month [December 2023] by the Philadelphia<br>Department of H=
+ealth. They included 12 children who were infected. In<br>comparison, fewer=
+ than 10 cases were reported per month from January<br>through September 20=
+23.=0D<br>=0D<br>_Shigella_ is a bacterium that causes bloody diarrhea, fev=
+er, and<br>stomach pain. It passes from one person to another when small am=
+ounts<br>of fecal matter are ingested, which can happen when people do not =
+wash<br>their hands after using the bathroom, during sex, and by drinking<b=
+r>dirty water. People experiencing homelessness and without access to<br>cl=
+ean bathrooms are at higher risk of a _Shigella_ infection. Infected<br>pat=
+ients can get well without treatment, but more serious cases can<br>require=
+ antibacterial drugs. Shigellosis can be fatal.=0D<br>=0D<br>"This is more =
+than the typical food poisoning that people experience,"<br>said Richard Eb=
+right, a microbiologist at Rutgers University. "This is<br>a much more seve=
+re infection."=0D<br>=0D<br>In 2023, the CDC warned of a rise in _Shigella_=
+ strains that can evade<br>antibiotics. The city has not detected locally t=
+he strains of<br>_Shigella_ that are resistant to nearly all antibacterials=
+. Still, lab<br>testing on the strains circulating in Philadelphia show tha=
+t many of<br>the drugs that were typically used to treat the disease are of=
+ten no<br>longer effective, the health department noted. The development me=
+ans<br>health-care providers cannot rely on some common and easily accessib=
+le<br>antimicrobials, said David Hyun, the director of the antibacterial<br=
+>resistance project at Pew Charitable Trusts.=0D<br>=0D<br>"We've been grad=
+ually seeing resistance patterns going up," Hyun<br>said.=0D<br>=0D<br>[Byl=
+ine: Abraham Gutman]=0D<br>=0D<br>--=0D<br>Communicated by:=0D<br>ProMED<br=
+><br>[Unlike most causes of bacterial enteritis, the inoculum of _Shigella_=
+<br>able to cause disease is much lower. The link to the CDC report on<br>r=
+esistance in shigellosis can be found at<br><a href=3D"https://u19268662.ct=
+.sendgrid.net/ss/c/u6Jy221DtLTd6phwYNECnZfcHvO-Xkk8OqKCDl4Yb9a4DbN7rDjMjjfM=
+e0yYp_WWIsWNgETpiZ49DxES_KNRfw/430/NzFx-6CXQn6NPLcy0CSU2A/h3/vDq32kPiDD-DzJ=
+K4yNO6WDYX-qNVR2UPV0EDz5fr_dI">https://emergency.cdc.gov/han/2023/han00486.=
+asp</a>.=0D<br>=0D<br>_Shigella_ was discovered more than 100 years ago by =
+the Japanese<br>microbiologist Kiyoshi Shiga, for whom the genus is named. =
+There are 4<br>species: _S. boydii_, _S. dysenteriae_, _S. flexneri_, and _=
+S.<br>sonnei_. _Shigella_ organisms can survive transit through the stomach=
+<br>because they are less susceptible to acid than other bacteria; for<br>t=
+his reason, as few as 10-100 organisms can cause disease. Ingested<br>bacte=
+ria pass into the small intestine where they multiply; large<br>numbers of =
+bacteria then pass into the colon, where they enter the<br>colonic cells. G=
+iven its relatively low infectious dose, transmission<br>can occur via cont=
+aminated food and water or via direct<br>person-to-person spread, including=
+ sexual practices commoner in men<br>who have sex with men. Humans are the =
+only natural reservoir for the<br>disease.=0D<br>=0D<br>The bacterium is th=
+e classical cause of bacterial dysentery (formerly<br>known as flux or the =
+bloody flux), an inflammatory disorder of the<br>colon, which results in se=
+vere diarrhea containing mucus and/or blood<br>in the feces with fever, abd=
+ominal pain, and rectal tenesmus (pain<br>while passing diarrhea).=0D<br>=0D=
+<br>A relatively recent review on shigellosis follows:=0D<br>=0D<br>Citatio=
+n: Kotloff K L, Riddle M S, Platts-Mills J A, et al.<br>Shigellosis. Lancet=
+. 2018; 391: 801-12;<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/T=
+UIVIg4PCmni5tP3Q8lzBb5MugwcowHsZrFMKbC9gdYT1d-3KaZ4zfGSimDKeKNtDgAFVobUfhOy=
+VLyiwAc7rg/430/NzFx-6CXQn6NPLcy0CSU2A/h4/wEg0KwO03Z-rqGZrtbvjiaQq9vdV4kBpM5=
+16__qWwVo">https://doi.org/10.1016/S0140-6736(17)33296-8</a>.=0D<br>-------=
+---------------------------------------------------------------------------=
+----------------------------------=0D<br>"Summary=0D<br>--------=0D<br>"Shi=
+gellosis is a clinical syndrome caused by invasion of the<br>epithelium lin=
+ing the terminal ileum, colon, and rectum by _Shigella_<br>species. Althoug=
+h infections occur globally and in people of all ages,<br>endemic infection=
+s among children aged 1-4 years living in low-income<br>and middle-income s=
+ettings constitute most of the disease burden. The<br>versatile manifestati=
+ons of these highly contagious organisms range<br>from acute watery diarrho=
+ea to fulminant dysentery characterised by<br>frequent scant bloody stools =
+with fever, prostration, and abdominal<br>cramps. A broad array of uncommon=
+, but often severe, intestinal and<br>extraintestinal complications can occ=
+ur. Despite marked reductions in<br>mortality during the past 3 decades, th=
+ere are roughly 164 000 annual<br>deaths attributable to shigellosis. Inter=
+continental dissemination of<br>multiresistant _Shigella_ strains, facilita=
+ted by travellers and men<br>who have sex with men, has prompted new recomm=
+endations for antibiotic<br>therapy. Awareness of disease burden and the em=
+erging threats posed by<br>_Shigella_ have accelerated interest in developm=
+ent of shigella<br>vaccines, many of which are being tested in clinical tri=
+als." - Mod.LL<br><br>ProMED map:<br>Philadelphia, Pennsylvania, United Sta=
+tes:<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/sSnCkKCWBvais3EuV=
+AOvgy2WOIX7pp1nXnn4AbwuQ3Z6WbkfhqXYXU-aTMPJ8yThJPxk8d7iPOYdFr5BdFl2aA/430/N=
+zFx-6CXQn6NPLcy0CSU2A/h5/z2acEbTR16yLBugvAexAS9T2kJQG8GtVE8O052sbiY4">https=
+://promedmail.org/promed-post?place=3D8714243,257</a>]<br><br>[See Also:<br=
+>Shigellosis - USA (01): (WA)<br>http://promedmail.org/post/20240113.871420=
+0=0D<br>2023=0D<br>----=0D<br>Shigellosis - USA (04): (WA)<br>http://promed=
+mail.org/post/20231214.8713723=0D<br>Shigellosis - USA (03): (CA) union con=
+ference, hotel<br>http://promedmail.org/post/20230914.8712129=0D<br>Shigell=
+osis - USA (02): (WA)<br>http://promedmail.org/post/20230901.8711916=0D<br>=
+Shigellosis - USA: XDR, int'l travel, MSM, CDC HAN, mostly S. sonnei,<br>al=
+ert http://promedmail.org/post/20230226.8708603=0D<br>2022=0D<br>----=0D<br=
+>Shigellosis - USA (03): (CA)<br>http://promedmail.org/post/20220330.870230=
+7=0D<br>Shigellosis - USA (02): (CA)<br>http://promedmail.org/post/20220306=
+.8701847=0D<br>Shigellosis - USA: (CA) http://promedmail.org/post/20220227.=
+8701699=0D<br>2021=0D<br>----=0D<br>Shigellosis - USA (06): (CA) homeless i=
+ndividuals<br>http://promedmail.org/post/20211222.8700434=0D<br>Shigellosis=
+ - USA (05): (CA) homeless individuals<br>http://promedmail.org/post/202111=
+13.8699654=0D<br>Shigellosis - USA (04): (CA) homeless individuals<br>http:=
+//promedmail.org/post/20211026.8699278=0D<br>Shigellosis - USA (03): (CA) h=
+omeless individuals<br>http://promedmail.org/post/20211012.8699003=0D<br>Sh=
+igellosis - USA (02): (KS) wildlife park, non-zoonotic, RFI<br>http://prome=
+dmail.org/post/20210811.8587171=0D<br>Shigellosis - USA: (KS) wildlife park=
+, RFI<br>http://promedmail.org/post/20210630.8486452=0D<br>2019=0D<br>----=0D=
+<br>Shigellosis - USA: (Guam) http://promedmail.org/post/20190319.6375402=0D=
+<br>2018=0D<br>----=0D<br>Shigellosis, st sonnei - USA: (VT) retirement com=
+munity, multidrug<br>resistant http://promedmail.org/post/20181107.6132342]=
+<br>.................................................ll/tw/jh<br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3Dbuiw63TdH-WjMdL6_w5wfo9daGYJWSSXHMvLxcINczRoMDAwdT=
+AwMOG1oERa3YAQI8D2WVuNoRKD7iGGbGr7kWZMevYZ9E8uF417rcx8tM8IY98mB8GczDO3RX_Kh=
+qm9NrsB1wXph1Jb4SatVDyTs1rze84baBgoLEp2njWXFS1rWvrtXQMxnwEA4GCYCSXW_gOiuFLv=
+LPa3Az5iQbZWifUmaeJbm4ZuS6OXnibQjHfjT7gC180_5e4bPOCJAckXyM5PwiKucf_MJbPzPUG=
+-JYj7LOuznRFR1lx6bd7D6A7NKeFF0ck1UvOShb80Rtli_SykjZtUxttB_Ve7rNn_X7cJvL1RiY=
+Fhr7apW7y6ycykOMwTA0sWz4OgSOVQ2yARgYZLgTjCPgIXOSa59pjqfc92YlqgprWzCLNRZ0FQf=
+xtGId3B79Rb09VowzLtbcSQIMr1zhyp9LEt_ruu93e4gTdZqlbOEOzH1CmP5dcjpbHV0R-NV3UZ=
+9Hw1a_nNfdkdbYmAgAyw3H8jHNXWYoo2Q4D35nSVF4lAQdMm3-8ZWdpwyp_qNXOIGUwtumQ96tu=
+FyDiDFq38TNVX_IB6QHwdXbydASoKc_SPDb7vQ1_Rw3zPxaiHLpbawRxMeRqTlCoY-93BYNmxKJ=
+vp3-wu-jbNjxsZgVMVrddJhH3TakDHly1cLLgWx0E0PaGhzrvHZgitL1xXu2WDJSS6X_QI9jKq-=
+uBOw9xgqtYRUL2aSYYaqA3Bhv7q-__gbArhO95DN4Jw3XzmlFG38zd-CJf4jTrtUS0haTJaX8X-=
+oLbpxHWS8whdjmGD2rRDGY3xcx_oQhSRDVFtnPUBeqHBA6LhVAFIGr4jAGKIyQm5C4KQPjL3ffe=
+SMl7nDMoAY-7neOlAn_A0O2dHPxBWMOy6PYvjpsm5zakHh8Rxr4Fv9t8olGo8BWHGS5NNCwiJmw=
+zGYosN_jvdtLrg8xesHIxihfsSfyMk6tCxteg_BwNuaRt2MOTjQEVo3ycgnC7I5KxJD_Wy7xjJM=
+wK5XQAIpsWBtiRcsMxgJQ6UYhimh1xO0uxaB1mMCgBMV3_RvVoXdJJSOVOkkwMysuM6FCpECIYu=
+NcZaz8vhm8xMbyuc2spc9d19eDveVzj96YhH30oXbq5OSxCxpIllyFzNW2I5QlZ2Jl4NSRyuQFa=
+utYMWefWUU2bA3iMaGrOEdlUV-k9XXsjLKQyPyw0wqzcBy3Cofjg=3D" target=3D"_blank" =
+class=3D"Unsubscribe--unsubscribePreferences" style=3D"font-family:sans-ser=
+if;text-decoration:none;">Unsubscribe Preferences</a></div><br>############=
+################################################<br>#######################=
+#####################################<br><br><img src=3D"https://u19268662.=
+ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/430/NzFx-6CXQn6NPLcy0CSU2A/ho.g=
+if" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"height:1px !imp=
+ortant;width:1px !important;border-width:0 !important;margin-top:0 !importa=
+nt;margin-bottom:0 !important;margin-right:0 !important;margin-left:0 !impo=
+rtant;padding-top:0 !important;padding-bottom:0 !important;padding-right:0 =
+!important;padding-left:0 !important;"/></body>
+</html>
+--879fe34a7e76fa2c80741c38faca70577ff126fcf185678955d24967874b--

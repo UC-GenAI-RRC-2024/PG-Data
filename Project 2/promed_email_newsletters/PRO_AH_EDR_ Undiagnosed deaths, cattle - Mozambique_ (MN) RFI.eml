@@ -1,0 +1,442 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a05:640c:3013:b0:1ee:4bd3:5fc9 with SMTP id z19csp197377eiw;
+        Sat, 20 Jan 2024 10:30:20 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IHrPZATm2aQyaHRlCWHgatC8hNLzk6soATLiruzwRhBYlhXKyXk9EFx+yXhgVe8X62Hb4bv
+X-Received: by 2002:ac8:4e93:0:b0:42a:a24:4858 with SMTP id 19-20020ac84e93000000b0042a0a244858mr2849672qtp.32.1705775420422;
+        Sat, 20 Jan 2024 10:30:20 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1705775420; cv=none;
+        d=google.com; s=arc-20160816;
+        b=xhLF94Lc8XCHaQE74fnkSFuGsC4J5FpChkMAmRXjyMZPjpQkOvMGTd+5w6VWIRBi2T
+         Jhw+2tUYPFQMR0Dh6QaNH+p0G1LhpS5WBOnvWkX1IAHDQcyE112y/Bzhpd+YPOGFLF2H
+         MmfzjeC1qUxtZ+LS5sRMnE5CSVW1CNDgZ0j4yPMk/S9YjHBTapcaNK471J/Dy6CeFMBM
+         gm4jlvkA3HptoJwlLp1M3cECg6/NAFuCLZOG2x0bPeDYjzcDfeG8YHahpOBwkCFKzrb7
+         Imf8QRnObeOoLi6HfFVnIsvSUxqGZ+4TsMGet6HEMhiTHBh5daiU2UedzPzUGEXjJSxt
+         6BWw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=0rJY0WFIeYH+Ajz5XVHqnyDC8VeaVFLE0SqeqshqcYc=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=srtfEDuuaoGMiW9DljF0s5ufo2esG8/bE0hn8CvPFckQyYguiWQFL7Ag5LXTuovt7x
+         jCHzscdc16cSkUUfRYU+bz75M4bYdR6wE6vY58I6HXvhmQeaRHq775ui/ujElh8PRsLG
+         T12ae6myzI0sQisT015p/M+No8QNlkJUhjn8K2QGIEeV7zVqalz2vZOhPOPKC7iLpV5o
+         Le3QQkDQrvyAv917/M4VlHKREOJ7bDO5PpseMY5jvwhwupAQqKq4MQ3++X6mHc8qfS/O
+         s4hCm6b3odOy/mkqrQ2tQIpjrCmf/EcUMOA8Ov+8jhtvcHIOrvIieUglwY+SPFV4V1zz
+         I1uA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=xH2YmebI;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=eRlydn67;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id y8-20020a05622a120800b0042a0991e599si2082108qtx.129.2024.01.20.10.30.20
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sat, 20 Jan 2024 10:30:20 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=xH2YmebI;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=eRlydn67;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=0rJY0WFIeYH+Ajz5XVHqnyDC8VeaVFLE0SqeqshqcYc=;
+	b=xH2YmebIrddx2Cr9o60bQfCLTnL7gN1410ghHLefxPlT97PreIJHN2GGnA+MJh8ge/HF
+	C7LCi6FSbWpi75FO8nKtFO/UmFQARPk1ZAxrbWimYCg9AOobXgBFwXnFRdu1iQpeQ2Zk98
+	6wtg4+gcxOVxCKjle7oaxwUxrNXZ/tdE3OI8eVullEOyWFjBU/AZN5AVwfrGQ5CtANOP1z
+	W8OC70m2zA5giBaftq+ItDliy5wKVlfDxlvyXBcXkhIzCVudrwjh5853TjI5kZHazPEDd2
+	7dYSdFD1FaIFkkDbHRJC5cmfL+l9Sb5EF4uXk0Ej2SGGaL3VOIQMgQtGWSdiM86w==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=0rJY0WFIeYH+Ajz5XVHqnyDC8VeaVFLE0SqeqshqcYc=;
+	b=eRlydn67V5Tv/C83fvrKFUjbbryrOd1X7m8b7Apg75rZDCFDfUamDpXYemhC0M7G2Imf
+	09aKGse6fvP/3XHF/6ZJ0bImYK1DPty8jqhdLxiyYL6v8/Vog7TwalqsVaLrcPtHoawl5m
+	lxX4pPRfgej0thsHnthCGqBcJGggGzdpA=
+Received: by filterdrecv-776574fcdb-9d7kd with SMTP id filterdrecv-776574fcdb-9d7kd-1-65AC1137-112
+        2024-01-20 18:30:15.985542658 +0000 UTC m=+102038.436937494
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-17 (SG) with HTTP
+	id TIU_JY0oTm6ulAq7_1QBlQ
+	Sat, 20 Jan 2024 18:30:15.934 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=7769982612e89c4e81ca64b2692fd91b4f0aa0720fd2510d218499d16ac3
+Date: Sat, 20 Jan 2024 18:30:19 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <TIU_JY0oTm6ulAq7_1QBlQ@geopod-ismtpd-17>
+Subject: PRO/AH/EDR> Undiagnosed deaths, cattle - Mozambique: (MN) RFI
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iBM8uDXR+Os2fEHYruh=2F1B0P04TSD0uwsqB2zDR?=
+ =?us-ascii?Q?zJdXzePo9v9LJop8IvRGS0UDOTspiKDMrHZwWHM?=
+ =?us-ascii?Q?7VDSNipwIlWq8dtj6pi8mGv2kNJfVSFqDZC=2FEhx?=
+ =?us-ascii?Q?KoVcM=2FcOCDyXwQnOKO+R4lLeDOkHoHBVZ3FPlXa?=
+ =?us-ascii?Q?UX+VN8OyzsFaSu=2FV7XYg=2FCBgCi0UlfWD1I3fp5?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUiShGf=2FO8XJWpH34Od4Nd?=
+ =?us-ascii?Q?fxXa6jil96uRcJkF+N+LeVnO1tx80ddOyoyOo=2Fc?=
+ =?us-ascii?Q?Brxcl3ERAm0cOY743=2FFH59DWiSf5OzXORh1DLKt?=
+ =?us-ascii?Q?hb1NMKty3PsA5ju0ZzxCrq1WQuZSEQf=2FJlWtgqv?=
+ =?us-ascii?Q?cZmsyCHlNUZsDRGS60O0N+HzrH4=2FJYhq7HhMocF?=
+ =?us-ascii?Q?1h0uh25HkcXehOOJk2b=2FdDvTakk0MW9ZX49Tupw?=
+ =?us-ascii?Q?gKDz03GpzhGDEL2i6fjFAx2zqaFUKvZ3oz2IAMT?=
+ =?us-ascii?Q?mRVEuWRwl3FuwjtYUmnvtpXveRnn1W811=2Ft7LP2?=
+ =?us-ascii?Q?=2Fy1fogrMS1T7+iq9srs5Yah5TBSE+JPyBaV0cyH?=
+ =?us-ascii?Q?Iq2lOWfTw+mJ3MzTcuqqqg=2FrWK7bYjXhfLHTj=2Fc?=
+ =?us-ascii?Q?b8FsCFr4i96SK5i72h3KAFV9zZ8reL1amXvJZMj?=
+ =?us-ascii?Q?P7nOvH0H+TJ4ljcc3YqkM90dmdIMdIPaifye8Np?=
+ =?us-ascii?Q?FbgsSqLIxWbAFthLLi5WkqX=2F1df8l4PjnayQhAE?=
+ =?us-ascii?Q?TzDLsvONsh9=2FgTKaXuKMbPosrV5Fj218b2JWq4f?=
+ =?us-ascii?Q?YGE6mUHqJBcjY+akXn7P8Rat3PcZHHpBctnjZ30?=
+ =?us-ascii?Q?jJrlmh2D5dHgmSD9yJd2NX+HylWi3i7GrokRB3S?=
+ =?us-ascii?Q?Y8tev1zIvFi4EMKkMiJmv272BbpcQYyDP16lziz?=
+ =?us-ascii?Q?bu8gqoMuXXbxlA6kO+eDDwPdMnmnRF5CJHrBwsu?=
+ =?us-ascii?Q?RXhSpZtgzailg9iULijTAmxQyObC6KO=2F+nz8u4X?=
+ =?us-ascii?Q?w7XJYcv9R++fyi2oU63M1NulpQ=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2EY3=5Fa-I=5FOL?=
+ =?us-ascii?Q?LvlINDQohiK=5FXqmD8CMliscR200jfaZXN5oMDAw?=
+ =?us-ascii?Q?dTAwMLxC=5Fu=5Fps1=5FyU51Ff0oQtVAGO0nCkcXVBB9?=
+ =?us-ascii?Q?D2M4Wv8QEBrqbuO0D-ANyUGFuL8uLtnTDuf=5FNVI?=
+ =?us-ascii?Q?x8QXogznU6x7zdBv2vzAfY4jOuqE5xU6OGmjOE7?=
+ =?us-ascii?Q?iVa9TOH3ShHMjpTGw=3D=3D=2E8DeFLpCGfJZmgXYRqyV?=
+ =?us-ascii?Q?d5fg48SoC7r0Qwiz8wgyKL1NoMDAwdTAwMJM8Dp?=
+ =?us-ascii?Q?0tdWwn-zHfsEwEcq62ufhvlGoLCA5SSUZOzZ16C?=
+ =?us-ascii?Q?eOaQPBg8jM82X0aSN1YzFnJMc7LMr2oxxYah=5FSH?=
+ =?us-ascii?Q?OqSbowbpCXtB8wkIxx0P7=5FwXokrNlZ4prh-OfD7?=
+ =?us-ascii?Q?oR6BaQ4oaUpT7gSZCTXjohAH7jw625=5FiRJKHq-G?=
+ =?us-ascii?Q?KGf2mf72XbXL85XakSGwV8C3sToUb6SaQhS0ImP?=
+ =?us-ascii?Q?F=5FzvhsH1A3sVG75nRDpSsEVZj3QVQ5Ao0uQGFY2?=
+ =?us-ascii?Q?yE8MfvV6uhMYpSNSlnw2HGTy4e3U9n117mwfXTe?=
+ =?us-ascii?Q?vDwAPCfINfQ=5F0vSz-MXvHdZ7Dr=5FL3KbVc7ZuE9d?=
+ =?us-ascii?Q?obukCJTVT=5F599ceP5h7J773s9YohnMWiD1c36v3?=
+ =?us-ascii?Q?ZrfYJ2J10O9Crm9hKi9TDxaVpBB76i22GrBqmkg?=
+ =?us-ascii?Q?Sk4Wck=5FhV1EmYg2iVifAdcAAK4zR2JNv8Gwqfiq?=
+ =?us-ascii?Q?rWyjd7WeGwJaOVR3VcA1Rj42wgmylWu5shC38s3?=
+ =?us-ascii?Q?0JEGIJz=5FVWLjY50L6x7DOjBFwXLH3q3ln9wmSHf?=
+ =?us-ascii?Q?-427UbawRyu-tjx4YK70HDtp=5FK6XCaz8y96gcvt?=
+ =?us-ascii?Q?6LJZMt3OCKEXAxD54alAdRVyk1ISK2u8szonZ57?=
+ =?us-ascii?Q?Z5chFFZqaqnEL8hL3T7aHW1PNXpN=5FJ5ZGr2vojF?=
+ =?us-ascii?Q?j-N7a0NFrl=5FYu09ud5CfG3oTZBaCd5tY0g3BdMV?=
+ =?us-ascii?Q?fOZnV-Upt1SMBOm7q5mlRbR4jM4mJbpYoVvPAu8?=
+ =?us-ascii?Q?bX5hzJd17SQZD90m-La6JDMaSbr2N-EqMMP1EPw?=
+ =?us-ascii?Q?O=5FqrRDYps9q0CJfdUUtlQpFPalrfD-hriw-Edas?=
+ =?us-ascii?Q?=5FC6qQzydcl8Wd=5F6udGsIRaw1PDitsTEnPZ2tD5V?=
+ =?us-ascii?Q?gE2evHOQ5EKKFexo77KZHwvurla47euvxFLutuv?=
+ =?us-ascii?Q?ZvVtILbCcprGZ4ziWBd7OWTQiqOsYiOkIiUCAel?=
+ =?us-ascii?Q?4WcShD6xcvg3TBowAbUwxylehzTZQfnmUS3tENv?=
+ =?us-ascii?Q?WFQNQlFcUnBoeVP9VVO2sqRFPciU3HszyRlSmkx?=
+ =?us-ascii?Q?J-UZCPy9dWJITzzj5cv=5FnaS3EgJkbGrq2Ewkopf?=
+ =?us-ascii?Q?anEauw=3D=3D=3E?=
+
+--7769982612e89c4e81ca64b2692fd91b4f0aa0720fd2510d218499d16ac3
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=us-ascii
+Mime-Version: 1.0
+
+UNDIAGNOSED DEATHS, CATTLE - MOZAMBIQUE: (MANICA) REQUEST FOR
+INFORMATION
+*************************************************************************
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+Date: Thu 18 Jan 2024
+Source: BNN [edited]
+<https://bnnbreaking.com/world/mozambique/mystery-disease-claims-over-900-c=
+attle-lives-in-mozambique/>
+
+
+A silent predator has claimed over 900 lives -- not of humans, but
+cattle -- in the heart of Mozambique since December [2023], leaving
+both local breeders and veterinary officials puzzled. The mysterious
+disease, currently unidentified, has taken hold in the province of
+Manica, a region that shares borders with Zimbabwe and is now
+witnessing the spread of this enigma to 3 of its districts. The
+escalating number of fatalities has sounded alarms among breeders,
+prompting calls for immediate action from veterinary authorities.
+
+The continued loss of cattle in the region is not just a matter of
+economic concern but also poses a critical threat to food security.
+Cattle serve as both a source of nutrition and a means of livelihood
+for the local population. With the death toll on the rise, the threat
+to the societal fabric of this agrarian community looms larger each
+day.
+
+Breeders are urging veterinary authorities to step up their efforts in
+identifying the cause of this mysterious disease and implementing
+measures to halt its spread. The urgency of the situation cannot be
+overstated, as the potential for further losses could deal a severe
+blow to the already struggling economy of the region.
+
+The fear is that if left unchecked, this disease could ripple out,
+affecting not just the region's agriculture but also its economy on a
+broader scale. The continued spread of the disease and the resultant
+loss of cattle could plunge the region into a deepening crisis, with
+repercussions far beyond the borders of Manica.
+
+--
+Communicated by:
+ProMED
+
+[As no clinical signs or lesions were mentioned in the report, it is
+difficult to determine what may be behind the cattle deaths. Anthrax
+would be high on the list of differentials. Manica was also one of 5
+provinces slated to receive 800 000 doses of vaccine against
+foot-and-mouth disease virus in August of 2023 with Tete and Niassa
+provinces having active FMDV outbreaks at that time
+(<https://allafrica.com/stories/202308080603.html>). Any additional
+information about these cases would be greatly appreciated. - Mod.JH
+
+ProMED map:
+Manica Province, Manica, Mozambique:
+<https://promedmail.org/promed-post?place=3D8714351,32458>]
+
+[See Also:
+2022
+----
+Foot & mouth disease - Mozambique (03): (NS) cattle, untyped, WOAH
+http://promedmail.org/post/20221020.8706251
+Foot & mouth disease - Mozambique (02): (TE) cattle, untyped, WOAH
+http://promedmail.org/post/20220804.8704865
+Foot & mouth disease - Mozambique: (TE) cattle, st not typed, OIE
+http://promedmail.org/post/20220418.8702695
+2018
+----
+Foot & mouth disease - Mozambique: (TE, NM) bovine, st pending, OIE
+http://promedmail.org/post/20180619.5862351
+Foot & mouth disease - Mozambique: (GA) bovine, st. not typed, OIE
+http://promedmail.org/post/20180108.5545890
+2017
+----
+Foot & mouth disease - Mozambique: (TE) bovine, serotype not typed,
+OIE http://promedmail.org/post/20171214.5503752
+2016
+----
+Foot & mouth disease - Mozambique: (GA) bovine, st. no typed, OIE
+http://promedmail.org/post/20161017.4566546
+2015
+----
+Foot & mouth disease - Mozambique: (MP) bovine, st pending, OIE
+http://promedmail.org/post/20150606.3414504
+2014
+----
+Foot & mouth disease - Mozambique: (MP) bovine, serotype pending, OIE
+http://promedmail.org/post/20140812.2683378
+2011
+----
+Foot & mouth disease - Mozambique: (GA, MP), st SAT2
+http://promedmail.org/post/20110104.0039
+2010
+----
+Foot & mouth disease - Mozambique: (GA) bovine, ovine, susp. OIE
+http://promedmail.org/post/20101001.3561
+2008
+----
+Foot & mouth disease - Mozambique ex Zimbabwe: RFI
+http://promedmail.org/post/20080427.1457
+Foot & mouth disease, bovine - Mozambique (Gaza)
+http://promedmail.org/post/20080406.1255
+2004
+----
+Foot & mouth disease - Mozambique: control
+http://promedmail.org/post/20040613.1591
+2002
+----
+Foot & mouth disease - Mozambique (03): OIE confirmed
+http://promedmail.org/post/20021113.5792]
+.................................................sb/jh/tw/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3D4a32GtjjUpiAGxcp4XpFwWpPmrQr4-aABjoFYqmT73VoMDAwdTAwMMV8gNF=
+_DUigokm_9bxKwqQPxzv1exbFv4BC2caon78uWs4Lf9KDmNVSqiBuCa3v5SqqHh_GcsXNVeeV57=
+-9CIjit2QAuCLAWyUB8u_ddIUQ-PgWIQTCTkzDc0pDMXV-Wq00qOrpsWJ7_MqfS_W23lGj1zVdn=
+EFOCxPscsgpLA6-8YnbOp52z3YIaoN6ra2IP8zw2F1akzV3embdWrpO6uksGuSTGLhIM0wjngFI=
+xXWZT7p5lnB5z3jwvvzglONBn5rbikAq2wYQ6_tc3nmArqWERyaT_EFdPqsA6hCpfdz_NhT8olc=
+x1-hIJchJzyv74R0Rwo9LoAaYeY5431Ath5LKMJSiOPF65n-D0Nx58_p0PYU840fQhVn_hHrGGr=
+ubKWK-9h6bD487FnVgBAncHur4Y0NO6dV9JtfOcOV255H0DuRQ0eXwtWgupco-sfqD31BU8Twlp=
+WKQphgL4r5QK9sakAJi8BbwmdAKDxZ6-9bgk1eTiQkUM-U9PSBRQYe7LjYqSyWFB_Lb6WJMf2iU=
+lxjfQM2fRH280fzfe95eUtlNT8LdkWCZZJ6I57VgVdsGrhPRF8q5V_AMW9DvpUZbgYNh9_CVSc-=
+xayiXRChmmZ7FmVyVcpdeCxBRnKS2jM0Wd2c-J5FQeWPSbydkDgEif6_LR7WbdyjVJgBsIqBgCb=
+rqiNLfQcwvq97qHqxvgs9h-75KsD-NhSHGrebN8NiAsbEYXZ43U3UDeDTbdLvGkKUxOtiTRKKkU=
+vDMzQzXijFsaGcv_E0xjdIyjscYIsb2rTgr3q4b14YJIbdU4cc_zrjyUrvKLn9im0gyMMZ_a9_c=
+qyXWLiqpPOCfjMsX4rcZnKMmDt7fbn8tfVdkY3upGkyF8H8amyLn_9SJnBMRwQXGlPR55zOkx4s=
+l5_u6rHxoVRKHyak0j4j9Lys4Nv7L3rHGpBD6U5NDLHPWEKywjmt6iUsArt4QRNKBn83Z7NEpPs=
+YXg2w2eAQV6eX1vvHkSV8lYDlmwJUq9GRE2qYGfCOXvYJLWyK1vrHkZw1AfmMcq1T5zk5cICUnN=
+bp_293okP58Y9QMltQeuvGkntoJdD2LUoWPWvFKYFcmGoe3_c_2VqUCoR4p_M52UYyIV4rFUrN-=
+jeSgSeDhHPC0tQ_J3VORDunnXk4Fhi9tWQWkiuO2FeMGlo_RgtJHgBM-nKov5bgD )
+############################################################
+############################################################
+
+--7769982612e89c4e81ca64b2692fd91b4f0aa0720fd2510d218499d16ac3
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>UNDIAGNOSED DEATHS, CATTLE - MOZAMBIQUE: (MANICA) REQUEST FOR<br>INFO=
+RMATION<br>****************************************************************=
+*********<br>A ProMED-mail post<br><a href=3D"https://u19268662.ct.sendgrid=
+.net/ss/c/wscE2ng5fl6JrPIt48tisIijpefK5PNjW-mL-YZGnfgDOxU1G3gjwnPSi2Tfv3HA/=
+435/HmJSUGTLSmqJzgp4zLqClw/h0/89rn5c8H83JzDbCufS-_DKglLXeErkdzE9yi2tBQ784">=
+http://www.promedmail.org</a><br>ProMED-mail is a program of the<br>Interna=
+tional Society for Infectious Diseases<br><a href=3D"https://u19268662.ct.s=
+endgrid.net/ss/c/wscE2ng5fl6JrPIt48tisCT5tpD4Upm3qyMCbcYSQvc/435/HmJSUGTLSm=
+qJzgp4zLqClw/h1/OKvZiqhg_Hb1uNYc4n_WlruYAlF-2yDbdiqvJEwoMYk">http://www.isi=
+d.org</a><br><br>Date: Thu 18 Jan 2024=0D<br>Source: BNN [edited]=0D<br><a =
+href=3D"https://u19268662.ct.sendgrid.net/ss/c/yz2fdA_g7iMSh8qzYPxBFtrDQPDj=
+5OiJ2P1j69-SzCmSVxFMBOzlKj7Dl_JpyMEaZbrnWDE3RKXII77yLq1nYBt1jJrkVpu3D1ocMWG=
+s3ihxmx_muk8mn0fVhGoVwbOCP1tRfRsl_Ma7BsLjLTQjcg/435/HmJSUGTLSmqJzgp4zLqClw/=
+h2/dPDVPXxL7z8tmejXkCiV5eO3pgt1OnhMc4omL5ogdkY">https://bnnbreaking.com/wor=
+ld/mozambique/mystery-disease-claims-over-900-cattle-lives-in-mozambique/</=
+a>=0D<br>=0D<br>=0D<br>A silent predator has claimed over 900 lives -- not =
+of humans, but<br>cattle -- in the heart of Mozambique since December [2023=
+], leaving<br>both local breeders and veterinary officials puzzled. The mys=
+terious<br>disease, currently unidentified, has taken hold in the province =
+of<br>Manica, a region that shares borders with Zimbabwe and is now<br>witn=
+essing the spread of this enigma to 3 of its districts. The<br>escalating n=
+umber of fatalities has sounded alarms among breeders,<br>prompting calls f=
+or immediate action from veterinary authorities.=0D<br>=0D<br>The continued=
+ loss of cattle in the region is not just a matter of<br>economic concern b=
+ut also poses a critical threat to food security.<br>Cattle serve as both a=
+ source of nutrition and a means of livelihood<br>for the local population.=
+ With the death toll on the rise, the threat<br>to the societal fabric of t=
+his agrarian community looms larger each<br>day.=0D<br>=0D<br>Breeders are =
+urging veterinary authorities to step up their efforts in<br>identifying th=
+e cause of this mysterious disease and implementing<br>measures to halt its=
+ spread. The urgency of the situation cannot be<br>overstated, as the poten=
+tial for further losses could deal a severe<br>blow to the already struggli=
+ng economy of the region.=0D<br>=0D<br>The fear is that if left unchecked, =
+this disease could ripple out,<br>affecting not just the region's agricultu=
+re but also its economy on a<br>broader scale. The continued spread of the =
+disease and the resultant<br>loss of cattle could plunge the region into a =
+deepening crisis, with<br>repercussions far beyond the borders of Manica.=0D=
+<br>=0D<br>--=0D<br>Communicated by:=0D<br>ProMED<br><br>[As no clinical si=
+gns or lesions were mentioned in the report, it is<br>difficult to determin=
+e what may be behind the cattle deaths. Anthrax<br>would be high on the lis=
+t of differentials. Manica was also one of 5<br>provinces slated to receive=
+ 800 000 doses of vaccine against<br>foot-and-mouth disease virus in August=
+ of 2023 with Tete and Niassa<br>provinces having active FMDV outbreaks at =
+that time<br>(<a href=3D"https://u19268662.ct.sendgrid.net/ss/c/irpYa2EQ3F3=
+6GLL_pppOEAcnuMMx0o1PjTTDE8R8mkGkDEsXiK5t45ZekAAw28FjDrIXv4TPA8IE9oYdcvDJyQ=
+/435/HmJSUGTLSmqJzgp4zLqClw/h3/piKLY0Wjv9Uemfwhxv7ehvC_Yhu5mGktBudPtzy6DdA"=
+>https://allafrica.com/stories/202308080603.html</a>). Any additional<br>in=
+formation about these cases would be greatly appreciated. - Mod.JH<br><br>P=
+roMED map:<br>Manica Province, Manica, Mozambique:<br><a href=3D"https://u1=
+9268662.ct.sendgrid.net/ss/c/sSnCkKCWBvais3EuVAOvgy2WOIX7pp1nXnn4AbwuQ3Z6Wb=
+kfhqXYXU-aTMPJ8yThRfaApKjNqJKLtjVDY7gjBQ/435/HmJSUGTLSmqJzgp4zLqClw/h4/L3OM=
+XcRHUiv9LR4W1jUGNitCgiVBaUGfzzoYooc6hPo">https://promedmail.org/promed-post=
+?place=3D8714351,32458</a>]<br><br>[See Also:<br>2022=0D<br>----=0D<br>Foot=
+ & mouth disease - Mozambique (03): (NS) cattle, untyped, WOAH<br>http://pr=
+omedmail.org/post/20221020.8706251=0D<br>Foot & mouth disease - Mozambique =
+(02): (TE) cattle, untyped, WOAH<br>http://promedmail.org/post/20220804.870=
+4865=0D<br>Foot & mouth disease - Mozambique: (TE) cattle, st not typed, OI=
+E<br>http://promedmail.org/post/20220418.8702695=0D<br>2018=0D<br>----=0D<b=
+r>Foot & mouth disease - Mozambique: (TE, NM) bovine, st pending, OIE<br>ht=
+tp://promedmail.org/post/20180619.5862351=0D<br>Foot & mouth disease - Moza=
+mbique: (GA) bovine, st. not typed, OIE<br>http://promedmail.org/post/20180=
+108.5545890=0D<br>2017=0D<br>----=0D<br>Foot & mouth disease - Mozambique: =
+(TE) bovine, serotype not typed,<br>OIE http://promedmail.org/post/20171214=
+.5503752=0D<br>2016=0D<br>----=0D<br>Foot & mouth disease - Mozambique: (GA=
+) bovine, st. no typed, OIE<br>http://promedmail.org/post/20161017.4566546=0D=
+<br>2015=0D<br>----=0D<br>Foot & mouth disease - Mozambique: (MP) bovine, s=
+t pending, OIE<br>http://promedmail.org/post/20150606.3414504=0D<br>2014=0D=
+<br>----=0D<br>Foot & mouth disease - Mozambique: (MP) bovine, serotype pen=
+ding, OIE<br>http://promedmail.org/post/20140812.2683378=0D<br>2011=0D<br>-=
+---=0D<br>Foot & mouth disease - Mozambique: (GA, MP), st SAT2<br>http://pr=
+omedmail.org/post/20110104.0039=0D<br>2010=0D<br>----=0D<br>Foot & mouth di=
+sease - Mozambique: (GA) bovine, ovine, susp. OIE<br>http://promedmail.org/=
+post/20101001.3561=0D<br>2008=0D<br>----=0D<br>Foot & mouth disease - Mozam=
+bique ex Zimbabwe: RFI<br>http://promedmail.org/post/20080427.1457=0D<br>Fo=
+ot & mouth disease, bovine - Mozambique (Gaza)<br>http://promedmail.org/pos=
+t/20080406.1255=0D<br>2004=0D<br>----=0D<br>Foot & mouth disease - Mozambiq=
+ue: control<br>http://promedmail.org/post/20040613.1591=0D<br>2002=0D<br>--=
+--=0D<br>Foot & mouth disease - Mozambique (03): OIE confirmed<br>http://pr=
+omedmail.org/post/20021113.5792]<br>.......................................=
+..........sb/jh/tw/jh<br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3D4a32GtjjUpiAGxcp4XpFwWpPmrQr4-aABjoFYqmT73VoMDAwdT=
+AwMMV8gNF_DUigokm_9bxKwqQPxzv1exbFv4BC2caon78uWs4Lf9KDmNVSqiBuCa3v5SqqHh_Gc=
+sXNVeeV57-9CIjit2QAuCLAWyUB8u_ddIUQ-PgWIQTCTkzDc0pDMXV-Wq00qOrpsWJ7_MqfS_W2=
+3lGj1zVdnEFOCxPscsgpLA6-8YnbOp52z3YIaoN6ra2IP8zw2F1akzV3embdWrpO6uksGuSTGLh=
+IM0wjngFIxXWZT7p5lnB5z3jwvvzglONBn5rbikAq2wYQ6_tc3nmArqWERyaT_EFdPqsA6hCpfd=
+z_NhT8olcx1-hIJchJzyv74R0Rwo9LoAaYeY5431Ath5LKMJSiOPF65n-D0Nx58_p0PYU840fQh=
+Vn_hHrGGrubKWK-9h6bD487FnVgBAncHur4Y0NO6dV9JtfOcOV255H0DuRQ0eXwtWgupco-sfqD=
+31BU8TwlpWKQphgL4r5QK9sakAJi8BbwmdAKDxZ6-9bgk1eTiQkUM-U9PSBRQYe7LjYqSyWFB_L=
+b6WJMf2iUlxjfQM2fRH280fzfe95eUtlNT8LdkWCZZJ6I57VgVdsGrhPRF8q5V_AMW9DvpUZbgY=
+Nh9_CVSc-xayiXRChmmZ7FmVyVcpdeCxBRnKS2jM0Wd2c-J5FQeWPSbydkDgEif6_LR7WbdyjVJ=
+gBsIqBgCbrqiNLfQcwvq97qHqxvgs9h-75KsD-NhSHGrebN8NiAsbEYXZ43U3UDeDTbdLvGkKUx=
+OtiTRKKkUvDMzQzXijFsaGcv_E0xjdIyjscYIsb2rTgr3q4b14YJIbdU4cc_zrjyUrvKLn9im0g=
+yMMZ_a9_cqyXWLiqpPOCfjMsX4rcZnKMmDt7fbn8tfVdkY3upGkyF8H8amyLn_9SJnBMRwQXGlP=
+R55zOkx4sl5_u6rHxoVRKHyak0j4j9Lys4Nv7L3rHGpBD6U5NDLHPWEKywjmt6iUsArt4QRNKBn=
+83Z7NEpPsYXg2w2eAQV6eX1vvHkSV8lYDlmwJUq9GRE2qYGfCOXvYJLWyK1vrHkZw1AfmMcq1T5=
+zk5cICUnNbp_293okP58Y9QMltQeuvGkntoJdD2LUoWPWvFKYFcmGoe3_c_2VqUCoR4p_M52UYy=
+IV4rFUrN-jeSgSeDhHPC0tQ_J3VORDunnXk4Fhi9tWQWkiuO2FeMGlo_RgtJHgBM-nKov5bgD" =
+target=3D"_blank" class=3D"Unsubscribe--unsubscribePreferences" style=3D"fo=
+nt-family:sans-serif;text-decoration:none;">Unsubscribe Preferences</a></di=
+v><br>############################################################<br>#####=
+#######################################################<br><br><img src=3D"=
+https://u19268662.ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/435/HmJSUGTLS=
+mqJzgp4zLqClw/ho.gif" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=
+=3D"height:1px !important;width:1px !important;border-width:0 !important;ma=
+rgin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;=
+margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !importa=
+nt;padding-right:0 !important;padding-left:0 !important;"/></body>
+</html>
+--7769982612e89c4e81ca64b2692fd91b4f0aa0720fd2510d218499d16ac3--

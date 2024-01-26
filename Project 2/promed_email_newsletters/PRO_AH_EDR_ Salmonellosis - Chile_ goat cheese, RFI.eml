@@ -1,0 +1,396 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a98:c004:0:b0:1eb:e128:bbe3 with SMTP id l4csp584075eic;
+        Tue, 9 Jan 2024 15:07:15 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IG00EP4BU6jk0qwBYT5n17Vvyhs4q7QzRXQL0RwayHtFqHIYrIfWtlz30WBh8qFcPyRuh4s
+X-Received: by 2002:a05:6e02:16cf:b0:35f:f678:a520 with SMTP id 15-20020a056e0216cf00b0035ff678a520mr238382ilx.13.1704841635139;
+        Tue, 09 Jan 2024 15:07:15 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1704841635; cv=none;
+        d=google.com; s=arc-20160816;
+        b=UvY8MZ4ws3Ye5MeUqbzCFya+oyygTyPEZ1aUxP2ibCP68lsTuBpp5H1/eOcwV1MZ6b
+         e0z5ajXNgSEHo4GM7BBGt1Yi4RjmGOsd2tDPN52WazOoQrrx3uu/MhrVnAb4khf/G+u9
+         7TIH1IBy9WEVcNq7TcjTvDWMdI4nTOEBi6720ZukQHvacefjGGLNGzzUV6GrjAAmgz2B
+         akZLrNzx8Ch/4KdcjtQBsqmhYKhCkTcsppjdrZtdPhdRxnO1qUx0sq41zZxz7ynMtcJc
+         9cWwY4UUedTPkFPSF7FfpIdH+eMdKuL7VSErActSueZyT7Sr5l/u0RBYuRF60jIKFQWi
+         4o9A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=C9Vuk4rg3Xhm8vUyj0eLwctsOFnA6GncUtBfhTDfDpI=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=YRN5DySgfDvlBIdIJCpQ6U3yPFVSpx+ej8Tc19/20jZ2aHhP1k8R/09kxEBwfx99F/
+         yF5Pm7lWtQ8YlGNHq6Uul6otTi/QtsEXa/JAnARLW7dD28zU73Y6n8XTq2SRhFvaZM6e
+         qp89UaBTq4cHPqw/+LZf59QN3Fz5kp0IQfXFZrHLvbyq5gSgfX33uKK3H/1kE/GgGdnu
+         j28/oCQ/x89fQVOon5YDJ63trU0M3Hsc/Xze22YQVxDx/P+844W/lpntu+QDu5svtw4Q
+         8dufZGrkSwmqraXhCNh+douAdFEZuSFwRyRPv/Sb2RRAQZd6L2C1UCEKYbpgcW6v1iDq
+         CHaQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=jiLnkqSt;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=PMJvG1w9;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id l73-20020a633e4c000000b005cec620c36esi2328320pga.460.2024.01.09.15.07.14
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 09 Jan 2024 15:07:15 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=jiLnkqSt;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=PMJvG1w9;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=C9Vuk4rg3Xhm8vUyj0eLwctsOFnA6GncUtBfhTDfDpI=;
+	b=jiLnkqStY1fMjgEI9pDlgHMC+zkb5ZgNHfYg2nPQWvraErmu5Jcj+GV5JzvTbjTE5CU6
+	nJDFf1bukCwX3c2Ahy/l5cAqGELwbIzQUrf62OA//YxUo8vVodvGm5lrRNZnwJ0nWW378W
+	vi6R+vflZBy5msMuqZd974UrAML2Y9SF0yWW2vEX2s457jvcY7w5e5+wDlL2y7+n/8Q4BS
+	eqLrCe3FN9wpKgEGX8r29EZBNZ4scYUPjwd5Awr8qvxKkcRdZsNLVeBsGpGaLkgkQDfKIg
+	qvt4VTUqB0GXydiKSwut/+UVrRWiBLZcZHRQ4ojOw2vw9x2vzdrfpI7XKPUST8tA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=C9Vuk4rg3Xhm8vUyj0eLwctsOFnA6GncUtBfhTDfDpI=;
+	b=PMJvG1w9dCTJvHz9y2wGGyb2v2K/xtaueDB6C4Ik2+8R3rDOcty/9OshK6njMFZM5rU8
+	82cE7EsrO+O9arzb4iaAGQpwZSKkUVxXWZQBza/at0Y3PD9nsOYdRSVm80pZk/TaLIRdEv
+	l6zpGJVWoCP70WWaUkijdwJGfY0F3v0YU=
+Received: by filterdrecv-f9c6bd569-nvrq6 with SMTP id filterdrecv-f9c6bd569-nvrq6-1-659DD19F-E3
+        2024-01-09 23:07:12.09550541 +0000 UTC m=+7273541.212740220
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-9 (SG) with HTTP
+	id BGykVkCzTn6etb9xP_9v0w
+	Tue, 09 Jan 2024 23:07:11.904 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=e40fc11e0665c678b012674f07711c1b924815d27b3a95d81aa36b14ecc1
+Date: Tue, 09 Jan 2024 23:07:13 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <BGykVkCzTn6etb9xP_9v0w@geopod-ismtpd-9>
+Subject: PRO/AH/EDR> Salmonellosis - Chile: goat cheese, RFI
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iBxwtikEj3gphAC8lD5s1VGJe5XltQCD2oWwARs?=
+ =?us-ascii?Q?Aw8VywDn2bUEUGfxMjVrD4l=2FOMLxuFTuxmjxVUb?=
+ =?us-ascii?Q?OscDgFpI4GfDAaJ56+4sb99Bk72MUMLFNGpgfie?=
+ =?us-ascii?Q?GOg0to2=2FRc9zTwMKXUHAjvu1Na4xtKb=2FbUm7O74?=
+ =?us-ascii?Q?fO3bfyr87PAs+rksKbnZ4kfDqpRADsSVC=2Fzqgt?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUiShGf=2FO8XJWpH34Od4Nd?=
+ =?us-ascii?Q?fxXa6jil96uRcJkF+N+LeVnO1tx80ddOyoyOo=2Fc?=
+ =?us-ascii?Q?Brxcl3ERAm0cOY743=2FFH59DWiSf5OzXORh1DLKt?=
+ =?us-ascii?Q?hb1NMKty3PsA5ju0ZzxCrq1WQuZSEQf=2FJlWtgqv?=
+ =?us-ascii?Q?cZmsyCHlNUZsDcM=2Fu6GNu+zNsmPMKMjWwYUNI71?=
+ =?us-ascii?Q?SUj3F55qz4S6BJOIEjF8WdiEiH4rXASHu1C8uVd?=
+ =?us-ascii?Q?Ahvxoo824NC949Iq3tlxQfb29VYmEWbOpUPh0oG?=
+ =?us-ascii?Q?25ufj4DZpMpv=2F4BzYi51LCPBq9Q9pveKXzHnNu0?=
+ =?us-ascii?Q?aMIw5AMXVSszjWTYJ5RdaoU2ra7wwsebwi7OsFX?=
+ =?us-ascii?Q?xObiG3IfE4FCv7y3LQ716tCdrNzuFcErXatsWDM?=
+ =?us-ascii?Q?mLUZFimkQuUoGOu385MTk5=2FXUdUlRgg3g7L=2FsEJ?=
+ =?us-ascii?Q?UNnTLzWKsLaiXVfWlKm7lfaKLsfb+8OaJheOg1o?=
+ =?us-ascii?Q?7DIwDJ7+sl8HRPjKB4BbPbEQcs6JJwiOJMDkD6q?=
+ =?us-ascii?Q?L26XnHFDLMMcePA=2FPx5VA8fOiPeHNpZiUT1HGQV?=
+ =?us-ascii?Q?BcGVQ5WSd84+cQYoP+e01pKM0N45WCpjCbGa223?=
+ =?us-ascii?Q?ceihooQetq0wjoaKjD22GQy1vAu8CmiPLDlcf2n?=
+ =?us-ascii?Q?VUEJ=2Fqd1hjwGLJLWCckfrPEEdTpNX6CXkFOhhSC?=
+ =?us-ascii?Q?GSbbUkXbC2Tc=2Fu2zbldjzsfmq9rOvStFc=2FCYmcM?=
+ =?us-ascii?Q?7hZYiTmxpoxij6ut=2FADVeUzn=2F61dhclUG5iWXKJ?=
+ =?us-ascii?Q?9zaQaBCbDiBRRbhoIzZwm=2F1asQ=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2EaCICMAqw6?=
+ =?us-ascii?Q?jd-hJqJNNmJXjZFZe7Mg93nBbtSD5bVeDFoMDAw?=
+ =?us-ascii?Q?dTAwMJsmEh9OSAlcErNYCwvAaKFQ5qTOMSsh0ej?=
+ =?us-ascii?Q?DW2LEtV=5Ff2QCwri9zSLzoER10ySGtarMWSjhPNp?=
+ =?us-ascii?Q?nlw9ehEJs8=5FvfGQtS=5F1QGodFh8TkDn4z1edC=5FDP?=
+ =?us-ascii?Q?8miR7MEZR5haHibnw=3D=3D=2EkdoFI7YSFBmFz4xZz3H?=
+ =?us-ascii?Q?aJfQb7krSaNXOxVG52icnWh5oMDAwdTAwMBFAqG?=
+ =?us-ascii?Q?PahoaffkF8ACC9=5F0KhCIfEGd13BZbbeltsnKZ9M?=
+ =?us-ascii?Q?TIUARvGNQd7RpD-WeBXpwQA4DTiLrDsDn8QdVmb?=
+ =?us-ascii?Q?lqSxdozgOoPoSTjlnA7mC8jN6X6aZ2ObWpqfG4N?=
+ =?us-ascii?Q?mNipXU6C9RQ1YYJJfmlGNDV42l0eo-7cCmvwQ5E?=
+ =?us-ascii?Q?XbtZJoa7S5JlSSbeXDWgr5LwDUVIEPUb9qTO1iI?=
+ =?us-ascii?Q?QqOuXhmADSCrUcuAdChNbIZtVR=5FlhxyU4x=5FhWfS?=
+ =?us-ascii?Q?RxPUQtPUyCoBRRjQ2P7xyJ=5FoGPboZqkY-DkJJ6f?=
+ =?us-ascii?Q?XQZ2LWx0Qpgi7SWLx9fmDSS9ad9XloGnOwjeSDW?=
+ =?us-ascii?Q?CKzONtdB=5FF9H5eRcZ0xtcZLordEZ2V5zh0KGrKD?=
+ =?us-ascii?Q?ed-V4s-J6jLq3E5r3gzz-MlvEiWQxilGJIOEMQE?=
+ =?us-ascii?Q?OySEq0ykObFMOFHuNtoTvqy2Xu5JXRobPpHCHc2?=
+ =?us-ascii?Q?0Y59ogxiCimpUyTPzzo7hpFwaSJImtDf-kM0v0S?=
+ =?us-ascii?Q?UUkqPZnf7gH-WOaDDQ1q0f6dIAskm=5FAcCFeHXo5?=
+ =?us-ascii?Q?uUU4UuxE5iNHNW88s70KxRlGjWiL4sNO9eDuXEb?=
+ =?us-ascii?Q?G6yp=5FpxhuCi5h7RwAtwd4j2iOZy96O2pcua8xT8?=
+ =?us-ascii?Q?wWBfO9yjIq6rnE6LUkAVI6DtSLxZzdB5Pwxe8AJ?=
+ =?us-ascii?Q?FXpOJRpKuTUNrwsTpjtS4oy15UiJNm1ZR1Ked23?=
+ =?us-ascii?Q?I-qNl4Vr4rKtivihhZXtXV2Q-kTkZxNuvgSIuu0?=
+ =?us-ascii?Q?cssrOzEyRpkFNaLZbC8M3TyCcZfdc-3lAlOk4cV?=
+ =?us-ascii?Q?dmtMTC03M0bwX=5FHh1CltTdzWkKRFBEgfqu38Kk5?=
+ =?us-ascii?Q?3-faXen=5FiS99I4kC8UUxjAaO30PF=5Fqa7bFCSXA0?=
+ =?us-ascii?Q?0p=5F6VbiZOfQlHVFrQTqWQ9ovrOiPMeauIQFl8g0?=
+ =?us-ascii?Q?oaLAG0LqPfkmIAlm=5Fx1kmreEB9zFflSAawsf6WV?=
+ =?us-ascii?Q?FzLiJaleJsFH0GQaYy-SVMwMprv97HgONZC-EkL?=
+ =?us-ascii?Q?jc4B0gMkwJabaamfMurA6s7AeTlzG-IV5zFNGk8?=
+ =?us-ascii?Q?ly7gA3WkI3ANxrQWA8yFO1SLDDEr1esz=5FRTDgED?=
+ =?us-ascii?Q?vXufQg=3D=3D=3E?=
+
+--e40fc11e0665c678b012674f07711c1b924815d27b3a95d81aa36b14ecc1
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=iso-8859-1
+Mime-Version: 1.0
+
+SALMONELLOSIS - CHILE: GOAT CHEESE, REQUEST FOR INFORMATION
+***********************************************************
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+Date: Tue 9 Jan 2024
+Source: Food Safety News [edited]
+<https://www.foodsafetynews.com/2024/01/salmonella-outbreak-in-chile-caused=
+-by-cheese/>
+
+
+Health officials in Chile have reported a _Salmonella_ outbreak that
+has sickened more than 60 people. So far, 66 people have been affected
+by the outbreak resulting from eating goat's cheese in the
+Metropolitan Region. Overall, 28 cases have been reported in the
+Valpara=EDso Region and 38 in the Metropolitan Region, including 7
+hospitalizations.
+
+Epidemiological work identified a producer of cheese who informally
+sold contaminated products in different parts of the province via
+commercial premises and the area of Llay Llay. Authorities have
+stopped cheese production. Officials said the producer and distributor
+sold the product in different outlets despite not having the required
+health resolution and documentation. They urged vendors not to buy
+products from such processors.
+
+Gonzalo Soto Brandt, the Secretaria Regional Ministerial de Salud
+(Seremi de Salud) of the Metropolitan Region, called on people who had
+bought the affected goat cheese to dispose of it to avoid possible
+food poisoning. Soto said it was essential that people who consumed
+goat cheese always verified that the authorities had approved it and
+that it was purchased in an established place. He added that the risk
+of food poisoning increases during the warmer spring-summer season
+because of higher temperatures.
+
+In 2023, 163 outbreaks were reported in the Metropolitan region,
+affecting 881 people, and 60 had to be hospitalized.
+
+Meanwhile, Chile has become the first country in Latin America to
+implement a food control system assessment with help from the UN Food
+and Agriculture Organization (FAO). The initiative, led by the Chilean
+Food Safety and Quality Agency (ACHIPIA), aims to improve strategic
+planning and strengthen governance around food safety. The launch
+event for the "Evaluaci=F3n del sistema de control de los alimentos de
+Chile" took place in Santiago in December 2023.
+
+As part of the project, a team of food safety experts from FAO will
+work with local authorities for food safety and relevant stakeholders
+to assess the effectiveness of the national food control system and
+develop a strategy to improve the country's public health and economic
+development. The FAO team will assist authorities through the 8-month
+process, which will develop a set of recommendations and a framework
+to facilitate their implementation.
+
+--
+Communicated by:
+ProMED
+
+[It is not directly stated whether the goat cheese was pasteurized or
+what serotype of _Salmonella enterica_ is involved. ProMED awaits more
+information about this ongoing outbreak in Chile. - Mod.LL
+
+ProMED map:
+Chile: <https://promedmail.org/promed-post?place=3D8714151,7>]
+
+[See Also:
+2023
+----
+Paratyphoid fever, st Paratyphi B - Argentina: (SA) sporting event,
+alert http://promedmail.org/post/20230102.8707583
+2021
+----
+Paratyphoid fever, st Paratyphi B - Argentina (02): (SA)
+http://promedmail.org/post/20211211.8700211
+Paratyphoid fever, st Paratyphi B - Argentina: (SA)
+http://promedmail.org/post/20211127.8699921
+2019
+----
+Salmonellosis - Chile: (Santiago) sushi
+http://promedmail.org/post/20191125.6796355]
+.................................................ll/rd/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3DXZUNuJNeZ9UdNZbNTcfLHPrNU4gxREwEh9UQ10LFobloMDAwdTAwMCgWLwu=
+GviRle4HveIiPR_JVR85at2lRRC1HG8MR7IBNrb_bBSf1pqA3h-7C9rBOkM0ftC6KmvUp043Bex=
+HFV2gGmA7410hWD_Zt-qnZz-8E9AFAHWS6rZut8DlF21Iy9WSs2FtcR6ymT6EvhL94mveg67jaQ=
+3MC3_mL8Q0THLQ-lJPhwTy6PrrCA_0BNvzuBJyZXGIqISOWwg_qoiaS2FO7igyrBq5W2zrXup-e=
+HzD4nuYgzJinungyKNVmjvioYvYz9wYQ8R5MER7HVce0jiiPEZGYnvZIQ85pB7KDD9c3I4_4zBa=
+Ms1wby_wRuH9OqdMh4NZj3HYVuMwkHeZMMjc0Dxm1OlBnxRvjla0zW-gr2MVjTZyzlMhlTj2Oh_=
+Ozx-s7OjoCOP4fdiP1GF-BHIALmfnaeT1AB6sgbmHiq_7sH3cXK1PyP2b92jtmMM7gtUCAU77XP=
+SOplbSUvxXnMg0dcEBNWxQvpBN_ha3WPknn6XAfdtv9QJPpEtWWVxgRHHze7A9eHGJx6lbdppG7=
+TT3P51vAWGUnweEl5a2p-XjY6N4AL-VZHgfoJ_WDPPfZAjV6tuyceTOEk4B8PSEcFGruTvjjLnC=
+_IhxmHJzULFM_dgN2p-J-sx0vbqFylqKAfMIQrI2twkhABcZyDuhqXvuLgfqH7VbFNy5jeUitMC=
+AwnDesBMJ7wMnq2inshWyCZdFfauAUJQ5Tmf84R0NzI1UOELndBgrLzlVMcT_-TPDbNsnn_Lg2C=
+MopsqAIe4ooidw5wZOXektGA-Tx-DG6a0_H_YT4jF26Oe1bf8rJUBciTm9VVadUrE7QTe2G94nu=
+Sw3eWiXXWfeVdCmH8rZBotWz0Ao4qeS8B0NUeckXn-EO__ilxtzhofj1Pfk1_kXODKe_iVPAOY7=
+PBRjLvJ0XIm8HmPQwLiE1bWsl9j0zyK1nyn-VodZFQLPXkAP0zoQqIoCWmm3rmMdOKszup2VuZN=
+fMbHUd5vw_pZuL6SIBPpb-qTSFUlhw2OawtsXAVAEcB6J0oG7v3O8jWS2s4Rnd1cRy_rfemSNHk=
+CwBbVPPgZ8E-Jba7hXQ903-Dn49DMc-4s95-P-I8tBkxQ6QbjSLyqbMKC7MIZh0uyCR0NSzLwSr=
+zvjDYx_9qCz5_1Ijze-geDuIHR957YT4-KQsT9NorS5rDpPUS1fXU0wZox0O7CR3 )
+############################################################
+############################################################
+
+--e40fc11e0665c678b012674f07711c1b924815d27b3a95d81aa36b14ecc1
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=iso-8859-1
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>SALMONELLOSIS - CHILE: GOAT CHEESE, REQUEST FOR INFORMATION<br>******=
+*****************************************************<br>A ProMED-mail post=
+<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tis=
+IijpefK5PNjW-mL-YZGnfgDOxU1G3gjwnPSi2Tfv3HA/42u/r76f-s6YQw--1ii1je_bJA/h0/-=
+XNnMsJcHHrGe0htkqxCAUhaPoVslagva4yP1VV-k_w">http://www.promedmail.org</a><b=
+r>ProMED-mail is a program of the<br>International Society for Infectious D=
+iseases<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrP=
+It48tisCT5tpD4Upm3qyMCbcYSQvc/42u/r76f-s6YQw--1ii1je_bJA/h1/rTRPzjn0e_HnnBa=
+cK2LhulOm4SPGjWe0O1B3LCS2ZXc">http://www.isid.org</a><br><br>Date: Tue 9 Ja=
+n 2024=0D<br>Source: Food Safety News [edited]=0D<br><a href=3D"https://u19=
+268662.ct.sendgrid.net/ss/c/TLh_csrC34X_iXpbYoMam7_KE_k7g5yUf5I4VNdPS-Si2yQ=
+hItnAHncEZMX6sGJAndPbYOk5luEIahhfFku7AIF9b8h57Q-6xR8NI1QogEBUT3iLdTLMaNDter=
+pCQCXo/42u/r76f-s6YQw--1ii1je_bJA/h2/Emgn5QQN05VQWHHAwpKgV1y2V8h54OD0d43o9A=
+Zd68E">https://www.foodsafetynews.com/2024/01/salmonella-outbreak-in-chile-=
+caused-by-cheese/</a>=0D<br>=0D<br>=0D<br>Health officials in Chile have re=
+ported a _Salmonella_ outbreak that<br>has sickened more than 60 people. So=
+ far, 66 people have been affected<br>by the outbreak resulting from eating=
+ goat's cheese in the<br>Metropolitan Region. Overall, 28 cases have been r=
+eported in the<br>Valpara=EDso Region and 38 in the Metropolitan Region, in=
+cluding 7<br>hospitalizations.=0D<br>=0D<br>Epidemiological work identified=
+ a producer of cheese who informally<br>sold contaminated products in diffe=
+rent parts of the province via<br>commercial premises and the area of Llay =
+Llay. Authorities have<br>stopped cheese production. Officials said the pro=
+ducer and distributor<br>sold the product in different outlets despite not =
+having the required<br>health resolution and documentation. They urged vend=
+ors not to buy<br>products from such processors.=0D<br>=0D<br>Gonzalo Soto =
+Brandt, the Secretaria Regional Ministerial de Salud<br>(Seremi de Salud) o=
+f the Metropolitan Region, called on people who had<br>bought the affected =
+goat cheese to dispose of it to avoid possible<br>food poisoning. Soto said=
+ it was essential that people who consumed<br>goat cheese always verified t=
+hat the authorities had approved it and<br>that it was purchased in an esta=
+blished place. He added that the risk<br>of food poisoning increases during=
+ the warmer spring-summer season<br>because of higher temperatures.=0D<br>=0D=
+<br>In 2023, 163 outbreaks were reported in the Metropolitan region,<br>aff=
+ecting 881 people, and 60 had to be hospitalized.=0D<br>=0D<br>Meanwhile, C=
+hile has become the first country in Latin America to<br>implement a food c=
+ontrol system assessment with help from the UN Food<br>and Agriculture Orga=
+nization (FAO). The initiative, led by the Chilean<br>Food Safety and Quali=
+ty Agency (ACHIPIA), aims to improve strategic<br>planning and strengthen g=
+overnance around food safety. The launch<br>event for the "Evaluaci=F3n del=
+ sistema de control de los alimentos de<br>Chile" took place in Santiago in=
+ December 2023.=0D<br>=0D<br>As part of the project, a team of food safety =
+experts from FAO will<br>work with local authorities for food safety and re=
+levant stakeholders<br>to assess the effectiveness of the national food con=
+trol system and<br>develop a strategy to improve the country's public healt=
+h and economic<br>development. The FAO team will assist authorities through=
+ the 8-month<br>process, which will develop a set of recommendations and a =
+framework<br>to facilitate their implementation.=0D<br>=0D<br>--=0D<br>Comm=
+unicated by:=0D<br>ProMED<br><br>[It is not directly stated whether the goa=
+t cheese was pasteurized or<br>what serotype of _Salmonella enterica_ is in=
+volved. ProMED awaits more<br>information about this ongoing outbreak in Ch=
+ile. - Mod.LL<br><br>ProMED map:<br>Chile: <a href=3D"https://u19268662.ct.=
+sendgrid.net/ss/c/sSnCkKCWBvais3EuVAOvgy2WOIX7pp1nXnn4AbwuQ3Z6WbkfhqXYXU-aT=
+MPJ8yThCIkPhMpzOaNguDitQDSAIA/42u/r76f-s6YQw--1ii1je_bJA/h3/YUOwVM745XEdp98=
+mmmeNWCq31IjkSc-UWL_idtaNPzE">https://promedmail.org/promed-post?place=3D87=
+14151,7</a>]<br><br>[See Also:<br>2023=0D<br>----=0D<br>Paratyphoid fever, =
+st Paratyphi B - Argentina: (SA) sporting event,<br>alert http://promedmail=
+.org/post/20230102.8707583=0D<br>2021=0D<br>----=0D<br>Paratyphoid fever, s=
+t Paratyphi B - Argentina (02): (SA)<br>http://promedmail.org/post/20211211=
+.8700211=0D<br>Paratyphoid fever, st Paratyphi B - Argentina: (SA)<br>http:=
+//promedmail.org/post/20211127.8699921=0D<br>2019=0D<br>----=0D<br>Salmonel=
+losis - Chile: (Santiago) sushi<br>http://promedmail.org/post/20191125.6796=
+355]<br>.................................................ll/rd/jh<br></body=
+>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3DXZUNuJNeZ9UdNZbNTcfLHPrNU4gxREwEh9UQ10LFobloMDAwdT=
+AwMCgWLwuGviRle4HveIiPR_JVR85at2lRRC1HG8MR7IBNrb_bBSf1pqA3h-7C9rBOkM0ftC6Km=
+vUp043BexHFV2gGmA7410hWD_Zt-qnZz-8E9AFAHWS6rZut8DlF21Iy9WSs2FtcR6ymT6EvhL94=
+mveg67jaQ3MC3_mL8Q0THLQ-lJPhwTy6PrrCA_0BNvzuBJyZXGIqISOWwg_qoiaS2FO7igyrBq5=
+W2zrXup-eHzD4nuYgzJinungyKNVmjvioYvYz9wYQ8R5MER7HVce0jiiPEZGYnvZIQ85pB7KDD9=
+c3I4_4zBaMs1wby_wRuH9OqdMh4NZj3HYVuMwkHeZMMjc0Dxm1OlBnxRvjla0zW-gr2MVjTZyzl=
+MhlTj2Oh_Ozx-s7OjoCOP4fdiP1GF-BHIALmfnaeT1AB6sgbmHiq_7sH3cXK1PyP2b92jtmMM7g=
+tUCAU77XPSOplbSUvxXnMg0dcEBNWxQvpBN_ha3WPknn6XAfdtv9QJPpEtWWVxgRHHze7A9eHGJ=
+x6lbdppG7TT3P51vAWGUnweEl5a2p-XjY6N4AL-VZHgfoJ_WDPPfZAjV6tuyceTOEk4B8PSEcFG=
+ruTvjjLnC_IhxmHJzULFM_dgN2p-J-sx0vbqFylqKAfMIQrI2twkhABcZyDuhqXvuLgfqH7VbFN=
+y5jeUitMCAwnDesBMJ7wMnq2inshWyCZdFfauAUJQ5Tmf84R0NzI1UOELndBgrLzlVMcT_-TPDb=
+Nsnn_Lg2CMopsqAIe4ooidw5wZOXektGA-Tx-DG6a0_H_YT4jF26Oe1bf8rJUBciTm9VVadUrE7=
+QTe2G94nuSw3eWiXXWfeVdCmH8rZBotWz0Ao4qeS8B0NUeckXn-EO__ilxtzhofj1Pfk1_kXODK=
+e_iVPAOY7PBRjLvJ0XIm8HmPQwLiE1bWsl9j0zyK1nyn-VodZFQLPXkAP0zoQqIoCWmm3rmMdOK=
+szup2VuZNfMbHUd5vw_pZuL6SIBPpb-qTSFUlhw2OawtsXAVAEcB6J0oG7v3O8jWS2s4Rnd1cRy=
+_rfemSNHkCwBbVPPgZ8E-Jba7hXQ903-Dn49DMc-4s95-P-I8tBkxQ6QbjSLyqbMKC7MIZh0uyC=
+R0NSzLwSrzvjDYx_9qCz5_1Ijze-geDuIHR957YT4-KQsT9NorS5rDpPUS1fXU0wZox0O7CR3" =
+target=3D"_blank" class=3D"Unsubscribe--unsubscribePreferences" style=3D"fo=
+nt-family:sans-serif;text-decoration:none;">Unsubscribe Preferences</a></di=
+v><br>############################################################<br>#####=
+#######################################################<br><br><img src=3D"=
+https://u19268662.ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/42u/r76f-s6YQ=
+w--1ii1je_bJA/ho.gif" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=
+=3D"height:1px !important;width:1px !important;border-width:0 !important;ma=
+rgin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;=
+margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !importa=
+nt;padding-right:0 !important;padding-left:0 !important;"/></body>
+</html>
+--e40fc11e0665c678b012674f07711c1b924815d27b3a95d81aa36b14ecc1--

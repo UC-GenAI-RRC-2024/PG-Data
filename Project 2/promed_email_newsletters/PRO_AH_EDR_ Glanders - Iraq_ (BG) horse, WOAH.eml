@@ -1,0 +1,454 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a98:c004:0:b0:1eb:e128:bbe3 with SMTP id l4csp4674630eic;
+        Tue, 16 Jan 2024 18:23:17 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IFEx1t20soe08vD2Bxp3G70NUKBULL/2Zmq+18zvM/Ef95FLX4oeM2I6Y5GYoHH4+vNYqws
+X-Received: by 2002:a5d:94d9:0:b0:7bf:57b4:d500 with SMTP id y25-20020a5d94d9000000b007bf57b4d500mr2361053ior.24.1705458197012;
+        Tue, 16 Jan 2024 18:23:17 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1705458196; cv=none;
+        d=google.com; s=arc-20160816;
+        b=QwODTjfxdtYz26+Saf3yT5sZDaylUmcukCqfKdpCX6ITIyfyj6lkaX2ciq9SxVJVoy
+         PxvZUvNbRVmnlNbr1Hhi49BE3hUm7XI4V+xa77AlmnMr07gcEK2PMd+VtRT+R/Rgn7N/
+         DTRyCcsRBiy3HF8NHRHRf9KmZFHXVjM9vSIdokbdM0UpxD/Rk+LrKeuiQ8Qi7bWmi7Vg
+         31mhmxPhOFJxuiolqv0cE25L05oMQKcuzwduyLHiMceHGEXSQTuMf90oTfzheDiWNSZG
+         Tpe3VFcBIRIwjiC4Lt8wxMy2ivp6WKYpVSZ2Y+3rFn1yhEQfiVmljnLyOHP8n/OuuoaV
+         Kosg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=wJb8ArxBQGXGljHfvwg/Ih7UBmhndbs0mYvr8hAILX8=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=mVDKHkmyrzkIOCTAa2Qa/tDelXOx4RGFPRREhDA0gX0KorC3PYBycyrGVnd68JYr7u
+         mAXGjFQkwX7n/iBYmw7a3azHYSub9pFfOPxqkevC3B8mIdLdJslK4XJRE5wxwnncwg1T
+         p8TT1ZWQxAt0atQ0ivdHCZoKJP7HjdgcBpy+Ucf4sdpiV5z8Csr+mWAIl6I8BDj6W80r
+         iieH7PuMxjUms1jIOZsXMRPLtgegvgWGR860PmEZF7SyD3YFWRnHJ51UArOWKLLb09pP
+         s8MVE1MuY1L2rnaS9dFEmFeLib0jsUBYv15FmE8H9r0BjA/W/ncQZlMCEclibOY4DPMz
+         Ligw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b="XzPncgB/";
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=HHNqVRqI;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id e1-20020a63e001000000b005b7160263f2si11712299pgh.154.2024.01.16.18.23.16
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 16 Jan 2024 18:23:16 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b="XzPncgB/";
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=HHNqVRqI;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=wJb8ArxBQGXGljHfvwg/Ih7UBmhndbs0mYvr8hAILX8=;
+	b=XzPncgB/tfbwUDSaMhxJjfxrNCsLB70OvKVuJsA42dl6IFpciei4kbNsjlPVDzg4Y0rU
+	OwUg9VlKazVvdJ5raquy9Nd+8cMWRnXtnffCzn7hv33BZxd8Al6n5Afc3xXCXFSSHzc2vN
+	Wp8uhSv4pBvhTXeVeMHHXnKXljR4DQZ1JPKE21Kmyl+SqGZ8z4+oxz/hTKRniJZfLnpbCK
+	LJhx4Z0a1kv0G7oevAEzuZ9/gWvqoC0GvuxByRcvkvdZ9pjwaP5pPmjo5Iy0GD7h8YY2iK
+	uzYiL8+5F94giaCjK6aNDz7euZmfp6UK4JeD9seAca9WbErF+DKWc5f1dOOvGzUg==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=wJb8ArxBQGXGljHfvwg/Ih7UBmhndbs0mYvr8hAILX8=;
+	b=HHNqVRqIhMndwxdSFi2Vi1b31xOgJFWcCCK1A7xgB3nTPYs88pcVTRvq+9xFZ5+Rn7Fk
+	LSjtfdSHNQN5SRFlP+3XJlceH1T795HjQSGMWgv4neUy1hL25E9ZYD+0f58d/vN2U8LqoT
+	uVHAOT8sfgcp5hqN1pHY+VwLYHT4NQCso=
+Received: by filterdrecv-657547499f-qmsfc with SMTP id filterdrecv-657547499f-qmsfc-1-65A73A10-E
+        2024-01-17 02:23:12.285909344 +0000 UTC m=+7890109.605659492
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-12 (SG) with HTTP
+	id BfMVDamBSSSPAkiSSpohVw
+	Wed, 17 Jan 2024 02:23:12.124 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=c5c0f33e42d39e5ba6103bf0f3ac5c37af9ca8f436250ebb3a4e0ac85f57
+Date: Wed, 17 Jan 2024 02:23:15 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <BfMVDamBSSSPAkiSSpohVw@geopod-ismtpd-12>
+Subject: PRO/AH/EDR> Glanders - Iraq: (BG) horse, WOAH
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iBXbcBryHnLtf10Ev7XseU0890e2Xwc=2FW2bkPIY?=
+ =?us-ascii?Q?XejRsV6MzUMA=2FxCUUlb4ZbGl+7chEOY8SEyKK9p?=
+ =?us-ascii?Q?HccoegcEZ8NRG3oUmKD6B5D6fTJgU9+vxGHJ8kT?=
+ =?us-ascii?Q?OT2+5YbULxxFYYf9IV2+SS4HJDSx+hqdke6XRlz?=
+ =?us-ascii?Q?P4shvvJQFO48hwTLve=2F=2FIBnu5fS9JIRnmoSwJw?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUiShGf=2FO8XJWpH34Od4Nd?=
+ =?us-ascii?Q?fxXa6jil96uRcJkF+N+LeVnO1tx80ddOyoyOo=2Fc?=
+ =?us-ascii?Q?Brxcl3ERAm0cOY743=2FFH59DWiSf5OzXORh1DLKt?=
+ =?us-ascii?Q?hb1NMKty3PsA5ju0ZzxCrq1WQuZSEQf=2FJlWtgqv?=
+ =?us-ascii?Q?cZmsyCHlNUZsD=2Fx=2FucZ1CkY3XVctXIp=2FYgCcFll?=
+ =?us-ascii?Q?Sz8qH=2F6AQXkKJhfszpf1pvsPomeIvlVLajK+lZL?=
+ =?us-ascii?Q?XHdM1InMImceaSOscVmzXtqSAzw4SPsgONkHNFA?=
+ =?us-ascii?Q?VbUcNJzDcH6CHtza68i2nll46sHE8YnWGNFVV0i?=
+ =?us-ascii?Q?e6qTTsB=2F1ksFrJ2svm6gnKt6wAdPiaHUhJaj=2Fv5?=
+ =?us-ascii?Q?zxibJN6SJWEIMBd7+C8D4M3CjT=2FG40oETjZGtwI?=
+ =?us-ascii?Q?7ETTK1CinZ4FYAWUymMMHrQ56XLKwYnbO2cuRKF?=
+ =?us-ascii?Q?SbCtCVEDjND7RwlJhM1Ah6LFKtVoXF+hCwU=2Fz2T?=
+ =?us-ascii?Q?VJA0FeGVUBqR8DjYYDNX5m6o1ckUljIfKev9Pz3?=
+ =?us-ascii?Q?UnHtApE6gke+29kYLQAjHYnv1u+sXndFiXkvjKR?=
+ =?us-ascii?Q?THIKOZSGWIGPyre+cW92NeyG1dtUAa=2FnyrHNC=2Fa?=
+ =?us-ascii?Q?sTRcLhsviNFMAiRft1nQuHeAVSQwx15jvjY7VT1?=
+ =?us-ascii?Q?VyE3PV3byXwX=2Foy1+BQ=2F+4plO7SRH9TTjPNaxc6?=
+ =?us-ascii?Q?5PvI2nFiHi5qdJWLYo3lQxkG90b7ZpIDpPSX3nq?=
+ =?us-ascii?Q?YitPtpbZIIXYXzP++9jZqn5Z6r87k6GgnQ2vSCS?=
+ =?us-ascii?Q?yKZRuOM9JDdfWKxsu2hBjoX7Sw=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2EDO0p2cjf4?=
+ =?us-ascii?Q?TEqJsoPwtk4ddLMtJFRYvg46VPKvFpH21toMDAw?=
+ =?us-ascii?Q?dTAwMKWYJ4m-XpJyRxR15BjhkjOs8CVF4IrgQGG?=
+ =?us-ascii?Q?fdsrCKpnP59XJ6IJRPrVEJzVV8QKgX1ahQszdJb?=
+ =?us-ascii?Q?umIpn0v0vgEdHr3OU8QBh2irJAPQ3kp=5FgkFIoSw?=
+ =?us-ascii?Q?QKbRYi-6y0WX19DHw=3D=3D=2EvTURigG3VQY4rkjByE1?=
+ =?us-ascii?Q?oAjW3QTVOLoQN4OL2lgIehhtoMDAwdTAwMC0LAp?=
+ =?us-ascii?Q?5Jnn-pf-g9IQ36XicuXJ-c7nZv1crhSW4K-HNq=5F?=
+ =?us-ascii?Q?gqkWHLLWyw2ZD27TKJ1K6=5FJlZUsQz0XLTV8wtWg?=
+ =?us-ascii?Q?PG8eAfREbgPEXG9Q2lNsFtgTFO2l0n972Mdz8Ux?=
+ =?us-ascii?Q?9wu6BMFYanO=5FfuMP5D6C1oaoqApvrWwzKDgbIJt?=
+ =?us-ascii?Q?4jjjhxDCYVsFfMs84JyVn4nh6FStxTAfp3bcvie?=
+ =?us-ascii?Q?kSStTOgan5=5Fn9slURqDVCIdAvsuauXJs90EfRej?=
+ =?us-ascii?Q?jjTgl2HRjFaPvFUSgghvmoj1O7yRqz4J9uOBTrN?=
+ =?us-ascii?Q?59ebwbOMpbsALKXeBHT8NtbeZbUvlTYDShUjxA0?=
+ =?us-ascii?Q?lSHKK=5FyM5=5FHQqTjDrXxKAJujxLUKcnMyEWXW6Rr?=
+ =?us-ascii?Q?KIR0uHeoDegnD9Pxqx4vBTmLGdeU=5FxccL=5F-bi-h?=
+ =?us-ascii?Q?52qhK8qjCABueijw7iYVVPT=5FI9cB7GkF=5F9QaLM7?=
+ =?us-ascii?Q?rq0cWbp-RVUWM-FBIIxHq1Z5WlyapHb5YSAkzYD?=
+ =?us-ascii?Q?uWSG69cn4xiNYyZEZiH6Ann7u0juVxbyMfxgWwx?=
+ =?us-ascii?Q?1x55UA3oloilqW=5FO3F0gjEFdDKbpOEzYddsXR5Q?=
+ =?us-ascii?Q?Mm2zlmAmuyNOuyjsa9uRSY6XUTOx9nYYkRO2wnv?=
+ =?us-ascii?Q?9xIdZ2unjQgR5NUexSlmIpmCmp7UvvaQPKIoIRY?=
+ =?us-ascii?Q?OQgLwHBOqVX=5FK0nWaFgYGbxC6MLKHeCPVipABzR?=
+ =?us-ascii?Q?BDtN=5FCmLGav5bUblgpGfaR1qO5LpzphELlWkyEl?=
+ =?us-ascii?Q?QOHtma9Ljx5AZ6URSvW9apXiWJgA06NvcJU4JIk?=
+ =?us-ascii?Q?nPlAzIOiFeGBEkXs223z9Hid3ZBuzG3Pq7l2niL?=
+ =?us-ascii?Q?YCU6laMqJuyaPOVhuaJ13WK1dv6mv-XdUOkvePb?=
+ =?us-ascii?Q?DW0XEprHxRSfY--=5FS8wkLgXqlXMZnvWMm-FivxB?=
+ =?us-ascii?Q?R2eqkHpsjcHaFRCH4iZ2=5FMQ0wrYwesBuNEtLOUm?=
+ =?us-ascii?Q?e0Z7OPbqmVcwGQBQ=5ForGPwgOdC=5FGhNvSxwuDQrk?=
+ =?us-ascii?Q?Wpq0WznGzy=5FabYKAvfonqpz7iRkBls1ZgoKd1Bu?=
+ =?us-ascii?Q?uDrsi1FaHrGUYsFcaYY=5Fd9pmrFoAKmNSN6er54E?=
+ =?us-ascii?Q?IVcizw=3D=3D=3E?=
+
+--c5c0f33e42d39e5ba6103bf0f3ac5c37af9ca8f436250ebb3a4e0ac85f57
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=us-ascii
+Mime-Version: 1.0
+
+GLANDERS - IRAQ: (BAGHDAD) HORSE, WOAH
+**************************************
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+Date: Sun 14 Jan 2024
+Source: WOAH-WAHIS (World Animal Health Information System) [edited]
+<https://wahis.woah.org/#/in-review/5485>
+
+
+Iraq - _Burkholderia mallei_ (Infection with) (Glanders) - Immediate
+notification
+---------------------------------------------------------------------------=
+-----
+General information
+Report type: Immediate notification
+Started: 8 Jan 2024
+Confirmed: 10 Jan 2024
+Reported: 14 Jan 2024
+End date: -
+Date of last occurrence: 31 Dec 2014
+Nature of diagnosis: Clinical, laboratory test
+Disease: Bluetongue virus (inf. with)
+Causal agent: Iraq - _Burkholderia mallei_ (Inf. with) (Glanders)
+Genotype / serotype / subtype: -
+Species: Equidae (domestic)
+Reason for notification: Recurrence of an eradicated disease=20
+Animal type: Terrestrial
+Disease category: WOAH (OIE) listed disease
+Event status: Ongoing
+
+Outbreak location: Baghdad, Adhamiya=20
+Started: 8 Jan 2024
+Epidemiological unit: Other
+Total animals affected:
+Species / Susceptible / Cases / Deaths / Killed and disposed of /
+Slaughtered or killed for commercial use / Vaccinated
+Equidae (domestic) / 1 / 1 / - / - / - / -
+
+Epidemiology
+Source of event or origin of infection: Introduction of new live
+animals
+
+Control measures at event level
+Domestic animals, applied: Disinfection, quarantine, movement control,
+zoning=20
+
+Diagnostic test result
+Test name / Laboratory / Species sampled / Number of outbreaks sampled
+/ First result date / Latest result date / Result
+Complement fixation test for antibody detection (Ab CFT) / Iraq
+Central Veterinary Laboratory / Equidae / 1 / 8 Jan 2024 / 10 Jan 2024
+/ Positive
+
+[The location of the outbreak can be seen on the interactive map
+included in the WOAH report at the source URL above.]
+
+--
+Communicated by:
+ProMED
+
+["Glanders is an infectious and life-threatening disease that mainly
+affects horses, donkeys or mules caused by the bacterium _Burkholderia
+mallei_. Glanders can be transmitted to humans. Susceptibility to
+glanders has also been demonstrated in camels, felines living in the
+wild, bears, wolves, and dogs. Carnivores may become infected by
+eating infected meat. Guinea pigs and hamsters are highly susceptible.
+The disease causes nodules and ulcerations in the respiratory tract
+and lungs in animals. A skin form, known as 'farcy', also occurs. In
+humans the disease can take different forms such as: nasal, localized
+with nodules and abscesses, pulmonary, septicemia with disseminated or
+chronic infection, respectively. A cure is possible, however, if cases
+are treated rapidly with antibiotics; fatality rates for untreated
+infections are very high. Glanders remains sporadically reported in a
+number of Asian, African, Middle Eastern, and South American
+countries. Glanders is a disease listed in the WOAH Terrestrial Animal
+Health Code and must be reported by Members according to the WOAH
+Code." (<https://www.woah.org/en/disease/glanders/>). - Mod.JH
+
+ProMED map:
+Iraq: <https://promedmail.org/promed-post?place=3D8714278,89>]
+
+[See Also:
+2019
+----
+Glanders - Kuwait: (AH) horse, OIE
+http://promedmail.org/post/20190731.6598640
+2017
+----
+Glanders, equine - Turkey: (IB)
+http://promedmail.org/post/20171206.5487492
+2012
+----
+Glanders, equine - Brazil: (MG) OIE
+http://promedmail.org/post/20120528.1147807
+2011
+----
+Glanders, equidae: laboratory diagnosis
+http://promedmail.org/post/20111102.3263
+Glanders, equine - Lebanon (03): RFI
+http://promedmail.org/post/20110822.2549
+Glanders, equine - Syria: RFI
+http://promedmail.org/post/20110731.2302
+Glanders, equine - Lebanon: (BA) OIE
+http://promedmail.org/post/20110713.2122
+Glanders, equine - Bahrain: (North), OIE
+http://promedmail.org/post/20110430.1350
+Glanders, feline - Iran: (TH), tiger, lion
+http://promedmail.org/post/20110122.0261
+2010
+----
+Glanders, equine - Bahrain (04): resolved, OIE, camel, RFI
+http://promedmail.org/post/20100919.3386
+Glanders, equine - Bahrain http://promedmail.org/post/20100428.1364
+2007
+----
+Glanders, equine - Iran ex Iraq
+http://promedmail.org/post/20071129.3854
+2004
+----
+Glanders, equine - United Arab Emirates: OIE
+http://promedmail.org/post/20041019.2836]
+.................................................mo/jh/may/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3DG98zCPT0ky_mg0_XKWlV3vfUhaT-DaiWuAuxvbDT5jpoMDAwdTAwMHWoXzJ=
+YOM9-2--nhw8vQ7tGINUWlQ9QjAIIX1Y93LTRxZaChNh6JA7UUEziodcWqsQ77D2A8nwJAlpN2F=
+Nn5Cx6j3Jufxgcr5rRIok_bwvUEMrCPPEQzK9gwUop0SsVWH4XkyBdSWLfzUD1plYd9oQsDZ6OU=
+416p0oGklAkEN92mAqTx4E__Qz4YmWeNRVTw8SHztu8Tvm9C442oPSzf4wxfmW_IrVs_k6LtkHJ=
+pzPO-o-meKr50sHFgLg6gW9GZlzsrMNnNEDZjBguP63ysx-xbYh0wej7nQtys8marNWTmnoBLQk=
+njWgzI5WIlKRfAPXybfDgoVtPHfaSQmLa4KIJPQd_N4RSCtePJEZtcgxrAzQLfuQQHYzc2QCXrq=
+hUrTjtcPdpEwHXjJadCdUd5N3TBLCtNxZZqIU_jWqAWYldhNucvOBPaaRRmzwj9JlJhBOKz5nJg=
+NNm08mPYA8XO8LTltwallMu26dgsJyTCrRB5bvzRfuMnKHNGjHJM_MKv8k_8gHHF4YT_JSlqhqu=
+SvTeB4jIuMAxHqYw0srt2sgqLwWp172P7zzB3FT3gf-fSRqn63yOchhBjrFeY_J1BPapG4XH1qm=
+xaoUj9Tf6n8RXdHK0ynMjY7WitE_yZU60-00X0kAWhzCXL5X7sAy4M-FduPIqc2gInhO54_i9s2=
+7SbLavdiKPAtTQCOPNj0-r5jDx7cjw6U8QyiNkcK2_8sTE2Hse6meoYuh1h_6z3uorZ43VE6rQQ=
+R5pxGA2lkSy-UAWVXcAXBC_g8uB1wmiIDSMBNky05aQ2E70X54ssTKbgY96nV_ZgCjpoZQPQGJg=
+LWUpVt_GZAa6WLIJmCYivPAQVkhvMGr5BeYsv2MFvSMcrfiO9g-exQjCiryfRLQ0j0sJpDUTdoA=
+JuVwHorS32OFW0kcAxABT2ppJeh9CSyOSHhyRuYK5AmeGFKIeCeXl9vCPNI3cq824P0xEp55ueL=
+_GfFBXPfU6FsNVfDZPPaUTGFavmMwKG3pMInz9Y9p-qqiCu6Muujg-EV19kYp_Bi7rzD8zTt06q=
+uEBslmcLxWJCV6M3b0mWp8qT3-NSkNH-xmWWkXtnPPZxuvt5tKJqjp1VaWfSv3cvY-q3q-n2JoR=
+OMakBG7qYVlOujqpUcdTErTaBrzYlZH5pUVOffpBe9n_UXqs8C5CwoDITUK7LHc2 )
+############################################################
+############################################################
+
+--c5c0f33e42d39e5ba6103bf0f3ac5c37af9ca8f436250ebb3a4e0ac85f57
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>GLANDERS - IRAQ: (BAGHDAD) HORSE, WOAH<br>***************************=
+***********<br>A ProMED-mail post<br><a href=3D"https://u19268662.ct.sendgr=
+id.net/ss/c/wscE2ng5fl6JrPIt48tisIijpefK5PNjW-mL-YZGnfgDOxU1G3gjwnPSi2Tfv3H=
+A/432/Db7_52XnSsaTyEPBFHjYBQ/h0/YXkOt9-0Tt1P-FvVifYE6pX6wfzPuPaUSLPghLN9_c0=
+">http://www.promedmail.org</a><br>ProMED-mail is a program of the<br>Inter=
+national Society for Infectious Diseases<br><a href=3D"https://u19268662.ct=
+.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisCT5tpD4Upm3qyMCbcYSQvc/432/Db7_52Xn=
+SsaTyEPBFHjYBQ/h1/o8pRvwUlS_jn8yky7j5oWcLzFhyIKJAinvFxOI5d3GY">http://www.i=
+sid.org</a><br><br>Date: Sun 14 Jan 2024=0D<br>Source: WOAH-WAHIS (World An=
+imal Health Information System) [edited]=0D<br><a href=3D"https://u19268662=
+.ct.sendgrid.net/ss/c/TLh_csrC34X_iXpbYoMam-hfNBcjkmqx8p5hLSO19IN38ZLaN-nCE=
+iF7d2InyIhO/432/Db7_52XnSsaTyEPBFHjYBQ/h2/ji1rLwLsvFJlsUJicYOJcp1mLlm_f8YC4=
+3vNvGMNX6U">https://wahis.woah.org/#/in-review/5485</a>=0D<br>=0D<br>=0D<br=
+>Iraq - _Burkholderia mallei_ (Infection with) (Glanders) - Immediate<br>no=
+tification=0D<br>----------------------------------------------------------=
+----------------------=0D<br>General information=0D<br>Report type: Immedia=
+te notification=0D<br>Started: 8 Jan 2024=0D<br>Confirmed: 10 Jan 2024=0D<b=
+r>Reported: 14 Jan 2024=0D<br>End date: -=0D<br>Date of last occurrence: 31=
+ Dec 2014=0D<br>Nature of diagnosis: Clinical, laboratory test=0D<br>Diseas=
+e: Bluetongue virus (inf. with)=0D<br>Causal agent: Iraq - _Burkholderia ma=
+llei_ (Inf. with) (Glanders)=0D<br>Genotype / serotype / subtype: -=0D<br>S=
+pecies: Equidae (domestic)=0D<br>Reason for notification: Recurrence of an =
+eradicated disease=20=0D<br>Animal type: Terrestrial=0D<br>Disease category=
+: WOAH (OIE) listed disease=0D<br>Event status: Ongoing=0D<br>=0D<br>Outbre=
+ak location: Baghdad, Adhamiya=20=0D<br>Started: 8 Jan 2024=0D<br>Epidemiol=
+ogical unit: Other=0D<br>Total animals affected:=0D<br>Species / Susceptibl=
+e / Cases / Deaths / Killed and disposed of /<br>Slaughtered or killed for =
+commercial use / Vaccinated=0D<br>Equidae (domestic) / 1 / 1 / - / - / - / =
+-=0D<br>=0D<br>Epidemiology=0D<br>Source of event or origin of infection: I=
+ntroduction of new live<br>animals=0D<br>=0D<br>Control measures at event l=
+evel=0D<br>Domestic animals, applied: Disinfection, quarantine, movement co=
+ntrol,<br>zoning=20=0D<br>=0D<br>Diagnostic test result=0D<br>Test name / L=
+aboratory / Species sampled / Number of outbreaks sampled<br>/ First result=
+ date / Latest result date / Result=0D<br>Complement fixation test for anti=
+body detection (Ab CFT) / Iraq<br>Central Veterinary Laboratory / Equidae /=
+ 1 / 8 Jan 2024 / 10 Jan 2024<br>/ Positive=0D<br>=0D<br>[The location of t=
+he outbreak can be seen on the interactive map<br>included in the WOAH repo=
+rt at the source URL above.]=0D<br>=0D<br>--=0D<br>Communicated by:=0D<br>P=
+roMED<br><br>["Glanders is an infectious and life-threatening disease that =
+mainly<br>affects horses, donkeys or mules caused by the bacterium _Burkhol=
+deria<br>mallei_. Glanders can be transmitted to humans. Susceptibility to<=
+br>glanders has also been demonstrated in camels, felines living in the<br>=
+wild, bears, wolves, and dogs. Carnivores may become infected by<br>eating =
+infected meat. Guinea pigs and hamsters are highly susceptible.<br>The dise=
+ase causes nodules and ulcerations in the respiratory tract<br>and lungs in=
+ animals. A skin form, known as 'farcy', also occurs. In<br>humans the dise=
+ase can take different forms such as: nasal, localized<br>with nodules and =
+abscesses, pulmonary, septicemia with disseminated or<br>chronic infection,=
+ respectively. A cure is possible, however, if cases<br>are treated rapidly=
+ with antibiotics; fatality rates for untreated<br>infections are very high=
+. Glanders remains sporadically reported in a<br>number of Asian, African, =
+Middle Eastern, and South American<br>countries. Glanders is a disease list=
+ed in the WOAH Terrestrial Animal<br>Health Code and must be reported by Me=
+mbers according to the WOAH<br>Code." (<a href=3D"https://u19268662.ct.send=
+grid.net/ss/c/TLh_csrC34X_iXpbYoMam2-QLiHwCJ8Scfe29XK2hdxlk-79cN8y4m-FLA7SX=
+_fNbZFxmK6SV3ONwnoTvI__1Q/432/Db7_52XnSsaTyEPBFHjYBQ/h3/relod4wM1QN7-YduEge=
+D-BlCFlPk7Cq_W3S-MNq30XQ">https://www.woah.org/en/disease/glanders/</a>). -=
+ Mod.JH<br><br>ProMED map:<br>Iraq: <a href=3D"https://u19268662.ct.sendgri=
+d.net/ss/c/sSnCkKCWBvais3EuVAOvgy2WOIX7pp1nXnn4AbwuQ3Z6WbkfhqXYXU-aTMPJ8yTh=
+B28nq4GMn8y1rRITROvsiQ/432/Db7_52XnSsaTyEPBFHjYBQ/h4/aapDuDanIdXfVifJEnB8YM=
+KvgeL5hFQGrIuh-C52Zcs">https://promedmail.org/promed-post?place=3D8714278,8=
+9</a>]<br><br>[See Also:<br>2019=0D<br>----=0D<br>Glanders - Kuwait: (AH) h=
+orse, OIE<br>http://promedmail.org/post/20190731.6598640=0D<br>2017=0D<br>-=
+---=0D<br>Glanders, equine - Turkey: (IB)<br>http://promedmail.org/post/201=
+71206.5487492=0D<br>2012=0D<br>----=0D<br>Glanders, equine - Brazil: (MG) O=
+IE<br>http://promedmail.org/post/20120528.1147807=0D<br>2011=0D<br>----=0D<=
+br>Glanders, equidae: laboratory diagnosis<br>http://promedmail.org/post/20=
+111102.3263=0D<br>Glanders, equine - Lebanon (03): RFI<br>http://promedmail=
+.org/post/20110822.2549=0D<br>Glanders, equine - Syria: RFI<br>http://prome=
+dmail.org/post/20110731.2302=0D<br>Glanders, equine - Lebanon: (BA) OIE<br>=
+http://promedmail.org/post/20110713.2122=0D<br>Glanders, equine - Bahrain: =
+(North), OIE<br>http://promedmail.org/post/20110430.1350=0D<br>Glanders, fe=
+line - Iran: (TH), tiger, lion<br>http://promedmail.org/post/20110122.0261=0D=
+<br>2010=0D<br>----=0D<br>Glanders, equine - Bahrain (04): resolved, OIE, c=
+amel, RFI<br>http://promedmail.org/post/20100919.3386=0D<br>Glanders, equin=
+e - Bahrain http://promedmail.org/post/20100428.1364=0D<br>2007=0D<br>----=0D=
+<br>Glanders, equine - Iran ex Iraq<br>http://promedmail.org/post/20071129.=
+3854=0D<br>2004=0D<br>----=0D<br>Glanders, equine - United Arab Emirates: O=
+IE<br>http://promedmail.org/post/20041019.2836]<br>........................=
+.........................mo/jh/may/jh<br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3DG98zCPT0ky_mg0_XKWlV3vfUhaT-DaiWuAuxvbDT5jpoMDAwdT=
+AwMHWoXzJYOM9-2--nhw8vQ7tGINUWlQ9QjAIIX1Y93LTRxZaChNh6JA7UUEziodcWqsQ77D2A8=
+nwJAlpN2FNn5Cx6j3Jufxgcr5rRIok_bwvUEMrCPPEQzK9gwUop0SsVWH4XkyBdSWLfzUD1plYd=
+9oQsDZ6OU416p0oGklAkEN92mAqTx4E__Qz4YmWeNRVTw8SHztu8Tvm9C442oPSzf4wxfmW_IrV=
+s_k6LtkHJpzPO-o-meKr50sHFgLg6gW9GZlzsrMNnNEDZjBguP63ysx-xbYh0wej7nQtys8marN=
+WTmnoBLQknjWgzI5WIlKRfAPXybfDgoVtPHfaSQmLa4KIJPQd_N4RSCtePJEZtcgxrAzQLfuQQH=
+Yzc2QCXrqhUrTjtcPdpEwHXjJadCdUd5N3TBLCtNxZZqIU_jWqAWYldhNucvOBPaaRRmzwj9JlJ=
+hBOKz5nJgNNm08mPYA8XO8LTltwallMu26dgsJyTCrRB5bvzRfuMnKHNGjHJM_MKv8k_8gHHF4Y=
+T_JSlqhquSvTeB4jIuMAxHqYw0srt2sgqLwWp172P7zzB3FT3gf-fSRqn63yOchhBjrFeY_J1BP=
+apG4XH1qmxaoUj9Tf6n8RXdHK0ynMjY7WitE_yZU60-00X0kAWhzCXL5X7sAy4M-FduPIqc2gIn=
+hO54_i9s27SbLavdiKPAtTQCOPNj0-r5jDx7cjw6U8QyiNkcK2_8sTE2Hse6meoYuh1h_6z3uor=
+Z43VE6rQQR5pxGA2lkSy-UAWVXcAXBC_g8uB1wmiIDSMBNky05aQ2E70X54ssTKbgY96nV_ZgCj=
+poZQPQGJgLWUpVt_GZAa6WLIJmCYivPAQVkhvMGr5BeYsv2MFvSMcrfiO9g-exQjCiryfRLQ0j0=
+sJpDUTdoAJuVwHorS32OFW0kcAxABT2ppJeh9CSyOSHhyRuYK5AmeGFKIeCeXl9vCPNI3cq824P=
+0xEp55ueL_GfFBXPfU6FsNVfDZPPaUTGFavmMwKG3pMInz9Y9p-qqiCu6Muujg-EV19kYp_Bi7r=
+zD8zTt06quEBslmcLxWJCV6M3b0mWp8qT3-NSkNH-xmWWkXtnPPZxuvt5tKJqjp1VaWfSv3cvY-=
+q3q-n2JoROMakBG7qYVlOujqpUcdTErTaBrzYlZH5pUVOffpBe9n_UXqs8C5CwoDITUK7LHc2" =
+target=3D"_blank" class=3D"Unsubscribe--unsubscribePreferences" style=3D"fo=
+nt-family:sans-serif;text-decoration:none;">Unsubscribe Preferences</a></di=
+v><br>############################################################<br>#####=
+#######################################################<br><br><img src=3D"=
+https://u19268662.ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/432/Db7_52XnS=
+saTyEPBFHjYBQ/ho.gif" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=
+=3D"height:1px !important;width:1px !important;border-width:0 !important;ma=
+rgin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;=
+margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !importa=
+nt;padding-right:0 !important;padding-left:0 !important;"/></body>
+</html>
+--c5c0f33e42d39e5ba6103bf0f3ac5c37af9ca8f436250ebb3a4e0ac85f57--

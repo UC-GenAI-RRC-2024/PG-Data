@@ -1,0 +1,551 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a98:c004:0:b0:1eb:e128:bbe3 with SMTP id l4csp2974213eic;
+        Sat, 13 Jan 2024 14:55:19 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IGbnDVD5t+fRCtLQZGRugecEwyfNl6V2XLgAuSwMcqIQ9IpTqtVCjBhr2Z61o74T/I+WKcC
+X-Received: by 2002:a05:622a:22a4:b0:429:74f4:5ace with SMTP id ay36-20020a05622a22a400b0042974f45acemr4471524qtb.66.1705186518786;
+        Sat, 13 Jan 2024 14:55:18 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1705186518; cv=none;
+        d=google.com; s=arc-20160816;
+        b=p+u7fpeGuPkytOYKzmyA9B3Y1yX/xAFxH06yzMGojW93AskVNe2AKBvlHDp/0x8WcJ
+         nr5ovTP0o/Fg6x66ION1Zu4NvjnMQmEU0nxS9U540hPPYBCE4g2gjK0sirDCjFvmSdDU
+         nAipCQGJ+U1xCozQHXVbrGrtvKWEVW47kkJw12+4/eMI1iPwChWUpr4xvy4hgt/1BJqV
+         4OUz27sjzITbBWVjh7txVeZ5M8BkqKKAyHDGKpjk7IZSVrUmD+HVZ9h9gbpZgJ/dGkpC
+         H0tM8PRJciDigtlWuTp7TAeaCd/OIueFowPO+1tK8lBF0Yy1i5rRoVjT6EQD2hhTIJcM
+         SPJA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=9IIswETnWfktgeQZe4qunCag/OOPPhLudK87t5W6bw4=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=qwRbxikz9XtOyuFMkedoarikgI/4YQ9nD25wAZFpa9YVRHMvCIsgoapJvXoucqXhI2
+         a/pYC/iQUbz4Lmc0sS8U7MIJxwraT/MbzQ02A2cWS+6YwSN+QI/HTtbmvw/QerW+5pBC
+         ks1agkHtOs17joPvSclVeRpe3YW5tbyzDndDMrnt33Dslm1cBu0S/1GUF9aO5u+n8C9Q
+         X3OO2jDfwTIZmjrlBlW/7S5nboZ5X22fHDtePyH629ABWiLTs8VdQt0Fptd0rwtCnCSk
+         KalCNE+viJtC2Vu3fYNGUVad1YufJG3eMympz2I2EeVKeDBitBiXcRi2ewwesOkOp04Z
+         CzbA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=IyuaV6eq;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b="Z/bdgIVy";
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id w6-20020a05622a190600b00429be04412fsi5716496qtc.291.2024.01.13.14.55.18
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sat, 13 Jan 2024 14:55:18 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=IyuaV6eq;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b="Z/bdgIVy";
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=9IIswETnWfktgeQZe4qunCag/OOPPhLudK87t5W6bw4=;
+	b=IyuaV6eqciCx1a/oN6uyx+o2v7nIVVOrrlmxuBDVvdEq7KAsqjJ0hfxOMdlkX2fc+Kiz
+	+bL4pi2Lzu0bK5xBYzGWvnYAhCNFoxriyufzsoo/+xsvOXBiZG4gWWi9QGbEOfEYwdM4Vx
+	y+rBBQ00SoeiR/yc5IuGPlAo4pCa19Wg/PiWxhNluMN7liomnxM8HQQEoAquFc87fCgQBs
+	FahGKOWKHrvyV8eKtz7XE0HRpzm2z5NYcSjPQTLU1ZmSD3hHN3vdL7nXAwhg6UaGoyDLFF
+	H7LM0rQxqObbEYXYWvpJAuCgCbuJaGLdcqD1NqveQH5p0LOpXv3He27gLem9xuLQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=9IIswETnWfktgeQZe4qunCag/OOPPhLudK87t5W6bw4=;
+	b=Z/bdgIVyjul3kRZzliy1WhGE2JRe/HkkE16w220YKtXOSkpccDKLP+f+KxgnG7f/JD5P
+	S64TSw3CMZ6lUs0yVBxgfd/Xehlr491/DQVxPnEE00L6bcKQ4+WT47N9jr7fulZSGPy9H7
+	zv8jDqrBITLvbYQCzZf6TA33MGgxoEos8=
+Received: by filterdrecv-5f9f645469-wr8sn with SMTP id filterdrecv-5f9f645469-wr8sn-1-65A314D3-14
+        2024-01-13 22:55:15.82131311 +0000 UTC m=+7618432.192975885
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-36 (SG) with HTTP
+	id 8kVOxgcIQwm5SWZX4ORNMw
+	Sat, 13 Jan 2024 22:55:15.588 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=fc796eb45d2a3fd2e06de8d22895d3af65beb89c9bf5ca884ce4bf94c6ff
+Date: Sat, 13 Jan 2024 22:55:17 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <8kVOxgcIQwm5SWZX4ORNMw@geopod-ismtpd-36>
+Subject: PRO/EDR> Malaria - Tanzania: (Zanzibar) re-emergence
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iBMjz7Ch0tWRj7ek8Roh5JgOfiDM9YBfyXkPvLk?=
+ =?us-ascii?Q?Quf9Q9dXp7qsX+4Fd9tMTIyLj0hOow=2FagyFqhyt?=
+ =?us-ascii?Q?dRSAyDpXDesm4JLc1cs+9YnipX7xwRT2gk1bBxT?=
+ =?us-ascii?Q?UXsqzQBucfWhW8Llg0DqPE97tQmmBiN1vMEVpk2?=
+ =?us-ascii?Q?yZ6nH2xIhsk43hHfcAdoaX=2Ftoh7YPnGLJ0m4HS?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUhc93xcG=2F095a5S4+mt=2FG?=
+ =?us-ascii?Q?uYUpctI=2FOGD2dwyi+uvm2j4FCdvuw0l9zcHM8iA?=
+ =?us-ascii?Q?mojOvTXq7jOpDFFNtfsYkHQYACEW8pq1BXXqYmH?=
+ =?us-ascii?Q?oGTsnt6QpE2ZV5WVqnpwfXWoLXx7+4ZiN7TQBAB?=
+ =?us-ascii?Q?ReQINGcLCMC9HHkkTwdKo2PwjryjKpYo=2FFRnlWq?=
+ =?us-ascii?Q?ICII8XhMV+rGIpgAp4NKhaG6n=2FpiJQDqsMAaQod?=
+ =?us-ascii?Q?=2FUrZVhAfR8cWHdQvzh777kK0wan1CTY+M3tkrK4?=
+ =?us-ascii?Q?ztDyAp7q6oEwcz1sf7eU4IjmCWBM+EPmhm+oRy9?=
+ =?us-ascii?Q?OIKZk6t4VYeb5GrM91vtTut2Z5E+RLViXndkBgx?=
+ =?us-ascii?Q?lg5akHd3eKSyopqkIgNGK5Ni3vPGVf23qZT1tME?=
+ =?us-ascii?Q?yTAOuIkhUWC=2FRPxxEbUtq5NHUPu+Q4N+jF4eeJl?=
+ =?us-ascii?Q?NZ9KLV8XM9dj9SW07A89qsOs917QP=2F345gT6kHs?=
+ =?us-ascii?Q?TR8g3XuhQ=2FJq6249pwkujueLDBe59kJfkgU2p7L?=
+ =?us-ascii?Q?tFM7oNc3H7poogyLQTceTiobw4uHuXsS=2FUujeBK?=
+ =?us-ascii?Q?oqP6y=2FwKSnPd8eZMSz+QZpR7qrxYcT2mkZQF2CB?=
+ =?us-ascii?Q?+drl=2F4lVXjJD=2FHnMHT2tBsshT5PYUHge60niGNj?=
+ =?us-ascii?Q?t=2FlJr52wiK8IYRGA0yg3qU6GnuCvuXZXVqbST5R?=
+ =?us-ascii?Q?joPWEqLd=2FX7j5R7jww6=2FCctJqqhOVzysw+H+LQp?=
+ =?us-ascii?Q?cy7rOwyOH7bV=2F0n6ZkTHpMpudrzsv2stgQI4QFU?=
+ =?us-ascii?Q?+aNKRUg79YXFuzGncoh9c4TaNA=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2EKexMlAaTH?=
+ =?us-ascii?Q?7m0vNvKaP10Ep0mL7l7HFSe1yq0qTDqgoRoMDAw?=
+ =?us-ascii?Q?dTAwMGA-uXQs44wMGqwHTONCex4P2JEkeJeDPzH?=
+ =?us-ascii?Q?Jnzx5YBgxQu11bGTukapuHeufSZPaB1LgE36-xg?=
+ =?us-ascii?Q?F2l75pV9Tb7kYnbIQeUkMSnc0t1fXhq4lXZscDi?=
+ =?us-ascii?Q?2BtmtVWPE9tMVNfqg=3D=3D=2ExwUQR=5FZ8UQzfJHYr9uz?=
+ =?us-ascii?Q?d11ABljejICkuIMAQmAhl6w1oMDAwdTAwMJwq8-?=
+ =?us-ascii?Q?YEfbUJcMsva=5FQgcIJKgX7KNHIQ71WWReDPk4GRB?=
+ =?us-ascii?Q?0OinXUpIhMrbZ6014hC6EhtbhEkBnxz7l3FGYN7?=
+ =?us-ascii?Q?SVHQyF5qSuMJ0f9fzPZeCOh=5Ftp1EhyyLF90HMLi?=
+ =?us-ascii?Q?gPaUjgG1oM69T4phVNOc-0BHGRKKoBPji740QGV?=
+ =?us-ascii?Q?HReXNwmpJfqGQfdWTgRHpMlB0xZKiNSEED5fAcH?=
+ =?us-ascii?Q?h7wv2mlZrztB779z5OhhS-oK-MlMO1M4KIXcqvd?=
+ =?us-ascii?Q?Zhf23arhAymVIsC95IqnVlq5aZl7KtW=5FfYabijc?=
+ =?us-ascii?Q?m52LsCoNus8Ow6o6MNjGsd2FlkYwLt8ZsfKnb4q?=
+ =?us-ascii?Q?9ixzMDEWtCJnhZydOnCqM5hWJIsX7W4FAqbAUkc?=
+ =?us-ascii?Q?z3yV9BplUs8rZ=5FojyRzvbxhQyt9o-s4fDMEuaCG?=
+ =?us-ascii?Q?m9b9L3VG40zwFfsUZpyqKExW92s-3ejnonesSuo?=
+ =?us-ascii?Q?zhPkiOq1gnkAJW1FqjfjE5rqWFiFz09pJbk3QkK?=
+ =?us-ascii?Q?HarRfMUC3LA-yAMyLTJGDoue5ZCALLa-KpP8KxC?=
+ =?us-ascii?Q?Qh5EfLJrNZjzG5TvyTA3vWwGgyQDIfnTts7C88o?=
+ =?us-ascii?Q?SjlXner0=5Fem9KR9qtdRy1EO9GFTi5tymh1y6gAC?=
+ =?us-ascii?Q?TZel=5F0ePe78SSdkRGZkFMhN4r6CVy8Nr1hKhtGG?=
+ =?us-ascii?Q?XSQyEv10zEtVPc6RvUcTpNGsaQEVDJnC7NPdfue?=
+ =?us-ascii?Q?WF6ixIr8FttdKyB2CkUSUCUB3xTctWUAECDGJXv?=
+ =?us-ascii?Q?EpwsdC2p6YMcSS5xvTUm7v5AkK0vj87331gHdGK?=
+ =?us-ascii?Q?7OnrRenYwII53kKRs=5FGIqQTcls20G2ZyPdzJkhZ?=
+ =?us-ascii?Q?M2edC5IU1OCHebcAtRO7mSgujfCA1ayq36vDyyx?=
+ =?us-ascii?Q?xOb4QYhRWqbyPVn5z-OZe=5FNVXUGiXQdpiIQK0nL?=
+ =?us-ascii?Q?0XsAOoq5zYHiV=5FWJMCqMR2YjMUmPDWbI0WHnx4F?=
+ =?us-ascii?Q?rIAHg2TN9t4OKZt0PJV6I-TO=5FeRzOQLJqjxTcSr?=
+ =?us-ascii?Q?kgtX2mqiS4n8C2EJwC2RPZiofJwZ9iA-Khr2hPe?=
+ =?us-ascii?Q?j6yklgqRYPhjJ27QtscJDJA=3E?=
+
+--fc796eb45d2a3fd2e06de8d22895d3af65beb89c9bf5ca884ce4bf94c6ff
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=us-ascii
+Mime-Version: 1.0
+
+MALARIA - TANZANIA: (ZANZIBAR) RE-EMERGENCE
+*******************************************
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+Date: Thu 11 Jan 2024
+Source: Daily News [edited]
+<https://dailynews.co.tz/malaria-re-emergence-in-zanzibar-why-residents-are=
+-to-blame>
+
+
+Zanzibar was already accelerating to eliminating malaria, the global
+killer disease. Most of the interventions appeared to work and the
+prevalence rate was 0.4% for at least a decade.
+
+But the increase in malaria cases between October and December last
+year [2023], down to this year (2024) was a shock to the health
+authorities in the Islands, where the hospital ward at Mnazi Mmoja
+Referral Hospital has been filled with patients battling for their
+lives.
+
+The Isles Minister of Health, Nassor Ahmed Mazrui had in mid-December
+last year [2023] said at a press conference that 3 people had died
+from malaria, but 2 weeks later he was quoted saying that the death
+toll had increased to 36 people.
+
+Malaria cases increased from 3223 people diagnosed with malaria in
+2022 to 3563 positives in June last year [2023], while those
+hospitalised increased from 282 to 423 in the same period. "After a
+long period of time without malaria, the immunity of Zanzibaris
+against the disease has gone down, leading to many people becoming
+easily affected," Mazrui said, adding that the government had quickly
+solicited medicine to treat people.
+
+Mr Mazrui was prompted to strengthen public awareness and 'outdoor
+spraying' in residential areas after an impromptu inspection in some
+parts of Zanzibar City revealed that the level of filthiness and poor
+sanitation was very high, harboring potential mosquito breeding sites.
+The World Heritage site (Stone Town), and Bwawani area have turned
+into prone areas because of filthiness as concluded by the Minister
+after also inspecting other areas such as Saateni in the city, who
+furiously said, "The surroundings are very dirty, there is no way we
+can win the fight against malaria in such a dirty environment."
+
+The Minister raised concern over the stinking stagnant water, wet
+areas, broken chambers for liquid wastes and bushes, which he said are
+good places for mosquitoes to breed and reproduce. "I take this
+opportunity to emphasise on collective responsibility in controlling
+malaria. It is possible to eliminate malaria if we all show
+commitment," he said, adding that travellers, students and security
+guards who spend many late hours outdoors should also take health
+precautions.
+
+Mr Hija Joseph Hija, Manager, Zanzibar Malaria Elimination Programme
+(ZAMEP), says outdoor spraying has been going on in some areas of
+Zanzibar, and that residents in areas such as Stone Town should not be
+worried, saying the spray is safe for humans, so they should allow
+their areas to be sprayed. "Fighting malaria is possible; we only need
+to share our responsibility, beginning with behaviour change to keep
+the environment clean. Stopping mosquitoes from reproducing is
+important," emphasised Mr Shija.
+
+Mr Mwinyi Issa Mselem from the surveillance committee on Malaria
+Projects supported by the 'Global Fund' emphasised to people during an
+inspection tour of some areas in Pemba Island last November [2023]
+that filthiness creates breeding sites for mosquitoes. "We have
+recorded admirable achievement in controlling malaria disease with
+prevalence below 1%. Let us observe health precautions, including
+keeping our surrounding clean to eliminate malaria," Mr Mselem said.
+
+During the inspection, he stressed to community leaders (popularly
+known as Sheha) to promote public awareness so that residents do not
+allow rainwater to become stagnant or create temporary ponds because
+it becomes breeding areas for mosquitoes. Mr Mohamed Haroun, community
+leader in Pemba, said, "We will continue educating people so that they
+avoid pollution by using inappropriate waste disposal, or leaving
+water wells and reserve tanks uncovered."
+
+Mr Yussuf Ali Othman from ZAMEP unit said that they have been working
+closely to fight malaria and that the target is to eliminate malaria
+from Zanzibar in the near future.
+
+[Byline: Issa Yusuf]
+
+--
+Communicated by:
+ProMED
+via
+ProMED-EAFR
+
+[Malaria resurgence underscores the vulnerability of populations when
+there is a lapse in public health practices, particularly poor
+sanitation fostering mosquito breeding sites. The government of
+Tanzania's swift response, including outdoor spraying and heightened
+public awareness, reflects a commendable commitment to addressing the
+issue.
+
+To further strengthen malaria control measures, ongoing collaboration
+between health authorities, community leaders, and the public is
+imperative. Continuous education on the importance of maintaining a
+clean environment, proper waste disposal, and the avoidance of
+stagnant water is crucial. Additionally, sustained efforts in outdoor
+spraying should be intensified, ensuring coverage in high-risk areas.
+
+The experience in Zanzibar highlights the need for vigilance even in
+regions that have made significant strides in disease control. By
+fostering a culture of collective responsibility and prioritizing
+preventive measures, Zanzibar can regain its momentum in the fight
+against malaria and work towards the ultimate goal of eliminating this
+debilitating disease from the islands. - Mod.TU
+
+ProMED map:
+Zanzibar, Tanzania:
+<https://promedmail.org/promed-post?place=3D8714213,201>]
+
+[See Also:
+2023
+----
+Malaria - Africa (07): Ethiopia (OR) continued increase, RFI
+http://promedmail.org/post/20231001.8712408
+Malaria - Africa (06): Ethiopia, increase, RFI
+http://promedmail.org/post/20230706.8710994
+Malaria - Africa (05): Kenya (MB) fatal, not linked to Anopheles
+stephensi http://promedmail.org/post/20230524.8710210
+Malaria - Africa (04): Kenya (BN), Congo DR (KS), Nigeria (AN), Ghana
+http://promedmail.org/post/20230502.8709805
+Malaria - Africa (03): Ghana, Nigeria, new R21/Matrix-M vaccine
+approved http://promedmail.org/post/20230421.8709605
+Malaria - Africa (02): Sudan, Uganda, increase
+http://promedmail.org/post/20230414.8709477
+Malaria - Africa: Kenya (MB) Anopheles stephensi, 1st rep, alert
+http://promedmail.org/post/20230222.8708528
+Malaria, falciparum - UK: artemisinin resistance, ex Uganda
+http://promedmail.org/post/20230217.8708458
+2022
+----
+Malaria - Africa (05): Ethiopia, Anopheles stephensi
+http://promedmail.org/post/20221102.8706520
+Malaria - Kenya: (KK) http://promedmail.org/post/20220528.8703500
+Malaria - Africa (04): Burundi, increase
+http://promedmail.org/post/20220503.8702997
+World Malaria Day: Africa http://promedmail.org/post/20220501.8702959
+Malaria - Africa (03): vaccine update
+http://promedmail.org/post/20220423.8702794
+Malaria - Africa (02): Mozambique (NS) increase
+http://promedmail.org/post/20220410.8702527
+Malaria - Africa: South Africa (WC)
+http://promedmail.org/post/20220305.8701819
+2021
+----
+Malaria: World Malaria Report 2021
+http://promedmail.org/post/20211219.8700380
+Malaria - Africa: RTS,S/AS01 child vaccine, WHO
+http://promedmail.org/post/20211007.8698896
+Malaria - Uganda: artemisinin resistance
+http://promedmail.org/post/20210924.8698670
+Malaria - Burkina Faso: genetically modified mosquito
+http://promedmail.org/post/20210601.8414384
+Malaria vaccine trial, high efficacy
+http://promedmail.org/post/20210424.8326270
+Malaria, artemisinin resistance - Africa
+http://promedmail.org/post/20210417.8313098
+Invasive mosquito, A. stephensi - Africa: malaria
+http://promedmail.org/post/20210202.8156660
+2020
+----
+Malaria - Namibia (02): (ZA) resurgence
+http://promedmail.org/post/20201204.7992054
+World Malaria Report 2020: Asia
+http://promedmail.org/post/20201130.7982459
+Invasive mosquito - Africa
+http://promedmail.org/post/20200824.7708503
+and other items in the archives]
+.................................................tu/rd/ya/rd/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3D11_VySKbtEqglo93FxeuaTxmYqFb__4DHeQOz7Z7ffpoMDAwdTAwMJMDyeg=
+iOTiS362kdNW3sIaZxgOmbZOS55Yka0ysG85u1MPiH_HcGYUiu3sh1hE6pvSD8YQZprBUhjO4dN=
+p1kxiNO3S2pzAyZKtMLN6XMzriOoB1LL-zRwIzdnQ2177LLlMcoQQZMV8F05FCJEtV8xFj4g2hO=
+znFyHhTNokfruTgD8_yki5ji51fpTX4D9Trzh0izbB352KKv0zmcuAB3I3Lj9oeh5KEVXVXB5sc=
+Ssmz08f5ObK2AyJDw8hKmA4viOgwLXSZM5pF1p5yBFJliimZZbMufm0FDcOlhaDkqTAqD-6Z0eV=
+p4PuYVelE_A20xGhVIOJFZ4XujUSx2VmOp9DJkdvoIR_VKyK4M_jaz-j8EswiEmVBtUQmhJn7aG=
+HGFj_inQ7YI4zyT1r1ddEdaQx92aKDisAzSJAXHtqEHdpcrPxEZpBvh3Y3reWjnMnmBPk7NkERs=
+3gUU6DkLwG3BAOEyYu_jbl47xG88jKnYWsU030Tzus3c7kUpkyEh1k0J0-ipeSL5-R2kPysgTdS=
+DpVtzTsE7CG0N2iREHSnzsmlV3tMoeYVLvtd4aFBsl0ZYpND9d-UzfF_QbdlavtZ6cMtvDuJeIr=
+WhF6A8kSzbxzpYmwU2JoNPyObO7wIIaj-xxg7tF7t2ylGNy-JGYXTicnQUr8FPGtvwS4R6xcCUl=
+WG5Wz_GdZeSRDimUc2Z-92ZCLqyzm6esfPAm0FK0Q4wT11jZdr0mi_cLZ2sAu1epAakKMR1mDUc=
+58Ft5iPWDdlLvC7tokx3l82KU6XjwF8CDDLM8mU3UPs7QoCFIctVyZhzv6ZigVRpSANGpgG1KWQ=
+Dpgt9o4HUiwnnMbo93AQ3nMbazZo_p9NjWKhpTCaM_G1T6oNvuX5TLNsKjL-0Q6QwuRzeu-im2J=
+q7r3dRUAnVwMmyaCM1TK6c6_KqYMdBFTgqay2zcDTsOEJP8QA4oXCcxTngwY1CSBQaJKT3Zyxp3=
+J4lciTOMyq-9rVMfFh8zkQtuRezc7ZtspX-iD3jlfClMvDVEKDqhsLtqLhbX97Pe0_A7ifVGTp4=
+KacxoY_KgmYZ47X9_w_73JFVTU4qJnvFfYB82zttVRpwimRbXkB-jj5Gmse8H7mI_QXaLF0KP58=
+d05sKEIVY690nPU2qPKx4FO4z9r9cQT2yq5LG7IbgFg=3D )
+############################################################
+############################################################
+
+--fc796eb45d2a3fd2e06de8d22895d3af65beb89c9bf5ca884ce4bf94c6ff
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>MALARIA - TANZANIA: (ZANZIBAR) RE-EMERGENCE<br>**********************=
+*********************<br>A ProMED-mail post<br><a href=3D"https://u19268662=
+.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisIijpefK5PNjW-mL-YZGnfgDOxU1G3gjw=
+nPSi2Tfv3HA/42y/HxQOJL0kTs-K4MFknborbg/h0/QvJUYDdU5PfBaMLGIeoDZ0h9sCm9OKpyr=
+YlsnBZLtL0">http://www.promedmail.org</a><br>ProMED-mail is a program of th=
+e<br>International Society for Infectious Diseases<br><a href=3D"https://u1=
+9268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisCT5tpD4Upm3qyMCbcYSQvc/42=
+y/HxQOJL0kTs-K4MFknborbg/h1/Z8DHj4qlWVdb93eJCrEW7bktCzVWTlGYI_cTC-TxV1U">ht=
+tp://www.isid.org</a><br><br>Date: Thu 11 Jan 2024=0D<br>Source: Daily News=
+ [edited]=0D<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/TUIVIg4PC=
+mni5tP3Q8lzBfraa24wveCX3lrhpLwM9RsMSxRflhlkFAP_KvSwDYRMaAxBfFtkKHU4scYtbfF2=
+bPrNq6ETxMRQ_pQLM_yCwFfiPFoEE6eP6ylzcUnOaKOJ/42y/HxQOJL0kTs-K4MFknborbg/h2/=
+kfkv7RYX4TkBd2H9KcM-JirgVnakM1YPZpKVhSfcTK0">https://dailynews.co.tz/malari=
+a-re-emergence-in-zanzibar-why-residents-are-to-blame</a>=0D<br>=0D<br>=0D<=
+br>Zanzibar was already accelerating to eliminating malaria, the global<br>=
+killer disease. Most of the interventions appeared to work and the<br>preva=
+lence rate was 0.4% for at least a decade.=0D<br>=0D<br>But the increase in=
+ malaria cases between October and December last<br>year [2023], down to th=
+is year (2024) was a shock to the health<br>authorities in the Islands, whe=
+re the hospital ward at Mnazi Mmoja<br>Referral Hospital has been filled wi=
+th patients battling for their<br>lives.=0D<br>=0D<br>The Isles Minister of=
+ Health, Nassor Ahmed Mazrui had in mid-December<br>last year [2023] said a=
+t a press conference that 3 people had died<br>from malaria, but 2 weeks la=
+ter he was quoted saying that the death<br>toll had increased to 36 people.=0D=
+<br>=0D<br>Malaria cases increased from 3223 people diagnosed with malaria =
+in<br>2022 to 3563 positives in June last year [2023], while those<br>hospi=
+talised increased from 282 to 423 in the same period. "After a<br>long peri=
+od of time without malaria, the immunity of Zanzibaris<br>against the disea=
+se has gone down, leading to many people becoming<br>easily affected," Mazr=
+ui said, adding that the government had quickly<br>solicited medicine to tr=
+eat people.=0D<br>=0D<br>Mr Mazrui was prompted to strengthen public awaren=
+ess and 'outdoor<br>spraying' in residential areas after an impromptu inspe=
+ction in some<br>parts of Zanzibar City revealed that the level of filthine=
+ss and poor<br>sanitation was very high, harboring potential mosquito breed=
+ing sites.<br>The World Heritage site (Stone Town), and Bwawani area have t=
+urned<br>into prone areas because of filthiness as concluded by the Ministe=
+r<br>after also inspecting other areas such as Saateni in the city, who<br>=
+furiously said, "The surroundings are very dirty, there is no way we<br>can=
+ win the fight against malaria in such a dirty environment."=0D<br>=0D<br>T=
+he Minister raised concern over the stinking stagnant water, wet<br>areas, =
+broken chambers for liquid wastes and bushes, which he said are<br>good pla=
+ces for mosquitoes to breed and reproduce. "I take this<br>opportunity to e=
+mphasise on collective responsibility in controlling<br>malaria. It is poss=
+ible to eliminate malaria if we all show<br>commitment," he said, adding th=
+at travellers, students and security<br>guards who spend many late hours ou=
+tdoors should also take health<br>precautions.=0D<br>=0D<br>Mr Hija Joseph =
+Hija, Manager, Zanzibar Malaria Elimination Programme<br>(ZAMEP), says outd=
+oor spraying has been going on in some areas of<br>Zanzibar, and that resid=
+ents in areas such as Stone Town should not be<br>worried, saying the spray=
+ is safe for humans, so they should allow<br>their areas to be sprayed. "Fi=
+ghting malaria is possible; we only need<br>to share our responsibility, be=
+ginning with behaviour change to keep<br>the environment clean. Stopping mo=
+squitoes from reproducing is<br>important," emphasised Mr Shija.=0D<br>=0D<=
+br>Mr Mwinyi Issa Mselem from the surveillance committee on Malaria<br>Proj=
+ects supported by the 'Global Fund' emphasised to people during an<br>inspe=
+ction tour of some areas in Pemba Island last November [2023]<br>that filth=
+iness creates breeding sites for mosquitoes. "We have<br>recorded admirable=
+ achievement in controlling malaria disease with<br>prevalence below 1%. Le=
+t us observe health precautions, including<br>keeping our surrounding clean=
+ to eliminate malaria," Mr Mselem said.=0D<br>=0D<br>During the inspection,=
+ he stressed to community leaders (popularly<br>known as Sheha) to promote =
+public awareness so that residents do not<br>allow rainwater to become stag=
+nant or create temporary ponds because<br>it becomes breeding areas for mos=
+quitoes. Mr Mohamed Haroun, community<br>leader in Pemba, said, "We will co=
+ntinue educating people so that they<br>avoid pollution by using inappropri=
+ate waste disposal, or leaving<br>water wells and reserve tanks uncovered."=0D=
+<br>=0D<br>Mr Yussuf Ali Othman from ZAMEP unit said that they have been wo=
+rking<br>closely to fight malaria and that the target is to eliminate malar=
+ia<br>from Zanzibar in the near future.=0D<br>=0D<br>[Byline: Issa Yusuf]=0D=
+<br>=0D<br>--=0D<br>Communicated by:=0D<br>ProMED=0D<br>via=0D<br>ProMED-EA=
+FR<br><br>[Malaria resurgence underscores the vulnerability of populations =
+when<br>there is a lapse in public health practices, particularly poor<br>s=
+anitation fostering mosquito breeding sites. The government of<br>Tanzania'=
+s swift response, including outdoor spraying and heightened<br>public aware=
+ness, reflects a commendable commitment to addressing the<br>issue.=0D<br>=0D=
+<br>To further strengthen malaria control measures, ongoing collaboration<b=
+r>between health authorities, community leaders, and the public is<br>imper=
+ative. Continuous education on the importance of maintaining a<br>clean env=
+ironment, proper waste disposal, and the avoidance of<br>stagnant water is =
+crucial. Additionally, sustained efforts in outdoor<br>spraying should be i=
+ntensified, ensuring coverage in high-risk areas.=0D<br>=0D<br>The experien=
+ce in Zanzibar highlights the need for vigilance even in<br>regions that ha=
+ve made significant strides in disease control. By<br>fostering a culture o=
+f collective responsibility and prioritizing<br>preventive measures, Zanzib=
+ar can regain its momentum in the fight<br>against malaria and work towards=
+ the ultimate goal of eliminating this<br>debilitating disease from the isl=
+ands. - Mod.TU<br><br>ProMED map:<br>Zanzibar, Tanzania:<br><a href=3D"http=
+s://u19268662.ct.sendgrid.net/ss/c/sSnCkKCWBvais3EuVAOvgy2WOIX7pp1nXnn4Abwu=
+Q3Z6WbkfhqXYXU-aTMPJ8yThG5oGzcu38VZ7bQT1Dbwoyg/42y/HxQOJL0kTs-K4MFknborbg/h=
+3/VgXCMmFiQgKkC7fyYXFA3kAgCKrXddZYRa4ZG9kbclQ">https://promedmail.org/prome=
+d-post?place=3D8714213,201</a>]<br><br>[See Also:<br>2023=0D<br>----=0D<br>=
+Malaria - Africa (07): Ethiopia (OR) continued increase, RFI<br>http://prom=
+edmail.org/post/20231001.8712408=0D<br>Malaria - Africa (06): Ethiopia, inc=
+rease, RFI<br>http://promedmail.org/post/20230706.8710994=0D<br>Malaria - A=
+frica (05): Kenya (MB) fatal, not linked to Anopheles<br>stephensi http://p=
+romedmail.org/post/20230524.8710210=0D<br>Malaria - Africa (04): Kenya (BN)=
+, Congo DR (KS), Nigeria (AN), Ghana<br>http://promedmail.org/post/20230502=
+.8709805=0D<br>Malaria - Africa (03): Ghana, Nigeria, new R21/Matrix-M vacc=
+ine<br>approved http://promedmail.org/post/20230421.8709605=0D<br>Malaria -=
+ Africa (02): Sudan, Uganda, increase<br>http://promedmail.org/post/2023041=
+4.8709477=0D<br>Malaria - Africa: Kenya (MB) Anopheles stephensi, 1st rep, =
+alert<br>http://promedmail.org/post/20230222.8708528=0D<br>Malaria, falcipa=
+rum - UK: artemisinin resistance, ex Uganda<br>http://promedmail.org/post/2=
+0230217.8708458=0D<br>2022=0D<br>----=0D<br>Malaria - Africa (05): Ethiopia=
+, Anopheles stephensi<br>http://promedmail.org/post/20221102.8706520=0D<br>=
+Malaria - Kenya: (KK) http://promedmail.org/post/20220528.8703500=0D<br>Mal=
+aria - Africa (04): Burundi, increase<br>http://promedmail.org/post/2022050=
+3.8702997=0D<br>World Malaria Day: Africa http://promedmail.org/post/202205=
+01.8702959=0D<br>Malaria - Africa (03): vaccine update<br>http://promedmail=
+.org/post/20220423.8702794=0D<br>Malaria - Africa (02): Mozambique (NS) inc=
+rease<br>http://promedmail.org/post/20220410.8702527=0D<br>Malaria - Africa=
+: South Africa (WC)<br>http://promedmail.org/post/20220305.8701819=0D<br>20=
+21=0D<br>----=0D<br>Malaria: World Malaria Report 2021<br>http://promedmail=
+.org/post/20211219.8700380=0D<br>Malaria - Africa: RTS,S/AS01 child vaccine=
+, WHO<br>http://promedmail.org/post/20211007.8698896=0D<br>Malaria - Uganda=
+: artemisinin resistance<br>http://promedmail.org/post/20210924.8698670=0D<=
+br>Malaria - Burkina Faso: genetically modified mosquito<br>http://promedma=
+il.org/post/20210601.8414384=0D<br>Malaria vaccine trial, high efficacy<br>=
+http://promedmail.org/post/20210424.8326270=0D<br>Malaria, artemisinin resi=
+stance - Africa<br>http://promedmail.org/post/20210417.8313098=0D<br>Invasi=
+ve mosquito, A. stephensi - Africa: malaria<br>http://promedmail.org/post/2=
+0210202.8156660=0D<br>2020=0D<br>----=0D<br>Malaria - Namibia (02): (ZA) re=
+surgence<br>http://promedmail.org/post/20201204.7992054=0D<br>World Malaria=
+ Report 2020: Asia<br>http://promedmail.org/post/20201130.7982459=0D<br>Inv=
+asive mosquito - Africa<br>http://promedmail.org/post/20200824.7708503=0D<b=
+r>and other items in the archives]<br>.....................................=
+............tu/rd/ya/rd/jh<br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3D11_VySKbtEqglo93FxeuaTxmYqFb__4DHeQOz7Z7ffpoMDAwdT=
+AwMJMDyegiOTiS362kdNW3sIaZxgOmbZOS55Yka0ysG85u1MPiH_HcGYUiu3sh1hE6pvSD8YQZp=
+rBUhjO4dNp1kxiNO3S2pzAyZKtMLN6XMzriOoB1LL-zRwIzdnQ2177LLlMcoQQZMV8F05FCJEtV=
+8xFj4g2hOznFyHhTNokfruTgD8_yki5ji51fpTX4D9Trzh0izbB352KKv0zmcuAB3I3Lj9oeh5K=
+EVXVXB5scSsmz08f5ObK2AyJDw8hKmA4viOgwLXSZM5pF1p5yBFJliimZZbMufm0FDcOlhaDkqT=
+AqD-6Z0eVp4PuYVelE_A20xGhVIOJFZ4XujUSx2VmOp9DJkdvoIR_VKyK4M_jaz-j8EswiEmVBt=
+UQmhJn7aGHGFj_inQ7YI4zyT1r1ddEdaQx92aKDisAzSJAXHtqEHdpcrPxEZpBvh3Y3reWjnMnm=
+BPk7NkERs3gUU6DkLwG3BAOEyYu_jbl47xG88jKnYWsU030Tzus3c7kUpkyEh1k0J0-ipeSL5-R=
+2kPysgTdSDpVtzTsE7CG0N2iREHSnzsmlV3tMoeYVLvtd4aFBsl0ZYpND9d-UzfF_QbdlavtZ6c=
+MtvDuJeIrWhF6A8kSzbxzpYmwU2JoNPyObO7wIIaj-xxg7tF7t2ylGNy-JGYXTicnQUr8FPGtvw=
+S4R6xcCUlWG5Wz_GdZeSRDimUc2Z-92ZCLqyzm6esfPAm0FK0Q4wT11jZdr0mi_cLZ2sAu1epAa=
+kKMR1mDUc58Ft5iPWDdlLvC7tokx3l82KU6XjwF8CDDLM8mU3UPs7QoCFIctVyZhzv6ZigVRpSA=
+NGpgG1KWQDpgt9o4HUiwnnMbo93AQ3nMbazZo_p9NjWKhpTCaM_G1T6oNvuX5TLNsKjL-0Q6Qwu=
+Rzeu-im2Jq7r3dRUAnVwMmyaCM1TK6c6_KqYMdBFTgqay2zcDTsOEJP8QA4oXCcxTngwY1CSBQa=
+JKT3Zyxp3J4lciTOMyq-9rVMfFh8zkQtuRezc7ZtspX-iD3jlfClMvDVEKDqhsLtqLhbX97Pe0_=
+A7ifVGTp4KacxoY_KgmYZ47X9_w_73JFVTU4qJnvFfYB82zttVRpwimRbXkB-jj5Gmse8H7mI_Q=
+XaLF0KP58d05sKEIVY690nPU2qPKx4FO4z9r9cQT2yq5LG7IbgFg=3D" target=3D"_blank" =
+class=3D"Unsubscribe--unsubscribePreferences" style=3D"font-family:sans-ser=
+if;text-decoration:none;">Unsubscribe Preferences</a></div><br>############=
+################################################<br>#######################=
+#####################################<br><br><img src=3D"https://u19268662.=
+ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/42y/HxQOJL0kTs-K4MFknborbg/ho.g=
+if" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"height:1px !imp=
+ortant;width:1px !important;border-width:0 !important;margin-top:0 !importa=
+nt;margin-bottom:0 !important;margin-right:0 !important;margin-left:0 !impo=
+rtant;padding-top:0 !important;padding-bottom:0 !important;padding-right:0 =
+!important;padding-left:0 !important;"/></body>
+</html>
+--fc796eb45d2a3fd2e06de8d22895d3af65beb89c9bf5ca884ce4bf94c6ff--

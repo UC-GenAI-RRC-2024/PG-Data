@@ -1,0 +1,642 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a05:640c:2d08:b0:1ee:5ffb:29ea with SMTP id p8csp228957eiu;
+        Mon, 22 Jan 2024 16:46:16 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IHdZ4HSo90yQ3/MKNxo5DaRXfXgQ4XIvYJF1yjruI7EbgxJm2U5eigqXVbwGafYrF4l9wFu
+X-Received: by 2002:a0d:e4c3:0:b0:5ff:4b64:890c with SMTP id n186-20020a0de4c3000000b005ff4b64890cmr3304101ywe.75.1705970776168;
+        Mon, 22 Jan 2024 16:46:16 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1705970776; cv=none;
+        d=google.com; s=arc-20160816;
+        b=gAy/yZACrI70pUoGJiT6gtYG8OhgMC8ExaDliyvH76hHji5NHF5Ay9xKKk1k/5wvyQ
+         p1X4kbVqd/m4YA9gTRWHODjWiH2Sqo9Ip8pQrXwuYTFzp90UbGH0mfwWGMwAETFBMex4
+         WDOs6k/iyROKsBNhwc8LoJUDlJXcsMVOiYHsSUZFh466DlFkqTSJU2Bo6ZG6lib9HlQa
+         izEklmL0t47BLXGWIUnN0YP7EnFcJ1oUxX4jR0kqHGjb917DhYxICPJa7B8DBGAtFQOZ
+         d0ibHmRYrcvs+0Rks18piuyq76bxqT1zimOJ5hEY+IJ2emf0gSHQ7XddFGObEhwS+sxo
+         0H8w==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=k1ncjBmL+4jHrtjhldBJFUO+Vc7O3IYm/4XNQ+d1L6A=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=f37L+SVF761tBWg3ezK3xXLsxM2ID/RI64Wevp+JTXAqZSz+R5HieR1Y6IVggeL4I9
+         XkfBygfVAAsnLjFCHwwbIH35L0nwqccxVrtP3bHx1giugSBAwaprI+Nt7RHjfPfuFtmU
+         V5O4FLOeQ7y3k72wdIpcnoIGChgcavSp8667TS8w6HAxsosnvylQ3DlbqFdHlH6akxhe
+         eMsPzH8SYbTK7W+5BMoc/CzfgkuCRyrX0Sq1BeSikVkCL1zlfTxGzHiTe2hoJs7wyMYa
+         yR4LOzTYXpaSe3bkhPNkD/d7B+kdCVekFKnkZ5J8IJKo5/xJaN6I1Gd4Fz2hcY75uGif
+         WKVQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=KzTXcP38;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=dND3HFQE;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id e19-20020ac85dd3000000b0042a3cb97070si3848148qtx.548.2024.01.22.16.46.16
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 22 Jan 2024 16:46:16 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=KzTXcP38;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=dND3HFQE;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=k1ncjBmL+4jHrtjhldBJFUO+Vc7O3IYm/4XNQ+d1L6A=;
+	b=KzTXcP38YUqaYBqp59kIR70MHg9Ypw8ZZoYPxWpUcQr8kC3zTUX4XK5t1BOY4mgYxls9
+	/i+rodoqS3q8tETKdgcbpF0N0NG422W5XbnTtmpLreXel28sriaeWJzFU33KFcXczhzx2E
+	s3hQ3gqG2/qgFqirbFu0rrGwQhO5b4dFRjNjpwK6TzENtImjYCjw7JeIk05iKbc2UsBf6y
+	MYv97VphLRVXZ6NfUg5MtHSK1/B+iSBIPeRp5/C/2wb1Vq5wzEjYkmcl++MvG19BBL1FwJ
+	pqOpM30fVJqVBUbcx4JW+JlF9k14GMxTBqiIcxEvlSodT9Q9hIEIToGbbmpXVH7A==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=k1ncjBmL+4jHrtjhldBJFUO+Vc7O3IYm/4XNQ+d1L6A=;
+	b=dND3HFQEF1JXfRru1dmgzwcxFoJO2T/mjc5VF0leJelo6EFuTf2hwShm4+FEVQnxUduw
+	pygfloeu2d17BiQsbnr2H8ODmDMw65atDSRNRJktAqlYFoQyUNsD7Ri+x5tGz7i3mLkF3h
+	O8ttDdMjibwuCLj/i/HOlLoN7V9qtAPFA=
+Received: by filterdrecv-74bdf4d586-xvxm2 with SMTP id filterdrecv-74bdf4d586-xvxm2-1-65AF0C57-4F
+        2024-01-23 00:46:15.790432719 +0000 UTC m=+8402670.504567569
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-14 (SG) with HTTP
+	id LT_g2aCiSZasMZxYvxfcRA
+	Tue, 23 Jan 2024 00:46:15.765 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=57899cb04cf9603f952a0bc9d5adb4b0830e7f75d6d524e7f485349e700b
+Date: Tue, 23 Jan 2024 00:46:15 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <LT_g2aCiSZasMZxYvxfcRA@geopod-ismtpd-14>
+Subject: PRO/EDR> Malaria - Venezuela: (FN, AM) indigenous people
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iBfQW24AiTaMaNoRKxfC3zYBSsz+ZKHUNa8Pend?=
+ =?us-ascii?Q?JX=2FbOg1yLDw4fqrJGZd83tugmQa5VlW0Bs09CE7?=
+ =?us-ascii?Q?OTU6sSfgSG449xEtPfTn93QjwtPoRQJa6VwvlZ4?=
+ =?us-ascii?Q?icyWNgWq9RaYE9v3tcuu6w5B58M2q3pJ5XzX1eR?=
+ =?us-ascii?Q?lOWUccuplJF7Wl=2FzRjT+4LjwNeA6R8ZwE4mN5q?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUhc93xcG=2F095a5S4+mt=2FG?=
+ =?us-ascii?Q?uYUpctI=2FOGD2dwyi+uvm2j4FCdvuw0l9zcHM8iA?=
+ =?us-ascii?Q?mojOvTXq7jOpDFFNtfsYkHQYACEW8pq1BXXqYmH?=
+ =?us-ascii?Q?oGTsnt6QpE2ZV5WVqnpwfXWoLXx7+4a7dsLqWcm?=
+ =?us-ascii?Q?zepuQmlTLUojEM4ExNCbcO=2FFBRBMP7gIHHmryRF?=
+ =?us-ascii?Q?DsQgQgMkr8AGCMt596LjVAF9iSI1+qdCcMC0=2FMn?=
+ =?us-ascii?Q?w4Tf60OEvxPRdWlICZMeLWWAVDdAl9re1ut1WrQ?=
+ =?us-ascii?Q?bB8s1zD4h+8FzE7Lbeqw=2FpZCDM4LyZugAwtN3HT?=
+ =?us-ascii?Q?ZuVQbm4FRjmJOBu1f0JBp7d3lZcNh15LKpoLdsy?=
+ =?us-ascii?Q?nG0TpAoM1xSdEDgIQ7o+GGvjckIib1JjDr4TaRA?=
+ =?us-ascii?Q?H4gIvySawpuEHKLWw5NUIM3XJeVWpDK6vQAnBAX?=
+ =?us-ascii?Q?P2iXTTBVzjwsjexeUF1uX09kUa8OLRk8jyw+nXw?=
+ =?us-ascii?Q?qRr1rlUAeYRBiG4DG4EESG3pi2h6HoFrX0LSxjz?=
+ =?us-ascii?Q?WTlbLXUyZTI8C=2FYO0+IgM8SYHcylKWjYSZe0cf+?=
+ =?us-ascii?Q?jGEsXFtw1adIGHZaYIkm=2FS6xkzhHaYy3g0FGvws?=
+ =?us-ascii?Q?0aPoUqjmeAHfzj=2FTypPoOHqYYylsa+QV7amRe+f?=
+ =?us-ascii?Q?9vcxpwE=2F1WtYeZM7gYKKtOWWEtKVW7+3f7Ar717?=
+ =?us-ascii?Q?TPUUuHMF3OKgKiWFrDi1G0HAOEfWfpbV6UVy+kJ?=
+ =?us-ascii?Q?C45CbhvsEyqWI5KeGBLa48vCTUp2mGl5WDjvizd?=
+ =?us-ascii?Q?alhpY6aeMq7dW1ACIp99Yzk9BA=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2E0jpx0O3tM?=
+ =?us-ascii?Q?5w7LQotEJeV7yeUkG4Daplgr4WPaQ3UwN9oMDAw?=
+ =?us-ascii?Q?dTAwMDQL0VpMzc2VcgCsrPNOrZvn9QyWZTujZm0?=
+ =?us-ascii?Q?hy7gqz4qgag4BOC6od63zZtjEwCujDZg3mufzWD?=
+ =?us-ascii?Q?lxwcAkNYYqAWnJpdQBTEtZPIng4Xyd9fxX-auio?=
+ =?us-ascii?Q?tYEex0iP0nBHyN-lQ=3D=3D=2EmR9iev2zEyJFNHcl=5Fld?=
+ =?us-ascii?Q?MptxiTZ8x-su-23szY7eMUWFoMDAwdTAwMDryPX?=
+ =?us-ascii?Q?JIjzmLfV9v31dbw9MMM7A6ZBsL=5FKGx3tSUBjgBi?=
+ =?us-ascii?Q?eJ8D29Ou28MOZPGvueEOzC59LM7CeRTox5xmSJE?=
+ =?us-ascii?Q?QvLHeBoeOv-VwLYbxLRyKawHpV32IbemBtCZszG?=
+ =?us-ascii?Q?ygY18to852zLEC0L0oyGeuiSyrtn1pOsmzd8JBv?=
+ =?us-ascii?Q?TfTLA=5F8Na8jsb2FP6wPCXfkU7HIPOOc3gCZSxOa?=
+ =?us-ascii?Q?oY6Cr9V8YJCw2r5KTamxAyMKeUeMLSBfdbQidCs?=
+ =?us-ascii?Q?rkEiXgcvz8GdvvMSCySboch1XNyjomGvFnGf2pL?=
+ =?us-ascii?Q?H2sQ3ayyu7XlrlMyLwS4JLxo15Oy6Pfirzb=5FUxT?=
+ =?us-ascii?Q?b94Cffpk5rqXcqWdwcEozJR8EymBOcLJ0z0iWZk?=
+ =?us-ascii?Q?tbDPaVJAIBKxIbpi8WG-u81PNsjNV=5FYYE8BwXxZ?=
+ =?us-ascii?Q?Pea55GlG8mAoR6tfPfUywBADw8325dVJjp4mwWq?=
+ =?us-ascii?Q?vA-sWkU5BIm5O3Z6dISRzoTIb1kocxtL=5Fk31I0n?=
+ =?us-ascii?Q?HbKz95f9KLkfK5mtPa4kOiNJKVR0L4MLdxtMfrU?=
+ =?us-ascii?Q?4Hhu1WqsPbOaG099Hnu9Iqri1Qyrg856qEJooCM?=
+ =?us-ascii?Q?yusS63cJgOL-U5AP91sEX1Bw9Qsw4BZFG-Mbw5H?=
+ =?us-ascii?Q?VpbiS4=5FNpFXVh1hBGQKL9Lfy1AsPlW8Le=5F2=5F3OI?=
+ =?us-ascii?Q?jlH8DGHczn82jrZrexRPw8xFvHZeWBSDWarvk=5FM?=
+ =?us-ascii?Q?Qxv8-AWlv=5FXtYVwSQey7CVwREm81ZlsBoznvLJg?=
+ =?us-ascii?Q?ewFLB5pyqpD6jA0b=5FJFWUV46n3k8r1fv1cZtisJ?=
+ =?us-ascii?Q?PBCw1zLBu7fhLdjRhyaenBL6d71Pp7617oXlpKQ?=
+ =?us-ascii?Q?i0b=5FrW4iSBYw10-w=5F3U6W660KvcHisBu94HkKUj?=
+ =?us-ascii?Q?KXU1akX7isFv8S4twN=5F34Bak3g=5FBSgevU2qUXlH?=
+ =?us-ascii?Q?65bjUcYSP5O7Mq1E7agqbOisQk=5FycWZNwnfmOz9?=
+ =?us-ascii?Q?tMGh-RmG0BkKncM9PEy8qk4dlo7aBX5bm9jG1Ex?=
+ =?us-ascii?Q?zL9dlrvwsp6uj8BVmctBSqVHRmnpscFgFRRr7LJ?=
+ =?us-ascii?Q?RXunMAllLg5Og6bmb5xot7m=3E?=
+
+--57899cb04cf9603f952a0bc9d5adb4b0830e7f75d6d524e7f485349e700b
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=utf-8
+Mime-Version: 1.0
+
+MALARIA - VENEZUELA: (FALCON, AMAZONAS) INDIGENOUS PEOPLE
+*********************************************************
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+Date: Sun 21 Jan 2024
+Source: El Clar=C3=ADn [machine trans., edited]
+<https://elclarinweb.com/alerta-epidemiologica-resurgimiento-mortal-de-mala=
+ria-en-comunidades-yanomami/>
+
+
+Epidemiological alert: deadly resurgence of malaria in Yanomami
+communities
+---------------------------------------------------------------------------
+Venezuela faces an alarming resurgence of malaria. The report by the
+NGO SOS Orinoco reveals the tragic reality: 85 Yanomami indigenous
+people have lost their lives due to malaria in various communities in
+the Sierra Parima, Amazonas State. Names like Momoi, Aranai, and
+Shamauka are now symbols of the devastation this outbreak has left in
+its wake. Epidemiologist Francisco Leal warns that malaria has also
+become endemic in the state of Falc=C3=B3n, pointing out that this
+infectious disease persists in the region, permanently affecting the
+population. This situation could lead to Falc=C3=B3n being declared the
+17th Venezuelan state endemic for malaria.
+
+The cases are concentrated in the southern area of western Falcon,
+specifically in Dabajuro, Buchivacoa and Mene de Mauroa. Health
+authorities have confirmed 134 cases, 86 of which are native and 48
+from Zulia. The lack of surveillance and control of the health system
+is blamed for the outbreak. Specialist Francisco Leal, with his vast
+experience, points out that the outbreak in Falc=C3=B3n is the result of
+failures in the surveillance and control system. The need to
+characterize, map and control the case mix of patients is highlighted
+as a priority to avoid future episodes.
+
+The current outbreak marks a grim record for Falc=C3=B3n, being the
+highest since 2019. Leal highlights that, since then, there was no
+certainty about the indigenous nature of the cases, underscoring the
+urgency of addressing and preventing future outbreaks. The increase in
+cases and deficiencies in the health system response raise questions
+about the effectiveness of control measures. The vulnerability of
+indigenous communities and the need for immediate action resonate as
+crucial challenges in the fight against malaria.
+
+--
+Communicated by:
+ProMED
+via=20
+ProMED-ESP
+
+[The history of Venezuela's experiences with malaria is discussed
+here:
+
+Gabald=C3=B3n-Figueira JC, Villegas L, Grillet ME, et al. Malaria in
+Venezuela: Gabald=C3=B3n's legacy scattered to the winds. Lancet Glob
+Health. 2021 May;9(5):e584-e585. doi: 10.1016/S2214-109X(21)00007-3.
+<https://pubmed.ncbi.nlm.nih.gov/33865468/> (References can be found
+at the original URL)
+---------------------------------------------------------------------------=
+-----
+"Between 1936 and 1970, Venezuela enacted one of the most important
+sanitary campaigns against malaria. It was led by Arnoldo Gabald=C3=B3n,
+and its cornerstone was a national indoor residual spraying campaign
+with dichlorodiphenyltrichloroethane that lasted for almost 4 decades.
+By 1961, malaria had been wiped out from 68% of the Venezuelan
+territory, and the mortality rate had been reduced from 164 deaths per
+100=E2=80=88000 people in 1936 to zero in 1962 (1,2). The partial
+elimination of the disease earned Venezuela an increase of over
+400=E2=80=88000 km2 in its commercially exploitable territory (1). an area
+twice as large as the UK. This additional land proved fundamental for
+Venezuela's economic development during the 2nd half of the 20th
+century.
+
+The current situation could not be more different: the 2020 World
+Malaria Report estimates that 467=E2=80=88421 cases of malaria occurred in
+Venezuela in 2019 -- a 1200% increase compared with the year 2000 (3).
+Venezuela's incidence of 32.8 per 1000 people at risk is 8 times
+higher than that of neighboring Brazil, and comparable to that of
+Ethiopia (34 cases per 1000 people at risk). Mortality figures are
+similarly striking. With 403 deaths in 2019, Venezuela accounted for
+73% of the total deaths from malaria estimated on the continent (3).
+
+The epicentre of the epidemic is the mining regions south of the
+Orinoco river (4) where conventional health care is often no longer
+available. This unavailability makes local Amerindian groups
+particularly susceptible, given their poor access to preventive
+measures and antimalarial treatment.
+
+The World Malaria Report shows that the situation in Venezuela is
+anomalous in the global context, with substantial progress achieved
+elsewhere. Furthermore, the scale of the epidemic, combined with
+migration from Venezuela into neighboring countries, makes this
+malaria crisis a regional problem, and is driving Latin America
+severely off track in meeting WHO's milestones for the 2016-30 period.
+(3,5). If the current trend is sustained, the region might reach 12
+cases of malaria per 1000 people at risk by 2030, in striking contrast
+with the projected reduction in areas with a higher malaria burden.
+Yet, international attention and support are scant, because of a
+long-outdated understanding of Venezuela as an affluent country.
+
+Because of the economic gains attained through its oil riches and the
+exploitation of malaria-free territories in the 1950s, the World Bank
+has long labelled Venezuela as an upper-middle-income country. That
+classification has not been changed, even though the estimated
+percentage of people living below the extreme poverty line (defined at
+USD 1.9 per day) reached 54=C2=B76% in 2019 (6).
+
+The current income classification is probably out of date. Between
+2013 and 2020, the Venezuelan economy has shrunk by an estimated 74%
+(7), but the World Bank classification has yet to account for the last
+2 years. The newest edition, published in July 2020, is based on
+economic data from mid-2019.(8) If there were full accounting for the
+past 7 years of economic contraction, Venezuela's per-person income
+would be well under the threshold to be classified as a lower
+middle-income country.
+
+The upper-middle-income classification constrains or, in some cases,
+outright prohibits assistance from key funders of malaria research and
+control. The Global Fund to fight AIDS, Tuberculosis and Malaria for
+instance, did not consider Venezuela to be eligible for malaria
+funding until 2019, when it was exceptionally included for the 2020-22
+allocation period based on its high malaria burden. At least USD 19.8
+million is expected to be disbursed to the country in 2021 (9).
+Despite this, Venezuela still is not prioritized by other key
+funders.
+
+Furthermore, although the Global Fund's decision is a key step, there
+is concern over how the funds will be managed, given obstacles
+ensuring public health neutrality in the context of humanitarian
+crisis and the political control of social aid programmes by the
+Venezuelan Government (10).
+
+To ensure a democratic use of these resources, allocation strategies
+should involve the Venezuelan medical and scientific community and
+civil society organizations in the design, monitoring, and evaluation
+of any interventions. Government participation should be conditional
+on the release of epidemiological data (which has been absent since
+2016), the cessation of the persecution of non-governmental
+organizations providing humanitarian support, and the acceptance of
+international accountability for disease control efforts.
+
+Paradoxically, we expect malaria cases to decrease in 2020, as
+mobility restrictions, caused by the COVID-19 pandemic and national
+fuel shortages, have probably reduced local transmission in mining
+sites. Additionally, a few non-governmental organizations together
+with the Pan-American Health Organization have made substantial
+efforts to distribute insecticide-treated nets in some of the higher
+burden areas, in addition to the tireless surveillance and control
+endeavors led by indigenous community health agents.
+
+The epidemic, however, will not be brought under control without a
+functional national malaria program in place. Ironically, it was the
+success of such a previous program that led to the economic boom now
+preventing Venezuelan researchers from accessing urgently needed
+resources. It is time for this painful irony to end." - Mod.LL
+
+ProMED map:
+Venezuela: <https://promedmail.org/promed-post?place=3D8714399,29>]
+
+[See Also:
+Malaria - Argentina: (Buenos Aires) imported, USA citizen, fatal
+http://promedmail.org/post/20240118.8714316
+Malaria - Cape Verde: elimination, WHO
+http://promedmail.org/post/20240117.8714283
+Malaria - USA (01): (OR) falciparum, probable prolonged presentation,
+ex Africa, 2022 http://promedmail.org/post/20240113.8714202
+Malaria - Tanzania: (Zanzibar) re-emergence
+http://promedmail.org/post/20240113.8714213
+2023
+----
+Malaria - Asia (09): India (WB)
+http://promedmail.org/post/20231215.8713751
+Malaria - Asia (07): India (TR) increased cases
+http://promedmail.org/post/20231018.8712705
+Malaria - Americas (16): USA (MD) autochthonous, falciparum, CDC
+http://promedmail.org/post/20231012.8712600
+Malaria - Americas (15): (Canada) ex Philippines, Plasmodium knowlesi
+http://promedmail.org/post/20231007.8712508
+Malaria - Americas (14): USA (AR) autochthonous
+http://promedmail.org/post/20231005.8712469
+Malaria - Africa (07): Ethiopia (OR) continued increase, RFI
+http://promedmail.org/post/20231001.8712408
+Malaria - Americas (13): Costa Rica (PU)
+http://promedmail.org/post/20230929.8712370
+Malaria - Americas (12): USA (FL, TX) CDC
+http://promedmail.org/post/20230908.8712013
+Malaria - Americas (11): USA (MD) 1st report in 40 years
+http://promedmail.org/post/20230819.8711760
+Malaria - Americas (11): Colombia, increase in incidence
+http://promedmail.org/post/20230723.8711323
+Malaria - Americas (10): USA (FL) autochthonous
+http://promedmail.org/post/20230718.8711230
+Malaria - Americas (09): USA (FL, TX) autochthonous, update
+http://promedmail.org/post/20230709.8711042
+Malaria - Africa (06): Ethiopia, increase, RFI
+http://promedmail.org/post/20230706.8710994
+Malaria - Americas (08): USA (FL, TX) autochthonous, CDC, alert
+http://promedmail.org/post/20230629.8710856
+Malaria - Americas (07): USA (TX) autochthonous
+http://promedmail.org/post/20230625.8710761
+Malaria - Americas (06): USA (FL) autochthonous, RFI
+http://promedmail.org/post/20230623.8710719
+Malaria - Africa (05): Kenya (MB) fatal, not linked to Anopheles
+stephensi http://promedmail.org/post/20230524.8710210
+Malaria - Africa (04): Kenya (BN), Congo DR (KS), Nigeria (AN), Ghana
+http://promedmail.org/post/20230502.8709805
+Malaria - Americas (05): Colombia, Venezuela
+http://promedmail.org/post/20230501.8709785
+Malaria - Americas (04): USA, imported, ex Liberia, fatal
+http://promedmail.org/post/20230427.8709737
+Malaria - Americas (03): (Costa Rica, Panama)
+http://promedmail.org/post/20230424.8709665
+Malaria - Americas (02): Costa Rica (LI)
+http://promedmail.org/post/20230409.8709416
+Malaria - Americas: Panama, increase
+http://promedmail.org/post/20230315.8708952]
+.................................................jt/ll/may/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3DectqUzjpxOCQdwBqe10mLlG10Fgk9llFN9qxAE_jsypoMDAwdTAwMLZ61lE=
+VOG2qTCLLXH7FICaoJeC-HPNLb52uO2KDx4zQhPr2GS-X3rs6OAFPN-wYUWpdoz4boQyrl4t6EC=
+LpFy3Wg449VFXdumXeDtI72FSHs8vs3bbYqsD2hjY7Fa3eYM30fAwiHVblw9GpynzqkQlnz4AJ1=
+Y-prDbbgxwwnE9MBQWqxG6OxohXZscULyxGiDeNTQetDQUDhnFXMPDvsdf5d_Kh5xQQMOq_Nh93=
+zT24bZrI1KWpVTs50px1D5ZUHUp0uWOzmuZ6Nz-AVvuEDswUmwRbhuBmZFapoUlXjwLGuRYWmTb=
+7vTh7ccA6mgQiNi00dRbvvjio6_GY6ggp6pT4kZQ308RgPIKTZCLJXYxnirSxZfY2qmpYIT1DiN=
+BOqTLyW2vUWFSkjGEr2iMi2-8MQWxQHyv5bAW1xYn9eunTHINmlu0MBO1QcSVasj9VR_sJnggeW=
+NDI_ut37tsA8WIO623KFb4et2-W3XzyjsY893K4Vm-WUXgXn0jOQRNJiUlV-RIOdH1s1JGOog9d=
+zwWDrqgyClrHnPKLxmesDVVg_BgnqqjwQFZdr4fRoDCLXiiQPgRBIqeOsyb99qvmxlLrfXdC6SN=
+V5ABWAA1_j4uFMoRa0aiPIiw39bvv5yxf4C6Y5xV-KLU4nHmOzdFNvRA7a6eKhkXmPZ1A8rNq68=
+G-6vcupcAUokbxwR61a9qZ9PiBI9pUiDPgB_-LV9QJjgl2n0WUtGpylRv51LqDj8jTTOPPJwR-Z=
+cwuawpLn3VjiSOqEUmsJc-en8p9haqPk2oG3IfzWS7pnhU7LEXqU2j4f2N3O1C6ec7jkrnpcMrP=
+OCr3xAbPjCyS3WUNhnGd76dNwgWTmlXK5ziMp0ETuW0pNLcB_YUkbeTR8AMUnJeCXc5LJ25vcjU=
+N2fWV-muWnvbXvILxp5lWTd_G6nQnLuSUH0ynPhtVClWF0KJkkWxSu20Q4rmulfrPsBfuE9QgKn=
+MbhGW39NT1Ya9BHOBrQz87SdUZsk_k59mLCHXsk7pIy7gJuxoJSu6NOz_Zm3S1Se1M77aqDVE0i=
+aVVRPjhEVLFJ8weaIvx6gKSbFpLwXq4m2N_tDRiWizwu9o0-EuIMWS0huK64Dpfm0LZPhwRjd8N=
+st03TTqWHrD2lzfjlaZ5BQO88wBBl2PjYIxtoMXDgjk=3D )
+############################################################
+############################################################
+
+--57899cb04cf9603f952a0bc9d5adb4b0830e7f75d6d524e7f485349e700b
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>MALARIA - VENEZUELA: (FALCON, AMAZONAS) INDIGENOUS PEOPLE<br>********=
+*************************************************<br>A ProMED-mail post<br>=
+<a href=3D"https://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisIijp=
+efK5PNjW-mL-YZGnfgDOxU1G3gjwnPSi2Tfv3HA/438/Vs5HPoonQT2NystoRFZUlg/h0/wLcGr=
+Aq3J5wbeYwx5ITR14fMXeWWMPWufUyMoRfQuaw">http://www.promedmail.org</a><br>Pr=
+oMED-mail is a program of the<br>International Society for Infectious Disea=
+ses<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48=
+tisCT5tpD4Upm3qyMCbcYSQvc/438/Vs5HPoonQT2NystoRFZUlg/h1/Y9seb4PfJkjTp0eYoil=
+wVWsslL52ArP3XIae8IglobU">http://www.isid.org</a><br><br>Date: Sun 21 Jan 2=
+024=0D<br>Source: El Clar=C3=ADn [machine trans., edited]=0D<br><a href=3D"=
+https://u19268662.ct.sendgrid.net/ss/c/u6Jy221DtLTd6phwYNECnZOWpcmRddALc4Yj=
+4EqDBaWRA7IySAEFIHq7soR_A2FHs8W-LfId3E95VJqV62El8aARPIdgfVoEzhOXHg97tmRKdYL=
+11Q1aaBrmt89iyMr_YHsciqkfATNqYs3-INmaEg/438/Vs5HPoonQT2NystoRFZUlg/h2/2zKcG=
+081NV_DXT_PeJ2jvtHauGeP_5z21mZpGtyTQ4c">https://elclarinweb.com/alerta-epid=
+emiologica-resurgimiento-mortal-de-malaria-en-comunidades-yanomami/</a>=0D<=
+br>=0D<br>=0D<br>Epidemiological alert: deadly resurgence of malaria in Yan=
+omami<br>communities=0D<br>------------------------------------------------=
+---------------------------=0D<br>Venezuela faces an alarming resurgence of=
+ malaria. The report by the<br>NGO SOS Orinoco reveals the tragic reality: =
+85 Yanomami indigenous<br>people have lost their lives due to malaria in va=
+rious communities in<br>the Sierra Parima, Amazonas State. Names like Momoi=
+, Aranai, and<br>Shamauka are now symbols of the devastation this outbreak =
+has left in<br>its wake. Epidemiologist Francisco Leal warns that malaria h=
+as also<br>become endemic in the state of Falc=C3=B3n, pointing out that th=
+is<br>infectious disease persists in the region, permanently affecting the<=
+br>population. This situation could lead to Falc=C3=B3n being declared the<=
+br>17th Venezuelan state endemic for malaria.=0D<br>=0D<br>The cases are co=
+ncentrated in the southern area of western Falcon,<br>specifically in Dabaj=
+uro, Buchivacoa and Mene de Mauroa. Health<br>authorities have confirmed 13=
+4 cases, 86 of which are native and 48<br>from Zulia. The lack of surveilla=
+nce and control of the health system<br>is blamed for the outbreak. Special=
+ist Francisco Leal, with his vast<br>experience, points out that the outbre=
+ak in Falc=C3=B3n is the result of<br>failures in the surveillance and cont=
+rol system. The need to<br>characterize, map and control the case mix of pa=
+tients is highlighted<br>as a priority to avoid future episodes.=0D<br>=0D<=
+br>The current outbreak marks a grim record for Falc=C3=B3n, being the<br>h=
+ighest since 2019. Leal highlights that, since then, there was no<br>certai=
+nty about the indigenous nature of the cases, underscoring the<br>urgency o=
+f addressing and preventing future outbreaks. The increase in<br>cases and =
+deficiencies in the health system response raise questions<br>about the eff=
+ectiveness of control measures. The vulnerability of<br>indigenous communit=
+ies and the need for immediate action resonate as<br>crucial challenges in =
+the fight against malaria.=0D<br>=0D<br>--=0D<br>Communicated by:=0D<br>Pro=
+MED=0D<br>via=20=0D<br>ProMED-ESP<br><br>[The history of Venezuela's experi=
+ences with malaria is discussed<br>here:=0D<br>=0D<br>Gabald=C3=B3n-Figueir=
+a JC, Villegas L, Grillet ME, et al. Malaria in<br>Venezuela: Gabald=C3=B3n=
+'s legacy scattered to the winds. Lancet Glob<br>Health. 2021 May;9(5):e584=
+-e585. doi: 10.1016/S2214-109X(21)00007-3.<br><a href=3D"https://u19268662.=
+ct.sendgrid.net/ss/c/0oc7vsq5mmLjPwOs4PjMh3uPKFO3RpoM8Ok2goq-HWzkU27fgRu2nd=
+4OA5OjqgxYsLXmRnTp03SNoq7zBFT1iA/438/Vs5HPoonQT2NystoRFZUlg/h3/G-yVojh60NVr=
+H0Hf7EHymvNfRu9KV4pCHtqxFWeRYC0">https://pubmed.ncbi.nlm.nih.gov/33865468/<=
+/a> (References can be found<br>at the original URL)=0D<br>----------------=
+----------------------------------------------------------------=0D<br>"Bet=
+ween 1936 and 1970, Venezuela enacted one of the most important<br>sanitary=
+ campaigns against malaria. It was led by Arnoldo Gabald=C3=B3n,<br>and its=
+ cornerstone was a national indoor residual spraying campaign<br>with dichl=
+orodiphenyltrichloroethane that lasted for almost 4 decades.<br>By 1961, ma=
+laria had been wiped out from 68% of the Venezuelan<br>territory, and the m=
+ortality rate had been reduced from 164 deaths per<br>100=E2=80=88000 peopl=
+e in 1936 to zero in 1962 (1,2). The partial<br>elimination of the disease =
+earned Venezuela an increase of over<br>400=E2=80=88000 km2 in its commerci=
+ally exploitable territory (1). an area<br>twice as large as the UK. This a=
+dditional land proved fundamental for<br>Venezuela's economic development d=
+uring the 2nd half of the 20th<br>century.=0D<br>=0D<br>The current situati=
+on could not be more different: the 2020 World<br>Malaria Report estimates =
+that 467=E2=80=88421 cases of malaria occurred in<br>Venezuela in 2019 -- a=
+ 1200% increase compared with the year 2000 (3).<br>Venezuela's incidence o=
+f 32.8 per 1000 people at risk is 8 times<br>higher than that of neighborin=
+g Brazil, and comparable to that of<br>Ethiopia (34 cases per 1000 people a=
+t risk). Mortality figures are<br>similarly striking. With 403 deaths in 20=
+19, Venezuela accounted for<br>73% of the total deaths from malaria estimat=
+ed on the continent (3).=0D<br>=0D<br>The epicentre of the epidemic is the =
+mining regions south of the<br>Orinoco river (4) where conventional health =
+care is often no longer<br>available. This unavailability makes local Ameri=
+ndian groups<br>particularly susceptible, given their poor access to preven=
+tive<br>measures and antimalarial treatment.=0D<br>=0D<br>The World Malaria=
+ Report shows that the situation in Venezuela is<br>anomalous in the global=
+ context, with substantial progress achieved<br>elsewhere. Furthermore, the=
+ scale of the epidemic, combined with<br>migration from Venezuela into neig=
+hboring countries, makes this<br>malaria crisis a regional problem, and is =
+driving Latin America<br>severely off track in meeting WHO's milestones for=
+ the 2016-30 period.<br>(3,5). If the current trend is sustained, the regio=
+n might reach 12<br>cases of malaria per 1000 people at risk by 2030, in st=
+riking contrast<br>with the projected reduction in areas with a higher mala=
+ria burden.<br>Yet, international attention and support are scant, because =
+of a<br>long-outdated understanding of Venezuela as an affluent country.=0D=
+<br>=0D<br>Because of the economic gains attained through its oil riches an=
+d the<br>exploitation of malaria-free territories in the 1950s, the World B=
+ank<br>has long labelled Venezuela as an upper-middle-income country. That<=
+br>classification has not been changed, even though the estimated<br>percen=
+tage of people living below the extreme poverty line (defined at<br>USD 1.9=
+ per day) reached 54=C2=B76% in 2019 (6).=0D<br>=0D<br>The current income c=
+lassification is probably out of date. Between<br>2013 and 2020, the Venezu=
+elan economy has shrunk by an estimated 74%<br>(7), but the World Bank clas=
+sification has yet to account for the last<br>2 years. The newest edition, =
+published in July 2020, is based on<br>economic data from mid-2019.(8) If t=
+here were full accounting for the<br>past 7 years of economic contraction, =
+Venezuela's per-person income<br>would be well under the threshold to be cl=
+assified as a lower<br>middle-income country.=0D<br>=0D<br>The upper-middle=
+-income classification constrains or, in some cases,<br>outright prohibits =
+assistance from key funders of malaria research and<br>control. The Global =
+Fund to fight AIDS, Tuberculosis and Malaria for<br>instance, did not consi=
+der Venezuela to be eligible for malaria<br>funding until 2019, when it was=
+ exceptionally included for the 2020-22<br>allocation period based on its h=
+igh malaria burden. At least USD 19.8<br>million is expected to be disburse=
+d to the country in 2021 (9).<br>Despite this, Venezuela still is not prior=
+itized by other key<br>funders.=0D<br>=0D<br>Furthermore, although the Glob=
+al Fund's decision is a key step, there<br>is concern over how the funds wi=
+ll be managed, given obstacles<br>ensuring public health neutrality in the =
+context of humanitarian<br>crisis and the political control of social aid p=
+rogrammes by the<br>Venezuelan Government (10).=0D<br>=0D<br>To ensure a de=
+mocratic use of these resources, allocation strategies<br>should involve th=
+e Venezuelan medical and scientific community and<br>civil society organiza=
+tions in the design, monitoring, and evaluation<br>of any interventions. Go=
+vernment participation should be conditional<br>on the release of epidemiol=
+ogical data (which has been absent since<br>2016), the cessation of the per=
+secution of non-governmental<br>organizations providing humanitarian suppor=
+t, and the acceptance of<br>international accountability for disease contro=
+l efforts.=0D<br>=0D<br>Paradoxically, we expect malaria cases to decrease =
+in 2020, as<br>mobility restrictions, caused by the COVID-19 pandemic and n=
+ational<br>fuel shortages, have probably reduced local transmission in mini=
+ng<br>sites. Additionally, a few non-governmental organizations together<br=
+>with the Pan-American Health Organization have made substantial<br>efforts=
+ to distribute insecticide-treated nets in some of the higher<br>burden are=
+as, in addition to the tireless surveillance and control<br>endeavors led b=
+y indigenous community health agents.=0D<br>=0D<br>The epidemic, however, w=
+ill not be brought under control without a<br>functional national malaria p=
+rogram in place. Ironically, it was the<br>success of such a previous progr=
+am that led to the economic boom now<br>preventing Venezuelan researchers f=
+rom accessing urgently needed<br>resources. It is time for this painful iro=
+ny to end." - Mod.LL<br><br>ProMED map:<br>Venezuela: <a href=3D"https://u1=
+9268662.ct.sendgrid.net/ss/c/sSnCkKCWBvais3EuVAOvgy2WOIX7pp1nXnn4AbwuQ3Z6Wb=
+kfhqXYXU-aTMPJ8yThc-I-62tor5dVH1LSD9qPzg/438/Vs5HPoonQT2NystoRFZUlg/h4/Khe5=
+xuKzmDGhRJHoGf08aSqbwESCZvfwUjlDherD9jA">https://promedmail.org/promed-post=
+?place=3D8714399,29</a>]<br><br>[See Also:<br>Malaria - Argentina: (Buenos =
+Aires) imported, USA citizen, fatal<br>http://promedmail.org/post/20240118.=
+8714316=0D<br>Malaria - Cape Verde: elimination, WHO<br>http://promedmail.o=
+rg/post/20240117.8714283=0D<br>Malaria - USA (01): (OR) falciparum, probabl=
+e prolonged presentation,<br>ex Africa, 2022 http://promedmail.org/post/202=
+40113.8714202=0D<br>Malaria - Tanzania: (Zanzibar) re-emergence<br>http://p=
+romedmail.org/post/20240113.8714213=0D<br>2023=0D<br>----=0D<br>Malaria - A=
+sia (09): India (WB)<br>http://promedmail.org/post/20231215.8713751=0D<br>M=
+alaria - Asia (07): India (TR) increased cases<br>http://promedmail.org/pos=
+t/20231018.8712705=0D<br>Malaria - Americas (16): USA (MD) autochthonous, f=
+alciparum, CDC<br>http://promedmail.org/post/20231012.8712600=0D<br>Malaria=
+ - Americas (15): (Canada) ex Philippines, Plasmodium knowlesi<br>http://pr=
+omedmail.org/post/20231007.8712508=0D<br>Malaria - Americas (14): USA (AR) =
+autochthonous<br>http://promedmail.org/post/20231005.8712469=0D<br>Malaria =
+- Africa (07): Ethiopia (OR) continued increase, RFI<br>http://promedmail.o=
+rg/post/20231001.8712408=0D<br>Malaria - Americas (13): Costa Rica (PU)<br>=
+http://promedmail.org/post/20230929.8712370=0D<br>Malaria - Americas (12): =
+USA (FL, TX) CDC<br>http://promedmail.org/post/20230908.8712013=0D<br>Malar=
+ia - Americas (11): USA (MD) 1st report in 40 years<br>http://promedmail.or=
+g/post/20230819.8711760=0D<br>Malaria - Americas (11): Colombia, increase i=
+n incidence<br>http://promedmail.org/post/20230723.8711323=0D<br>Malaria - =
+Americas (10): USA (FL) autochthonous<br>http://promedmail.org/post/2023071=
+8.8711230=0D<br>Malaria - Americas (09): USA (FL, TX) autochthonous, update=
+<br>http://promedmail.org/post/20230709.8711042=0D<br>Malaria - Africa (06)=
+: Ethiopia, increase, RFI<br>http://promedmail.org/post/20230706.8710994=0D=
+<br>Malaria - Americas (08): USA (FL, TX) autochthonous, CDC, alert<br>http=
+://promedmail.org/post/20230629.8710856=0D<br>Malaria - Americas (07): USA =
+(TX) autochthonous<br>http://promedmail.org/post/20230625.8710761=0D<br>Mal=
+aria - Americas (06): USA (FL) autochthonous, RFI<br>http://promedmail.org/=
+post/20230623.8710719=0D<br>Malaria - Africa (05): Kenya (MB) fatal, not li=
+nked to Anopheles<br>stephensi http://promedmail.org/post/20230524.8710210=0D=
+<br>Malaria - Africa (04): Kenya (BN), Congo DR (KS), Nigeria (AN), Ghana<b=
+r>http://promedmail.org/post/20230502.8709805=0D<br>Malaria - Americas (05)=
+: Colombia, Venezuela<br>http://promedmail.org/post/20230501.8709785=0D<br>=
+Malaria - Americas (04): USA, imported, ex Liberia, fatal<br>http://promedm=
+ail.org/post/20230427.8709737=0D<br>Malaria - Americas (03): (Costa Rica, P=
+anama)<br>http://promedmail.org/post/20230424.8709665=0D<br>Malaria - Ameri=
+cas (02): Costa Rica (LI)<br>http://promedmail.org/post/20230409.8709416=0D=
+<br>Malaria - Americas: Panama, increase<br>http://promedmail.org/post/2023=
+0315.8708952]<br>.................................................jt/ll/may=
+/jh<br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3DectqUzjpxOCQdwBqe10mLlG10Fgk9llFN9qxAE_jsypoMDAwdT=
+AwMLZ61lEVOG2qTCLLXH7FICaoJeC-HPNLb52uO2KDx4zQhPr2GS-X3rs6OAFPN-wYUWpdoz4bo=
+Qyrl4t6ECLpFy3Wg449VFXdumXeDtI72FSHs8vs3bbYqsD2hjY7Fa3eYM30fAwiHVblw9Gpynzq=
+kQlnz4AJ1Y-prDbbgxwwnE9MBQWqxG6OxohXZscULyxGiDeNTQetDQUDhnFXMPDvsdf5d_Kh5xQ=
+QMOq_Nh93zT24bZrI1KWpVTs50px1D5ZUHUp0uWOzmuZ6Nz-AVvuEDswUmwRbhuBmZFapoUlXjw=
+LGuRYWmTb7vTh7ccA6mgQiNi00dRbvvjio6_GY6ggp6pT4kZQ308RgPIKTZCLJXYxnirSxZfY2q=
+mpYIT1DiNBOqTLyW2vUWFSkjGEr2iMi2-8MQWxQHyv5bAW1xYn9eunTHINmlu0MBO1QcSVasj9V=
+R_sJnggeWNDI_ut37tsA8WIO623KFb4et2-W3XzyjsY893K4Vm-WUXgXn0jOQRNJiUlV-RIOdH1=
+s1JGOog9dzwWDrqgyClrHnPKLxmesDVVg_BgnqqjwQFZdr4fRoDCLXiiQPgRBIqeOsyb99qvmxl=
+LrfXdC6SNV5ABWAA1_j4uFMoRa0aiPIiw39bvv5yxf4C6Y5xV-KLU4nHmOzdFNvRA7a6eKhkXmP=
+Z1A8rNq68G-6vcupcAUokbxwR61a9qZ9PiBI9pUiDPgB_-LV9QJjgl2n0WUtGpylRv51LqDj8jT=
+TOPPJwR-ZcwuawpLn3VjiSOqEUmsJc-en8p9haqPk2oG3IfzWS7pnhU7LEXqU2j4f2N3O1C6ec7=
+jkrnpcMrPOCr3xAbPjCyS3WUNhnGd76dNwgWTmlXK5ziMp0ETuW0pNLcB_YUkbeTR8AMUnJeCXc=
+5LJ25vcjUN2fWV-muWnvbXvILxp5lWTd_G6nQnLuSUH0ynPhtVClWF0KJkkWxSu20Q4rmulfrPs=
+BfuE9QgKnMbhGW39NT1Ya9BHOBrQz87SdUZsk_k59mLCHXsk7pIy7gJuxoJSu6NOz_Zm3S1Se1M=
+77aqDVE0iaVVRPjhEVLFJ8weaIvx6gKSbFpLwXq4m2N_tDRiWizwu9o0-EuIMWS0huK64Dpfm0L=
+ZPhwRjd8Nst03TTqWHrD2lzfjlaZ5BQO88wBBl2PjYIxtoMXDgjk=3D" target=3D"_blank" =
+class=3D"Unsubscribe--unsubscribePreferences" style=3D"font-family:sans-ser=
+if;text-decoration:none;">Unsubscribe Preferences</a></div><br>############=
+################################################<br>#######################=
+#####################################<br><br><img src=3D"https://u19268662.=
+ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/438/Vs5HPoonQT2NystoRFZUlg/ho.g=
+if" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"height:1px !imp=
+ortant;width:1px !important;border-width:0 !important;margin-top:0 !importa=
+nt;margin-bottom:0 !important;margin-right:0 !important;margin-left:0 !impo=
+rtant;padding-top:0 !important;padding-bottom:0 !important;padding-right:0 =
+!important;padding-left:0 !important;"/></body>
+</html>
+--57899cb04cf9603f952a0bc9d5adb4b0830e7f75d6d524e7f485349e700b--

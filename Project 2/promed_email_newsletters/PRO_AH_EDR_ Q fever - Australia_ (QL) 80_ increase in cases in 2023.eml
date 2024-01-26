@@ -1,0 +1,590 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a05:640c:3013:b0:1ee:4bd3:5fc9 with SMTP id z19csp269668eiw;
+        Sat, 20 Jan 2024 14:14:18 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IERHg9Xd4DyHpZ1bkXiaDCSl5FR50JzW7qtYqLQuQRfbMt72dyAQSQbzcsUZotNmcJOE1Pm
+X-Received: by 2002:ae9:e219:0:b0:783:8a5b:953e with SMTP id c25-20020ae9e219000000b007838a5b953emr2593412qkc.101.1705788857803;
+        Sat, 20 Jan 2024 14:14:17 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1705788857; cv=none;
+        d=google.com; s=arc-20160816;
+        b=dlpOmlPue2TUiuvF2lIqtbxXXEvgB9i+rJ0PJUjbYjDVBPc9g9Jm/paY3PmlyPTdn1
+         3LbHOboBMafap6Ms/fWtbtnBGJd9b2rRVnQOj+8NOpCW8dbZbBNiBsnaA+eQ4io5wY2T
+         wv/10xVw3ZP4Or1pWDcrbUUSNF35RZZYN10H7LW4WHGVzPTnPSeqtzdkHJFU9SZb8xp/
+         TMIt1dR2+jscXO6l/yXKWnrwxzT5MQuQfpbaJWOCFJh2Doyn6o0mT7F9E3ujXr95Vsc4
+         840XwogAMqZK0KA6OnQ9wG6hEgxS/divetHMCBN3MeqigG3rMvpJWc0PKxERxBZ7sG0A
+         /XUw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=gdua+4sR1HexlZG3yHGbthgL7ml2NDzMjoCaJ5nxLEw=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=F6ezzXUQV2aipSvn0Atb2DD9b6SKR8OWAlIudw08HAR/PSk3Eu2DBXvgFk2ERKJtCH
+         TKVWkDNuFDZ5cFzTfzBZIv1Bihu7ve5N2p6cqCkGwLoTNTRoreQYt6zrK+B/BwejuO+0
+         BgqICHl34Uhep0BoecBuoW6JnInRqalvxCQoQwbXpg3zkEa5Q939tKAGB6aqvj55bD+h
+         KnIYPqZaOBmxvfs7oRMaXWl5buCG7AzoDQlzGfk36G7RlnaJeMUhKskNuRzd85k+9+P4
+         a5CueKjFuyh3GTR6GBxj4fjQPeYOjo/3po0TVkNaxu5oHYtYZ9N0Yt1zZg0Qh1E6lCYQ
+         /g0A==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=uczW8lmD;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=SoxZdzeK;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id d9-20020a05620a136900b00783338c59b2si2267303qkl.596.2024.01.20.14.14.17
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sat, 20 Jan 2024 14:14:17 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=uczW8lmD;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=SoxZdzeK;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=gdua+4sR1HexlZG3yHGbthgL7ml2NDzMjoCaJ5nxLEw=;
+	b=uczW8lmDaItg4vcLR2y6TFK8pcsw4IEjcb8tmbd8KK9Nj2x4KWUtQBFB0IYrjVlVtqHN
+	GLIpyAkYqIjOIuFa6MfN4GQULnA58Xs20nPIOYTAfE7zNqh6y5dFly0OuRQzm9sO/nfkNr
+	5DlSAi5Dj5w7iJl+3SlJufG2fHVDNVjXMRolBU9gTGuMT7nAjdVo93aGnpwq0jrdsoJo1q
+	kGg1XhNseWPJan+Xunl6G4sKsyU5yovQnK4ZRH0XZBSAdXFGxTJ4qD/g9gFfQnw2lgv0Gs
+	XFPS3ZJjetnBA4ZZxlTu0dDC+LMYI44cI2nQ4SpMXzXf6Oh4vzwH5pJH81GgfInQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=gdua+4sR1HexlZG3yHGbthgL7ml2NDzMjoCaJ5nxLEw=;
+	b=SoxZdzeKMP9buEaMi9l4RjQwY+H6oyOMUK4jPq49oFoQqKhoHFrsIQ0A3t0c66hAucr0
+	VQgrotkxLJNSZgtkuuWdU++5NpOMUM+j+PDDbC0f9G7Qv9pbnx1U0Rv9iBKgm+xyWL8X2X
+	1lIyG+BC3nmBm3GfOXQIybuafYLgYYd3o=
+Received: by filterdrecv-987c56d66-t9p5x with SMTP id filterdrecv-987c56d66-t9p5x-1-65AC45B6-37
+        2024-01-20 22:14:15.092758093 +0000 UTC m=+8220782.083102314
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-33 (SG) with HTTP
+	id 9IFKVEfwSY2bZFbJpzexnw
+	Sat, 20 Jan 2024 22:14:14.920 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=8ce07cd314071fa227c14b88acb88529222ff23c0121d6519eff0d40f403
+Date: Sat, 20 Jan 2024 22:14:16 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <9IFKVEfwSY2bZFbJpzexnw@geopod-ismtpd-33>
+Subject: PRO/AH/EDR> Q fever - Australia: (QL) 80% increase in cases in 2023
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iB+Z35lagaLUCa8yirrk4yibdcvbsZfBMyj54o2?=
+ =?us-ascii?Q?OFYGCINfVhGx5B23gZwdlx+IuBeTybLzRNV12SZ?=
+ =?us-ascii?Q?N6J6uAovnk2EoYcGRQ0Kz+yrWTDh1VdBXbKI4iQ?=
+ =?us-ascii?Q?S0fbGImnNY=2F=2FReMMihHFUwVknaQJfLTG82i0o0g?=
+ =?us-ascii?Q?ijLB8ciint7dRAVI75k+7d3eZ4yZ=2FAAOIDWMHt?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUiShGf=2FO8XJWpH34Od4Nd?=
+ =?us-ascii?Q?fxXa6jil96uRcJkF+N+LeVnO1tx80ddOyoyOo=2Fc?=
+ =?us-ascii?Q?Brxcl3ERAm0cOY743=2FFH59DWiSf5OzXORh1DLKt?=
+ =?us-ascii?Q?hb1NMKty3PsA5ju0ZzxCrq1WQuZSEQf=2FJlWtgqv?=
+ =?us-ascii?Q?cZmsyCHlNUZsDNa9f4yfKBf3OCAMKLlAjlpF529?=
+ =?us-ascii?Q?3qWHkGEDWlNfBg0l1d5PqENRoujXLWwfos4p=2Fzi?=
+ =?us-ascii?Q?1e8rEbr1+YdokhciNl4yDa7ucg633HaQJ=2Fat3Hr?=
+ =?us-ascii?Q?LBtijtTmBVrcHXmGz1NckvgdSAHi8iVB=2FHbC3c6?=
+ =?us-ascii?Q?LnDy9ONafhK9Q4OfhojyT0vSYH1e6rtjD92gMDU?=
+ =?us-ascii?Q?O8YFWPfJ1IR9EWEXz9WWEQYTFWCo1=2FTkqWEFue7?=
+ =?us-ascii?Q?HSl4dss02g2lypD=2FK9kRCr81x30xcXS2uuFBJ+M?=
+ =?us-ascii?Q?rvw0x4zpx4BIJ7qP0IDa9tOMpQobNxD3nlB3WlE?=
+ =?us-ascii?Q?hIPdIBPNm+h5sX4pbKIXZSJIanYNmXkmJcNWg9q?=
+ =?us-ascii?Q?uXGG4=2FUbNMBwqMH3AujmGEynFznbSNvhEHYgOdV?=
+ =?us-ascii?Q?vTx3km4IM=2F82J2+lpm0muUmpRQJZtZWibBI0Qh5?=
+ =?us-ascii?Q?+S0TPHcitwIJ9Hh=2F8WXHiWHuM1xCZ99x3=2FZtyZK?=
+ =?us-ascii?Q?fJPBNhkRQitwqNjQMp4XMcpXDVrP5eCycJrjCPR?=
+ =?us-ascii?Q?tcCmFgYRbHdDkEHGLZhmcE30E8vMb=2FSgQICA7W7?=
+ =?us-ascii?Q?ENnNgnq+0An9wlawnXS0S0+S5+LofjR32O3enaF?=
+ =?us-ascii?Q?SIjBUjHGEozCgVQk6cf5BQd2Qw=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2E2zXvXbUbS?=
+ =?us-ascii?Q?qsNG79b3FwKwnHtDkKdi2K=5FwZHHWFXV4bpoMDAw?=
+ =?us-ascii?Q?dTAwMOv03pJmIMnQUfABOqo9=5Fi=5FvKmUZChwkaF5?=
+ =?us-ascii?Q?kcQ5hfm4mvGVDNqNbeVdRfkb7BsGQMYaRskNZiT?=
+ =?us-ascii?Q?GvB5M3-atl8tI1Y2bRJtcSrGZn4Uo82NdpJ1Bst?=
+ =?us-ascii?Q?nvOR-gygjRBQYTxUw=3D=3D=2EeSNHs3uiHmanqUpnIGE?=
+ =?us-ascii?Q?xcF9K9m4PrhzHTZ24poWIjKpoMDAwdTAwMFeByG?=
+ =?us-ascii?Q?36iF723Xrj4Z42uTNpE3T9AQPB3mRpT1CVYCebu?=
+ =?us-ascii?Q?foVahRXxRxn3VhYelJNKjJqeey6MuaPrztWrRs1?=
+ =?us-ascii?Q?-ipUK3OaUYGFKktNTN9D5XPRdjgTwL3eJDOUuhH?=
+ =?us-ascii?Q?MvzWqtCUBHshQdyZbLSr3OApw1OHHaHFOoMsLIy?=
+ =?us-ascii?Q?pj8v6jdXtiEzbhiTq0spPw4VErRI7FW7K0IWWYo?=
+ =?us-ascii?Q?9iQEIPeUDJmlnTSCMTKOdi31P=5F043Gn5-PTaYYw?=
+ =?us-ascii?Q?1XiSgauSEmcrmcysv3G-FbnTFuMESufYPIdacOr?=
+ =?us-ascii?Q?visjUkoRAYvNsD6xRCkrrQa7SqHBTIvJzzGKkuP?=
+ =?us-ascii?Q?F0zdfNiVe-4szpCR5Jd0llyp4i8gyh2lNw70shS?=
+ =?us-ascii?Q?z0jfUUNjUeZ6fzxnXSw62YV2v=5F-ttezcK2VV40u?=
+ =?us-ascii?Q?4Y6ON-2LJ0jP5kyvCPmRA7Bh8lX96ri1BXsygis?=
+ =?us-ascii?Q?T6-8AKsg6NAJBtIIU5Ewwjiifz7O5MxnEHrA5qX?=
+ =?us-ascii?Q?FP9idta53XBnXwmCZUctXyMTN8cNvB9eb-C=5F3eu?=
+ =?us-ascii?Q?OFOvwIBckQqqU8s5o0850gnwhuzjuVAfHp5FVcl?=
+ =?us-ascii?Q?ME4VLg-orJqhRScX83o1eLypZyosdXY=5FW2Wv0Q5?=
+ =?us-ascii?Q?EJTLLYHgrLP6Xe5dp4-AajzYRoVB0L-O3EGLEQj?=
+ =?us-ascii?Q?T=5F5ySwRWACY1kGxf6fA0K-7krJ1sPQ7omX=5F5SXK?=
+ =?us-ascii?Q?aiUBw6gZiLwv8x25gpVbbTtP1wVo3drVeN1RUbv?=
+ =?us-ascii?Q?IZdaLlC9ZiUhePnQvrCrCq7M2RLb03mUYTJ79KT?=
+ =?us-ascii?Q?22ZMA6FPhPQgtIdmN49U2QJi0I15YN0atVjWLM3?=
+ =?us-ascii?Q?lbD8jAaPhNQKlcNGVYGrg6pIyMm-Si7K6THNeLA?=
+ =?us-ascii?Q?RlXmhHR05-BGwRAkipfvfMp1yQf-gdiKPQp2=5FNT?=
+ =?us-ascii?Q?fzR9=5FhT18-uezAFivgwO0LIqn75veAbOL07qJ5m?=
+ =?us-ascii?Q?7AF4s0nO6UdG4Q5LfjOlKpS06copZl9q85D2m=5FY?=
+ =?us-ascii?Q?t1lMFF3vqXfxZq61wgYRB0odh0AgjIB9aezbjEs?=
+ =?us-ascii?Q?9tZ9ZpDpbI3yWRnLA0sDkqh=5FDiNumlHExbNFEKi?=
+ =?us-ascii?Q?FWxVnA=3D=3D=3E?=
+
+--8ce07cd314071fa227c14b88acb88529222ff23c0121d6519eff0d40f403
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=us-ascii
+Mime-Version: 1.0
+
+Q FEVER - AUSTRALIA: (QUEEENSLAND) 80 PERCENT INCREASE IN CASES IN
+2023
+***********************************************************************
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+Date: Sat 20 Jan 2024
+Source: Warwick Today [edited]
+<https://warwicktoday.com.au/news/2024-01-20/rising-q-fever-cases/>
+
+
+As the residents of Darling Downs and South West continue to enjoy the
+region's vibrant livestock and wildlife, health authorities are
+issuing a crucial reminder about the potential risks associated with Q
+fever, a bacterial infection that can be carried by both domestic and
+wild animals.
+
+Q fever is caused by the bacterium _Coxiella burnetii_, commonly found
+in animals such as cattle, sheep, goats, and kangaroos. The bacterium
+can also be present in the environment, carried through dust and soil.
+The infection is typically transmitted by inhaling droplets or dust
+contaminated with birth fluids, feces, manure, or urine from infected
+animals.
+
+Dr Priya Janagaraj, Public Health Physician at Darling Downs Health,
+highlighted the diverse nature of Q fever symptoms, ranging from no
+symptoms to fever, headache, weight loss, nausea, cough, chills,
+fatigue, and the potential development of chronic fatigue.
+
+"People exposed to animals, animal products, and animal waste are at
+higher risk of contracting Q fever. We strongly recommend vaccination,
+especially for those in high-risk industries such as abattoir and meat
+workers, farmers, veterinarians, animal hunters, wildlife workers, and
+dog and cat breeders," Dr Janagaraj said.
+
+Pregnant women, in particular, face significant risks, including low
+birth weight, stillbirth, and miscarriage. Dr Janagaraj stated the
+importance for pregnant women to avoid contact with animals giving
+birth or that have recently given birth. To minimize the risk of Q
+fever infection during pregnancy, health authorities provide the
+following recommendations:
+
+- Avoid assisting ewes, cows, or nanny goats during the birthing
+process.
+- Steer clear of contact with newborn animals, afterbirth, birthing
+fluids, or materials contaminated by such birth products.
+- Refrain from handling materials that may have come into contact with
+animals, their young, or afterbirths.
+- Avoid handling fresh or aged feces or manure that may create dust or
+particles.
+- Ensure partners or contacts who have attended birthing animals take
+appropriate health and hygiene precautions.
+
+Pregnant women experiencing fever or flu-like symptoms, or those
+concerned about potential infection from a farm environment, should
+seek medical advice promptly.
+
+Q fever symptoms typically manifest 2-3 weeks after exposure, but this
+period can vary from 4 days to 6 weeks.
+
+In 2023, the region reported 86 notifications of Q fever, indicating
+an alarming 80% increase compared to the previous year [2022]. With
+the area's substantial agricultural industry, health authorities
+stress the importance of proactive measures and encourage residents to
+contact their local GP if they have concerns or experience symptoms
+related to Q fever.
+
+--
+Communicated by:
+ProMED
+
+[Q fever, often acquired by close exposure to animals, is infectious
+with a very low inoculum and may be aerosolized over a significant
+distance. _Coxiella burnetii_, the causative agent, was discovered in
+1937. This organism is an agent that can be resistant to heat and
+desiccation and is highly infectious by the aerosol route. A single
+inhaled organism may produce clinical illness. Indeed, in [non-human]
+primates, the dose to kill 50% of primates was found to be 1.7
+organisms (1).
+
+Cattle, sheep, and goats are the primary reservoirs of _C. burnetii_.
+Infection has been noted in a wide variety of other animals, including
+other species of livestock and in domesticated pets. _C. burnetii_
+does not usually cause clinical disease in these animals, although
+abortion in goats and sheep has been linked to _C. burnetii_
+infection. Organisms are excreted in milk, urine, and feces of
+infected animals. Most importantly, during birthing, the organisms are
+shed in high numbers within the amniotic fluids and the placenta.
+Contact with contaminated wool is known to be a mode of transmission
+(2).
+
+The organisms can be resistant to heat, drying, and many common
+disinfectants. These features enable the bacteria to survive for long
+periods in the environment. This very stable form of _C. burnetii_ is
+associated with metabolically dormant and spore-like compact small
+cell variants of the organism that are produced during standard
+replication along with the less resistant large cell form (3).
+
+Infection of humans usually occurs by inhalation of these organisms
+from air that contains airborne barnyard dust contaminated by dried
+placental material, birth fluids, and excreta of infected herd
+animals. Humans are often very susceptible to the disease, and very
+few organisms may be required to cause infection.
+
+Ingestion of contaminated milk, followed by regurgitation and
+inspiration of the contaminated food, is a less common mode of
+transmission. Other modes of transmission to humans, including tick
+bites and human-to-human transmission, are rare.
+
+References
+----------
+1. Lillie RD, Perrin TL, Armstrong C. An institutional outbreak of
+pneumonitis: III. Histopathology in man and rhesus monkeys in the
+pneumonitis due to the virus of "Q" fever. Pub Hlth Rep. 1941; 56(4):
+149-155; <http://www.jstor.org/stable/4583593>.
+2. Maurin M, Raoult D. Q fever. Clin Microbiol Rev. 1999; 12(4):
+518-553; <https://doi.org/10.1128/cmr.12.4.518>.
+3. Norlander L. Q fever epidemiology and pathogenesis. Microbes
+Infect. 2000; 2(4): 417-424;
+<https://doi.org/10.1016/s1286-4579(00)00325-7>.
+
+A good recent review on Q fever follows:
+
+Melgar TA, Bauler TJ, Lutwick LI. Q fever in man: A One Health
+paradigm disease. In: The principles and practices of Q fever: the One
+Health paradigm. Simoes JCC, Anastacio SF, Da Silva GJ (eds). Nova
+Scientific Publishers: New York, 2017; pp 1-24;
+<https://www.researchgate.net/publication/317778542_Q_fever_in_man_A_one_he=
+alth_paradigm_disease>.
+- Mod.LL
+
+ProMED map:
+Queensland, Australia:
+<https://promedmail.org/promed-post?place=3D8714356,285>]
+
+[See Also:
+2023
+----
+Q fever - Australia (02): (QL) petting zoo susp.
+http://promedmail.org/post/20230820.8711765
+Q fever - Bulgaria (03): (SF)
+http://promedmail.org/post/20230806.8711593
+Q fever - Spain: (BZ) cave used as animal shelter/lambing-kidding
+season http://promedmail.org/post/20230716.8711174
+Q fever - Romania: (BH) http://promedmail.org/post/20230630.8710864
+Q fever - Australia: (QL) taxidermist
+http://promedmail.org/post/20230330.8709242Q fever - Croatia: (PG)
+goat http://promedmail.org/post/20230308.8708806
+Q fever - Germany: (NI) http://promedmail.org/post/20230228.8708632
+Q fever - Bulgaria http://promedmail.org/post/20230223.8708555
+Q fever - India: (TG) abattoir workers
+http://promedmail.org/post/20230127.8708009
+Q fever - Bosnia & Herzegovina: (Sarajevo) vet student, livestock exp
+http://promedmail.org/post/20230121.8707889
+2022
+----
+Q fever - Australia: (QL) alert
+http://promedmail.org/post/20220914.8705575
+Q fever - Russia: (RO) RFI
+http://promedmail.org/post/20220715.8704444
+Q fever - Spain: (AS) RFI http://promedmail.org/post/20220402.8702360
+Q fever - Croatia (02): (PG) exposure to sheep and goats, RFI
+http://promedmail.org/post/20220320.8702110
+Q fever - Croatia: (PG) RFI
+http://promedmail.org/post/20220319.8702080
+2021
+----
+Q fever - Argentina: (ER) meatpackers, 2021
+http://promedmail.org/post/20220212.8701417
+Q fever - Germany (02): (Berlin) laboratory animal, RFI
+http://promedmail.org/post/20211220.8700385
+Q fever - Germany: (Berlin) sheep, human, laboratory staff, RFI
+http://promedmail.org/post/20210926.8698730
+Q fever - Chile (02): (LL) NOT, psittacosis
+http://promedmail.org/post/20210801.8561443
+Q fever - Chile: (LL) dairy industry veterinarian, susp
+http://promedmail.org/post/20210726.8544687
+Q fever - Spain (02): (PV) bouldering, Baltzola caves, RFI
+http://promedmail.org/post/20210504.8343274
+Q fever - Spain: (PV) recurrent, waste treatment facility, RFI
+http://promedmail.org/post/20210327.8273195
+2020
+----
+Q fever - Australia (02): (NSW)
+http://promedmail.org/post/20201012.7855851
+Q fever - Australia: (QL) http://promedmail.org/post/20200905.7750506
+Q fever - Bulgaria (02): (GB, SH) sheep, goat, cattle, OIE
+http://promedmail.org/post/20200611.7458895
+Q fever - Bulgaria: (GB) http://promedmail.org/post/20200521.7362087]
+.................................................ll/tw/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3DvhbkYoGu84vOoprw_WNbWecB9lWN_tQCPTEz8m4ICdBoMDAwdTAwMHqKBC4=
+q5i5eruGF36DQhjAwXHfLFDAvLvp_RGB7WjYlOPQy53-al4SbII92swQ4mwSA-SSvx5G9L2Cnwg=
+BRDlDs3Y6LdlHl7-swGQ34hDucichn6AP52Namk3stxHMTsL5T6TjOy5IaVJ8eV5LtG1h6942ir=
+sp-SEcFRv37YGvb0hdkO9SHYEUoC5VRnvCVwhz70z0pOtvCZOcswR8oouSH8DlfD40qHk8zKWpm=
+AucXNcAF2xeVxxIuzNin319FtamGr0FXYdYgwSgpAOUbfAP-YCk0tGkWHm23sTdXfyf3AkD5Sf8=
+JH4ujYarVEY6b9cQa_GIVp1iOljggO992nX4q_LxzMKv0sFbFtw3bUxJcVYUQukoHYUvGzmBC7W=
+owwFv62sWtfGwyfaTxzhtz0F58w2Vs8P_xeJAqWrTjyeOknUqGeE4kCTwup3Liwobw--jZN4kgE=
+_Zqmd1x92-DMHL8NciFo1JUcRzjDxGwJHOE7NTWEogMLQt-lNcI7Yeh8QQSjqVCGOzV_7HgqBYM=
+mP7lM4tGBVBZba_hljLfpI_YyZRtAsGA0fNXbLU5aebMm6rwodsF8_lRMT7oQwihOFvX3IaN7il=
+uZr4NsYc761H0q8Vw4TaLpm_HRTlsXdda29n4uGHXDzTh8J9rCd1rk2hapNvzuHDmObSCoOgjyK=
+OTvsZ5TT9SzeC54WxYtWGfon0BWSFXMmQ0G-0_J56Dea8QSbBearxjjiZp3zrOoEBlKqpMxatc7=
+JqYDS1qClq1k2h1IlRirSQhupRJ-UE5qGe5XQ-GMeiFXA6aDcFQxtwLqmlbMrwcfqbxadJV3Icx=
+hhuQi5qrdgRVOKZ5jCxuP1JgQcZByHOctmT-GDBWnzMD3grtitSiz09GGu0AFXWFhYyXBGwb3x-=
+9dqGOlBgKAtXCpn4-1ev9DerGQiVrBfachlEE9iRQheYrIqLZw96RG7hYztfLhjYjuRXQtY0rfD=
+oExq-3ehFTdrhhji2rU0H-5SoBaUxqZ1KwtzzT6mJ5NqQzz4Y2e_IbrFeU9snwg72JZnlJb4QFk=
+eDc9ZMxDxpA8wIPgOLjyTZ_M4TR5Sev6Av26XqLIN53DJoALkYGyNqIoy8Zrl-CM4jWrb0eGeP6=
+s6JO9CGxyLcIVhUkmjnOck_GDxAj4iQ32VGrbcm-R-fVEicoIe7_Bm6i_3ly6avj )
+############################################################
+############################################################
+
+--8ce07cd314071fa227c14b88acb88529222ff23c0121d6519eff0d40f403
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>Q FEVER - AUSTRALIA: (QUEEENSLAND) 80 PERCENT INCREASE IN CASES IN<br=
+>2023<br>******************************************************************=
+*****<br>A ProMED-mail post<br><a href=3D"https://u19268662.ct.sendgrid.net=
+/ss/c/wscE2ng5fl6JrPIt48tisIijpefK5PNjW-mL-YZGnfgDOxU1G3gjwnPSi2Tfv3HA/435/=
+21m_VdFESLeTvMaeZ05m6A/h0/CTsTaWtQ4Lb21XyGk0k_JfFfjS8JkDU2o6WHcr3p2Yo">http=
+://www.promedmail.org</a><br>ProMED-mail is a program of the<br>Internation=
+al Society for Infectious Diseases<br><a href=3D"https://u19268662.ct.sendg=
+rid.net/ss/c/wscE2ng5fl6JrPIt48tisCT5tpD4Upm3qyMCbcYSQvc/435/21m_VdFESLeTvM=
+aeZ05m6A/h1/9ww9HN7eNI4nC9vKTB8xHqPvkZ5xYiKb8wFfYK5e538">http://www.isid.or=
+g</a><br><br>Date: Sat 20 Jan 2024=0D<br>Source: Warwick Today [edited]=0D<=
+br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/TLh_csrC34X_iXpbYoMam2=
+5uZl0IbpQDibBD-y4NX0YRxwpJJPt3knIHHHGEcmWBx1MABWN4c93WdT-RBKCCm6s_tPht3Rhnm=
+pC56srObww/435/21m_VdFESLeTvMaeZ05m6A/h2/OZAFr5W3WkQugDsdEd9Jef1gy_wJWYxi2b=
+s2zEkO9BE">https://warwicktoday.com.au/news/2024-01-20/rising-q-fever-cases=
+/</a>=0D<br>=0D<br>=0D<br>As the residents of Darling Downs and South West =
+continue to enjoy the<br>region's vibrant livestock and wildlife, health au=
+thorities are<br>issuing a crucial reminder about the potential risks assoc=
+iated with Q<br>fever, a bacterial infection that can be carried by both do=
+mestic and<br>wild animals.=0D<br>=0D<br>Q fever is caused by the bacterium=
+ _Coxiella burnetii_, commonly found<br>in animals such as cattle, sheep, g=
+oats, and kangaroos. The bacterium<br>can also be present in the environmen=
+t, carried through dust and soil.<br>The infection is typically transmitted=
+ by inhaling droplets or dust<br>contaminated with birth fluids, feces, man=
+ure, or urine from infected<br>animals.=0D<br>=0D<br>Dr Priya Janagaraj, Pu=
+blic Health Physician at Darling Downs Health,<br>highlighted the diverse n=
+ature of Q fever symptoms, ranging from no<br>symptoms to fever, headache, =
+weight loss, nausea, cough, chills,<br>fatigue, and the potential developme=
+nt of chronic fatigue.=0D<br>=0D<br>"People exposed to animals, animal prod=
+ucts, and animal waste are at<br>higher risk of contracting Q fever. We str=
+ongly recommend vaccination,<br>especially for those in high-risk industrie=
+s such as abattoir and meat<br>workers, farmers, veterinarians, animal hunt=
+ers, wildlife workers, and<br>dog and cat breeders," Dr Janagaraj said.=0D<=
+br>=0D<br>Pregnant women, in particular, face significant risks, including =
+low<br>birth weight, stillbirth, and miscarriage. Dr Janagaraj stated the<b=
+r>importance for pregnant women to avoid contact with animals giving<br>bir=
+th or that have recently given birth. To minimize the risk of Q<br>fever in=
+fection during pregnancy, health authorities provide the<br>following recom=
+mendations:=0D<br>=0D<br>- Avoid assisting ewes, cows, or nanny goats durin=
+g the birthing<br>process.=0D<br>- Steer clear of contact with newborn anim=
+als, afterbirth, birthing<br>fluids, or materials contaminated by such birt=
+h products.=0D<br>- Refrain from handling materials that may have come into=
+ contact with<br>animals, their young, or afterbirths.=0D<br>- Avoid handli=
+ng fresh or aged feces or manure that may create dust or<br>particles.=0D<b=
+r>- Ensure partners or contacts who have attended birthing animals take<br>=
+appropriate health and hygiene precautions.=0D<br>=0D<br>Pregnant women exp=
+eriencing fever or flu-like symptoms, or those<br>concerned about potential=
+ infection from a farm environment, should<br>seek medical advice promptly.=0D=
+<br>=0D<br>Q fever symptoms typically manifest 2-3 weeks after exposure, bu=
+t this<br>period can vary from 4 days to 6 weeks.=0D<br>=0D<br>In 2023, the=
+ region reported 86 notifications of Q fever, indicating<br>an alarming 80%=
+ increase compared to the previous year [2022]. With<br>the area's substant=
+ial agricultural industry, health authorities<br>stress the importance of p=
+roactive measures and encourage residents to<br>contact their local GP if t=
+hey have concerns or experience symptoms<br>related to Q fever.=0D<br>=0D<b=
+r>--=0D<br>Communicated by:=0D<br>ProMED<br><br>[Q fever, often acquired by=
+ close exposure to animals, is infectious<br>with a very low inoculum and m=
+ay be aerosolized over a significant<br>distance. _Coxiella burnetii_, the =
+causative agent, was discovered in<br>1937. This organism is an agent that =
+can be resistant to heat and<br>desiccation and is highly infectious by the=
+ aerosol route. A single<br>inhaled organism may produce clinical illness. =
+Indeed, in [non-human]<br>primates, the dose to kill 50% of primates was fo=
+und to be 1.7<br>organisms (1).=0D<br>=0D<br>Cattle, sheep, and goats are t=
+he primary reservoirs of _C. burnetii_.<br>Infection has been noted in a wi=
+de variety of other animals, including<br>other species of livestock and in=
+ domesticated pets. _C. burnetii_<br>does not usually cause clinical diseas=
+e in these animals, although<br>abortion in goats and sheep has been linked=
+ to _C. burnetii_<br>infection. Organisms are excreted in milk, urine, and =
+feces of<br>infected animals. Most importantly, during birthing, the organi=
+sms are<br>shed in high numbers within the amniotic fluids and the placenta=
+.<br>Contact with contaminated wool is known to be a mode of transmission<b=
+r>(2).=0D<br>=0D<br>The organisms can be resistant to heat, drying, and man=
+y common<br>disinfectants. These features enable the bacteria to survive fo=
+r long<br>periods in the environment. This very stable form of _C. burnetii=
+_ is<br>associated with metabolically dormant and spore-like compact small<=
+br>cell variants of the organism that are produced during standard<br>repli=
+cation along with the less resistant large cell form (3).=0D<br>=0D<br>Infe=
+ction of humans usually occurs by inhalation of these organisms<br>from air=
+ that contains airborne barnyard dust contaminated by dried<br>placental ma=
+terial, birth fluids, and excreta of infected herd<br>animals. Humans are o=
+ften very susceptible to the disease, and very<br>few organisms may be requ=
+ired to cause infection.=0D<br>=0D<br>Ingestion of contaminated milk, follo=
+wed by regurgitation and<br>inspiration of the contaminated food, is a less=
+ common mode of<br>transmission. Other modes of transmission to humans, inc=
+luding tick<br>bites and human-to-human transmission, are rare.=0D<br>=0D<b=
+r>References=0D<br>----------=0D<br>1. Lillie RD, Perrin TL, Armstrong C. A=
+n institutional outbreak of<br>pneumonitis: III. Histopathology in man and =
+rhesus monkeys in the<br>pneumonitis due to the virus of "Q" fever. Pub Hlt=
+h Rep. 1941; 56(4):<br>149-155; <a href=3D"https://u19268662.ct.sendgrid.ne=
+t/ss/c/wscE2ng5fl6JrPIt48tisGw9SZ2g-4i5KW6pImb8GeIcLgQEp678D5N_hzWGoj3n/435=
+/21m_VdFESLeTvMaeZ05m6A/h3/27MdnTI9lYXhDHWFoe-0KBn7X-LA3rwk4zYCbvHGReM">htt=
+p://www.jstor.org/stable/4583593</a>.=0D<br>2. Maurin M, Raoult D. Q fever.=
+ Clin Microbiol Rev. 1999; 12(4):<br>518-553; <a href=3D"https://u19268662.=
+ct.sendgrid.net/ss/c/TUIVIg4PCmni5tP3Q8lzBVGvJObpRCCgBkmVvQBM1RMkXd_l5miJn_=
+9tJHP6CztZ/435/21m_VdFESLeTvMaeZ05m6A/h4/JhC4tkOF_hEjuXYov5JnKmn1ES5vPKKRVI=
+x5Jx8HUHk">https://doi.org/10.1128/cmr.12.4.518</a>.=0D<br>3. Norlander L. =
+Q fever epidemiology and pathogenesis. Microbes<br>Infect. 2000; 2(4): 417-=
+424;<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/TUIVIg4PCmni5tP3Q=
+8lzBcN8c8ZqkW5bO6MEuOYagBP38YIv2CBF_2K0wxWypZh2gx5c5XRplbH7WKl0vq2EQw/435/2=
+1m_VdFESLeTvMaeZ05m6A/h5/FosbSx9B9U3wnBqO9mxS8qsA1nyxVO78uNdfWg5Ffes">https=
+://doi.org/10.1016/s1286-4579(00)00325-7</a>.=0D<br>=0D<br>A good recent re=
+view on Q fever follows:=0D<br>=0D<br>Melgar TA, Bauler TJ, Lutwick LI. Q f=
+ever in man: A One Health<br>paradigm disease. In: The principles and pract=
+ices of Q fever: the One<br>Health paradigm. Simoes JCC, Anastacio SF, Da S=
+ilva GJ (eds). Nova<br>Scientific Publishers: New York, 2017; pp 1-24;<br><=
+a href=3D"https://u19268662.ct.sendgrid.net/ss/c/TLh_csrC34X_iXpbYoMam-rvfb=
+3QN2ygfhXkTIbG_jTn6VMH2NUFdopTWvbGtEsMPizelliQfiHPXd2vA7u-cvIEGsZGGCQKlm-tu=
+rMoFq6rXBRO3OL8vuMYSPcIDz8CL7uildmEpj-NFrnVLLq17w/435/21m_VdFESLeTvMaeZ05m6=
+A/h6/gz5TghRo63wUJYQszyFNwVUdDzN83to6XsDFBSIhKnk">https://www.researchgate.=
+net/publication/317778542_Q_fever_in_man_A_one_health_paradigm_disease</a>.=0D=
+<br>- Mod.LL<br><br>ProMED map:<br>Queensland, Australia:<br><a href=3D"htt=
+ps://u19268662.ct.sendgrid.net/ss/c/sSnCkKCWBvais3EuVAOvgy2WOIX7pp1nXnn4Abw=
+uQ3Z6WbkfhqXYXU-aTMPJ8yTh3MXgevz_UHYW6Sjo7YCVAA/435/21m_VdFESLeTvMaeZ05m6A/=
+h7/TBk-W3Ii7qFwc0VXHG1Q67mY9-ELZxco3YDx2ly5u9A">https://promedmail.org/prom=
+ed-post?place=3D8714356,285</a>]<br><br>[See Also:<br>2023=0D<br>----=0D<br=
+>Q fever - Australia (02): (QL) petting zoo susp.<br>http://promedmail.org/=
+post/20230820.8711765=0D<br>Q fever - Bulgaria (03): (SF)<br>http://promedm=
+ail.org/post/20230806.8711593=0D<br>Q fever - Spain: (BZ) cave used as anim=
+al shelter/lambing-kidding<br>season http://promedmail.org/post/20230716.87=
+11174=0D<br>Q fever - Romania: (BH) http://promedmail.org/post/20230630.871=
+0864=0D<br>Q fever - Australia: (QL) taxidermist<br>http://promedmail.org/p=
+ost/20230330.8709242Q fever - Croatia: (PG)<br>goat http://promedmail.org/p=
+ost/20230308.8708806=0D<br>Q fever - Germany: (NI) http://promedmail.org/po=
+st/20230228.8708632=0D<br>Q fever - Bulgaria http://promedmail.org/post/202=
+30223.8708555=0D<br>Q fever - India: (TG) abattoir workers<br>http://promed=
+mail.org/post/20230127.8708009=0D<br>Q fever - Bosnia & Herzegovina: (Saraj=
+evo) vet student, livestock exp<br>http://promedmail.org/post/20230121.8707=
+889=0D<br>2022=0D<br>----=0D<br>Q fever - Australia: (QL) alert<br>http://p=
+romedmail.org/post/20220914.8705575=0D<br>Q fever - Russia: (RO) RFI<br>htt=
+p://promedmail.org/post/20220715.8704444=0D<br>Q fever - Spain: (AS) RFI ht=
+tp://promedmail.org/post/20220402.8702360=0D<br>Q fever - Croatia (02): (PG=
+) exposure to sheep and goats, RFI<br>http://promedmail.org/post/20220320.8=
+702110=0D<br>Q fever - Croatia: (PG) RFI<br>http://promedmail.org/post/2022=
+0319.8702080=0D<br>2021=0D<br>----=0D<br>Q fever - Argentina: (ER) meatpack=
+ers, 2021<br>http://promedmail.org/post/20220212.8701417=0D<br>Q fever - Ge=
+rmany (02): (Berlin) laboratory animal, RFI<br>http://promedmail.org/post/2=
+0211220.8700385=0D<br>Q fever - Germany: (Berlin) sheep, human, laboratory =
+staff, RFI<br>http://promedmail.org/post/20210926.8698730=0D<br>Q fever - C=
+hile (02): (LL) NOT, psittacosis<br>http://promedmail.org/post/20210801.856=
+1443=0D<br>Q fever - Chile: (LL) dairy industry veterinarian, susp<br>http:=
+//promedmail.org/post/20210726.8544687=0D<br>Q fever - Spain (02): (PV) bou=
+ldering, Baltzola caves, RFI<br>http://promedmail.org/post/20210504.8343274=0D=
+<br>Q fever - Spain: (PV) recurrent, waste treatment facility, RFI<br>http:=
+//promedmail.org/post/20210327.8273195=0D<br>2020=0D<br>----=0D<br>Q fever =
+- Australia (02): (NSW)<br>http://promedmail.org/post/20201012.7855851=0D<b=
+r>Q fever - Australia: (QL) http://promedmail.org/post/20200905.7750506=0D<=
+br>Q fever - Bulgaria (02): (GB, SH) sheep, goat, cattle, OIE<br>http://pro=
+medmail.org/post/20200611.7458895=0D<br>Q fever - Bulgaria: (GB) http://pro=
+medmail.org/post/20200521.7362087]<br>.....................................=
+............ll/tw/jh<br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3DvhbkYoGu84vOoprw_WNbWecB9lWN_tQCPTEz8m4ICdBoMDAwdT=
+AwMHqKBC4q5i5eruGF36DQhjAwXHfLFDAvLvp_RGB7WjYlOPQy53-al4SbII92swQ4mwSA-SSvx=
+5G9L2CnwgBRDlDs3Y6LdlHl7-swGQ34hDucichn6AP52Namk3stxHMTsL5T6TjOy5IaVJ8eV5Lt=
+G1h6942irsp-SEcFRv37YGvb0hdkO9SHYEUoC5VRnvCVwhz70z0pOtvCZOcswR8oouSH8DlfD40=
+qHk8zKWpmAucXNcAF2xeVxxIuzNin319FtamGr0FXYdYgwSgpAOUbfAP-YCk0tGkWHm23sTdXfy=
+f3AkD5Sf8JH4ujYarVEY6b9cQa_GIVp1iOljggO992nX4q_LxzMKv0sFbFtw3bUxJcVYUQukoHY=
+UvGzmBC7WowwFv62sWtfGwyfaTxzhtz0F58w2Vs8P_xeJAqWrTjyeOknUqGeE4kCTwup3Liwobw=
+--jZN4kgE_Zqmd1x92-DMHL8NciFo1JUcRzjDxGwJHOE7NTWEogMLQt-lNcI7Yeh8QQSjqVCGOz=
+V_7HgqBYMmP7lM4tGBVBZba_hljLfpI_YyZRtAsGA0fNXbLU5aebMm6rwodsF8_lRMT7oQwihOF=
+vX3IaN7iluZr4NsYc761H0q8Vw4TaLpm_HRTlsXdda29n4uGHXDzTh8J9rCd1rk2hapNvzuHDmO=
+bSCoOgjyKOTvsZ5TT9SzeC54WxYtWGfon0BWSFXMmQ0G-0_J56Dea8QSbBearxjjiZp3zrOoEBl=
+KqpMxatc7JqYDS1qClq1k2h1IlRirSQhupRJ-UE5qGe5XQ-GMeiFXA6aDcFQxtwLqmlbMrwcfqb=
+xadJV3IcxhhuQi5qrdgRVOKZ5jCxuP1JgQcZByHOctmT-GDBWnzMD3grtitSiz09GGu0AFXWFhY=
+yXBGwb3x-9dqGOlBgKAtXCpn4-1ev9DerGQiVrBfachlEE9iRQheYrIqLZw96RG7hYztfLhjYju=
+RXQtY0rfDoExq-3ehFTdrhhji2rU0H-5SoBaUxqZ1KwtzzT6mJ5NqQzz4Y2e_IbrFeU9snwg72J=
+ZnlJb4QFkeDc9ZMxDxpA8wIPgOLjyTZ_M4TR5Sev6Av26XqLIN53DJoALkYGyNqIoy8Zrl-CM4j=
+Wrb0eGeP6s6JO9CGxyLcIVhUkmjnOck_GDxAj4iQ32VGrbcm-R-fVEicoIe7_Bm6i_3ly6avj" =
+target=3D"_blank" class=3D"Unsubscribe--unsubscribePreferences" style=3D"fo=
+nt-family:sans-serif;text-decoration:none;">Unsubscribe Preferences</a></di=
+v><br>############################################################<br>#####=
+#######################################################<br><br><img src=3D"=
+https://u19268662.ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/435/21m_VdFES=
+LeTvMaeZ05m6A/ho.gif" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=
+=3D"height:1px !important;width:1px !important;border-width:0 !important;ma=
+rgin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;=
+margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !importa=
+nt;padding-right:0 !important;padding-left:0 !important;"/></body>
+</html>
+--8ce07cd314071fa227c14b88acb88529222ff23c0121d6519eff0d40f403--

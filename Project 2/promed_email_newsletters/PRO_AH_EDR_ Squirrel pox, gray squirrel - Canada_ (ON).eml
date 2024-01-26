@@ -1,0 +1,526 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a98:d84b:0:b0:1eb:e128:bbe3 with SMTP id b11csp1161187eil;
+        Fri, 19 Jan 2024 12:16:15 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IG0h9GAZwSwQKx0/A/0RRBFPZ2GWpfkMMJRNPM8vt8zQeS2DZlH0FRTLMmhzXA3bkUQm70s
+X-Received: by 2002:a05:6214:1c08:b0:681:6cb1:edb0 with SMTP id u8-20020a0562141c0800b006816cb1edb0mr459033qvc.49.1705695375283;
+        Fri, 19 Jan 2024 12:16:15 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1705695375; cv=none;
+        d=google.com; s=arc-20160816;
+        b=AC6sJyzob4fFoqF9tK+g6z8hIvA5RUOn71VmI5onydifn3Q8gbphd50k1Rs5ZcF+WV
+         dX86XMGF6Br/ikny9q7uaHDcTayDjLTYAk+N5XZQ0DFUGgeOu8So837oO/LEECQrPC1E
+         cDlL2poOG/Rd8evcZt4rvqShdk8MPlvPVpMzU6RdswFRc75d8HZdvlk854owtQNwgwxF
+         4FFcVJMKXtXFGnaGCu/SwwnzBdsvzBqQ6jg4e3y9zmOJ6OGgGUCMfAs1CRXInMEOFCJO
+         oCqR2t/TE/ZS99fW/Gmz8vFh0H3KW5VcVIZsE6FYqOkN1jUS7SRQHzy7r+c5dhPl4o8S
+         l6Ow==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=6ztv6Vl77U+oZKavLAGO0QV8PxvasinnChcJTvrt9Rg=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=OfhyHcqOCvqo4YaPBcTs4ZE/y47ej5JiHEtSa9FWlDos4Q6y3aZECc7Wex6g2EDdbn
+         kYpEH9Bxp/5JyxU1PCRG55EP/I/ZH2vsQj8o+5QUrNZuXkMdqK+rF0MytaxxdvKFKsUs
+         XJxHrrdyhXsnZ24HlWWYM19zz0MSgllH4KOmk6MZOVDEA7JV3AxEcl0V0fy6byYawwBX
+         8/edoWz1LV9U0OKPEx8oImBrz3Fo5/RzzoO6bP2nJqpilTl11zFw1S79IYo14IhEPAkU
+         L33Lq6F0PQMCgIV2yp2bAuGB3yMjKc1/voYY8HFbWmvfu2ao+EcPmA4Zgfnd4YokYx2S
+         GUuQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=FoYQMcUp;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=jwqyBvOE;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id o8-20020a0ce408000000b0068194ca223asi3929823qvl.547.2024.01.19.12.16.14
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 19 Jan 2024 12:16:15 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=FoYQMcUp;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=jwqyBvOE;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=6ztv6Vl77U+oZKavLAGO0QV8PxvasinnChcJTvrt9Rg=;
+	b=FoYQMcUpYCweHoh58IA0isL9aVfPmFx3QodGasjoEc4ktJiuUQdGuzWB65HtO3btooEu
+	DFpuOKwxtoOpaJnY9xDzpNqWoNtNMCwKtSLTKYmGpUV53Ib9HRw9fvIB6M8DbkKqOg/yOP
+	8Ea9o0MJYrDGxB5F9caV7umuGd2w3ggVYZnM+Q382+qk7cyeVW0PHIX7akDlwMUqOvYEIA
+	KnRUncRrBhyJCI/SyAqT+Z6iFhDcYoNboR1AIQqzDJigSxpYfyyPnV9AnwCM/TbzoAEj5H
+	LXvX1K+WABTSh2bM/TfXF4wVW0WhiO5/AWw+ZPZtPO9Yo2G+xA2htjQBRVoKdgVw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=6ztv6Vl77U+oZKavLAGO0QV8PxvasinnChcJTvrt9Rg=;
+	b=jwqyBvOEzz4/1t4dEfV2xvN6wbNb9nIjv7c3oh9fRL/1l4uRaU9KApt+XJs/pGZuS9aJ
+	zvwNbkSeVwGcCcVfTrjLESrGbB8ujOE1UDVDHsfd7/gcMOK3yTlep8E8jZGGrMLx3BdAFZ
+	1Hb+VdF+21CYxckb7KTm6VzleRqxNhXDw=
+Received: by filterdrecv-5579bc58-j65nl with SMTP id filterdrecv-5579bc58-j65nl-1-65AAD88C-41
+        2024-01-19 20:16:12.482647565 +0000 UTC m=+8127243.555037490
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-28 (SG) with HTTP
+	id jwALltHdRSyGI-Z7uJsXsA
+	Fri, 19 Jan 2024 20:16:12.326 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=8181700ef14e3e83b656cceac403ccd2d3d434cfaff5f06d32e709414217
+Date: Fri, 19 Jan 2024 20:16:14 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <jwALltHdRSyGI-Z7uJsXsA@geopod-ismtpd-28>
+Subject: PRO/AH/EDR> Squirrel pox, gray squirrel - Canada: (ON)
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iBt1bMQd4P1dSAO3zWK2UfzJH86ISR2E+zxYX=2Fa?=
+ =?us-ascii?Q?6gJ=2FdIu6UhuE5TZiP1P3YYg3miwmaMlcBh6Ioep?=
+ =?us-ascii?Q?7NuHx1GAw+zfXh=2F5zkUiNU51zlc13vTPi5OOG2X?=
+ =?us-ascii?Q?mQnBj1KrUddohWYiktC1H+eiH6n0iiIf3RtalWv?=
+ =?us-ascii?Q?dkJTO2fxy7e3TFsRJyVVtXuqZTf693FV9yN2Is?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUiShGf=2FO8XJWpH34Od4Nd?=
+ =?us-ascii?Q?fxXa6jil96uRcJkF+N+LeVnO1tx80ddOyoyOo=2Fc?=
+ =?us-ascii?Q?Brxcl3ERAm0cOY743=2FFH59DWiSf5OzXORh1DLKt?=
+ =?us-ascii?Q?hb1NMKty3PsA5ju0ZzxCrq1WQuZSEQf=2FJlWtgqv?=
+ =?us-ascii?Q?cZmsyCHlNUZsDV11DsU7rwxGQWrH80ci9Lk=2Ftcp?=
+ =?us-ascii?Q?66z3DyTcAUWOYV6jyJTmB9CHuDM3iOFwW2TPFFw?=
+ =?us-ascii?Q?FT2VgnpH5v=2FIrn02sLX7mL8uTOgPVvYQb2wMyjm?=
+ =?us-ascii?Q?Qh5I9QhiYw4AGvNq1h+uib3z330jVafRDFOdAqb?=
+ =?us-ascii?Q?Hdie=2FCl=2Flzz5xK036vtDkTIQhyPJETT3nPfNFwD?=
+ =?us-ascii?Q?j4B60jMVpLKhXzcdnCByItNFSPru2Avax7OxcLp?=
+ =?us-ascii?Q?SMKvU8XoZ1mkIW+Zks7F27FrJ6lWmAaq2Bq6zcY?=
+ =?us-ascii?Q?w0GzcXuTk+D5b=2FcqOrztxNTSz2e3KNFeQtBB0rR?=
+ =?us-ascii?Q?RypHKOhzypUUaBrgteYoAveCwBXEW4dPKcPCrM7?=
+ =?us-ascii?Q?3808kuvIJaoTScqH35biVuMe1mvA24aAs0NQBfF?=
+ =?us-ascii?Q?sxNhYGXcQOPPwBLshlHiCLTO9vtmOx9GC7QPBOy?=
+ =?us-ascii?Q?=2Fnuvhg+KnmVlDUNd=2F6Zu1q9GfO0u8dDovG15YxS?=
+ =?us-ascii?Q?REIp3WaSjDzl1IMqlH0zQQVSRulZfRLdccGwVsp?=
+ =?us-ascii?Q?=2FmvZWYCzM8kzvD6159orJ6E6CKz5ylV5v7cscma?=
+ =?us-ascii?Q?4QMv8bITqWtwDxqKwDAE+3VCWfCAJVLLT3CNZAz?=
+ =?us-ascii?Q?U96ho+uE6Re3l0rS2zdjgZM3Cg=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2EbZm45pxGf?=
+ =?us-ascii?Q?LOFHToSYBoG6OSbaQLZOfalIvX33MaEeHFoMDAw?=
+ =?us-ascii?Q?dTAwMLwsxTzJgJ5RCNrerLXd-rcO2CCIKA2V0sz?=
+ =?us-ascii?Q?5PrHp=5FO17SzLrUQZuw2p1s4BeeU2tyJw2g138rG?=
+ =?us-ascii?Q?MWnHJk73=5FZsvgwojPw1w9wJQPcyC3eYdbR505UJ?=
+ =?us-ascii?Q?NHSQj4cyWHiZXsLeA=3D=3D=2E700x2atbqQ-cMVf9aUA?=
+ =?us-ascii?Q?vdnjLmzMbkQfkXz6liBvR7zVoMDAwdTAwMLCuEs?=
+ =?us-ascii?Q?h0fEmSizUAuVRNPKKMgAYD9dq1y1dkmBiNRVLmm?=
+ =?us-ascii?Q?tnzMMCD9kaBypog2jkhVdTcRfAgBpt9CW0G167P?=
+ =?us-ascii?Q?OHrFcX-aCxJ1I0-nOgBeqrQpRIhTJWpDXLTCRef?=
+ =?us-ascii?Q?naFO3qVm9kDupCSokssJo3NQFICDdZnmbE=5FWmQy?=
+ =?us-ascii?Q?aMIegDlh5F7OCSf5Bur8bhpWsNtd9rudXOBPNCP?=
+ =?us-ascii?Q?FPaQ6V=5FZ7v-t7OoZeuogyIio1NE3g1j67kawgyw?=
+ =?us-ascii?Q?Vjtmq3xb6olMiyTTT2g=5FArzxp4f4VfkQuwosBMV?=
+ =?us-ascii?Q?KC0st9fY-EHh6vhFJXbmtBejqQaIpu982AgivS6?=
+ =?us-ascii?Q?n5dZZ10JixLH-9vPHRs50aRtFkcthw9hNA4nMdq?=
+ =?us-ascii?Q?z9i6wvWLARCLsxEj7oBf0sLlY1ZXJdW5i5s6ZEl?=
+ =?us-ascii?Q?UzmSVU5mgrDBMuguNAbBM2UaamAY7S9msXeJkJq?=
+ =?us-ascii?Q?Q99CVsKyVRrjityu6PoVpOgOKnFZGMIUAPQqT9z?=
+ =?us-ascii?Q?AOwWhxfPWMuXQ572wiEAyM6M6aZ07qhLuBQxWiL?=
+ =?us-ascii?Q?2JY-wG4ghm1rs2FRWGG31CjBdrlAJSm3l8j6vg7?=
+ =?us-ascii?Q?7QKi0X1LQCJ77LS48pthupqEvVKutfDW1IGhKcs?=
+ =?us-ascii?Q?D3F2nRn7y1G359OKl5mpOi2LLZnkUnZ2t=5F9DUvE?=
+ =?us-ascii?Q?MlamN=5FUY5VX=5FqEZcFE1PaBCaGLSVv9bIvvJh0ge?=
+ =?us-ascii?Q?rsgVh9VGbustQekQADz8eHmQtDFlvaahTvEfdMM?=
+ =?us-ascii?Q?VDLdtJfr3mqSYRXmNEfj4ASoVM6BTH5S5edqD=5F-?=
+ =?us-ascii?Q?hv73LDRMyODOzJh9k6T8GkDb5yLDySmwWGbNaku?=
+ =?us-ascii?Q?Nm90pllZVwhBtIV8WK62VdLO480MaZ2lWEsXitP?=
+ =?us-ascii?Q?d6ozPwYUAqhzr3bnS0S6WnXmsE30Ke35xpBf66g?=
+ =?us-ascii?Q?uPnt7EZIjibkW65Rx5WZP3uQnDF5NVXgxs4Hy=5FK?=
+ =?us-ascii?Q?aimXMq3sQqgzO9bo=5FH52ioGWkrDGBgrvS-4QC8F?=
+ =?us-ascii?Q?gb1nLOYgj7XS-CdFibL2G9iURgBnpysLczAuZDz?=
+ =?us-ascii?Q?jkxCJm0ui7tbS5uAMEuhRYHOcnainxkeMBoL7hf?=
+ =?us-ascii?Q?GN2Utw=3D=3D=3E?=
+
+--8181700ef14e3e83b656cceac403ccd2d3d434cfaff5f06d32e709414217
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=us-ascii
+Mime-Version: 1.0
+
+SQUIRREL POX, GRAY SQUIRREL - CANADA: (ONTARIO)
+***********************************************
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+Date: Tue 16 Jan 2024 16:39 EST
+Source: CTV News [edited]
+<https://www.ctvnews.ca/mobile/health/what-is-squirrelpox-and-should-canadi=
+ans-be-concerned-1.6728568>
+
+
+A viral disease that can cause squirrels to break out in unsightly
+skin lesions has been reported by an animal rehabilitation centre in
+Ontario. Known as squirrel pox, experts say the highly contagious
+disease does not affect humans, pets or most other animals.
+
+"Most squirrels affected by this disease will have hairless or poorly
+haired, raised masses over the face and limbs," Brian Stevens, a
+wildlife pathologist with the Canadian Wildlife Health Cooperative,
+told CTVNews.ca. "In Ontario, it is rare for squirrels to carry any
+diseases that are a major concern for the health of humans."
+
+Caused by the squirrel fibroma virus, the disease predominately
+infects grey squirrels, which are commonly found in forests and cities
+throughout the eastern parts of North America. The tree squirrel
+species, which can also have brownish or black fur, typically survives
+infection with growths or tumours disappearing over time.
+
+"There is no concern for humans or other animals with this virus,"
+Stevens, who studies wildlife diseases and mortality, said. "It is
+specific to squirrels and cannot be transmitted to other species."
+
+After a 5-year absence in cases, Joy Huggins from Wildlife Haven
+Waterloo says the Ontario animal rehabilitation facility has
+experienced a recent increase in calls about squirrels with probable
+infections. Wildlife Haven is currently caring for a symptomatic
+juvenile squirrel that arrived in early December [2023] with siblings
+that have since died.
+
+"It's hard for everybody in the winter, let alone a young one, because
+she is a baby," Huggins told CTV News Kitchener. "So if they can come
+in here and get reprieve and rest, they've got more chance of
+living."
+
+The disease has also been reported in nearby states like New York,
+Michigan, Indiana and Wisconsin. A 2020 study noted that antibodies
+for the virus were largely absent in introduced populations in B.C.,
+but found in 79% of 19 grey squirrels tested in Toronto. Related
+species like red and fox squirrels can also be infected.
+
+In Canada, Stevens says sick animals can be reported to local wildlife
+rehabilitation centres while dead animals can be reported to the
+Canadian Wildlife Health Cooperative.
+
+"It's likely relatively common out there as we get a handful of
+reports every year," Stevens said. "[M]ost of the reports describe
+Ontario and the northeast U.S. as the typical regions affected by this
+disease; however, it is likely more widespread in other adjacent
+provinces and into the Midwest."
+
+While the virus has been transmitted to rabbits in a laboratory
+setting, it is believed to only affect squirrels in nature, and
+possibly woodchucks.
+
+Michigan's Department of Natural Resources also states the "disease is
+of no public health significance."
+
+"Transmission of the virus can occur via direct contact between
+squirrels and by the bites of mosquitoes and fleas," the department
+explains. "In severe cases, when vision is obstructed or the skin
+becomes secondarily infected, the animal may be less active, weak, and
+eventually die."
+
+Mason Stothart recently completed a PhD in veterinary medical sciences
+at the University of Calgary, and previously studied eastern grey
+squirrels at the University of Guelph, where he saw the effects of
+squirrel pox first-hand in southern Ontario.
+
+"It likely circulates amongst the grey squirrel populations, only to
+present symptoms in young or physiologically stressed individuals,"
+Stothart told CTVNews.ca. "If folks want to help limit the spread and
+protect squirrels in their backyards, they could consider not putting
+out bird seed, or otherwise cleaning their feeders on a regular
+basis."
+
+Indiana's Department of Natural Resources says infected animals can
+even be safely eaten.
+
+"There have been no reports of infected humans, including from
+consumption, if the tumours do not reach internal organs," the
+department states. "If internal tumours are found, do not consume the
+animal and discard the carcass properly."
+
+In Europe, where previously introduced North American grey squirrels
+are now considered an invasive species, a similar squirrel pox virus
+has devastated some European red squirrel populations, which typically
+lack natural immunity.
+
+"In Europe, squirrel pox virus is carried by non-native grey squirrels
+and spread into native red squirrel populations," a 2022 study
+explained. "The virus causes a large proportion of infected red
+squirrels to die and contributes to local declines and the replacement
+by grey squirrels."
+
+[Byline: Daniel Otis]
+
+--
+Communicated by:
+ProMED
+
+[Squirrel pox is a viral disease that affects only squirrels. It is
+caused by a parapoxvirus that circulates naturally in gray and fox
+squirrel populations in eastern North America. While these species
+typically tolerate the infection, this virus may result in fatal
+disease in squirrels without a co-evolutionary history. This was the
+case for red squirrels in Europe (_Sciurus vulgaris_), which suffered
+extensive die-offs in the UK after the introduction of the virus in
+the island by grey squirrels (_Sciurus carolinensis_) from North
+America. Gray and fox squirrels may become sick if their health
+condition has been impoverished due to natural or anthropic stressors.
+- Mod.PMB
+
+ProMED map:
+Ontario Province, Canada:
+<https://promedmail.org/promed-post?place=3D8714336,260>]
+
+[See Also:
+2023
+----
+Squirrel pox, red squirrel - UK: (Scotland)
+http://promedmail.org/post/20230118.8707844
+2019
+----
+Squirrel pox, red squirrel - UK (04): (England) susp
+http://promedmail.org/post/20191211.6835066=20
+Squirrel pox, red squirrel - UK (03): (England) alert
+http://promedmail.org/post/20190801.6600455
+Squirrel pox, red squirrel - UK (02): (England) alert
+http://promedmail.org/post/20190701.6546339=20
+Squirrel pox, red squirrel - UK: (England)
+http://promedmail.org/post/20190514.6468998
+2016
+----
+Squirrel pox, red squirrel - UK: (Northern Ireland)
+http://promedmail.org/post/20160328.4123766
+2012
+----
+Squirrel pox, red squirrel - Ireland: (WW)
+http://promedmail.org/post/20120116.1012040
+2011
+----
+Squirrel pox, gray squirrel - USA: (FL)
+http://promedmail.org/post/20111012.3053=20
+Squirrel pox, red squirrel - UK: Northern Ireland
+http://promedmail.org/post/20110402.1024
+2008
+----
+Squirrel pox, red squirrel - UK: prospects of immunity
+http://promedmail.org/post/20081016.3279
+Squirrel pox, red squirrel - UK: (Scotland)
+http://promedmail.org/post/20080523.1701]
+.................................................mo/pmb/rd/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3D68T1uq_Fk0Wcb2NDIWv3pFZA7MmtdseD223_2s3gZYpoMDAwdTAwMDBJ51a=
+BCULR3UUgVvcDm90zXchzM6koPWMAl-oxvemh1BlhwmOZJp6UlaVqENMyWFkSAhbtvpAoYcmXvi=
+-R7slCZ8aq7IFP8_-d9l7zi1P6wIuh_WgJDIyVa1LZUwJ2sm6m_CP0b469TOX4y_gO3bVpRt3H3=
+hJlX4hYdOct5DiXMsWBq7ovOOfe-wATKYGS7EZlgTb8IlbA7xVkozfmB24M_dnSJip8Q1148qhQ=
+YxafCEgZ9igf_Hgg-0luFzOSBciSVR7_F4hHedjhiC9TIKbhthWsZ5dmmxKeiV2tftTzqEJvHZC=
+BkOI-O4R8PyxC9mxTXw8q1-Kta3SFyNmJ_79ghh0GrIouKH55zbZc2q0IaE00KxrFzlRDKX3VbI=
+mt9dpKAdMtTjGRYaj9hY0a0gI4NogrSrUcw59enIa_c_UrOboTXjO-3cK8AWGdgufBQBZr3y7X5=
+bHW1BFmS8K_KFxeqCDpaUhU5ulTBvyLjL9_-o-bXCvw8ukHVwwYxDjlrKds5vG6kiNsoIBoKa86=
+ZGXXwhUxfUEGmdCld7y22uMjwQPQa-Si2P3MV6ucatXdM2rp5Rd8cY9lhB5hFNnAUdC1hPi-uis=
+NTr9DX1ltSkprmAtWt4RxWWusjRiiFDDLdZVyo0SUoVGlbHfD9wrLfK2ybp9gOidPRp1UjU6kbH=
+fNxusKTXNgD0CNCehFL9LniqJfE9rIEHzipTYxMDa_179BUAtGq8Qkk4wI5w1J15hT-ziTQ1qT7=
+xtIj_CJ8vSeOUrGSeaLnsY-LLdsTWJcHH5BavRzsD-k9LlU_hRMj2CL4mhJeV1Tt909_nQJfbeh=
+wl41RCdlm_uaTRSuskObRmA-6eKKUb69Sm87S4ZS7DzNfAKMSgA6APo8LhpHzVLiHTXfjYih64B=
+_SblIxExk6IPlu03v_TcXap60gPq6L7p6Zd9NJlRopJx_jYNrYbnTaQuSESJIgRB-psMNDUyNjg=
+Fzrd_lyGJptl04xMLWYmzGVJ_EdAf1jcsH3HpdWDpbY1Wb3aMM44OQBsKL7DqTzpa2ZyUV4feD0=
+L8qCHPAaKDGYiTGJwfLZlK8d9kkdZ1YOkU5bTyX-Z0Pctdo2ZODfjGNFULl1LAi8Z33yChblnju=
+KXtajsL8z_Zkjgxh5E2GgydM3TAdrAvBfxAstTPSyx8wbmwo8xSOLHxCtBeCCent )
+############################################################
+############################################################
+
+--8181700ef14e3e83b656cceac403ccd2d3d434cfaff5f06d32e709414217
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>SQUIRREL POX, GRAY SQUIRREL - CANADA: (ONTARIO)<br>******************=
+*****************************<br>A ProMED-mail post<br><a href=3D"https://u=
+19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisIijpefK5PNjW-mL-YZGnfgDO=
+xU1G3gjwnPSi2Tfv3HA/434/btUl-1d0QLC2cJJD79DKjg/h0/rmfeGECOTPf-SL5CaK7Mu0RO7=
+Rz6Iz01spoAspOWqPw">http://www.promedmail.org</a><br>ProMED-mail is a progr=
+am of the<br>International Society for Infectious Diseases<br><a href=3D"ht=
+tps://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisCT5tpD4Upm3qyMCbc=
+YSQvc/434/btUl-1d0QLC2cJJD79DKjg/h1/VObUrwlza1r1NrKNxDXx95CZROoPQYB2H58lM2m=
+QD5g">http://www.isid.org</a><br><br>Date: Tue 16 Jan 2024 16:39 EST=0D<br>=
+Source: CTV News [edited]=0D<br><a href=3D"https://u19268662.ct.sendgrid.ne=
+t/ss/c/TLh_csrC34X_iXpbYoMam47IcDCBBsRPSgPaUKxql_d9iZbppIDMHvyfJsrT1wYDpPm9=
+M4TpWNC0KBFTIX_n2Fb4yAyOwyMbIjTvjDcjQ0l3_BI4TSZpruWrXsBTkR-lyEOm3Fv_BfZfvMy=
+tmxFOpQ/434/btUl-1d0QLC2cJJD79DKjg/h2/hRw5jqGS--pqAS-P08U2gUx7D8lT70cdeZ3V8=
+QKTPdo">https://www.ctvnews.ca/mobile/health/what-is-squirrelpox-and-should=
+-canadians-be-concerned-1.6728568</a>=0D<br>=0D<br>=0D<br>A viral disease t=
+hat can cause squirrels to break out in unsightly<br>skin lesions has been =
+reported by an animal rehabilitation centre in<br>Ontario. Known as squirre=
+l pox, experts say the highly contagious<br>disease does not affect humans,=
+ pets or most other animals.=0D<br>=0D<br>"Most squirrels affected by this =
+disease will have hairless or poorly<br>haired, raised masses over the face=
+ and limbs," Brian Stevens, a<br>wildlife pathologist with the Canadian Wil=
+dlife Health Cooperative,<br>told CTVNews.ca. "In Ontario, it is rare for s=
+quirrels to carry any<br>diseases that are a major concern for the health o=
+f humans."=0D<br>=0D<br>Caused by the squirrel fibroma virus, the disease p=
+redominately<br>infects grey squirrels, which are commonly found in forests=
+ and cities<br>throughout the eastern parts of North America. The tree squi=
+rrel<br>species, which can also have brownish or black fur, typically survi=
+ves<br>infection with growths or tumours disappearing over time.=0D<br>=0D<=
+br>"There is no concern for humans or other animals with this virus,"<br>St=
+evens, who studies wildlife diseases and mortality, said. "It is<br>specifi=
+c to squirrels and cannot be transmitted to other species."=0D<br>=0D<br>Af=
+ter a 5-year absence in cases, Joy Huggins from Wildlife Haven<br>Waterloo =
+says the Ontario animal rehabilitation facility has<br>experienced a recent=
+ increase in calls about squirrels with probable<br>infections. Wildlife Ha=
+ven is currently caring for a symptomatic<br>juvenile squirrel that arrived=
+ in early December [2023] with siblings<br>that have since died.=0D<br>=0D<=
+br>"It's hard for everybody in the winter, let alone a young one, because<b=
+r>she is a baby," Huggins told CTV News Kitchener. "So if they can come<br>=
+in here and get reprieve and rest, they've got more chance of<br>living."=0D=
+<br>=0D<br>The disease has also been reported in nearby states like New Yor=
+k,<br>Michigan, Indiana and Wisconsin. A 2020 study noted that antibodies<b=
+r>for the virus were largely absent in introduced populations in B.C.,<br>b=
+ut found in 79% of 19 grey squirrels tested in Toronto. Related<br>species =
+like red and fox squirrels can also be infected.=0D<br>=0D<br>In Canada, St=
+evens says sick animals can be reported to local wildlife<br>rehabilitation=
+ centres while dead animals can be reported to the<br>Canadian Wildlife Hea=
+lth Cooperative.=0D<br>=0D<br>"It's likely relatively common out there as w=
+e get a handful of<br>reports every year," Stevens said. "[M]ost of the rep=
+orts describe<br>Ontario and the northeast U.S. as the typical regions affe=
+cted by this<br>disease; however, it is likely more widespread in other adj=
+acent<br>provinces and into the Midwest."=0D<br>=0D<br>While the virus has =
+been transmitted to rabbits in a laboratory<br>setting, it is believed to o=
+nly affect squirrels in nature, and<br>possibly woodchucks.=0D<br>=0D<br>Mi=
+chigan's Department of Natural Resources also states the "disease is<br>of =
+no public health significance."=0D<br>=0D<br>"Transmission of the virus can=
+ occur via direct contact between<br>squirrels and by the bites of mosquito=
+es and fleas," the department<br>explains. "In severe cases, when vision is=
+ obstructed or the skin<br>becomes secondarily infected, the animal may be =
+less active, weak, and<br>eventually die."=0D<br>=0D<br>Mason Stothart rece=
+ntly completed a PhD in veterinary medical sciences<br>at the University of=
+ Calgary, and previously studied eastern grey<br>squirrels at the Universit=
+y of Guelph, where he saw the effects of<br>squirrel pox first-hand in sout=
+hern Ontario.=0D<br>=0D<br>"It likely circulates amongst the grey squirrel =
+populations, only to<br>present symptoms in young or physiologically stress=
+ed individuals,"<br>Stothart told CTVNews.ca. "If folks want to help limit =
+the spread and<br>protect squirrels in their backyards, they could consider=
+ not putting<br>out bird seed, or otherwise cleaning their feeders on a reg=
+ular<br>basis."=0D<br>=0D<br>Indiana's Department of Natural Resources says=
+ infected animals can<br>even be safely eaten.=0D<br>=0D<br>"There have bee=
+n no reports of infected humans, including from<br>consumption, if the tumo=
+urs do not reach internal organs," the<br>department states. "If internal t=
+umours are found, do not consume the<br>animal and discard the carcass prop=
+erly."=0D<br>=0D<br>In Europe, where previously introduced North American g=
+rey squirrels<br>are now considered an invasive species, a similar squirrel=
+ pox virus<br>has devastated some European red squirrel populations, which =
+typically<br>lack natural immunity.=0D<br>=0D<br>"In Europe, squirrel pox v=
+irus is carried by non-native grey squirrels<br>and spread into native red =
+squirrel populations," a 2022 study<br>explained. "The virus causes a large=
+ proportion of infected red<br>squirrels to die and contributes to local de=
+clines and the replacement<br>by grey squirrels."=0D<br>=0D<br>[Byline: Dan=
+iel Otis]=0D<br>=0D<br>--=0D<br>Communicated by:=0D<br>ProMED<br><br>[Squir=
+rel pox is a viral disease that affects only squirrels. It is<br>caused by =
+a parapoxvirus that circulates naturally in gray and fox<br>squirrel popula=
+tions in eastern North America. While these species<br>typically tolerate t=
+he infection, this virus may result in fatal<br>disease in squirrels withou=
+t a co-evolutionary history. This was the<br>case for red squirrels in Euro=
+pe (_Sciurus vulgaris_), which suffered<br>extensive die-offs in the UK aft=
+er the introduction of the virus in<br>the island by grey squirrels (_Sciur=
+us carolinensis_) from North<br>America. Gray and fox squirrels may become =
+sick if their health<br>condition has been impoverished due to natural or a=
+nthropic stressors.<br>- Mod.PMB<br><br>ProMED map:<br>Ontario Province, Ca=
+nada:<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/sSnCkKCWBvais3Eu=
+VAOvgy2WOIX7pp1nXnn4AbwuQ3Z6WbkfhqXYXU-aTMPJ8yTh3Ew0AVqpOBZ9V2jsKU-58A/434/=
+btUl-1d0QLC2cJJD79DKjg/h3/GJDj8172uZWlEtcT_EhhIiNQ0f2rQnmFDjEuG_nMJMY">http=
+s://promedmail.org/promed-post?place=3D8714336,260</a>]<br><br>[See Also:<b=
+r>2023=0D<br>----=0D<br>Squirrel pox, red squirrel - UK: (Scotland)<br>http=
+://promedmail.org/post/20230118.8707844=0D<br>2019=0D<br>----=0D<br>Squirre=
+l pox, red squirrel - UK (04): (England) susp<br>http://promedmail.org/post=
+/20191211.6835066=20=0D<br>Squirrel pox, red squirrel - UK (03): (England) =
+alert<br>http://promedmail.org/post/20190801.6600455=0D<br>Squirrel pox, re=
+d squirrel - UK (02): (England) alert<br>http://promedmail.org/post/2019070=
+1.6546339=20=0D<br>Squirrel pox, red squirrel - UK: (England)<br>http://pro=
+medmail.org/post/20190514.6468998=0D<br>2016=0D<br>----=0D<br>Squirrel pox,=
+ red squirrel - UK: (Northern Ireland)<br>http://promedmail.org/post/201603=
+28.4123766=0D<br>2012=0D<br>----=0D<br>Squirrel pox, red squirrel - Ireland=
+: (WW)<br>http://promedmail.org/post/20120116.1012040=0D<br>2011=0D<br>----=0D=
+<br>Squirrel pox, gray squirrel - USA: (FL)<br>http://promedmail.org/post/2=
+0111012.3053=20=0D<br>Squirrel pox, red squirrel - UK: Northern Ireland<br>=
+http://promedmail.org/post/20110402.1024=0D<br>2008=0D<br>----=0D<br>Squirr=
+el pox, red squirrel - UK: prospects of immunity<br>http://promedmail.org/p=
+ost/20081016.3279=0D<br>Squirrel pox, red squirrel - UK: (Scotland)<br>http=
+://promedmail.org/post/20080523.1701]<br>..................................=
+...............mo/pmb/rd/jh<br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3D68T1uq_Fk0Wcb2NDIWv3pFZA7MmtdseD223_2s3gZYpoMDAwdT=
+AwMDBJ51aBCULR3UUgVvcDm90zXchzM6koPWMAl-oxvemh1BlhwmOZJp6UlaVqENMyWFkSAhbtv=
+pAoYcmXvi-R7slCZ8aq7IFP8_-d9l7zi1P6wIuh_WgJDIyVa1LZUwJ2sm6m_CP0b469TOX4y_gO=
+3bVpRt3H3hJlX4hYdOct5DiXMsWBq7ovOOfe-wATKYGS7EZlgTb8IlbA7xVkozfmB24M_dnSJip=
+8Q1148qhQYxafCEgZ9igf_Hgg-0luFzOSBciSVR7_F4hHedjhiC9TIKbhthWsZ5dmmxKeiV2tft=
+TzqEJvHZCBkOI-O4R8PyxC9mxTXw8q1-Kta3SFyNmJ_79ghh0GrIouKH55zbZc2q0IaE00KxrFz=
+lRDKX3VbImt9dpKAdMtTjGRYaj9hY0a0gI4NogrSrUcw59enIa_c_UrOboTXjO-3cK8AWGdgufB=
+QBZr3y7X5bHW1BFmS8K_KFxeqCDpaUhU5ulTBvyLjL9_-o-bXCvw8ukHVwwYxDjlrKds5vG6kiN=
+soIBoKa86ZGXXwhUxfUEGmdCld7y22uMjwQPQa-Si2P3MV6ucatXdM2rp5Rd8cY9lhB5hFNnAUd=
+C1hPi-uisNTr9DX1ltSkprmAtWt4RxWWusjRiiFDDLdZVyo0SUoVGlbHfD9wrLfK2ybp9gOidPR=
+p1UjU6kbHfNxusKTXNgD0CNCehFL9LniqJfE9rIEHzipTYxMDa_179BUAtGq8Qkk4wI5w1J15hT=
+-ziTQ1qT7xtIj_CJ8vSeOUrGSeaLnsY-LLdsTWJcHH5BavRzsD-k9LlU_hRMj2CL4mhJeV1Tt90=
+9_nQJfbehwl41RCdlm_uaTRSuskObRmA-6eKKUb69Sm87S4ZS7DzNfAKMSgA6APo8LhpHzVLiHT=
+XfjYih64B_SblIxExk6IPlu03v_TcXap60gPq6L7p6Zd9NJlRopJx_jYNrYbnTaQuSESJIgRB-p=
+sMNDUyNjgFzrd_lyGJptl04xMLWYmzGVJ_EdAf1jcsH3HpdWDpbY1Wb3aMM44OQBsKL7DqTzpa2=
+ZyUV4feD0L8qCHPAaKDGYiTGJwfLZlK8d9kkdZ1YOkU5bTyX-Z0Pctdo2ZODfjGNFULl1LAi8Z3=
+3yChblnjuKXtajsL8z_Zkjgxh5E2GgydM3TAdrAvBfxAstTPSyx8wbmwo8xSOLHxCtBeCCent" =
+target=3D"_blank" class=3D"Unsubscribe--unsubscribePreferences" style=3D"fo=
+nt-family:sans-serif;text-decoration:none;">Unsubscribe Preferences</a></di=
+v><br>############################################################<br>#####=
+#######################################################<br><br><img src=3D"=
+https://u19268662.ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/434/btUl-1d0Q=
+LC2cJJD79DKjg/ho.gif" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=
+=3D"height:1px !important;width:1px !important;border-width:0 !important;ma=
+rgin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;=
+margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !importa=
+nt;padding-right:0 !important;padding-left:0 !important;"/></body>
+</html>
+--8181700ef14e3e83b656cceac403ccd2d3d434cfaff5f06d32e709414217--

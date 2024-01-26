@@ -1,0 +1,498 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a98:c004:0:b0:1eb:e128:bbe3 with SMTP id l4csp4034689eic;
+        Mon, 15 Jan 2024 17:50:17 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IGp1nCMApg+9vj7cTJ3UrIDuupU0hfHZnkWU38QUAMVSKMf7GFTecZDCYR2N8XBXoV3WXCG
+X-Received: by 2002:a05:6214:d49:b0:681:22fd:23bb with SMTP id 9-20020a0562140d4900b0068122fd23bbmr8883990qvr.36.1705369816867;
+        Mon, 15 Jan 2024 17:50:16 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1705369816; cv=none;
+        d=google.com; s=arc-20160816;
+        b=Ml8n6KHyeGJLQtUI26FSjEQioR9xumFCuc/bmIp1G4eslGRl8OE1hYNjydT+TRb5XY
+         LMi+hmzX2vE9gJmhEVmbvQei/4k6bbm03yQ+966J+15b4Ei1s7GnafFKX3nTb4cZAK54
+         SATfQMk0M+ihlDtKIlTkLJCUVQFobkRjC/oncMFVY1BlgbpWcYB0oXpMyGEI32JP6r3q
+         nSeUWY00hpQ/1fKW4mmWugXs1eGsrllit1ljW7GbcykBYJRjjXfw8HSjISsGRzXudNmh
+         No7krPw1EHfEdvpFPi36Cx8MNP/Sh0zXtX24eYqlYSyUt+oEBarut1ZbbXv+WJF3w/pz
+         V8uQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=brnDIzMYB4bjznqSEUqgmoSc5Ie4/6ZozmNbOwbli1M=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=ttTAoQ82zsyzP52t9a9A644UrMJ/KdX7aVZD0390JS/YdQdSMh6Aetnt6Ot3Y6U+JP
+         ClnG8GmfBOz0bE3EZWvmu49GLB3IdHGlZCQo42uKxRM3CH5z66mejWMo9yLJBk3gegMn
+         t1o74qMMwrZ+LvdxPbgVB1LwwUmctMby92rchMjqQNwVJu+tarRPK3tg4N5SXY6KEyHt
+         lpV6FfGEA1BoY1bJ/+vmEjGws9ixJF6PYSYRUOIyHRXXTqyD6JTMcs2EpikLHN4Jchy8
+         vpF8KlJ+tckVdDCTim7KswPzHaAcObnOHHpnneUv1NsuYoD7xMgO9KDIIcZMNZsqU42C
+         bMtw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=M7IuqtEW;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=BPzepVoi;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id x1-20020a0c8e81000000b00680ce50b84bsi1025228qvb.567.2024.01.15.17.50.16
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 15 Jan 2024 17:50:16 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=M7IuqtEW;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=BPzepVoi;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=brnDIzMYB4bjznqSEUqgmoSc5Ie4/6ZozmNbOwbli1M=;
+	b=M7IuqtEWvwYk7BAI9ACxP6dFn0ZffVdtpsfBaURNPgnuwTl81cjtuXlRpdr8Yfybpsve
+	MNp5xOaGta/uTLDnd8LtlLV/R6JNRdQ9vTZNFl9bto7i9fdgfn9eQBRcyfN/mjOonQAgdG
+	iUC4iLIw56F1Ho9bkTrNO2SaZsIQDhQmHQVhNqfo6JGsW8YxQl4ArISregHPwRBLMGtLPp
+	vtB1rujLtkf/mCXq5B/By50YptIKSApLjM1e15+/X/gvwrA5aMqOdq8iUKtv+0ZSvgTbxc
+	mCr8f3VWQH+41d0iwXQ7cuuCiRaBA0hXAja3pyUm2g0zvN24z5gjfturJ99mg6YA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=brnDIzMYB4bjznqSEUqgmoSc5Ie4/6ZozmNbOwbli1M=;
+	b=BPzepVoiDerSl8R3CKRwwnh0MlQZogLUNXnLSm7FCpZ34JL9Dkv1ffSe81F7gp6VM5z+
+	rgNCM0G/UKdXhmn0YHJJHih7TzO1j54kZfzNc7Ox+SPRkxpp3xkW5sjjoMSYAljmHTMH9E
+	hAZSdooicN7YUe1+8T2RyaS7pSD/7RNbg=
+Received: by filterdrecv-66b6fdb7fb-7s5lp with SMTP id filterdrecv-66b6fdb7fb-7s5lp-1-65A5E0D5-1C
+        2024-01-16 01:50:13.403253449 +0000 UTC m=+7801714.759148861
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-10 (SG) with HTTP
+	id FBjQ6VTsSMS-sW0bUt-SLQ
+	Tue, 16 Jan 2024 01:50:13.376 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=de76072e3e4cd0a20f745b229307cd1262b5d50f2acb8e46828b2cb55d37
+Date: Tue, 16 Jan 2024 01:50:16 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <FBjQ6VTsSMS-sW0bUt-SLQ@geopod-ismtpd-10>
+Subject: PRO/AH/EDR> Die-off, apis - USA: (CA) fipronil toxicity confirmed
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iBQUEyTFpeXwrpb6lSr9Uhdp5geU91QdLTaPJP2?=
+ =?us-ascii?Q?SBO=2FQywL=2FCyDHNRuSzpKDN81a7Rtc+OaXHRSXMB?=
+ =?us-ascii?Q?tFHoayclDsTMXksYQ=2FFxSuiv9VZLe2HI8fO=2FiSj?=
+ =?us-ascii?Q?remmaYumXmLi0V+71r2nbkpb90k2UoipKYyyzHs?=
+ =?us-ascii?Q?gDnleJCzD7zW2=2FOedMpP0VdJBi4hAUaFuCCZsb?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUiShGf=2FO8XJWpH34Od4Nd?=
+ =?us-ascii?Q?fxXa6jil96uRcJkF+N+LeVnO1tx80ddOyoyOo=2Fc?=
+ =?us-ascii?Q?Brxcl3ERAm0cOY743=2FFH59DWiSf5OzXORh1DLKt?=
+ =?us-ascii?Q?hb1NMKty3PsA5ju0ZzxCrq1WQuZSEQf=2FJlWtgqv?=
+ =?us-ascii?Q?cZmsyCHlNUZsDcagqVaVwtDlRUfxqa23hM9gTG3?=
+ =?us-ascii?Q?lmEy3Qg3AdyLcMan1VQ3r2ANx4CgB+y4v+RLPrn?=
+ =?us-ascii?Q?zuIRy7QpQAu6CZqlNSLIhz21t4ssx46z9O4q+WE?=
+ =?us-ascii?Q?hSSPmTEGwGNWr5sRa9Ih242O63NQyW=2Fz0h8M9JQ?=
+ =?us-ascii?Q?8pabeGdsvsf=2F=2Fx0F=2FaH4=2FnBjcgWezPN5CGZJnj2?=
+ =?us-ascii?Q?BI3pnRa3xbo14yMBF8KlyYHsHqPTtr+rZ=2FyQ6dK?=
+ =?us-ascii?Q?eRvhhXLRsha6eITvsU=2FfkXSU2=2FqrS08RtCcTtko?=
+ =?us-ascii?Q?rCjvD+mmvRp9KG9iJ9QBE5CufrPzomCy36Nxd34?=
+ =?us-ascii?Q?=2F9l7rXxC2YMP1upE9yCPkZRsj54AYTrpEjUksJw?=
+ =?us-ascii?Q?p7C7Oy24fKt1ocC+mtrcQn5QzinbvjYtiqqKDqQ?=
+ =?us-ascii?Q?m=2FyGmfH5hIbn7PYwfGNGymsliRoErpULm+2PABM?=
+ =?us-ascii?Q?7O3LVblHx80L5dMCqjyeQxepSDzRLRE+WZqVY00?=
+ =?us-ascii?Q?ZoOYsUrO3I2l52GvmPo6ck9jp1oo6mqIMhr7QK1?=
+ =?us-ascii?Q?qbti3NhHkPBko=2F7BMbykT6XojLSEOc9+ni1DxCi?=
+ =?us-ascii?Q?E4R9MaEdE=2Fu6mCMiUTJkewuEEzhKAX5MZN8rouo?=
+ =?us-ascii?Q?iv0eKwsLLyKvUIi33cxw7aXZPg=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2EXGuyCiaSB?=
+ =?us-ascii?Q?bYaaSTJaTikSmdetw86fZB-83G0CAp4ckdoMDAw?=
+ =?us-ascii?Q?dTAwMFkCePbNeAyaV-UlBWt64ryNcIYxt7wvLOO?=
+ =?us-ascii?Q?hr=5FpQUqQJj4T0rsFyc=5FDxgqlsR=5F0=5FFukdTQ6o93?=
+ =?us-ascii?Q?C1wV-SstdvGX3Z-PQnAXWgLaIl2UeeWzZRf0FjR?=
+ =?us-ascii?Q?E5BQb3xTqosCnhRQA=3D=3D=2EqYeXqDLUyV3UxkpNo3J?=
+ =?us-ascii?Q?gvl03CSgFVzXVQivNrV8GJStoMDAwdTAwMNyyap?=
+ =?us-ascii?Q?q0uzmtoUVglQQ3i4lErWa73dG2tu762n7NArkqX?=
+ =?us-ascii?Q?CrLh=5FUM8dsqmgUFWkhZedkKoRa2WG736c-3bBWA?=
+ =?us-ascii?Q?IVGohtADemVL6rTCgr=5Ft3IX-5oaRVnbSdXwxsrT?=
+ =?us-ascii?Q?h4U6T9zlRoGSIsd4dcEtI7JGehAntEAu8apzozz?=
+ =?us-ascii?Q?-WDJvxMOWv0Fe3pEpF-jhL7jVY2nosP2qfNSxmS?=
+ =?us-ascii?Q?I0jPFgiOEB23oVFP=5FIgQn4gO50Q8bJoid1whFef?=
+ =?us-ascii?Q?vWyY57NWa-LGWU9BZdWrrV7ZxfGzQUtcauzsji9?=
+ =?us-ascii?Q?0hwZOtKBs2-poWSH5e-KyT0Vpm1TXffeTzF8EJw?=
+ =?us-ascii?Q?IjolLT10R3UYkGKOJ1Kb77HUaQzhVh65AKrrbmo?=
+ =?us-ascii?Q?bXnfpZLvDFeAMhV5zOjDFufzjArD9cCvdBRwRXa?=
+ =?us-ascii?Q?UT0c5M8LzhnTYnYHLASp1xiVLlLrIzHBNgpZ=5FdU?=
+ =?us-ascii?Q?DaLJQpub44o2ZzGGUKq5i6hHuRA7cQ7kOX4L8MO?=
+ =?us-ascii?Q?wMbyfdyHRMuGCX-uxtGj05FeWYNSwp6MZs=5FLvks?=
+ =?us-ascii?Q?VoTY2j1iKpSXPA8plHcSkHfeNt6KAti4hPgAs=5FS?=
+ =?us-ascii?Q?Odn1jC1BqvwEkIwz4E6b9Yv5FvZqHUMK354WNA5?=
+ =?us-ascii?Q?xm1otms8kYYuDpWMxlt06z4nodb8YpTZu2HnGvW?=
+ =?us-ascii?Q?6-evLgourfYaJBJNfBZNF0z6kBzv3r5O9OybqTC?=
+ =?us-ascii?Q?S4ixPUmEg9y7a96Mss7vRc3VEzCNvUlH6vCnzfo?=
+ =?us-ascii?Q?YZ6eoiRCIj1I7b8XbBRWAhXRsalomOqHqpTlEES?=
+ =?us-ascii?Q?RGQiZPfUezPt=5Fyz1dJA37RQ7TxDE8unrncAGn-o?=
+ =?us-ascii?Q?9CKysvbtaiKYhQVHlHVfdMuLdoCFJg4yxfJ66TV?=
+ =?us-ascii?Q?i2xsEwGfauHWA4dITkqDFMQyNxRMMocSymG7IzR?=
+ =?us-ascii?Q?YJgz3DoK1haV2QHOxjw3igc7EhYJTWSb=5F2=5FLvV0?=
+ =?us-ascii?Q?s-MU2xurkA7oElkBxr86XTLaNpm1sBX7xCevERh?=
+ =?us-ascii?Q?BHognko4rLXE7d9wZc8OL8osmzJYNQRDGIyb7vw?=
+ =?us-ascii?Q?psb1gCe=5FvKC-7Fm7LFt18YeFmZAu5JF2RiD4IAT?=
+ =?us-ascii?Q?ED3RFA=3D=3D=3E?=
+
+--de76072e3e4cd0a20f745b229307cd1262b5d50f2acb8e46828b2cb55d37
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=us-ascii
+Mime-Version: 1.0
+
+DIE-OFF, APIS - USA: (CALIFORNIA) FIPRONIL TOXICITY CONFIRMED
+*************************************************************
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+[1]=20
+Date: Wed 10 Jan 2024
+Source: California County News [edited]
+<https://www.californiacountynews.org/news/2024/01/san-diego-county-solves-=
+mystery-behind-deaths-three-million-bees>
+
+
+San Diego County Solves Mystery Behind Deaths of 3 Million Bees
+---------------------------------------------------------------
+San Diego County's Department of Agriculture has identified the cause
+of a mysterious bee die-off which occurred in September [2023], though
+some important questions still remain.
+
+The 3 million bees which perished at the San Diego Bee Sanctuary last
+year [2023] represented about 2/3 of the sanctuary's population. Until
+now, nothing was known about why they died.
+
+The county has since determined the bees were exposed to a toxic dose
+of an insecticide known as Fipronil. How they were exposed to the
+toxin is unclear. The county was able to determine neighboring farms
+did not use this particular pesticide to ward off insects.=20
+
+Despite the looming questions, the sanctuary says it will try to
+rebuild its bee colonies this year [2024]. Sanctuary officials said
+they are relieved to know a neighboring farm was not responsible.
+
+--
+Communicated by:
+ProMED
+
+******
+[2]=20
+Date: Mon 15 Jan 2024
+Source: The Independent [edited]
+<https://www.independent.co.uk/travel/americas/bees-millions-death-californ=
+ia-sanctuary-b2478547.html>
+
+
+Experts explain mysterious mass death of 3 million bees at California
+sanctuary
+---------------------------------------------------------------------------=
+----
+An investigation by California officials has determined that millions
+of bees who suddenly died at a sanctuary last year [2023] were killed
+by a "double lethal" dose of poison.
+
+The US Department of Agriculture (USDA) launched an investigation in
+September [2023] after 3 million bees at the sanctuary in Northern San
+Diego perished in the span of just a few days, according to KPBS.
+
+According to the findings by the agency, the bees were exposed to
+Fipronil, a termiticide banned for agriculture and landscaping use.
+
+However, it remains unclear how the large quantity of bees were
+exposed to the substance.
+
+"At this point, the source of that Fipronil is undetermined," Garrett
+Cooper, the deputy agriculture commissioner in San Diego County, told
+KPBS.
+
+"We had surveyed a lot of the pest control businesses which provided
+use reports and were in the area. None of them had used the particular
+insecticide. We also looked at the ag(riculture) operations."
+
+On a GoFundMe page, the sanctuary said orchards and recreational lands
+within close proximity to the site did not use fipronil and the owners
+suspect "malice" in the mass wipeout of the bees.
+
+The owners have decided to close down the Escondido location, they
+said.
+
+"We do suspect malice. All nearby orchards had no Fipronil. It could
+have been directed towards us. We cannot be sure. We are pulling out
+of the area," Dominic Peck, an employee at the sanctuary, told ABC
+News.
+
+The sanctuary's Valley Center location remains open with around 1.5
+million bees.
+
+[Byline: Andrea Blanco]
+
+--
+Communicated by:
+ProMED
+
+[This is tragic on so many levels. It has resulted a tremendous amount
+of bee loss, bee product loss, loss of income for the owners, and now
+for the region as the company intends to relocate.=20
+
+"Fipronil is a broad use insecticide belonging to the phenylpyrazole
+chemical family. Fipronil is used to control ants, beetles,
+cockroaches, fleas, ticks, termites, mole crickets, thrips, rootworms,
+weevils, and other insects. Fipronil is a white powder with a moldy
+odor. Fipronil was first registered for use in the United States in
+1996.
+
+"Fipronil is used in a wide variety of pesticide products, including
+granular products for grass, gel baits, spot-on pet care products,
+liquid termite control products, and products for agriculture. There
+are more than 50 registered products that contain fipronil.
+
+"Fipronil kills insects when they eat it or come in contact with it.
+Fipronil works by disrupting the normal function of the central
+nervous system in insects. Fipronil is more toxic to insects than
+people and pets because it is more likely to bind to insect nerve
+endings.
+
+"Tests were done to find out if fipronil is toxic to fish and
+creatures in the water without backbones (invertebrates), such as
+shrimp and water fleas. Scientists found that fipronil is highly toxic
+to sea and freshwater fish, and highly toxic to sea and freshwater
+invertebrates. Two fipronil metabolites were also tested in freshwater
+fish and invertebrates and were more toxic than fipronil.
+
+"In other studies, fipronil was found to be highly toxic to some
+birds, but practically non-toxic to ducks. Fipronil was also found to
+be highly toxic to honey bees, but not toxic to earthworms."
+(Extracted from <http://npic.orst.edu/factsheets/fipronil.html>)
+
+My 1st thought was a malicious act by someone, perhaps not knowing
+they were honey bees or perhaps out of anger because of a bee sting.
+But the high number of bee deaths, makes this notion move to bottom of
+the differential list.=20
+
+If someone, or some group is responsible, hopefully they will be
+caught and punished, but in the intervening time, we wish the bee
+company a speedy recovery. - Mod.TG
+
+ProMED map:
+California, United States:
+<https://promedmail.org/promed-post?place=3D8714259,204>]
+
+[See Also:
+2021
+----
+Die-off, apis - Colombia: pesticide susp
+http://promedmail.org/post/20210308.8235211]
+.................................................mo/tg/may/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3DZWQEPjzBW_T9HOxZqyPtdcJgZBDojuLmy9-mX9o7IgxoMDAwdTAwMHxEMQZ=
+FGA8wHNhiRG9MhwTp36tw-iF5UD1AScKS1QxLMxUkGj7S8BX-Bze2y8JQZPyjLHBjZLZQ3CQQ2d=
+ewaU_BJjnjBHErna_EhlNYqI4nQ2tkkWj755H-xaOKzbc8iSQHZlkynWVXkOjW3Gba5lODPDz7i=
+lm-9Q5fZJY3Yk7KllCabkBHyFWpDEtfc2dvJCZFltDanktgoJrOXqN8Q9-fk03SXjWI9ChHS23_=
+yepSyR16pSRjFqaqohGsRKAdHlesN2huw7o5fbiJcuawGc6koGNMXcipHjSmRqWP9M7MPj68GHv=
+z4XsI6YLmjzuAoEW8u92RP2iMXNkhvD9ONDnarpoHbrRlopLdrjxqgqlf-sQz4GNDfHSXLZwV1X=
+gaFUeJU254bsV8E0OdORaLQEb3m184Bd3Iq8Qvp_xYwrutCwhAJOVRtPcIbO3HQjLYknpq_b0u0=
+O-HfAExrHrnqpNHrMIYnThan9a1jwxXnky6dEYzs0izDPQvkorL6QQVkBltyjQNaDnlIf6RMp_e=
+lZ6hxOCdZ9gq3PaFWNCoVIAf3YQQVzjgQb08MJKl_jxElJlbC0pLoKUGe2Fbrkdo8y7TPZS28Z5=
+SDkRokeAnZArdckBIpAyhkF3WrokaYNXgccfVDoqqnNxvGyzoYSrWOjJrkZ2TKrsjGcMr5N3Le5=
+0qIwRpKyvqy4Ho3Bt-uPcuk6K5JRLWHsE2jXgUyAkmxk62GW8dGQvv2O-CWYTw3h3SXNOMRAwlZ=
+pd6jQ8Pv5zNu-SkD9zx0Jh6oRxeYiTSZKYcNF_vR_SGB1qRZdjiQ0ed8oOMT8c99qjzls0wdR29=
+lUItv2S-Gy1X9YNinax1zOlNnRwIvL3c9vxJWxYEIudhQwmY4DYJN3MSEBS4Gxgf6sVrZGzFPE3=
+ZL2PlEIDAe6iH_ldigcYJxEpSfNXE_hEpamaUzlKT6q5mwRBwIa55wskIM3sheKktNAJaLHR54r=
+vVXNcOi9Q8Q9LvGuY1MGagsJPokykEA_TlJozPQNfPuAHHtCl_k4uxsuIpzuYLNladNskm-0a93=
+yCCVHHnEBNNG04NOboNlHDtuRyl3JVq3TRE5EDpPLFtnNJSDliMYPuBg9tUddftszIFz2tVCtd4=
+CaR590Btz_9eB_iMaDnCGu07pZye8jemTIjMzZuq8fbY3uDYqubyYEnH7NcnNcVZ )
+############################################################
+############################################################
+
+--de76072e3e4cd0a20f745b229307cd1262b5d50f2acb8e46828b2cb55d37
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>DIE-OFF, APIS - USA: (CALIFORNIA) FIPRONIL TOXICITY CONFIRMED<br>****=
+*********************************************************<br>A ProMED-mail =
+post<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt4=
+8tisIijpefK5PNjW-mL-YZGnfgDOxU1G3gjwnPSi2Tfv3HA/431/K1pR_0KwRzaDO69qb3SJmw/=
+h0/xnIx34xl3RmpMsrz3F9vLnFCss8n0mk87YjZZlV7E-8">http://www.promedmail.org</=
+a><br>ProMED-mail is a program of the<br>International Society for Infectio=
+us Diseases<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl=
+6JrPIt48tisCT5tpD4Upm3qyMCbcYSQvc/431/K1pR_0KwRzaDO69qb3SJmw/h1/Z6P5K_Y94ue=
+21xseiJfCQFzjCPOLURng0mw2RKE53Uk">http://www.isid.org</a><br><br>[1]=20=0D<=
+br>Date: Wed 10 Jan 2024=0D<br>Source: California County News [edited]=0D<b=
+r><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/TLh_csrC34X_iXpbYoMam_d=
+zrXRPeMlwg-93-Ut3_0eWFmW8evvJK5jx0Bo__9QbBcYEN8yKYqoAgBAmeGw7Ce7kw0FIh9vymX=
+TX9iRSVU_nIYFUhSEFX_XCw2FZtClpzTWFqgJXmRYjFlK2hk0KWZWYyXa0DiyDNK0H1wxRCYA/4=
+31/K1pR_0KwRzaDO69qb3SJmw/h2/oCnshl1dFTsrEkzFnvfanaZXzDqyoHw-BEMmji_C3vE">h=
+ttps://www.californiacountynews.org/news/2024/01/san-diego-county-solves-my=
+stery-behind-deaths-three-million-bees</a>=0D<br>=0D<br>=0D<br>San Diego Co=
+unty Solves Mystery Behind Deaths of 3 Million Bees=0D<br>-----------------=
+----------------------------------------------=0D<br>San Diego County's Dep=
+artment of Agriculture has identified the cause<br>of a mysterious bee die-=
+off which occurred in September [2023], though<br>some important questions =
+still remain.=0D<br>=0D<br>The 3 million bees which perished at the San Die=
+go Bee Sanctuary last<br>year [2023] represented about 2/3 of the sanctuary=
+'s population. Until<br>now, nothing was known about why they died.=0D<br>=0D=
+<br>The county has since determined the bees were exposed to a toxic dose<b=
+r>of an insecticide known as Fipronil. How they were exposed to the<br>toxi=
+n is unclear. The county was able to determine neighboring farms<br>did not=
+ use this particular pesticide to ward off insects.=20=0D<br>=0D<br>Despite=
+ the looming questions, the sanctuary says it will try to<br>rebuild its be=
+e colonies this year [2024]. Sanctuary officials said<br>they are relieved =
+to know a neighboring farm was not responsible.=0D<br>=0D<br>--=0D<br>Commu=
+nicated by:=0D<br>ProMED=0D<br>=0D<br>******=0D<br>[2]=20=0D<br>Date: Mon 1=
+5 Jan 2024=0D<br>Source: The Independent [edited]=0D<br><a href=3D"https://=
+u19268662.ct.sendgrid.net/ss/c/TLh_csrC34X_iXpbYoMam8xDGlajlF0tY_ayiUsdCtgq=
+9un9nUwqQtTUu_7uFOJU3Ipx6mItmraCkDLaP2sToqIQGvfONk87dXveEmELWePkc_G9WwdePOL=
+92cidydTYEt56womD_mIMwuYvE7qYhQ/431/K1pR_0KwRzaDO69qb3SJmw/h3/LGsGbMUyW7Mxl=
+uPCDjfP88psNeARSBLjF4PHQE8L6Go">https://www.independent.co.uk/travel/americ=
+as/bees-millions-death-california-sanctuary-b2478547.html</a>=0D<br>=0D<br>=0D=
+<br>Experts explain mysterious mass death of 3 million bees at California<b=
+r>sanctuary=0D<br>---------------------------------------------------------=
+----------------------=0D<br>An investigation by California officials has d=
+etermined that millions<br>of bees who suddenly died at a sanctuary last ye=
+ar [2023] were killed<br>by a "double lethal" dose of poison.=0D<br>=0D<br>=
+The US Department of Agriculture (USDA) launched an investigation in<br>Sep=
+tember [2023] after 3 million bees at the sanctuary in Northern San<br>Dieg=
+o perished in the span of just a few days, according to KPBS.=0D<br>=0D<br>=
+According to the findings by the agency, the bees were exposed to<br>Fipron=
+il, a termiticide banned for agriculture and landscaping use.=0D<br>=0D<br>=
+However, it remains unclear how the large quantity of bees were<br>exposed =
+to the substance.=0D<br>=0D<br>"At this point, the source of that Fipronil =
+is undetermined," Garrett<br>Cooper, the deputy agriculture commissioner in=
+ San Diego County, told<br>KPBS.=0D<br>=0D<br>"We had surveyed a lot of the=
+ pest control businesses which provided<br>use reports and were in the area=
+. None of them had used the particular<br>insecticide. We also looked at th=
+e ag(riculture) operations."=0D<br>=0D<br>On a GoFundMe page, the sanctuary=
+ said orchards and recreational lands<br>within close proximity to the site=
+ did not use fipronil and the owners<br>suspect "malice" in the mass wipeou=
+t of the bees.=0D<br>=0D<br>The owners have decided to close down the Escon=
+dido location, they<br>said.=0D<br>=0D<br>"We do suspect malice. All nearby=
+ orchards had no Fipronil. It could<br>have been directed towards us. We ca=
+nnot be sure. We are pulling out<br>of the area," Dominic Peck, an employee=
+ at the sanctuary, told ABC<br>News.=0D<br>=0D<br>The sanctuary's Valley Ce=
+nter location remains open with around 1.5<br>million bees.=0D<br>=0D<br>[B=
+yline: Andrea Blanco]=0D<br>=0D<br>--=0D<br>Communicated by:=0D<br>ProMED<b=
+r><br>[This is tragic on so many levels. It has resulted a tremendous amoun=
+t<br>of bee loss, bee product loss, loss of income for the owners, and now<=
+br>for the region as the company intends to relocate.=20=0D<br>=0D<br>"Fipr=
+onil is a broad use insecticide belonging to the phenylpyrazole<br>chemical=
+ family. Fipronil is used to control ants, beetles,<br>cockroaches, fleas, =
+ticks, termites, mole crickets, thrips, rootworms,<br>weevils, and other in=
+sects. Fipronil is a white powder with a moldy<br>odor. Fipronil was first =
+registered for use in the United States in<br>1996.=0D<br>=0D<br>"Fipronil =
+is used in a wide variety of pesticide products, including<br>granular prod=
+ucts for grass, gel baits, spot-on pet care products,<br>liquid termite con=
+trol products, and products for agriculture. There<br>are more than 50 regi=
+stered products that contain fipronil.=0D<br>=0D<br>"Fipronil kills insects=
+ when they eat it or come in contact with it.<br>Fipronil works by disrupti=
+ng the normal function of the central<br>nervous system in insects. Fiproni=
+l is more toxic to insects than<br>people and pets because it is more likel=
+y to bind to insect nerve<br>endings.=0D<br>=0D<br>"Tests were done to find=
+ out if fipronil is toxic to fish and<br>creatures in the water without bac=
+kbones (invertebrates), such as<br>shrimp and water fleas. Scientists found=
+ that fipronil is highly toxic<br>to sea and freshwater fish, and highly to=
+xic to sea and freshwater<br>invertebrates. Two fipronil metabolites were a=
+lso tested in freshwater<br>fish and invertebrates and were more toxic than=
+ fipronil.=0D<br>=0D<br>"In other studies, fipronil was found to be highly =
+toxic to some<br>birds, but practically non-toxic to ducks. Fipronil was al=
+so found to<br>be highly toxic to honey bees, but not toxic to earthworms."=
+<br>(Extracted from <a href=3D"https://u19268662.ct.sendgrid.net/ss/c/1Y21I=
+YzZhuabvkChf43C-dCPhYk3o2uJh4OxCXD_LG4lP1APT53KfraNNNDZjghrkEg3n5FYMyLB2q0b=
+OeokYA/431/K1pR_0KwRzaDO69qb3SJmw/h4/fLKy2GB3YNzd9iKjOjCCMfaGoGbtbv0AeUbzHX=
+2ktC4">http://npic.orst.edu/factsheets/fipronil.html</a>)=0D<br>=0D<br>My 1=
+st thought was a malicious act by someone, perhaps not knowing<br>they were=
+ honey bees or perhaps out of anger because of a bee sting.<br>But the high=
+ number of bee deaths, makes this notion move to bottom of<br>the different=
+ial list.=20=0D<br>=0D<br>If someone, or some group is responsible, hopeful=
+ly they will be<br>caught and punished, but in the intervening time, we wis=
+h the bee<br>company a speedy recovery. - Mod.TG<br><br>ProMED map:<br>Cali=
+fornia, United States:<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c=
+/sSnCkKCWBvais3EuVAOvgy2WOIX7pp1nXnn4AbwuQ3Z6WbkfhqXYXU-aTMPJ8yThhPagzJBQQu=
+_xh2MJwtl7FA/431/K1pR_0KwRzaDO69qb3SJmw/h5/5YTU-3RX0wseR9A7iUdnHbq-zQC00p5o=
+RtEvJXKQdSQ">https://promedmail.org/promed-post?place=3D8714259,204</a>]<br=
+><br>[See Also:<br>2021=0D<br>----=0D<br>Die-off, apis - Colombia: pesticid=
+e susp<br>http://promedmail.org/post/20210308.8235211]<br>.................=
+................................mo/tg/may/jh<br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3DZWQEPjzBW_T9HOxZqyPtdcJgZBDojuLmy9-mX9o7IgxoMDAwdT=
+AwMHxEMQZFGA8wHNhiRG9MhwTp36tw-iF5UD1AScKS1QxLMxUkGj7S8BX-Bze2y8JQZPyjLHBjZ=
+LZQ3CQQ2dewaU_BJjnjBHErna_EhlNYqI4nQ2tkkWj755H-xaOKzbc8iSQHZlkynWVXkOjW3Gba=
+5lODPDz7ilm-9Q5fZJY3Yk7KllCabkBHyFWpDEtfc2dvJCZFltDanktgoJrOXqN8Q9-fk03SXjW=
+I9ChHS23_yepSyR16pSRjFqaqohGsRKAdHlesN2huw7o5fbiJcuawGc6koGNMXcipHjSmRqWP9M=
+7MPj68GHvz4XsI6YLmjzuAoEW8u92RP2iMXNkhvD9ONDnarpoHbrRlopLdrjxqgqlf-sQz4GNDf=
+HSXLZwV1XgaFUeJU254bsV8E0OdORaLQEb3m184Bd3Iq8Qvp_xYwrutCwhAJOVRtPcIbO3HQjLY=
+knpq_b0u0O-HfAExrHrnqpNHrMIYnThan9a1jwxXnky6dEYzs0izDPQvkorL6QQVkBltyjQNaDn=
+lIf6RMp_elZ6hxOCdZ9gq3PaFWNCoVIAf3YQQVzjgQb08MJKl_jxElJlbC0pLoKUGe2Fbrkdo8y=
+7TPZS28Z5SDkRokeAnZArdckBIpAyhkF3WrokaYNXgccfVDoqqnNxvGyzoYSrWOjJrkZ2TKrsjG=
+cMr5N3Le50qIwRpKyvqy4Ho3Bt-uPcuk6K5JRLWHsE2jXgUyAkmxk62GW8dGQvv2O-CWYTw3h3S=
+XNOMRAwlZpd6jQ8Pv5zNu-SkD9zx0Jh6oRxeYiTSZKYcNF_vR_SGB1qRZdjiQ0ed8oOMT8c99qj=
+zls0wdR29lUItv2S-Gy1X9YNinax1zOlNnRwIvL3c9vxJWxYEIudhQwmY4DYJN3MSEBS4Gxgf6s=
+VrZGzFPE3ZL2PlEIDAe6iH_ldigcYJxEpSfNXE_hEpamaUzlKT6q5mwRBwIa55wskIM3sheKktN=
+AJaLHR54rvVXNcOi9Q8Q9LvGuY1MGagsJPokykEA_TlJozPQNfPuAHHtCl_k4uxsuIpzuYLNlad=
+Nskm-0a93yCCVHHnEBNNG04NOboNlHDtuRyl3JVq3TRE5EDpPLFtnNJSDliMYPuBg9tUddftszI=
+Fz2tVCtd4CaR590Btz_9eB_iMaDnCGu07pZye8jemTIjMzZuq8fbY3uDYqubyYEnH7NcnNcVZ" =
+target=3D"_blank" class=3D"Unsubscribe--unsubscribePreferences" style=3D"fo=
+nt-family:sans-serif;text-decoration:none;">Unsubscribe Preferences</a></di=
+v><br>############################################################<br>#####=
+#######################################################<br><br><img src=3D"=
+https://u19268662.ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/431/K1pR_0KwR=
+zaDO69qb3SJmw/ho.gif" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=
+=3D"height:1px !important;width:1px !important;border-width:0 !important;ma=
+rgin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;=
+margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !importa=
+nt;padding-right:0 !important;padding-left:0 !important;"/></body>
+</html>
+--de76072e3e4cd0a20f745b229307cd1262b5d50f2acb8e46828b2cb55d37--

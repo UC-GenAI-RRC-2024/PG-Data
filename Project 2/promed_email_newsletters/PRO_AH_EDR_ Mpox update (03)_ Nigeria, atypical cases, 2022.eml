@@ -1,0 +1,588 @@
+Delivered-To: pgepnewsletter@gmail.com
+Received: by 2002:a98:c004:0:b0:1eb:e128:bbe3 with SMTP id l4csp4037247eic;
+        Mon, 15 Jan 2024 17:58:14 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IF/fKPXYFyMGsXBXKh5R6NoNpquGaRvRa23KDeTGk3piKtX3HE+rDjkv6/sHTpUBDnSR+g3
+X-Received: by 2002:a05:622a:44:b0:429:fa8f:c00f with SMTP id y4-20020a05622a004400b00429fa8fc00fmr1973339qtw.63.1705370294071;
+        Mon, 15 Jan 2024 17:58:14 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1705370294; cv=none;
+        d=google.com; s=arc-20160816;
+        b=V/vyzgOiLt3lIwyynWbMYeReNuOPWg107KPqcq7Pgu6hhCXYAaUbfmvyeICUUFwPTx
+         JWQl30RE2MNlHMEVDMRiPI5G1nRsSllQJb63fXFw8mqSjCplW17LHwDCgji/zrbnCWVd
+         KSm2UGZoJweJ5DOgKTK5x0L3YehErmvQ/levZMYoILaWWTXXOqFffzmqODj58/0SIh3i
+         wk0WXKXnas9gXC32L6Gi+tV0QzHe6DuU8bn5OSZOBQU1sUJLLmfktGtZzP7PBPeAX8S9
+         4DR/ghA0Hj87zBHTFclNbzIGYRu+27MFSQDFebqUdAYwsYiP5DxDTuUA0UbDdhmymCX8
+         SCKQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=nYAxfs8QEXguCF3U8+8xiafTnNtn8aoMGPO4JaqwFjM=;
+        fh=m8+yFGL9AGrkSifADXzxzWHypeMVd9MF7/kbikeN2H4=;
+        b=VjAFDHVlragyVuo27n7doVijA3RaevD2UZkBd5U9yipcxJYPcjjsgxJR+C+xwAxQ4c
+         lcSgaFya2VJ/3MbR34ne+EJXLFb/TrMM5+e23xzyVjnd/JO+JJeRjPSdNFkSjVcXnI3P
+         IzHZsgP76AczztHb2S24DMSFKE6E4YM1Dr6TMVaOBYdI6o0a9l9TaOJ+ytzdg9L5wULD
+         S2SY2uBXEE1y92ZooBlHbaD+iyEWvsAp3GjGDIq4GT3s6XfbgnUMz2tqW57umEIfCGwK
+         S+CKxa3tYgrfdr9E/2RpNchw6LE6UK+7Cl7x1QcVaN2C9ezIRFSw+4mKTF1lcv20IfwZ
+         bXGA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=j67eBwF7;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=UWRh8JTz;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+Return-Path: <bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org>
+Received: from xtrwrkzn.outbound-mail.sendgrid.net (xtrwrkzn.outbound-mail.sendgrid.net. [167.89.81.226])
+        by mx.google.com with ESMTPS id d14-20020ac85ace000000b004298cd99df9si9012363qtd.290.2024.01.15.17.58.13
+        for <pgepnewsletter@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 15 Jan 2024 17:58:14 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) client-ip=167.89.81.226;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@isid.org header.s=s1 header.b=j67eBwF7;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=UWRh8JTz;
+       spf=pass (google.com: domain of bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org designates 167.89.81.226 as permitted sender) smtp.mailfrom="bounces+19268662-547c-pgepnewsletter=gmail.com@em7004.isid.org";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=isid.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=isid.org;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=nYAxfs8QEXguCF3U8+8xiafTnNtn8aoMGPO4JaqwFjM=;
+	b=j67eBwF7P5vDm0Mn61EFK2UWHftGE9wd+9TgMeEjSa9jRxYjtt61WCPH++4eI35dKlTZ
+	V1P5AdMRnAh1a25pC4aBrnRuXTAfj314GWWPl0XUDb2EZjrydJZ5bNLgXo1U0uz6XsEnzU
+	YW4ImN5jQ9tLfA07puBlgHbVJyesZ3jIpoj8D5btjzUjMKLEs7QsmRKBfz2VvizXK1C/rj
+	FCxwh2bBmiMa2URj/yPbpkA3IcySXIh/EkWdeT16GRvB5PlKoMOsrpj0u0Jltr/7eFAMjY
+	kKDTeLbJgQTbgqT7oRZ5x7nCU++ufnqggpu1Uax07O0FqMEFnS21CWpz7GZhWuoQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=nYAxfs8QEXguCF3U8+8xiafTnNtn8aoMGPO4JaqwFjM=;
+	b=UWRh8JTzqy5NLIubeeZFPy6yiwDG4vZ98Oy5G8xsxszalE9I6G5a0S6GNo+gnqL9j6iq
+	cW2UUaLlzUZyHU1h9ohRNp2FgRMVYMcpA6Ig4KQHDUFjdDZ2nVegCr5riIU2Ix9Fc9lZ1q
+	kHW62myg6ercRLpvb6WVx11MGUWOOpf2c=
+Received: by filterdrecv-559468bd77-nxzrg with SMTP id filterdrecv-559468bd77-nxzrg-1-65A5E2B4-7
+        2024-01-16 01:58:12.397762051 +0000 UTC m=+7802300.961484501
+Received: from MTkyNjg2NjI (unknown)
+	by geopod-ismtpd-1 (SG) with HTTP
+	id FPE1jHIEQIq4xN8wLpDskg
+	Tue, 16 Jan 2024 01:58:12.190 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=7580712b779411cfa2cab9ba516098e8cc63612d7a780e79fdb083b92193
+Date: Tue, 16 Jan 2024 01:58:12 +0000 (UTC)
+From: ProMED <promed@isid.org>
+Mime-Version: 1.0
+Message-ID: <FPE1jHIEQIq4xN8wLpDskg@geopod-ismtpd-1>
+Subject: PRO/AH/EDR> Mpox update (03): Nigeria, atypical cases, 2022
+Reply-To: noreply@isid.org
+X-Feedback-ID: 19268662:SG
+X-SG-EID: 
+ =?us-ascii?Q?lYKUi1ucKQwcfoVB1xAcbBSlsJP9QSi7ed2VWI0p5NjpCc5BQK+kujBGGO1mU1?=
+ =?us-ascii?Q?iBr0jkvLTO3tGC0UD0m22MZel1UIOTL4nseU8OL?=
+ =?us-ascii?Q?o7pH+TEzKetVU9pZc6MIwKaq+9m2LLljCu6iHEC?=
+ =?us-ascii?Q?hNS8oPXM6uJntbB+JeJ9Jv05iFFb1L69bCEnnTs?=
+ =?us-ascii?Q?+gPjBaQJKPbWwoBH98MBuBTnLZCi1PeGuwK+UnU?=
+ =?us-ascii?Q?DeD1Vk263cUZ0sWQpCxO1onNE74TM=2FtXYeokJ3?=
+X-SG-ID: 
+ =?us-ascii?Q?se=2F49CGmbS0sfR97ImeXvNhg9p9jggtUUChgqoY2wUiShGf=2FO8XJWpH34Od4Nd?=
+ =?us-ascii?Q?fxXa6jil96uRcJkF+N+LeVnO1tx80ddOyoyOo=2Fc?=
+ =?us-ascii?Q?Brxcl3ERAm0cOY743=2FFH59DWiSf5OzXORh1DLKt?=
+ =?us-ascii?Q?hb1NMKty3PsA5ju0ZzxCrq1WQuZSEQf=2FJlWtgqv?=
+ =?us-ascii?Q?cZmsyCHlNUZsDwOAAIJqzLsrUJEJdMMtEs+ugWe?=
+ =?us-ascii?Q?VzekCHQF+ZPdkfrz5Hd7F01VWqpkQ1VD7nYq7SX?=
+ =?us-ascii?Q?kuhC+Nni2jE4HuvSZz+ysJbfl+3kCIwfOZ9vH3D?=
+ =?us-ascii?Q?1sH7MjSMxxxQZCOYWKdKR2GIN8mdYWETi2nDrZ7?=
+ =?us-ascii?Q?XymjP053SWLkbGjXFoSImyzqZWuUQ3besomM5ou?=
+ =?us-ascii?Q?TpJyx5pDU1pgGFz5TOvFX0YbAKsWpOFUC0SowjH?=
+ =?us-ascii?Q?KstHMKYG6tRLW=2FKusFfUjkdUASz5JMPwlr9MHs2?=
+ =?us-ascii?Q?D2bdEYpuZQHndB8x3B8CiFEXW5JSFNVLk7A+Zyu?=
+ =?us-ascii?Q?T1pMtnZDsYk6xmrO5MEy8IXW0PXD05Dg46fUEvJ?=
+ =?us-ascii?Q?=2Fazd8RnqmYpy=2F+TJeQZuOCSKla60WnWOHwRIQSb?=
+ =?us-ascii?Q?dlau9=2F00ySt7u3y6upPYVmFNz+CO4S5gkV34OCV?=
+ =?us-ascii?Q?Fni4r=2FZspuh8bgPoSY6WWb9=2FNAzLVatsg9By2TW?=
+ =?us-ascii?Q?DXnzozv7wC8Mkrb2FdibeS1WvE0dA82q3WbQ6mn?=
+ =?us-ascii?Q?ZnrCC12apKonB48Fuz+=2Fllj3J=2FVNNfCw1k=2Fh6Jf?=
+ =?us-ascii?Q?bTeZJ5SvUOunWMJbcjyZltkREYAqEByv+w=2FF9uS?=
+ =?us-ascii?Q?8AdfqOKmFC4hPlIMXMftqXOr8g=3D=3D?=
+To: pgepnewsletter@gmail.com
+X-Entity-ID: 3CKJgmVGbBVD214dsRqreg==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em7004=2Eisid=2Eorg=3Fsubject=3D19268662=2EOdPd0AXKU?=
+ =?us-ascii?Q?OGMhqvMfCIxufAgOH1bw5FFfMiaW-8qmj1oMDAw?=
+ =?us-ascii?Q?dTAwMAcU4mqG8EphgKwb0HOxmVLwOYkp4L7dnR3?=
+ =?us-ascii?Q?yC9c-CcYQZdVg=5Fe8W967nw7yU4v5mHYh4z8Y7D5?=
+ =?us-ascii?Q?W53zS-kxU0lkIp6TEx0HDKalshXBAYP21rOWmSD?=
+ =?us-ascii?Q?1Mm7w0NEkxK2=5F67GQ=3D=3D=2EdpwdUfDJu0qzOHGxd3c?=
+ =?us-ascii?Q?FCfMICSqsYNnvHysK46UVFIloMDAwdTAwMJmVfY?=
+ =?us-ascii?Q?XdmFzUDC47P5WXjoQtONhV=5FN1KrtTWyv12Xv5dh?=
+ =?us-ascii?Q?8HENuHTMXAC9ODZQaqYx2kNVJjWIuZKMR=5F7oHnG?=
+ =?us-ascii?Q?2LWw7dtOB7Uvpyvo2YXpSdlvYOmMTjxsMUiqY4x?=
+ =?us-ascii?Q?DO4lt774IRREXhIepIxUGxyWqwnz8cjXon5shog?=
+ =?us-ascii?Q?k=5FZOeSX8A485cvq0AORUqOMdEyIi83em1mGDMMB?=
+ =?us-ascii?Q?c-nTUBOcLa4HJk-jrVkhcQJu32sfPMV8TSROZ-U?=
+ =?us-ascii?Q?-EBdfECFJgzOHju=5FHmGXl3nQEc=5FP16cd1NDAyp6?=
+ =?us-ascii?Q?nAf0eSWpL55=5FN5DZ5pF5nzKWK8lQTb59XsIiFOd?=
+ =?us-ascii?Q?65sp4zOofHECD0U9BFAUEo=5FgSFwWamxNz7k1kO6?=
+ =?us-ascii?Q?tcUcznUIckYL=5FvKavYLeeTJJb8x78rK1UJpMJyH?=
+ =?us-ascii?Q?f2z=5Fmi5xJQ0IPY7mjnF6YuyxdRDInY-5nilQVIt?=
+ =?us-ascii?Q?Yh8ZcF0WfMOgflyX=5FCerzegqohsbFWMKe-XV0P0?=
+ =?us-ascii?Q?RmXEiCi8nFGQYaV5QkG7RO1wiyAShgyST0nDBw6?=
+ =?us-ascii?Q?7OFo3YvzK-O31O4W6QPzOJu9LPXhDq3QPReXuXe?=
+ =?us-ascii?Q?P3whwkWmsSa8y-Pl8N-Ue-Vq3e4lzTdO4R2EPIv?=
+ =?us-ascii?Q?ENV6n5nuI65GHAT1qcmghvCIwluF1=5F2FIR4NDX0?=
+ =?us-ascii?Q?8jiXORTD4jxB8AXrjpi8uMkCYiniUO293Sz0DF4?=
+ =?us-ascii?Q?6KFlKbPpCDKojDAHyAZ02ebtQoPruek5N7t=5FJAI?=
+ =?us-ascii?Q?33lF89zG5jdQLYSh33j88wNrpAmG8ysybIjUxKi?=
+ =?us-ascii?Q?Vw=5Fh3o2kfecu0b5zMJeWQS=5F-8hi2A4FbcA6V4bR?=
+ =?us-ascii?Q?Lt5nVPrPAq2VrotMMIaQNkdMY4yHuHOsziqafvr?=
+ =?us-ascii?Q?NhRdfDXuV6gUwfGG03I6ZtMUSZK5If76XVW4QdH?=
+ =?us-ascii?Q?WIZ-YNjjwwCYwVfB0NbPPr8cbmTi0ICBE-beRel?=
+ =?us-ascii?Q?0gSFLrXWxn0j=5FtC2MS8yW0kDVe6Dbd0SiZfoySN?=
+ =?us-ascii?Q?iyW0D5rLe2dIdpI=5FE=5Fn51=5FskZHSeGe0vQaWRRXK?=
+ =?us-ascii?Q?McaSereskMLEa3QhVof7nuL9dMDmC1WXd4l4bzq?=
+ =?us-ascii?Q?Qd8PUw=3D=3D=3E?=
+
+--7580712b779411cfa2cab9ba516098e8cc63612d7a780e79fdb083b92193
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=us-ascii
+Mime-Version: 1.0
+
+MPOX UPDATE (03): NIGERIA, ATYPICAL CASES, 2022
+***********************************************
+A ProMED-mail post
+<http://www.promedmail.org>
+ProMED-mail is a program of the
+International Society for Infectious Diseases
+<http://www.isid.org>
+
+Date: Sat 13 Jan 2024
+Source: Healio [edited]
+<https://www.healio.com/news/infectious-disease/20240112/2022-mpox-outbreak=
+-cases-had-atypical-symptoms-and-presentation>
+
+
+During a 2022 mpox outbreak in a Nigerian tertiary care facility,
+several confirmed cases presented atypically, according to a recent
+assessment of cases.
+
+"Having managed cases of mpox previously, I became amazed at the
+gradual drift of the clinical presentation from the usual, previously
+documented, and observed pattern of presentation to some forms I
+considered atypical," Nneka M. Chika-Igwenyi, MD, an infectious
+diseases physician at Alex Ekwueme Federal University Teaching
+Hospital, Abakaliki, told Healio. "This spored me into highlighting
+some of the observed atypical presentations."
+
+During a 2022 mpox outbreak in a Nigerian facility, cases deviated
+from the typical presentation highlighting the need for further
+evaluation of unusual skin lesions and increased mpox screening.
+Chika-Igwenyi and colleagues assessed clinical and epidemiological
+data of PCR-confirmed mpox cases reported during the 2022 outbreak to
+gather information on unusual presentations.
+
+Of 17 suspected cases reported during the outbreak, 13 were PCR
+confirmed. Among these 13 patients, there were several atypical
+presentations.
+
+According to Chika-Igwenyi, these cases occurred among young adults
+and were more common in males (64.3%), which is in contrast to
+previously documented occurrence in children and young females.
+Additionally, among these patients, there was a lack of prodromal
+symptoms (reported among only 3 or 23.1% of cases) that usually
+indicate the onset of skin lesions. When patients did have prodromal
+symptoms, symptoms persisted for longer than a week in 38.5% of
+cases.
+
+All 13 patients experienced rash of "various distribution." Skin
+lesions were polymorphic in 6 cases (46.2%) with solitary skin lesions
+reported in 3 patients (23.1%). Chika-Igwenyi added that contrary to
+previous outbreaks where skin lesions followed typical stages and were
+synchronous, some cases had asynchronous lesions with rashes occurring
+at different stages of development. According to the study,
+significant genital lesions were reported in both genders and in 6
+(46.2%) cases. Perianal lesions were also reported atypically among
+heterosexuals and non-men who have sex with men population patients
+(71.1%) with one case (7.7%) being severe.
+
+Based on these assessments, Chika-Igwenyi said that moving forward
+there needs to be screening and evaluation of genital skin lesions
+presumed to be sexually transmitted infections. There should also be a
+revision of clinical case definition to include the reported atypical
+presentations.
+
+"[There should be a] high index of suspicion among clinicians and
+public health interventions using a one-health approach,"
+Chika-Igwenyi concluded.
+
+[Byline: Caitlyn Stulpin]
+
+--
+Communicated by:
+ProMED
+
+[This case report highlights the need for further inclusion of mpox in
+clinician differentials for patients with any genital lesion
+regardless of sex or sexuality. As we have seen throughout mpox
+outbreaks, case presentation can be extremely variable with symptoms
+typically residing on their own. This should raise concern as to
+whether patients are actually receiving the appropriate diagnosis or
+if the virus is simply running its course. The prodromal phase they
+present with also means that patients could be contagious for an
+extended period without rash symptoms, leading to further spread of
+the virus. - Mod.CS
+
+ProMED map:
+Nigeria: <https://promedmail.org/promed-post?place=3D8714253,62>]
+
+[See Also:
+Mpox update (02): Israel, new cases, MOH
+http://promedmail.org/post/20240111.8714172
+Mpox update (01): Cambodia, new cases
+http://promedmail.org/post/20240105.8714076
+2023
+----
+Mpox update (51): Cambodia (PP) local case
+http://promedmail.org/post/20231214.8713728
+Mpox update (50): Viet Nam (Mekong Delta region)
+http://promedmail.org/post/20231208.8713590
+Mpox update (49): WHO, Congo DR, USA (ID), Indonesia
+http://promedmail.org/post/20231127.8713353
+Mpox update (48): Viet Nam, Taiwan, Indonesia
+http://promedmail.org/post/20231115.8713148
+Mpox update (47): Congo DR (KU), Malaysia, Indonesia (Jakarta), RFI
+http://promedmail.org/post/20231102.8712960
+Mpox update (46): Pakistan (KP) ex Saudi Arabia
+http://promedmail.org/post/20231102.8712956
+Mpox update (45): Viet Nam, fatal, immunocompromised patient
+http://promedmail.org/post/20231026.8712826
+Mpox update (44): tecovirimat resistance, HIV
+http://promedmail.org/post/20231025.8712791
+Mpox update (43): worldwide cases, Viet Nam, vaccination
+http://promedmail.org/post/20231015.8712649
+Mpox update (42): UK, Viet Nam
+http://promedmail.org/post/20231009.8712516
+Mpox update (41): cases, Vietnam, Congo DR, RFI
+http://promedmail.org/post/20230929.8712374
+Mpox update (40): worldwide, Congo DR, Laos
+http://promedmail.org/post/20230926.8712311
+Mpox update (39): cases, China, England, vaccination
+http://promedmail.org/post/20230915.8712118
+Mpox update (38): Thailand, MSM, teenagers
+http://promedmail.org/post/20230904.8711966
+Mpox update (37): Pakistan, USA, Congo DR
+http://promedmail.org/post/20230901.8711932
+Mpox update (36): Malaysia, RFI
+http://promedmail.org/post/20230825.8711837
+Mpox update (35): Spain, Pakistan
+http://promedmail.org/post/20230822.8711787
+Mpox update (34): Taiwan, fatal, corr
+http://promedmail.org/post/20230815.8711712
+Mpox update (34): Taiwan, fatal
+http://promedmail.org/post/20230815.8711702
+Mpox update (33): China, Australia
+http://promedmail.org/post/20230813.8711686
+Mpox update (32): Taiwan http://promedmail.org/post/20230810.8711633
+Mpox update (31): http://promedmail.org/post/20230805.8711570
+Mpox update (30): cases, steroids, Trinidad and Tobago, Pakistan,
+Portugal, RFI http://promedmail.org/post/20230801.8711442
+Mpox update (29): cases, Congo DR
+http://promedmail.org/post/20230724.8711303
+Mpox update (28): cases, comment, Trinidad & Tobago, UK, Germany,
+comparison http://promedmail.org/post/20230714.8711137
+Mpox update (27): cases, Cameroon, Thailand, RFI
+http://promedmail.org/post/20230711.8710983
+Mpox update (26): cases, USA, Canada, Israel, South Korea
+http://promedmail.org/post/20230701.8710843
+Mpox update (25): cases, vaccine, China, resurgence
+http://promedmail.org/post/20230625.8710712
+Mpox update (24): cases, detection, UK, PCR
+http://promedmail.org/post/20230622.8710641
+Mpox update (23): viral shedding, Beijing, STI, Taiwan
+http://promedmail.org/post/20230616.8710543
+Mpox update (22): cases, recurrent outbreaks, UK
+http://promedmail.org/post/20230611.8710429
+Mpox update (21): USA, Cameroon, cases, wastewater
+http://promedmail.org/post/20230528.8710251
+Mpox update (20): cases, WHO, USA, France
+http://promedmail.org/post/20230519.8710125
+Mpox update (19): USA, South Korea, Brazil, cases, resurgence, RFI
+http://promedmail.org/post/20230513.8709994
+Mpox update (18): WHO, Pakistan, USA, sociobehavioral factors
+http://promedmail.org/post/20230508.8709908
+Mpox update (17): cases, South Korea, Japan, Pakistan, UK
+http://promedmail.org/post/20230501.8709757
+Mpox update (16): cases, disparities, South Korea
+http://promedmail.org/post/20230422.8709604
+Mpox update (15): cases, Japan, AIDS-defining
+http://promedmail.org/post/20230414.8709457
+Mpox update (14): worldwide, USA, Congo DR (HU), vaccination
+http://promedmail.org/post/20230409.8709364
+Mpox update (13): cases, Netherlands, virtual ward
+http://promedmail.org/post/20230402.8709218
+Mpox update (12): Japan, TikTok, Jamaica, vaccination
+http://promedmail.org/post/20230324.8709105
+Mpox update (11): cases, incubation, reinfection, Mexico, Jynneos
+http://promedmail.org/post/20230318.8708975
+Mpox update (10): Taiwan, undetected case, death, treatment
+http://promedmail.org/post/20230311.8708853
+Mpox update (09): worldwide, USA, Taiwan, occupational transm,
+sampling, immunology http://promedmail.org/post/20230303.8708676
+Mpox update (08): worldwide, Belgium
+http://promedmail.org/post/20230224.8708552
+Mpox update (07): worldwide, USA, WHO, wastewater
+http://promedmail.org/post/20230217.8708422
+Mpox update (06): worldwide, antivirals
+http://promedmail.org/post/20230210.8708259
+Mpox update (05): worldwide, USA
+http://promedmail.org/post/20230202.8708119
+Mpox update (04): worldwide, USA, drug sensitivity, evolution, Viet
+Nam http://promedmail.org/post/20230126.8707984
+Mpox update (03): worldwide, USA, DR Congo
+http://promedmail.org/post/20230120.8707842
+Mpox update (02): worldwide, USA, antivirals
+http://promedmail.org/post/20230113.8707762
+Mpox update (01): worldwide, USA, breakthrough cases, unvaccinated,
+women http://promedmail.org/post/20230106.8707651]
+.................................................sb/cs/may/jh
+*##########################################################*
+************************************************************
+ProMED makes every effort to verify the reports that are posted, but the ac=
+curacy
+and completeness of the information, and of any statements or opinions base=
+d
+thereon, are not guaranteed. The reader assumes all risks in using informat=
+ion
+posted or archived by ProMED. ISID and its associated service providers sha=
+ll not
+be held responsible for errors or omissions or held liable for any damages =
+incurred
+as a result of use or reliance upon posted or archived material.
+************************************************************
+Donate to ProMED. Details available at: https://isid.networkforgood.com/pro=
+jects/79924-invest-in-the-mission.
+************************************************************
+Visit ProMED's website at https://www.promedmail.org/.
+Submit all items for posting via the ProMED website at https://promedmail.o=
+rg/submitinfo/.
+If you have any questions or need support, please contact us via the ProMED=
+ website at  https://promedmail.org/support/.
+You may subscribe/unsubscribe at  https://isid.org/promedmail-subscribe/.
+Unsubscribe Preferences ( https://u19268662.ct.sendgrid.net/asm/?user_id=3D=
+19268662&data=3DcKjuOFmqgjZJHiSBCk_wRu5iwZAEXN7jmpSDLxb_oxhoMDAwdTAwMMUwPqB=
+fM271T4gxRQokO3_xQVr4tzztrYHXbYzbqg9R9q-ifFCXOkWjmBfEDkaH2gQBJnWchgThlJsuBk=
+yWsiNJkxzCngHDuhjmewCTDOETvl_F8swVMRVgZk_UHEZmKUs2F-jxrYAfPaOO2q57nPyrRmNb5=
+2SfPcY98fQhXpts7So-PFOEAI6J9nltR--OK6pFtbMY1esycLopiUzjImVY2l9mSeTQpJbYeJPR=
+EW3_ysdeNYN-JKN5W6F6xGhVnRN3hMNecf8UJTgbZvUg_AjtbBZDCvYZBBrMxXYCeJsHCKX7G5s=
+tWi5Z-AVg-IKXfyCov2zY5nSF2wolCRUGudQ5b12rTHOEb0i5Fhy3SqwgEyc88d8blu17PACZfy=
+m0mKgcOxAmw0scJ0BURWF9ZFxzF72mcqxyV6Dklrt7Db4Lu6u7NY1WHL6QKyNrX8ael-Bn_RoTF=
+Wiv48pmTQfIUCI2QoPNE8ro9lXXArtkyvHfXqO3rLgRLJZmsCfBAMFmRdqeiBAwv5LfvvaGRdmo=
+OlfBmKpMboWNcKthDDuu0RuGHsL0AucI4KoPKM1axay2rujL91pYFPg_BjXm2wKGKmHa6qDc3vA=
+z5oBx7P5nR-0hd4jG6B7Vot68sXZwekzm0CoC9zKxJwzg9-zPiA1r_IBZGZZ3Ezr_mtuJdid0Ub=
+tqFaH5L6bPgMeJh6jA2nXh9ETQP2bUSaqyxjbgEbZu4D7_KQCgiMDyseDah6Ye1E0sAuGO4f8nd=
+SJnV3odukqI4dL3pML2-Q0i21CgRynIaYxjj3qUHCEvFR1H5cJ2hl91oqNGaxncZGf98MCenA3t=
+gGNaXhTgUKcvar46t_3UybDhOIzq1ZV70U5uE9ME4jzw-nf5YnZXu1VINUXYZ_Vmk5W8nxlFfw-=
+txxdVbj1U8cZv2RNIH1jNqOUjfaDluhWrj1glpdchOuLM081huUsAY-tSxxdLTcmExTiZaruXi-=
+3_rhoSJ2J7dmAaMUwsIPJycfblihH96X5WxzQ7DW48BdeFmzhS9aVMP4ESgbqNdB3-CvZ1WinAM=
+bZruFJCFcgmggLo-QzIYtQppt_RsYq_quU_-HrJ4ZEb7Dx1fhaqNgjin0i9mRyep79aIeD0uKm3=
+kiyOUE58izUsHHVJaYlsj2PhtIENnnwblWIdfYAk9R3u0y4S9Hqvr_Bsnn8A1Tu0 )
+############################################################
+############################################################
+
+--7580712b779411cfa2cab9ba516098e8cc63612d7a780e79fdb083b92193
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Mime-Version: 1.0
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>MPOX UPDATE (03): NIGERIA, ATYPICAL CASES, 2022<br>******************=
+*****************************<br>A ProMED-mail post<br><a href=3D"https://u=
+19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisIijpefK5PNjW-mL-YZGnfgDO=
+xU1G3gjwnPSi2Tfv3HA/431/L5f3CG6sThyAAFO2SQEvAQ/h0/O6bbDJnTTSQcpPbbVAHdhKfMd=
+--KFm3JAFyxiQg1_Og">http://www.promedmail.org</a><br>ProMED-mail is a progr=
+am of the<br>International Society for Infectious Diseases<br><a href=3D"ht=
+tps://u19268662.ct.sendgrid.net/ss/c/wscE2ng5fl6JrPIt48tisCT5tpD4Upm3qyMCbc=
+YSQvc/431/L5f3CG6sThyAAFO2SQEvAQ/h1/jzN0CV7nenED36BaB-vY5H0ztPjql23R8sgX6bj=
+rthE">http://www.isid.org</a><br><br>Date: Sat 13 Jan 2024=0D<br>Source: He=
+alio [edited]=0D<br><a href=3D"https://u19268662.ct.sendgrid.net/ss/c/TLh_c=
+srC34X_iXpbYoMam6nIJeLKIYln-TR_4o7skbuJ-mO5oWBUMBp3RCxr3BjtgJE9JOC5z7BzT6dK=
+W4t9UrCw0O7MuUNmXanKqR_i_SXrSHrHGTkEShljzvBfwPUoTkS8KIE6rQnfEcol60nMUsslRwL=
+_zFtyRzo7S6PuIqQ/431/L5f3CG6sThyAAFO2SQEvAQ/h2/b9gcHqDt57SIZ_89tTmWaethW0h4=
+oWARq0_dGDW9hGo">https://www.healio.com/news/infectious-disease/20240112/20=
+22-mpox-outbreak-cases-had-atypical-symptoms-and-presentation</a>=0D<br>=0D=
+<br>=0D<br>During a 2022 mpox outbreak in a Nigerian tertiary care facility=
+,<br>several confirmed cases presented atypically, according to a recent<br=
+>assessment of cases.=0D<br>=0D<br>"Having managed cases of mpox previously=
+, I became amazed at the<br>gradual drift of the clinical presentation from=
+ the usual, previously<br>documented, and observed pattern of presentation =
+to some forms I<br>considered atypical," Nneka M. Chika-Igwenyi, MD, an inf=
+ectious<br>diseases physician at Alex Ekwueme Federal University Teaching<b=
+r>Hospital, Abakaliki, told Healio. "This spored me into highlighting<br>so=
+me of the observed atypical presentations."=0D<br>=0D<br>During a 2022 mpox=
+ outbreak in a Nigerian facility, cases deviated<br>from the typical presen=
+tation highlighting the need for further<br>evaluation of unusual skin lesi=
+ons and increased mpox screening.<br>Chika-Igwenyi and colleagues assessed =
+clinical and epidemiological<br>data of PCR-confirmed mpox cases reported d=
+uring the 2022 outbreak to<br>gather information on unusual presentations.=0D=
+<br>=0D<br>Of 17 suspected cases reported during the outbreak, 13 were PCR<=
+br>confirmed. Among these 13 patients, there were several atypical<br>prese=
+ntations.=0D<br>=0D<br>According to Chika-Igwenyi, these cases occurred amo=
+ng young adults<br>and were more common in males (64.3%), which is in contr=
+ast to<br>previously documented occurrence in children and young females.<b=
+r>Additionally, among these patients, there was a lack of prodromal<br>symp=
+toms (reported among only 3 or 23.1% of cases) that usually<br>indicate the=
+ onset of skin lesions. When patients did have prodromal<br>symptoms, sympt=
+oms persisted for longer than a week in 38.5% of<br>cases.=0D<br>=0D<br>All=
+ 13 patients experienced rash of "various distribution." Skin<br>lesions we=
+re polymorphic in 6 cases (46.2%) with solitary skin lesions<br>reported in=
+ 3 patients (23.1%). Chika-Igwenyi added that contrary to<br>previous outbr=
+eaks where skin lesions followed typical stages and were<br>synchronous, so=
+me cases had asynchronous lesions with rashes occurring<br>at different sta=
+ges of development. According to the study,<br>significant genital lesions =
+were reported in both genders and in 6<br>(46.2%) cases. Perianal lesions w=
+ere also reported atypically among<br>heterosexuals and non-men who have se=
+x with men population patients<br>(71.1%) with one case (7.7%) being severe=
+.=0D<br>=0D<br>Based on these assessments, Chika-Igwenyi said that moving f=
+orward<br>there needs to be screening and evaluation of genital skin lesion=
+s<br>presumed to be sexually transmitted infections. There should also be a=
+<br>revision of clinical case definition to include the reported atypical<b=
+r>presentations.=0D<br>=0D<br>"[There should be a] high index of suspicion =
+among clinicians and<br>public health interventions using a one-health appr=
+oach,"<br>Chika-Igwenyi concluded.=0D<br>=0D<br>[Byline: Caitlyn Stulpin]=0D=
+<br>=0D<br>--=0D<br>Communicated by:=0D<br>ProMED<br><br>[This case report =
+highlights the need for further inclusion of mpox in<br>clinician different=
+ials for patients with any genital lesion<br>regardless of sex or sexuality=
+. As we have seen throughout mpox<br>outbreaks, case presentation can be ex=
+tremely variable with symptoms<br>typically residing on their own. This sho=
+uld raise concern as to<br>whether patients are actually receiving the appr=
+opriate diagnosis or<br>if the virus is simply running its course. The prod=
+romal phase they<br>present with also means that patients could be contagio=
+us for an<br>extended period without rash symptoms, leading to further spre=
+ad of<br>the virus. - Mod.CS<br><br>ProMED map:<br>Nigeria: <a href=3D"http=
+s://u19268662.ct.sendgrid.net/ss/c/sSnCkKCWBvais3EuVAOvgy2WOIX7pp1nXnn4Abwu=
+Q3Z6WbkfhqXYXU-aTMPJ8yThV5qy4ybRtblf0UOPZ1ofzA/431/L5f3CG6sThyAAFO2SQEvAQ/h=
+3/sr1R5VlRwfoDXJyhIM-5gl_MscfVV9XglJTZu1nC31k">https://promedmail.org/prome=
+d-post?place=3D8714253,62</a>]<br><br>[See Also:<br>Mpox update (02): Israe=
+l, new cases, MOH<br>http://promedmail.org/post/20240111.8714172=0D<br>Mpox=
+ update (01): Cambodia, new cases<br>http://promedmail.org/post/20240105.87=
+14076=0D<br>2023=0D<br>----=0D<br>Mpox update (51): Cambodia (PP) local cas=
+e<br>http://promedmail.org/post/20231214.8713728=0D<br>Mpox update (50): Vi=
+et Nam (Mekong Delta region)<br>http://promedmail.org/post/20231208.8713590=0D=
+<br>Mpox update (49): WHO, Congo DR, USA (ID), Indonesia<br>http://promedma=
+il.org/post/20231127.8713353=0D<br>Mpox update (48): Viet Nam, Taiwan, Indo=
+nesia<br>http://promedmail.org/post/20231115.8713148=0D<br>Mpox update (47)=
+: Congo DR (KU), Malaysia, Indonesia (Jakarta), RFI<br>http://promedmail.or=
+g/post/20231102.8712960=0D<br>Mpox update (46): Pakistan (KP) ex Saudi Arab=
+ia<br>http://promedmail.org/post/20231102.8712956=0D<br>Mpox update (45): V=
+iet Nam, fatal, immunocompromised patient<br>http://promedmail.org/post/202=
+31026.8712826=0D<br>Mpox update (44): tecovirimat resistance, HIV<br>http:/=
+/promedmail.org/post/20231025.8712791=0D<br>Mpox update (43): worldwide cas=
+es, Viet Nam, vaccination<br>http://promedmail.org/post/20231015.8712649=0D=
+<br>Mpox update (42): UK, Viet Nam<br>http://promedmail.org/post/20231009.8=
+712516=0D<br>Mpox update (41): cases, Vietnam, Congo DR, RFI<br>http://prom=
+edmail.org/post/20230929.8712374=0D<br>Mpox update (40): worldwide, Congo D=
+R, Laos<br>http://promedmail.org/post/20230926.8712311=0D<br>Mpox update (3=
+9): cases, China, England, vaccination<br>http://promedmail.org/post/202309=
+15.8712118=0D<br>Mpox update (38): Thailand, MSM, teenagers<br>http://prome=
+dmail.org/post/20230904.8711966=0D<br>Mpox update (37): Pakistan, USA, Cong=
+o DR<br>http://promedmail.org/post/20230901.8711932=0D<br>Mpox update (36):=
+ Malaysia, RFI<br>http://promedmail.org/post/20230825.8711837=0D<br>Mpox up=
+date (35): Spain, Pakistan<br>http://promedmail.org/post/20230822.8711787=0D=
+<br>Mpox update (34): Taiwan, fatal, corr<br>http://promedmail.org/post/202=
+30815.8711712=0D<br>Mpox update (34): Taiwan, fatal<br>http://promedmail.or=
+g/post/20230815.8711702=0D<br>Mpox update (33): China, Australia<br>http://=
+promedmail.org/post/20230813.8711686=0D<br>Mpox update (32): Taiwan http://=
+promedmail.org/post/20230810.8711633=0D<br>Mpox update (31): http://promedm=
+ail.org/post/20230805.8711570=0D<br>Mpox update (30): cases, steroids, Trin=
+idad and Tobago, Pakistan,<br>Portugal, RFI http://promedmail.org/post/2023=
+0801.8711442=0D<br>Mpox update (29): cases, Congo DR<br>http://promedmail.o=
+rg/post/20230724.8711303=0D<br>Mpox update (28): cases, comment, Trinidad &=
+ Tobago, UK, Germany,<br>comparison http://promedmail.org/post/20230714.871=
+1137=0D<br>Mpox update (27): cases, Cameroon, Thailand, RFI<br>http://prome=
+dmail.org/post/20230711.8710983=0D<br>Mpox update (26): cases, USA, Canada,=
+ Israel, South Korea<br>http://promedmail.org/post/20230701.8710843=0D<br>M=
+pox update (25): cases, vaccine, China, resurgence<br>http://promedmail.org=
+/post/20230625.8710712=0D<br>Mpox update (24): cases, detection, UK, PCR<br=
+>http://promedmail.org/post/20230622.8710641=0D<br>Mpox update (23): viral =
+shedding, Beijing, STI, Taiwan<br>http://promedmail.org/post/20230616.87105=
+43=0D<br>Mpox update (22): cases, recurrent outbreaks, UK<br>http://promedm=
+ail.org/post/20230611.8710429=0D<br>Mpox update (21): USA, Cameroon, cases,=
+ wastewater<br>http://promedmail.org/post/20230528.8710251=0D<br>Mpox updat=
+e (20): cases, WHO, USA, France<br>http://promedmail.org/post/20230519.8710=
+125=0D<br>Mpox update (19): USA, South Korea, Brazil, cases, resurgence, RF=
+I<br>http://promedmail.org/post/20230513.8709994=0D<br>Mpox update (18): WH=
+O, Pakistan, USA, sociobehavioral factors<br>http://promedmail.org/post/202=
+30508.8709908=0D<br>Mpox update (17): cases, South Korea, Japan, Pakistan, =
+UK<br>http://promedmail.org/post/20230501.8709757=0D<br>Mpox update (16): c=
+ases, disparities, South Korea<br>http://promedmail.org/post/20230422.87096=
+04=0D<br>Mpox update (15): cases, Japan, AIDS-defining<br>http://promedmail=
+.org/post/20230414.8709457=0D<br>Mpox update (14): worldwide, USA, Congo DR=
+ (HU), vaccination<br>http://promedmail.org/post/20230409.8709364=0D<br>Mpo=
+x update (13): cases, Netherlands, virtual ward<br>http://promedmail.org/po=
+st/20230402.8709218=0D<br>Mpox update (12): Japan, TikTok, Jamaica, vaccina=
+tion<br>http://promedmail.org/post/20230324.8709105=0D<br>Mpox update (11):=
+ cases, incubation, reinfection, Mexico, Jynneos<br>http://promedmail.org/p=
+ost/20230318.8708975=0D<br>Mpox update (10): Taiwan, undetected case, death=
+, treatment<br>http://promedmail.org/post/20230311.8708853=0D<br>Mpox updat=
+e (09): worldwide, USA, Taiwan, occupational transm,<br>sampling, immunolog=
+y http://promedmail.org/post/20230303.8708676=0D<br>Mpox update (08): world=
+wide, Belgium<br>http://promedmail.org/post/20230224.8708552=0D<br>Mpox upd=
+ate (07): worldwide, USA, WHO, wastewater<br>http://promedmail.org/post/202=
+30217.8708422=0D<br>Mpox update (06): worldwide, antivirals<br>http://prome=
+dmail.org/post/20230210.8708259=0D<br>Mpox update (05): worldwide, USA<br>h=
+ttp://promedmail.org/post/20230202.8708119=0D<br>Mpox update (04): worldwid=
+e, USA, drug sensitivity, evolution, Viet<br>Nam http://promedmail.org/post=
+/20230126.8707984=0D<br>Mpox update (03): worldwide, USA, DR Congo<br>http:=
+//promedmail.org/post/20230120.8707842=0D<br>Mpox update (02): worldwide, U=
+SA, antivirals<br>http://promedmail.org/post/20230113.8707762=0D<br>Mpox up=
+date (01): worldwide, USA, breakthrough cases, unvaccinated,<br>women http:=
+//promedmail.org/post/20230106.8707651]<br>................................=
+.................sb/cs/may/jh<br></body>
+</html><!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body>*##########################################################*<br>*****=
+*******************************************************<br>ProMED makes eve=
+ry effort to verify the reports that are posted, but the accuracy<br>and co=
+mpleteness of the information, and of any statements or opinions based<br>t=
+hereon, are not guaranteed. The reader assumes all risks in using informati=
+on<br>posted or archived by ProMED. ISID and its associated service provide=
+rs shall not<br>be held responsible for errors or omissions or held liable =
+for any damages incurred<br>as a result of use or reliance upon posted or a=
+rchived material.<br>******************************************************=
+******<br>Donate to ProMED. Details available at: https://isid.networkforgo=
+od.com/projects/79924-invest-in-the-mission.<br>***************************=
+*********************************<br>Visit ProMED's website at https://www.=
+promedmail.org/.<br>Submit all items for posting via the ProMED website at =
+https://promedmail.org/submitinfo/.<br>If you have any questions or need su=
+pport, please contact us via the ProMED website at  https://promedmail.org/=
+support/.<br>You may subscribe/unsubscribe at  https://isid.org/promedmail-=
+subscribe/.<br><div><a href=3D"https://u19268662.ct.sendgrid.net/asm/?user_=
+id=3D19268662&amp;data=3DcKjuOFmqgjZJHiSBCk_wRu5iwZAEXN7jmpSDLxb_oxhoMDAwdT=
+AwMMUwPqBfM271T4gxRQokO3_xQVr4tzztrYHXbYzbqg9R9q-ifFCXOkWjmBfEDkaH2gQBJnWch=
+gThlJsuBkyWsiNJkxzCngHDuhjmewCTDOETvl_F8swVMRVgZk_UHEZmKUs2F-jxrYAfPaOO2q57=
+nPyrRmNb52SfPcY98fQhXpts7So-PFOEAI6J9nltR--OK6pFtbMY1esycLopiUzjImVY2l9mSeT=
+QpJbYeJPREW3_ysdeNYN-JKN5W6F6xGhVnRN3hMNecf8UJTgbZvUg_AjtbBZDCvYZBBrMxXYCeJ=
+sHCKX7G5stWi5Z-AVg-IKXfyCov2zY5nSF2wolCRUGudQ5b12rTHOEb0i5Fhy3SqwgEyc88d8bl=
+u17PACZfym0mKgcOxAmw0scJ0BURWF9ZFxzF72mcqxyV6Dklrt7Db4Lu6u7NY1WHL6QKyNrX8ae=
+l-Bn_RoTFWiv48pmTQfIUCI2QoPNE8ro9lXXArtkyvHfXqO3rLgRLJZmsCfBAMFmRdqeiBAwv5L=
+fvvaGRdmoOlfBmKpMboWNcKthDDuu0RuGHsL0AucI4KoPKM1axay2rujL91pYFPg_BjXm2wKGKm=
+Ha6qDc3vAz5oBx7P5nR-0hd4jG6B7Vot68sXZwekzm0CoC9zKxJwzg9-zPiA1r_IBZGZZ3Ezr_m=
+tuJdid0UbtqFaH5L6bPgMeJh6jA2nXh9ETQP2bUSaqyxjbgEbZu4D7_KQCgiMDyseDah6Ye1E0s=
+AuGO4f8ndSJnV3odukqI4dL3pML2-Q0i21CgRynIaYxjj3qUHCEvFR1H5cJ2hl91oqNGaxncZGf=
+98MCenA3tgGNaXhTgUKcvar46t_3UybDhOIzq1ZV70U5uE9ME4jzw-nf5YnZXu1VINUXYZ_Vmk5=
+W8nxlFfw-txxdVbj1U8cZv2RNIH1jNqOUjfaDluhWrj1glpdchOuLM081huUsAY-tSxxdLTcmEx=
+TiZaruXi-3_rhoSJ2J7dmAaMUwsIPJycfblihH96X5WxzQ7DW48BdeFmzhS9aVMP4ESgbqNdB3-=
+CvZ1WinAMbZruFJCFcgmggLo-QzIYtQppt_RsYq_quU_-HrJ4ZEb7Dx1fhaqNgjin0i9mRyep79=
+aIeD0uKm3kiyOUE58izUsHHVJaYlsj2PhtIENnnwblWIdfYAk9R3u0y4S9Hqvr_Bsnn8A1Tu0" =
+target=3D"_blank" class=3D"Unsubscribe--unsubscribePreferences" style=3D"fo=
+nt-family:sans-serif;text-decoration:none;">Unsubscribe Preferences</a></di=
+v><br>############################################################<br>#####=
+#######################################################<br><br><img src=3D"=
+https://u19268662.ct.sendgrid.net/ss/o/LbtalBvHhFtzyiegKfBhew/431/L5f3CG6sT=
+hyAAFO2SQEvAQ/ho.gif" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=
+=3D"height:1px !important;width:1px !important;border-width:0 !important;ma=
+rgin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;=
+margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !importa=
+nt;padding-right:0 !important;padding-left:0 !important;"/></body>
+</html>
+--7580712b779411cfa2cab9ba516098e8cc63612d7a780e79fdb083b92193--
